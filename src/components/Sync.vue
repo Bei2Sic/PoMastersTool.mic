@@ -523,7 +523,7 @@ svg {
     gap: 1vh;
     /* 间距随视口缩放 */
     overflow: hidden;
-    background-image: url('@/assets/images/bg2.png');
+    background-image: url('../assets/images/bg2.png');
     align-self: center;
     /* height: calc(100% - 3vh); */
     /* 减去上下 padding（1.5vh*2），随视口缩放 */

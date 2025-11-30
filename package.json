@@ -13,9 +13,8 @@
     "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
-    "bootstrap": "^5.3.8",
     "opencc-js": "^1.0.5",
-    "pinia": "^3.0.4",
+    "pinia": "^3.0.4",gio
     "vue": "^3.5.22",
     "vue-demi": "^0.14.10"
   },

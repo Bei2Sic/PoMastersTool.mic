@@ -51,12 +51,12 @@ export const BonusList = [
 
 // 潜能饼干类型资源
 export const PotentialCookiesUrl = [
-    new URL('@/assets/images/icon_arcsuit.png', import.meta.url).href,
-    new URL('@/assets/images/icon_masterex.png', import.meta.url).href,
-    new URL('@/assets/images/icon_master.png', import.meta.url).href,
-    new URL('@/assets/images/icon_mega.png', import.meta.url).href,
-    new URL('@/assets/images/icon_dynamax.png', import.meta.url).href,
-    new URL('@/assets/images/icon_shiny.png', import.meta.url).href,
+    new URL('../assets/images/icon_arcsuit.png', import.meta.url).href,
+    new URL('../assets/images/icon_masterex.png', import.meta.url).href,
+    new URL('../assets/images/icon_master.png', import.meta.url).href,
+    new URL('../assets/images/icon_mega.png', import.meta.url).href,
+    new URL('../assets/images/icon_dynamax.png', import.meta.url).href,
+    new URL('../assets/images/icon_shiny.png', import.meta.url).href,
 ]
 
 // temp: mock data

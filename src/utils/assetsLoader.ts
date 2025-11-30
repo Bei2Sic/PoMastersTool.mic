@@ -19,7 +19,7 @@ export const loadSyncGridsImageMap = async (): Promise<
 
         for (const [filePath, resourceUrl] of Object.entries(modules)) {
             const keyName = filePath
-                .replace("/src/assets/sync-grids/", "")
+                .replace("../assets/sync-grids/", "")
                 .replace(/\\/g, "/")
                 .replace(".png", "");
 
@@ -70,7 +70,7 @@ export const loadActorImageMap = async (): Promise<Record<string, unknown>> => {
         for (const [filePath, resourceUrl] of Object.entries(modules)) {
             // 提取纯文件名
             const keyName = filePath
-                .replace("/src/assets/actors/", "")
+                .replace("../assets/actors/", "")
                 .replace(/\\/g, "/")
                 .replace(".png", "");
 
