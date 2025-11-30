@@ -1,0 +1,1074 @@
+{
+  "trainer": {
+    "id": "10273000000",
+    "name": "賽寶利",
+    "actor": "賽寶利",
+    "actorId": "ch0273_00_savory",
+    "rarity": 5,
+    "role": 5,
+    "exRole": 3,
+    "ex": true,
+    "exclusivity": "Pokefair",
+    "maxBonusLevel": 10
+  },
+  "scoutMethod": 1,
+  "scheduleId": "chara_6060_0714_FOREVER",
+  "themes": [
+    {
+      "name": "超能力屬性／場地",
+      "description": "我方全體拍組最大HP提升24\n我方全體拍組的速度提升24",
+      "tag": "超能力",
+      "category": 1
+    },
+    {
+      "name": "伽勒爾／場地",
+      "description": "我方全體拍組最大HP提升7\n我方全體拍組的速度提升7",
+      "tag": "伽勒爾",
+      "category": 2
+    },
+    {
+      "name": "道館館主／場地",
+      "description": "我方全體拍組最大HP提升7\n我方全體拍組的速度提升7",
+      "tag": "道館館主",
+      "category": 3
+    },
+    {
+      "name": "眼鏡／場地",
+      "description": "我方全體拍組最大HP提升8\n我方全體拍組的速度提升8",
+      "tag": "眼鏡",
+      "category": 4
+    },
+    {
+      "name": "不可思議的力量／場地",
+      "description": "我方全體拍組最大HP提升8\n我方全體拍組的速度提升8",
+      "tag": "不可思議的力量",
+      "category": 999
+    }
+  ],
+  "specialAwaking": {
+    "name": "優雅的超能力",
+    "description": "當天氣為冰雹時,會提高我方全體拍組的拍組招式的威力。在寶可夢首次使出招式時,會將場地變成精神場地。場地變成精神場地的瞬間在場上時,會延長精神場地的持續時間。",
+    "detail": [
+      "冰雹時拍組招式威力↑G3",
+      "寶可夢首次出招後變成精神場地",
+      "精神場地時間延長3"
+    ]
+  },
+  "pokemon": [
+    {
+      "id": "20273000000",
+      "variationType": 0,
+      "name": "呆呆王",
+      "form": "伽勒爾的樣子",
+      "actor": "pm0199_00_31_dyadoking",
+      "gender": 1,
+      "is_shiny": false,
+      "type": 11,
+      "weakness": 16,
+      "stat": {
+        "hp": [
+          102,
+          177,
+          249,
+          535,
+          595,
+          655,
+          835
+        ],
+        "atk": [
+          13,
+          55,
+          94,
+          248,
+          280,
+          312,
+          408
+        ],
+        "def": [
+          11,
+          33,
+          54,
+          131,
+          147,
+          163,
+          211
+        ],
+        "spa": [
+          16,
+          75,
+          132,
+          352,
+          400,
+          448,
+          592
+        ],
+        "spd": [
+          12,
+          36,
+          57,
+          145,
+          165,
+          185,
+          245
+        ],
+        "spe": [
+          10,
+          47,
+          83,
+          226,
+          254,
+          282,
+          366
+        ]
+      },
+      "passives": [
+        {
+          "name": "自身引發全體或我方場地時下次不消耗計量槽9",
+          "description": "當自己使全場地或我方場地的場地效果生效時,會讓自己變成下次計量槽消耗0狀態。",
+          "detail": []
+        },
+        {
+          "name": "冰雹時減輕物理傷害G3",
+          "description": "當天氣為冰雹時,會減輕我方受到物理招式攻擊時的傷害。",
+          "detail": []
+        },
+        {
+          "name": "冰雹無效G",
+          "description": "我方全體拍組不會受到冰雹所造成的傷害。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 826,
+          "user": "寶可夢",
+          "name": "詭異咒語",
+          "type": 11,
+          "gauge": 4,
+          "uses": "−",
+          "category": "特殊",
+          "power": 160,
+          "accuracy": 100,
+          "target": "對手１對拍組",
+          "description": "沒有追加效果。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 8222,
+          "user": "寶可夢",
+          "name": "伽勒爾的分析",
+          "type": 0,
+          "gauge": 2,
+          "uses": 2,
+          "category": "變化",
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方場地",
+          "description": "提高我方全體拍組的下次特殊招式威力增強1階段。讓我方場地變成伽勒爾鬥陣(特殊)。伽勒爾鬥陣(特殊)將會發揮下列所有效果。提高我方全體拍組的特殊招式和特殊拍組招式威力10%。減輕我方全體拍組受到特殊招式和特殊拍組招式攻擊時的傷害5%。當我方場地中擁有伽勒爾標籤的拍組越多,此效果還會提升得越多。(每增加1對拍組,威力提升+10%,傷害減輕+3%。)(威力最多可提升40%,傷害最多可減輕14%。)",
+          "tags": 8388608,
+          "group": "Regular"
+        },
+        {
+          "id": 6067,
+          "user": "寶可夢",
+          "name": "高雅的冷笑話",
+          "type": 6,
+          "gauge": 2,
+          "uses": 1,
+          "category": "變化",
+          "power": 0,
+          "accuracy": 0,
+          "target": "對手全體拍組",
+          "description": "【開放條件】\n我方場地變成任一鬥陣時\n【封印條件】\n我方場地的所有鬥陣都被解除時\n\n招式必定會命中。降低對手全體拍組的防禦、特防和閃避率3階段。會將天氣變成冰雹。讓對手場地變成能力無法提升狀態。讓我方場地變成能力下降防禦狀態。讓我方全體拍組降低的能力回到初始狀態。",
+          "tags": 8388616,
+          "group": 6
+        },
+        {
+          "id": 12730,
+          "user": "訓練師",
+          "name": "超、能、力!",
+          "type": 0,
+          "gauge": 0,
+          "uses": 1,
+          "category": "變化",
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方１對拍組",
+          "description": "提高我方的特攻4階段。提高我方的擊中要害率3階段。讓我方變成附帶回復狀態。",
+          "tags": "none",
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 108000,
+        "user": "寶可夢",
+        "name": "優雅的超能力之超能力光線",
+        "type": 11,
+        "gauge": 0,
+        "uses": "−",
+        "category": "特殊",
+        "power": 250,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "沒有追加效果。",
+        "tags": "none",
+        "group": "Sync"
+      }
+    },
+    {
+      "id": "20273000000",
+      "variationType": 4,
+      "name": "呆呆王",
+      "form": "伽勒爾的樣子",
+      "actor": "pm0199_81_31_dyadoking",
+      "gender": 1,
+      "is_shiny": false,
+      "type": "-1",
+      "weakness": "-1",
+      "stat": {
+        "hp": [
+          102,
+          177,
+          249,
+          535,
+          595,
+          655,
+          835
+        ],
+        "atk": [
+          13,
+          55,
+          94,
+          248,
+          280,
+          312,
+          408
+        ],
+        "def": [
+          11,
+          33,
+          54,
+          131,
+          147,
+          163,
+          211
+        ],
+        "spa": [
+          16,
+          75,
+          132,
+          352,
+          400,
+          448,
+          592
+        ],
+        "spd": [
+          12,
+          36,
+          57,
+          145,
+          165,
+          185,
+          245
+        ],
+        "spe": [
+          10,
+          47,
+          83,
+          226,
+          254,
+          282,
+          366
+        ]
+      },
+      "passives": [
+        {
+          "name": "自身引發全體或我方場地時下次不消耗計量槽9",
+          "description": "當自己使全場地或我方場地的場地效果生效時,會讓自己變成下次計量槽消耗0狀態。",
+          "detail": []
+        },
+        {
+          "name": "冰雹時減輕物理傷害G3",
+          "description": "當天氣為冰雹時,會減輕我方受到物理招式攻擊時的傷害。",
+          "detail": []
+        },
+        {
+          "name": "冰雹無效G",
+          "description": "我方全體拍組不會受到冰雹所造成的傷害。",
+          "detail": []
+        }
+      ],
+      "moves": null,
+      "syncMove": null,
+      "movesDynamax": [
+        {
+          "id": 7030,
+          "user": "寶可夢",
+          "name": "極巨超能",
+          "type": 11,
+          "gauge": 0,
+          "uses": "−",
+          "category": "特殊",
+          "power": 400,
+          "accuracy": 0,
+          "target": "對手１對拍組",
+          "description": "將場地變成精神場地。",
+          "tags": "none",
+          "group": 5
+        },
+        {
+          "id": 7039,
+          "user": "寶可夢",
+          "name": "極巨防壁",
+          "type": 1,
+          "gauge": 0,
+          "uses": "−",
+          "category": "變化",
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方１對拍組",
+          "description": "讓我方變成下次傷害防禦狀態。",
+          "tags": "none",
+          "group": 5
+        }
+      ]
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "賽寶利專用潛能餅乾１",
+      "skills": [
+        {
+          "name": [],
+          "description": "使出拍組極巨化招式後,會提高自己的下次特殊招式威力增強1階段。",
+          "rate": 100
+        }
+      ]
+    },
+    {
+      "cookieName": "賽寶利專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": [],
+          "description": "只有在天氣、場地或領域變化時,招式計量槽會累積得較快。",
+          "rate": 33
+        },
+        {
+          "name": [],
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "rate": 33
+        },
+        {
+          "name": [],
+          "description": "只有在天氣、場地或領域變化時,會提高我方全體拍組的拍組招式的威力。",
+          "rate": 33
+        }
+      ]
+    }
+  ],
+  "grid": [
+    {
+      "id": 1027300000,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1027300001,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1027300002,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1027300003,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1027300004,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1027300005,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1027300006,
+      "name": "效果絕佳時威力提升1",
+      "description": "當效果絕佳時,會提高該招式的威力。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 0,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1027300007,
+      "name": "攻擊時攻擊特攻下降9",
+      "description": "使出招式攻擊成功時,會降低對手的攻擊和特攻1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 4,
+      "x": 0,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1027300008,
+      "name": "對手中拍組極巨化招式後特防下降G2",
+      "description": "當以對手為對象的拍組極巨化招式成功時,會降低對手全體拍組的特防2階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 5,
+      "x": 0,
+      "y": -5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1027300009,
+      "name": "畏縮無效",
+      "description": "不會陷入畏縮狀態。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 2,
+      "x": 0,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1027300010,
+      "name": "全種類下降無效",
+      "description": "所有的能力都不會降低。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 4,
+      "x": -1,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1027300011,
+      "name": "自身引發全體或我方場地時賦予特殊增強(1)9",
+      "description": "當自己使全場地或我方場地的場地效果生效時,會提高自己的下次特殊招式威力增強1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 5,
+      "x": 1,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1027300012,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1027300013,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1027300014,
+      "name": "詭異咒語：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": 0,
+      "color": "#47D147",
+      "type": 11
+    },
+    {
+      "id": 1027300015,
+      "name": "詭異咒語：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 1,
+      "y": 1,
+      "color": "#47D147",
+      "type": 11
+    },
+    {
+      "id": 1027300016,
+      "name": "詭異咒語：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 1,
+      "y": 2,
+      "color": "#47D147",
+      "type": 11
+    },
+    {
+      "id": 1027300017,
+      "name": "鬥陣時HP回復1",
+      "description": "當我方場地為任一鬥陣時,寶可夢每次行動後都會回復自己的HP。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": 1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1027300018,
+      "name": "鬥陣時攻擊招式威力↓2",
+      "description": "當我方場地為任一鬥陣時,會減輕受到招式攻擊時的傷害。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 3,
+      "y": 0,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1027300019,
+      "name": "伽勒爾鬥陣(特殊)時間延長3",
+      "description": "我方場地變成伽勒爾鬥陣(特殊)的瞬間在場上時,會延長伽勒爾鬥陣(特殊)的持續時間。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1027300020,
+      "name": "對手非能力上昇時威力提升3",
+      "description": "當對手沒有處於提高狀態的能力時,會提高自己的招式的威力。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 3,
+      "y": 1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1027300021,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1027300022,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1027300023,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1027300024,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -3,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1027300025,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1027300026,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1027300027,
+      "name": "冰雹時拍組招式威力提升2",
+      "description": "當天氣為冰雹時,會提高拍組招式的威力。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -3,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1027300028,
+      "name": "首次HP減半時變成冰雹",
+      "description": "在自己的HP首次剩下一半以下時,會將天氣變成冰雹。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -2,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1027300029,
+      "name": "高雅的冷笑話：招式後招式計量槽增加9",
+      "description": "招式成功時,會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -1,
+      "y": -4,
+      "color": "#FF0066",
+      "type": 6
+    },
+    {
+      "id": 1027300030,
+      "name": "冰雹時威力提升G2",
+      "description": "當天氣為冰雹時,會提高我方全體拍組的招式的威力。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -3,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1027300031,
+      "name": "冰雹時間延長5",
+      "description": "天氣變成冰雹的瞬間在場上時,會延長冰雹的持續時間。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1027300032,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1027300033,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1027300034,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1027300035,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": -4,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1027300036,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -4,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1027300037,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -4,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1027300038,
+      "name": "精神場地時招式計量槽加速2",
+      "description": "當場地為精神場地時,招式計量槽會累積得較快。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 2,
+      "x": 3,
+      "y": -5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1027300039,
+      "name": "超、能、力!：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": -5,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1027300040,
+      "name": "精神場地時HP回復1",
+      "description": "當場地為精神場地時,寶可夢每次行動後都會回復自己的HP。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 1,
+      "y": -5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1027300041,
+      "name": "依特攻升幅拍組招式↑",
+      "description": "自己的特攻提高得越多,拍組招式的威力就提高得越多。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 3,
+      "y": -6,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1027300042,
+      "name": "伽勒爾的分析：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": -6,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1027300043,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1027300044,
+      "name": "混亂無效",
+      "description": "不會陷入混亂狀態。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": -3,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1027300045,
+      "name": "詭異咒語：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": 2,
+      "color": "#47D147",
+      "type": 11
+    },
+    {
+      "id": 1027300046,
+      "name": "詭異咒語：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -1,
+      "y": 2,
+      "color": "#47D147",
+      "type": 11
+    },
+    {
+      "id": 1027300047,
+      "name": "詭異咒語：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -3,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 11
+    },
+    {
+      "id": 1027300048,
+      "name": "解除異常狀態",
+      "description": "當自己首次陷入異常狀態時,會解除自己的異常狀態。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -2,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1027300049,
+      "name": "解除妨害狀態",
+      "description": "當自己首次陷入畏縮、混亂或束縛狀態時,會解除該狀態。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -1,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1027300050,
+      "name": "極巨超能：威力 + 100",
+      "description": "",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 3,
+      "x": -3,
+      "y": 4,
+      "color": "#BF80FF",
+      "type": 11
+    },
+    {
+      "id": 1027300051,
+      "name": "拍組極巨化招式後計數加速2",
+      "description": "使出拍組極巨化招式後, 會讓發動拍組招式所需的行動數減少2次。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1027300052,
+      "name": "優雅的超能力之超能力光線：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": -3,
+      "color": "#BF80FF",
+      "type": 11
+    },
+    {
+      "id": 1027300053,
+      "name": "優雅的超能力之超能力光線：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": 3,
+      "color": "#BF80FF",
+      "type": 11
+    }
+  ]
+}

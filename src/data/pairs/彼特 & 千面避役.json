@@ -1,0 +1,997 @@
+{
+  "trainer": {
+    "id": "10246000001",
+    "name": "彼特",
+    "actor": "彼特",
+    "actorId": "ch0246_00_beet",
+    "rarity": 5,
+    "role": 5,
+    "exRole": 3,
+    "ex": true,
+    "exclusivity": "Variety",
+    "maxBonusLevel": 5
+  },
+  "scoutMethod": 1,
+  "scheduleId": "chara_6110_1210_FOREVER",
+  "themes": [
+    {
+      "name": "水屬性／場地",
+      "description": "我方全體拍組最大HP提升24\n我方全體拍組的速度提升24",
+      "tag": "水",
+      "category": 1
+    },
+    {
+      "name": "伽勒爾／場地",
+      "description": "我方全體拍組最大HP提升7\n我方全體拍組的速度提升7",
+      "tag": "伽勒爾",
+      "category": 2
+    },
+    {
+      "name": "勁敵／場地",
+      "description": "我方全體拍組最大HP提升7\n我方全體拍組的速度提升7",
+      "tag": "勁敵",
+      "category": 3
+    },
+    {
+      "name": "伽勒爾的冒險／場地",
+      "description": "我方全體拍組最大HP提升8\n我方全體拍組的速度提升8",
+      "tag": "伽勒爾的冒險",
+      "category": 999
+    }
+  ],
+  "specialAwaking": {
+    "name": "",
+    "description": "",
+    "detail": []
+  },
+  "pokemon": [
+    {
+      "id": "20246000001",
+      "variationType": 0,
+      "name": "千面避役",
+      "form": "",
+      "actor": "pm0818_00_00_intereon",
+      "gender": 1,
+      "is_shiny": false,
+      "type": 3,
+      "weakness": 5,
+      "stat": {
+        "hp": [
+          99,
+          171,
+          240,
+          515,
+          575,
+          635,
+          815
+        ],
+        "atk": [
+          10,
+          49,
+          85,
+          228,
+          260,
+          292,
+          388
+        ],
+        "def": [
+          10,
+          33,
+          54,
+          142,
+          158,
+          174,
+          222
+        ],
+        "spa": [
+          12,
+          64,
+          112,
+          310,
+          350,
+          390,
+          510
+        ],
+        "spd": [
+          10,
+          33,
+          54,
+          142,
+          158,
+          174,
+          222
+        ],
+        "spe": [
+          17,
+          60,
+          99,
+          264,
+          300,
+          336,
+          444
+        ]
+      },
+      "passives": [
+        {
+          "name": "風度翩翩的默契",
+          "description": "上場時,會提高自己的特攻6階段。上場時,會提高自己的擊中要害率3階段。",
+          "detail": [
+            "上場時特攻提升6",
+            "上場時擊中要害率提升3"
+          ]
+        },
+        {
+          "name": "自身引發下雨時場地變成伽勒爾鬥陣(特殊)",
+          "description": "當自己使天氣變成下雨時,會讓我方場地變成伽勒爾鬥陣(特殊)。",
+          "detail": []
+        },
+        {
+          "name": "下雨時攻擊時下次不消耗計量槽9",
+          "description": "當天氣為下雨且使出招式攻擊成功時,會讓自己變成下次計量槽消耗0狀態。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 745,
+          "user": "寶可夢",
+          "name": "狙擊",
+          "type": 3,
+          "gauge": 4,
+          "uses": "−",
+          "category": "特殊",
+          "power": 128,
+          "accuracy": 100,
+          "target": "對手１對拍組",
+          "description": "容易擊中要害。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 240,
+          "user": "寶可夢",
+          "name": "求雨",
+          "type": 3,
+          "gauge": 2,
+          "uses": 2,
+          "category": "變化",
+          "power": 0,
+          "accuracy": 0,
+          "target": "全場地",
+          "description": "會將天氣變成下雨。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 6103,
+          "user": "寶可夢",
+          "name": "高壓狙擊",
+          "type": 3,
+          "gauge": 2,
+          "uses": "−",
+          "category": "特殊",
+          "power": 400,
+          "accuracy": 100,
+          "target": "對手１對拍組",
+          "description": "【開放條件】\n我方隊伍使出1次拍組招式時\n【封印條件】\n使出此招式時\n\n容易擊中要害。降低對手的特防3階段。",
+          "tags": "none",
+          "group": 6
+        },
+        {
+          "id": 12468,
+          "user": "訓練師",
+          "name": "真拿你沒辦法!",
+          "type": 0,
+          "gauge": 0,
+          "uses": 1,
+          "category": "變化",
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方１對拍組",
+          "description": "我方發動拍組招式所需的行動數會減少1次。讓我方變成下次效果絕佳威力提升狀態。提高我方的下次特殊招式威力增強3階段。",
+          "tags": "none",
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 114800,
+        "user": "寶可夢",
+        "name": "了解實力射穿對手之水之光線",
+        "type": 3,
+        "gauge": 0,
+        "uses": "−",
+        "category": "特殊",
+        "power": 250,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "沒有追加效果。",
+        "tags": "none",
+        "group": "Sync"
+      }
+    },
+    {
+      "id": "20246000001",
+      "variationType": 4,
+      "name": "千面避役",
+      "form": "",
+      "actor": "pm0818_83_00_intereon",
+      "gender": 1,
+      "is_shiny": false,
+      "type": "-1",
+      "weakness": "-1",
+      "stat": {
+        "hp": [
+          99,
+          171,
+          240,
+          515,
+          575,
+          635,
+          815
+        ],
+        "atk": [
+          10,
+          49,
+          85,
+          228,
+          260,
+          292,
+          388
+        ],
+        "def": [
+          10,
+          33,
+          54,
+          142,
+          158,
+          174,
+          222
+        ],
+        "spa": [
+          12,
+          64,
+          112,
+          310,
+          350,
+          390,
+          510
+        ],
+        "spd": [
+          10,
+          33,
+          54,
+          142,
+          158,
+          174,
+          222
+        ],
+        "spe": [
+          17,
+          60,
+          99,
+          264,
+          300,
+          336,
+          444
+        ]
+      },
+      "passives": [
+        {
+          "name": "風度翩翩的默契",
+          "description": "上場時,會提高自己的特攻6階段。上場時,會提高自己的擊中要害率3階段。",
+          "detail": [
+            "上場時特攻提升6",
+            "上場時擊中要害率提升3"
+          ]
+        },
+        {
+          "name": "自身引發下雨時場地變成伽勒爾鬥陣(特殊)",
+          "description": "當自己使天氣變成下雨時,會讓我方場地變成伽勒爾鬥陣(特殊)。",
+          "detail": []
+        },
+        {
+          "name": "下雨時攻擊時下次不消耗計量槽9",
+          "description": "當天氣為下雨且使出招式攻擊成功時,會讓自己變成下次計量槽消耗0狀態。",
+          "detail": []
+        }
+      ],
+      "moves": null,
+      "syncMove": null,
+      "movesDynamax": [
+        {
+          "id": 7024,
+          "user": "寶可夢",
+          "name": "極巨水流",
+          "type": 3,
+          "gauge": 0,
+          "uses": "−",
+          "category": "特殊",
+          "power": 400,
+          "accuracy": 0,
+          "target": "對手１對拍組",
+          "description": "會將天氣變成下雨。",
+          "tags": "none",
+          "group": 5
+        },
+        {
+          "id": 7039,
+          "user": "寶可夢",
+          "name": "極巨防壁",
+          "type": 1,
+          "gauge": 0,
+          "uses": "−",
+          "category": "變化",
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方１對拍組",
+          "description": "讓我方變成下次傷害防禦狀態。",
+          "tags": "none",
+          "group": 5
+        },
+        {
+          "id": 7024,
+          "user": "寶可夢",
+          "name": "極巨水流",
+          "type": 3,
+          "gauge": 0,
+          "uses": "−",
+          "category": "特殊",
+          "power": 400,
+          "accuracy": 0,
+          "target": "對手１對拍組",
+          "description": "會將天氣變成下雨。",
+          "tags": "none",
+          "group": 5
+        }
+      ]
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "彼特專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": [],
+          "description": "只有在天氣、場地或領域變化時,招式計量槽會累積得較快。",
+          "rate": 33
+        },
+        {
+          "name": [],
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "rate": 33
+        },
+        {
+          "name": [],
+          "description": "只有在天氣、場地或領域變化時,會提高我方全體拍組的拍組招式的威力。",
+          "rate": 33
+        }
+      ]
+    }
+  ],
+  "grid": [
+    {
+      "id": 1024600100,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024600101,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024600102,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024600103,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024600104,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024600105,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024600106,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024600107,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024600108,
+      "name": "狙擊：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": 0,
+      "color": "#47D147",
+      "type": 3
+    },
+    {
+      "id": 1024600109,
+      "name": "狙擊：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 1,
+      "y": 1,
+      "color": "#47D147",
+      "type": 3
+    },
+    {
+      "id": 1024600110,
+      "name": "擊中要害時速度提升2",
+      "description": "擊中對手要害時,會提高自己的速度2階段。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 1,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1024600111,
+      "name": "狙擊：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": 1,
+      "color": "#FF0066",
+      "type": 3
+    },
+    {
+      "id": 1024600112,
+      "name": "狙擊：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 3,
+      "y": 0,
+      "color": "#47D147",
+      "type": 3
+    },
+    {
+      "id": 1024600113,
+      "name": "依特攻升幅威力提升",
+      "description": "自己的特攻提高得越多,招式的威力就提高得越多。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1024600114,
+      "name": "拍組招式後賦予特殊增強(2)9",
+      "description": "使出拍組招式後,會提高自己的下次特殊招式威力增強2階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 3,
+      "y": 1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1024600115,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024600116,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024600117,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024600118,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -3,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024600119,
+      "name": "高壓狙擊：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": -2,
+      "color": "#BF80FF",
+      "type": 3
+    },
+    {
+      "id": 1024600120,
+      "name": "高壓狙擊：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -1,
+      "y": -3,
+      "color": "#BF80FF",
+      "type": 3
+    },
+    {
+      "id": 1024600121,
+      "name": "高壓狙擊：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -3,
+      "y": -2,
+      "color": "#BF80FF",
+      "type": 3
+    },
+    {
+      "id": 1024600122,
+      "name": "高壓狙擊：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -2,
+      "y": -3,
+      "color": "#FF0066",
+      "type": 3
+    },
+    {
+      "id": 1024600123,
+      "name": "真拿你沒辦法!：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -1,
+      "y": -4,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1024600124,
+      "name": "對手中拍組極巨化招式後特防↓3",
+      "description": "當以對手為對象的拍組極巨化招式成功時,會降低對手的特防3階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -3,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1024600125,
+      "name": "依對手特防降幅拍組招式↑",
+      "description": "對手的特防降低得越多,自己的拍組招式的威力就提高得越多。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1024600126,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024600127,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024600128,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024600129,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": -4,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024600130,
+      "name": "狙擊：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": -4,
+      "color": "#47D147",
+      "type": 3
+    },
+    {
+      "id": 1024600131,
+      "name": "狙擊：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 1,
+      "y": -4,
+      "color": "#47D147",
+      "type": 3
+    },
+    {
+      "id": 1024600132,
+      "name": "擊中要害時威力提升1",
+      "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 3,
+      "y": -5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1024600133,
+      "name": "速度 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": 2,
+      "y": -5,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024600134,
+      "name": "拍組極巨化招式後場地招式計量槽加速",
+      "description": "使出拍組極巨化招式後,會讓我方場地變成招式計量槽加速狀態。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 1,
+      "y": -5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1024600135,
+      "name": "拍組極巨化招式後計數加速2",
+      "description": "使出拍組極巨化招式後, 會讓發動拍組招式所需的行動數減少2次。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 3,
+      "y": -6,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1024600136,
+      "name": "極巨水流：威力 + 100",
+      "description": "",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 3,
+      "x": 2,
+      "y": -6,
+      "color": "#BF80FF",
+      "type": 3
+    },
+    {
+      "id": 1024600137,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024600138,
+      "name": "特攻下降無效",
+      "description": "特攻不會降低。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": -3,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1024600139,
+      "name": "高壓狙擊：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": 2,
+      "color": "#BF80FF",
+      "type": 3
+    },
+    {
+      "id": 1024600140,
+      "name": "高壓狙擊：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -1,
+      "y": 2,
+      "color": "#BF80FF",
+      "type": 3
+    },
+    {
+      "id": 1024600141,
+      "name": "下雨時招式計量槽加速2",
+      "description": "當天氣為下雨時,招式計量槽會累積得較快。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -3,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1024600142,
+      "name": "特攻 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": -2,
+      "y": 3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024600143,
+      "name": "下雨時異常無效",
+      "description": "當天氣為下雨時,不會陷入異常狀態。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 2,
+      "x": -1,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1024600144,
+      "name": "拍組招式瞄準要害1",
+      "description": "用拍組招式攻擊時,容易擊中要害。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -3,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1024600145,
+      "name": "下雨時拍組招式提升9",
+      "description": "當天氣為下雨時,會提高拍組招式的威力。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1024600146,
+      "name": "了解實力射穿對手之水之光線：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": -3,
+      "color": "#BF80FF",
+      "type": 3
+    },
+    {
+      "id": 1024600147,
+      "name": "了解實力射穿對手之水之光線：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": 3,
+      "color": "#BF80FF",
+      "type": 3
+    }
+  ]
+}

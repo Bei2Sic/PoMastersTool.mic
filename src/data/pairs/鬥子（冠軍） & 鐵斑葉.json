@@ -1,0 +1,914 @@
+{
+  "trainer": {
+    "id": "10004900000",
+    "name": "鬥子（冠軍）",
+    "actor": "鬥子",
+    "actorId": "ch0004_90_toko",
+    "rarity": 5,
+    "role": 0,
+    "exRole": 4,
+    "ex": true,
+    "exclusivity": "MasterEX",
+    "maxBonusLevel": 5
+  },
+  "scoutMethod": 1,
+  "scheduleId": "chara_7110_1130_FOREVER",
+  "themes": [
+    {
+      "name": "超能力屬性／攻擊",
+      "description": "僅在我方使出超能力屬性攻擊時，攻擊和特攻提升30",
+      "tag": "超能力",
+      "category": 1
+    },
+    {
+      "name": "合眾／攻擊",
+      "description": "我方全體拍組的攻擊和特攻提升8",
+      "tag": "合眾",
+      "category": 2
+    },
+    {
+      "name": "主角／攻擊",
+      "description": "我方全體拍組的攻擊和特攻提升8",
+      "tag": "主角",
+      "category": 3
+    },
+    {
+      "name": "冠軍／攻擊",
+      "description": "我方全體拍組的攻擊和特攻提升8",
+      "tag": "冠軍",
+      "category": 3
+    },
+    {
+      "name": "披風／攻擊",
+      "description": "我方全體拍組的攻擊和特攻提升9",
+      "tag": "披風",
+      "category": 4
+    }
+  ],
+  "specialAwaking": {
+    "name": "",
+    "description": "",
+    "detail": []
+  },
+  "pokemon": [
+    {
+      "id": "20004900000",
+      "variationType": 0,
+      "name": "鐵斑葉",
+      "form": "",
+      "actor": "pm1010_00_00_tetsunoisaha",
+      "gender": 3,
+      "is_shiny": false,
+      "type": 11,
+      "weakness": 12,
+      "stat": {
+        "hp": [
+          115,
+          194,
+          269,
+          566,
+          630,
+          694,
+          886
+        ],
+        "atk": [
+          12,
+          64,
+          112,
+          310,
+          350,
+          390,
+          510
+        ],
+        "def": [
+          8,
+          27,
+          45,
+          111,
+          127,
+          143,
+          191
+        ],
+        "spa": [
+          7,
+          31,
+          52,
+          140,
+          160,
+          180,
+          240
+        ],
+        "spd": [
+          9,
+          31,
+          52,
+          129,
+          145,
+          161,
+          209
+        ],
+        "spe": [
+          9,
+          53,
+          95,
+          260,
+          296,
+          332,
+          440
+        ]
+      },
+      "passives": [
+        {
+          "name": "合眾的熱血少女",
+          "description": "提高我方全體拍組的招式和拍組招式威力20%。減輕我方全體拍組受到招式和拍組招式攻擊時的傷害25%。當我方隊伍中擁有合眾標籤的拍組越多,此效果還會提升得越多。(每增加1對拍組,威力提升+15%,傷害減輕+3%。)(威力最多可提升50%,傷害最多可減輕31%。)除了特定情況之外,只要寶可夢招式或拍組招式的攻擊命中就必定會擊中要害。",
+          "detail": [
+            "",
+            "寶可夢招式及拍組招式擊中要害化"
+          ]
+        },
+        {
+          "name": "未來的光劍",
+          "description": "當自己使出「驅勁能量」或我方使場地變成電氣場地時,將會發揮下列所有效果。讓發動拍組招式所需的行動數減少1次。提高自己的下次物理招式威力增強2階段。",
+          "detail": []
+        },
+        {
+          "name": "在未來磨練的一擊",
+          "description": "一般屬性的招式會變成超能力屬性。使出自己的「終極衝擊」時,會減少使用1條招式計量槽。使出招式攻擊成功時,會降低對手的防禦3階段。",
+          "detail": [
+            "超能力屬性替換",
+            "攻擊時防禦3↓9"
+          ]
+        },
+        {
+          "name": "堅定不移的鋼鐵正義",
+          "description": "當場地為任一場地時,會提高拍組招式的威力。當場地為任一場地時,對手的攻擊不會擊中要害。",
+          "detail": [
+            "場地生效時拍組招式↑9",
+            "場地生效時擊中要害無效"
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "id": 416,
+          "user": "寶可夢",
+          "name": "終極衝擊",
+          "type": 1,
+          "gauge": 4,
+          "uses": "−",
+          "category": "物理",
+          "power": 223,
+          "accuracy": 90,
+          "target": "對手１對拍組",
+          "description": "沒有追加效果。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 19170,
+          "user": "寶可夢",
+          "name": "驅勁能量",
+          "type": 0,
+          "gauge": 0,
+          "uses": 2,
+          "category": "變化",
+          "power": 0,
+          "accuracy": 0,
+          "target": "自己",
+          "description": "分別提高自己的下次物理招式威力增強和下次特殊招式威力增強1階段。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 6163,
+          "user": "寶可夢",
+          "name": "光刃之精神劍",
+          "type": 11,
+          "gauge": 2,
+          "uses": 1,
+          "category": "物理",
+          "power": 350,
+          "accuracy": 0,
+          "target": "對手全體拍組",
+          "description": "【開放條件】\n自己使出1次招式時\n【封印條件】\n無\n\n攻擊必定會命中。讓對手陷入畏縮狀態。即使對象為複數,招式的威力也不會降低。當場地為任一場地時,威力會變成1.5倍。當場地為電氣場地時,會將場地變成電氣場地。當場地為青草場地時,會將場地變成青草場地。當場地為精神場地時,會將場地變成精神場地。",
+          "tags": "SureHit",
+          "group": 6
+        },
+        {
+          "id": 10046,
+          "user": "訓練師",
+          "name": "炎炎鬥志的榮耀",
+          "type": 0,
+          "gauge": 0,
+          "uses": 1,
+          "category": "變化",
+          "power": 0,
+          "accuracy": 0,
+          "target": "全場地",
+          "description": "將場地變成電氣場地。提高自己的攻擊6階段。讓自己變成下次計量槽消耗0狀態。提高自己的下次物理招式威力增強2階段。",
+          "tags": 8388608,
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 118200,
+        "user": "寶可夢",
+        "name": "邁向互助未來之精神劍",
+        "type": 11,
+        "gauge": 0,
+        "uses": "−",
+        "category": "物理",
+        "power": 250,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "沒有追加效果。",
+        "tags": "none",
+        "group": "Sync"
+      }
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "鬥子（冠軍）專用潛能餅乾１",
+      "skills": [
+        {
+          "name": [],
+          "description": "當效果絕佳時,會提高該拍組招式的威力。",
+          "rate": 100
+        }
+      ]
+    },
+    {
+      "cookieName": "鬥子（冠軍）專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": [],
+          "description": "當效果絕佳時,會提高該招式的威力。",
+          "rate": 33
+        },
+        {
+          "name": [],
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "rate": 33
+        },
+        {
+          "name": [],
+          "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
+          "rate": 33
+        }
+      ]
+    }
+  ],
+  "grid": [
+    {
+      "id": 1000490000,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000490001,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000490002,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000490003,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000490004,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000490005,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000490006,
+      "name": "光刃之精神劍：首次招式後招式次數回復1",
+      "description": "首次招式成功時,會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 5,
+      "x": 0,
+      "y": 2,
+      "color": "#FF0066",
+      "type": 11
+    },
+    {
+      "id": 1000490007,
+      "name": "訓練家出招後賦予物理增強(2)9",
+      "description": "在訓練家使出招式時,會提高自己的下次物理招式威力增強2階段。",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 4,
+      "x": 0,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000490008,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000490009,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000490010,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000490011,
+      "name": "終極衝擊：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 1,
+      "y": 2,
+      "color": "#47D147",
+      "type": 1
+    },
+    {
+      "id": 1000490012,
+      "name": "終極衝擊：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": 2,
+      "color": "#47D147",
+      "type": 1
+    },
+    {
+      "id": 1000490013,
+      "name": "終極衝擊：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 3,
+      "y": 2,
+      "color": "#47D147",
+      "type": 1
+    },
+    {
+      "id": 1000490014,
+      "name": "終極衝擊：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 1,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 1
+    },
+    {
+      "id": 1000490015,
+      "name": "首次拍組招式後場地招式計量槽加速",
+      "description": "首次使出拍組招式時,會讓我方場地變成招式計量槽加速狀態。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000490016,
+      "name": "無傷上場時附帶回復",
+      "description": "在HP全滿的狀態上場時,會讓自己變成附帶回復狀態。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 3,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000490017,
+      "name": "場地生效時寶可夢招式及拍組招式↑3",
+      "description": "當場地為任一場地時,會提高自己的招式和拍組招式的威力。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 1,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000490018,
+      "name": "攻擊時賦予物理增強(1)9",
+      "description": "使出招式攻擊成功時,會提高自己的下次物理招式威力增強1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000490019,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000490020,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000490021,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -3,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000490022,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000490023,
+      "name": "光刃之精神劍：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": -2,
+      "color": "#BF80FF",
+      "type": 11
+    },
+    {
+      "id": 1000490024,
+      "name": "光刃之精神劍：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -3,
+      "y": -2,
+      "color": "#BF80FF",
+      "type": 11
+    },
+    {
+      "id": 1000490025,
+      "name": "光刃之精神劍：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -1,
+      "y": -3,
+      "color": "#BF80FF",
+      "type": 11
+    },
+    {
+      "id": 1000490026,
+      "name": "驅勁能量：招式後下次效果絕佳威力提升9",
+      "description": "招式成功時,讓自己變成下次效果絕佳威力提升狀態。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -2,
+      "y": -3,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1000490027,
+      "name": "驅勁能量：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -3,
+      "y": -3,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1000490028,
+      "name": "首次上場時計數加速1",
+      "description": "首次上場時,發動拍組招式所需的行動數會減少1次。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -1,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000490029,
+      "name": "依攻擊升幅拍組招式↑",
+      "description": "自己的攻擊提高得越多,拍組招式的威力就提高得越多。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000490030,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000490031,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000490032,
+      "name": "光刃之精神劍：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": -2,
+      "color": "#BF80FF",
+      "type": 11
+    },
+    {
+      "id": 1000490033,
+      "name": "光刃之精神劍：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 1,
+      "y": -2,
+      "color": "#BF80FF",
+      "type": 11
+    },
+    {
+      "id": 1000490034,
+      "name": "光刃之精神劍：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 3,
+      "y": -3,
+      "color": "#FF0066",
+      "type": 11
+    },
+    {
+      "id": 1000490035,
+      "name": "電氣場地時招式計量槽加速2",
+      "description": "當場地為電氣場地時,招式計量槽會累積得較快。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 2,
+      "x": 2,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000490036,
+      "name": "攻擊 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": 1,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000490037,
+      "name": "炎炎鬥志的榮耀：首次招式後招式次數回復1",
+      "description": "首次招式成功時,會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 3,
+      "y": -4,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1000490038,
+      "name": "電氣場地時間延長5",
+      "description": "場地變成電氣場地的瞬間在場上時,會延長電氣場地的持續時間。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000490039,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000490040,
+      "name": "畏縮無效",
+      "description": "不會陷入畏縮狀態。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": -3,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000490041,
+      "name": "終極衝擊：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": 2,
+      "color": "#47D147",
+      "type": 1
+    },
+    {
+      "id": 1000490042,
+      "name": "終極衝擊：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -1,
+      "y": 2,
+      "color": "#47D147",
+      "type": 1
+    },
+    {
+      "id": 1000490043,
+      "name": "終極衝擊：命中率 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 2,
+      "x": -3,
+      "y": 3,
+      "color": "#47D147",
+      "type": 1
+    },
+    {
+      "id": 1000490044,
+      "name": "精神場地時招式計量槽加速2",
+      "description": "當場地為精神場地時,招式計量槽會累積得較快。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 2,
+      "x": -2,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000490045,
+      "name": "速度 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": -1,
+      "y": 3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000490046,
+      "name": "首次拍組招式後變成精神場地",
+      "description": "首次使出拍組招式時,會將場地變成精神場地。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -3,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000490047,
+      "name": "精神場地時間延長5",
+      "description": "場地變成精神場地的瞬間在場上時,會延長精神場地的持續時間。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000490048,
+      "name": "邁向互助未來之精神劍：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": 3,
+      "color": "#BF80FF",
+      "type": 11
+    },
+    {
+      "id": 1000490049,
+      "name": "邁向互助未來之精神劍：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": -3,
+      "color": "#BF80FF",
+      "type": 11
+    }
+  ]
+}

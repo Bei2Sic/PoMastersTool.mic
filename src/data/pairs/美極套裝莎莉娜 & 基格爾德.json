@@ -1,0 +1,1029 @@
+{
+  "trainer": {
+    "id": "10130100000",
+    "name": "美極套裝莎莉娜",
+    "actor": "莎莉娜",
+    "actorId": "ch0130_10_serena",
+    "rarity": 5,
+    "role": 1,
+    "exRole": 2,
+    "ex": true,
+    "exclusivity": "Master",
+    "maxBonusLevel": 5
+  },
+  "scoutMethod": 1,
+  "scheduleId": "chara_4025_0317_FOREVER",
+  "themes": [
+    {
+      "name": "龍屬性／攻擊",
+      "description": "僅在我方使出龍屬性攻擊時，攻擊和特攻提升30",
+      "tag": "龍",
+      "category": 1
+    },
+    {
+      "name": "卡洛斯／攻擊",
+      "description": "我方全體拍組的攻擊和特攻提升8",
+      "tag": "卡洛斯",
+      "category": 2
+    },
+    {
+      "name": "主角／攻擊",
+      "description": "我方全體拍組的攻擊和特攻提升8",
+      "tag": "主角",
+      "category": 3
+    },
+    {
+      "name": "美極套裝／攻擊",
+      "description": "我方全體拍組的攻擊和特攻提升9",
+      "tag": "美極套裝",
+      "category": 4
+    }
+  ],
+  "specialAwaking": {
+    "name": "",
+    "description": "",
+    "detail": []
+  },
+  "pokemon": [
+    {
+      "id": "20130100000",
+      "variationType": 0,
+      "name": "基格爾德",
+      "form": "５０％形態",
+      "actor": "pm0770_00_pokemonZ",
+      "gender": 3,
+      "is_shiny": false,
+      "type": 15,
+      "weakness": 6,
+      "stat": {
+        "hp": [
+          90,
+          162,
+          231,
+          506,
+          566,
+          626,
+          806
+        ],
+        "atk": [
+          21,
+          76,
+          127,
+          336,
+          380,
+          424,
+          556
+        ],
+        "def": [
+          11,
+          28,
+          43,
+          98,
+          110,
+          122,
+          158
+        ],
+        "spa": [
+          21,
+          76,
+          127,
+          336,
+          380,
+          424,
+          556
+        ],
+        "spd": [
+          10,
+          26,
+          41,
+          96,
+          108,
+          120,
+          156
+        ],
+        "spe": [
+          13,
+          56,
+          95,
+          260,
+          296,
+          332,
+          440
+        ]
+      },
+      "passives": [
+        {
+          "name": "卡洛斯的先驅",
+          "description": "提高我方全體拍組的招式的威力10%。減輕我方全體拍組受到招式攻擊時的傷害20%。當我方隊伍中擁有卡洛斯標籤的拍組越多,此效果還會提升得越多。(每增加1對拍組,威力提升+10%,傷害減輕+3%。)(威力最多可提升30%,傷害最多可減輕26%。)",
+          "detail": []
+        },
+        {
+          "name": "首次上場時賦予物理/特殊增強1",
+          "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強1階段。",
+          "detail": []
+        },
+        {
+          "name": "首次上場時計數加速1",
+          "description": "首次上場時,發動拍組招式所需的行動數會減少1次。",
+          "detail": []
+        },
+        {
+          "name": "對手禁止替換時拍組招式威力↑5",
+          "description": "當對手陷入禁止替換狀態時,會提高自己的拍組招式的威力。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 615,
+          "user": "寶可夢",
+          "name": "千波激盪",
+          "type": 9,
+          "gauge": 4,
+          "uses": "−",
+          "category": "物理",
+          "power": 140,
+          "accuracy": 100,
+          "target": "對手全體拍組",
+          "description": "讓對手陷入禁止替換狀態。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 19082,
+          "user": "寶可夢",
+          "name": "要害攻擊+",
+          "type": 0,
+          "gauge": 0,
+          "uses": 2,
+          "category": "變化",
+          "power": 0,
+          "accuracy": 0,
+          "target": "自己",
+          "description": "提高自己的擊中要害率2階段。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 649,
+          "user": "寶可夢",
+          "name": "核心懲罰者",
+          "type": 15,
+          "gauge": 4,
+          "uses": "−",
+          "category": "特殊",
+          "power": 160,
+          "accuracy": 100,
+          "target": "對手全體拍組",
+          "description": "沒有追加效果。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 11301,
+          "user": "訓練師",
+          "name": "觸動回憶!",
+          "type": 0,
+          "gauge": 2,
+          "uses": 1,
+          "category": "變化",
+          "power": 0,
+          "accuracy": 0,
+          "target": "自己",
+          "description": "提高自己的攻擊和特攻6階段。讓自己變成附帶回復狀態。",
+          "tags": "none",
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 87700,
+        "user": "寶可夢",
+        "name": "釋放潛藏的力量之核心懲罰者",
+        "type": 15,
+        "gauge": 0,
+        "uses": "−",
+        "category": "特殊",
+        "power": 250,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "變成完全體形態直到對戰結束。",
+        "tags": "none",
+        "group": "Sync"
+      }
+    },
+    {
+      "id": "20130100000",
+      "variationType": 5,
+      "name": "基格爾德",
+      "form": "５０％形態",
+      "actor": "pm0770_15_zygarde100",
+      "gender": 3,
+      "is_shiny": false,
+      "type": "-1",
+      "weakness": "-1",
+      "stat": {
+        "hp": [
+          90,
+          162,
+          231,
+          506,
+          566,
+          626,
+          806
+        ],
+        "atk": [
+          25,
+          91,
+          152,
+          403,
+          456,
+          508,
+          667
+        ],
+        "def": [
+          13,
+          33,
+          51,
+          117,
+          132,
+          146,
+          189
+        ],
+        "spa": [
+          25,
+          91,
+          152,
+          403,
+          456,
+          508,
+          667
+        ],
+        "spd": [
+          12,
+          31,
+          49,
+          115,
+          129,
+          144,
+          187
+        ],
+        "spe": [
+          15,
+          67,
+          114,
+          312,
+          355,
+          398,
+          528
+        ]
+      },
+      "passives": [
+        {
+          "name": "卡洛斯的先驅",
+          "description": "提高我方全體拍組的招式的威力10%。減輕我方全體拍組受到招式攻擊時的傷害20%。當我方隊伍中擁有卡洛斯標籤的拍組越多,此效果還會提升得越多。(每增加1對拍組,威力提升+10%,傷害減輕+3%。)(威力最多可提升30%,傷害最多可減輕26%。)",
+          "detail": []
+        },
+        {
+          "name": "必中化",
+          "description": "招式必定會命中。",
+          "detail": []
+        },
+        {
+          "name": "全種類下降無效",
+          "description": "所有的能力都不會降低。",
+          "detail": []
+        },
+        {
+          "name": "對手禁止替換時寶可夢招式及拍組招式↑5",
+          "description": "當對手陷入禁止替換狀態時,會提高自己的招式的威力。當對手陷入禁止替換狀態時,會提高自己的拍組招式的威力。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 615,
+          "user": "寶可夢",
+          "name": "千波激盪",
+          "type": 9,
+          "gauge": 4,
+          "uses": "−",
+          "category": "物理",
+          "power": 140,
+          "accuracy": 100,
+          "target": "對手全體拍組",
+          "description": "讓對手陷入禁止替換狀態。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 19082,
+          "user": "寶可夢",
+          "name": "要害攻擊+",
+          "type": 0,
+          "gauge": 0,
+          "uses": 2,
+          "category": "變化",
+          "power": 0,
+          "accuracy": 0,
+          "target": "自己",
+          "description": "提高自己的擊中要害率2階段。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 649,
+          "user": "寶可夢",
+          "name": "核心懲罰者",
+          "type": 15,
+          "gauge": 4,
+          "uses": "−",
+          "category": "特殊",
+          "power": 160,
+          "accuracy": 100,
+          "target": "對手全體拍組",
+          "description": "沒有追加效果。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 11301,
+          "user": "訓練師",
+          "name": "觸動回憶!",
+          "type": 0,
+          "gauge": 2,
+          "uses": 1,
+          "category": "變化",
+          "power": 0,
+          "accuracy": 0,
+          "target": "自己",
+          "description": "提高自己的攻擊和特攻6階段。讓自己變成附帶回復狀態。",
+          "tags": "none",
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 87700,
+        "user": "寶可夢",
+        "name": "釋放潛藏的力量之核心懲罰者",
+        "type": 15,
+        "gauge": 0,
+        "uses": "−",
+        "category": "特殊",
+        "power": 250,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "變成完全體形態直到對戰結束。",
+        "tags": "none",
+        "group": "Sync"
+      }
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "美極套裝莎莉娜專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": [],
+          "description": "當效果絕佳時,會提高該招式的威力。",
+          "rate": 33
+        },
+        {
+          "name": [],
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "rate": 33
+        },
+        {
+          "name": [],
+          "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
+          "rate": 33
+        }
+      ]
+    }
+  ],
+  "grid": [
+    {
+      "id": 1013010000,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013010001,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013010002,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013010003,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013010004,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013010005,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013010006,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013010007,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013010008,
+      "name": "核心懲罰者：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 3,
+      "y": 1,
+      "color": "#47D147",
+      "type": 15
+    },
+    {
+      "id": 1013010009,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013010010,
+      "name": "核心懲罰者：招式後招式計量槽增加2",
+      "description": "招式成功時,有30%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 6,
+      "orb": 72,
+      "level": 1,
+      "x": 2,
+      "y": 2,
+      "color": "#FF0066",
+      "type": 15
+    },
+    {
+      "id": 1013010011,
+      "name": "核心懲罰者：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 3,
+      "y": 2,
+      "color": "#47D147",
+      "type": 15
+    },
+    {
+      "id": 1013010012,
+      "name": "對手禁止替換時威力提升1",
+      "description": "當對手陷入禁止替換狀態時,會提高自己的招式的威力。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 2,
+      "x": 1,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1013010013,
+      "name": "核心懲罰者：招式後招式計量槽增加4",
+      "description": "招式成功時,有50%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 15
+    },
+    {
+      "id": 1013010014,
+      "name": "特攻 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": 3,
+      "y": 3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013010015,
+      "name": "首次拍組招式後下次效果絕佳威力提升",
+      "description": "首次使出拍組招式時,會讓自己變成下次效果絕佳威力提升狀態。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 1,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1013010016,
+      "name": "拍組招式瞄準要害1",
+      "description": "用拍組招式攻擊時,容易擊中要害。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1013010017,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013010018,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013010019,
+      "name": "千波激盪：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -3,
+      "y": -1,
+      "color": "#47D147",
+      "type": 9
+    },
+    {
+      "id": 1013010020,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013010021,
+      "name": "千波激盪：招式後招式計量槽增加2",
+      "description": "招式成功時,有30%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 6,
+      "orb": 72,
+      "level": 1,
+      "x": -2,
+      "y": -2,
+      "color": "#FF0066",
+      "type": 9
+    },
+    {
+      "id": 1013010022,
+      "name": "千波激盪：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -3,
+      "y": -2,
+      "color": "#47D147",
+      "type": 9
+    },
+    {
+      "id": 1013010023,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 2,
+      "x": -1,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013010024,
+      "name": "千波激盪：招式後招式計量槽增加4",
+      "description": "招式成功時,有50%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -2,
+      "y": -3,
+      "color": "#FF0066",
+      "type": 9
+    },
+    {
+      "id": 1013010025,
+      "name": "沙暴時招式計量槽加速2",
+      "description": "當天氣為沙暴時,招式計量槽會累積得較快。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -3,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1013010026,
+      "name": "效果絕佳時威力提升2",
+      "description": "當效果絕佳時,會提高該招式的威力。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -1,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1013010027,
+      "name": "異常無效",
+      "description": "不會陷入異常狀態。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 3,
+      "x": -2,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1013010028,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013010029,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013010030,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013010031,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013010032,
+      "name": "千波激盪：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 2,
+      "x": 3,
+      "y": -3,
+      "color": "#47D147",
+      "type": 9
+    },
+    {
+      "id": 1013010033,
+      "name": "觸動回憶!：招式後招式次數回復3",
+      "description": "招式成功時,有40%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": -3,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1013010034,
+      "name": "千波激盪：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 1,
+      "y": -3,
+      "color": "#47D147",
+      "type": 9
+    },
+    {
+      "id": 1013010035,
+      "name": "首次拍組招式後下次傷害防禦",
+      "description": "首次使出拍組招式時,會讓自己變成下次傷害防禦狀態。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 3,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1013010036,
+      "name": "觸動回憶!：招式後下次不消耗計量槽9",
+      "description": "招式成功時,會讓自己變成下次計量槽消耗0狀態。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 3,
+      "x": 2,
+      "y": -4,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1013010037,
+      "name": "沙暴無效",
+      "description": "不會受到沙暴所造成的傷害。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": -2,
+      "y": 1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1013010038,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -3,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013010039,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013010040,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013010041,
+      "name": "核心懲罰者：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 2,
+      "x": -3,
+      "y": 3,
+      "color": "#47D147",
+      "type": 15
+    },
+    {
+      "id": 1013010042,
+      "name": "要害攻擊+：招式後招式次數回復3",
+      "description": "招式成功時,有40%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -2,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1013010043,
+      "name": "核心懲罰者：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -1,
+      "y": 3,
+      "color": "#47D147",
+      "type": 15
+    },
+    {
+      "id": 1013010044,
+      "name": "拍組招式後招式計量槽增加6",
+      "description": "使出拍組招式後,會幫自己增加6條招式計量槽。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -3,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1013010045,
+      "name": "依特攻升幅拍組招式↑",
+      "description": "自己的特攻提高得越多,拍組招式的威力就提高得越多。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1013010046,
+      "name": "釋放潛藏的力量之核心懲罰者：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": 3,
+      "color": "#BF80FF",
+      "type": 15
+    },
+    {
+      "id": 1013010047,
+      "name": "釋放潛藏的力量之核心懲罰者：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": -3,
+      "color": "#BF80FF",
+      "type": 15
+    }
+  ]
+}

@@ -1,0 +1,1003 @@
+{
+  "trainer": {
+    "id": "10244000001",
+    "name": "赫普",
+    "actor": "赫普",
+    "actorId": "ch0244_00_hop",
+    "rarity": 5,
+    "role": 5,
+    "exRole": 0,
+    "ex": true,
+    "exclusivity": "Variety",
+    "maxBonusLevel": 5
+  },
+  "scoutMethod": 1,
+  "scheduleId": "chara_6110_1210_FOREVER",
+  "themes": [
+    {
+      "name": "草屬性／場地",
+      "description": "我方全體拍組最大HP提升24\n我方全體拍組的速度提升24",
+      "tag": "草",
+      "category": 1
+    },
+    {
+      "name": "伽勒爾／場地",
+      "description": "我方全體拍組最大HP提升7\n我方全體拍組的速度提升7",
+      "tag": "伽勒爾",
+      "category": 2
+    },
+    {
+      "name": "勁敵／場地",
+      "description": "我方全體拍組最大HP提升7\n我方全體拍組的速度提升7",
+      "tag": "勁敵",
+      "category": 3
+    },
+    {
+      "name": "伽勒爾的冒險／場地",
+      "description": "我方全體拍組最大HP提升8\n我方全體拍組的速度提升8",
+      "tag": "伽勒爾的冒險",
+      "category": 999
+    },
+    {
+      "name": "研究者／場地",
+      "description": "我方全體拍組最大HP提升8\n我方全體拍組的速度提升8",
+      "tag": "研究者",
+      "category": 999
+    }
+  ],
+  "specialAwaking": {
+    "name": "",
+    "description": "",
+    "detail": []
+  },
+  "pokemon": [
+    {
+      "id": "20244000002",
+      "variationType": 0,
+      "name": "轟擂金剛猩",
+      "form": "",
+      "actor": "pm0812_00_00_gorirander",
+      "gender": 1,
+      "is_shiny": false,
+      "type": 5,
+      "weakness": 2,
+      "stat": {
+        "hp": [
+          108,
+          181,
+          250,
+          525,
+          585,
+          645,
+          825
+        ],
+        "atk": [
+          13,
+          57,
+          99,
+          264,
+          300,
+          336,
+          444
+        ],
+        "def": [
+          12,
+          36,
+          57,
+          145,
+          165,
+          185,
+          245
+        ],
+        "spa": [
+          11,
+          37,
+          61,
+          160,
+          180,
+          200,
+          260
+        ],
+        "spd": [
+          10,
+          33,
+          54,
+          142,
+          158,
+          174,
+          222
+        ],
+        "spe": [
+          12,
+          51,
+          87,
+          230,
+          262,
+          294,
+          390
+        ]
+      },
+      "passives": [
+        {
+          "name": "沉著溫和的默契",
+          "description": "上場時,會提高自己的攻擊6階段。上場時,會提高自己的擊中要害率3階段。",
+          "detail": [
+            "上場時攻擊提升6",
+            "上場時擊中要害率提升3"
+          ]
+        },
+        {
+          "name": "自身引發青草場地時場地變成伽勒爾鬥陣(物理)",
+          "description": "當自己使場地變成青草場地時,會讓我方場地變成伽勒爾鬥陣(物理)。",
+          "detail": []
+        },
+        {
+          "name": "青草場地時攻擊時下次不消耗計量槽9",
+          "description": "當場地為青草場地且使出招式攻擊成功時,會讓自己變成下次計量槽消耗0狀態。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 778,
+          "user": "寶可夢",
+          "name": "鼓擊",
+          "type": 5,
+          "gauge": 4,
+          "uses": "−",
+          "category": "物理",
+          "power": 160,
+          "accuracy": 100,
+          "target": "對手１對拍組",
+          "description": "降低對手的速度1階段。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 580,
+          "user": "寶可夢",
+          "name": "青草場地",
+          "type": 5,
+          "gauge": 2,
+          "uses": 2,
+          "category": "變化",
+          "power": 0,
+          "accuracy": 0,
+          "target": "全場地",
+          "description": "將場地變成青草場地。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 6102,
+          "user": "寶可夢",
+          "name": "亂擂鼓擊",
+          "type": 5,
+          "gauge": 4,
+          "uses": "−",
+          "category": "物理",
+          "power": 300,
+          "accuracy": 100,
+          "target": "對手全體拍組",
+          "description": "【開放條件】\n我方隊伍使出1次拍組極巨化招式時\n【封印條件】\n使出此招式時\n\n即使對象為複數,招式的威力也不會降低。降低對手的速度1階段。",
+          "tags": "none",
+          "group": 6
+        },
+        {
+          "id": 12447,
+          "user": "訓練師",
+          "name": "展現知識給你看!",
+          "type": 0,
+          "gauge": 0,
+          "uses": 1,
+          "category": "變化",
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方１對拍組",
+          "description": "我方發動拍組招式所需的行動數會減少1次。讓我方變成下次效果絕佳威力提升狀態。提高我方的下次物理招式威力增強3階段。",
+          "tags": "none",
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 114700,
+        "user": "寶可夢",
+        "name": "重視隊伍的和諧之草之衝擊",
+        "type": 5,
+        "gauge": 0,
+        "uses": "−",
+        "category": "物理",
+        "power": 250,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "沒有追加效果。",
+        "tags": "none",
+        "group": "Sync"
+      }
+    },
+    {
+      "id": "20244000002",
+      "variationType": 4,
+      "name": "轟擂金剛猩",
+      "form": "",
+      "actor": "pm0812_83_00_gorirander",
+      "gender": 1,
+      "is_shiny": false,
+      "type": "-1",
+      "weakness": "-1",
+      "stat": {
+        "hp": [
+          108,
+          181,
+          250,
+          525,
+          585,
+          645,
+          825
+        ],
+        "atk": [
+          13,
+          57,
+          99,
+          264,
+          300,
+          336,
+          444
+        ],
+        "def": [
+          12,
+          36,
+          57,
+          145,
+          165,
+          185,
+          245
+        ],
+        "spa": [
+          11,
+          37,
+          61,
+          160,
+          180,
+          200,
+          260
+        ],
+        "spd": [
+          10,
+          33,
+          54,
+          142,
+          158,
+          174,
+          222
+        ],
+        "spe": [
+          12,
+          51,
+          87,
+          230,
+          262,
+          294,
+          390
+        ]
+      },
+      "passives": [
+        {
+          "name": "沉著溫和的默契",
+          "description": "上場時,會提高自己的攻擊6階段。上場時,會提高自己的擊中要害率3階段。",
+          "detail": [
+            "上場時攻擊提升6",
+            "上場時擊中要害率提升3"
+          ]
+        },
+        {
+          "name": "自身引發青草場地時場地變成伽勒爾鬥陣(物理)",
+          "description": "當自己使場地變成青草場地時,會讓我方場地變成伽勒爾鬥陣(物理)。",
+          "detail": []
+        },
+        {
+          "name": "青草場地時攻擊時下次不消耗計量槽9",
+          "description": "當場地為青草場地且使出招式攻擊成功時,會讓自己變成下次計量槽消耗0狀態。",
+          "detail": []
+        }
+      ],
+      "moves": null,
+      "syncMove": null,
+      "movesDynamax": [
+        {
+          "id": 7025,
+          "user": "寶可夢",
+          "name": "極巨草原",
+          "type": 5,
+          "gauge": 0,
+          "uses": "−",
+          "category": "物理",
+          "power": 400,
+          "accuracy": 0,
+          "target": "對手１對拍組",
+          "description": "將場地變成青草場地。",
+          "tags": "none",
+          "group": 5
+        },
+        {
+          "id": 7039,
+          "user": "寶可夢",
+          "name": "極巨防壁",
+          "type": 1,
+          "gauge": 0,
+          "uses": "−",
+          "category": "變化",
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方１對拍組",
+          "description": "讓我方變成下次傷害防禦狀態。",
+          "tags": "none",
+          "group": 5
+        },
+        {
+          "id": 7025,
+          "user": "寶可夢",
+          "name": "極巨草原",
+          "type": 5,
+          "gauge": 0,
+          "uses": "−",
+          "category": "物理",
+          "power": 400,
+          "accuracy": 0,
+          "target": "對手１對拍組",
+          "description": "將場地變成青草場地。",
+          "tags": "none",
+          "group": 5
+        }
+      ]
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "赫普專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": [],
+          "description": "只有在天氣、場地或領域變化時,招式計量槽會累積得較快。",
+          "rate": 33
+        },
+        {
+          "name": [],
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "rate": 33
+        },
+        {
+          "name": [],
+          "description": "只有在天氣、場地或領域變化時,會提高我方全體拍組的拍組招式的威力。",
+          "rate": 33
+        }
+      ]
+    }
+  ],
+  "grid": [
+    {
+      "id": 1024400100,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024400101,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024400102,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024400103,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024400104,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024400105,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024400106,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024400107,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024400108,
+      "name": "鼓擊：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": 0,
+      "color": "#47D147",
+      "type": 5
+    },
+    {
+      "id": 1024400109,
+      "name": "鼓擊：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 1,
+      "y": 1,
+      "color": "#47D147",
+      "type": 5
+    },
+    {
+      "id": 1024400110,
+      "name": "上場時速度下降G1",
+      "description": "上場時,會降低對手全體拍組的速度1階段。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 1,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1024400111,
+      "name": "鼓擊：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": 1,
+      "color": "#FF0066",
+      "type": 5
+    },
+    {
+      "id": 1024400112,
+      "name": "鼓擊：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 3,
+      "y": 0,
+      "color": "#47D147",
+      "type": 5
+    },
+    {
+      "id": 1024400113,
+      "name": "對手速度下降時威力提升3",
+      "description": "當對手的速度降低時,會提高自己的招式的威力。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1024400114,
+      "name": "攻擊 + 20",
+      "description": "",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 3,
+      "x": 3,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024400115,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024400116,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024400117,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024400118,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -3,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024400119,
+      "name": "亂擂鼓擊：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": -2,
+      "color": "#BF80FF",
+      "type": 5
+    },
+    {
+      "id": 1024400120,
+      "name": "亂擂鼓擊：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -1,
+      "y": -3,
+      "color": "#BF80FF",
+      "type": 5
+    },
+    {
+      "id": 1024400121,
+      "name": "亂擂鼓擊：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -3,
+      "y": -2,
+      "color": "#BF80FF",
+      "type": 5
+    },
+    {
+      "id": 1024400122,
+      "name": "解除異常狀態",
+      "description": "當自己首次陷入異常狀態時,會解除自己的異常狀態。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -2,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1024400123,
+      "name": "拍組極巨化招式後場地招式計量槽加速",
+      "description": "使出拍組極巨化招式後,會讓我方場地變成招式計量槽加速狀態。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -1,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1024400124,
+      "name": "拍組極巨化招式後計數加速2",
+      "description": "使出拍組極巨化招式後, 會讓發動拍組招式所需的行動數減少2次。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -3,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1024400125,
+      "name": "極巨草原：威力 + 100",
+      "description": "",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 3,
+      "x": -2,
+      "y": -4,
+      "color": "#BF80FF",
+      "type": 5
+    },
+    {
+      "id": 1024400126,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024400127,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024400128,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024400129,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": -4,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024400130,
+      "name": "亂擂鼓擊：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": -4,
+      "color": "#BF80FF",
+      "type": 5
+    },
+    {
+      "id": 1024400131,
+      "name": "亂擂鼓擊：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 1,
+      "y": -4,
+      "color": "#BF80FF",
+      "type": 5
+    },
+    {
+      "id": 1024400132,
+      "name": "青草場地時招式計量槽加速2",
+      "description": "當場地為青草場地時,招式計量槽會累積得較快。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 3,
+      "y": -5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1024400133,
+      "name": "青草場地：招式後招式計量槽增加4",
+      "description": "招式成功時,有50%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": -5,
+      "color": "#FF0066",
+      "type": 5
+    },
+    {
+      "id": 1024400134,
+      "name": "青草場地時攻擊招式威力↓2",
+      "description": "當場地為青草場地時,會減輕受到招式攻擊時的傷害。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 1,
+      "y": -5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1024400135,
+      "name": "青草場地時異常無效",
+      "description": "當場地為青草場地時,不會陷入異常狀態。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 3,
+      "x": 3,
+      "y": -6,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1024400136,
+      "name": "青草場地時拍組招式威力提升9",
+      "description": "當場地為青草場地時,會提高拍組招式的威力。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": -6,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1024400137,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024400138,
+      "name": "畏縮無效",
+      "description": "不會陷入畏縮狀態。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": -3,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1024400139,
+      "name": "鼓擊：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": 2,
+      "color": "#47D147",
+      "type": 5
+    },
+    {
+      "id": 1024400140,
+      "name": "鼓擊：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -1,
+      "y": 2,
+      "color": "#47D147",
+      "type": 5
+    },
+    {
+      "id": 1024400141,
+      "name": "攻擊時速度下降9",
+      "description": "使出招式攻擊成功時,會降低對手的速度1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 2,
+      "x": -3,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1024400142,
+      "name": "防禦 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": -2,
+      "y": 3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024400143,
+      "name": "展現知識給你看!：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -1,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1024400144,
+      "name": "展現知識給你看!：我方中招後賦予拍組招式增強(4)9",
+      "description": "以我方拍組為對象的招式(不含場地效果)成功時,會提高受到該招式效果影響的我方拍組的下次拍組招式威力增強4階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -3,
+      "y": 4,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1024400145,
+      "name": "拍組招式後下次效果絕佳威力提升9",
+      "description": "使出拍組招式後,會讓自己變成下次效果絕佳威力提升狀態。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 3,
+      "x": -2,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1024400146,
+      "name": "重視隊伍的和諧之草之衝擊：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": -3,
+      "color": "#BF80FF",
+      "type": 5
+    },
+    {
+      "id": 1024400147,
+      "name": "重視隊伍的和諧之草之衝擊：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": 3,
+      "color": "#BF80FF",
+      "type": 5
+    }
+  ]
+}

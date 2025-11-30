@@ -1,0 +1,967 @@
+{
+  "trainer": {
+    "id": "10000800001",
+    "name": "赤紅",
+    "actor": "赤紅",
+    "actorId": "ch0000_80_red",
+    "rarity": 5,
+    "role": 5,
+    "exRole": 1,
+    "ex": true,
+    "exclusivity": "Mix",
+    "maxBonusLevel": 5
+  },
+  "scoutMethod": 1,
+  "scheduleId": "chara_5100_1101_FOREVER",
+  "themes": [
+    {
+      "name": "草屬性／場地",
+      "description": "我方全體拍組最大HP提升24\n我方全體拍組的速度提升24",
+      "tag": "草",
+      "category": 1
+    },
+    {
+      "name": "關都／場地",
+      "description": "我方全體拍組最大HP提升7\n我方全體拍組的速度提升7",
+      "tag": "關都",
+      "category": 2
+    },
+    {
+      "name": "主角／場地",
+      "description": "我方全體拍組最大HP提升7\n我方全體拍組的速度提升7",
+      "tag": "主角",
+      "category": 3
+    },
+    {
+      "name": "真新鎮／場地",
+      "description": "我方全體拍組最大HP提升8\n我方全體拍組的速度提升8",
+      "tag": "真新鎮",
+      "category": 999
+    },
+    {
+      "name": "鬥志昂揚／場地",
+      "description": "我方全體拍組最大HP提升8\n我方全體拍組的速度提升8",
+      "tag": "鬥志昂揚",
+      "category": 999
+    }
+  ],
+  "specialAwaking": {
+    "name": "",
+    "description": "",
+    "detail": []
+  },
+  "pokemon": [
+    {
+      "id": "20000800001",
+      "variationType": 0,
+      "name": "妙蛙花",
+      "form": "",
+      "actor": "pm0003_00_fushigibana",
+      "gender": 1,
+      "is_shiny": false,
+      "type": 5,
+      "weakness": 2,
+      "stat": {
+        "hp": [
+          100,
+          179,
+          254,
+          551,
+          615,
+          679,
+          871
+        ],
+        "atk": [
+          17,
+          60,
+          99,
+          264,
+          300,
+          336,
+          444
+        ],
+        "def": [
+          12,
+          35,
+          56,
+          144,
+          160,
+          176,
+          224
+        ],
+        "spa": [
+          17,
+          60,
+          99,
+          264,
+          300,
+          336,
+          444
+        ],
+        "spd": [
+          14,
+          38,
+          59,
+          147,
+          167,
+          187,
+          247
+        ],
+        "spe": [
+          13,
+          50,
+          86,
+          229,
+          257,
+          285,
+          369
+        ]
+      },
+      "passives": [
+        {
+          "name": "關都冒險的收穫",
+          "description": "招式必定會命中。除了特定情況之外,只要寶可夢招式、拍組招式或拍組極巨化招式的攻擊命中就必定會擊中要害。",
+          "detail": []
+        },
+        {
+          "name": "上場時攻擊特攻提升4",
+          "description": "上場時,會提高自己的攻擊和特攻4階段。",
+          "detail": []
+        },
+        {
+          "name": "對手中招後攻擊特攻下降9",
+          "description": "當以對手為對象的招式成功時,會降低對手的攻擊或特攻1階段,或是兩種皆會降低1階段。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 75,
+          "user": "寶可夢",
+          "name": "飛葉快刀",
+          "type": 5,
+          "gauge": 2,
+          "uses": "−",
+          "category": "物理",
+          "power": 43,
+          "accuracy": 95,
+          "target": "對手全體拍組",
+          "description": "容易擊中要害。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 19001,
+          "user": "寶可夢",
+          "name": "迷你傷藥G",
+          "type": 0,
+          "gauge": 0,
+          "uses": 2,
+          "category": "變化",
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方全體拍組",
+          "description": "回復我方全體拍組的HP,約為最大HP的20%。",
+          "tags": "Heals",
+          "group": "Regular"
+        },
+        {
+          "id": 10007,
+          "user": "訓練師",
+          "name": "邁向勝利的韌性",
+          "type": 0,
+          "gauge": 0,
+          "uses": 2,
+          "category": "變化",
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方１對拍組",
+          "description": "提高我方的防禦和特防2階段。讓我方變成附帶回復狀態。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 6038,
+          "user": "寶可夢",
+          "name": "終極瘋狂植物",
+          "type": 5,
+          "gauge": 2,
+          "uses": "−",
+          "category": "特殊",
+          "power": 180,
+          "accuracy": 100,
+          "target": "對手全體拍組",
+          "description": "【開放條件】\n場地變成青草場地時\n【封印條件】\n青草場地被解除時\n\n降低對手的特防2階段。即使對象為複數,招式的威力也不會降低。",
+          "tags": "none",
+          "group": 6
+        }
+      ],
+      "syncMove": {
+        "id": 103600,
+        "user": "寶可夢",
+        "name": "靜靜茂盛的深綠之草之光線",
+        "type": 5,
+        "gauge": 0,
+        "uses": "−",
+        "category": "特殊",
+        "power": 250,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "沒有追加效果。",
+        "tags": "none",
+        "group": "Sync"
+      }
+    },
+    {
+      "id": "20000800001",
+      "variationType": 4,
+      "name": "妙蛙花",
+      "form": "",
+      "actor": "pm0003_81_00_fushigibana",
+      "gender": 1,
+      "is_shiny": false,
+      "type": "-1",
+      "weakness": "-1",
+      "stat": {
+        "hp": [
+          100,
+          179,
+          254,
+          551,
+          615,
+          679,
+          871
+        ],
+        "atk": [
+          17,
+          60,
+          99,
+          264,
+          300,
+          336,
+          444
+        ],
+        "def": [
+          12,
+          35,
+          56,
+          144,
+          160,
+          176,
+          224
+        ],
+        "spa": [
+          17,
+          60,
+          99,
+          264,
+          300,
+          336,
+          444
+        ],
+        "spd": [
+          14,
+          38,
+          59,
+          147,
+          167,
+          187,
+          247
+        ],
+        "spe": [
+          13,
+          50,
+          86,
+          229,
+          257,
+          285,
+          369
+        ]
+      },
+      "passives": [
+        {
+          "name": "關都冒險的收穫",
+          "description": "招式必定會命中。除了特定情況之外,只要寶可夢招式、拍組招式或拍組極巨化招式的攻擊命中就必定會擊中要害。",
+          "detail": []
+        },
+        {
+          "name": "上場時攻擊特攻提升4",
+          "description": "上場時,會提高自己的攻擊和特攻4階段。",
+          "detail": []
+        },
+        {
+          "name": "對手中招後攻擊特攻下降9",
+          "description": "當以對手為對象的招式成功時,會降低對手的攻擊或特攻1階段,或是兩種皆會降低1階段。",
+          "detail": []
+        }
+      ],
+      "moves": null,
+      "syncMove": null,
+      "movesDynamax": [
+        {
+          "id": 7025,
+          "user": "寶可夢",
+          "name": "極巨草原",
+          "type": 5,
+          "gauge": 0,
+          "uses": "−",
+          "category": "物理",
+          "power": 400,
+          "accuracy": 0,
+          "target": "對手１對拍組",
+          "description": "將場地變成青草場地。",
+          "tags": "none",
+          "group": 5
+        }
+      ]
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "赤紅專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": [],
+          "description": "只有在天氣、場地或領域變化時,招式計量槽會累積得較快。",
+          "rate": 33
+        },
+        {
+          "name": [],
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "rate": 33
+        },
+        {
+          "name": [],
+          "description": "只有在天氣、場地或領域變化時,會提高我方全體拍組的拍組招式的威力。",
+          "rate": 33
+        }
+      ]
+    }
+  ],
+  "grid": [
+    {
+      "id": 1000080100,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000080101,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000080102,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000080103,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000080104,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000080105,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000080106,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000080107,
+      "name": "飛葉快刀：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 3,
+      "y": -1,
+      "color": "#47D147",
+      "type": 5
+    },
+    {
+      "id": 1000080108,
+      "name": "飛葉快刀：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": 0,
+      "color": "#47D147",
+      "type": 5
+    },
+    {
+      "id": 1000080109,
+      "name": "飛葉快刀：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 1,
+      "y": 1,
+      "color": "#47D147",
+      "type": 5
+    },
+    {
+      "id": 1000080110,
+      "name": "飛葉快刀：對手中招後賦予中毒4",
+      "description": "當以對手為對象的招式成功時,有50%的機率會讓對手陷入中毒狀態。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 1,
+      "y": 2,
+      "color": "#FF0066",
+      "type": 5
+    },
+    {
+      "id": 1000080111,
+      "name": "飛葉快刀：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": 1,
+      "color": "#FF0066",
+      "type": 5
+    },
+    {
+      "id": 1000080112,
+      "name": "飛葉快刀：效果絕佳時威力提升9",
+      "description": "當效果絕佳時,會提高該招式的威力。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 3,
+      "y": 0,
+      "color": "#FF0066",
+      "type": 5
+    },
+    {
+      "id": 1000080113,
+      "name": "對手異常時威力提升3",
+      "description": "當對手陷入異常狀態時,會提高自己的招式的威力。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 3,
+      "x": 2,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000080114,
+      "name": "攻擊時能力下降9",
+      "description": "使出招式攻擊成功時,會降低對手的攻擊、防禦、特攻、特防、速度、命中率、閃避率中的一種能力1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 3,
+      "y": 1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000080115,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000080116,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000080117,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000080118,
+      "name": "終極瘋狂植物：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -3,
+      "y": -1,
+      "color": "#BF80FF",
+      "type": 5
+    },
+    {
+      "id": 1000080119,
+      "name": "終極瘋狂植物：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": -2,
+      "color": "#BF80FF",
+      "type": 5
+    },
+    {
+      "id": 1000080120,
+      "name": "終極瘋狂植物：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -1,
+      "y": -3,
+      "color": "#BF80FF",
+      "type": 5
+    },
+    {
+      "id": 1000080121,
+      "name": "攻擊時特攻提升4",
+      "description": "使出招式攻擊成功時,有50%的機率會提高自己的特攻1階段。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 2,
+      "x": -3,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000080122,
+      "name": "終極瘋狂植物：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -2,
+      "y": -3,
+      "color": "#FF0066",
+      "type": 5
+    },
+    {
+      "id": 1000080123,
+      "name": "首次危機時賦予特殊增強2",
+      "description": "首次陷入危機時,會提高自己的下次特殊招式威力增強2階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 2,
+      "x": -1,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000080124,
+      "name": "依對手特防降幅拍組招式↑",
+      "description": "對手的特防降低得越多,自己的拍組招式的威力就提高得越多。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -3,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000080125,
+      "name": "拍組極巨化招式後計數加速2",
+      "description": "使出拍組極巨化招式後, 會讓發動拍組招式所需的行動數減少2次。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000080126,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000080127,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000080128,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000080129,
+      "name": "麻痺無效",
+      "description": "不會陷入麻痺狀態。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": 3,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000080130,
+      "name": "終極瘋狂植物：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": -4,
+      "color": "#BF80FF",
+      "type": 5
+    },
+    {
+      "id": 1000080131,
+      "name": "終極瘋狂植物：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 1,
+      "y": -4,
+      "color": "#BF80FF",
+      "type": 5
+    },
+    {
+      "id": 1000080132,
+      "name": "青草場地時妨害狀態無效",
+      "description": "當場地為青草場地時,不會陷入畏縮、混亂或束縛狀態。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 3,
+      "y": -5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000080133,
+      "name": "邁向勝利的韌性：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": -5,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1000080134,
+      "name": "青草場地時招式計量槽加速2",
+      "description": "當場地為青草場地時,招式計量槽會累積得較快。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 1,
+      "y": -5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000080135,
+      "name": "邁向勝利的韌性：我方中招後賦予特殊增強(1)9",
+      "description": "以我方拍組為對象的招式(不含場地效果)成功時,會提高受到該招式效果影響的我方拍組的下次特殊招式威力增強1階段。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 3,
+      "x": 3,
+      "y": -6,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1000080136,
+      "name": "青草場地時拍組招式威力提升5",
+      "description": "當場地為青草場地時,會提高拍組招式的威力。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": -6,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000080137,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000080138,
+      "name": "中毒無效",
+      "description": "不會陷入中毒狀態和劇毒狀態。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": -3,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000080139,
+      "name": "飛葉快刀：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": 2,
+      "color": "#47D147",
+      "type": 5
+    },
+    {
+      "id": 1000080140,
+      "name": "飛葉快刀：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -1,
+      "y": 2,
+      "color": "#47D147",
+      "type": 5
+    },
+    {
+      "id": 1000080141,
+      "name": "特攻 + 20",
+      "description": "",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -3,
+      "y": 3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000080142,
+      "name": "迷你傷藥G：HP回復招式回復量增加1",
+      "description": "當自己使出會回復HP的招式時,會提高HP回復量。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 2,
+      "x": -2,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1000080143,
+      "name": "晴天時招式計量槽加速2",
+      "description": "當天氣為日照強烈時,招式計量槽會累積得較快。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -1,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000080144,
+      "name": "迷你傷藥G：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 3,
+      "x": -3,
+      "y": 4,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1000080145,
+      "name": "拍組極巨化招式效果絕佳時威力提升3",
+      "description": "當拍組極巨化招式的效果絕佳時,會提高該拍組極巨化招式的威力。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 3,
+      "x": -2,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000080146,
+      "name": "靜靜茂盛的深綠之草之光線：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": -3,
+      "color": "#BF80FF",
+      "type": 5
+    },
+    {
+      "id": 1000080147,
+      "name": "靜靜茂盛的深綠之草之光線：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": 3,
+      "color": "#BF80FF",
+      "type": 5
+    }
+  ]
+}

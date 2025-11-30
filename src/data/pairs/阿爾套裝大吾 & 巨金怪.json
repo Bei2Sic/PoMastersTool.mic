@@ -1,0 +1,1107 @@
+{
+  "trainer": {
+    "id": "10090900000",
+    "name": "阿爾套裝大吾",
+    "actor": "大吾",
+    "actorId": "ch0090_90_daigo",
+    "rarity": 5,
+    "role": 6,
+    "exRole": 2,
+    "ex": true,
+    "exclusivity": "Master",
+    "maxBonusLevel": 5
+  },
+  "scoutMethod": 1,
+  "scheduleId": "chara_6080_0830_FOREVER",
+  "themes": [
+    {
+      "name": "鋼屬性／複合",
+      "description": "我方全體拍組最大HP提升24\n僅在我方使出鋼屬性攻擊時，攻擊和特攻提升24",
+      "tag": "鋼",
+      "category": 1
+    },
+    {
+      "name": "豐緣／複合",
+      "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
+      "tag": "豐緣",
+      "category": 2
+    },
+    {
+      "name": "冠軍／複合",
+      "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
+      "tag": "冠軍",
+      "category": 3
+    },
+    {
+      "name": "阿爾套裝／複合",
+      "description": "我方全體拍組最大HP提升8\n我方全體拍組的攻擊和特攻提升5",
+      "tag": "阿爾套裝",
+      "category": 4
+    },
+    {
+      "name": "石頭愛好者／複合",
+      "description": "我方全體拍組最大HP提升8\n我方全體拍組的攻擊和特攻提升5",
+      "tag": "石頭愛好者",
+      "category": 999
+    }
+  ],
+  "specialAwaking": {
+    "name": "",
+    "description": "",
+    "detail": []
+  },
+  "pokemon": [
+    {
+      "id": "20090900000",
+      "variationType": 0,
+      "name": "巨金怪",
+      "form": "",
+      "actor": "pm0376_00_metagross",
+      "gender": 3,
+      "is_shiny": false,
+      "type": 17,
+      "weakness": 14,
+      "stat": {
+        "hp": [
+          106,
+          182,
+          254,
+          540,
+          600,
+          660,
+          840
+        ],
+        "atk": [
+          10,
+          56,
+          98,
+          274,
+          310,
+          346,
+          454
+        ],
+        "def": [
+          20,
+          62,
+          101,
+          255,
+          287,
+          319,
+          415
+        ],
+        "spa": [
+          10,
+          39,
+          66,
+          176,
+          200,
+          224,
+          296
+        ],
+        "spd": [
+          20,
+          62,
+          101,
+          255,
+          287,
+          319,
+          415
+        ],
+        "spe": [
+          16,
+          53,
+          89,
+          232,
+          260,
+          288,
+          372
+        ]
+      },
+      "passives": [
+        {
+          "name": "鋼鐵神話",
+          "description": "提高我方全體拍組的招式的威力10%。減輕我方全體拍組受到招式攻擊時的傷害20%。當我方隊伍中擁有鋼標籤的拍組越多,此效果還會提升得越多。(每增加1對拍組,威力提升+10%,傷害減輕+3%。)(威力最多可提升30%,傷害最多可減輕26%。)",
+          "detail": []
+        },
+        {
+          "name": "鋼鐵制裁",
+          "description": "首次上場時,會提高我方全體拍組的鋼屬性抵抗1階段。首次上場時,會降低對手全體拍組的鋼屬性抵抗1階段。",
+          "detail": []
+        },
+        {
+          "name": "歷經冒險後的收穫",
+          "description": "首次上場時,會讓我方全體拍組變成挺住狀態。使出招式攻擊成功時,會讓自己變成下次計量槽消耗0狀態。使出招式攻擊成功時,會提高我方全體拍組的下次物理招式威力增強1階段。",
+          "detail": []
+        },
+        {
+          "name": "漂泊愛石家",
+          "description": "對手的攻擊不會擊中要害。不會受到沙暴所造成的傷害。當自己的能力降低時,不但不會降低反而等量提高該能力。",
+          "detail": []
+        },
+        {
+          "name": "被攻擊時HP回復9",
+          "description": "受到招式攻擊時,會回復自己的HP。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 442,
+          "user": "寶可夢",
+          "name": "鐵頭",
+          "type": 17,
+          "gauge": 3,
+          "uses": "−",
+          "category": "物理",
+          "power": 92,
+          "accuracy": 100,
+          "target": "對手１對拍組",
+          "description": "有30%的機率會讓對手陷入畏縮狀態。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 19000,
+          "user": "寶可夢",
+          "name": "傷藥",
+          "type": 0,
+          "gauge": 0,
+          "uses": 2,
+          "category": "變化",
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方１對拍組",
+          "description": "回復我方的HP,約為最大HP的40%。",
+          "tags": "Heals",
+          "group": "Regular"
+        },
+        {
+          "id": 6077,
+          "user": "寶可夢",
+          "name": "子彈拳・瞬天",
+          "type": 17,
+          "gauge": 0,
+          "uses": 3,
+          "category": "物理",
+          "power": 120,
+          "accuracy": 0,
+          "target": "對手全體拍組",
+          "description": "【開放條件】\n自己使出1次招式時\n【封印條件】\n使出此招式時\n\n攻擊必定會命中。降低對手的防禦和特防2階段。提高我方全體拍組的防禦和特防2階段。",
+          "tags": 12,
+          "group": 6
+        },
+        {
+          "id": 10902,
+          "user": "訓練師",
+          "name": "誰叫我們是最強的呢",
+          "type": 0,
+          "gauge": 0,
+          "uses": 1,
+          "category": "變化",
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方全體拍組",
+          "description": "提高我方全體拍組的攻擊6階段。使用最多3條自己的招式計量槽。使用的量越多,我方全體拍組的擊中要害率就提高得越多。可提高0~3階段。提高我方全體拍組的下次拍組招式威力增強3階段。",
+          "tags": "none",
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 64500,
+        "user": "寶可夢",
+        "name": "百鍊成鋼的神招之彗星拳",
+        "type": 17,
+        "gauge": 0,
+        "uses": "−",
+        "category": "物理",
+        "power": 300,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "變成超級巨金怪直到對戰結束。容易擊中要害。回復我方全體拍組的HP,約為最大HP的20%。",
+        "tags": 67109120,
+        "group": "Sync"
+      }
+    },
+    {
+      "id": "20090900000",
+      "variationType": 1,
+      "name": "超級巨金怪",
+      "form": "",
+      "actor": "pm0376_51_megametagross",
+      "gender": 3,
+      "is_shiny": false,
+      "type": "-1",
+      "weakness": "-1",
+      "stat": {
+        "hp": [
+          106,
+          182,
+          254,
+          540,
+          600,
+          660,
+          840
+        ],
+        "atk": [
+          11,
+          61,
+          107,
+          301,
+          341,
+          380,
+          499
+        ],
+        "def": [
+          22,
+          68,
+          111,
+          280,
+          315,
+          350,
+          456
+        ],
+        "spa": [
+          11,
+          42,
+          72,
+          193,
+          220,
+          246,
+          325
+        ],
+        "spd": [
+          22,
+          68,
+          111,
+          280,
+          315,
+          350,
+          456
+        ],
+        "spe": [
+          17,
+          58,
+          97,
+          255,
+          286,
+          316,
+          409
+        ]
+      },
+      "passives": [
+        {
+          "name": "鋼鐵神話",
+          "description": "提高我方全體拍組的招式的威力10%。減輕我方全體拍組受到招式攻擊時的傷害20%。當我方隊伍中擁有鋼標籤的拍組越多,此效果還會提升得越多。(每增加1對拍組,威力提升+10%,傷害減輕+3%。)(威力最多可提升30%,傷害最多可減輕26%。)",
+          "detail": []
+        },
+        {
+          "name": "鋼鐵制裁",
+          "description": "首次上場時,會提高我方全體拍組的鋼屬性抵抗1階段。首次上場時,會降低對手全體拍組的鋼屬性抵抗1階段。",
+          "detail": []
+        },
+        {
+          "name": "歷經冒險後的收穫",
+          "description": "首次上場時,會讓我方全體拍組變成挺住狀態。使出招式攻擊成功時,會讓自己變成下次計量槽消耗0狀態。使出招式攻擊成功時,會提高我方全體拍組的下次物理招式威力增強1階段。",
+          "detail": []
+        },
+        {
+          "name": "漂泊愛石家",
+          "description": "對手的攻擊不會擊中要害。不會受到沙暴所造成的傷害。當自己的能力降低時,不但不會降低反而等量提高該能力。",
+          "detail": []
+        },
+        {
+          "name": "被攻擊時HP回復G9",
+          "description": "受到招式攻擊時,會回復我方全體拍組的HP。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 442,
+          "user": "寶可夢",
+          "name": "鐵頭",
+          "type": 17,
+          "gauge": 3,
+          "uses": "−",
+          "category": "物理",
+          "power": 92,
+          "accuracy": 100,
+          "target": "對手１對拍組",
+          "description": "有30%的機率會讓對手陷入畏縮狀態。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 19000,
+          "user": "寶可夢",
+          "name": "傷藥",
+          "type": 0,
+          "gauge": 0,
+          "uses": 2,
+          "category": "變化",
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方１對拍組",
+          "description": "回復我方的HP,約為最大HP的40%。",
+          "tags": "Heals",
+          "group": "Regular"
+        },
+        {
+          "id": 6077,
+          "user": "寶可夢",
+          "name": "子彈拳・瞬天",
+          "type": 17,
+          "gauge": 0,
+          "uses": 3,
+          "category": "物理",
+          "power": 120,
+          "accuracy": 0,
+          "target": "對手全體拍組",
+          "description": "【開放條件】\n自己使出1次招式時\n【封印條件】\n使出此招式時\n\n攻擊必定會命中。降低對手的防禦和特防2階段。提高我方全體拍組的防禦和特防2階段。",
+          "tags": 12,
+          "group": 6
+        },
+        {
+          "id": 10902,
+          "user": "訓練師",
+          "name": "誰叫我們是最強的呢",
+          "type": 0,
+          "gauge": 0,
+          "uses": 1,
+          "category": "變化",
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方全體拍組",
+          "description": "提高我方全體拍組的攻擊6階段。使用最多3條自己的招式計量槽。使用的量越多,我方全體拍組的擊中要害率就提高得越多。可提高0~3階段。提高我方全體拍組的下次拍組招式威力增強3階段。",
+          "tags": "none",
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 64500,
+        "user": "寶可夢",
+        "name": "百鍊成鋼的神招之彗星拳",
+        "type": 17,
+        "gauge": 0,
+        "uses": "−",
+        "category": "物理",
+        "power": 300,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "變成超級巨金怪直到對戰結束。容易擊中要害。回復我方全體拍組的HP,約為最大HP的20%。",
+        "tags": 67109120,
+        "group": "Sync"
+      }
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "阿爾套裝大吾專用潛能餅乾１",
+      "skills": [
+        {
+          "name": [],
+          "description": "上場時,會讓我方全體拍組變成附帶回復狀態。",
+          "rate": 100
+        }
+      ]
+    },
+    {
+      "cookieName": "阿爾套裝大吾專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": [],
+          "description": "招式成功時,會幫自己增加1條招式計量槽。",
+          "rate": 33
+        },
+        {
+          "name": [],
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "rate": 33
+        },
+        {
+          "name": [],
+          "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
+          "rate": 33
+        }
+      ]
+    }
+  ],
+  "grid": [
+    {
+      "id": 1009090000,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009090001,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009090002,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009090003,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009090004,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009090005,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009090006,
+      "name": "HP + 40",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 2,
+      "x": 0,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009090007,
+      "name": "百鍊成鋼的神招之彗星拳：威力 + 50",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 3,
+      "x": 0,
+      "y": 3,
+      "color": "#BF80FF",
+      "type": 17
+    },
+    {
+      "id": 1009090008,
+      "name": "攻擊時攻擊特攻下降9",
+      "description": "使出招式攻擊成功時,會降低對手的攻擊和特攻1階段。",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 4,
+      "x": 0,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009090009,
+      "name": "首次拍組招式後招式次數回復1",
+      "description": "首次使出拍組招式時,會幫自己的招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 5,
+      "x": 0,
+      "y": 5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009090010,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009090011,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009090012,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009090013,
+      "name": "鐵頭：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": 1,
+      "color": "#47D147",
+      "type": 17
+    },
+    {
+      "id": 1009090014,
+      "name": "鐵頭：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 3,
+      "y": 0,
+      "color": "#47D147",
+      "type": 17
+    },
+    {
+      "id": 1009090015,
+      "name": "鐵頭：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 2,
+      "y": 2,
+      "color": "#47D147",
+      "type": 17
+    },
+    {
+      "id": 1009090016,
+      "name": "防禦 + 20",
+      "description": "",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 3,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009090017,
+      "name": "減輕物理傷害2",
+      "description": "可減輕受到物理招式攻擊時的傷害。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 3,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009090018,
+      "name": "異常無效",
+      "description": "不會陷入異常狀態。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 1,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009090019,
+      "name": "依攻擊升幅拍組招式↑",
+      "description": "自己的攻擊提高得越多,拍組招式的威力就提高得越多。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009090020,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009090021,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009090022,
+      "name": "子彈拳・瞬天：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": -1,
+      "color": "#BF80FF",
+      "type": 17
+    },
+    {
+      "id": 1009090023,
+      "name": "中毒無效",
+      "description": "不會陷入中毒狀態和劇毒狀態。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": -1,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009090024,
+      "name": "子彈拳・瞬天：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -1,
+      "y": -3,
+      "color": "#BF80FF",
+      "type": 17
+    },
+    {
+      "id": 1009090025,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 2,
+      "x": -3,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009090026,
+      "name": "誰叫我們是最強的呢：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -3,
+      "y": -1,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1009090027,
+      "name": "子彈拳・瞬天：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -2,
+      "y": -2,
+      "color": "#BF80FF",
+      "type": 17
+    },
+    {
+      "id": 1009090028,
+      "name": "僅限一次再次挺住",
+      "description": "除了特定情況之外,首次以挺住的效果使HP剩下1時,會讓自己再次變成挺住狀態。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -3,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009090029,
+      "name": "首次上場時計數加速1",
+      "description": "首次上場時,發動拍組招式所需的行動數會減少1次。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009090030,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009090031,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009090032,
+      "name": "鐵頭：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": -3,
+      "color": "#47D147",
+      "type": 17
+    },
+    {
+      "id": 1009090033,
+      "name": "鐵頭：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 1,
+      "y": -3,
+      "color": "#47D147",
+      "type": 17
+    },
+    {
+      "id": 1009090034,
+      "name": "鐵頭：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 1,
+      "x": 1,
+      "y": -4,
+      "color": "#FF0066",
+      "type": 17
+    },
+    {
+      "id": 1009090035,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 2,
+      "x": 3,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009090036,
+      "name": "被攻擊時招式計量槽增加4",
+      "description": "受到招式攻擊時,有50%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 3,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009090037,
+      "name": "攻擊 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": 2,
+      "y": -4,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009090038,
+      "name": "依攻擊升幅威力提升",
+      "description": "自己的攻擊提高得越多,招式的威力就提高得越多。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 3,
+      "y": -5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009090039,
+      "name": "鐵頭：妨害機率提升1",
+      "description": "當招式的追加效果可使對手陷入畏縮、混亂或束縛狀態時,會提高該追加效果的成功率。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": -5,
+      "color": "#FF0066",
+      "type": 17
+    },
+    {
+      "id": 1009090040,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009090041,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009090042,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -3,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009090043,
+      "name": "子彈拳・瞬天：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -3,
+      "y": 3,
+      "color": "#BF80FF",
+      "type": 17
+    },
+    {
+      "id": 1009090044,
+      "name": "子彈拳・瞬天：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": 3,
+      "color": "#BF80FF",
+      "type": 17
+    },
+    {
+      "id": 1009090045,
+      "name": "特防 + 20",
+      "description": "",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -3,
+      "y": 4,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009090046,
+      "name": "傷藥：HP回復招式回復量增加1",
+      "description": "當自己使出會回復HP的招式時,會提高HP回復量。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 2,
+      "x": -2,
+      "y": 4,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1009090047,
+      "name": "傷藥：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -3,
+      "y": 5,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1009090048,
+      "name": "傷藥：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 3,
+      "x": -1,
+      "y": 4,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1009090049,
+      "name": "傷藥：HP回復招式回復量增加1",
+      "description": "當自己使出會回復HP的招式時,會提高HP回復量。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": 5,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1009090050,
+      "name": "百鍊成鋼的神招之彗星拳：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 3,
+      "y": -2,
+      "color": "#BF80FF",
+      "type": 17
+    },
+    {
+      "id": 1009090051,
+      "name": "百鍊成鋼的神招之彗星拳：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": -3,
+      "y": 1,
+      "color": "#BF80FF",
+      "type": 17
+    }
+  ]
+}

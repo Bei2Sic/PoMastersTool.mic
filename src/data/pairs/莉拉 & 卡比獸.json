@@ -1,0 +1,1076 @@
+{
+  "trainer": {
+    "id": "10178000000",
+    "name": "莉拉",
+    "actor": "莉拉",
+    "actorId": "ch0178_00_lira",
+    "rarity": 5,
+    "role": 2,
+    "exRole": 5,
+    "ex": true,
+    "exclusivity": "Pokefair",
+    "maxBonusLevel": 10
+  },
+  "scoutMethod": 1,
+  "scheduleId": "chara_5010_0215_FOREVER",
+  "themes": [
+    {
+      "name": "一般屬性／輔助",
+      "description": "我方全體拍組最大HP提升60",
+      "tag": "一般",
+      "category": 1
+    },
+    {
+      "name": "阿羅拉／輔助",
+      "description": "我方全體拍組最大HP提升13",
+      "tag": "阿羅拉",
+      "category": 2
+    },
+    {
+      "name": "大姐姐／輔助",
+      "description": "我方全體拍組最大HP提升15",
+      "tag": "大姐姐",
+      "category": 999
+    }
+  ],
+  "specialAwaking": {
+    "name": "國際警察中的精英",
+    "description": "使出拍組極巨化招式後, 會讓發動拍組招式所需的行動數減少3次。當僅影響我方場地的效果發揮時,會減輕我方受到招式攻擊時的傷害。",
+    "detail": [
+      "拍組極巨化招式後計數加速3",
+      "我方為場地效果對象時攻擊招式↓G2"
+    ]
+  },
+  "pokemon": [
+    {
+      "id": "20178000000",
+      "variationType": 0,
+      "name": "卡比獸",
+      "form": "",
+      "actor": "pm0143_00_kabigon",
+      "gender": 1,
+      "is_shiny": false,
+      "type": 1,
+      "weakness": 7,
+      "stat": {
+        "hp": [
+          101,
+          185,
+          263,
+          582,
+          650,
+          718,
+          922
+        ],
+        "atk": [
+          11,
+          48,
+          84,
+          227,
+          255,
+          283,
+          367
+        ],
+        "def": [
+          17,
+          51,
+          81,
+          202,
+          230,
+          258,
+          342
+        ],
+        "spa": [
+          8,
+          29,
+          47,
+          124,
+          140,
+          156,
+          204
+        ],
+        "spd": [
+          24,
+          58,
+          91,
+          212,
+          240,
+          268,
+          352
+        ],
+        "spe": [
+          10,
+          39,
+          66,
+          176,
+          200,
+          224,
+          296
+        ]
+      },
+      "passives": [
+        {
+          "name": "使出次數限定招式時特防提升G9",
+          "description": "當使出有次數限制的招式時,會提高我方全體拍組的特防1階段。",
+          "detail": []
+        },
+        {
+          "name": "我方為場地效果對象時5種能力提升2",
+          "description": "只有在僅影響我方場地的效果發揮時,攻擊、防禦、特攻、特防和速度會變成1.2倍。",
+          "detail": []
+        },
+        {
+          "name": "拍組極巨化招式後HP回復5",
+          "description": "使出拍組極巨化招式後,會回復自己的HP,約為自己最大HP的50%。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 29,
+          "user": "寶可夢",
+          "name": "頭錘",
+          "type": 1,
+          "gauge": 2,
+          "uses": "−",
+          "category": "物理",
+          "power": 53,
+          "accuracy": 100,
+          "target": "對手１對拍組",
+          "description": "有30%的機率會讓對手陷入畏縮狀態。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 115,
+          "user": "寶可夢",
+          "name": "反射壁",
+          "type": 11,
+          "gauge": 3,
+          "uses": 2,
+          "category": "變化",
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方場地",
+          "description": "讓我方場地變成減輕物理傷害狀態。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 182,
+          "user": "寶可夢",
+          "name": "守住",
+          "type": 1,
+          "gauge": 2,
+          "uses": 1,
+          "category": "變化",
+          "power": 0,
+          "accuracy": 0,
+          "target": "自己",
+          "description": "讓自己變成下次傷害防禦狀態。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 11780,
+          "user": "訓練師",
+          "name": "有你在我放心!",
+          "type": 0,
+          "gauge": 0,
+          "uses": 1,
+          "category": "變化",
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方全體拍組",
+          "description": "讓我方場地變成要害防禦狀態。讓我方場地變成異常狀態防禦狀態。讓我方場地變成減輕特殊傷害狀態。提高我方全體拍組的攻擊2階段。",
+          "tags": 8388608,
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 96000,
+        "user": "寶可夢",
+        "name": "任何任務都能達成之一般衝擊",
+        "type": 1,
+        "gauge": 0,
+        "uses": "−",
+        "category": "物理",
+        "power": 300,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "沒有追加效果。",
+        "tags": "none",
+        "group": "Sync"
+      }
+    },
+    {
+      "id": "20178000000",
+      "variationType": 4,
+      "name": "卡比獸",
+      "form": "",
+      "actor": "pm0143_81_00_gkabigon",
+      "gender": 1,
+      "is_shiny": false,
+      "type": "-1",
+      "weakness": "-1",
+      "stat": {
+        "hp": [
+          101,
+          185,
+          263,
+          582,
+          650,
+          718,
+          922
+        ],
+        "atk": [
+          11,
+          48,
+          84,
+          227,
+          255,
+          283,
+          367
+        ],
+        "def": [
+          17,
+          51,
+          81,
+          202,
+          230,
+          258,
+          342
+        ],
+        "spa": [
+          8,
+          29,
+          47,
+          124,
+          140,
+          156,
+          204
+        ],
+        "spd": [
+          24,
+          58,
+          91,
+          212,
+          240,
+          268,
+          352
+        ],
+        "spe": [
+          10,
+          39,
+          66,
+          176,
+          200,
+          224,
+          296
+        ]
+      },
+      "passives": [
+        {
+          "name": "使出次數限定招式時特防提升G9",
+          "description": "當使出有次數限制的招式時,會提高我方全體拍組的特防1階段。",
+          "detail": []
+        },
+        {
+          "name": "我方為場地效果對象時5種能力提升2",
+          "description": "只有在僅影響我方場地的效果發揮時,攻擊、防禦、特攻、特防和速度會變成1.2倍。",
+          "detail": []
+        },
+        {
+          "name": "拍組極巨化招式後HP回復5",
+          "description": "使出拍組極巨化招式後,會回復自己的HP,約為自己最大HP的50%。",
+          "detail": []
+        }
+      ],
+      "moves": null,
+      "syncMove": null,
+      "movesDynamax": [
+        {
+          "id": 7000,
+          "user": "寶可夢",
+          "name": "超極巨資源再生",
+          "type": 1,
+          "gauge": 0,
+          "uses": "−",
+          "category": "物理",
+          "power": 400,
+          "accuracy": 0,
+          "target": "對手１對拍組",
+          "description": "幫自己的招式的使用次數回復1次。",
+          "tags": "none",
+          "group": 5
+        },
+        {
+          "id": 7039,
+          "user": "寶可夢",
+          "name": "極巨防壁",
+          "type": 1,
+          "gauge": 0,
+          "uses": "−",
+          "category": "變化",
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方１對拍組",
+          "description": "讓我方變成下次傷害防禦狀態。",
+          "tags": "none",
+          "group": 5
+        },
+        {
+          "id": 7039,
+          "user": "寶可夢",
+          "name": "極巨防壁",
+          "type": 1,
+          "gauge": 0,
+          "uses": "−",
+          "category": "變化",
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方１對拍組",
+          "description": "讓我方變成下次傷害防禦狀態。",
+          "tags": "none",
+          "group": 5
+        }
+      ]
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "莉拉專用潛能餅乾１",
+      "skills": [
+        {
+          "name": [],
+          "description": "首次上場時,會讓我方場地變成招式計量槽加速狀態。",
+          "rate": 100
+        }
+      ]
+    },
+    {
+      "cookieName": "莉拉專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": [],
+          "description": "受到招式攻擊時,會回復我方全體拍組的HP。",
+          "rate": 33
+        },
+        {
+          "name": [],
+          "description": "首次上場時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
+          "rate": 33
+        },
+        {
+          "name": [],
+          "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
+          "rate": 33
+        }
+      ]
+    }
+  ],
+  "grid": [
+    {
+      "id": 1017800000,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1017800001,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1017800002,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1017800003,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1017800004,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1017800005,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1017800006,
+      "name": "火屬性防守",
+      "description": "可減輕受到火屬性招式攻擊時的傷害。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 0,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1017800007,
+      "name": "拍組招式及拍組極巨化招式後賦予物理增強(1)G9",
+      "description": "使出拍組招式或拍組極巨化招式後,會提高我方全體拍組的下次物理招式威力增強1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 4,
+      "x": 0,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1017800008,
+      "name": "拍組招式後場地招式計量槽加速",
+      "description": "使出拍組招式後,會讓我方場地變成招式計量槽加速狀態。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 5,
+      "x": -2,
+      "y": 5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1017800009,
+      "name": "冰屬性防守",
+      "description": "可減輕受到冰屬性招式攻擊時的傷害。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 0,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1017800010,
+      "name": "我方為場地效果對象時招式計量槽加速3",
+      "description": "只有在僅影響我方場地的效果發揮時,招式計量槽會累積得較快。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 4,
+      "x": 0,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1017800011,
+      "name": "拍組招式後HP中回復G1",
+      "description": "使出拍組招式後,會回復我方全體拍組的HP,約為最大HP的20%。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 5,
+      "x": -2,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1017800012,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1017800013,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1017800014,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1017800015,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1017800016,
+      "name": "頭錘：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": 2,
+      "color": "#47D147",
+      "type": 1
+    },
+    {
+      "id": 1017800017,
+      "name": "頭錘：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 1,
+      "y": 3,
+      "color": "#47D147",
+      "type": 1
+    },
+    {
+      "id": 1017800018,
+      "name": "頭錘：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 3,
+      "y": 2,
+      "color": "#47D147",
+      "type": 1
+    },
+    {
+      "id": 1017800019,
+      "name": "頭錘：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 1
+    },
+    {
+      "id": 1017800020,
+      "name": "妨害機率提升1",
+      "description": "當招式的追加效果可使對手陷入畏縮、混亂或束縛狀態時,會提高該追加效果的成功率。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 1,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1017800021,
+      "name": "無傷上場時附帶回復",
+      "description": "在HP全滿的狀態上場時,會讓自己變成附帶回復狀態。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 2,
+      "x": 3,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1017800022,
+      "name": "超極巨資源再生：威力 + 100",
+      "description": "",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 3,
+      "x": 2,
+      "y": 4,
+      "color": "#BF80FF",
+      "type": 1
+    },
+    {
+      "id": 1017800023,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1017800024,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -3,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1017800025,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1017800026,
+      "name": "守住：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 1,
+      "x": -2,
+      "y": -1,
+      "color": "#FF0066",
+      "type": 1
+    },
+    {
+      "id": 1017800027,
+      "name": "特防 + 20",
+      "description": "",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -3,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1017800028,
+      "name": "特防下降無效",
+      "description": "特防不會降低。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 2,
+      "x": -1,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1017800029,
+      "name": "HP + 20",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": -2,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1017800030,
+      "name": "首次上場時減輕場地物理傷害",
+      "description": "首次上場時,會讓我方場地變成減輕物理傷害狀態。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -3,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1017800031,
+      "name": "寶可夢使出變化招式時招式計量槽增加2",
+      "description": "在寶可夢使出變化招式時,會幫自己增加2條招式計量槽。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -1,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1017800032,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1017800033,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1017800034,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1017800035,
+      "name": "中毒無效",
+      "description": "不會陷入中毒狀態和劇毒狀態。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": 3,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1017800036,
+      "name": "頭錘：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": -4,
+      "color": "#47D147",
+      "type": 1
+    },
+    {
+      "id": 1017800037,
+      "name": "解除妨害狀態",
+      "description": "當自己首次陷入畏縮、混亂或束縛狀態時,會解除該狀態。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 1,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1017800038,
+      "name": "頭錘：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 3,
+      "y": -5,
+      "color": "#47D147",
+      "type": 1
+    },
+    {
+      "id": 1017800039,
+      "name": "有你在我放心!：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": -5,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1017800040,
+      "name": "有你在我放心!：招式後挺住9",
+      "description": "招式成功時,會讓自己變成挺住狀態。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 1,
+      "y": -5,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1017800041,
+      "name": "HP + 40",
+      "description": "",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 3,
+      "y": -6,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1017800042,
+      "name": "有你在我放心!：招式後要害率提升G1",
+      "description": "招式成功時,會提高我方全體拍組的擊中要害率1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": -6,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1017800043,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1017800044,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1017800045,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -3,
+      "y": 3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1017800046,
+      "name": "反射壁：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 1,
+      "x": -2,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 11
+    },
+    {
+      "id": 1017800047,
+      "name": "防禦下降無效",
+      "description": "防禦不會降低。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 2,
+      "x": -1,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1017800048,
+      "name": "防禦 + 20",
+      "description": "",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -3,
+      "y": 4,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1017800049,
+      "name": "反射壁：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -2,
+      "y": 4,
+      "color": "#FF0066",
+      "type": 11
+    },
+    {
+      "id": 1017800050,
+      "name": "反射壁：招式後防禦提升G1",
+      "description": "招式成功時,會提高我方全體拍組的防禦1階段。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 3,
+      "x": -1,
+      "y": 4,
+      "color": "#FF0066",
+      "type": 11
+    },
+    {
+      "id": 1017800051,
+      "name": "拍組極巨化招式後防禦提升G2",
+      "description": "使出拍組極巨化招式後,會提高我方全體拍組的防禦2階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -3,
+      "y": 5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1017800052,
+      "name": "任何任務都能達成之一般衝擊：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": 3,
+      "color": "#BF80FF",
+      "type": 1
+    },
+    {
+      "id": 1017800053,
+      "name": "任何任務都能達成之一般衝擊：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": -3,
+      "color": "#BF80FF",
+      "type": 1
+    }
+  ]
+}

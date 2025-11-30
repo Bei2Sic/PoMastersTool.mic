@@ -1,0 +1,909 @@
+{
+  "trainer": {
+    "id": "10091200000",
+    "name": "美極套裝竹蘭（異裝）",
+    "actor": "竹蘭",
+    "actorId": "ch0091_20_shirona",
+    "rarity": 5,
+    "role": 3,
+    "exRole": 0,
+    "ex": true,
+    "exclusivity": "Master",
+    "maxBonusLevel": 5
+  },
+  "scoutMethod": 1,
+  "scheduleId": "chara_3120_1227_FOREVER",
+  "themes": [
+    {
+      "name": "幽靈屬性／技術",
+      "description": "我方全體拍組最大HP提升24\n僅在我方使出幽靈屬性攻擊時，攻擊和特攻提升24",
+      "tag": "幽靈",
+      "category": 1
+    },
+    {
+      "name": "神奧／技術",
+      "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
+      "tag": "神奧",
+      "category": 2
+    },
+    {
+      "name": "美極套裝／技術",
+      "description": "我方全體拍組最大HP提升8\n我方全體拍組的攻擊和特攻提升5",
+      "tag": "美極套裝",
+      "category": 4
+    },
+    {
+      "name": "對戰設施的強者／技術",
+      "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
+      "tag": "對戰設施的強者",
+      "category": 3
+    },
+    {
+      "name": "鬥志昂揚／技術",
+      "description": "我方全體拍組最大HP提升8\n我方全體拍組的攻擊和特攻提升5",
+      "tag": "鬥志昂揚",
+      "category": 999
+    }
+  ],
+  "specialAwaking": {
+    "name": "",
+    "description": "",
+    "detail": []
+  },
+  "pokemon": [
+    {
+      "id": "20091200000",
+      "variationType": 0,
+      "name": "騎拉帝納",
+      "form": "別種形態",
+      "actor": "pm0487_11_giratina",
+      "gender": 3,
+      "is_shiny": false,
+      "type": 14,
+      "weakness": 18,
+      "stat": {
+        "hp": [
+          98,
+          167,
+          233,
+          497,
+          553,
+          609,
+          777
+        ],
+        "atk": [
+          19,
+          68,
+          113,
+          300,
+          340,
+          380,
+          500
+        ],
+        "def": [
+          15,
+          38,
+          59,
+          147,
+          163,
+          179,
+          227
+        ],
+        "spa": [
+          26,
+          83,
+          137,
+          346,
+          390,
+          434,
+          566
+        ],
+        "spd": [
+          15,
+          38,
+          59,
+          147,
+          163,
+          179,
+          227
+        ],
+        "spe": [
+          16,
+          60,
+          102,
+          267,
+          303,
+          339,
+          447
+        ]
+      },
+      "passives": [
+        {
+          "name": "神奧的先驅",
+          "description": "提高我方全體拍組的招式的威力10%。減輕我方全體拍組受到招式攻擊時的傷害20%。當我方隊伍中擁有神奧標籤的拍組越多,此效果還會提升得越多。(每增加1對拍組,威力提升+10%,傷害減輕+3%。)(威力最多可提升30%,傷害最多可減輕26%。)",
+          "detail": []
+        },
+        {
+          "name": "對手中招後防禦特防↓9",
+          "description": "當以對手為對象的招式成功時,會降低對手的防禦或特防1階段,或是兩種皆會降低1階段。",
+          "detail": []
+        },
+        {
+          "name": "暗影潛襲後招式計量槽增加2",
+          "description": "變成暗影潛襲狀態時,會幫自己增加2條招式計量槽。",
+          "detail": []
+        },
+        {
+          "name": "暗影潛襲後下次效果絕佳威力提升",
+          "description": "變成暗影潛襲狀態時,會讓自己變成下次效果絕佳威力提升狀態。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 247,
+          "user": "寶可夢",
+          "name": "暗影球",
+          "type": 14,
+          "gauge": 3,
+          "uses": "−",
+          "category": "特殊",
+          "power": 99,
+          "accuracy": 100,
+          "target": "對手１對拍組",
+          "description": "有20%的機率會降低對手的特防1階段。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 19640,
+          "user": "寶可夢",
+          "name": "妖怪祈願",
+          "type": 0,
+          "gauge": 2,
+          "uses": 2,
+          "category": "變化",
+          "power": 0,
+          "accuracy": 0,
+          "target": "全場地",
+          "description": "將領域變成妖怪領域。(妖怪領域會提高幽靈屬性的攻擊的威力。)",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 467,
+          "user": "寶可夢",
+          "name": "暗影潛襲",
+          "type": 14,
+          "gauge": 0,
+          "uses": 3,
+          "category": "物理",
+          "power": 200,
+          "accuracy": 100,
+          "target": "對手１對拍組",
+          "description": "變成暗影潛襲狀態。變成暗影潛襲狀態一段時間後,將會解除暗影潛襲狀態並且攻擊對手。在暗影潛襲狀態時,無法做出其他行動。在暗影潛襲狀態時,對手的招式不會命中。在暗影潛襲狀態時,若受到拍組招式或拍組極巨化招式攻擊,將會解除暗影潛襲狀態。",
+          "tags": 573444,
+          "group": "Regular"
+        },
+        {
+          "id": 10912,
+          "user": "訓練師",
+          "name": "開始調查!",
+          "type": 0,
+          "gauge": 0,
+          "uses": 1,
+          "category": "變化",
+          "power": 0,
+          "accuracy": 0,
+          "target": "自己",
+          "description": "提高自己的攻擊和特攻4階段。提高自己的擊中要害率3階段。降低自己的防禦和特防1階段。",
+          "tags": "none",
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 86500,
+        "user": "寶可夢",
+        "name": "打破定律的世界之暗影潛襲",
+        "type": 14,
+        "gauge": 0,
+        "uses": "−",
+        "category": "物理",
+        "power": 200,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "當領域為妖怪領域時,威力會提高。",
+        "tags": "none",
+        "group": "Sync"
+      }
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "美極套裝竹蘭（異裝）專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": [],
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "rate": 33
+        },
+        {
+          "name": [],
+          "description": "當效果絕佳時,會提高該拍組招式的威力。",
+          "rate": 33
+        },
+        {
+          "name": [],
+          "description": "首次上場時,會提高自己的下次拍組招式威力增強5階段。",
+          "rate": 33
+        }
+      ]
+    },
+    {
+      "cookieName": "美極套裝竹蘭（異裝）專用潛能餅乾１",
+      "skills": [
+        {
+          "name": [],
+          "description": "上場時,會提高自己的攻擊2階段。",
+          "rate": 100
+        }
+      ]
+    }
+  ],
+  "grid": [
+    {
+      "id": 1009120000,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009120001,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009120002,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009120003,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009120004,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009120005,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009120006,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009120007,
+      "name": "HP + 20",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 1,
+      "x": 2,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009120008,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009120009,
+      "name": "暗影球：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 1,
+      "x": 3,
+      "y": 1,
+      "color": "#47D147",
+      "type": 14
+    },
+    {
+      "id": 1009120010,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009120011,
+      "name": "暗影球：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": 1,
+      "y": 3,
+      "color": "#47D147",
+      "type": 14
+    },
+    {
+      "id": 1009120012,
+      "name": "暗影球：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 1,
+      "x": 3,
+      "y": 2,
+      "color": "#47D147",
+      "type": 14
+    },
+    {
+      "id": 1009120013,
+      "name": "暗影球：招式後招式計量槽增加2",
+      "description": "招式成功時,有30%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 14
+    },
+    {
+      "id": 1009120014,
+      "name": "妖怪祈願：訓練家出招後特攻提升G4",
+      "description": "在訓練家使出招式時,有50%的機率會提高我方全體拍組的特攻1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 1,
+      "y": 4,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1009120015,
+      "name": "暗影球：效果絕佳時威力提升1",
+      "description": "當效果絕佳時,會提高該招式的威力。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 2,
+      "x": 3,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 14
+    },
+    {
+      "id": 1009120016,
+      "name": "暗影球：下降機率提升2",
+      "description": "當招式的追加效果可降低對手能力值時,會提高該追加效果的成功率。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 3,
+      "x": 2,
+      "y": 4,
+      "color": "#FF0066",
+      "type": 14
+    },
+    {
+      "id": 1009120017,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009120018,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -3,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009120019,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009120020,
+      "name": "暗影潛襲：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -3,
+      "y": 0,
+      "color": "#47D147",
+      "type": 14
+    },
+    {
+      "id": 1009120021,
+      "name": "暗影潛襲：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -1,
+      "y": -1,
+      "color": "#47D147",
+      "type": 14
+    },
+    {
+      "id": 1009120022,
+      "name": "暗影潛襲後招式計量槽增加1",
+      "description": "變成暗影潛襲狀態時,會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -2,
+      "y": -1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009120023,
+      "name": "效果絕佳時威力提升2",
+      "description": "當效果絕佳時,會提高該招式的威力。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 2,
+      "x": -3,
+      "y": -1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009120024,
+      "name": "特攻提升時拍組招式威力提升5",
+      "description": "當自己的特攻提高時,會提高拍組招式的威力。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -1,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009120025,
+      "name": "拍組招式後快攻次數回復1",
+      "description": "使出拍組招式後,會幫自己有快攻效果的招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 3,
+      "x": -2,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009120026,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009120027,
+      "name": "攻擊 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 1,
+      "x": 3,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009120028,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009120029,
+      "name": "暗影潛襲：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 1,
+      "y": -2,
+      "color": "#47D147",
+      "type": 14
+    },
+    {
+      "id": 1009120030,
+      "name": "妖怪祈願：招式後招式計量槽增加2",
+      "description": "招式成功時,有30%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 3,
+      "y": -3,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1009120031,
+      "name": "妖怪祈願：招式後招式計量槽增加2",
+      "description": "招式成功時,有30%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": -3,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1009120032,
+      "name": "妖怪祈願：訓練家出招後攻擊提升G4",
+      "description": "在訓練家使出招式時,有50%的機率會提高我方全體拍組的攻擊1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 1,
+      "y": -3,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1009120033,
+      "name": "暗影潛襲：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 3,
+      "y": -4,
+      "color": "#47D147",
+      "type": 14
+    },
+    {
+      "id": 1009120034,
+      "name": "妖怪祈願：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 3,
+      "x": 2,
+      "y": -4,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1009120035,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009120036,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009120037,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": 3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009120038,
+      "name": "速度 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 1,
+      "x": -3,
+      "y": 4,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009120039,
+      "name": "暗影潛襲：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": 4,
+      "color": "#47D147",
+      "type": 14
+    },
+    {
+      "id": 1009120040,
+      "name": "暗影潛襲：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -3,
+      "y": 5,
+      "color": "#47D147",
+      "type": 14
+    },
+    {
+      "id": 1009120041,
+      "name": "暗影潛襲：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -1,
+      "y": 4,
+      "color": "#47D147",
+      "type": 14
+    },
+    {
+      "id": 1009120042,
+      "name": "開始調查!：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -2,
+      "y": 5,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1009120043,
+      "name": "拍組招式後解除能力下降9",
+      "description": "使出拍組招式後,會讓自己被降低的能力回到初始狀態。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -3,
+      "y": 6,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009120044,
+      "name": "妖怪領域時HP回復1",
+      "description": "當領域為妖怪領域時,寶可夢每次行動後都會回復自己的HP。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 3,
+      "x": -1,
+      "y": 5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009120045,
+      "name": "依對手特防降幅拍組招式↑",
+      "description": "對手的特防降低得越多,自己的拍組招式的威力就提高得越多。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": 6,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009120046,
+      "name": "打破定律的世界之暗影潛襲：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": 3,
+      "color": "#BF80FF",
+      "type": 14
+    },
+    {
+      "id": 1009120047,
+      "name": "打破定律的世界之暗影潛襲：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": -3,
+      "color": "#BF80FF",
+      "type": 14
+    },
+    {
+      "id": 1009120048,
+      "name": "兩個世界交錯重疊的地方",
+      "description": "首次使出招式攻擊成功時,會將領域變成妖怪領域。首次使出拍組招式時,會將領域變成妖怪領域。(妖怪領域會提高幽靈屬性的攻擊的威力。)領域變成妖怪領域的瞬間在場上時,會延長妖怪領域的持續時間。",
+      "detail": [
+        "首次攻擊時變成妖怪領域",
+        "首次拍組招式後變成妖怪領域",
+        "妖怪領域時間延長3"
+      ],
+      "energy": 0,
+      "orb": 5,
+      "level": 5,
+      "x": 0,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009120049,
+      "name": "我方引發妖怪領域時物理/特殊增強(2)G9",
+      "description": "當我方使妖怪領域生效時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強2階段。",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 4,
+      "x": 0,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    }
+  ]
+}

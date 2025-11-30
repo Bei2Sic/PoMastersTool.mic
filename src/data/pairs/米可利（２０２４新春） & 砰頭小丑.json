@@ -1,0 +1,982 @@
+{
+  "trainer": {
+    "id": "10127400000",
+    "name": "米可利（２０２４新春）",
+    "actor": "米可利",
+    "actorId": "ch0127_40_mikuri",
+    "rarity": 5,
+    "role": 5,
+    "exRole": 1,
+    "ex": true,
+    "exclusivity": "Seasonal",
+    "maxBonusLevel": 5
+  },
+  "scoutMethod": 1,
+  "scheduleId": "chara_5120_0101_FOREVER",
+  "themes": [
+    {
+      "name": "火屬性／場地",
+      "description": "我方全體拍組最大HP提升24\n我方全體拍組的速度提升24",
+      "tag": "火",
+      "category": 1
+    },
+    {
+      "name": "豐緣／場地",
+      "description": "我方全體拍組最大HP提升7\n我方全體拍組的速度提升7",
+      "tag": "豐緣",
+      "category": 2
+    },
+    {
+      "name": "道館館主／場地",
+      "description": "我方全體拍組最大HP提升7\n我方全體拍組的速度提升7",
+      "tag": "道館館主",
+      "category": 3
+    },
+    {
+      "name": "季節服裝／場地",
+      "description": "我方全體拍組最大HP提升8\n我方全體拍組的速度提升8",
+      "tag": "季節服裝",
+      "category": 4
+    },
+    {
+      "name": "華麗大賽／場地",
+      "description": "我方全體拍組最大HP提升8\n我方全體拍組的速度提升8",
+      "tag": "華麗大賽",
+      "category": 999
+    }
+  ],
+  "specialAwaking": {
+    "name": "",
+    "description": "",
+    "detail": []
+  },
+  "pokemon": [
+    {
+      "id": "20127400000",
+      "variationType": 0,
+      "name": "砰頭小丑",
+      "form": "",
+      "actor": "pm0806_00_00_zugadoon",
+      "gender": 3,
+      "is_shiny": false,
+      "type": 2,
+      "weakness": 16,
+      "stat": {
+        "hp": [
+          96,
+          172,
+          244,
+          530,
+          590,
+          650,
+          830
+        ],
+        "atk": [
+          12,
+          55,
+          94,
+          259,
+          295,
+          331,
+          439
+        ],
+        "def": [
+          9,
+          29,
+          47,
+          124,
+          140,
+          156,
+          204
+        ],
+        "spa": [
+          16,
+          63,
+          108,
+          284,
+          320,
+          356,
+          464
+        ],
+        "spd": [
+          10,
+          31,
+          49,
+          126,
+          142,
+          158,
+          206
+        ],
+        "spe": [
+          10,
+          56,
+          98,
+          274,
+          310,
+          346,
+          454
+        ]
+      },
+      "passives": [
+        {
+          "name": "驚爆幻影!",
+          "description": "使出拍組極巨化招式後,會從各種追加效果當中,隨機發動其中一種追加效果。",
+          "detail": []
+        },
+        {
+          "name": "打倒對手時賦予特殊增強(2)9",
+          "description": "使出招式打倒對手時,會提高自己的下次特殊招式威力增強2階段。",
+          "detail": []
+        },
+        {
+          "name": "拍組極巨化招式後計數加速2",
+          "description": "使出拍組極巨化招式後, 會讓發動拍組招式所需的行動數減少2次。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 247,
+          "user": "寶可夢",
+          "name": "暗影球",
+          "type": 14,
+          "gauge": 3,
+          "uses": "−",
+          "category": "特殊",
+          "power": 99,
+          "accuracy": 100,
+          "target": "對手１對拍組",
+          "description": "有20%的機率會降低對手的特防1階段。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 8207,
+          "user": "寶可夢",
+          "name": "豐緣的分析",
+          "type": 0,
+          "gauge": 2,
+          "uses": 2,
+          "category": "變化",
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方場地",
+          "description": "提高我方全體拍組的下次特殊招式威力增強1階段。讓我方場地變成豐緣鬥陣(特殊)。豐緣鬥陣(特殊)將會發揮下列所有效果。提高我方全體拍組的特殊招式和特殊拍組招式威力10%。減輕我方全體拍組受到特殊招式和特殊拍組招式攻擊時的傷害5%。當我方場地中擁有豐緣標籤的拍組越多,此效果還會提升得越多。(每增加1對拍組,威力提升+10%,傷害減輕+3%。)(威力最多可提升40%,傷害最多可減輕14%。)",
+          "tags": 8388608,
+          "group": "Regular"
+        },
+        {
+          "id": 6042,
+          "user": "寶可夢",
+          "name": "怪炎驚爆大頭",
+          "type": 2,
+          "gauge": 4,
+          "uses": "−",
+          "category": "特殊",
+          "power": 200,
+          "accuracy": 100,
+          "target": "對手全體拍組",
+          "description": "【開放條件】\n自己使出1次招式時\n【封印條件】\n無\n\n使自己的下次特殊招式威力增強從0~10提高任一階段。(增強階段越高,提高機率就越低。)",
+          "tags": "none",
+          "group": 6
+        },
+        {
+          "id": 11274,
+          "user": "訓練師",
+          "name": "開始表演吧!",
+          "type": 0,
+          "gauge": 0,
+          "uses": 1,
+          "category": "變化",
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方１對拍組",
+          "description": "提高我方的特攻4階段。提高我方的擊中要害率3階段。",
+          "tags": "none",
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 104800,
+        "user": "寶可夢",
+        "name": "優雅猛燃之火之光線",
+        "type": 2,
+        "gauge": 0,
+        "uses": "−",
+        "category": "特殊",
+        "power": 250,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "沒有追加效果。",
+        "tags": "none",
+        "group": "Sync"
+      }
+    },
+    {
+      "id": "20127400000",
+      "variationType": 4,
+      "name": "砰頭小丑",
+      "form": "",
+      "actor": "pm0806_81_00_zugadoon",
+      "gender": 3,
+      "is_shiny": false,
+      "type": "-1",
+      "weakness": "-1",
+      "stat": {
+        "hp": [
+          96,
+          172,
+          244,
+          530,
+          590,
+          650,
+          830
+        ],
+        "atk": [
+          12,
+          55,
+          94,
+          259,
+          295,
+          331,
+          439
+        ],
+        "def": [
+          9,
+          29,
+          47,
+          124,
+          140,
+          156,
+          204
+        ],
+        "spa": [
+          16,
+          63,
+          108,
+          284,
+          320,
+          356,
+          464
+        ],
+        "spd": [
+          10,
+          31,
+          49,
+          126,
+          142,
+          158,
+          206
+        ],
+        "spe": [
+          10,
+          56,
+          98,
+          274,
+          310,
+          346,
+          454
+        ]
+      },
+      "passives": [
+        {
+          "name": "驚爆幻影!",
+          "description": "使出拍組極巨化招式後,會從各種追加效果當中,隨機發動其中一種追加效果。",
+          "detail": []
+        },
+        {
+          "name": "打倒對手時賦予特殊增強(2)9",
+          "description": "使出招式打倒對手時,會提高自己的下次特殊招式威力增強2階段。",
+          "detail": []
+        },
+        {
+          "name": "拍組極巨化招式後計數加速2",
+          "description": "使出拍組極巨化招式後, 會讓發動拍組招式所需的行動數減少2次。",
+          "detail": []
+        }
+      ],
+      "moves": null,
+      "syncMove": null,
+      "movesDynamax": [
+        {
+          "id": 7018,
+          "user": "寶可夢",
+          "name": "極巨幽魂",
+          "type": 14,
+          "gauge": 0,
+          "uses": "−",
+          "category": "特殊",
+          "power": 400,
+          "accuracy": 0,
+          "target": "對手１對拍組",
+          "description": "降低對手全體拍組的防禦2階段。",
+          "tags": "none",
+          "group": 5
+        },
+        {
+          "id": 7022,
+          "user": "寶可夢",
+          "name": "極巨火爆",
+          "type": 2,
+          "gauge": 0,
+          "uses": "−",
+          "category": "特殊",
+          "power": 400,
+          "accuracy": 0,
+          "target": "對手１對拍組",
+          "description": "會將天氣變成日照強烈的狀態。",
+          "tags": "none",
+          "group": 5
+        }
+      ]
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "米可利（２０２４新春）專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": [],
+          "description": "只有在天氣、場地或領域變化時,招式計量槽會累積得較快。",
+          "rate": 33
+        },
+        {
+          "name": [],
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "rate": 33
+        },
+        {
+          "name": [],
+          "description": "只有在天氣、場地或領域變化時,會提高我方全體拍組的拍組招式的威力。",
+          "rate": 33
+        }
+      ]
+    }
+  ],
+  "grid": [
+    {
+      "id": 1012740000,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012740001,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012740002,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012740003,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012740004,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012740005,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012740006,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012740007,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012740008,
+      "name": "怪炎驚爆大頭：招式後招式計量槽增加2",
+      "description": "招式成功時,有30%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 6,
+      "orb": 72,
+      "level": 1,
+      "x": 2,
+      "y": 0,
+      "color": "#FF0066",
+      "type": 2
+    },
+    {
+      "id": 1012740009,
+      "name": "怪炎驚爆大頭：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 1,
+      "y": 1,
+      "color": "#BF80FF",
+      "type": 2
+    },
+    {
+      "id": 1012740010,
+      "name": "攻擊時賦予混亂4",
+      "description": "使出招式攻擊成功時,有50%的機率會讓對手陷入混亂狀態。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 1,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1012740011,
+      "name": "怪炎驚爆大頭：招式後招式計量槽增加5",
+      "description": "招式成功時,有60%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 2,
+      "y": 1,
+      "color": "#FF0066",
+      "type": 2
+    },
+    {
+      "id": 1012740012,
+      "name": "怪炎驚爆大頭：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 3,
+      "y": 0,
+      "color": "#BF80FF",
+      "type": 2
+    },
+    {
+      "id": 1012740013,
+      "name": "依特攻升幅拍組招式↑",
+      "description": "自己的特攻提高得越多,拍組招式的威力就提高得越多。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1012740014,
+      "name": "拍組招式瞄準要害1",
+      "description": "用拍組招式攻擊時,容易擊中要害。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 3,
+      "y": 1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1012740015,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012740016,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012740017,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012740018,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -3,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012740019,
+      "name": "暗影球：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": -2,
+      "color": "#47D147",
+      "type": 14
+    },
+    {
+      "id": 1012740020,
+      "name": "暗影球：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -1,
+      "y": -3,
+      "color": "#47D147",
+      "type": 14
+    },
+    {
+      "id": 1012740021,
+      "name": "暗影球：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -3,
+      "y": -2,
+      "color": "#47D147",
+      "type": 14
+    },
+    {
+      "id": 1012740022,
+      "name": "特攻 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": -2,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012740023,
+      "name": "開始表演吧!：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -1,
+      "y": -4,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1012740024,
+      "name": "豐緣的分析：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 3,
+      "x": -3,
+      "y": -3,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1012740025,
+      "name": "開始表演吧!：招式後特攻提升2",
+      "description": "招式成功時,會提高自己的特攻2階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": -4,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1012740026,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012740027,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012740028,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012740029,
+      "name": "特攻下降無效",
+      "description": "特攻不會降低。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": 3,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1012740030,
+      "name": "暗影球：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": -4,
+      "color": "#47D147",
+      "type": 14
+    },
+    {
+      "id": 1012740031,
+      "name": "暗影球：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 1,
+      "y": -4,
+      "color": "#47D147",
+      "type": 14
+    },
+    {
+      "id": 1012740032,
+      "name": "暗影球：下降機率提升2",
+      "description": "當招式的追加效果可降低對手能力值時,會提高該追加效果的成功率。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 2,
+      "x": 3,
+      "y": -5,
+      "color": "#FF0066",
+      "type": 14
+    },
+    {
+      "id": 1012740033,
+      "name": "暗影球：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": -5,
+      "color": "#FF0066",
+      "type": 14
+    },
+    {
+      "id": 1012740034,
+      "name": "暗影球：效果絕佳時威力提升5",
+      "description": "當效果絕佳時,會提高該招式的威力。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 2,
+      "x": 1,
+      "y": -5,
+      "color": "#FF0066",
+      "type": 14
+    },
+    {
+      "id": 1012740035,
+      "name": "暗影球：招式後賦予特殊增強(1)9",
+      "description": "招式成功時,會提高自己的下次特殊招式威力增強1階段。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 3,
+      "x": 3,
+      "y": -6,
+      "color": "#FF0066",
+      "type": 14
+    },
+    {
+      "id": 1012740036,
+      "name": "極巨幽魂：威力 + 100",
+      "description": "",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 3,
+      "x": 2,
+      "y": -6,
+      "color": "#BF80FF",
+      "type": 14
+    },
+    {
+      "id": 1012740037,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012740038,
+      "name": "怪炎驚爆大頭：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -3,
+      "y": 2,
+      "color": "#BF80FF",
+      "type": 2
+    },
+    {
+      "id": 1012740039,
+      "name": "怪炎驚爆大頭：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": 2,
+      "color": "#BF80FF",
+      "type": 2
+    },
+    {
+      "id": 1012740040,
+      "name": "怪炎驚爆大頭：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -1,
+      "y": 2,
+      "color": "#BF80FF",
+      "type": 2
+    },
+    {
+      "id": 1012740041,
+      "name": "晴天時HP回復1",
+      "description": "當天氣為日照強烈時,寶可夢每次行動後都會回復自己的HP。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -3,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1012740042,
+      "name": "晴天時招式計量槽加速2",
+      "description": "當天氣為日照強烈時,招式計量槽會累積得較快。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -2,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1012740043,
+      "name": "晴天時妨害狀態無效",
+      "description": "當天氣為日照強烈時,不會陷入畏縮狀態、混亂狀態或束縛狀態。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 2,
+      "x": -1,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1012740044,
+      "name": "晴天時威力提升3",
+      "description": "當天氣為日照強烈時,會提高招式的威力。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -3,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1012740045,
+      "name": "極巨火爆：威力 + 100",
+      "description": "",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 3,
+      "x": -2,
+      "y": 4,
+      "color": "#BF80FF",
+      "type": 2
+    },
+    {
+      "id": 1012740046,
+      "name": "優雅猛燃之火之光線：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": -3,
+      "color": "#BF80FF",
+      "type": 2
+    },
+    {
+      "id": 1012740047,
+      "name": "優雅猛燃之火之光線：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": 3,
+      "color": "#BF80FF",
+      "type": 2
+    }
+  ]
+}

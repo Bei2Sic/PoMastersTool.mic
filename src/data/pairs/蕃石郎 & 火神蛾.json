@@ -1,0 +1,1086 @@
+{
+  "trainer": {
+    "id": "10212000000",
+    "name": "蕃石郎",
+    "actor": "蕃石郎",
+    "actorId": "ch0212_00_banjiro",
+    "rarity": 5,
+    "role": 5,
+    "exRole": 4,
+    "ex": true,
+    "exclusivity": "Pokefair",
+    "maxBonusLevel": 10
+  },
+  "scoutMethod": 1,
+  "scheduleId": "chara_7040_0505_FOREVER",
+  "themes": [
+    {
+      "name": "蟲屬性／場地",
+      "description": "我方全體拍組最大HP提升24\n我方全體拍組的速度提升24",
+      "tag": "蟲",
+      "category": 1
+    },
+    {
+      "name": "合眾／場地",
+      "description": "我方全體拍組最大HP提升7\n我方全體拍組的速度提升7",
+      "tag": "合眾",
+      "category": 2
+    },
+    {
+      "name": "對戰設施的強者／場地",
+      "description": "我方全體拍組最大HP提升7\n我方全體拍組的速度提升7",
+      "tag": "對戰設施的強者",
+      "category": 3
+    },
+    {
+      "name": "我行我素／場地",
+      "description": "我方全體拍組最大HP提升8\n我方全體拍組的速度提升8",
+      "tag": "我行我素",
+      "category": 999
+    },
+    {
+      "name": "鬥志昂揚／場地",
+      "description": "我方全體拍組最大HP提升8\n我方全體拍組的速度提升8",
+      "tag": "鬥志昂揚",
+      "category": 999
+    }
+  ],
+  "specialAwaking": {
+    "name": "突破難關的強者",
+    "description": "首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。當領域為玉蟲領域時,會提高我方全體拍組的拍組招式的威力。領域變成玉蟲領域的瞬間在場上時,會延長玉蟲領域的持續時間。",
+    "detail": [
+      "首次拍組招式後計數加速1",
+      "玉蟲領域時拍組招式↑G2",
+      "玉蟲領域時間延長3"
+    ]
+  },
+  "pokemon": [
+    {
+      "id": "20212000000",
+      "variationType": 0,
+      "name": "火神蛾",
+      "form": "",
+      "actor": "pm0637_00_ulgamoth",
+      "gender": 1,
+      "is_shiny": false,
+      "type": 12,
+      "weakness": 13,
+      "stat": {
+        "hp": [
+          104,
+          182,
+          257,
+          543,
+          607,
+          671,
+          863
+        ],
+        "atk": [
+          16,
+          53,
+          89,
+          232,
+          260,
+          288,
+          372
+        ],
+        "def": [
+          12,
+          36,
+          57,
+          145,
+          165,
+          185,
+          245
+        ],
+        "spa": [
+          23,
+          67,
+          109,
+          274,
+          310,
+          346,
+          454
+        ],
+        "spd": [
+          14,
+          38,
+          59,
+          147,
+          167,
+          187,
+          247
+        ],
+        "spe": [
+          15,
+          58,
+          97,
+          262,
+          298,
+          334,
+          442
+        ]
+      },
+      "passives": [
+        {
+          "name": "較量實力的純真",
+          "description": "使出拍組極巨化招式後,會將領域變成EX玉蟲領域。(EX玉蟲領域會提高蟲屬性的攻擊的威力。)使出拍組極巨化招式後,會提高自己的下次特殊招式威力增強2階段。",
+          "detail": [
+            "拍組極巨化招式後變成EX玉蟲領域",
+            "拍組極巨化招式後特殊增強2"
+          ]
+        },
+        {
+          "name": "一路以來吃過的苦頭",
+          "description": "招式必定會命中。當我方使玉蟲領域生效時,會提高自己的下次特殊招式威力增強1階段。",
+          "detail": [
+            "我方引發玉蟲領域時賦予特殊增強(1)9",
+            "必中化"
+          ]
+        },
+        {
+          "name": "寶可夢招式計量槽消耗量減少1",
+          "description": "使出寶可夢招式時,會減少使用1條招式計量槽。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 522,
+          "user": "寶可夢",
+          "name": "蟲之抵抗",
+          "type": 12,
+          "gauge": 2,
+          "uses": "−",
+          "category": "特殊",
+          "power": 30,
+          "accuracy": 100,
+          "target": "對手全體拍組",
+          "description": "降低對手的特攻1階段。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 19160,
+          "user": "寶可夢",
+          "name": "絕佳強化",
+          "type": 0,
+          "gauge": 0,
+          "uses": 2,
+          "category": "變化",
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方１對拍組",
+          "description": "讓我方變成下次效果絕佳威力提升狀態。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 6122,
+          "user": "寶可夢",
+          "name": "蟲鳴・陽炎",
+          "type": 12,
+          "gauge": 2,
+          "uses": 2,
+          "category": "特殊",
+          "power": 120,
+          "accuracy": 100,
+          "target": "對手全體拍組",
+          "description": "【開放條件】\n自己使出1次訓練家招式時\n【封印條件】\n無\n\n降低對手的特防3階段。即使對象為複數,招式的威力也不會降低。提高我方全體拍組的下次特殊招式威力增強1階段。",
+          "tags": "none",
+          "group": 6
+        },
+        {
+          "id": 12120,
+          "user": "訓練師",
+          "name": "看是誰比較強!",
+          "type": 0,
+          "gauge": 0,
+          "uses": 1,
+          "category": "變化",
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方１對拍組",
+          "description": "讓我方場地變成招式計量槽加速狀態。提高我方的特攻4階段。提高我方的擊中要害率3階段。",
+          "tags": 8388608,
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 118400,
+        "user": "寶可夢",
+        "name": "純真地追求用吃苦變強之蟲之光線",
+        "type": 12,
+        "gauge": 0,
+        "uses": "−",
+        "category": "特殊",
+        "power": 250,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "沒有追加效果。",
+        "tags": "none",
+        "group": "Sync"
+      }
+    },
+    {
+      "id": "20212000000",
+      "variationType": 4,
+      "name": "火神蛾",
+      "form": "",
+      "actor": "pm0637_83_00_ulgamoth",
+      "gender": 1,
+      "is_shiny": false,
+      "type": "-1",
+      "weakness": "-1",
+      "stat": {
+        "hp": [
+          104,
+          182,
+          257,
+          543,
+          607,
+          671,
+          863
+        ],
+        "atk": [
+          16,
+          53,
+          89,
+          232,
+          260,
+          288,
+          372
+        ],
+        "def": [
+          12,
+          36,
+          57,
+          145,
+          165,
+          185,
+          245
+        ],
+        "spa": [
+          23,
+          67,
+          109,
+          274,
+          310,
+          346,
+          454
+        ],
+        "spd": [
+          14,
+          38,
+          59,
+          147,
+          167,
+          187,
+          247
+        ],
+        "spe": [
+          15,
+          58,
+          97,
+          262,
+          298,
+          334,
+          442
+        ]
+      },
+      "passives": [
+        {
+          "name": "較量實力的純真",
+          "description": "使出拍組極巨化招式後,會將領域變成EX玉蟲領域。(EX玉蟲領域會提高蟲屬性的攻擊的威力。)使出拍組極巨化招式後,會提高自己的下次特殊招式威力增強2階段。",
+          "detail": [
+            "拍組極巨化招式後變成EX玉蟲領域",
+            "拍組極巨化招式後特殊增強2"
+          ]
+        },
+        {
+          "name": "一路以來吃過的苦頭",
+          "description": "招式必定會命中。當我方使玉蟲領域生效時,會提高自己的下次特殊招式威力增強1階段。",
+          "detail": [
+            "我方引發玉蟲領域時賦予特殊增強(1)9",
+            "必中化"
+          ]
+        },
+        {
+          "name": "寶可夢招式計量槽消耗量減少1",
+          "description": "使出寶可夢招式時,會減少使用1條招式計量槽。",
+          "detail": []
+        }
+      ],
+      "moves": null,
+      "syncMove": null,
+      "movesDynamax": [
+        {
+          "id": 7016,
+          "user": "寶可夢",
+          "name": "極巨蟲蠱",
+          "type": 12,
+          "gauge": 0,
+          "uses": "−",
+          "category": "特殊",
+          "power": 400,
+          "accuracy": 0,
+          "target": "對手１對拍組",
+          "description": "降低對手全體拍組的特攻2階段。",
+          "tags": "none",
+          "group": 5
+        },
+        {
+          "id": 7016,
+          "user": "寶可夢",
+          "name": "極巨蟲蠱",
+          "type": 12,
+          "gauge": 0,
+          "uses": "−",
+          "category": "特殊",
+          "power": 400,
+          "accuracy": 0,
+          "target": "對手１對拍組",
+          "description": "降低對手全體拍組的特攻2階段。",
+          "tags": "none",
+          "group": 5
+        }
+      ]
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "蕃石郎專用潛能餅乾１",
+      "skills": [
+        {
+          "name": [],
+          "description": "當自己的特攻提高時,會提高拍組極巨化招式的威力。",
+          "rate": 100
+        }
+      ]
+    },
+    {
+      "cookieName": "蕃石郎專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": [],
+          "description": "只有在天氣、場地或領域變化時,招式計量槽會累積得較快。",
+          "rate": 33
+        },
+        {
+          "name": [],
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "rate": 33
+        },
+        {
+          "name": [],
+          "description": "只有在天氣、場地或領域變化時,會提高我方全體拍組的拍組招式的威力。",
+          "rate": 33
+        }
+      ]
+    }
+  ],
+  "grid": [
+    {
+      "id": 1800101374,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800101375,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800101376,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800101377,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800101378,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800101379,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800101380,
+      "name": "解除妨害狀態",
+      "description": "當自己首次陷入畏縮、混亂或束縛狀態時,會解除該狀態。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 0,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800101381,
+      "name": "拍組極巨化招式後賦予特殊增強(1)G9",
+      "description": "使出拍組極巨化招式後,會提高我方全體拍組的下次特殊招式威力增強1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 4,
+      "x": 0,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800101382,
+      "name": "攻擊時攻擊特攻下降9",
+      "description": "使出招式攻擊成功時,會降低對手的攻擊和特攻1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 5,
+      "x": 0,
+      "y": -5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800101383,
+      "name": "玉蟲領域時HP回復1",
+      "description": "當領域為玉蟲領域時,寶可夢每次行動後都會回復自己的HP。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 0,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800101384,
+      "name": "絕佳強化：我方中招後賦予特殊增強(1)9",
+      "description": "以我方拍組為對象的招式(不含場地效果)成功時,會提高受到該招式效果影響的我方拍組的下次特殊招式威力增強1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 4,
+      "x": -1,
+      "y": 4,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1800101385,
+      "name": "對手中寶可夢/拍組/拍組極巨化招式後能力↓9",
+      "description": "當以對手為對象的寶可夢招式、拍組招式或拍組極巨化招式成功時,會降低對手的攻擊、防禦、特攻、特防、速度、命中率、閃避率中的一種能力1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 5,
+      "x": 1,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800101386,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800101387,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800101388,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800101389,
+      "name": "蟲之抵抗：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 1,
+      "y": 1,
+      "color": "#47D147",
+      "type": 12
+    },
+    {
+      "id": 1800101390,
+      "name": "蟲之抵抗：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 1,
+      "y": 2,
+      "color": "#FF0066",
+      "type": 12
+    },
+    {
+      "id": 1800101391,
+      "name": "蟲之抵抗：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 2,
+      "y": 1,
+      "color": "#47D147",
+      "type": 12
+    },
+    {
+      "id": 1800101392,
+      "name": "蟲之抵抗：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 3,
+      "y": 0,
+      "color": "#47D147",
+      "type": 12
+    },
+    {
+      "id": 1800101393,
+      "name": "依對手特防降幅拍組招式↑",
+      "description": "對手的特防降低得越多,自己的拍組招式的威力就提高得越多。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800101394,
+      "name": "拍組極巨化招式後計數加速2",
+      "description": "使出拍組極巨化招式後, 會讓發動拍組招式所需的行動數減少2次。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 3,
+      "y": 1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800101395,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800101396,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800101397,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800101398,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -3,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800101399,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800101400,
+      "name": "蟲之抵抗：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -1,
+      "y": -3,
+      "color": "#47D147",
+      "type": 12
+    },
+    {
+      "id": 1800101401,
+      "name": "蟲之抵抗：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -3,
+      "y": -2,
+      "color": "#47D147",
+      "type": 12
+    },
+    {
+      "id": 1800101402,
+      "name": "看是誰比較強!：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -2,
+      "y": -3,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1800101403,
+      "name": "看是誰比較強!：我方中招後下次效果絕佳威力↑9",
+      "description": "以我方拍組為對象的招式(不含場地效果)成功時,會讓受到該招式效果影響的我方拍組變成下次效果絕佳威力提升狀態。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -1,
+      "y": -4,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1800101404,
+      "name": "看是誰比較強!：我方中招後特攻提升2",
+      "description": "以我方拍組為對象的招式(不含場地效果)成功時,會提高受到該招式效果影響的我方拍組的特攻2階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -3,
+      "y": -3,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1800101405,
+      "name": "蟲之抵抗：效果絕佳時威力提升9",
+      "description": "當效果絕佳時,會提高該招式的威力。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": -4,
+      "color": "#FF0066",
+      "type": 12
+    },
+    {
+      "id": 1800101406,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800101407,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800101408,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800101409,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": -4,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800101410,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -4,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800101411,
+      "name": "蟲鳴・陽炎：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 1,
+      "y": -4,
+      "color": "#BF80FF",
+      "type": 12
+    },
+    {
+      "id": 1800101412,
+      "name": "蟲鳴・陽炎：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 3,
+      "y": -5,
+      "color": "#BF80FF",
+      "type": 12
+    },
+    {
+      "id": 1800101413,
+      "name": "蟲鳴・陽炎：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 2,
+      "y": -5,
+      "color": "#BF80FF",
+      "type": 12
+    },
+    {
+      "id": 1800101414,
+      "name": "蟲鳴・陽炎：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 1,
+      "y": -5,
+      "color": "#FF0066",
+      "type": 12
+    },
+    {
+      "id": 1800101415,
+      "name": "拍組極巨化招式後下次不消耗計量槽G",
+      "description": "使出拍組極巨化招式後,會讓我方全體拍組變成下次計量槽消耗0狀態。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 3,
+      "y": -6,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800101416,
+      "name": "極巨蟲蠱：威力 + 100",
+      "description": "",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 3,
+      "x": 2,
+      "y": -6,
+      "color": "#BF80FF",
+      "type": 12
+    },
+    {
+      "id": 1800101417,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800101418,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -3,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800101419,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800101420,
+      "name": "蟲鳴・陽炎：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -1,
+      "y": 2,
+      "color": "#BF80FF",
+      "type": 12
+    },
+    {
+      "id": 1800101421,
+      "name": "蟲鳴・陽炎：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -3,
+      "y": 3,
+      "color": "#BF80FF",
+      "type": 12
+    },
+    {
+      "id": 1800101422,
+      "name": "絕佳強化：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -2,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1800101423,
+      "name": "玉蟲領域時招式計量槽加速2",
+      "description": "當領域為玉蟲領域時,招式計量槽會累積得較快。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 2,
+      "x": -1,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800101424,
+      "name": "攻擊時速度提升G9",
+      "description": "使出招式攻擊成功時,會提高我方全體拍組的速度1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -3,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800101425,
+      "name": "依速度升幅威力提升",
+      "description": "自己的速度提高得越多,招式的威力就提高得越多。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800101426,
+      "name": "純真地追求用吃苦變強之蟲之光線：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": -3,
+      "color": "#BF80FF",
+      "type": 12
+    },
+    {
+      "id": 1800101427,
+      "name": "純真地追求用吃苦變強之蟲之光線：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": 3,
+      "color": "#BF80FF",
+      "type": 12
+    }
+  ]
+}

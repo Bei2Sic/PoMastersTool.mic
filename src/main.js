@@ -1,0 +1,24 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './assets/main.css';
+
+import { createApp } from 'vue';
+import { createPinia } from "pinia";
+import App from './App.vue';
+import { useSyncCacheStore } from "@/store/syncCache";
+import { useSyncElemStore } from "@/store/syncElem";
+
+
+
+
+const app = createApp(App);
+app.use(createPinia());
+
+// 初始化拍组缓存（网页加载时执行）
+const syncCacheStore = useSyncCacheStore();
+// 等待所以json文件加载完毕
+await syncCacheStore.initSyncCache();
+const syncElemStore = useSyncElemStore();
+// 默认初始化最新拍组
+syncElemStore.initCurrentSync()
+
+app.mount("#app");

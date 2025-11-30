@@ -1,0 +1,942 @@
+{
+  "trainer": {
+    "id": "10133910000",
+    "name": "阿爾套裝小銀",
+    "actor": "小銀",
+    "actorId": "ch0133_91_shilver",
+    "rarity": 5,
+    "role": 6,
+    "exRole": 2,
+    "ex": true,
+    "exclusivity": "Master",
+    "maxBonusLevel": 5
+  },
+  "scoutMethod": 1,
+  "scheduleId": "chara_7060_0715_FOREVER",
+  "themes": [
+    {
+      "name": "火屬性／複合",
+      "description": "我方全體拍組最大HP提升24\n僅在我方使出火屬性攻擊時，攻擊和特攻提升24",
+      "tag": "火",
+      "category": 1
+    },
+    {
+      "name": "城都／複合",
+      "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
+      "tag": "城都",
+      "category": 2
+    },
+    {
+      "name": "勁敵／複合",
+      "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
+      "tag": "勁敵",
+      "category": 3
+    },
+    {
+      "name": "阿爾套裝／複合",
+      "description": "我方全體拍組最大HP提升8\n我方全體拍組的攻擊和特攻提升5",
+      "tag": "阿爾套裝",
+      "category": 4
+    },
+    {
+      "name": "組隊對戰／複合",
+      "description": "我方全體拍組最大HP提升8\n我方全體拍組的攻擊和特攻提升5",
+      "tag": "組隊對戰",
+      "category": 999
+    }
+  ],
+  "specialAwaking": {
+    "name": "",
+    "description": "",
+    "detail": []
+  },
+  "pokemon": [
+    {
+      "id": "20133910000",
+      "variationType": 0,
+      "name": "鳳王",
+      "form": "",
+      "actor": "pm0250_00_houou",
+      "gender": 3,
+      "is_shiny": false,
+      "type": 2,
+      "weakness": 3,
+      "stat": {
+        "hp": [
+          108,
+          187,
+          262,
+          559,
+          623,
+          687,
+          879
+        ],
+        "atk": [
+          17,
+          60,
+          99,
+          264,
+          300,
+          336,
+          444
+        ],
+        "def": [
+          14,
+          56,
+          95,
+          249,
+          281,
+          313,
+          409
+        ],
+        "spa": [
+          15,
+          55,
+          94,
+          248,
+          280,
+          312,
+          408
+        ],
+        "spd": [
+          14,
+          56,
+          95,
+          249,
+          281,
+          313,
+          409
+        ],
+        "spe": [
+          12,
+          55,
+          94,
+          259,
+          295,
+          331,
+          439
+        ]
+      },
+      "passives": [
+        {
+          "name": "火球神話",
+          "description": "提高我方全體拍組的招式的威力10%。減輕我方全體拍組受到招式攻擊時的傷害20%。當我方隊伍中擁有火標籤的拍組越多,此效果還會提升得越多。(每增加1對拍組,威力提升+10%,傷害減輕+3%。)(威力最多可提升30%,傷害最多可減輕26%。)",
+          "detail": []
+        },
+        {
+          "name": "火球制裁",
+          "description": "首次上場時,會提高我方全體拍組的火屬性抵抗1階段。首次上場時,會降低對手全體拍組的火屬性抵抗1階段。",
+          "detail": []
+        },
+        {
+          "name": "金色的正直之心",
+          "description": "受到招式攻擊時,會降低剛才來攻擊自己的對手的攻擊和特攻2階段。受到招式攻擊時,會提高我方全體拍組的攻擊、防禦、特攻、特防、速度、命中率、閃避率中的一種能力2階段。(提高我方全體拍組的相同能力。)",
+          "detail": [
+            "碰了可是很危險的喔……",
+            "被攻擊時同一能力2↑G9"
+          ]
+        },
+        {
+          "name": "永不消逝的彩虹",
+          "description": "在自己的HP剩下一半以下時,會減少自己的「自我再生」的使用次數1次並回復自己的HP,為自己最大HP的100%。",
+          "detail": []
+        },
+        {
+          "name": "呼喚幸福的七彩翅膀",
+          "description": "使出招式攻擊成功時,會讓自己變成下次計量槽消耗0狀態。使出招式攻擊成功時,有50%的機率會讓對手陷入畏縮狀態。",
+          "detail": [
+            "攻擊時下次不消耗計量槽9",
+            "攻擊時賦予畏縮4"
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "id": 221,
+          "user": "寶可夢",
+          "name": "神聖之火",
+          "type": 2,
+          "gauge": 3,
+          "uses": "−",
+          "category": "物理",
+          "power": 87,
+          "accuracy": 95,
+          "target": "對手１對拍組",
+          "description": "解除自己的冰凍狀態。有50%的機率會讓對手陷入灼傷狀態。",
+          "tags": "OkWhileFrozen",
+          "group": "Regular"
+        },
+        {
+          "id": 105,
+          "user": "寶可夢",
+          "name": "自我再生",
+          "type": 1,
+          "gauge": 2,
+          "uses": 2,
+          "category": "變化",
+          "power": 0,
+          "accuracy": 0,
+          "target": "自己",
+          "description": "回復自己的HP,約為自己最大HP的50%。",
+          "tags": "Heals",
+          "group": "Regular"
+        },
+        {
+          "id": 6134,
+          "user": "寶可夢",
+          "name": "神聖之火・聖天",
+          "type": 2,
+          "gauge": 1,
+          "uses": 3,
+          "category": "物理",
+          "power": 150,
+          "accuracy": 0,
+          "target": "對手全體拍組",
+          "description": "【開放條件】\n自己的HP為50%以上時\n【封印條件】\n自己的HP不到50%時\n\n攻擊必定會命中。解除自己的冰凍狀態。讓對手陷入灼傷狀態。即使對象為複數,招式的威力也不會降低。當選擇此招式時的剩餘次數為3,會將天氣變成EX日照強烈的狀態。當選擇此招式時的剩餘次數為2,會降低對手的防禦和特防3階段。當選擇此招式時的剩餘次數為1,會讓我方全體拍組變成挺住狀態。",
+          "tags": 40,
+          "group": 6
+        },
+        {
+          "id": 11332,
+          "user": "訓練師",
+          "name": "看誰才是又對又強大!",
+          "type": 0,
+          "gauge": 0,
+          "uses": 1,
+          "category": "變化",
+          "power": 0,
+          "accuracy": 0,
+          "target": "自己",
+          "description": "自己發動拍組招式所需的行動數會減少2次。提高自己的防禦和特防6階段。",
+          "tags": "none",
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 115000,
+        "user": "寶可夢",
+        "name": "金科玉律的神招之神聖之火",
+        "type": 2,
+        "gauge": 0,
+        "uses": "−",
+        "category": "物理",
+        "power": 300,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "首次使出拍組招式時,會讓自己變成下次傷害防禦狀態。",
+        "tags": 67108864,
+        "group": "Sync"
+      }
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "阿爾套裝小銀專用潛能餅乾１",
+      "skills": [
+        {
+          "name": [],
+          "description": "受到招式攻擊時,有50%的機率會提高我方全體拍組的速度1階段。",
+          "rate": 100
+        }
+      ]
+    },
+    {
+      "cookieName": "阿爾套裝小銀專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": [],
+          "description": "招式成功時,會幫自己增加1條招式計量槽。",
+          "rate": 33
+        },
+        {
+          "name": [],
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "rate": 33
+        },
+        {
+          "name": [],
+          "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
+          "rate": 33
+        }
+      ]
+    }
+  ],
+  "grid": [
+    {
+      "id": 1800102850,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800102851,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800102852,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800102853,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800102854,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800102855,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800102856,
+      "name": "HP + 40",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 2,
+      "x": 0,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800102857,
+      "name": "金科玉律的神招之神聖之火：威力 + 50",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 3,
+      "x": 0,
+      "y": 3,
+      "color": "#BF80FF",
+      "type": 2
+    },
+    {
+      "id": 1800102858,
+      "name": "上場時擊中要害率提升G3",
+      "description": "上場時,會提高我方全體拍組的擊中要害率3階段。",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 4,
+      "x": 0,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800102859,
+      "name": "晴天時間延長3",
+      "description": "天氣變成日照強烈的瞬間在場上時,會延長日照強烈的狀態的持續時間。",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 5,
+      "x": 0,
+      "y": 5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800102860,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800102861,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800102862,
+      "name": "神聖之火：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 3,
+      "y": -1,
+      "color": "#47D147",
+      "type": 2
+    },
+    {
+      "id": 1800102863,
+      "name": "神聖之火：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": 1,
+      "color": "#47D147",
+      "type": 2
+    },
+    {
+      "id": 1800102864,
+      "name": "神聖之火：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 3,
+      "y": 0,
+      "color": "#47D147",
+      "type": 2
+    },
+    {
+      "id": 1800102865,
+      "name": "神聖之火：命中率 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 2,
+      "y": 2,
+      "color": "#47D147",
+      "type": 2
+    },
+    {
+      "id": 1800102866,
+      "name": "攻擊 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": 3,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800102867,
+      "name": "依攻擊升幅威力提升",
+      "description": "自己的攻擊提高得越多,招式的威力就提高得越多。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 2,
+      "x": 3,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800102868,
+      "name": "晴天時拍組招式威力提升9",
+      "description": "當天氣為日照強烈時,會提高拍組招式的威力。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 1,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800102869,
+      "name": "攻擊灼傷中的對手時能力下降9",
+      "description": "當對手陷入灼傷狀態且使出招式攻擊成功時,會降低對手的攻擊、防禦、特攻、特防、速度、命中率和閃避率中的一種能力1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800102870,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800102871,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800102872,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800102873,
+      "name": "神聖之火・聖天：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -1,
+      "y": -2,
+      "color": "#BF80FF",
+      "type": 2
+    },
+    {
+      "id": 1800102874,
+      "name": "神聖之火・聖天：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -1,
+      "y": -3,
+      "color": "#BF80FF",
+      "type": 2
+    },
+    {
+      "id": 1800102875,
+      "name": "神聖之火・聖天：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -3,
+      "y": 0,
+      "color": "#BF80FF",
+      "type": 2
+    },
+    {
+      "id": 1800102876,
+      "name": "看誰才是又對又強大!：招式後附帶回復G",
+      "description": "招式成功時,會讓我方全體拍組變成附帶回復狀態。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -3,
+      "y": -1,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1800102877,
+      "name": "首次上場時場地招式計量槽加速",
+      "description": "首次上場時,會讓我方場地變成招式計量槽加速狀態。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -2,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800102878,
+      "name": "看誰才是又對又強大!：招式後下次吸引全體招式9",
+      "description": "招式成功時,會讓自己變成下次吸引全體招式狀態。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -3,
+      "y": -2,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1800102879,
+      "name": "看誰才是又對又強大!：招式後攻擊提升G4",
+      "description": "招式成功時,會提高我方全體拍組的攻擊4階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": -3,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1800102880,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800102881,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800102882,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800102883,
+      "name": "神聖之火・聖天：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 1,
+      "y": -3,
+      "color": "#BF80FF",
+      "type": 2
+    },
+    {
+      "id": 1800102884,
+      "name": "神聖之火・聖天：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 1,
+      "y": -4,
+      "color": "#BF80FF",
+      "type": 2
+    },
+    {
+      "id": 1800102885,
+      "name": "神聖之火・聖天：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 3,
+      "y": -3,
+      "color": "#FF0066",
+      "type": 2
+    },
+    {
+      "id": 1800102886,
+      "name": "晴天時招式計量槽加速2",
+      "description": "當天氣為日照強烈時,招式計量槽會累積得較快。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 2,
+      "x": 3,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800102887,
+      "name": "晴天時HP回復1",
+      "description": "當天氣為日照強烈時,寶可夢每次行動後都會回復自己的HP。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 2,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800102888,
+      "name": "晴天時異常狀態妨害無效G",
+      "description": "當天氣為日照強烈時,我方全體拍組不會陷入異常狀態、畏縮狀態、混亂狀態或束縛狀態。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 3,
+      "y": -5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800102889,
+      "name": "晴天時攻擊招式↓G2",
+      "description": "當天氣為日照強烈時,會減輕我方受到招式攻擊時的傷害。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": -5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800102890,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800102891,
+      "name": "特防下降無效",
+      "description": "特防不會降低。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": -1,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800102892,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -3,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800102893,
+      "name": "神聖之火：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -3,
+      "y": 3,
+      "color": "#47D147",
+      "type": 2
+    },
+    {
+      "id": 1800102894,
+      "name": "神聖之火：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": 3,
+      "color": "#47D147",
+      "type": 2
+    },
+    {
+      "id": 1800102895,
+      "name": "神聖之火：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -3,
+      "y": 4,
+      "color": "#FF0066",
+      "type": 2
+    },
+    {
+      "id": 1800102896,
+      "name": "首次拍組招式後物理/特殊增強G1",
+      "description": "首次使出拍組招式時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 2,
+      "x": -2,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800102897,
+      "name": "HP + 20",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": -3,
+      "y": 5,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800102898,
+      "name": "首次拍組招式後計數加速1",
+      "description": "首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -1,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800102899,
+      "name": "僅限一次再次挺住",
+      "description": "除了特定情況之外,首次以挺住的效果使HP剩下1時,會讓自己再次變成挺住狀態。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": 5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800102900,
+      "name": "金科玉律的神招之神聖之火：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 3,
+      "y": -2,
+      "color": "#BF80FF",
+      "type": 2
+    },
+    {
+      "id": 1800102901,
+      "name": "金科玉律的神招之神聖之火：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": -3,
+      "y": 1,
+      "color": "#BF80FF",
+      "type": 2
+    }
+  ]
+}

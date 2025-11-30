@@ -1,0 +1,31 @@
+{
+  "name": "pomasterstool.mic",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "npm run build && gh-pages -d dist"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "opencc-js": "^1.0.5",
+    "pinia": "^3.0.4",
+    "vue": "^3.5.22",
+    "vue-demi": "^0.14.10"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "@types/opencc-js": "^1.0.3",
+    "@vitejs/plugin-vue": "^6.0.1",
+    "gh-pages": "^6.3.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.11",
+    "vite-plugin-vue-devtools": "^8.0.3"
+  }
+}

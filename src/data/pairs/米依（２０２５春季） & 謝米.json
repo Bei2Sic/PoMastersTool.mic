@@ -1,0 +1,884 @@
+{
+  "trainer": {
+    "id": "10097400000",
+    "name": "米依（２０２５春季）",
+    "actor": "米依",
+    "actorId": "ch0097_40_mai",
+    "rarity": 5,
+    "role": 4,
+    "exRole": 2,
+    "ex": true,
+    "exclusivity": "Seasonal",
+    "maxBonusLevel": 5
+  },
+  "scoutMethod": 1,
+  "scheduleId": "chara_7010_0131_FOREVER",
+  "themes": [
+    {
+      "name": "草屬性／速戰",
+      "description": "僅在我方使出草屬性攻擊時，攻擊和特攻提升24\n我方全體拍組的速度提升24",
+      "tag": "草",
+      "category": 1
+    },
+    {
+      "name": "神奧／速戰",
+      "description": "我方全體拍組的攻擊和特攻提升4\n我方全體拍組的速度提升7",
+      "tag": "神奧",
+      "category": 2
+    },
+    {
+      "name": "季節服裝／速戰",
+      "description": "我方全體拍組的攻擊和特攻提升5\n我方全體拍組的速度提升8",
+      "tag": "季節服裝",
+      "category": 4
+    },
+    {
+      "name": "披風／速戰",
+      "description": "我方全體拍組的攻擊和特攻提升5\n我方全體拍組的速度提升8",
+      "tag": "披風",
+      "category": 4
+    },
+    {
+      "name": "組隊對戰／速戰",
+      "description": "我方全體拍組的攻擊和特攻提升5\n我方全體拍組的速度提升8",
+      "tag": "組隊對戰",
+      "category": 999
+    }
+  ],
+  "specialAwaking": {
+    "name": "",
+    "description": "",
+    "detail": []
+  },
+  "pokemon": [
+    {
+      "id": "20097400000",
+      "variationType": 0,
+      "name": "謝米",
+      "form": "陸上形態",
+      "actor": "pm0492_11_shaymin",
+      "gender": 3,
+      "is_shiny": false,
+      "type": 5,
+      "weakness": 2,
+      "stat": {
+        "hp": [
+          110,
+          185,
+          257,
+          543,
+          603,
+          663,
+          843
+        ],
+        "atk": [
+          15,
+          58,
+          97,
+          262,
+          298,
+          334,
+          442
+        ],
+        "def": [
+          15,
+          37,
+          58,
+          135,
+          151,
+          167,
+          215
+        ],
+        "spa": [
+          25,
+          75,
+          123,
+          310,
+          350,
+          390,
+          510
+        ],
+        "spd": [
+          15,
+          37,
+          58,
+          135,
+          151,
+          167,
+          215
+        ],
+        "spe": [
+          15,
+          61,
+          103,
+          279,
+          315,
+          351,
+          459
+        ]
+      },
+      "passives": [
+        {
+          "name": "能確切感受的溫柔之心",
+          "description": "當自己首次將我方場地變成神奧鬥陣(特殊)時,會讓發動拍組招式所需的行動數減少3次。當自己首次將我方場地變成神奧鬥陣(特殊)時,會提高自己的特攻4階段。",
+          "detail": [
+            "自身首次引發神奧鬥陣(特殊)時計數加速3",
+            "自身首次引發神奧鬥陣(特殊)時特攻↑4"
+          ]
+        },
+        {
+          "name": "開花結果的才能",
+          "description": "招式成功時,會提高自己的命中率和擊中要害率1階段。招式成功時,會幫自己增加2條招式計量槽。",
+          "detail": [
+            "招式後命中率提升1",
+            "招式後要害率提升1",
+            "招式後招式計量槽2↑9"
+          ]
+        },
+        {
+          "name": "下降機率提升2",
+          "description": "當招式的追加效果可降低對手能力值時,會提高該追加效果的成功率。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 465,
+          "user": "寶可夢",
+          "name": "種子閃光",
+          "type": 5,
+          "gauge": 4,
+          "uses": "−",
+          "category": "特殊",
+          "power": 185,
+          "accuracy": 85,
+          "target": "對手１對拍組",
+          "description": "有40%的機率會降低對手的特防2階段。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 8210,
+          "user": "寶可夢",
+          "name": "神奧的分析",
+          "type": 0,
+          "gauge": 2,
+          "uses": 2,
+          "category": "變化",
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方場地",
+          "description": "提高我方全體拍組的下次特殊招式威力增強1階段。讓我方場地變成神奧鬥陣(特殊)。神奧鬥陣(特殊)將會發揮下列所有效果。提高我方全體拍組的特殊招式和特殊拍組招式威力10%。減輕我方全體拍組受到特殊招式和特殊拍組招式攻擊時的傷害5%。當我方場地中擁有神奧標籤的拍組越多,此效果還會提升得越多。(每增加1對拍組,威力提升+10%,傷害減輕+3%。)(威力最多可提升40%,傷害最多可減輕14%。)",
+          "tags": 8388608,
+          "group": "Regular"
+        },
+        {
+          "id": 6106,
+          "user": "寶可夢",
+          "name": "祝福之種子閃光",
+          "type": 5,
+          "gauge": 2,
+          "uses": "−",
+          "category": "特殊",
+          "power": 250,
+          "accuracy": 100,
+          "target": "對手全體拍組",
+          "description": "【開放條件】\n封印狀態下自己的隊伍發動拍組招式所需的行動數減少3次時\n【封印條件】\n使出此招式時\n\n除了特定情況之外,只要攻擊命中就必定會擊中要害。降低對手的特防2階段。即使對象為複數,招式的威力也不會降低。提高我方全體拍組的下次特殊招式威力增強1階段。",
+          "tags": "none",
+          "group": 6
+        },
+        {
+          "id": 10974,
+          "user": "訓練師",
+          "name": "謝謝……!",
+          "type": 0,
+          "gauge": 0,
+          "uses": 1,
+          "category": "變化",
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方全體拍組",
+          "description": "讓我方場地變成招式計量槽加速狀態。提高我方全體拍組的速度4階段。提高自己的閃避率2階段。",
+          "tags": 8388608,
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 115100,
+        "user": "寶可夢",
+        "name": "謝意與勇氣開花結果之草之光線",
+        "type": 5,
+        "gauge": 0,
+        "uses": "−",
+        "category": "特殊",
+        "power": 200,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "自己的特攻提高得越多,威力就越大。",
+        "tags": "none",
+        "group": "Sync"
+      }
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "米依（２０２５春季）專用潛能餅乾１",
+      "skills": [
+        {
+          "name": [],
+          "description": "上場時,會讓自己變成下次必中要害狀態。",
+          "rate": 100
+        }
+      ]
+    },
+    {
+      "cookieName": "米依（２０２５春季）專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": [],
+          "description": "招式成功時,會幫自己增加1條招式計量槽。",
+          "rate": 33
+        },
+        {
+          "name": [],
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "rate": 33
+        },
+        {
+          "name": [
+            "首次上場時計數加速1",
+            "首次拍組招式後計數加速1"
+          ],
+          "description": "首次上場時,發動拍組招式所需的行動數會減少1次。首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。",
+          "rate": 33
+        }
+      ]
+    }
+  ],
+  "grid": [
+    {
+      "id": 1009740000,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009740001,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009740002,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009740003,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009740004,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009740005,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009740006,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009740007,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009740008,
+      "name": "種子閃光：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": 0,
+      "color": "#47D147",
+      "type": 5
+    },
+    {
+      "id": 1009740009,
+      "name": "種子閃光：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 1,
+      "y": 1,
+      "color": "#47D147",
+      "type": 5
+    },
+    {
+      "id": 1009740010,
+      "name": "種子閃光：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 3,
+      "y": 0,
+      "color": "#47D147",
+      "type": 5
+    },
+    {
+      "id": 1009740011,
+      "name": "種子閃光：招式後招式計量槽增加2",
+      "description": "招式成功時,有30%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": 1,
+      "color": "#FF0066",
+      "type": 5
+    },
+    {
+      "id": 1009740012,
+      "name": "鬥陣時異常無效",
+      "description": "當我方場地為任一鬥陣時,不會陷入異常狀態。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 1,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009740013,
+      "name": "種子閃光：攻擊時命中率下降9",
+      "description": "使出招式攻擊成功時,會降低對手的命中率1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 3,
+      "y": 1,
+      "color": "#FF0066",
+      "type": 5
+    },
+    {
+      "id": 1009740014,
+      "name": "種子閃光：依對手特防降幅威力↑",
+      "description": "對手的特防降低得越多,自己的招式的威力就提高得越多。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": 2,
+      "color": "#FF0066",
+      "type": 5
+    },
+    {
+      "id": 1009740015,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009740016,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -3,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009740017,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009740018,
+      "name": "種子閃光：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -1,
+      "y": -1,
+      "color": "#47D147",
+      "type": 5
+    },
+    {
+      "id": 1009740019,
+      "name": "種子閃光：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -3,
+      "y": 0,
+      "color": "#47D147",
+      "type": 5
+    },
+    {
+      "id": 1009740020,
+      "name": "謝謝……!：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -2,
+      "y": -1,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1009740021,
+      "name": "謝謝……!：招式後下次效果絕佳威力↑G9",
+      "description": "招式成功時,會讓我方全體拍組變成下次效果絕佳威力提升狀態。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -1,
+      "y": -2,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1009740022,
+      "name": "首次拍組招式後賦予特殊增強G1",
+      "description": "首次使出拍組招式時,會提高我方全體拍組的下次特殊招式威力增強1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -3,
+      "y": -1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009740023,
+      "name": "依對手特防降幅拍組招式↑",
+      "description": "對手的特防降低得越多,自己的拍組招式的威力就提高得越多。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009740024,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009740025,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009740026,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": -4,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009740027,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009740028,
+      "name": "祝福之種子閃光：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": -4,
+      "color": "#BF80FF",
+      "type": 5
+    },
+    {
+      "id": 1009740029,
+      "name": "祝福之種子閃光：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 3,
+      "y": -5,
+      "color": "#BF80FF",
+      "type": 5
+    },
+    {
+      "id": 1009740030,
+      "name": "祝福之種子閃光：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 1,
+      "y": -4,
+      "color": "#BF80FF",
+      "type": 5
+    },
+    {
+      "id": 1009740031,
+      "name": "上場時擊中要害率提升1",
+      "description": "上場時,會提高自己的擊中要害率1階段。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 2,
+      "y": -5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009740032,
+      "name": "特攻 + 20",
+      "description": "",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 3,
+      "y": -6,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009740033,
+      "name": "上場時特攻提升2",
+      "description": "上場時,會提高自己的特攻2階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 1,
+      "y": -5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009740034,
+      "name": "依特攻升幅威力提升",
+      "description": "自己的特攻提高得越多,招式的威力就提高得越多。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": -6,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009740035,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009740036,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009740037,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -3,
+      "y": 4,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009740038,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": 3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009740039,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 4,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009740040,
+      "name": "祝福之種子閃光：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -3,
+      "y": 5,
+      "color": "#BF80FF",
+      "type": 5
+    },
+    {
+      "id": 1009740041,
+      "name": "祝福之種子閃光：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -1,
+      "y": 4,
+      "color": "#BF80FF",
+      "type": 5
+    },
+    {
+      "id": 1009740042,
+      "name": "鬥陣時招式計量槽加速2",
+      "description": "當我方場地為任一鬥陣時,招式計量槽會累積得較快。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -2,
+      "y": 5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009740043,
+      "name": "鬥陣時HP回復1",
+      "description": "當我方場地為任一鬥陣時,寶可夢每次行動後都會回復自己的HP。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -3,
+      "y": 6,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009740044,
+      "name": "神奧鬥陣(特殊)時拍組招式↑G2",
+      "description": "當我方場地為神奧鬥陣(特殊)時,會提高我方全體拍組的拍組招式的威力。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -1,
+      "y": 5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009740045,
+      "name": "神奧鬥陣(特殊)時間延長3",
+      "description": "我方場地變成神奧鬥陣(特殊)的瞬間在場上時,會延長神奧鬥陣(特殊)的持續時間。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": 6,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009740046,
+      "name": "謝意與勇氣開花結果之草之光線：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": 3,
+      "color": "#BF80FF",
+      "type": 5
+    },
+    {
+      "id": 1009740047,
+      "name": "謝意與勇氣開花結果之草之光線：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": -3,
+      "color": "#BF80FF",
+      "type": 5
+    }
+  ]
+}

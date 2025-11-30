@@ -1,0 +1,1019 @@
+{
+  "trainer": {
+    "id": "10137000000",
+    "name": "大木",
+    "actor": "大木",
+    "actorId": "ch0137_00_orchid1",
+    "rarity": 3,
+    "role": 3,
+    "exRole": -1,
+    "ex": true,
+    "exclusivity": "Regular",
+    "maxBonusLevel": 5
+  },
+  "scoutMethod": 2,
+  "scheduleId": "update_2010_4W_FOREVER",
+  "themes": [
+    {
+      "name": "超能力屬性／技術",
+      "description": "我方全體拍組最大HP提升24\n僅在我方使出超能力屬性攻擊時，攻擊和特攻提升24",
+      "tag": "超能力",
+      "category": 1
+    },
+    {
+      "name": "關都／技術",
+      "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
+      "tag": "關都",
+      "category": 2
+    },
+    {
+      "name": "研究者／技術",
+      "description": "我方全體拍組最大HP提升8\n我方全體拍組的攻擊和特攻提升5",
+      "tag": "研究者",
+      "category": 999
+    },
+    {
+      "name": "往事／技術",
+      "description": "我方全體拍組最大HP提升8\n我方全體拍組的攻擊和特攻提升5",
+      "tag": "往事",
+      "category": 999
+    }
+  ],
+  "specialAwaking": {
+    "name": "",
+    "description": "",
+    "detail": []
+  },
+  "pokemon": [
+    {
+      "id": "20137000000",
+      "variationType": 0,
+      "name": "夢幻",
+      "form": "使用拍組招式前",
+      "actor": "pm0151_00_mew",
+      "gender": 3,
+      "is_shiny": false,
+      "type": 11,
+      "weakness": 12,
+      "stat": {
+        "hp": [
+          100,
+          144,
+          171,
+          302,
+          340,
+          368,
+          440
+        ],
+        "atk": [
+          10,
+          54,
+          81,
+          200,
+          240,
+          268,
+          340
+        ],
+        "def": [
+          10,
+          54,
+          81,
+          200,
+          240,
+          268,
+          340
+        ],
+        "spa": [
+          10,
+          54,
+          81,
+          200,
+          240,
+          268,
+          340
+        ],
+        "spd": [
+          10,
+          54,
+          81,
+          200,
+          240,
+          268,
+          340
+        ],
+        "spe": [
+          10,
+          54,
+          81,
+          200,
+          240,
+          268,
+          340
+        ]
+      },
+      "passives": [
+        {
+          "name": "效果絕佳時威力提升1",
+          "description": "當效果絕佳時,會提高該招式的威力。",
+          "detail": []
+        },
+        {
+          "name": "攻擊時能力下降9",
+          "description": "使出招式攻擊成功時,會降低對手的攻擊、防禦、特攻、特防、速度、命中率、閃避率中的一種能力1階段。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 129,
+          "user": "寶可夢",
+          "name": "高速星星",
+          "type": 1,
+          "gauge": 2,
+          "uses": "−",
+          "category": "特殊",
+          "power": 57,
+          "accuracy": 0,
+          "target": "對手全體拍組",
+          "description": "攻擊必定會命中。",
+          "tags": "SureHit",
+          "group": "Regular"
+        },
+        {
+          "id": 19050,
+          "user": "寶可夢",
+          "name": "速度強化",
+          "type": 0,
+          "gauge": 0,
+          "uses": 2,
+          "category": "變化",
+          "power": 0,
+          "accuracy": 0,
+          "target": "自己",
+          "description": "提高自己的速度2階段。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 94,
+          "user": "寶可夢",
+          "name": "精神強念",
+          "type": 11,
+          "gauge": 3,
+          "uses": "−",
+          "category": "特殊",
+          "power": 99,
+          "accuracy": 100,
+          "target": "對手１對拍組",
+          "description": "有10%的機率會降低對手的特防1階段。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 11370,
+          "user": "訓練師",
+          "name": "Let's Go!",
+          "type": 0,
+          "gauge": 0,
+          "uses": 2,
+          "category": "變化",
+          "power": 0,
+          "accuracy": 0,
+          "target": "自己",
+          "description": "提高自己的特攻2階段。提高自己的攻擊、防禦、特防、速度、命中率、閃避率中的一種能力3階段。",
+          "tags": "none",
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 79700,
+        "user": "寶可夢",
+        "name": "偉大的寶可夢博士之精神強念",
+        "type": 11,
+        "gauge": 0,
+        "uses": "−",
+        "category": "特殊",
+        "power": 250,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "沒有追加效果。",
+        "tags": "none",
+        "group": "Sync"
+      }
+    },
+    {
+      "id": "20137000000",
+      "variationType": 3,
+      "name": "夢幻",
+      "form": "使用拍組招式後",
+      "actor": "pm0151_00_mew",
+      "gender": 3,
+      "is_shiny": false,
+      "type": "-1",
+      "weakness": "-1",
+      "stat": {
+        "hp": [
+          100,
+          144,
+          171,
+          302,
+          340,
+          368,
+          440
+        ],
+        "atk": [
+          10,
+          54,
+          81,
+          200,
+          240,
+          268,
+          340
+        ],
+        "def": [
+          10,
+          54,
+          81,
+          200,
+          240,
+          268,
+          340
+        ],
+        "spa": [
+          10,
+          54,
+          81,
+          200,
+          240,
+          268,
+          340
+        ],
+        "spd": [
+          10,
+          54,
+          81,
+          200,
+          240,
+          268,
+          340
+        ],
+        "spe": [
+          10,
+          54,
+          81,
+          200,
+          240,
+          268,
+          340
+        ]
+      },
+      "passives": [
+        {
+          "name": "效果絕佳時威力提升1",
+          "description": "當效果絕佳時,會提高該招式的威力。",
+          "detail": []
+        },
+        {
+          "name": "攻擊時能力下降9",
+          "description": "使出招式攻擊成功時,會降低對手的攻擊、防禦、特攻、特防、速度、命中率、閃避率中的一種能力1階段。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 126,
+          "user": "寶可夢",
+          "name": "大字爆炎",
+          "type": 2,
+          "gauge": 3,
+          "uses": "−",
+          "category": "特殊",
+          "power": 116,
+          "accuracy": 85,
+          "target": "對手１對拍組",
+          "description": "有10%的機率會讓對手陷入灼傷狀態。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 87,
+          "user": "寶可夢",
+          "name": "打雷",
+          "type": 4,
+          "gauge": 3,
+          "uses": "−",
+          "category": "特殊",
+          "power": 124,
+          "accuracy": 70,
+          "target": "對手１對拍組",
+          "description": "當天氣為下雨時,攻擊必定會命中。有30%的機率會讓對手陷入麻痺狀態。",
+          "tags": 4259840,
+          "group": "Regular"
+        },
+        {
+          "id": 94,
+          "user": "寶可夢",
+          "name": "精神強念",
+          "type": 11,
+          "gauge": 3,
+          "uses": "−",
+          "category": "特殊",
+          "power": 99,
+          "accuracy": 100,
+          "target": "對手１對拍組",
+          "description": "有10%的機率會降低對手的特防1階段。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 59,
+          "user": "寶可夢",
+          "name": "暴風雪",
+          "type": 6,
+          "gauge": 3,
+          "uses": "−",
+          "category": "特殊",
+          "power": 126,
+          "accuracy": 70,
+          "target": "對手全體拍組",
+          "description": "當天氣為冰雹時,攻擊必定會命中。有10%的機率會讓對手陷入冰凍狀態。",
+          "tags": "none",
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 79700,
+        "user": "寶可夢",
+        "name": "偉大的寶可夢博士之精神強念",
+        "type": 11,
+        "gauge": 0,
+        "uses": "−",
+        "category": "特殊",
+        "power": 250,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "沒有追加效果。",
+        "tags": "none",
+        "group": "Sync"
+      }
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "大木專用潛能餅乾１",
+      "skills": [
+        {
+          "name": [],
+          "description": "使出招式攻擊成功時,有60%的機率會幫自己增加1條招式計量槽。",
+          "rate": 100
+        }
+      ]
+    },
+    {
+      "cookieName": "大木專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": [],
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "rate": 33
+        },
+        {
+          "name": [],
+          "description": "當效果絕佳時,會提高該拍組招式的威力。",
+          "rate": 33
+        },
+        {
+          "name": [],
+          "description": "首次上場時,會提高自己的下次拍組招式威力增強5階段。",
+          "rate": 33
+        }
+      ]
+    }
+  ],
+  "grid": [
+    {
+      "id": 1013700000,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013700001,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013700002,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013700003,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013700004,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013700005,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013700006,
+      "name": "速度 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 0,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013700007,
+      "name": "暴風雪：威力 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -1,
+      "y": 3,
+      "color": "#47D147",
+      "type": 6
+    },
+    {
+      "id": 1013700008,
+      "name": "速度強化：招式後招式次數回復3",
+      "description": "招式成功時,有40%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -1,
+      "y": 4,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1013700009,
+      "name": "暴風雪：命中率 + 20",
+      "description": "",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 0,
+      "y": 4,
+      "color": "#47D147",
+      "type": 6
+    },
+    {
+      "id": 1013700010,
+      "name": "暴風雪：威力 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 1,
+      "y": 3,
+      "color": "#47D147",
+      "type": 6
+    },
+    {
+      "id": 1013700011,
+      "name": "高速星星：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 6,
+      "orb": 72,
+      "level": 1,
+      "x": 1,
+      "y": 2,
+      "color": "#FF0066",
+      "type": 1
+    },
+    {
+      "id": 1013700012,
+      "name": "暴風雪：威力 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 0,
+      "y": 3,
+      "color": "#47D147",
+      "type": 6
+    },
+    {
+      "id": 1013700013,
+      "name": "HP + 20",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013700014,
+      "name": "高速星星：威力 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": 1,
+      "color": "#47D147",
+      "type": 1
+    },
+    {
+      "id": 1013700015,
+      "name": "依速度升幅拍組招式↑",
+      "description": "自己的速度提高得越多,拍組招式的威力就提高得越多。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 3,
+      "x": 3,
+      "y": 1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1013700016,
+      "name": "高速星星：威力 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 3,
+      "x": 4,
+      "y": 0,
+      "color": "#47D147",
+      "type": 1
+    },
+    {
+      "id": 1013700017,
+      "name": "依閃避率升幅拍組招式↑",
+      "description": "自己的閃避率提高得越多,拍組招式的威力就提高得越多。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 3,
+      "x": 4,
+      "y": -1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1013700018,
+      "name": "高速星星：威力 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": -1,
+      "color": "#47D147",
+      "type": 1
+    },
+    {
+      "id": 1013700019,
+      "name": "偉大的寶可夢博士之精神強念：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": 3,
+      "y": 0,
+      "color": "#BF80FF",
+      "type": 11
+    },
+    {
+      "id": 1013700020,
+      "name": "特攻 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 1,
+      "x": 2,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013700021,
+      "name": "大字爆炎：威力 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 3,
+      "y": -2,
+      "color": "#47D147",
+      "type": 2
+    },
+    {
+      "id": 1013700022,
+      "name": "天氣變化時威力提升3",
+      "description": "只有在天氣變化時,會提高招式的威力。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 4,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1013700023,
+      "name": "大字爆炎：命中率 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 2,
+      "x": 4,
+      "y": -4,
+      "color": "#47D147",
+      "type": 2
+    },
+    {
+      "id": 1013700024,
+      "name": "對手異常時威力提升3",
+      "description": "當對手陷入異常狀態時,會提高自己的招式的威力。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 3,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1013700025,
+      "name": "大字爆炎：威力 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": -3,
+      "color": "#47D147",
+      "type": 2
+    },
+    {
+      "id": 1013700026,
+      "name": "大字爆炎：威力 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 3,
+      "y": -3,
+      "color": "#47D147",
+      "type": 2
+    },
+    {
+      "id": 1013700027,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 0,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013700028,
+      "name": "精神強念：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": 1,
+      "y": -3,
+      "color": "#47D147",
+      "type": 11
+    },
+    {
+      "id": 1013700029,
+      "name": "上場時閃避率提升2",
+      "description": "上場時,會提高自己的閃避率2階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 1,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1013700030,
+      "name": "精神強念：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": -4,
+      "color": "#47D147",
+      "type": 11
+    },
+    {
+      "id": 1013700031,
+      "name": "寶可夢出招後閃避率↑2",
+      "description": "在寶可夢使出招式時,有30%的機率會提高自己的閃避率1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -1,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1013700032,
+      "name": "精神強念：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": -1,
+      "y": -2,
+      "color": "#47D147",
+      "type": 11
+    },
+    {
+      "id": 1013700033,
+      "name": "精神強念：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 1,
+      "x": 0,
+      "y": -3,
+      "color": "#47D147",
+      "type": 11
+    },
+    {
+      "id": 1013700034,
+      "name": "HP + 20",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013700035,
+      "name": "特防 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": -2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013700036,
+      "name": "解除異常狀態",
+      "description": "當自己首次陷入異常狀態時,會解除自己的異常狀態。",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": -3,
+      "y": -1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1013700037,
+      "name": "Let's Go!：招式後招式次數回復3",
+      "description": "招式成功時,有40%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -4,
+      "y": 0,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1013700038,
+      "name": "首次危機時HP回復4",
+      "description": "首次陷入危機時,會回復自己的HP,約為自己最大HP的40%。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -4,
+      "y": 1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1013700039,
+      "name": "防禦 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": -3,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013700040,
+      "name": "偉大的寶可夢博士之精神強念：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": -3,
+      "y": 0,
+      "color": "#BF80FF",
+      "type": 11
+    },
+    {
+      "id": 1013700041,
+      "name": "速度 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013700042,
+      "name": "打雷：威力 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -3,
+      "y": 2,
+      "color": "#47D147",
+      "type": 4
+    },
+    {
+      "id": 1013700043,
+      "name": "異常機率提升1",
+      "description": "當招式的追加效果可使對手陷入異常狀態時,會提高該追加效果的成功率。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 3,
+      "x": -4,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1013700044,
+      "name": "打雷：命中率 + 20",
+      "description": "",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 3,
+      "x": -4,
+      "y": 4,
+      "color": "#47D147",
+      "type": 4
+    },
+    {
+      "id": 1013700045,
+      "name": "首次危機時特攻提升2",
+      "description": "首次陷入危機時,會提高自己的特攻2階段。",
+      "detail": [],
+      "energy": 6,
+      "orb": 72,
+      "level": 3,
+      "x": -3,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1013700046,
+      "name": "打雷：威力 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": 3,
+      "color": "#47D147",
+      "type": 4
+    },
+    {
+      "id": 1013700047,
+      "name": "打雷：威力 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -3,
+      "y": 3,
+      "color": "#47D147",
+      "type": 4
+    }
+  ]
+}
