@@ -520,11 +520,16 @@ const handleMovePower = (move) => {
     if (move.power <= 0) {
         return '-';
     }
-    if (props.bonusLevel <= 5) {
-        power = Math.trunc(power * (1 + (props.bonusLevel - 1) * 0.05))
-    } else if (bonusLevel > 5) {
-        // 超觉醒....
+    // if (props.bonusLevel <= 5) {
+    //     power = Math.trunc(power * (1 + (props.bonusLevel - 1) * 0.05))
+    // } else if (props.bonusLevel > 5) {
+    //     // 超觉醒....
+    // }
+    let level = props.bonusLevel
+    if (level > 5) {
+        level = 5;
     }
+    power = Math.trunc(power * (1 + (level - 1) * 0.05))
 
     return power
 };

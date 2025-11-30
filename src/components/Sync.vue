@@ -15,6 +15,10 @@
                     </div>
                 </div>
                 <div class="rating-section">
+                    <!-- 移动端：信息切换按钮（默认隐藏，移动端显示） -->
+                    <button class="info-toggle-btn" @click="showMobileInfo = !showMobileInfo">
+                        {{ showMobileInfo ? '关闭信息' : '查看信息' }}
+                    </button>
                     <Bonus v-model="dynamicState.bonusLevel" :star-size="20" :gap="5"
                         :max-rating="trainer.maxBonusLevel" />
                 </div>
@@ -95,10 +99,37 @@
                     <Filter @select-trainer="handleSelectTrainer" @close-modal="showFilterModal = false" />
                 </div>
             </div>
+
+            <div v-if="showMobileInfo" class="mobile-info-modal" @click="showMobileInfo = false">
+                <!-- 弹窗内容区（点击内部不关闭） -->
+                <div class="mobile-info-content" @click.stop>
+                    <!-- 关闭按钮 -->
+                    <button class="mobile-info-close" @click="showMobileInfo = false">×</button>
+                    <!-- 拍组名称标题栏 -->
+                    <div class="mobile-info-title">{{ syncMethods.getSyncName() }}</div>
+                    <!-- 核心：Info组件（完整功能保留） -->
+                    <Info :level-value="dynamicState.level" :current-rarity-value="dynamicState.currentRarity"
+                        :potential-value="dynamicState.potential" :ex-role-enabled-value="dynamicState.exRoleEnabled"
+                        :bonus-level="dynamicState.bonusLevel"
+                        :selected-pokemon-index="dynamicState.selectedPokemonIndex" :trainer="syncMethods.getTrainer()"
+                        :themes="syncMethods.getThemes()" :special-awaking="syncMethods.getSpecialAwaking()"
+                        :variation-list="syncMethods.getvariationList()" :final-stats="finalStats" :pokemon="pokemon"
+                        @update:levelValue="(val) => dynamicState.level = val"
+                        @update:currentRarityValue="(val) => dynamicState.currentRarity = val"
+                        @update:potentialValue="(val) => dynamicState.potential = val"
+                        @update:exRoleEnabledValue="(val) => dynamicState.exRoleEnabled = val"
+                        @update:selectedPokemonIndex="(val) => dynamicState.selectedPokemonIndex = val" />
+                </div>
+            </div>
+
         </div>
 
         <!-- 右侧信息区域（完全不变） -->
         <div class=" right-panel">
+
+            <!-- 移动端：关闭按钮 -->
+            <button class="mobile-close-btn" @click="showMobileInfo = false">×</button>
+
             <div class="tab-bar">
                 <button class="tab-btn" :class="{ active: curTab === 'grid' }" @click="curTab = 'grid'">
                     石盤一覽
@@ -207,6 +238,10 @@ const trainer = computed(() => {
 });
 
 const showFilterModal = ref(false);
+
+// 设备移动端
+const showMobileInfo = ref(false);
+const isMobile = ref(window.innerWidth <= 1200);
 
 // SVG基础配置（核心：画布尺寸和中心点）
 const svgWidth = ref(0);
@@ -843,5 +878,226 @@ svg {
     margin: 0;
     font-weight: 500;
     text-align: center;
+}
+
+/* 移动端信息显示 */
+.mobile-info-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10001;
+    /* 高于所有其他弹窗 */
+    padding: 20px 15px;
+}
+
+.mobile-info-content {
+    width: 100%;
+    max-width: 800px;
+    background-color: #fff;
+    background-image: url('../assets/images/bg2.png');
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+    position: relative;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-info-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #ff4500;
+    color: white;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.mobile-info-title {
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #568dd1;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 1px solid #eee;
+}
+
+/* Info组件容器：允许滚动 */
+.mobile-info-content>div:last-child {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px;
+}
+
+@media (max-width: 1200px) {
+    .left-panel {
+        width: 100vw !important;
+        /* 移动端占满屏幕 */
+        border-right: none;
+    }
+
+    /* 显示移动端按钮 */
+    .info-toggle-btn {
+        display: none;
+        position: absolute;
+        left: 40px;
+        top: 45px;
+        background-image: url('../assets/images/bg1.png');
+        padding: 6px 14px;
+        color: black;
+        border: none;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.2s;
+    }
+
+    .mobile-close-btn {
+        display: block;
+    }
+
+    /* 右侧信息区域：默认隐藏（平移出屏幕），显示时占满屏幕 */
+    .right-panel {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw !important;
+        height: 100vh !important;
+        z-index: 10000;
+        transform: translateX(100%);
+        /* 默认隐藏在右侧 */
+        background-color: #fff;
+    }
+
+    .right-panel.mobile-show {
+        transform: translateX(0);
+        /* 显示时平移到屏幕内 */
+    }
+
+    /* 适配移动端元素尺寸 */
+    .bonus-container {
+        width: 90% !important;
+        /* 占满左侧宽度 */
+        margin: 8px auto;
+    }
+
+    .info-item {
+        font-size: 13px !important;
+        /* 缩小文字 */
+        padding: 4px 0 !important;
+    }
+
+    .rating-section {
+        padding: 6px 8px !important;
+    }
+
+    /* SVG容器适配 */
+    .svg-container {
+        padding: 10px 0;
+    }
+
+    svg {
+        min-height: 600px !important;
+        /* 移动端缩小SVG高度 */
+    }
+
+    /* 潜能弹窗适配 */
+    .potential-window {
+        width: 90vw !important;
+        height: 80vh !important;
+        top: 10vh !important;
+    }
+
+    .window-icons {
+        flex-wrap: wrap;
+        /* 图标换行显示 */
+        gap: 8px;
+        justify-content: center !important;
+    }
+
+    .icon-item {
+        width: 40px !important;
+        height: 40px !important;
+    }
+
+    /* 按钮触控优化（移动端最小点击区域44px） */
+    .tab-btn {
+        height: 44px !important;
+        font-size: 15px !important;
+    }
+
+    .cookie-level-btn {
+        height: 36px !important;
+        font-size: 14px !important;
+    }
+
+    .cookie-select-btn {
+        height: 36px !important;
+        font-size: 14px !important;
+    }
+
+    .potential-title {
+        padding: 10px 8px !important;
+        font-size: 15px !important;
+    }
+
+    .pokemon-name {
+        font-size: 15px !important;
+        height: 44px !important;
+    }
+
+    /* 石盘信息窗口优化 */
+    .tile-window {
+        font-size: 12px !important;
+    }
+
+    .tile-name {
+        font-size: 13px !important;
+    }
+
+    /* 筛选弹窗适配 */
+    .modal-content {
+        width: 90% !important;
+        max-width: none !important;
+    }
+}
+
+/* 小屏手机额外适配（375px以下） */
+@media (max-width: 375px) {
+    .hexRadius {
+        ref: 28 !important;
+        /* 进一步缩小石盘 */
+    }
+
+    .pokemonSize {
+        ref: 40 !important;
+        /* 进一步缩小头像 */
+    }
+
+    .tileWinHeight {
+        ref: 140 !important;
+        /* 缩小信息窗口高度 */
+    }
 }
 </style>
