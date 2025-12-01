@@ -18,25 +18,25 @@
       "name": "水屬性／攻擊",
       "description": "僅在我方使出水屬性攻擊時，攻擊和特攻提升30",
       "tag": "水",
-      "category": 1
+      "category": 999
     },
     {
       "name": "合眾／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "合眾",
-      "category": 2
+      "category": 999
     },
     {
       "name": "披風／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升9",
       "tag": "披風",
-      "category": 4
+      "category": 999
     },
     {
       "name": "美極套裝／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升9",
       "tag": "美極套裝",
-      "category": 4
+      "category": 999
     }
   ],
   "specialAwaking": {
@@ -214,8 +214,8 @@
       "actor": "pm0319_51_megasamehader",
       "gender": 1,
       "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 3,
+      "weakness": 18,
       "stat": {
         "hp": [
           82,
@@ -365,7 +365,15 @@
         "description": "變成超級巨牙鯊直到對戰結束。",
         "tags": "none",
         "group": "Sync"
-      }
+      },
+      "scale": [
+        100,
+        110,
+        100,
+        100,
+        100,
+        130
+      ]
     }
   ],
   "luckCookies": [

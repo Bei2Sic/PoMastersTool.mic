@@ -4,7 +4,6 @@ import { getRoleInfo, getTypeInfo } from '@/utils/assetsMap';
 export const loadAllSyncJson = async (): Promise<GlobalSyncCache> => {
     const cache: GlobalSyncCache = {};
     try {
-        console.log("enter");
         // 扫描 syncDir 下所有 .json 文件，懒加载（eager: false 改为 true 则同步加载）
         const modules = import.meta.glob<SyncRawData>("@/data/pairs/*.json", {
             eager: true,
@@ -21,7 +20,6 @@ export const loadAllSyncJson = async (): Promise<GlobalSyncCache> => {
 
             // 存入缓存（键=拍组ID）
             cache[rawData.trainer.id] = { meta, rawData };
-            // console.log(rawData.trainer.id, meta)
         }
 
         // 按拍组ID排序（可选，让选择器顺序一致）

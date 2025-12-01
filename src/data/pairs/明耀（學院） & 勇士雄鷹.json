@@ -18,25 +18,25 @@
       "name": "超能力屬性／速戰",
       "description": "僅在我方使出超能力屬性攻擊時，攻擊和特攻提升24\n我方全體拍組的速度提升24",
       "tag": "超能力",
-      "category": 1
+      "category": 999
     },
     {
       "name": "神奧／速戰",
       "description": "我方全體拍組的攻擊和特攻提升4\n我方全體拍組的速度提升7",
       "tag": "神奧",
-      "category": 2
+      "category": 999
     },
     {
       "name": "主角／速戰",
       "description": "我方全體拍組的攻擊和特攻提升4\n我方全體拍組的速度提升7",
       "tag": "主角",
-      "category": 3
+      "category": 999
     },
     {
       "name": "特別服裝／速戰",
       "description": "我方全體拍組的攻擊和特攻提升5\n我方全體拍組的速度提升8",
       "tag": "特別服裝",
-      "category": 4
+      "category": 999
     }
   ],
   "specialAwaking": {
@@ -468,7 +468,7 @@
       "level": 1,
       "x": -2,
       "y": 0,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 11
     },
     {
@@ -481,7 +481,7 @@
       "level": 1,
       "x": -1,
       "y": -1,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 11
     },
     {
@@ -494,7 +494,7 @@
       "level": 2,
       "x": -3,
       "y": 0,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 11
     },
     {
@@ -611,7 +611,7 @@
       "level": 1,
       "x": 2,
       "y": -4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 11
     },
     {
@@ -624,7 +624,7 @@
       "level": 1,
       "x": 3,
       "y": -5,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 11
     },
     {

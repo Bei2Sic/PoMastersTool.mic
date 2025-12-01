@@ -18,19 +18,19 @@
       "name": "水屬性／輔助",
       "description": "我方全體拍組最大HP提升60",
       "tag": "水",
-      "category": 1
+      "category": 999
     },
     {
       "name": "阿羅拉／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "阿羅拉",
-      "category": 2
+      "category": 999
     },
     {
       "name": "主角／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "主角",
-      "category": 3
+      "category": 999
     },
     {
       "name": "愛好自然之人／輔助",

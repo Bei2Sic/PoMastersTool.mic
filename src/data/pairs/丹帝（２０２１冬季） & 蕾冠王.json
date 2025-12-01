@@ -18,25 +18,25 @@
       "name": "冰屬性／攻擊",
       "description": "僅在我方使出冰屬性攻擊時，攻擊和特攻提升30",
       "tag": "冰",
-      "category": 1
+      "category": 999
     },
     {
       "name": "伽勒爾／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "伽勒爾",
-      "category": 2
+      "category": 999
     },
     {
       "name": "季節服裝／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升9",
       "tag": "季節服裝",
-      "category": 4
+      "category": 999
     },
     {
       "name": "對戰設施的強者／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "對戰設施的強者",
-      "category": 3
+      "category": 999
     },
     {
       "name": "我行我素／攻擊",

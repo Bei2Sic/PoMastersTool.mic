@@ -18,25 +18,25 @@
       "name": "岩石屬性／技術",
       "description": "我方全體拍組最大HP提升24\n僅在我方使出岩石屬性攻擊時，攻擊和特攻提升24",
       "tag": "岩石",
-      "category": 1
+      "category": 999
     },
     {
       "name": "卡洛斯／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "卡洛斯",
-      "category": 2
+      "category": 999
     },
     {
       "name": "冠軍／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "冠軍",
-      "category": 3
+      "category": 999
     },
     {
       "name": "美極套裝／技術",
       "description": "我方全體拍組最大HP提升8\n我方全體拍組的攻擊和特攻提升5",
       "tag": "美極套裝",
-      "category": 4
+      "category": 999
     },
     {
       "name": "表演家／技術",
@@ -224,8 +224,8 @@
       "actor": "pm0772_51_megadiancie_rare",
       "gender": 3,
       "is_shiny": true,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 13,
+      "weakness": 17,
       "stat": {
         "hp": [
           98,
@@ -375,7 +375,15 @@
         "description": "變成超級蒂安希直到對戰結束。當領域為岩石領域時,威力會提高。",
         "tags": "none",
         "group": "Sync"
-      }
+      },
+      "scale": [
+        100,
+        120,
+        120,
+        100,
+        100,
+        100
+      ]
     }
   ],
   "luckCookies": [
@@ -736,7 +744,7 @@
       "level": 1,
       "x": -2,
       "y": 0,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 13
     },
     {
@@ -762,7 +770,7 @@
       "level": 1,
       "x": -1,
       "y": -1,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 13
     },
     {
@@ -983,7 +991,7 @@
       "level": 1,
       "x": -3,
       "y": 4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 13
     },
     {
@@ -996,7 +1004,7 @@
       "level": 1,
       "x": -2,
       "y": 4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 13
     },
     {
@@ -1009,7 +1017,7 @@
       "level": 1,
       "x": -3,
       "y": 5,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 13
     },
     {

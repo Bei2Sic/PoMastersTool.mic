@@ -18,25 +18,25 @@
       "name": "惡屬性／技術",
       "description": "我方全體拍組最大HP提升24\n僅在我方使出惡屬性攻擊時，攻擊和特攻提升24",
       "tag": "惡",
-      "category": 1
+      "category": 999
     },
     {
       "name": "阿羅拉／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "阿羅拉",
-      "category": 2
+      "category": 999
     },
     {
       "name": "對戰設施的強者／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "對戰設施的強者",
-      "category": 3
+      "category": 999
     },
     {
       "name": "面罩／技術",
       "description": "我方全體拍組最大HP提升8\n我方全體拍組的攻擊和特攻提升5",
       "tag": "面罩",
-      "category": 4
+      "category": 999
     },
     {
       "name": "鍛鍊精壯的身體／技術",

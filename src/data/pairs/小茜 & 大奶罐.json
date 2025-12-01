@@ -18,25 +18,25 @@
       "name": "一般屬性／技術",
       "description": "我方全體拍組最大HP提升24\n僅在我方使出一般屬性攻擊時，攻擊和特攻提升24",
       "tag": "一般",
-      "category": 1
+      "category": 999
     },
     {
       "name": "城都／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "城都",
-      "category": 2
+      "category": 999
     },
     {
       "name": "道館館主／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "道館館主",
-      "category": 3
+      "category": 999
     },
     {
       "name": "雙馬尾／技術",
       "description": "我方全體拍組最大HP提升8\n我方全體拍組的攻擊和特攻提升5",
       "tag": "雙馬尾",
-      "category": 4
+      "category": 999
     },
     {
       "name": "寶可全能競技賽／技術",

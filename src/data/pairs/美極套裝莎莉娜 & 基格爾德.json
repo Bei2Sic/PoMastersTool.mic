@@ -18,25 +18,25 @@
       "name": "龍屬性／攻擊",
       "description": "僅在我方使出龍屬性攻擊時，攻擊和特攻提升30",
       "tag": "龍",
-      "category": 1
+      "category": 999
     },
     {
       "name": "卡洛斯／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "卡洛斯",
-      "category": 2
+      "category": 999
     },
     {
       "name": "主角／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "主角",
-      "category": 3
+      "category": 999
     },
     {
       "name": "美極套裝／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升9",
       "tag": "美極套裝",
-      "category": 4
+      "category": 999
     }
   ],
   "specialAwaking": {
@@ -219,8 +219,8 @@
       "actor": "pm0770_15_zygarde100",
       "gender": 3,
       "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 15,
+      "weakness": 6,
       "stat": {
         "hp": [
           90,
@@ -375,7 +375,15 @@
         "description": "變成完全體形態直到對戰結束。",
         "tags": "none",
         "group": "Sync"
-      }
+      },
+      "scale": [
+        100,
+        120,
+        120,
+        120,
+        120,
+        120
+      ]
     }
   ],
   "luckCookies": [

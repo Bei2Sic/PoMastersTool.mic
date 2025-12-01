@@ -18,25 +18,25 @@
       "name": "電屬性／場地",
       "description": "我方全體拍組最大HP提升24\n我方全體拍組的速度提升24",
       "tag": "電",
-      "category": 1
+      "category": 999
     },
     {
       "name": "合眾／場地",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的速度提升7",
       "tag": "合眾",
-      "category": 2
+      "category": 999
     },
     {
       "name": "道館館主／場地",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的速度提升7",
       "tag": "道館館主",
-      "category": 3
+      "category": 999
     },
     {
       "name": "美極套裝／場地",
       "description": "我方全體拍組最大HP提升8\n我方全體拍組的速度提升8",
       "tag": "美極套裝",
-      "category": 4
+      "category": 999
     },
     {
       "name": "表演家／場地",
@@ -230,8 +230,8 @@
       "actor": "pm0642_84_00_voltolos",
       "gender": 1,
       "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 4,
+      "weakness": 6,
       "stat": {
         "hp": [
           98,
@@ -313,6 +313,14 @@
       ],
       "moves": null,
       "syncMove": null,
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
       "movesDynamax": [
         {
           "id": 7028,
@@ -652,7 +660,7 @@
       "level": 3,
       "x": 2,
       "y": 2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 4
     },
     {
@@ -886,7 +894,7 @@
       "level": 1,
       "x": 1,
       "y": -4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 4
     },
     {
@@ -899,7 +907,7 @@
       "level": 2,
       "x": 3,
       "y": -5,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 4
     },
     {
@@ -1003,7 +1011,7 @@
       "level": 1,
       "x": -1,
       "y": 2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 4
     },
     {
@@ -1016,7 +1024,7 @@
       "level": 2,
       "x": -3,
       "y": 3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 4
     },
     {

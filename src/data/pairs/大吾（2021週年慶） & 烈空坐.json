@@ -18,25 +18,25 @@
       "name": "飛行屬性／攻擊",
       "description": "僅在我方使出飛行屬性攻擊時，攻擊和特攻提升30",
       "tag": "飛行",
-      "category": 1
+      "category": 999
     },
     {
       "name": "豐緣／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "豐緣",
-      "category": 2
+      "category": 999
     },
     {
       "name": "季節服裝／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升9",
       "tag": "季節服裝",
-      "category": 4
+      "category": 999
     },
     {
       "name": "對戰設施的強者／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "對戰設施的強者",
-      "category": 3
+      "category": 999
     },
     {
       "name": "石頭愛好者／攻擊",
@@ -225,8 +225,8 @@
       "actor": "pm0384_51_megarayquaza_rare",
       "gender": 3,
       "is_shiny": true,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 10,
+      "weakness": 6,
       "stat": {
         "hp": [
           93,
@@ -381,7 +381,15 @@
         "description": "變成超級烈空坐直到對戰結束。",
         "tags": "none",
         "group": "Sync"
-      }
+      },
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        140
+      ]
     }
   ],
   "luckCookies": [

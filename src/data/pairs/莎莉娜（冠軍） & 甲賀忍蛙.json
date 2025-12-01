@@ -18,25 +18,25 @@
       "name": "水屬性／技術",
       "description": "我方全體拍組最大HP提升24\n僅在我方使出水屬性攻擊時，攻擊和特攻提升24",
       "tag": "水",
-      "category": 1
+      "category": 999
     },
     {
       "name": "卡洛斯／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "卡洛斯",
-      "category": 2
+      "category": 999
     },
     {
       "name": "主角／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "主角",
-      "category": 3
+      "category": 999
     },
     {
       "name": "冠軍／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "冠軍",
-      "category": 3
+      "category": 999
     }
   ],
   "specialAwaking": {
@@ -219,8 +219,8 @@
       "actor": "pm0725_00_frog3",
       "gender": 1,
       "is_shiny": false,
-      "type": "16",
-      "weakness": "-1",
+      "type": 16,
+      "weakness": 4,
       "stat": {
         "hp": [
           95,
@@ -375,7 +375,15 @@
         "description": "對手的能力降低得越多,威力就越大。",
         "tags": "none",
         "group": "Sync"
-      }
+      },
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
     }
   ],
   "luckCookies": [
@@ -762,7 +770,7 @@
       "level": 1,
       "x": 3,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 1
     },
     {
@@ -775,7 +783,7 @@
       "level": 1,
       "x": 2,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 1
     },
     {
@@ -918,7 +926,7 @@
       "level": 1,
       "x": -2,
       "y": 4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 1
     },
     {
@@ -931,7 +939,7 @@
       "level": 1,
       "x": -3,
       "y": 5,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 1
     },
     {

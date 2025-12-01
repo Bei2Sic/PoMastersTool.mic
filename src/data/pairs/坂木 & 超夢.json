@@ -18,19 +18,19 @@
       "name": "超能力屬性／攻擊",
       "description": "僅在我方使出超能力屬性攻擊時，攻擊和特攻提升30",
       "tag": "超能力",
-      "category": 1
+      "category": 999
     },
     {
       "name": "關都／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "關都",
-      "category": 2
+      "category": 999
     },
     {
       "name": "邪惡組織／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "邪惡組織",
-      "category": 3
+      "category": 999
     },
     {
       "name": "命運糾纏的父子／攻擊",
@@ -204,8 +204,8 @@
       "actor": "pm0150_52_megamewtwoY",
       "gender": 3,
       "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 11,
+      "weakness": 16,
       "stat": {
         "hp": [
           82,
@@ -345,7 +345,15 @@
         "description": "變成超級超夢Y直到對戰結束。",
         "tags": "none",
         "group": "Sync"
-      }
+      },
+      "scale": [
+        100,
+        100,
+        100,
+        120,
+        100,
+        120
+      ]
     }
   ],
   "luckCookies": [

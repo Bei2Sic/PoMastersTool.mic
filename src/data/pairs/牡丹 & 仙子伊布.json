@@ -18,19 +18,19 @@
       "name": "妖精屬性／輔助",
       "description": "我方全體拍組最大HP提升60",
       "tag": "妖精",
-      "category": 1
+      "category": 999
     },
     {
       "name": "帕底亞／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "帕底亞",
-      "category": 2
+      "category": 999
     },
     {
       "name": "眼鏡／輔助",
       "description": "我方全體拍組最大HP提升15",
       "tag": "眼鏡",
-      "category": 4
+      "category": 999
     },
     {
       "name": "機械愛好者／輔助",
@@ -42,7 +42,7 @@
       "name": "天星隊／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "天星隊",
-      "category": 3
+      "category": 999
     }
   ],
   "specialAwaking": {
@@ -610,7 +610,7 @@
       "level": 2,
       "x": -3,
       "y": -1,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 18
     },
     {
@@ -623,7 +623,7 @@
       "level": 2,
       "x": -1,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 18
     },
     {
@@ -727,7 +727,7 @@
       "level": 1,
       "x": 2,
       "y": -4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 18
     },
     {
@@ -740,7 +740,7 @@
       "level": 2,
       "x": 1,
       "y": -4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 18
     },
     {
@@ -753,7 +753,7 @@
       "level": 1,
       "x": 3,
       "y": -5,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 18
     },
     {

@@ -18,25 +18,25 @@
       "name": "地面屬性／輔助",
       "description": "我方全體拍組最大HP提升60",
       "tag": "地面",
-      "category": 1
+      "category": 999
     },
     {
       "name": "城都／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "城都",
-      "category": 2
+      "category": 999
     },
     {
       "name": "特別服裝／輔助",
       "description": "我方全體拍組最大HP提升15",
       "tag": "特別服裝",
-      "category": 4
+      "category": 999
     },
     {
       "name": "雙馬尾／輔助",
       "description": "我方全體拍組最大HP提升15",
       "tag": "雙馬尾",
-      "category": 4
+      "category": 999
     },
     {
       "name": "寶可全能競技賽／輔助",

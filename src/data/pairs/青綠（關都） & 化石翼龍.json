@@ -18,19 +18,19 @@
       "name": "岩石屬性／攻擊",
       "description": "僅在我方使出岩石屬性攻擊時，攻擊和特攻提升30",
       "tag": "岩石",
-      "category": 1
+      "category": 999
     },
     {
       "name": "關都／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "關都",
-      "category": 2
+      "category": 999
     },
     {
       "name": "勁敵／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "勁敵",
-      "category": 3
+      "category": 999
     },
     {
       "name": "真新鎮／攻擊",
@@ -224,8 +224,8 @@
       "actor": "pm0142_51_megaptera",
       "gender": 1,
       "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 13,
+      "weakness": 3,
       "stat": {
         "hp": [
           91,
@@ -375,7 +375,15 @@
         "description": "變成超級化石翼龍直到對戰結束。",
         "tags": "none",
         "group": "Sync"
-      }
+      },
+      "scale": [
+        100,
+        120,
+        100,
+        120,
+        100,
+        100
+      ]
     }
   ],
   "luckCookies": [

@@ -18,19 +18,19 @@
       "name": "水屬性／場地",
       "description": "我方全體拍組最大HP提升24\n我方全體拍組的速度提升24",
       "tag": "水",
-      "category": 1
+      "category": 999
     },
     {
       "name": "關都／場地",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的速度提升7",
       "tag": "關都",
-      "category": 2
+      "category": 999
     },
     {
       "name": "主角／場地",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的速度提升7",
       "tag": "主角",
-      "category": 3
+      "category": 999
     },
     {
       "name": "真新鎮／場地",
@@ -214,8 +214,8 @@
       "actor": "pm0009_83_00_kamex",
       "gender": 2,
       "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 3,
+      "weakness": 5,
       "stat": {
         "hp": [
           106,
@@ -291,6 +291,14 @@
       ],
       "moves": null,
       "syncMove": null,
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
       "movesDynamax": [
         {
           "id": 7024,
@@ -590,7 +598,7 @@
       "level": 1,
       "x": -2,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 3
     },
     {
@@ -603,7 +611,7 @@
       "level": 1,
       "x": -1,
       "y": -3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 3
     },
     {
@@ -733,7 +741,7 @@
       "level": 1,
       "x": 2,
       "y": -4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 3
     },
     {
@@ -746,7 +754,7 @@
       "level": 1,
       "x": 1,
       "y": -4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 3
     },
     {
@@ -759,7 +767,7 @@
       "level": 2,
       "x": 3,
       "y": -5,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 3
     },
     {

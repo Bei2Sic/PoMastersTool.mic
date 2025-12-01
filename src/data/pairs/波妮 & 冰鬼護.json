@@ -18,19 +18,19 @@
       "name": "冰屬性／輔助",
       "description": "我方全體拍組最大HP提升60",
       "tag": "冰",
-      "category": 1
+      "category": 999
     },
     {
       "name": "豐緣／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "豐緣",
-      "category": 2
+      "category": 999
     },
     {
       "name": "四天王／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "四天王",
-      "category": 3
+      "category": 999
     },
     {
       "name": "大姐姐／輔助",
@@ -209,8 +209,8 @@
       "actor": "pm0362_51_megaonigohri",
       "gender": 1,
       "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 6,
+      "weakness": 17,
       "stat": {
         "hp": [
           118,
@@ -360,7 +360,15 @@
         "description": "變成超級冰鬼護直到對戰結束。",
         "tags": "none",
         "group": "Sync"
-      }
+      },
+      "scale": [
+        100,
+        100,
+        100,
+        120,
+        100,
+        120
+      ]
     }
   ],
   "luckCookies": [

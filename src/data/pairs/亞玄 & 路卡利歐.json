@@ -18,13 +18,13 @@
       "name": "格鬥屬性／速戰",
       "description": "僅在我方使出格鬥屬性攻擊時，攻擊和特攻提升24\n我方全體拍組的速度提升24",
       "tag": "格鬥",
-      "category": 1
+      "category": 999
     },
     {
       "name": "神奧／速戰",
       "description": "我方全體拍組的攻擊和特攻提升4\n我方全體拍組的速度提升7",
       "tag": "神奧",
-      "category": 2
+      "category": 999
     },
     {
       "name": "不可思議的力量／速戰",
@@ -220,8 +220,8 @@
       "actor": "pm0448_81_00_lucario",
       "gender": 1,
       "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 7,
+      "weakness": 2,
       "stat": {
         "hp": [
           98,
@@ -297,6 +297,14 @@
       ],
       "moves": null,
       "syncMove": null,
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
       "movesDynamax": [
         {
           "id": 7005,
@@ -772,7 +780,7 @@
       "level": 3,
       "x": 1,
       "y": -5,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 7
     },
     {
@@ -915,7 +923,7 @@
       "level": 3,
       "x": -1,
       "y": 5,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 17
     },
     {

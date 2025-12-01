@@ -18,31 +18,31 @@
       "name": "地面屬性／輔助",
       "description": "我方全體拍組最大HP提升60",
       "tag": "地面",
-      "category": 1
+      "category": 999
     },
     {
       "name": "伽勒爾／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "伽勒爾",
-      "category": 2
+      "category": 999
     },
     {
       "name": "道館館主／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "道館館主",
-      "category": 3
+      "category": 999
     },
     {
       "name": "季節服裝／輔助",
       "description": "我方全體拍組最大HP提升15",
       "tag": "季節服裝",
-      "category": 4
+      "category": 999
     },
     {
       "name": "圍巾／輔助",
       "description": "我方全體拍組最大HP提升15",
       "tag": "圍巾",
-      "category": 4
+      "category": 999
     }
   ],
   "specialAwaking": {
@@ -224,8 +224,8 @@
       "actor": "pm0844_83_00_sadaija",
       "gender": 1,
       "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 9,
+      "weakness": 3,
       "stat": {
         "hp": [
           96,
@@ -305,6 +305,14 @@
       ],
       "moves": null,
       "syncMove": null,
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
       "movesDynamax": [
         {
           "id": 7012,

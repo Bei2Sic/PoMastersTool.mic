@@ -18,25 +18,25 @@
       "name": "飛行屬性／攻擊",
       "description": "僅在我方使出飛行屬性攻擊時，攻擊和特攻提升30",
       "tag": "飛行",
-      "category": 1
+      "category": 999
     },
     {
       "name": "關都／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "關都",
-      "category": 2
+      "category": 999
     },
     {
       "name": "冠軍／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "冠軍",
-      "category": 3
+      "category": 999
     },
     {
       "name": "披風／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升9",
       "tag": "披風",
-      "category": 4
+      "category": 999
     }
   ],
   "specialAwaking": {
@@ -222,8 +222,8 @@
       "actor": "pm0006_52_megalizardonY",
       "gender": 1,
       "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 10,
+      "weakness": 13,
       "stat": {
         "hp": [
           103,
@@ -381,7 +381,15 @@
         "description": "變成超級噴火龍Y直到對戰結束。",
         "tags": "none",
         "group": "Sync"
-      }
+      },
+      "scale": [
+        100,
+        120,
+        100,
+        100,
+        100,
+        120
+      ]
     }
   ],
   "luckCookies": [
@@ -687,7 +695,7 @@
       "level": 1,
       "x": -1,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 1
     },
     {
@@ -700,7 +708,7 @@
       "level": 1,
       "x": -2,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 1
     },
     {
@@ -713,7 +721,7 @@
       "level": 1,
       "x": -3,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 1
     },
     {
@@ -830,7 +838,7 @@
       "level": 1,
       "x": 1,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 1
     },
     {
@@ -843,7 +851,7 @@
       "level": 2,
       "x": 3,
       "y": -3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 1
     },
     {

@@ -18,31 +18,31 @@
       "name": "惡屬性／輔助",
       "description": "我方全體拍組最大HP提升60",
       "tag": "惡",
-      "category": 1
+      "category": 999
     },
     {
       "name": "城都／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "城都",
-      "category": 2
+      "category": 999
     },
     {
       "name": "邪惡組織／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "邪惡組織",
-      "category": 3
+      "category": 999
     },
     {
       "name": "美極套裝／輔助",
       "description": "我方全體拍組最大HP提升15",
       "tag": "美極套裝",
-      "category": 4
+      "category": 999
     },
     {
       "name": "太陽眼鏡／輔助",
       "description": "我方全體拍組最大HP提升15",
       "tag": "太陽眼鏡",
-      "category": 4
+      "category": 999
     }
   ],
   "specialAwaking": {
@@ -391,7 +391,7 @@
       "level": 1,
       "x": 2,
       "y": 2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 16
     },
     {
@@ -404,7 +404,7 @@
       "level": 2,
       "x": 1,
       "y": 3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 16
     },
     {
@@ -417,7 +417,7 @@
       "level": 1,
       "x": 3,
       "y": 2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 16
     },
     {
@@ -768,7 +768,7 @@
       "level": 1,
       "x": -3,
       "y": 3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 16
     },
     {
@@ -781,7 +781,7 @@
       "level": 1,
       "x": -2,
       "y": 3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 16
     },
     {

@@ -18,25 +18,25 @@
       "name": "火屬性／攻擊",
       "description": "僅在我方使出火屬性攻擊時，攻擊和特攻提升30",
       "tag": "火",
-      "category": 1
+      "category": 999
     },
     {
       "name": "伽勒爾／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "伽勒爾",
-      "category": 2
+      "category": 999
     },
     {
       "name": "冠軍／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "冠軍",
-      "category": 3
+      "category": 999
     },
     {
       "name": "對戰設施的強者／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "對戰設施的強者",
-      "category": 3
+      "category": 999
     },
     {
       "name": "我行我素／攻擊",
@@ -225,8 +225,8 @@
       "actor": "pm0006_81_00_glizardon",
       "gender": 1,
       "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 2,
+      "weakness": 4,
       "stat": {
         "hp": [
           101,
@@ -307,6 +307,14 @@
       ],
       "moves": null,
       "syncMove": null,
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
       "movesDynamax": [
         {
           "id": 7008,

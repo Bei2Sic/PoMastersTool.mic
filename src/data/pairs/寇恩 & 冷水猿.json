@@ -18,19 +18,19 @@
       "name": "水屬性／速戰",
       "description": "僅在我方使出水屬性攻擊時，攻擊和特攻提升24\n我方全體拍組的速度提升24",
       "tag": "水",
-      "category": 1
+      "category": 999
     },
     {
       "name": "合眾／速戰",
       "description": "我方全體拍組的攻擊和特攻提升4\n我方全體拍組的速度提升7",
       "tag": "合眾",
-      "category": 2
+      "category": 999
     },
     {
       "name": "道館館主／速戰",
       "description": "我方全體拍組的攻擊和特攻提升4\n我方全體拍組的速度提升7",
       "tag": "道館館主",
-      "category": 3
+      "category": 999
     },
     {
       "name": "烹飪／速戰",
@@ -350,7 +350,7 @@
       "level": 1,
       "x": 2,
       "y": 0,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 3
     },
     {
@@ -363,7 +363,7 @@
       "level": 1,
       "x": 1,
       "y": 1,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 3
     },
     {
@@ -376,7 +376,7 @@
       "level": 2,
       "x": 3,
       "y": 0,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 3
     },
     {
@@ -753,7 +753,7 @@
       "level": 1,
       "x": -2,
       "y": 4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 3
     },
     {
@@ -766,7 +766,7 @@
       "level": 1,
       "x": -3,
       "y": 5,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 3
     },
     {

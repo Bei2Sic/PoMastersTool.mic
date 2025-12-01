@@ -18,31 +18,31 @@
       "name": "火屬性／技術",
       "description": "我方全體拍組最大HP提升24\n僅在我方使出火屬性攻擊時，攻擊和特攻提升24",
       "tag": "火",
-      "category": 1
+      "category": 999
     },
     {
       "name": "豐緣／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "豐緣",
-      "category": 2
+      "category": 999
     },
     {
       "name": "主角／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "主角",
-      "category": 3
+      "category": 999
     },
     {
       "name": "美極套裝／技術",
       "description": "我方全體拍組最大HP提升8\n我方全體拍組的攻擊和特攻提升5",
       "tag": "美極套裝",
-      "category": 4
+      "category": 999
     },
     {
       "name": "雙馬尾／技術",
       "description": "我方全體拍組最大HP提升8\n我方全體拍組的攻擊和特攻提升5",
       "tag": "雙馬尾",
-      "category": 4
+      "category": 999
     }
   ],
   "specialAwaking": {
@@ -224,8 +224,8 @@
       "actor": "pm0257_51_megabusyamo",
       "gender": 1,
       "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 2,
+      "weakness": 10,
       "stat": {
         "hp": [
           95,
@@ -375,7 +375,15 @@
         "description": "變成超級火焰雞直到對戰結束。對手的防禦降低得越多,威力就越大。",
         "tags": "none",
         "group": "Sync"
-      }
+      },
+      "scale": [
+        100,
+        120,
+        100,
+        100,
+        100,
+        120
+      ]
     }
   ],
   "luckCookies": [

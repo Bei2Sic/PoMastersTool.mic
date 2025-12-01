@@ -18,19 +18,19 @@
       "name": "草屬性／速戰",
       "description": "僅在我方使出草屬性攻擊時，攻擊和特攻提升24\n我方全體拍組的速度提升24",
       "tag": "草",
-      "category": 1
+      "category": 999
     },
     {
       "name": "豐緣／速戰",
       "description": "我方全體拍組的攻擊和特攻提升4\n我方全體拍組的速度提升7",
       "tag": "豐緣",
-      "category": 2
+      "category": 999
     },
     {
       "name": "對戰設施的強者／速戰",
       "description": "我方全體拍組的攻擊和特攻提升4\n我方全體拍組的速度提升7",
       "tag": "對戰設施的強者",
-      "category": 3
+      "category": 999
     },
     {
       "name": "鍛鍊精壯的身體／速戰",
@@ -224,8 +224,8 @@
       "actor": "pm0286_81_00_kinogassa",
       "gender": 2,
       "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 5,
+      "weakness": 10,
       "stat": {
         "hp": [
           98,
@@ -301,6 +301,14 @@
       ],
       "moves": null,
       "syncMove": null,
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
       "movesDynamax": [
         {
           "id": 7025,
@@ -760,7 +768,7 @@
       "level": 3,
       "x": -3,
       "y": -1,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 5
     },
     {

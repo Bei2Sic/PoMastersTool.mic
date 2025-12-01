@@ -18,25 +18,25 @@
       "name": "妖精屬性／技術",
       "description": "我方全體拍組最大HP提升24\n僅在我方使出妖精屬性攻擊時，攻擊和特攻提升24",
       "tag": "妖精",
-      "category": 1
+      "category": 999
     },
     {
       "name": "豐緣／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "豐緣",
-      "category": 2
+      "category": 999
     },
     {
       "name": "勁敵／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "勁敵",
-      "category": 3
+      "category": 999
     },
     {
       "name": "美極套裝／技術",
       "description": "我方全體拍組最大HP提升8\n我方全體拍組的攻擊和特攻提升5",
       "tag": "美極套裝",
-      "category": 4
+      "category": 999
     },
     {
       "name": "鬥志昂揚／技術",
@@ -224,8 +224,8 @@
       "actor": "pm0282_51_megasrnight_rare",
       "gender": 1,
       "is_shiny": true,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 18,
+      "weakness": 14,
       "stat": {
         "hp": [
           92,
@@ -375,7 +375,15 @@
         "description": "變成超級沙奈朵直到對戰結束。當領域為妖精領域時,威力會提高。",
         "tags": "none",
         "group": "Sync"
-      }
+      },
+      "scale": [
+        100,
+        100,
+        100,
+        120,
+        120,
+        100
+      ]
     }
   ],
   "luckCookies": [
@@ -736,7 +744,7 @@
       "level": 1,
       "x": -2,
       "y": 0,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 18
     },
     {
@@ -775,7 +783,7 @@
       "level": 2,
       "x": -2,
       "y": -1,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 18
     },
     {
@@ -996,7 +1004,7 @@
       "level": 1,
       "x": -2,
       "y": 4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 18
     },
     {
@@ -1009,7 +1017,7 @@
       "level": 1,
       "x": -3,
       "y": 5,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 18
     },
     {
@@ -1022,7 +1030,7 @@
       "level": 2,
       "x": -1,
       "y": 4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 18
     },
     {

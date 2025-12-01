@@ -18,25 +18,25 @@
       "name": "幽靈屬性／技術",
       "description": "我方全體拍組最大HP提升24\n僅在我方使出幽靈屬性攻擊時，攻擊和特攻提升24",
       "tag": "幽靈",
-      "category": 1
+      "category": 999
     },
     {
       "name": "城都／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "城都",
-      "category": 2
+      "category": 999
     },
     {
       "name": "季節服裝／技術",
       "description": "我方全體拍組最大HP提升8\n我方全體拍組的攻擊和特攻提升5",
       "tag": "季節服裝",
-      "category": 4
+      "category": 999
     },
     {
       "name": "披風／技術",
       "description": "我方全體拍組最大HP提升8\n我方全體拍組的攻擊和特攻提升5",
       "tag": "披風",
-      "category": 4
+      "category": 999
     },
     {
       "name": "不可思議的力量／技術",
@@ -220,8 +220,8 @@
       "actor": "pm0354_51_megajuppeta",
       "gender": 1,
       "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 14,
+      "weakness": 16,
       "stat": {
         "hp": [
           85,
@@ -371,7 +371,15 @@
         "description": "變成超級詛咒娃娃直到對戰結束。當對手陷入灼傷狀態時,威力會提高。",
         "tags": "none",
         "group": "Sync"
-      }
+      },
+      "scale": [
+        100,
+        120,
+        100,
+        100,
+        100,
+        120
+      ]
     }
   ],
   "luckCookies": [

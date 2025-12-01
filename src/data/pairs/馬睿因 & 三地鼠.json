@@ -18,25 +18,25 @@
       "name": "鋼屬性／攻擊",
       "description": "僅在我方使出鋼屬性攻擊時，攻擊和特攻提升30",
       "tag": "鋼",
-      "category": 1
+      "category": 999
     },
     {
       "name": "阿羅拉／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "阿羅拉",
-      "category": 2
+      "category": 999
     },
     {
       "name": "四天王／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "四天王",
-      "category": 3
+      "category": 999
     },
     {
       "name": "眼鏡／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升9",
       "tag": "眼鏡",
-      "category": 4
+      "category": 999
     },
     {
       "name": "天文台的親戚／攻擊",

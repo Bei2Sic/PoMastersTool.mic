@@ -18,25 +18,25 @@
       "name": "水屬性／輔助",
       "description": "我方全體拍組最大HP提升60",
       "tag": "水",
-      "category": 1
+      "category": 999
     },
     {
       "name": "關都／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "關都",
-      "category": 2
+      "category": 999
     },
     {
       "name": "勁敵／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "勁敵",
-      "category": 3
+      "category": 999
     },
     {
       "name": "美極套裝／輔助",
       "description": "我方全體拍組最大HP提升15",
       "tag": "美極套裝",
-      "category": 4
+      "category": 999
     },
     {
       "name": "真新鎮／輔助",
@@ -224,8 +224,8 @@
       "actor": "pm0009_51_megamex",
       "gender": 1,
       "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 3,
+      "weakness": 4,
       "stat": {
         "hp": [
           89,
@@ -375,7 +375,15 @@
         "description": "變成超級水箭龜直到對戰結束。自己的防禦提高得越多,威力就越大。",
         "tags": "none",
         "group": "Sync"
-      }
+      },
+      "scale": [
+        100,
+        100,
+        120,
+        100,
+        120,
+        100
+      ]
     }
   ],
   "luckCookies": [

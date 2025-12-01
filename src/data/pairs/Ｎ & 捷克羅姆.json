@@ -18,25 +18,25 @@
       "name": "電屬性／攻擊",
       "description": "僅在我方使出電屬性攻擊時，攻擊和特攻提升30",
       "tag": "電",
-      "category": 1
+      "category": 999
     },
     {
       "name": "合眾／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "合眾",
-      "category": 2
+      "category": 999
     },
     {
       "name": "勁敵／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "勁敵",
-      "category": 3
+      "category": 999
     },
     {
       "name": "邪惡組織／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "邪惡組織",
-      "category": 3
+      "category": 999
     },
     {
       "name": "合眾的冒險／攻擊",

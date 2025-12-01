@@ -18,19 +18,19 @@
       "name": "草屬性／攻擊",
       "description": "僅在我方使出草屬性攻擊時，攻擊和特攻提升30",
       "tag": "草",
-      "category": 1
+      "category": 999
     },
     {
       "name": "豐緣／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "豐緣",
-      "category": 2
+      "category": 999
     },
     {
       "name": "主角／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "主角",
-      "category": 3
+      "category": 999
     },
     {
       "name": "豐緣的最強父子／攻擊",
@@ -215,8 +215,8 @@
       "actor": "pm0254_51_megajukain",
       "gender": 1,
       "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 5,
+      "weakness": 8,
       "stat": {
         "hp": [
           125,
@@ -361,7 +361,15 @@
         "description": "沒有追加效果。",
         "tags": "none",
         "group": "Sync"
-      }
+      },
+      "scale": [
+        100,
+        130,
+        100,
+        110,
+        100,
+        100
+      ]
     }
   ],
   "luckCookies": [

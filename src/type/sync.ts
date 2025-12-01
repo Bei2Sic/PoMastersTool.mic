@@ -1,4 +1,4 @@
-import { ExRoleIndex, RoleIndex, RarityIndex } from "@/type/const";
+import { BonusIndex, ExRoleIndex, RarityIndex, RoleIndex } from "@/type/const";
 import { ComputedRef } from "vue";
 
 // ------------------------------ 拍组JSON原始数据类型（与JSON结构完全对应）------------------------------
@@ -108,6 +108,7 @@ export interface Pokemon {
     type: number;
     weakness: number;
     stat: PokemonStat;
+    scale?: number[];
     passives: Passive[];
     moves: Move[];
     syncMove: SyncMove;
@@ -169,7 +170,7 @@ export interface SyncDynamicState {
     level: number; // 当前等级
     potential: number; // 当前潜力
     exRoleEnabled: boolean; // 是否开启EX体系
-    bonusLevel: number; // 当前宝数等级
+    bonusLevel: BonusIndex; // 当前宝数等级
     // bonusList: { id: number; isActive: boolean }[]; // 宝数激活列表
     gridData: Tile[]; // 石盘动态数据
     potentialCookie: LuckCookie | null; // 当前选择的潜能饼干

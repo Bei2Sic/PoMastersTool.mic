@@ -18,19 +18,19 @@
       "name": "草屬性／攻擊",
       "description": "僅在我方使出草屬性攻擊時，攻擊和特攻提升30",
       "tag": "草",
-      "category": 1
+      "category": 999
     },
     {
       "name": "伽勒爾／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "伽勒爾",
-      "category": 2
+      "category": 999
     },
     {
       "name": "主角／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "主角",
-      "category": 3
+      "category": 999
     },
     {
       "name": "伽勒爾的冒險／攻擊",
@@ -218,8 +218,8 @@
       "actor": "pm0812_81_00_ggorirander",
       "gender": 1,
       "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 5,
+      "weakness": 2,
       "stat": {
         "hp": [
           95,
@@ -295,6 +295,14 @@
       ],
       "moves": null,
       "syncMove": null,
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
       "movesDynamax": [
         {
           "id": 7045,
@@ -791,7 +799,7 @@
       "level": 3,
       "x": -2,
       "y": -4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 9
     },
     {
@@ -1025,7 +1033,7 @@
       "level": 3,
       "x": -2,
       "y": 4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 5
     },
     {

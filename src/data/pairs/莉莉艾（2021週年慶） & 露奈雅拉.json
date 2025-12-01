@@ -18,25 +18,25 @@
       "name": "幽靈屬性／攻擊",
       "description": "僅在我方使出幽靈屬性攻擊時，攻擊和特攻提升30",
       "tag": "幽靈",
-      "category": 1
+      "category": 999
     },
     {
       "name": "阿羅拉／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "阿羅拉",
-      "category": 2
+      "category": 999
     },
     {
       "name": "季節服裝／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升9",
       "tag": "季節服裝",
-      "category": 4
+      "category": 999
     },
     {
       "name": "雙馬尾／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升9",
       "tag": "雙馬尾",
-      "category": 4
+      "category": 999
     },
     {
       "name": "阿羅拉的冒險／攻擊",

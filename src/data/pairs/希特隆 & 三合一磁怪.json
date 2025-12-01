@@ -18,25 +18,25 @@
       "name": "電屬性／輔助",
       "description": "我方全體拍組最大HP提升60",
       "tag": "電",
-      "category": 1
+      "category": 999
     },
     {
       "name": "卡洛斯／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "卡洛斯",
-      "category": 2
+      "category": 999
     },
     {
       "name": "道館館主／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "道館館主",
-      "category": 3
+      "category": 999
     },
     {
       "name": "眼鏡／輔助",
       "description": "我方全體拍組最大HP提升15",
       "tag": "眼鏡",
-      "category": 4
+      "category": 999
     },
     {
       "name": "機械愛好者／輔助",

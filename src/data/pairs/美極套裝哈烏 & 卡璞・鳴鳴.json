@@ -18,19 +18,19 @@
       "name": "電屬性／技術",
       "description": "我方全體拍組最大HP提升24\n僅在我方使出電屬性攻擊時，攻擊和特攻提升24",
       "tag": "電",
-      "category": 1
+      "category": 999
     },
     {
       "name": "阿羅拉／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "阿羅拉",
-      "category": 2
+      "category": 999
     },
     {
       "name": "美極套裝／技術",
       "description": "我方全體拍組最大HP提升8\n我方全體拍組的攻擊和特攻提升5",
       "tag": "美極套裝",
-      "category": 4
+      "category": 999
     },
     {
       "name": "我行我素／技術",
@@ -458,7 +458,7 @@
       "level": 1,
       "x": 2,
       "y": 2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 4
     },
     {
@@ -471,7 +471,7 @@
       "level": 2,
       "x": 1,
       "y": 3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 4
     },
     {
@@ -484,7 +484,7 @@
       "level": 1,
       "x": 3,
       "y": 2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 4
     },
     {
@@ -692,7 +692,7 @@
       "level": 1,
       "x": 2,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 4
     },
     {
@@ -718,7 +718,7 @@
       "level": 2,
       "x": 3,
       "y": -3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 4
     },
     {

@@ -9,7 +9,6 @@ import {
     SyncMethods,
     SyncRawData,
     Tile,
-    Trainer,
 } from "@/type/sync"; // 导入你的核心类型
 import { StatValueCalculator } from "@/utils/statValue";
 import { defineStore } from "pinia";
@@ -98,7 +97,7 @@ export const useSyncElemStore = defineStore("syncUse", {
             if (!rawData) return;
             this.currentSync = createSync(rawData);
             localStorage.setItem(STORAGE_KEY, trainer_id);
-        }
+        },
     },
 });
 
@@ -154,8 +153,9 @@ const createSync = (jsonData: SyncRawData): Sync => {
 
     // 内部工具函数：六维属性计算
     const calculateStat = (statKey: keyof PokemonStat): number => {
+        const originPokemon = jsonData.pokemon[0];
         const currentPokemon = jsonData.pokemon[state.selectedPokemonIndex];
-        const statList = currentPokemon.stat[statKey] as [
+        const statList = originPokemon.stat[statKey] as [
             number,
             number,
             number,
@@ -165,9 +165,17 @@ const createSync = (jsonData: SyncRawData): Sync => {
             number
         ];
 
-        // 基础白值计算（适配新的stat数组结构）
+        // 等級加成
         const input = { level: state.level, statList };
         let result = StatValueCalculator.calculate(input);
+
+        // 超覺醒加成
+        result = StatValueCalculator.calculateAwakeningBonus(
+            result,
+            jsonData.trainer.role,
+            state.bonusLevel,
+            getStatIndexByStatKey(statKey)
+        );
 
         // 星级加成
         result = StatValueCalculator.calcuateRarityBonus(
@@ -185,6 +193,12 @@ const createSync = (jsonData: SyncRawData): Sync => {
                 jsonData.trainer.exRole,
                 getStatIndexByStatKey(statKey)
             );
+        }
+        // 如果有加成列表
+        if (currentPokemon?.scale && currentPokemon.scale.length > 0) {
+            let index = getStatIndexByStatKey(statKey) - 1;
+            let scale = currentPokemon.scale[index];
+            result = StatValueCalculator.calculateVarietyBonus(result, scale);
         }
 
         return Math.floor(result);
@@ -218,9 +232,12 @@ const createSync = (jsonData: SyncRawData): Sync => {
 
         getSyncName: () => {
             const { name: trainerName } = jsonData.trainer;
-            const { name: pokemonName, form } = jsonData.pokemon[state.selectedPokemonIndex];
+            const { name: pokemonName, form } =
+                jsonData.pokemon[state.selectedPokemonIndex];
 
-            const fixTrainerName = trainerName.replace(/（/g, "(").replace(/）/g, ")");
+            const fixTrainerName = trainerName
+                .replace(/（/g, "(")
+                .replace(/）/g, ")");
             const fixPokemonName = `${pokemonName}${form ? `(${form})` : ""}`;
 
             return `${fixTrainerName} & ${fixPokemonName}`;
@@ -255,7 +272,7 @@ const createSync = (jsonData: SyncRawData): Sync => {
                 return ["基礎形態"];
             }
 
-            const variationList = jsonData.pokemon.map(item => {
+            const variationList = jsonData.pokemon.map((item) => {
                 switch (item.variationType) {
                     case 1:
                         return "Mega形態";
@@ -273,7 +290,7 @@ const createSync = (jsonData: SyncRawData): Sync => {
         },
 
         getPokemon: (index: number) => {
-            return jsonData.pokemon[index] || null
+            return jsonData.pokemon[index] || null;
         },
 
         // 切换石盘激活状态
@@ -282,7 +299,6 @@ const createSync = (jsonData: SyncRawData): Sync => {
             if (tile && methods.isTileReachable(tile)) {
                 tile.isActive = !tile.isActive;
             }
-            console.log(computedProps.selectedTiles.value);
         },
 
         // 更新等级（含范围验证）
@@ -310,7 +326,6 @@ const createSync = (jsonData: SyncRawData): Sync => {
                 ...cookie,
                 cookieName: `${cookie.cookieName}${level}`,
             };
-            console.log(state.potentialCookie.cookieName);
         },
 
         // 判断石盘是否可达（基于宝数等级）
@@ -351,7 +366,6 @@ const createSync = (jsonData: SyncRawData): Sync => {
             let keyName = "";
             if (state.bonusLevel < tile.level) {
                 keyName = "icons/locked-" + tile.level;
-                console.log(keyName);
                 const imagePath = `../assets/sync-grids/${keyName}.png`;
                 const url = new URL(imagePath, import.meta.url).href;
                 return url;
@@ -382,16 +396,16 @@ const createSync = (jsonData: SyncRawData): Sync => {
         },
 
         fixTileName: (tile: Tile) => {
-            let name = tile.name
+            let name = tile.name;
             switch (tile.color) {
                 case "#BF80FF":
-                    name = name.replace(/^.*?：/, '拍组招式：');
-                    break
+                    name = name.replace(/^.*?：/, "拍组招式：");
+                    break;
             }
             // name = name.replace(/[:：]\s*/, '：<br>');
-            name.replace(/[:：]/, '$&\n');
+            name.replace(/[:：]/, "$&\n");
 
-            return name
+            return name;
         },
 
         // 切换宝可梦形态

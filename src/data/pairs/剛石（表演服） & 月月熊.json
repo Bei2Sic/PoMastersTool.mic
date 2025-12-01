@@ -18,19 +18,19 @@
       "name": "地面屬性／攻擊",
       "description": "僅在我方使出地面屬性攻擊時，攻擊和特攻提升30",
       "tag": "地面",
-      "category": 1
+      "category": 999
     },
     {
       "name": "神奧／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "神奧",
-      "category": 2
+      "category": 999
     },
     {
       "name": "特別服裝／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升9",
       "tag": "特別服裝",
-      "category": 4
+      "category": 999
     },
     {
       "name": "愛好自然之人／攻擊",
@@ -386,7 +386,7 @@
       "level": 1,
       "x": 2,
       "y": 2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 9
     },
     {
@@ -399,7 +399,7 @@
       "level": 1,
       "x": 3,
       "y": 2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 9
     },
     {
@@ -412,7 +412,7 @@
       "level": 2,
       "x": 1,
       "y": 3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 9
     },
     {
@@ -646,7 +646,7 @@
       "level": 1,
       "x": 2,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 9
     },
     {
@@ -659,7 +659,7 @@
       "level": 1,
       "x": 1,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 9
     },
     {

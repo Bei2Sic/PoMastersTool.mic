@@ -63,7 +63,6 @@ const handleMouseMove = (e) => {
     if (rating !== currentBonus.value) {
         currentBonus.value = rating;
         emit('update:modelValue', rating); // 实时同步给v-model
-        console.log('滑动确认评分：', rating);
     }
 };
 </script>

@@ -18,25 +18,25 @@
       "name": "一般屬性／速戰",
       "description": "僅在我方使出一般屬性攻擊時，攻擊和特攻提升24\n我方全體拍組的速度提升24",
       "tag": "一般",
-      "category": 1
+      "category": 999
     },
     {
       "name": "帕底亞／速戰",
       "description": "我方全體拍組的攻擊和特攻提升4\n我方全體拍組的速度提升7",
       "tag": "帕底亞",
-      "category": 2
+      "category": 999
     },
     {
       "name": "道館館主／速戰",
       "description": "我方全體拍組的攻擊和特攻提升4\n我方全體拍組的速度提升7",
       "tag": "道館館主",
-      "category": 3
+      "category": 999
     },
     {
       "name": "四天王／速戰",
       "description": "我方全體拍組的攻擊和特攻提升4\n我方全體拍組的速度提升7",
       "tag": "四天王",
-      "category": 3
+      "category": 999
     },
     {
       "name": "我行我素／速戰",
@@ -562,7 +562,7 @@
       "level": 1,
       "x": -2,
       "y": 0,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 1
     },
     {
@@ -575,7 +575,7 @@
       "level": 1,
       "x": -1,
       "y": -1,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 1
     },
     {
@@ -588,7 +588,7 @@
       "level": 2,
       "x": -3,
       "y": 0,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 1
     },
     {
@@ -705,7 +705,7 @@
       "level": 1,
       "x": 2,
       "y": -4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 1
     },
     {
@@ -718,7 +718,7 @@
       "level": 1,
       "x": 3,
       "y": -5,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 1
     },
     {

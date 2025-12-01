@@ -18,25 +18,25 @@
       "name": "水屬性／攻擊",
       "description": "僅在我方使出水屬性攻擊時，攻擊和特攻提升30",
       "tag": "水",
-      "category": 1
+      "category": 999
     },
     {
       "name": "卡洛斯／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "卡洛斯",
-      "category": 2
+      "category": 999
     },
     {
       "name": "邪惡組織／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "邪惡組織",
-      "category": 3
+      "category": 999
     },
     {
       "name": "美極套裝／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升9",
       "tag": "美極套裝",
-      "category": 4
+      "category": 999
     },
     {
       "name": "研究者／攻擊",
@@ -705,7 +705,7 @@
       "level": 1,
       "x": 3,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 3
     },
     {
@@ -718,7 +718,7 @@
       "level": 1,
       "x": 2,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 3
     },
     {
@@ -731,7 +731,7 @@
       "level": 1,
       "x": 1,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 3
     },
     {
@@ -744,7 +744,7 @@
       "level": 2,
       "x": 3,
       "y": -3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 3
     },
     {

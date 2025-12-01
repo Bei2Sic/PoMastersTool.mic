@@ -18,19 +18,19 @@
       "name": "鋼屬性／場地",
       "description": "我方全體拍組最大HP提升24\n我方全體拍組的速度提升24",
       "tag": "鋼",
-      "category": 1
+      "category": 999
     },
     {
       "name": "神奧／場地",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的速度提升7",
       "tag": "神奧",
-      "category": 2
+      "category": 999
     },
     {
       "name": "對戰設施的強者／場地",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的速度提升7",
       "tag": "對戰設施的強者",
-      "category": 3
+      "category": 999
     },
     {
       "name": "知識豐富／場地",

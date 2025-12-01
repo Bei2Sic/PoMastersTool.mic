@@ -18,19 +18,19 @@
       "name": "鋼屬性／輔助",
       "description": "我方全體拍組最大HP提升60",
       "tag": "鋼",
-      "category": 1
+      "category": 999
     },
     {
       "name": "神奧／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "神奧",
-      "category": 2
+      "category": 999
     },
     {
       "name": "對戰設施的強者／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "對戰設施的強者",
-      "category": 3
+      "category": 999
     },
     {
       "name": "大姐姐／輔助",
@@ -224,8 +224,8 @@
       "actor": "pm0227_81_00_airmd",
       "gender": 2,
       "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 17,
+      "weakness": 2,
       "stat": {
         "hp": [
           101,
@@ -301,6 +301,14 @@
       ],
       "moves": null,
       "syncMove": null,
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
       "movesDynamax": [
         {
           "id": 7019,

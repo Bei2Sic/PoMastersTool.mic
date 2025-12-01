@@ -18,25 +18,25 @@
       "name": "幽靈屬性／技術",
       "description": "我方全體拍組最大HP提升24\n僅在我方使出幽靈屬性攻擊時，攻擊和特攻提升24",
       "tag": "幽靈",
-      "category": 1
+      "category": 999
     },
     {
       "name": "伽勒爾／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "伽勒爾",
-      "category": 2
+      "category": 999
     },
     {
       "name": "道館館主／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "道館館主",
-      "category": 3
+      "category": 999
     },
     {
       "name": "面罩／技術",
       "description": "我方全體拍組最大HP提升8\n我方全體拍組的攻擊和特攻提升5",
       "tag": "面罩",
-      "category": 4
+      "category": 999
     },
     {
       "name": "不可思議的力量／技術",
@@ -220,8 +220,8 @@
       "actor": "pm0094_81_00_ggangar",
       "gender": 1,
       "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 14,
+      "weakness": 9,
       "stat": {
         "hp": [
           88,
@@ -297,6 +297,14 @@
       ],
       "moves": null,
       "syncMove": null,
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
       "movesDynamax": [
         {
           "id": 7001,
@@ -587,7 +595,7 @@
       "level": 3,
       "x": 2,
       "y": 4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 14
     },
     {
@@ -704,7 +712,7 @@
       "level": 3,
       "x": -2,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 8
     },
     {
@@ -964,7 +972,7 @@
       "level": 3,
       "x": -2,
       "y": 6,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 7
     },
     {

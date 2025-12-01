@@ -18,25 +18,25 @@
       "name": "毒屬性／技術",
       "description": "我方全體拍組最大HP提升24\n僅在我方使出毒屬性攻擊時，攻擊和特攻提升24",
       "tag": "毒",
-      "category": 1
+      "category": 999
     },
     {
       "name": "合眾／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "合眾",
-      "category": 2
+      "category": 999
     },
     {
       "name": "道館館主／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "道館館主",
-      "category": 3
+      "category": 999
     },
     {
       "name": "美極套裝／技術",
       "description": "我方全體拍組最大HP提升8\n我方全體拍組的攻擊和特攻提升5",
       "tag": "美極套裝",
-      "category": 4
+      "category": 999
     },
     {
       "name": "表演家／技術",
@@ -223,8 +223,8 @@
       "actor": "pm0849_81_00_gstrinder",
       "gender": 2,
       "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 8,
+      "weakness": 9,
       "stat": {
         "hp": [
           96,
@@ -300,6 +300,14 @@
       ],
       "moves": null,
       "syncMove": null,
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
       "movesDynamax": [
         {
           "id": 7010,
@@ -603,7 +611,7 @@
       "level": 2,
       "x": 1,
       "y": 3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 8
     },
     {
@@ -616,7 +624,7 @@
       "level": 1,
       "x": 3,
       "y": 2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 8
     },
     {
@@ -668,7 +676,7 @@
       "level": 3,
       "x": 2,
       "y": 4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 8
     },
     {
@@ -785,7 +793,7 @@
       "level": 3,
       "x": -2,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 4
     },
     {
@@ -967,7 +975,7 @@
       "level": 1,
       "x": -2,
       "y": 4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 8
     },
     {
@@ -980,7 +988,7 @@
       "level": 1,
       "x": -3,
       "y": 5,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 8
     },
     {
@@ -993,7 +1001,7 @@
       "level": 2,
       "x": -1,
       "y": 4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 8
     },
     {

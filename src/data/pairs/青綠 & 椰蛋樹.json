@@ -18,25 +18,25 @@
       "name": "草屬性／輔助",
       "description": "我方全體拍組最大HP提升60",
       "tag": "草",
-      "category": 1
+      "category": 999
     },
     {
       "name": "關都／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "關都",
-      "category": 2
+      "category": 999
     },
     {
       "name": "冠軍／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "冠軍",
-      "category": 3
+      "category": 999
     },
     {
       "name": "勁敵／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "勁敵",
-      "category": 3
+      "category": 999
     },
     {
       "name": "真新鎮／輔助",

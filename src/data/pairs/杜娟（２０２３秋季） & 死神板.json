@@ -18,25 +18,25 @@
       "name": "地面屬性／技術",
       "description": "我方全體拍組最大HP提升24\n僅在我方使出地面屬性攻擊時，攻擊和特攻提升24",
       "tag": "地面",
-      "category": 1
+      "category": 999
     },
     {
       "name": "豐緣／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "豐緣",
-      "category": 2
+      "category": 999
     },
     {
       "name": "道館館主／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "道館館主",
-      "category": 3
+      "category": 999
     },
     {
       "name": "季節服裝／技術",
       "description": "我方全體拍組最大HP提升8\n我方全體拍組的攻擊和特攻提升5",
       "tag": "季節服裝",
-      "category": 4
+      "category": 999
     },
     {
       "name": "石頭愛好者／技術",
@@ -623,7 +623,7 @@
       "level": 1,
       "x": 1,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 9
     },
     {
@@ -636,7 +636,7 @@
       "level": 2,
       "x": 3,
       "y": -3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 9
     },
     {
@@ -649,7 +649,7 @@
       "level": 2,
       "x": 2,
       "y": -3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 9
     },
     {
@@ -727,7 +727,7 @@
       "level": 1,
       "x": -1,
       "y": 3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 9
     },
     {
@@ -740,7 +740,7 @@
       "level": 1,
       "x": -3,
       "y": 4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 9
     },
     {

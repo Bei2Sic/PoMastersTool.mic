@@ -18,25 +18,25 @@
       "name": "火屬性／技術",
       "description": "我方全體拍組最大HP提升24\n僅在我方使出火屬性攻擊時，攻擊和特攻提升24",
       "tag": "火",
-      "category": 1
+      "category": 999
     },
     {
       "name": "關都／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "關都",
-      "category": 2
+      "category": 999
     },
     {
       "name": "主角／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "主角",
-      "category": 3
+      "category": 999
     },
     {
       "name": "冠軍／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "冠軍",
-      "category": 3
+      "category": 999
     },
     {
       "name": "真新鎮／技術",
@@ -381,7 +381,7 @@
       "level": 1,
       "x": 2,
       "y": 2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 2
     },
     {
@@ -394,7 +394,7 @@
       "level": 2,
       "x": 1,
       "y": 3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 2
     },
     {
@@ -407,7 +407,7 @@
       "level": 1,
       "x": 3,
       "y": 2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 2
     },
     {
@@ -758,7 +758,7 @@
       "level": 1,
       "x": -2,
       "y": 4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 2
     },
     {
@@ -784,7 +784,7 @@
       "level": 2,
       "x": -1,
       "y": 4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 2
     },
     {

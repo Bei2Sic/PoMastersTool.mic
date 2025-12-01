@@ -18,19 +18,19 @@
       "name": "冰屬性／輔助",
       "description": "我方全體拍組最大HP提升60",
       "tag": "冰",
-      "category": 1
+      "category": 999
     },
     {
       "name": "卡洛斯／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "卡洛斯",
-      "category": 2
+      "category": 999
     },
     {
       "name": "對戰設施的強者／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "對戰設施的強者",
-      "category": 3
+      "category": 999
     },
     {
       "name": "組隊對戰／輔助",

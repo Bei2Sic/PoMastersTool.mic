@@ -18,25 +18,25 @@
       "name": "鋼屬性／速戰",
       "description": "僅在我方使出鋼屬性攻擊時，攻擊和特攻提升24\n我方全體拍組的速度提升24",
       "tag": "鋼",
-      "category": 1
+      "category": 999
     },
     {
       "name": "阿羅拉／速戰",
       "description": "我方全體拍組的攻擊和特攻提升4\n我方全體拍組的速度提升7",
       "tag": "阿羅拉",
-      "category": 2
+      "category": 999
     },
     {
       "name": "季節服裝／速戰",
       "description": "我方全體拍組的攻擊和特攻提升5\n我方全體拍組的速度提升8",
       "tag": "季節服裝",
-      "category": 4
+      "category": 999
     },
     {
       "name": "雙馬尾／速戰",
       "description": "我方全體拍組的攻擊和特攻提升5\n我方全體拍組的速度提升8",
       "tag": "雙馬尾",
-      "category": 4
+      "category": 999
     },
     {
       "name": "阿羅拉的冒險／速戰",
@@ -457,7 +457,7 @@
       "level": 1,
       "x": -2,
       "y": 0,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 17
     },
     {
@@ -483,7 +483,7 @@
       "level": 2,
       "x": -3,
       "y": 0,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 17
     },
     {
@@ -600,7 +600,7 @@
       "level": 1,
       "x": 2,
       "y": -4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 17
     },
     {
@@ -613,7 +613,7 @@
       "level": 1,
       "x": 3,
       "y": -5,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 17
     },
     {
@@ -626,7 +626,7 @@
       "level": 2,
       "x": 1,
       "y": -4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 17
     },
     {

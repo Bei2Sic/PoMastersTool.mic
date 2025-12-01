@@ -18,19 +18,19 @@
       "name": "冰屬性／技術",
       "description": "我方全體拍組最大HP提升24\n僅在我方使出冰屬性攻擊時，攻擊和特攻提升24",
       "tag": "冰",
-      "category": 1
+      "category": 999
     },
     {
       "name": "合眾／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "合眾",
-      "category": 2
+      "category": 999
     },
     {
       "name": "主角／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "主角",
-      "category": 3
+      "category": 999
     },
     {
       "name": "合眾的冒險／技術",

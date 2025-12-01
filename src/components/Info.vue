@@ -5,7 +5,7 @@
             <!-- 当前形态名称 -->
             <button class="variation-name-btn" @click="toggleVariation">{{
                 props.variationList[internalSelectedPokemonIndex]
-            }}</button>
+                }}</button>
         </div>
         <!-- 動態配置區域 -->
         <div class="config-row">
@@ -96,7 +96,7 @@
             <div class="content-container">
                 <!-- 招式tab内容（默认显示） -->
                 <div v-if="activeTab === 'move'" class="moves-container">
-                    <div class="move-card" :class="handlerMoveBGColor(move.type)"
+                    <div class="move-card" :class="handleMoveBGColor(move.type)"
                         v-for="(move, index) in pokemon.moves ?? []" :key="index">
                         <div class="move-header">
                             <div class="move-title">
@@ -117,8 +117,8 @@
                                         backgroundPosition: 'center'
                                     }" v-for="i in move.gauge" :key="i"></span>
                                 </div>
-                                <div class="move-uses" v-if="handlerMoveUses(move.uses)">
-                                    {{ handlerMoveUses(move.uses) }}
+                                <div class="move-uses" v-if="handleMoveUses(move.uses)">
+                                    {{ handleMoveUses(move.uses) }}
                                 </div>
                             </div>
                         </div>
@@ -137,7 +137,7 @@
                                 </div>
                                 <div class="info-item">
                                     <span class="info-label">威力</span>
-                                    <span class="info-value">{{ handleMovePower(move) }}</span>
+                                    <span class="info-value">{{ handleMovePower(move, "move") }}</span>
                                 </div>
                             </div>
                             <div class="info-col">
@@ -147,7 +147,7 @@
                                 </div>
                                 <div class="info-item">
                                     <span class="info-label">命中率</span>
-                                    <span class="info-value">{{ handlerMoveAccuracy(move) }}</span>
+                                    <span class="info-value">{{ handleMoveAccuracy(move) }}</span>
                                 </div>
                             </div>
                         </div>
@@ -157,7 +157,7 @@
                     </div>
 
                     <!-- 极巨化招式 -->
-                    <div class="move-card" :class="handlerMoveBGColor(moveMax.type)"
+                    <div class="move-card" :class="handleMoveBGColor(moveMax.type)"
                         v-for="(moveMax, index) in pokemon.movesDynamax ?? []" :key="index">
                         <div class="move-header">
                             <div class="move-title">
@@ -185,7 +185,7 @@
                                 </div>
                                 <div class="info-item">
                                     <span class="info-label">威力</span>
-                                    <span class="info-value">{{ handleMovePower(moveMax) }}</span>
+                                    <span class="info-value">{{ handleMovePower(moveMax, "dynamaxMove") }}</span>
                                 </div>
                             </div>
                             <div class="info-col">
@@ -195,7 +195,7 @@
                                 </div>
                                 <div class="info-item">
                                     <span class="info-label">命中率</span>
-                                    <span class="info-value">{{ handlerMoveAccuracy(moveMax) }}</span>
+                                    <span class="info-value">{{ handleMoveAccuracy(moveMax) }}</span>
                                 </div>
                             </div>
                         </div>
@@ -205,7 +205,7 @@
                     </div>
 
                     <!-- 太晶技能 -->
-                    <div class="move-card" :class="handlerMoveBGColor(pokemon.moveTera.type)" v-if="pokemon.moveTera">
+                    <div class="move-card" :class="handleMoveBGColor(pokemon.moveTera.type)" v-if="pokemon.moveTera">
                         <!-- 动态绑定同步技能颜色 -->
                         <div class="move-header">
                             <div class="move-title">
@@ -226,8 +226,8 @@
                                         backgroundPosition: 'center'
                                     }" v-for="i in pokemon.moveTera.gauge" :key="i"></span>
                                 </div>
-                                <div class="move-uses" v-if="handlerMoveUses(pokemon.moveTera.uses)">
-                                    {{ handlerMoveUses(pokemon.moveTera.uses) }}
+                                <div class="move-uses" v-if="handleMoveUses(pokemon.moveTera.uses)">
+                                    {{ handleMoveUses(pokemon.moveTera.uses) }}
                                 </div>
                             </div>
                         </div>
@@ -246,7 +246,7 @@
                                 </div>
                                 <div class="info-item">
                                     <span class="info-label">威力</span>
-                                    <span class="info-value">{{ handleMovePower(pokemon.moveTera) }}</span>
+                                    <span class="info-value">{{ handleMovePower(pokemon.moveTera, "none") }}</span>
                                 </div>
                             </div>
                             <div class="info-col">
@@ -256,7 +256,7 @@
                                 </div>
                                 <div class="info-item">
                                     <span class="info-label">命中率</span>
-                                    <span class="info-value"> {{ handlerMoveAccuracy(pokemon.moveTera) }}</span>
+                                    <span class="info-value"> {{ handleMoveAccuracy(pokemon.moveTera) }}</span>
                                 </div>
                             </div>
                         </div>
@@ -266,7 +266,7 @@
                     </div>
 
                     <!-- 拍招-->
-                    <div class="move-card" :class="handlerMoveBGColor(pokemon.syncMove.type)" v-if="pokemon.syncMove">
+                    <div class="move-card" :class="handleMoveBGColor(pokemon.syncMove.type)" v-if="pokemon.syncMove">
                         <!-- 动态绑定同步技能颜色 -->
                         <div class="move-header">
                             <div class="move-title">
@@ -294,7 +294,7 @@
                                 </div>
                                 <div class="info-item">
                                     <span class="info-label">威力</span>
-                                    <span class="info-value">{{ handleMovePower(pokemon.syncMove) }}</span>
+                                    <span class="info-value">{{ handleMovePower(pokemon.syncMove, "syncMove") }}</span>
                                 </div>
                             </div>
                             <div class="info-col">
@@ -304,7 +304,7 @@
                                 </div>
                                 <div class="info-item">
                                     <span class="info-label">命中率</span>
-                                    <span class="info-value"> {{ handlerMoveAccuracy(pokemon.syncMove) }}</span>
+                                    <span class="info-value"> {{ handleMoveAccuracy(pokemon.syncMove) }}</span>
                                 </div>
                             </div>
                         </div>
@@ -345,7 +345,7 @@
 
 
                     <div class="passive-card" v-for="(passive, index) in pokemon.passives ?? []" :key="index" :style="{
-                        backgroundImage: `var(--bgPassive${handlerPassiveBGImage(index)})`,
+                        backgroundImage: `var(--bgPassive${handlePassiveBGImage(index)})`,
                         backgroundSize: 'cover',   // 背景圖覆蓋整個卡片
                         backgroundRepeat: 'no-repeat',
                         backgroundPosition: 'center'
@@ -373,11 +373,11 @@
                 <!-- 组队技能区域 -->
                 <div v-else-if="activeTab === 'team'" class="theme-container">
                     <!-- 循環渲染每個組隊技能卡片 -->
-                    <div class="theme-card" :class="handlerThemeBGColor(index, theme)" v-for="(theme, index) in themes"
+                    <div class="theme-card" :class="handleThemeBGColor(index, theme)" v-for="(theme, index) in themes"
                         :key="index">
                         <div class="theme-header">
                             <span class="icon" :style="{
-                                backgroundImage: `var(--${handlerThemeIcon(theme)})`,
+                                backgroundImage: `var(--${handleThemeIcon(theme)})`,
                                 backgroundSize: 'contain',
                                 backgroundRepeat: 'no-repeat',
                                 backgroundPosition: 'center'
@@ -400,8 +400,9 @@
 </template>
 
 <script setup>
-import { StatValueCalculator } from '@/utils/statValue'; // 假设工具类路径正确
 import { getCategoryInfo, getTypeInfo, getTypeInfoWithCNName } from '@/utils/assetsMap';
+import { MovePowerCalculator } from '@/utils/powerValue';
+import { StatValueCalculator } from '@/utils/statValue';
 import { ref, watch } from 'vue';
 
 const activeTab = ref('move');
@@ -515,27 +516,30 @@ watch(
 );
 
 // 计算技能威力
-const handleMovePower = (move) => {
+const handleMovePower = (move, move_category) => {
+
     let power = move.power
     if (move.power <= 0) {
         return '-';
     }
-    // if (props.bonusLevel <= 5) {
-    //     power = Math.trunc(power * (1 + (props.bonusLevel - 1) * 0.05))
-    // } else if (props.bonusLevel > 5) {
-    //     // 超觉醒....
-    // }
-    let level = props.bonusLevel
-    if (level > 5) {
-        level = 5;
+    if (props.bonusLevel <= 5) {
+        power = MovePowerCalculator.calculateLevelBonus(power, props.bonusLevel);
+    } else if (props.bonusLevel > 5) {
+        // 超觉醒....
+        power = MovePowerCalculator.calculateAwakeningBonus(power, props.trainer.role, props.bonusLevel, move_category);
+        power = Math.ceil(power + Math.floor(move.power * 0.2));
     }
-    power = Math.trunc(power * (1 + (level - 1) * 0.05))
+    console.log(power);
+
+    if (props.trainer.exRole === 3 && props.exRoleEnabledValue && move_category === "syncMove") {
+        power = Math.ceil(power * 1.5)
+    }
 
     return power
 };
 
 // 显示技能使用次数
-const handlerMoveUses = (uses) => {
+const handleMoveUses = (uses) => {
     if (typeof uses !== 'number' || isNaN(uses)) {
         return '';
     }
@@ -543,7 +547,7 @@ const handlerMoveUses = (uses) => {
 };
 
 // 显示技能命中率
-const handlerMoveAccuracy = (move) => {
+const handleMoveAccuracy = (move) => {
     if (move.accuracy != 0) {
         return move.accuracy;
     }
@@ -555,17 +559,17 @@ const handlerMoveAccuracy = (move) => {
 };
 
 // 显示拍招效果
-const handlerSyncMoveEffect = (move) => {
+const handleSyncMoveEffect = (move) => {
 
 };
 
 // 技能背景色映射
-const handlerMoveBGColor = (type) => {
+const handleMoveBGColor = (type) => {
     return 'bg_' + getTypeInfo(type).typeSuffix.toLowerCase();
 }
 
 // 被動技能背景圖映射
-const handlerPassiveBGImage = (index) => {
+const handlePassiveBGImage = (index) => {
     if (index === 1) {
         return props.trainer.exclusivity === "Arcsuit" ? props.trainer.exclusivity : "";
     } else if (index === 0) {
@@ -588,7 +592,7 @@ const togglePassiveDetail = (index) => {
 };
 
 // 组队技能背景色映射
-const handlerThemeBGColor = (index, theme) => {
+const handleThemeBGColor = (index, theme) => {
     if (index === 0) {
         // 第一个为属性
         return 'bg_' + getTypeInfoWithCNName(theme.tag).typeSuffix.toLowerCase();
@@ -598,7 +602,7 @@ const handlerThemeBGColor = (index, theme) => {
 }
 
 // 组队技能图标映射
-const handlerThemeIcon = (theme) => {
+const handleThemeIcon = (theme) => {
     switch (theme.category) {
         // 属性
         case 1:
@@ -694,7 +698,7 @@ const handleExRoleChange = () => {
 /* 每个筛选项占1/4宽度，同时设置最小宽度防止过窄 */
 .config-item {
     flex: 1;
-    min-width: 150px;
+    min-width: 50px;
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -825,7 +829,7 @@ const handleExRoleChange = () => {
 
 /* 拍組信息區域*/
 .sync-page {
-    min-height: 100vh;
+    /* min-height: 100vh; */
 }
 
 /* 顶部切换栏 */

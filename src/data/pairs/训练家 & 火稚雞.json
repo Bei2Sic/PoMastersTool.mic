@@ -18,19 +18,19 @@
       "name": "火屬性／輔助",
       "description": "我方全體拍組最大HP提升60",
       "tag": "火",
-      "category": 1
+      "category": 999
     },
     {
       "name": "主角／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "主角",
-      "category": 3
+      "category": 999
     },
     {
       "name": "帕希歐／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "帕希歐",
-      "category": 2
+      "category": 999
     }
   ],
   "specialAwaking": {

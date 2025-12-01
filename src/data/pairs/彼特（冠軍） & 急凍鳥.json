@@ -18,25 +18,25 @@
       "name": "超能力屬性／輔助",
       "description": "我方全體拍組最大HP提升60",
       "tag": "超能力",
-      "category": 1
+      "category": 999
     },
     {
       "name": "伽勒爾／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "伽勒爾",
-      "category": 2
+      "category": 999
     },
     {
       "name": "冠軍／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "冠軍",
-      "category": 3
+      "category": 999
     },
     {
       "name": "圍巾／輔助",
       "description": "我方全體拍組最大HP提升15",
       "tag": "圍巾",
-      "category": 4
+      "category": 999
     },
     {
       "name": "伽勒爾的冒險／輔助",
@@ -771,7 +771,7 @@
       "level": 1,
       "x": -2,
       "y": 3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 11
     },
     {
@@ -784,7 +784,7 @@
       "level": 2,
       "x": -1,
       "y": 3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 11
     },
     {
@@ -797,7 +797,7 @@
       "level": 2,
       "x": -3,
       "y": 4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 11
     },
     {

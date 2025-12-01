@@ -18,19 +18,19 @@
       "name": "一般屬性／場地",
       "description": "我方全體拍組最大HP提升24\n我方全體拍組的速度提升24",
       "tag": "一般",
-      "category": 1
+      "category": 999
     },
     {
       "name": "阿羅拉／場地",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的速度提升7",
       "tag": "阿羅拉",
-      "category": 2
+      "category": 999
     },
     {
       "name": "給予考驗之人／場地",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的速度提升7",
       "tag": "給予考驗之人",
-      "category": 3
+      "category": 999
     },
     {
       "name": "知識豐富／場地",

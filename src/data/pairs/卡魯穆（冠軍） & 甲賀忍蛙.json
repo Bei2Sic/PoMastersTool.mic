@@ -18,31 +18,31 @@
       "name": "惡屬性／輔助",
       "description": "我方全體拍組最大HP提升60",
       "tag": "惡",
-      "category": 1
+      "category": 999
     },
     {
       "name": "卡洛斯／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "卡洛斯",
-      "category": 2
+      "category": 999
     },
     {
       "name": "主角／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "主角",
-      "category": 3
+      "category": 999
     },
     {
       "name": "冠軍／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "冠軍",
-      "category": 3
+      "category": 999
     },
     {
       "name": "圍巾／輔助",
       "description": "我方全體拍組最大HP提升15",
       "tag": "圍巾",
-      "category": 4
+      "category": 999
     }
   ],
   "specialAwaking": {
@@ -225,8 +225,8 @@
       "actor": "pm0725_00_frog3_rare",
       "gender": 1,
       "is_shiny": true,
-      "type": "3",
-      "weakness": "-1",
+      "type": 3,
+      "weakness": 12,
       "stat": {
         "hp": [
           95,
@@ -381,7 +381,15 @@
         "description": "沒有追加效果。",
         "tags": "none",
         "group": "Sync"
-      }
+      },
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
     }
   ],
   "luckCookies": [

@@ -18,25 +18,25 @@
       "name": "冰屬性／技術",
       "description": "我方全體拍組最大HP提升24\n僅在我方使出冰屬性攻擊時，攻擊和特攻提升24",
       "tag": "冰",
-      "category": 1
+      "category": 999
     },
     {
       "name": "城都／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "城都",
-      "category": 2
+      "category": 999
     },
     {
       "name": "勁敵／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "勁敵",
-      "category": 3
+      "category": 999
     },
     {
       "name": "美極套裝／技術",
       "description": "我方全體拍組最大HP提升8\n我方全體拍組的攻擊和特攻提升5",
       "tag": "美極套裝",
-      "category": 4
+      "category": 999
     },
     {
       "name": "組隊對戰／技術",
@@ -849,7 +849,7 @@
       "level": 1,
       "x": -2,
       "y": 4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 6
     },
     {
@@ -862,7 +862,7 @@
       "level": 1,
       "x": -3,
       "y": 5,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 6
     },
     {
@@ -875,7 +875,7 @@
       "level": 2,
       "x": -1,
       "y": 4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 6
     },
     {
@@ -888,7 +888,7 @@
       "level": 2,
       "x": -2,
       "y": 5,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 6
     },
     {

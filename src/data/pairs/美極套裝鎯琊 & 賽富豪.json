@@ -18,31 +18,31 @@
       "name": "鋼屬性／速戰",
       "description": "僅在我方使出鋼屬性攻擊時，攻擊和特攻提升24\n我方全體拍組的速度提升24",
       "tag": "鋼",
-      "category": 1
+      "category": 999
     },
     {
       "name": "帕希歐／速戰",
       "description": "我方全體拍組的攻擊和特攻提升4\n我方全體拍組的速度提升7",
       "tag": "帕希歐",
-      "category": 2
+      "category": 999
     },
     {
       "name": "勁敵／速戰",
       "description": "我方全體拍組的攻擊和特攻提升4\n我方全體拍組的速度提升7",
       "tag": "勁敵",
-      "category": 3
+      "category": 999
     },
     {
       "name": "美極套裝／速戰",
       "description": "我方全體拍組的攻擊和特攻提升5\n我方全體拍組的速度提升8",
       "tag": "美極套裝",
-      "category": 4
+      "category": 999
     },
     {
       "name": "太陽眼鏡／速戰",
       "description": "我方全體拍組的攻擊和特攻提升5\n我方全體拍組的速度提升8",
       "tag": "太陽眼鏡",
-      "category": 4
+      "category": 999
     }
   ],
   "specialAwaking": {
@@ -628,7 +628,7 @@
       "level": 1,
       "x": 2,
       "y": -4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 17
     },
     {
@@ -641,7 +641,7 @@
       "level": 1,
       "x": 3,
       "y": -5,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 17
     },
     {
@@ -771,7 +771,7 @@
       "level": 1,
       "x": -2,
       "y": 4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 17
     },
     {
@@ -784,7 +784,7 @@
       "level": 1,
       "x": -3,
       "y": 5,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 17
     },
     {
@@ -797,7 +797,7 @@
       "level": 2,
       "x": -1,
       "y": 4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 17
     },
     {

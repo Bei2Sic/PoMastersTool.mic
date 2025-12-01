@@ -18,19 +18,19 @@
       "name": "鋼屬性／攻擊",
       "description": "僅在我方使出鋼屬性攻擊時，攻擊和特攻提升30",
       "tag": "鋼",
-      "category": 1
+      "category": 999
     },
     {
       "name": "豐緣／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "豐緣",
-      "category": 2
+      "category": 999
     },
     {
       "name": "冠軍／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "冠軍",
-      "category": 3
+      "category": 999
     },
     {
       "name": "石頭愛好者／攻擊",
@@ -219,8 +219,8 @@
       "actor": "pm0376_51_megametagross",
       "gender": 3,
       "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 17,
+      "weakness": 14,
       "stat": {
         "hp": [
           80,
@@ -365,7 +365,15 @@
         "description": "變成超級巨金怪直到對戰結束。",
         "tags": "none",
         "group": "Sync"
-      }
+      },
+      "scale": [
+        100,
+        120,
+        110,
+        100,
+        110,
+        100
+      ]
     }
   ],
   "luckCookies": [

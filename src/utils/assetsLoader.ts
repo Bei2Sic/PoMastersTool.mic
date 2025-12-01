@@ -42,7 +42,6 @@ export const loadSyncGridsImageMap = async (): Promise<
             } 个图片`
         );
 
-        console.log(imageMap);
         return imageMap;
     } catch (error) {
         console.error(`加载目录 @/assets/sync-grids 图片失败：`, error);

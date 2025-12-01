@@ -18,19 +18,19 @@
       "name": "毒屬性／攻擊",
       "description": "僅在我方使出毒屬性攻擊時，攻擊和特攻提升30",
       "tag": "毒",
-      "category": 1
+      "category": 999
     },
     {
       "name": "關都／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "關都",
-      "category": 2
+      "category": 999
     },
     {
       "name": "邪惡組織／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "邪惡組織",
-      "category": 3
+      "category": 999
     },
     {
       "name": "火箭隊永恆不朽！／攻擊",

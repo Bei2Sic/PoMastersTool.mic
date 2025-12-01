@@ -18,25 +18,25 @@
       "name": "超能力屬性／攻擊",
       "description": "僅在我方使出超能力屬性攻擊時，攻擊和特攻提升30",
       "tag": "超能力",
-      "category": 1
+      "category": 999
     },
     {
       "name": "阿羅拉／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "阿羅拉",
-      "category": 2
+      "category": 999
     },
     {
       "name": "邪惡組織／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "邪惡組織",
-      "category": 3
+      "category": 999
     },
     {
       "name": "美極套裝／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升9",
       "tag": "美極套裝",
-      "category": 4
+      "category": 999
     },
     {
       "name": "大姐姐／攻擊",
@@ -225,8 +225,8 @@
       "actor": "pm0865_14_prismdragon",
       "gender": 3,
       "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 11,
+      "weakness": 14,
       "stat": {
         "hp": [
           100,
@@ -381,7 +381,15 @@
         "description": "變成究極奈克洛茲瑪直到對戰結束。",
         "tags": "none",
         "group": "Sync"
-      }
+      },
+      "scale": [
+        100,
+        120,
+        120,
+        120,
+        120,
+        120
+      ]
     }
   ],
   "luckCookies": [

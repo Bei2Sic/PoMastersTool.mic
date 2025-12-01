@@ -18,19 +18,19 @@
       "name": "地面屬性／攻擊",
       "description": "僅在我方使出地面屬性攻擊時，攻擊和特攻提升30",
       "tag": "地面",
-      "category": 1
+      "category": 999
     },
     {
       "name": "神奧／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "神奧",
-      "category": 2
+      "category": 999
     },
     {
       "name": "冠軍／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "冠軍",
-      "category": 3
+      "category": 999
     },
     {
       "name": "漣漪鎮／攻擊",
@@ -219,8 +219,8 @@
       "actor": "pm0445_51_megagaburias",
       "gender": 2,
       "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 9,
+      "weakness": 6,
       "stat": {
         "hp": [
           108,
@@ -370,7 +370,15 @@
         "description": "變成超級烈咬陸鯊直到對戰結束。",
         "tags": "none",
         "group": "Sync"
-      }
+      },
+      "scale": [
+        100,
+        120,
+        120,
+        100,
+        100,
+        100
+      ]
     }
   ],
   "luckCookies": [

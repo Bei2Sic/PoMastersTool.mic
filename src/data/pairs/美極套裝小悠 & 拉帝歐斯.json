@@ -18,25 +18,25 @@
       "name": "龍屬性／輔助",
       "description": "我方全體拍組最大HP提升60",
       "tag": "龍",
-      "category": 1
+      "category": 999
     },
     {
       "name": "豐緣／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "豐緣",
-      "category": 2
+      "category": 999
     },
     {
       "name": "主角／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "主角",
-      "category": 3
+      "category": 999
     },
     {
       "name": "美極套裝／輔助",
       "description": "我方全體拍組最大HP提升15",
       "tag": "美極套裝",
-      "category": 4
+      "category": 999
     },
     {
       "name": "宇宙中心／輔助",
@@ -224,8 +224,8 @@
       "actor": "pm0381_51_megalatios",
       "gender": 1,
       "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 15,
+      "weakness": 18,
       "stat": {
         "hp": [
           106,
@@ -375,7 +375,15 @@
         "description": "變成超級拉帝歐斯直到對戰結束。",
         "tags": "none",
         "group": "Sync"
-      }
+      },
+      "scale": [
+        100,
+        100,
+        110,
+        100,
+        130,
+        100
+      ]
     }
   ],
   "luckCookies": [

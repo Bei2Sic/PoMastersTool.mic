@@ -18,19 +18,19 @@
       "name": "超能力屬性／技術",
       "description": "我方全體拍組最大HP提升24\n僅在我方使出超能力屬性攻擊時，攻擊和特攻提升24",
       "tag": "超能力",
-      "category": 1
+      "category": 999
     },
     {
       "name": "豐緣／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "豐緣",
-      "category": 2
+      "category": 999
     },
     {
       "name": "季節服裝／技術",
       "description": "我方全體拍組最大HP提升8\n我方全體拍組的攻擊和特攻提升5",
       "tag": "季節服裝",
-      "category": 4
+      "category": 999
     },
     {
       "name": "我行我素／技術",
@@ -224,8 +224,8 @@
       "actor": "pm0380_51_megalatias",
       "gender": 2,
       "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 11,
+      "weakness": 6,
       "stat": {
         "hp": [
           88,
@@ -375,7 +375,15 @@
         "description": "變成超級拉帝亞斯直到對戰結束。對手的特攻降低得越多,威力就越大。",
         "tags": "none",
         "group": "Sync"
-      }
+      },
+      "scale": [
+        100,
+        100,
+        100,
+        120,
+        120,
+        100
+      ]
     }
   ],
   "luckCookies": [

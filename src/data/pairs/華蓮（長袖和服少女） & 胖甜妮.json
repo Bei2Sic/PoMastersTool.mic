@@ -18,19 +18,19 @@
       "name": "妖精屬性／技術",
       "description": "我方全體拍組最大HP提升24\n僅在我方使出妖精屬性攻擊時，攻擊和特攻提升24",
       "tag": "妖精",
-      "category": 1
+      "category": 999
     },
     {
       "name": "卡洛斯／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "卡洛斯",
-      "category": 2
+      "category": 999
     },
     {
       "name": "雙馬尾／技術",
       "description": "我方全體拍組最大HP提升8\n我方全體拍組的攻擊和特攻提升5",
       "tag": "雙馬尾",
-      "category": 4
+      "category": 999
     }
   ],
   "specialAwaking": {

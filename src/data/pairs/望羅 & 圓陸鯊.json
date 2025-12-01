@@ -18,13 +18,13 @@
       "name": "地面屬性／攻擊",
       "description": "僅在我方使出地面屬性攻擊時，攻擊和特攻提升30",
       "tag": "地面",
-      "category": 1
+      "category": 999
     },
     {
       "name": "神奧／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "神奧",
-      "category": 2
+      "category": 999
     },
     {
       "name": "知識豐富／攻擊",

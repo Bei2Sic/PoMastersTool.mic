@@ -18,25 +18,25 @@
       "name": "格鬥屬性／場地",
       "description": "我方全體拍組最大HP提升24\n我方全體拍組的速度提升24",
       "tag": "格鬥",
-      "category": 1
+      "category": 999
     },
     {
       "name": "帕底亞／場地",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的速度提升7",
       "tag": "帕底亞",
-      "category": 2
+      "category": 999
     },
     {
       "name": "勁敵／場地",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的速度提升7",
       "tag": "勁敵",
-      "category": 3
+      "category": 999
     },
     {
       "name": "冠軍／場地",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的速度提升7",
       "tag": "冠軍",
-      "category": 3
+      "category": 999
     }
   ],
   "specialAwaking": {
@@ -223,8 +223,8 @@
       "actor": "pm1019_71_07_kamitsuorochi",
       "gender": 1,
       "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 7,
+      "weakness": 10,
       "stat": {
         "hp": [
           110,
@@ -387,6 +387,14 @@
         "tags": "none",
         "group": "Sync"
       },
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
       "moveTera": {
         "id": 4041,
         "user": "寶可夢",

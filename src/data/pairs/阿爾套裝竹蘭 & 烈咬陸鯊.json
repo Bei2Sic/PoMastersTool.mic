@@ -18,25 +18,25 @@
       "name": "地面屬性／複合",
       "description": "我方全體拍組最大HP提升24\n僅在我方使出地面屬性攻擊時，攻擊和特攻提升24",
       "tag": "地面",
-      "category": 1
+      "category": 999
     },
     {
       "name": "神奧／複合",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "神奧",
-      "category": 2
+      "category": 999
     },
     {
       "name": "冠軍／複合",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "冠軍",
-      "category": 3
+      "category": 999
     },
     {
       "name": "阿爾套裝／複合",
       "description": "我方全體拍組最大HP提升8\n我方全體拍組的攻擊和特攻提升5",
       "tag": "阿爾套裝",
-      "category": 4
+      "category": 999
     },
     {
       "name": "研究者／複合",
@@ -230,8 +230,8 @@
       "actor": "pm0445_51_megagaburias",
       "gender": 2,
       "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 9,
+      "weakness": 6,
       "stat": {
         "hp": [
           120,
@@ -391,7 +391,15 @@
         "description": "變成超級烈咬陸鯊直到對戰結束。提高自己的下次物理招式威力增強2階段。",
         "tags": 67108864,
         "group": "Sync"
-      }
+      },
+      "scale": [
+        100,
+        110,
+        110,
+        110,
+        110,
+        110
+      ]
     }
   ],
   "luckCookies": [
@@ -606,7 +614,7 @@
       "level": 1,
       "x": 2,
       "y": 1,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 9
     },
     {
@@ -645,7 +653,7 @@
       "level": 2,
       "x": 3,
       "y": 1,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 9
     },
     {
@@ -853,7 +861,7 @@
       "level": 1,
       "x": 2,
       "y": -3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 9
     },
     {
@@ -866,7 +874,7 @@
       "level": 1,
       "x": 1,
       "y": -3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 9
     },
     {
@@ -879,7 +887,7 @@
       "level": 1,
       "x": 1,
       "y": -4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 9
     },
     {

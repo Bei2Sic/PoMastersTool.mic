@@ -18,19 +18,19 @@
       "name": "妖精屬性／場地",
       "description": "我方全體拍組最大HP提升24\n我方全體拍組的速度提升24",
       "tag": "妖精",
-      "category": 1
+      "category": 999
     },
     {
       "name": "帕底亞／場地",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的速度提升7",
       "tag": "帕底亞",
-      "category": 2
+      "category": 999
     },
     {
       "name": "四天王／場地",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的速度提升7",
       "tag": "四天王",
-      "category": 3
+      "category": 999
     },
     {
       "name": "大小姐／場地",
@@ -573,7 +573,7 @@
       "level": 1,
       "x": -2,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 18
     },
     {
@@ -586,7 +586,7 @@
       "level": 1,
       "x": -1,
       "y": -3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 18
     },
     {
@@ -599,7 +599,7 @@
       "level": 2,
       "x": -3,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 18
     },
     {
@@ -716,7 +716,7 @@
       "level": 1,
       "x": 2,
       "y": -4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 18
     },
     {
@@ -729,7 +729,7 @@
       "level": 1,
       "x": 1,
       "y": -4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 18
     },
     {

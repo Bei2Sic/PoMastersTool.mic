@@ -18,19 +18,19 @@
       "name": "妖精屬性／技術",
       "description": "我方全體拍組最大HP提升24\n僅在我方使出妖精屬性攻擊時，攻擊和特攻提升24",
       "tag": "妖精",
-      "category": 1
+      "category": 999
     },
     {
       "name": "伽勒爾／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "伽勒爾",
-      "category": 2
+      "category": 999
     },
     {
       "name": "勁敵／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "勁敵",
-      "category": 3
+      "category": 999
     },
     {
       "name": "伽勒爾的冒險／技術",
@@ -218,8 +218,8 @@
       "actor": "pm0858_81_00_gbrimuon",
       "gender": 2,
       "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 18,
+      "weakness": 8,
       "stat": {
         "hp": [
           80,
@@ -295,6 +295,14 @@
       ],
       "moves": null,
       "syncMove": null,
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
       "movesDynamax": [
         {
           "id": 7040,
@@ -595,7 +603,7 @@
       "level": 3,
       "x": 2,
       "y": 4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 18
     },
     {
@@ -712,7 +720,7 @@
       "level": 3,
       "x": -2,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 11
     },
     {
@@ -972,7 +980,7 @@
       "level": 3,
       "x": -2,
       "y": 6,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 2
     },
     {
@@ -1037,7 +1045,7 @@
       "level": 5,
       "x": 0,
       "y": 5,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 18
     },
     {

@@ -18,19 +18,19 @@
       "name": "鋼屬性／攻擊",
       "description": "僅在我方使出鋼屬性攻擊時，攻擊和特攻提升30",
       "tag": "鋼",
-      "category": 1
+      "category": 999
     },
     {
       "name": "帕底亞／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "帕底亞",
-      "category": 2
+      "category": 999
     },
     {
       "name": "四天王／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "四天王",
-      "category": 3
+      "category": 999
     },
     {
       "name": "大小姐／攻擊",
@@ -442,7 +442,7 @@
       "level": 1,
       "x": 3,
       "y": 1,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 17
     },
     {
@@ -455,7 +455,7 @@
       "level": 1,
       "x": 1,
       "y": 2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 17
     },
     {
@@ -611,7 +611,7 @@
       "level": 1,
       "x": -2,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 17
     },
     {
@@ -624,7 +624,7 @@
       "level": 1,
       "x": -3,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 17
     },
     {
@@ -637,7 +637,7 @@
       "level": 2,
       "x": -1,
       "y": -3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 17
     },
     {

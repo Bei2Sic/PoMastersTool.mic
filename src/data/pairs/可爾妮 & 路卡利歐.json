@@ -18,19 +18,19 @@
       "name": "格鬥屬性／攻擊",
       "description": "僅在我方使出格鬥屬性攻擊時，攻擊和特攻提升30",
       "tag": "格鬥",
-      "category": 1
+      "category": 999
     },
     {
       "name": "卡洛斯／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "卡洛斯",
-      "category": 2
+      "category": 999
     },
     {
       "name": "道館館主／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "道館館主",
-      "category": 3
+      "category": 999
     },
     {
       "name": "鬥志昂揚／攻擊",
@@ -204,8 +204,8 @@
       "actor": "pm0448_51_megalucario",
       "gender": 1,
       "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 7,
+      "weakness": 2,
       "stat": {
         "hp": [
           62,
@@ -345,7 +345,15 @@
         "description": "變成超級路卡利歐直到對戰結束。",
         "tags": "none",
         "group": "Sync"
-      }
+      },
+      "scale": [
+        100,
+        120,
+        100,
+        100,
+        100,
+        120
+      ]
     }
   ],
   "luckCookies": [

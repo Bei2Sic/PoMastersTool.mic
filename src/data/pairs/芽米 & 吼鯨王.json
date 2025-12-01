@@ -18,13 +18,13 @@
       "name": "水屬性／輔助",
       "description": "我方全體拍組最大HP提升60",
       "tag": "水",
-      "category": 1
+      "category": 999
     },
     {
       "name": "神奧／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "神奧",
-      "category": 2
+      "category": 999
     },
     {
       "name": "大姐姐／輔助",

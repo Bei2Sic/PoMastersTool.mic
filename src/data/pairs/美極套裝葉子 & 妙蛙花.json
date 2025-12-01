@@ -18,19 +18,19 @@
       "name": "草屬性／技術",
       "description": "我方全體拍組最大HP提升24\n僅在我方使出草屬性攻擊時，攻擊和特攻提升24",
       "tag": "草",
-      "category": 1
+      "category": 999
     },
     {
       "name": "關都／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "關都",
-      "category": 2
+      "category": 999
     },
     {
       "name": "美極套裝／技術",
       "description": "我方全體拍組最大HP提升8\n我方全體拍組的攻擊和特攻提升5",
       "tag": "美極套裝",
-      "category": 4
+      "category": 999
     },
     {
       "name": "真新鎮／技術",
@@ -218,8 +218,8 @@
       "actor": "pm0003_51_megafushigibana",
       "gender": 2,
       "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 5,
+      "weakness": 11,
       "stat": {
         "hp": [
           111,
@@ -369,7 +369,15 @@
         "description": "變成超級妙蛙花直到對戰結束。當對手陷入中毒或劇毒狀態時,威力會提高。",
         "tags": "none",
         "group": "Sync"
-      }
+      },
+      "scale": [
+        100,
+        100,
+        100,
+        120,
+        120,
+        100
+      ]
     }
   ],
   "luckCookies": [

@@ -18,19 +18,19 @@
       "name": "地面屬性／場地",
       "description": "我方全體拍組最大HP提升24\n我方全體拍組的速度提升24",
       "tag": "地面",
-      "category": 1
+      "category": 999
     },
     {
       "name": "關都／場地",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的速度提升7",
       "tag": "關都",
-      "category": 2
+      "category": 999
     },
     {
       "name": "邪惡組織／場地",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的速度提升7",
       "tag": "邪惡組織",
-      "category": 3
+      "category": 999
     }
   ],
   "specialAwaking": {
@@ -338,7 +338,7 @@
       "level": 1,
       "x": 2,
       "y": 0,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 9
     },
     {
@@ -351,7 +351,7 @@
       "level": 1,
       "x": 1,
       "y": 1,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 9
     },
     {
@@ -390,7 +390,7 @@
       "level": 2,
       "x": 3,
       "y": 0,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 9
     },
     {
@@ -637,7 +637,7 @@
       "level": 1,
       "x": 1,
       "y": -4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 9
     },
     {
@@ -650,7 +650,7 @@
       "level": 2,
       "x": 3,
       "y": -5,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 9
     },
     {

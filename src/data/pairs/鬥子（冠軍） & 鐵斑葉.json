@@ -18,31 +18,31 @@
       "name": "超能力屬性／攻擊",
       "description": "僅在我方使出超能力屬性攻擊時，攻擊和特攻提升30",
       "tag": "超能力",
-      "category": 1
+      "category": 999
     },
     {
       "name": "合眾／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "合眾",
-      "category": 2
+      "category": 999
     },
     {
       "name": "主角／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "主角",
-      "category": 3
+      "category": 999
     },
     {
       "name": "冠軍／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "冠軍",
-      "category": 3
+      "category": 999
     },
     {
       "name": "披風／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升9",
       "tag": "披風",
-      "category": 4
+      "category": 999
     }
   ],
   "specialAwaking": {
@@ -569,7 +569,7 @@
       "level": 1,
       "x": -2,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 11
     },
     {
@@ -582,7 +582,7 @@
       "level": 1,
       "x": -3,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 11
     },
     {
@@ -595,7 +595,7 @@
       "level": 2,
       "x": -1,
       "y": -3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 11
     },
     {
@@ -686,7 +686,7 @@
       "level": 1,
       "x": 2,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 11
     },
     {
@@ -699,7 +699,7 @@
       "level": 1,
       "x": 1,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 11
     },
     {

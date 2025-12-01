@@ -18,25 +18,25 @@
       "name": "惡屬性／場地",
       "description": "我方全體拍組最大HP提升24\n我方全體拍組的速度提升24",
       "tag": "惡",
-      "category": 1
+      "category": 999
     },
     {
       "name": "神奧／場地",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的速度提升7",
       "tag": "神奧",
-      "category": 2
+      "category": 999
     },
     {
       "name": "主角／場地",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的速度提升7",
       "tag": "主角",
-      "category": 3
+      "category": 999
     },
     {
       "name": "圍巾／場地",
       "description": "我方全體拍組最大HP提升8\n我方全體拍組的速度提升8",
       "tag": "圍巾",
-      "category": 4
+      "category": 999
     },
     {
       "name": "洗翠的冒險／場地",
@@ -728,7 +728,7 @@
       "level": 1,
       "x": 2,
       "y": -4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 16
     },
     {
@@ -741,7 +741,7 @@
       "level": 1,
       "x": 1,
       "y": -4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 16
     },
     {
@@ -754,7 +754,7 @@
       "level": 2,
       "x": 3,
       "y": -5,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 16
     },
     {
@@ -858,7 +858,7 @@
       "level": 1,
       "x": -1,
       "y": 2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 16
     },
     {
@@ -871,7 +871,7 @@
       "level": 2,
       "x": -3,
       "y": 3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 16
     },
     {

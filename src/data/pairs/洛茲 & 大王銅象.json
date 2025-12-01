@@ -18,19 +18,19 @@
       "name": "鋼屬性／攻擊",
       "description": "僅在我方使出鋼屬性攻擊時，攻擊和特攻提升30",
       "tag": "鋼",
-      "category": 1
+      "category": 999
     },
     {
       "name": "伽勒爾／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "伽勒爾",
-      "category": 2
+      "category": 999
     },
     {
       "name": "邪惡組織／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "邪惡組織",
-      "category": 3
+      "category": 999
     },
     {
       "name": "鬥志昂揚／攻擊",
@@ -218,8 +218,8 @@
       "actor": "pm0879_81_00_gdaioudou",
       "gender": 2,
       "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 17,
+      "weakness": 7,
       "stat": {
         "hp": [
           104,
@@ -295,6 +295,14 @@
       ],
       "moves": null,
       "syncMove": null,
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
       "movesDynamax": [
         {
           "id": 7049,
@@ -517,7 +525,7 @@
       "level": 4,
       "x": 0,
       "y": -4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 17
     },
     {
@@ -816,7 +824,7 @@
       "level": 3,
       "x": -2,
       "y": -4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 17
     },
     {
@@ -933,7 +941,7 @@
       "level": 3,
       "x": 2,
       "y": -4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 9
     },
     {
@@ -1050,7 +1058,7 @@
       "level": 3,
       "x": -2,
       "y": 4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 13
     },
     {

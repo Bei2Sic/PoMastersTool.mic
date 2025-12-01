@@ -18,25 +18,25 @@
       "name": "草屬性／輔助",
       "description": "我方全體拍組最大HP提升60",
       "tag": "草",
-      "category": 1
+      "category": 999
     },
     {
       "name": "阿羅拉／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "阿羅拉",
-      "category": 2
+      "category": 999
     },
     {
       "name": "給予考驗之人／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "給予考驗之人",
-      "category": 3
+      "category": 999
     },
     {
       "name": "美極套裝／輔助",
       "description": "我方全體拍組最大HP提升15",
       "tag": "美極套裝",
-      "category": 4
+      "category": 999
     },
     {
       "name": "我行我素／輔助",

@@ -18,25 +18,25 @@
       "name": "電屬性／輔助",
       "description": "我方全體拍組最大HP提升60",
       "tag": "電",
-      "category": 1
+      "category": 999
     },
     {
       "name": "城都／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "城都",
-      "category": 2
+      "category": 999
     },
     {
       "name": "道館館主／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "道館館主",
-      "category": 3
+      "category": 999
     },
     {
       "name": "季節服裝／輔助",
       "description": "我方全體拍組最大HP提升15",
       "tag": "季節服裝",
-      "category": 4
+      "category": 999
     },
     {
       "name": "寶可全能競技賽／輔助",
@@ -220,8 +220,8 @@
       "actor": "pm0181_51_megadenryu",
       "gender": 2,
       "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 4,
+      "weakness": 9,
       "stat": {
         "hp": [
           101,
@@ -371,7 +371,15 @@
         "description": "變成超級電龍直到對戰結束。",
         "tags": "none",
         "group": "Sync"
-      }
+      },
+      "scale": [
+        100,
+        100,
+        120,
+        100,
+        120,
+        100
+      ]
     }
   ],
   "luckCookies": [

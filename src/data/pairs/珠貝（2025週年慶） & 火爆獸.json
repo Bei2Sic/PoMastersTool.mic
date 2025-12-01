@@ -18,19 +18,19 @@
       "name": "毒屬性／場地",
       "description": "我方全體拍組最大HP提升24\n我方全體拍組的速度提升24",
       "tag": "毒",
-      "category": 1
+      "category": 999
     },
     {
       "name": "神奧／場地",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的速度提升7",
       "tag": "神奧",
-      "category": 2
+      "category": 999
     },
     {
       "name": "季節服裝／場地",
       "description": "我方全體拍組最大HP提升8\n我方全體拍組的速度提升8",
       "tag": "季節服裝",
-      "category": 4
+      "category": 999
     },
     {
       "name": "愛好自然之人／場地",
@@ -234,8 +234,8 @@
       "actor": "pm0157_74_08_bakphoon",
       "gender": 2,
       "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 8,
+      "weakness": 9,
       "stat": {
         "hp": [
           96,
@@ -403,6 +403,14 @@
         "tags": "none",
         "group": "Sync"
       },
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
       "moveTera": {
         "id": 4045,
         "user": "寶可夢",
@@ -736,7 +744,7 @@
       "level": 1,
       "x": -2,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 1
     },
     {
@@ -749,7 +757,7 @@
       "level": 1,
       "x": -1,
       "y": -3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 1
     },
     {
@@ -996,7 +1004,7 @@
       "level": 1,
       "x": -2,
       "y": 2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 14
     },
     {
@@ -1009,7 +1017,7 @@
       "level": 1,
       "x": -1,
       "y": 2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 14
     },
     {

@@ -1,10 +1,13 @@
 import {
-    StatIndex,
+    AwakeningBonusConfig,
+    BonusIndex,
     ExRoleBonusConfig,
     ExRoleIndex,
     ExRoleList,
     NumToBaseType,
     RarityIndex,
+    RoleIndex,
+    StatIndex,
 } from "@/type/const";
 
 export interface Input {
@@ -16,12 +19,6 @@ export interface Input {
  * 六维数值计算类（数组输入版，适配切片类型传参）
  */
 export class StatValueCalculator {
-    /**
-     * 计算目标等级的数值
-     * @param input - 输入参数（符合 StatsInput 接口）
-     * @returns 目标等级的数值（向下取整为整数）
-     * @throws 输入参数不合法时抛出错误（明确错误原因）
-     */
     static calculate(input: Input): number {
         const { level, statList } = input;
         const [base1, base30, base45, base100, base120, base140, base200] =
@@ -52,36 +49,102 @@ export class StatValueCalculator {
 
         return Math.floor(value);
     }
-
+    //
     static calcuateRarityBonus(
         statValue: number,
         oriRarity: RarityIndex,
         curRarity: RarityIndex,
         potential: number,
-        baseNum: StatIndex
+        statNum: StatIndex // 1 = HP, 2 = ATK, 3 = DEF, 4 = SPA, 5 = SPD, 6 = SPE
     ): number {
         let result: number;
-        if (baseNum > 1 || oriRarity !== 5) {
-            result = statValue + (curRarity - oriRarity) * 40 + 2 * potential;
+        if (statNum > 1) {
+            if (oriRarity != 5) {
+                result =
+                    statValue + (curRarity - oriRarity) * 20 + 1 * potential;
+            } else {
+                result =
+                    statValue + (curRarity - oriRarity) * 40 + 2 * potential;
+            }
         } else {
-            // 5星拍组 HP 系数不一样
-            result = statValue + (curRarity - oriRarity) * 100 + 5 * potential;
+            // 拍组 HP 系数不一样
+            if (oriRarity != 5) {
+                result =
+                    statValue + (curRarity - oriRarity) * 40 + 2 * potential;
+            } else {
+                result =
+                    statValue + (curRarity - oriRarity) * 100 + 5 * potential;
+            }
         }
 
         return result;
     }
-
+    // 计算
     static calculateExRole(
         statValue: number,
         t: ExRoleIndex,
-        baseNum: StatIndex
+        statNum: StatIndex
     ): number {
-        const baseKey = NumToBaseType[baseNum];
+        if (t === -1) {
+            return statValue;
+        }
+
+        const baseKey = NumToBaseType[statNum];
         // 类型需减-1找到对应索引
         const bonusRule = ExRoleBonusConfig[t - 1];
         const value = statValue + bonusRule[baseKey];
 
         return Math.floor(value);
+    }
+
+    static calculateAwakeningBonus(
+        statValue: number,
+        role: RoleIndex,
+        bonusLevel: BonusIndex,
+        statNum: StatIndex
+    ): number {
+        // 沒有超覺醒
+        if (bonusLevel < 6) {
+            return statValue;
+        }
+
+        const statKey = NumToBaseType[statNum];
+        let finalValue = statValue;
+
+        // 遍历超覺醒起始等級到当前等级，累积每个等级的加成
+        for (let level = 6; level <= bonusLevel; level++) {
+            const levelConfig = AwakeningBonusConfig[role][level - 6];
+            // 优先取属性单独配置，无则取通用配置
+            const bonusConfig = (levelConfig?.stat?.[statKey] ||
+                levelConfig?.stat?.common) ?? { mode: "none" };
+
+            if (!bonusConfig || bonusConfig.mode === "none") {
+                continue; // 无加成则跳过
+            }
+
+            // 累积计算（倍率先乘，固定值后加，顺序不影响最终结果）
+            switch (bonusConfig.mode) {
+                case "multi":
+                    finalValue = Math.floor(finalValue * bonusConfig.value);
+                    break;
+                case "flat":
+                    finalValue = Math.floor(finalValue + bonusConfig.value);
+                    break;
+            }
+        }
+        return finalValue;
+    }
+
+    static calculateVarietyBonus(
+        statValue: number,
+        scale: number,
+    ): number {
+        
+        if (scale != 100) {
+            statValue = Math.floor(statValue*scale/100)
+        }
+
+        return statValue;
     }
 
     static getExRoleText(t: ExRoleIndex | number): string {

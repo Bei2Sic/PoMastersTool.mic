@@ -18,19 +18,19 @@
       "name": "一般屬性／攻擊",
       "description": "僅在我方使出一般屬性攻擊時，攻擊和特攻提升30",
       "tag": "一般",
-      "category": 1
+      "category": 999
     },
     {
       "name": "神奧／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "神奧",
-      "category": 2
+      "category": 999
     },
     {
       "name": "對戰設施的強者／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "對戰設施的強者",
-      "category": 3
+      "category": 999
     },
     {
       "name": "鬥志昂揚／攻擊",
@@ -224,8 +224,8 @@
       "actor": "pm0486_81_00_regigigas",
       "gender": 3,
       "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 1,
+      "weakness": 7,
       "stat": {
         "hp": [
           110,
@@ -301,6 +301,14 @@
       ],
       "moves": null,
       "syncMove": null,
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
       "movesDynamax": [
         {
           "id": 7003,
@@ -823,7 +831,7 @@
       "level": 1,
       "x": 3,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 1
     },
     {
@@ -836,7 +844,7 @@
       "level": 1,
       "x": 2,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 1
     },
     {
@@ -953,7 +961,7 @@
       "level": 1,
       "x": -2,
       "y": 2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 1
     },
     {
@@ -966,7 +974,7 @@
       "level": 1,
       "x": -1,
       "y": 2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 1
     },
     {
@@ -979,7 +987,7 @@
       "level": 2,
       "x": -3,
       "y": 3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 1
     },
     {
@@ -1018,7 +1026,7 @@
       "level": 3,
       "x": -3,
       "y": 4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 1
     },
     {

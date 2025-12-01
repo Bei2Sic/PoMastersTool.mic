@@ -16,8 +16,8 @@
                 </div>
                 <div class="rating-section">
                     <!-- 移动端：信息切换按钮（默认隐藏，移动端显示） -->
-                    <button class="info-toggle-btn" @click="showMobileInfo = !showMobileInfo">
-                        {{ showMobileInfo ? '关闭信息' : '查看信息' }}
+                    <button v-show="isSingleView" class="floating-btn" @click="showInfo = !showInfo">
+                        {{ '信息' }}
                     </button>
                     <Bonus v-model="dynamicState.bonusLevel" :star-size="20" :gap="5"
                         :max-rating="trainer.maxBonusLevel" />
@@ -59,10 +59,12 @@
                             }" @click.stop="syncMethods.toggleTile(tile.id)" @mouseenter="hoveredTile = tile"
                             @mouseleave="hoveredTile = null" />
 
-                        <image :href="syncMethods.getTileBorderUrl(tile)" :x="calcHexSvgX(tile.x) - 40"
-                            :y="calcHexSvgY(tile.x, tile.y) - 40" width="80" height="80" pointer-events="none" />
-                        <image :href="syncMethods.getTileFillUrl(tile)" :x="calcHexSvgX(tile.x) - 40"
-                            :y="calcHexSvgY(tile.x, tile.y) - 40" width="80" height="80" pointer-events="none" />
+                        <image :href="syncMethods.getTileBorderUrl(tile)" :x="calcHexSvgX(tile.x) - tileUrlWidth / 2"
+                            :y="calcHexSvgY(tile.x, tile.y) - tileUrlHeight / 2" :width="tileUrlWidth"
+                            :height="tileUrlHeight" pointer-events="none" />
+                        <image :href="syncMethods.getTileFillUrl(tile)" :x="calcHexSvgX(tile.x) - tileUrlWidth / 2"
+                            :y="calcHexSvgY(tile.x, tile.y) - tileUrlHeight / 2" :width="tileUrlWidth"
+                            :height="tileUrlHeight" pointer-events="none" />
                         <foreignObject v-if="hoveredTile" :x="calcTileWinX(hoveredTile.x)"
                             :y="calcTileWinY(hoveredTile.x, hoveredTile.y)" :width=tileWinWidth :height=tileWinHeight>
                             <div xmlns="http://www.w3.org/2000/svg" class="tile-window"
@@ -81,13 +83,13 @@
                             </div>
                         </foreignObject>
                         <!-- 石盘文字 -->
-                        <foreignObject v-if="hoveredTile != tile" :x="calcHexSvgX(tile.x) - 30"
-                            :y="calcHexSvgY(tile.x, tile.y) - 28" width="80" height="80"
+                        <!-- <foreignObject v-if="hoveredTile != tile" :x="calcHexSvgX(tile.x) - tileTextX"
+                            :y="calcHexSvgY(tile.x, tile.y) - tileTextY" :width="tileUrlWidth" :height="tileUrlHeight"
                             style="pointer-events: none; isolation: auto;">
                             <div xmlns="http://www.w3.org/2000/xhtml" class="tile-name-text">{{
                                 syncMethods.fixTileName(tile) }}
                             </div>
-                        </foreignObject>
+                        </foreignObject> -->
                     </template>
                 </svg>
             </div>
@@ -100,11 +102,10 @@
                 </div>
             </div>
 
-            <div v-if="showMobileInfo" class="mobile-info-modal" @click="showMobileInfo = false">
-                <!-- 弹窗内容区（点击内部不关闭） -->
+            <div v-if="showInfo" class="mobile-info-modal" @click="showInfo = false">
                 <div class="mobile-info-content" @click.stop>
                     <!-- 关闭按钮 -->
-                    <button class="mobile-info-close" @click="showMobileInfo = false">×</button>
+                    <button class="mobile-info-close" @click="showInfo = false">×</button>
                     <!-- 拍组名称标题栏 -->
                     <div class="mobile-info-title">{{ syncMethods.getSyncName() }}</div>
                     <!-- 核心：Info组件（完整功能保留） -->
@@ -126,10 +127,6 @@
 
         <!-- 右侧信息区域（完全不变） -->
         <div class=" right-panel">
-
-            <!-- 移动端：关闭按钮 -->
-            <button class="mobile-close-btn" @click="showMobileInfo = false">×</button>
-
             <div class="tab-bar">
                 <button class="tab-btn" :class="{ active: curTab === 'grid' }" @click="curTab = 'grid'">
                     石盤一覽
@@ -217,13 +214,13 @@
 </template>
 
 <script setup>
-import { PotentialCookiesUrl, PotentialSkills } from '@/type/const';
-import { useSyncElemStore } from "@/store/syncElem";
-import Info from '@/components/Info.vue';
 import Bonus from '@/components/Bonus.vue';
 import Filter from '@/components/Filter.vue';
-import { computed, nextTick, onMounted, onUnmounted, ref } from 'vue';
+import Info from '@/components/Info.vue';
+import { useSyncElemStore } from "@/store/syncElem";
+import { PotentialCookiesUrl, PotentialSkills } from '@/type/const';
 import { getTrainerUrl } from '@/utils/assetsMap';
+import { computed, nextTick, onMounted, onUnmounted, ref } from 'vue';
 
 // 缓存数据
 const syncElemStore = useSyncElemStore();
@@ -240,14 +237,16 @@ const trainer = computed(() => {
 const showFilterModal = ref(false);
 
 // 设备移动端
-const showMobileInfo = ref(false);
-const isMobile = ref(window.innerWidth <= 1200);
+const showInfo = ref(false);
+const isSingleView = ref(window.innerWidth <= 1200);
 
 // SVG基础配置（核心：画布尺寸和中心点）
 const svgWidth = ref(0);
 const svgHeight = ref(880); // SVG画布高度
 const centerX = ref(0); // SVG中心点X
 const centerY = ref(0); // SVG中心点Y
+const centerOffsetX = ref(0);
+const centerOffsetY = ref(0);
 const pokemonSize = ref(55); // 拍组头像尺寸
 
 // 六边形配置（SVG绘制正六边形，精准无偏差）
@@ -258,9 +257,17 @@ const hexPoints = ref(''); // 石盘顶点坐标（动态计算）
 const tileWinWidth = ref(300);
 const tileWinHeight = ref(150);
 
+// 石盘资源的高度宽度
+const tileUrlWidth = ref(80);
+const tileUrlHeight = ref(80);
+
+// 石盘文字的X Y以及文字大小
+const tileTextX = ref(30);
+const tileTextY = ref(28);
+
 // 石盘间距配置（避免重叠，可微调）
 const xSpacingRatio = ref(0.8); // 横向间距系数（0.8-0.95）
-const ySpacingRatio = ref(1.1); // 纵向间距系数（1.0-1.2）
+const ySpacingRatio = ref(1.05); // 纵向间距系数（1.0-1.2）
 
 const hoveredTile = ref(null);
 
@@ -276,6 +283,37 @@ const isPotentialWindowOpen = ref(false);
 // 切换窗叶显示/隐藏（点击“潜能区域”或关闭按钮触发）
 const togglePotentialPanel = () => {
     isPotentialWindowOpen.value = !isPotentialWindowOpen.value;
+};
+
+const adjustSizeByScreen = () => {
+    const screenWidth = window.innerWidth;
+    isSingleView.value = screenWidth <= 1200;
+    if (screenWidth < 390) {
+        hexRadius.value = 20;
+        pokemonSize.value = 30;
+        tileWinWidth.value = 260;
+        tileWinHeight.value = 200;
+        tileUrlWidth.value = 40;
+        tileUrlHeight.value = 40;
+        ySpacingRatio.value = 1.00;
+        // tileTextX.value = 18;
+        // tileTextY.value = 20;
+        centerOffsetY.value = -200;
+    } else if (screenWidth < 700) {
+        hexRadius.value = 25;
+        pokemonSize.value = 35;
+        tileWinWidth.value = 260;
+        tileWinHeight.value = 200;
+        tileUrlWidth.value = 50;
+        tileUrlHeight.value = 50;
+        ySpacingRatio.value = 1.00
+
+        centerOffsetY.value = -100;
+        centerOffsetX.value = 20;
+
+    }
+    initSvgConfig();
+    calcSvgCenter();
 };
 
 // 初始化SVG配置：画布尺寸、六边形顶点
@@ -300,8 +338,8 @@ const initSvgConfig = () => {
 
 // 计算SVG中心点（头像位置，也是石盘布局中心）
 const calcSvgCenter = () => {
-    centerX.value = svgWidth.value / 2; // SVG水平中心
-    centerY.value = svgHeight.value / 2; // SVG垂直中心
+    centerX.value = svgWidth.value / 2 + centerOffsetX.value; // SVG水平中心
+    centerY.value = svgHeight.value / 2 + centerOffsetY.value; // SVG垂直中心
 };
 
 // 计算石盘在SVG中的X坐标（以头像为中心）
@@ -341,6 +379,11 @@ const calcTileWinX = (x) => {
 
 // 计算石盘信息显示窗口Y坐标
 const calcTileWinY = (x, y) => {
+    // 如果是单页面显示
+    if (isSingleView.value) {
+        return centerY.value + tileWinHeight.value * 1.5;
+    }
+
     const tileY = calcHexSvgY(x, y);
 
     // 优先尝试显示在六边形正下方位置
@@ -368,14 +411,12 @@ const handleSelectTrainer = (trainerId) => {
 
 // 窗口大小变化时，重新适配SVG尺寸
 const handleResize = () => {
-    initSvgConfig();
-    calcSvgCenter();
+    adjustSizeByScreen();
 };
 
 onMounted(() => {
     nextTick(() => {
-        initSvgConfig();
-        calcSvgCenter();
+        adjustSizeByScreen();
         window.addEventListener('resize', handleResize);
     });
 });
@@ -508,7 +549,6 @@ svg {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    /* background-color: #f8f9fa; */
     /* max-height: 880px; */
 }
 
@@ -954,27 +994,36 @@ svg {
         /* 移动端占满屏幕 */
         border-right: none;
     }
-
-    /* 显示移动端按钮 */
-    .info-toggle-btn {
-        display: none;
-        position: absolute;
-        left: 40px;
-        top: 45px;
-        background-image: url('../assets/images/bg1.png');
-        padding: 6px 14px;
+    /* 悬浮按钮基础样式 */
+    .floating-btn {
+        position: fixed;
+        /* 固定定位，脱离文档流 */
+        right: 20px;
+        bottom: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-image: url('../assets/images/bg2.png');
+        /* 主题色 */
         color: black;
         border: none;
-        border-radius: 20px;
-        font-size: 14px;
-        font-weight: 500;
+        font-size: 15px;
+        font-weight: bold;
         cursor: pointer;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        /* 阴影增强悬浮感 */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 999;
+        /* 保证在其他元素上方 */
         transition: background-color 0.2s;
+        /*  hover动画 */
     }
 
-    .mobile-close-btn {
-        display: block;
+    /*  hover效果 */
+    .floating-btn:hover {
+        background-color: #337ECC;
     }
 
     /* 右侧信息区域：默认隐藏（平移出屏幕），显示时占满屏幕 */
@@ -1080,24 +1129,6 @@ svg {
     .modal-content {
         width: 90% !important;
         max-width: none !important;
-    }
-}
-
-/* 小屏手机额外适配（375px以下） */
-@media (max-width: 375px) {
-    .hexRadius {
-        ref: 28 !important;
-        /* 进一步缩小石盘 */
-    }
-
-    .pokemonSize {
-        ref: 40 !important;
-        /* 进一步缩小头像 */
-    }
-
-    .tileWinHeight {
-        ref: 140 !important;
-        /* 缩小信息窗口高度 */
     }
 }
 </style>

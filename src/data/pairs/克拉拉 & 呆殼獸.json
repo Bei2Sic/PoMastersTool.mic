@@ -18,19 +18,19 @@
       "name": "毒屬性／技術",
       "description": "我方全體拍組最大HP提升24\n僅在我方使出毒屬性攻擊時，攻擊和特攻提升24",
       "tag": "毒",
-      "category": 1
+      "category": 999
     },
     {
       "name": "伽勒爾／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "伽勒爾",
-      "category": 2
+      "category": 999
     },
     {
       "name": "道館館主／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "道館館主",
-      "category": 3
+      "category": 999
     },
     {
       "name": "大姐姐／技術",
@@ -224,8 +224,8 @@
       "actor": "pm0080_00_31_dyadoran",
       "gender": 2,
       "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 8,
+      "weakness": 14,
       "stat": {
         "hp": [
           108,
@@ -375,7 +375,15 @@
         "description": "自己的特攻提高得越多,威力就越大。",
         "tags": "none",
         "group": "Sync"
-      }
+      },
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
     },
     {
       "id": "20272000000",
@@ -385,8 +393,8 @@
       "actor": "pm0080_81_31_dyadoran",
       "gender": 2,
       "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 8,
+      "weakness": 14,
       "stat": {
         "hp": [
           108,
@@ -462,6 +470,14 @@
       ],
       "moves": null,
       "syncMove": null,
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
       "movesDynamax": [
         {
           "id": 7010,

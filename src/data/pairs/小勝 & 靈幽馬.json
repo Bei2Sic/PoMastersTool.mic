@@ -18,19 +18,19 @@
       "name": "幽靈屬性／場地",
       "description": "我方全體拍組最大HP提升24\n我方全體拍組的速度提升24",
       "tag": "幽靈",
-      "category": 1
+      "category": 999
     },
     {
       "name": "伽勒爾／場地",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的速度提升7",
       "tag": "伽勒爾",
-      "category": 2
+      "category": 999
     },
     {
       "name": "主角／場地",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的速度提升7",
       "tag": "主角",
-      "category": 3
+      "category": 999
     },
     {
       "name": "伽勒爾的冒險／場地",
@@ -214,8 +214,8 @@
       "actor": "pm0897_81_00_wraithpos",
       "gender": 3,
       "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 14,
+      "weakness": 16,
       "stat": {
         "hp": [
           97,
@@ -291,6 +291,14 @@
       ],
       "moves": null,
       "syncMove": null,
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
       "movesDynamax": [
         {
           "id": 7018,
@@ -547,7 +555,7 @@
       "level": 3,
       "x": 3,
       "y": -6,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 14
     },
     {
@@ -651,7 +659,7 @@
       "level": 3,
       "x": -3,
       "y": 4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 9
     },
     {

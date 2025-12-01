@@ -18,19 +18,19 @@
       "name": "岩石屬性／攻擊",
       "description": "僅在我方使出岩石屬性攻擊時，攻擊和特攻提升30",
       "tag": "岩石",
-      "category": 1
+      "category": 999
     },
     {
       "name": "合眾／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "合眾",
-      "category": 2
+      "category": 999
     },
     {
       "name": "主角／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "主角",
-      "category": 3
+      "category": 999
     },
     {
       "name": "鬥志昂揚／攻擊",
@@ -42,7 +42,7 @@
       "name": "特別服裝／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升9",
       "tag": "特別服裝",
-      "category": 4
+      "category": 999
     }
   ],
   "specialAwaking": {
@@ -220,8 +220,8 @@
       "actor": "pm0772_51_megadiancie",
       "gender": 3,
       "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 13,
+      "weakness": 17,
       "stat": {
         "hp": [
           87,
@@ -371,7 +371,15 @@
         "description": "變成超級蒂安希直到對戰結束。",
         "tags": "none",
         "group": "Sync"
-      }
+      },
+      "scale": [
+        100,
+        120,
+        100,
+        100,
+        100,
+        120
+      ]
     }
   ],
   "luckCookies": [

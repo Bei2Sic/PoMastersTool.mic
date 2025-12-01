@@ -18,25 +18,25 @@
       "name": "火屬性／技術",
       "description": "我方全體拍組最大HP提升24\n僅在我方使出火屬性攻擊時，攻擊和特攻提升24",
       "tag": "火",
-      "category": 1
+      "category": 999
     },
     {
       "name": "帕底亞／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "帕底亞",
-      "category": 2
+      "category": 999
     },
     {
       "name": "勁敵／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "勁敵",
-      "category": 3
+      "category": 999
     },
     {
       "name": "季節服裝／技術",
       "description": "我方全體拍組最大HP提升8\n我方全體拍組的攻擊和特攻提升5",
       "tag": "季節服裝",
-      "category": 4
+      "category": 999
     },
     {
       "name": "烹飪／技術",
@@ -503,7 +503,7 @@
       "level": 1,
       "x": -2,
       "y": 0,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 2
     },
     {
@@ -516,7 +516,7 @@
       "level": 2,
       "x": -3,
       "y": 0,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 2
     },
     {
@@ -529,7 +529,7 @@
       "level": 1,
       "x": -1,
       "y": -1,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 2
     },
     {
@@ -620,7 +620,7 @@
       "level": 1,
       "x": 2,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 2
     },
     {
@@ -633,7 +633,7 @@
       "level": 1,
       "x": 1,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 2
     },
     {

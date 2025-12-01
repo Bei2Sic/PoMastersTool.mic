@@ -18,19 +18,19 @@
       "name": "幽靈屬性／速戰",
       "description": "僅在我方使出幽靈屬性攻擊時，攻擊和特攻提升24\n我方全體拍組的速度提升24",
       "tag": "幽靈",
-      "category": 1
+      "category": 999
     },
     {
       "name": "神奧／速戰",
       "description": "我方全體拍組的攻擊和特攻提升4\n我方全體拍組的速度提升7",
       "tag": "神奧",
-      "category": 2
+      "category": 999
     },
     {
       "name": "冠軍／速戰",
       "description": "我方全體拍組的攻擊和特攻提升4\n我方全體拍組的速度提升7",
       "tag": "冠軍",
-      "category": 3
+      "category": 999
     },
     {
       "name": "漣漪鎮／速戰",
@@ -363,7 +363,7 @@
       "level": 1,
       "x": 2,
       "y": 0,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 14
     },
     {
@@ -376,7 +376,7 @@
       "level": 1,
       "x": 1,
       "y": 1,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 14
     },
     {
@@ -389,7 +389,7 @@
       "level": 2,
       "x": 3,
       "y": 0,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 14
     },
     {
@@ -766,7 +766,7 @@
       "level": 1,
       "x": -2,
       "y": 4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 14
     },
     {
@@ -779,7 +779,7 @@
       "level": 1,
       "x": -3,
       "y": 5,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 14
     },
     {

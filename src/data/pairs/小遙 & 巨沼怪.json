@@ -18,19 +18,19 @@
       "name": "水屬性／技術",
       "description": "我方全體拍組最大HP提升24\n僅在我方使出水屬性攻擊時，攻擊和特攻提升24",
       "tag": "水",
-      "category": 1
+      "category": 999
     },
     {
       "name": "豐緣／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "豐緣",
-      "category": 2
+      "category": 999
     },
     {
       "name": "主角／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "主角",
-      "category": 3
+      "category": 999
     },
     {
       "name": "宇宙中心／技術",
@@ -220,8 +220,8 @@
       "actor": "pm0260_51_megalaglarge",
       "gender": 2,
       "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 3,
+      "weakness": 5,
       "stat": {
         "hp": [
           152,
@@ -371,7 +371,15 @@
         "description": "變成超級巨沼怪直到對戰結束。當天氣為下雨時,威力會提高。",
         "tags": "none",
         "group": "Sync"
-      }
+      },
+      "scale": [
+        100,
+        100,
+        120,
+        120,
+        100,
+        100
+      ]
     }
   ],
   "luckCookies": [

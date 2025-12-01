@@ -18,25 +18,25 @@
       "name": "電屬性／技術",
       "description": "我方全體拍組最大HP提升24\n僅在我方使出電屬性攻擊時，攻擊和特攻提升24",
       "tag": "電",
-      "category": 1
+      "category": 999
     },
     {
       "name": "伽勒爾／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "伽勒爾",
-      "category": 2
+      "category": 999
     },
     {
       "name": "勁敵／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "勁敵",
-      "category": 3
+      "category": 999
     },
     {
       "name": "雙馬尾／技術",
       "description": "我方全體拍組最大HP提升8\n我方全體拍組的攻擊和特攻提升5",
       "tag": "雙馬尾",
-      "category": 4
+      "category": 999
     },
     {
       "name": "大小姐／技術",
@@ -219,8 +219,8 @@
       "actor": "pm0877_12_00_morpeko",
       "gender": 2,
       "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 4,
+      "weakness": 12,
       "stat": {
         "hp": [
           114,
@@ -365,7 +365,15 @@
         "description": "當自己為空腹花紋時,會變成滿腹花紋。當對手陷入麻痺狀態時,威力會提高。",
         "tags": "none",
         "group": "Sync"
-      }
+      },
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
     }
   ],
   "luckCookies": [

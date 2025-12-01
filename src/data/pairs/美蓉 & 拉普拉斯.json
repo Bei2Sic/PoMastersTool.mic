@@ -18,19 +18,19 @@
       "name": "冰屬性／輔助",
       "description": "我方全體拍組最大HP提升60",
       "tag": "冰",
-      "category": 1
+      "category": 999
     },
     {
       "name": "伽勒爾／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "伽勒爾",
-      "category": 2
+      "category": 999
     },
     {
       "name": "道館館主／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "道館館主",
-      "category": 3
+      "category": 999
     },
     {
       "name": "老手／輔助",
@@ -220,8 +220,8 @@
       "actor": "pm0131_81_00_glaplace",
       "gender": 2,
       "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 6,
+      "weakness": 13,
       "stat": {
         "hp": [
           100,
@@ -297,6 +297,14 @@
       ],
       "moves": null,
       "syncMove": null,
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
       "movesDynamax": [
         {
           "id": 7044,
@@ -574,7 +582,7 @@
       "level": 2,
       "x": 3,
       "y": 3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 6
     },
     {

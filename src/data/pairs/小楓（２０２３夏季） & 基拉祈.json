@@ -18,25 +18,25 @@
       "name": "鋼屬性／技術",
       "description": "我方全體拍組最大HP提升24\n僅在我方使出鋼屬性攻擊時，攻擊和特攻提升24",
       "tag": "鋼",
-      "category": 1
+      "category": 999
     },
     {
       "name": "豐緣／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "豐緣",
-      "category": 2
+      "category": 999
     },
     {
       "name": "道館館主／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "道館館主",
-      "category": 3
+      "category": 999
     },
     {
       "name": "季節服裝／技術",
       "description": "我方全體拍組最大HP提升8\n我方全體拍組的攻擊和特攻提升5",
       "tag": "季節服裝",
-      "category": 4
+      "category": 999
     },
     {
       "name": "宇宙中心／技術",

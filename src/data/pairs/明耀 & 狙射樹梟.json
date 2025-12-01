@@ -18,25 +18,25 @@
       "name": "格鬥屬性／速戰",
       "description": "僅在我方使出格鬥屬性攻擊時，攻擊和特攻提升24\n我方全體拍組的速度提升24",
       "tag": "格鬥",
-      "category": 1
+      "category": 999
     },
     {
       "name": "神奧／速戰",
       "description": "我方全體拍組的攻擊和特攻提升4\n我方全體拍組的速度提升7",
       "tag": "神奧",
-      "category": 2
+      "category": 999
     },
     {
       "name": "主角／速戰",
       "description": "我方全體拍組的攻擊和特攻提升4\n我方全體拍組的速度提升7",
       "tag": "主角",
-      "category": 3
+      "category": 999
     },
     {
       "name": "圍巾／速戰",
       "description": "我方全體拍組的攻擊和特攻提升5\n我方全體拍組的速度提升8",
       "tag": "圍巾",
-      "category": 4
+      "category": 999
     },
     {
       "name": "洗翠的冒險／速戰",
@@ -682,7 +682,7 @@
       "level": 1,
       "x": 1,
       "y": -3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 7
     },
     {
@@ -695,7 +695,7 @@
       "level": 1,
       "x": 2,
       "y": -4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 7
     },
     {
@@ -708,7 +708,7 @@
       "level": 1,
       "x": 3,
       "y": -5,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 7
     },
     {
@@ -851,7 +851,7 @@
       "level": 1,
       "x": -3,
       "y": 5,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 7
     },
     {
@@ -864,7 +864,7 @@
       "level": 2,
       "x": -1,
       "y": 4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 7
     },
     {

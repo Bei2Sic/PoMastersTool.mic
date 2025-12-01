@@ -18,19 +18,19 @@
       "name": "龍屬性／輔助",
       "description": "我方全體拍組最大HP提升60",
       "tag": "龍",
-      "category": 1
+      "category": 999
     },
     {
       "name": "阿羅拉／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "阿羅拉",
-      "category": 2
+      "category": 999
     },
     {
       "name": "太陽眼鏡／輔助",
       "description": "我方全體拍組最大HP提升15",
       "tag": "太陽眼鏡",
-      "category": 4
+      "category": 999
     },
     {
       "name": "研究者／輔助",
@@ -220,8 +220,8 @@
       "actor": "pm0103_84_00_anassy",
       "gender": 1,
       "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 15,
+      "weakness": 8,
       "stat": {
         "hp": [
           97,
@@ -297,6 +297,14 @@
       ],
       "moves": null,
       "syncMove": null,
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
       "movesDynamax": [
         {
           "id": 7025,
@@ -569,7 +577,7 @@
       "level": 2,
       "x": 3,
       "y": 3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 5
     },
     {
@@ -608,7 +616,7 @@
       "level": 1,
       "x": -3,
       "y": 0,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 15
     },
     {
@@ -634,7 +642,7 @@
       "level": 1,
       "x": -2,
       "y": -1,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 15
     },
     {
@@ -660,7 +668,7 @@
       "level": 2,
       "x": -1,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 15
     },
     {
@@ -764,7 +772,7 @@
       "level": 1,
       "x": 2,
       "y": -4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 15
     },
     {
@@ -790,7 +798,7 @@
       "level": 1,
       "x": 3,
       "y": -5,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 15
     },
     {
@@ -829,7 +837,7 @@
       "level": 2,
       "x": 3,
       "y": -6,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 15
     },
     {

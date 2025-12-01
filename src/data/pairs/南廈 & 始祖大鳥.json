@@ -18,19 +18,19 @@
       "name": "岩石屬性／攻擊",
       "description": "僅在我方使出岩石屬性攻擊時，攻擊和特攻提升30",
       "tag": "岩石",
-      "category": 1
+      "category": 999
     },
     {
       "name": "合眾／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "合眾",
-      "category": 2
+      "category": 999
     },
     {
       "name": "對戰設施的強者／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "對戰設施的強者",
-      "category": 3
+      "category": 999
     },
     {
       "name": "組隊對戰／攻擊",

@@ -18,25 +18,25 @@
       "name": "地面屬性／攻擊",
       "description": "僅在我方使出地面屬性攻擊時，攻擊和特攻提升30",
       "tag": "地面",
-      "category": 1
+      "category": 999
     },
     {
       "name": "城都／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "城都",
-      "category": 2
+      "category": 999
     },
     {
       "name": "邪惡組織／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "邪惡組織",
-      "category": 3
+      "category": 999
     },
     {
       "name": "美極套裝／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升9",
       "tag": "美極套裝",
-      "category": 4
+      "category": 999
     }
   ],
   "specialAwaking": {
@@ -218,8 +218,8 @@
       "actor": "pm0034_81_00_nidoking",
       "gender": 1,
       "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 9,
+      "weakness": 11,
       "stat": {
         "hp": [
           97,
@@ -295,6 +295,14 @@
       ],
       "moves": null,
       "syncMove": null,
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
       "movesDynamax": [
         {
           "id": 7011,
@@ -585,7 +593,7 @@
       "level": 3,
       "x": 2,
       "y": 4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 9
     },
     {
@@ -728,7 +736,7 @@
       "level": 3,
       "x": -2,
       "y": -4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 8
     },
     {
@@ -832,7 +840,7 @@
       "level": 3,
       "x": 3,
       "y": -4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 17
     },
     {

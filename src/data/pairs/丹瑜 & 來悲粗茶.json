@@ -18,19 +18,19 @@
       "name": "草屬性／輔助",
       "description": "我方全體拍組最大HP提升60",
       "tag": "草",
-      "category": 1
+      "category": 999
     },
     {
       "name": "帕底亞／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "帕底亞",
-      "category": 2
+      "category": 999
     },
     {
       "name": "勁敵／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "勁敵",
-      "category": 3
+      "category": 999
     },
     {
       "name": "組隊對戰／輔助",
@@ -221,8 +221,8 @@
       "actor": "pm1013_71_05_yabasocha",
       "gender": 3,
       "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 5,
+      "weakness": 2,
       "stat": {
         "hp": [
           95,
@@ -379,6 +379,14 @@
         "tags": "none",
         "group": "Sync"
       },
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
       "moveTera": {
         "id": 4042,
         "user": "寶可夢",

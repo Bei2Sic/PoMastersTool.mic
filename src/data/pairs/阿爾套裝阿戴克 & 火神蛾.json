@@ -18,25 +18,25 @@
       "name": "蟲屬性／複合",
       "description": "我方全體拍組最大HP提升24\n僅在我方使出蟲屬性攻擊時，攻擊和特攻提升24",
       "tag": "蟲",
-      "category": 1
+      "category": 999
     },
     {
       "name": "合眾／複合",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "合眾",
-      "category": 2
+      "category": 999
     },
     {
       "name": "冠軍／複合",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "冠軍",
-      "category": 3
+      "category": 999
     },
     {
       "name": "阿爾套裝／複合",
       "description": "我方全體拍組最大HP提升8\n我方全體拍組的攻擊和特攻提升5",
       "tag": "阿爾套裝",
-      "category": 4
+      "category": 999
     },
     {
       "name": "老手／複合",
@@ -688,7 +688,7 @@
       "level": 1,
       "x": 2,
       "y": -3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 1
     },
     {
@@ -701,7 +701,7 @@
       "level": 1,
       "x": 1,
       "y": -3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 1
     },
     {
@@ -714,7 +714,7 @@
       "level": 1,
       "x": 1,
       "y": -4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 1
     },
     {
@@ -844,7 +844,7 @@
       "level": 1,
       "x": -2,
       "y": 3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 1
     },
     {
@@ -857,7 +857,7 @@
       "level": 2,
       "x": -3,
       "y": 4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 1
     },
     {

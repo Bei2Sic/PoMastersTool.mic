@@ -18,25 +18,25 @@
       "name": "龍屬性／攻擊",
       "description": "僅在我方使出龍屬性攻擊時，攻擊和特攻提升30",
       "tag": "龍",
-      "category": 1
+      "category": 999
     },
     {
       "name": "關都／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "關都",
-      "category": 2
+      "category": 999
     },
     {
       "name": "主角／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "主角",
-      "category": 3
+      "category": 999
     },
     {
       "name": "季節服裝／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升9",
       "tag": "季節服裝",
-      "category": 4
+      "category": 999
     },
     {
       "name": "真新鎮／攻擊",
@@ -235,8 +235,8 @@
       "actor": "pm0006_71_15_lizardon",
       "gender": 1,
       "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 15,
+      "weakness": 6,
       "stat": {
         "hp": [
           110,
@@ -406,6 +406,14 @@
         "tags": "none",
         "group": "Sync"
       },
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
       "moveTera": {
         "id": 4043,
         "user": "寶可夢",
@@ -775,7 +783,7 @@
       "level": 1,
       "x": -2,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 15
     },
     {
@@ -788,7 +796,7 @@
       "level": 1,
       "x": -3,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 15
     },
     {
@@ -801,7 +809,7 @@
       "level": 2,
       "x": -1,
       "y": -3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 15
     },
     {
@@ -892,7 +900,7 @@
       "level": 1,
       "x": 2,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 15
     },
     {
@@ -905,7 +913,7 @@
       "level": 1,
       "x": 1,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 15
     },
     {

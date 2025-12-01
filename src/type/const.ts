@@ -9,7 +9,7 @@ export interface TypeMapItem {
     cnName: string;
 }
 
-export const STORAGE_KEY = 'current_sync_trainer_id';
+export const STORAGE_KEY = "current_sync_trainer_id";
 
 export const ExRoleList = [
     "攻擊型",
@@ -19,6 +19,7 @@ export const ExRoleList = [
     "場地型",
 ] as const;
 
+// ex角色加成
 export const ExRoleBonusConfig = [
     // 0: 攻擊型 → hp+60, atk+40, spa+40
     { hp: 60, atk: 40, def: 0, spa: 40, spd: 0, spe: 0 },
@@ -32,9 +33,137 @@ export const ExRoleBonusConfig = [
     { hp: 60, atk: 0, def: 20, spa: 0, spd: 20, spe: 40 },
 ] as const;
 
-export const AwakeningBonusConifg = [
-    // 1
-]
+// 超覺醒加成
+export const AwakeningBonusConfig = {
+    // 0: 物理擊型
+    0: [
+        // 1級：白值六维×1.1
+        {
+            stat: { common: { mode: "multi", value: 1.1 } },
+        },
+        // 2級：基礎技能x1.1
+        {
+            move: { mode: "multi", value: 1.1 },
+        },
+        // 3級：拍招和極巨化x1.2
+        {
+            syncMove: { mode: "multi", value: 1.2 },
+            dynamaxMove: { mode: "multi", value: 1.2 },
+        },
+        // 4級：基礎技能x1.3
+        {
+            move: { mode: "multi", value: 1.3 },
+        },
+    ],
+    // 1: 特殊攻擊型
+    1: [
+        // 1級：白值六维×1.1
+        {
+            stat: { common: { mode: "multi", value: 1.1 } },
+        },
+        // 2級：基礎技能x1.1
+        {
+            move: { mode: "multi", value: 1.1 },
+        },
+        // 3級：拍招和極巨化x1.2
+        {
+            syncMove: { mode: "multi", value: 1.2 },
+            dynamaxMove: { mode: "multi", value: 1.2 },
+        },
+        // 4級：基礎技能x1.3
+        {
+            move: { mode: "multi", value: 1.3 },
+        },
+    ],
+    // 2: 輔助型
+    2: [
+        // 1級：白值六维×1.1
+        {
+            stat: { common: { mode: "multi", value: 1.1 } },
+        },
+        // 2級：白值HP+50
+        {
+            stat: {
+                hp: { mode: "flat", value: 50 },
+            },
+        },
+        // 3級：白值DEF+20、SPD+20
+        {
+            stat: {
+                def: { mode: "flat", value: 20 },
+                spd: { mode: "flat", value: 20 },
+            },
+        },
+        // 4級：白值HP+100
+        {
+            stat: {
+                hp: { mode: "flat", value: 100 },
+            },
+        },
+    ],
+    // 3: 技術型
+    3: [
+        // 1級：白值六维×1.1
+        {
+            stat: { common: { mode: "multi", value: 1.1 } },
+        },
+        // 2級：拍招和極巨化x1.1
+        {
+            syncMove: { mode: "multi", value: 1.1 },
+            dynamaxMove: { mode: "multi", value: 1.1 },
+        },
+        // 3級：基礎技能x1.2
+        {
+            move: { mode: "multi", value: 1.2 },
+        },
+        // 4級：拍招和極巨化x1.3
+        {
+            syncMove: { mode: "multi", value: 1.3 },
+            dynamaxMove: { mode: "multi", value: 1.3 },
+        },
+    ],
+    // 4: 速戰型
+    4: [
+        // 1級：白值六维×1.1
+        {
+            stat: { common: { mode: "multi", value: 1.1 } },
+        },
+        // 2級：基礎技能x1.1
+        {
+            move: { mode: "multi", value: 1.1 },
+        },
+        // 3級：拍招和極巨化x1.2
+        {
+            syncMove: { mode: "multi", value: 1.2 },
+            dynamaxMove: { mode: "multi", value: 1.2 },
+        },
+        // 4級：基礎技能x1.3
+        {
+            move: { mode: "multi", value: 1.3 },
+        },
+    ],
+    // 5: 場地型
+    5: [
+        // 1級：白值六维×1.1
+        {
+            stat: { common: { mode: "multi", value: 1.1 } },
+        },
+        // 2級：拍招和極巨化x1.1
+        {
+            syncMove: { mode: "multi", value: 1.1 },
+            dynamaxMove: { mode: "multi", value: 1.1 },
+        },
+        // 3級：基礎技能x1.2
+        {
+            move: { mode: "multi", value: 1.2 },
+        },
+        // 4級：拍招和極巨化x1.3
+        {
+            syncMove: { mode: "multi", value: 1.3 },
+            dynamaxMove: { mode: "multi", value: 1.3 },
+        },
+    ],
+} as const;
 
 export const NumToBaseType = {
     1: "hp",
@@ -45,19 +174,17 @@ export const NumToBaseType = {
     6: "spe",
 } as const;
 
-export const BonusList = [
-
-]
+export const BonusList = [];
 
 // 潜能饼干类型资源
 export const PotentialCookiesUrl = [
-    new URL('../assets/images/icon_arcsuit.png', import.meta.url).href,
-    new URL('../assets/images/icon_masterex.png', import.meta.url).href,
-    new URL('../assets/images/icon_master.png', import.meta.url).href,
-    new URL('../assets/images/icon_mega.png', import.meta.url).href,
-    new URL('../assets/images/icon_dynamax.png', import.meta.url).href,
-    new URL('../assets/images/icon_shiny.png', import.meta.url).href,
-]
+    new URL("../assets/images/icon_arcsuit.png", import.meta.url).href,
+    new URL("../assets/images/icon_masterex.png", import.meta.url).href,
+    new URL("../assets/images/icon_master.png", import.meta.url).href,
+    new URL("../assets/images/icon_mega.png", import.meta.url).href,
+    new URL("../assets/images/icon_dynamax.png", import.meta.url).href,
+    new URL("../assets/images/icon_shiny.png", import.meta.url).href,
+];
 
 // temp: mock data
 export const PotentialSkills = [
@@ -66,21 +193,21 @@ export const PotentialSkills = [
         type: 1,
         cookieName: "危機時威力提升",
         desc: "在陷入危機時，會提高招式的威力。",
-        level: [1, 2]
+        level: [1, 2],
     },
     {
         id: 2,
         type: 1,
         cookieName: "沙暴時威力提升",
         desc: "當天氣為沙暴時，會提高招式的威力。",
-        level: [1, 2, 3]
+        level: [1, 2, 3],
     },
     {
         id: 3,
         type: 1,
         cookieName: "異常狀態時威力提升",
         desc: "當自己陷入異常狀態時，會提高招式的威力。",
-        level: [1, 2, 3]
+        level: [1, 2, 3],
     },
     {
         id: 4,
@@ -131,4 +258,4 @@ export const PotentialSkills = [
         desc: "擊中對手要害時，會提高當下該攻擊的威力。",
         level: null,
     },
-]
+];

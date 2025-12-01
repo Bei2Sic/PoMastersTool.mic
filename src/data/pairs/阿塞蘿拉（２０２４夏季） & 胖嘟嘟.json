@@ -18,25 +18,25 @@
       "name": "幽靈屬性／輔助",
       "description": "我方全體拍組最大HP提升60",
       "tag": "幽靈",
-      "category": 1
+      "category": 999
     },
     {
       "name": "阿羅拉／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "阿羅拉",
-      "category": 2
+      "category": 999
     },
     {
       "name": "給予考驗之人／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "給予考驗之人",
-      "category": 3
+      "category": 999
     },
     {
       "name": "季節服裝／輔助",
       "description": "我方全體拍組最大HP提升15",
       "tag": "季節服裝",
-      "category": 4
+      "category": 999
     },
     {
       "name": "我行我素／輔助",
@@ -503,7 +503,7 @@
       "level": 1,
       "x": -1,
       "y": -1,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 14
     },
     {
@@ -516,7 +516,7 @@
       "level": 1,
       "x": -2,
       "y": -1,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 14
     },
     {
@@ -529,7 +529,7 @@
       "level": 2,
       "x": -3,
       "y": -1,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 14
     },
     {
@@ -633,7 +633,7 @@
       "level": 1,
       "x": 3,
       "y": -4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 14
     },
     {
@@ -646,7 +646,7 @@
       "level": 1,
       "x": 2,
       "y": -4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 14
     },
     {

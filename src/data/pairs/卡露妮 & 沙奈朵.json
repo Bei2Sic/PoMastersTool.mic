@@ -18,19 +18,19 @@
       "name": "妖精屬性／攻擊",
       "description": "僅在我方使出妖精屬性攻擊時，攻擊和特攻提升30",
       "tag": "妖精",
-      "category": 1
+      "category": 999
     },
     {
       "name": "卡洛斯／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "卡洛斯",
-      "category": 2
+      "category": 999
     },
     {
       "name": "冠軍／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "冠軍",
-      "category": 3
+      "category": 999
     },
     {
       "name": "表演家／攻擊",
@@ -224,8 +224,8 @@
       "actor": "pm0282_51_megasrnight",
       "gender": 2,
       "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 18,
+      "weakness": 14,
       "stat": {
         "hp": [
           99,
@@ -375,7 +375,15 @@
         "description": "變成超級沙奈朵直到對戰結束。",
         "tags": "none",
         "group": "Sync"
-      }
+      },
+      "scale": [
+        100,
+        100,
+        100,
+        120,
+        120,
+        100
+      ]
     }
   ],
   "luckCookies": [

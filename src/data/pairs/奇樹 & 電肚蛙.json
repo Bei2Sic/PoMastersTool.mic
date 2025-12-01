@@ -18,19 +18,19 @@
       "name": "電屬性／輔助",
       "description": "我方全體拍組最大HP提升60",
       "tag": "電",
-      "category": 1
+      "category": 999
     },
     {
       "name": "帕底亞／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "帕底亞",
-      "category": 2
+      "category": 999
     },
     {
       "name": "道館館主／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "道館館主",
-      "category": 3
+      "category": 999
     },
     {
       "name": "表演家／輔助",
@@ -471,7 +471,7 @@
       "level": 1,
       "x": 2,
       "y": 2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 4
     },
     {
@@ -484,7 +484,7 @@
       "level": 2,
       "x": 1,
       "y": 3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 4
     },
     {
@@ -497,7 +497,7 @@
       "level": 1,
       "x": 3,
       "y": 2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 4
     },
     {
@@ -744,7 +744,7 @@
       "level": 2,
       "x": 1,
       "y": -4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 4
     },
     {
@@ -757,7 +757,7 @@
       "level": 1,
       "x": 3,
       "y": -5,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 4
     },
     {

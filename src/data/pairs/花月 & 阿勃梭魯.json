@@ -18,19 +18,19 @@
       "name": "惡屬性／技術",
       "description": "我方全體拍組最大HP提升24\n僅在我方使出惡屬性攻擊時，攻擊和特攻提升24",
       "tag": "惡",
-      "category": 1
+      "category": 999
     },
     {
       "name": "豐緣／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "豐緣",
-      "category": 2
+      "category": 999
     },
     {
       "name": "四天王／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "四天王",
-      "category": 3
+      "category": 999
     },
     {
       "name": "鬥志昂揚／技術",
@@ -214,8 +214,8 @@
       "actor": "pm0359_51_megaabsol",
       "gender": 1,
       "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "type": 16,
+      "weakness": 12,
       "stat": {
         "hp": [
           97,
@@ -365,7 +365,15 @@
         "description": "變成超級阿勃梭魯直到對戰結束。容易擊中要害。當對手陷入混亂狀態時,威力會提高。",
         "tags": "none",
         "group": "Sync"
-      }
+      },
+      "scale": [
+        100,
+        120,
+        100,
+        100,
+        100,
+        120
+      ]
     }
   ],
   "luckCookies": [

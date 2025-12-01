@@ -18,31 +18,31 @@
       "name": "冰屬性／場地",
       "description": "我方全體拍組最大HP提升24\n我方全體拍組的速度提升24",
       "tag": "冰",
-      "category": 1
+      "category": 999
     },
     {
       "name": "合眾／場地",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的速度提升7",
       "tag": "合眾",
-      "category": 2
+      "category": 999
     },
     {
       "name": "主角／場地",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的速度提升7",
       "tag": "主角",
-      "category": 3
+      "category": 999
     },
     {
       "name": "冠軍／場地",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的速度提升7",
       "tag": "冠軍",
-      "category": 3
+      "category": 999
     },
     {
       "name": "披風／場地",
       "description": "我方全體拍組最大HP提升8\n我方全體拍組的速度提升8",
       "tag": "披風",
-      "category": 4
+      "category": 999
     }
   ],
   "specialAwaking": {
@@ -549,7 +549,7 @@
       "level": 1,
       "x": -2,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 6
     },
     {
@@ -562,7 +562,7 @@
       "level": 1,
       "x": -1,
       "y": -3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 6
     },
     {
@@ -575,7 +575,7 @@
       "level": 2,
       "x": -3,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 6
     },
     {
@@ -692,7 +692,7 @@
       "level": 1,
       "x": 2,
       "y": -4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 6
     },
     {
@@ -705,7 +705,7 @@
       "level": 1,
       "x": 1,
       "y": -4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 6
     },
     {
