@@ -18,13 +18,13 @@
       "name": "一般屬性／輔助",
       "description": "我方全體拍組最大HP提升60",
       "tag": "一般",
-      "category": 999
+      "category": 1
     },
     {
       "name": "阿羅拉／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "阿羅拉",
-      "category": 999
+      "category": 2
     },
     {
       "name": "大姐姐／輔助",

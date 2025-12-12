@@ -18,19 +18,19 @@
       "name": "蟲屬性／攻擊",
       "description": "僅在我方使出蟲屬性攻擊時，攻擊和特攻提升30",
       "tag": "蟲",
-      "category": 999
+      "category": 1
     },
     {
       "name": "城都／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "城都",
-      "category": 999
+      "category": 2
     },
     {
       "name": "道館館主／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "道館館主",
-      "category": 999
+      "category": 3
     },
     {
       "name": "知識豐富／攻擊",

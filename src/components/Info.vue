@@ -1,11 +1,11 @@
 <template>
-    <div class="info-panel">
+    <div>
         <!-- 形态切换 -->
         <div class="variation-switcher" v-if="props.variationList.length >= 2">
             <!-- 当前形态名称 -->
             <button class="variation-name-btn" @click="toggleVariation">{{
                 props.variationList[internalSelectedPokemonIndex]
-                }}</button>
+            }}</button>
         </div>
         <!-- 動態配置區域 -->
         <div class="config-row">
@@ -30,7 +30,7 @@
                     <option v-for="num in 21" :value="num - 1">{{ num - 1 }}</option>
                 </select>
             </div>
-            <div class="config-item" v-if="trainer.exRole !== 0">
+            <div class="config-item" v-if="trainer.exRole !== -1">
                 <label>EX體系</label>
                 <select v-model="internalExRoleEnabledValue" class="config-select" @change="handleExRoleChange">
                     <option :value="false">-</option>
@@ -75,7 +75,7 @@
             </div>
         </div>
 
-        <div class="sync-page">
+        <div>
             <!-- 顶部切换栏 -->
             <div class="tab-bar">
                 <button class="tab-btn" :class="{ active: activeTab === 'move' }" @click="activeTab = 'move'">
@@ -96,16 +96,11 @@
             <div class="content-container">
                 <!-- 招式tab内容（默认显示） -->
                 <div v-if="activeTab === 'move'" class="moves-container">
-                    <div class="move-card" :class="handleMoveBGColor(move.type)"
-                        v-for="(move, index) in pokemon.moves ?? []" :key="index">
+                    <div class="move-card" :class="getMoveBackgroundColorClass(move.type)"
+                        v-for="(move, index) in finalMoves.moves ?? []" :key="index">
                         <div class="move-header">
                             <div class="move-title">
-                                <span class="icon" :style="{
-                                    backgroundImage: `var(--iconMove${getTypeInfo(move.type).typeSuffix})`,
-                                    backgroundSize: 'contain',
-                                    backgroundRepeat: 'no-repeat',
-                                    backgroundPosition: 'center'
-                                }"></span>
+                                <span class="icon" :style="getTypeIconStyle(move.type)"></span>
                                 {{ move.name }}
                             </div>
                             <div class="move-count">
@@ -117,8 +112,8 @@
                                         backgroundPosition: 'center'
                                     }" v-for="i in move.gauge" :key="i"></span>
                                 </div>
-                                <div class="move-uses" v-if="handleMoveUses(move.uses)">
-                                    {{ handleMoveUses(move.uses) }}
+                                <div class="move-uses" v-if="formatMoveUses(move.uses)">
+                                    {{ formatMoveUses(move.uses) }}
                                 </div>
                             </div>
                         </div>
@@ -127,17 +122,12 @@
                                 <div class="info-item">
                                     <span class="info-label">分類</span>
                                     <span class="info-value">
-                                        <span class="icon" :style="{
-                                            backgroundImage: `var(--icon${getCategoryInfo(move.category).typeSuffix})`,
-                                            backgroundSize: 'contain',
-                                            backgroundRepeat: 'no-repeat',
-                                            backgroundPosition: 'center'
-                                        }"></span>
+                                        <span class="icon" :style="getCategoryIconStyle(move.category)"></span>
                                     </span>
                                 </div>
                                 <div class="info-item">
                                     <span class="info-label">威力</span>
-                                    <span class="info-value">{{ handleMovePower(move, "move") }}</span>
+                                    <span class="info-value">{{ move.finalPower }}</span>
                                 </div>
                             </div>
                             <div class="info-col">
@@ -147,7 +137,7 @@
                                 </div>
                                 <div class="info-item">
                                     <span class="info-label">命中率</span>
-                                    <span class="info-value">{{ handleMoveAccuracy(move) }}</span>
+                                    <span class="info-value">{{ formatMoveAccuracy(move) }}</span>
                                 </div>
                             </div>
                         </div>
@@ -157,16 +147,11 @@
                     </div>
 
                     <!-- 极巨化招式 -->
-                    <div class="move-card" :class="handleMoveBGColor(moveMax.type)"
-                        v-for="(moveMax, index) in pokemon.movesDynamax ?? []" :key="index">
+                    <div class="move-card" :class="getMoveBackgroundColorClass(moveMax.type)"
+                        v-for="(moveMax, index) in finalMoves.movesDynamax ?? []" :key="index">
                         <div class="move-header">
                             <div class="move-title">
-                                <span class="icon" :style="{
-                                    backgroundImage: `var(--iconMove${getTypeInfo(moveMax.type).typeSuffix})`,
-                                    backgroundSize: 'contain',
-                                    backgroundRepeat: 'no-repeat',
-                                    backgroundPosition: 'center'
-                                }"></span>
+                                <span class="icon" :style="getTypeIconStyle(moveMax.type)"></span>
                                 {{ moveMax.name }}
                             </div>
                         </div>
@@ -175,17 +160,12 @@
                                 <div class="info-item">
                                     <span class="info-label">分類</span>
                                     <span class="info-value">
-                                        <span class="icon" :style="{
-                                            backgroundImage: `var(--icon${getCategoryInfo(moveMax.category).typeSuffix})`,
-                                            backgroundSize: 'contain',
-                                            backgroundRepeat: 'no-repeat',
-                                            backgroundPosition: 'center'
-                                        }"></span>
+                                        <span class="icon" :style="getCategoryIconStyle(moveMax.category)"></span>
                                     </span>
                                 </div>
                                 <div class="info-item">
                                     <span class="info-label">威力</span>
-                                    <span class="info-value">{{ handleMovePower(moveMax, "dynamaxMove") }}</span>
+                                    <span class="info-value">{{ moveMax.finalPower }}</span>
                                 </div>
                             </div>
                             <div class="info-col">
@@ -195,7 +175,7 @@
                                 </div>
                                 <div class="info-item">
                                     <span class="info-label">命中率</span>
-                                    <span class="info-value">{{ handleMoveAccuracy(moveMax) }}</span>
+                                    <span class="info-value">{{ formatMoveAccuracy(moveMax) }}</span>
                                 </div>
                             </div>
                         </div>
@@ -205,17 +185,13 @@
                     </div>
 
                     <!-- 太晶技能 -->
-                    <div class="move-card" :class="handleMoveBGColor(pokemon.moveTera.type)" v-if="pokemon.moveTera">
+                    <div class="move-card" :class="getMoveBackgroundColorClass(finalMoves.moveTera.type)"
+                        v-if="finalMoves.moveTera">
                         <!-- 动态绑定同步技能颜色 -->
                         <div class="move-header">
                             <div class="move-title">
-                                <span class="icon" :style="{
-                                    backgroundImage: `var(--iconMove${getTypeInfo(pokemon.moveTera.type).typeSuffix})`,
-                                    backgroundSize: 'contain',
-                                    backgroundRepeat: 'no-repeat',
-                                    backgroundPosition: 'center'
-                                }"></span>
-                                {{ pokemon.moveTera.name }}
+                                <span class="icon" :style="getTypeIconStyle(finalMoves.moveTera.type)"></span>
+                                {{ finalMoves.moveTera.name }}
                             </div>
                             <div class="move-count">
                                 <div class="count-blocks">
@@ -224,10 +200,10 @@
                                         backgroundSize: 'contain',
                                         backgroundRepeat: 'no-repeat',
                                         backgroundPosition: 'center'
-                                    }" v-for="i in pokemon.moveTera.gauge" :key="i"></span>
+                                    }" v-for="i in finalMoves.moveTera.gauge" :key="i"></span>
                                 </div>
-                                <div class="move-uses" v-if="handleMoveUses(pokemon.moveTera.uses)">
-                                    {{ handleMoveUses(pokemon.moveTera.uses) }}
+                                <div class="move-uses" v-if="formatMoveUses(finalMoves.moveTera.uses)">
+                                    {{ formatMoveUses(finalMoves.moveTera.uses) }}
                                 </div>
                             </div>
                         </div>
@@ -236,47 +212,39 @@
                                 <div class="info-item">
                                     <span class="info-label">分類</span>
                                     <span class="info-value">
-                                        <span class="icon" :style="{
-                                            backgroundImage: `var(--icon${getCategoryInfo(pokemon.moveTera.category).typeSuffix})`,
-                                            backgroundSize: 'contain',
-                                            backgroundRepeat: 'no-repeat',
-                                            backgroundPosition: 'center'
-                                        }"></span>
+                                        <span class="icon"
+                                            :style="getCategoryIconStyle(finalMoves.moveTera.category)"></span>
                                     </span>
                                 </div>
                                 <div class="info-item">
                                     <span class="info-label">威力</span>
-                                    <span class="info-value">{{ handleMovePower(pokemon.moveTera, "none") }}</span>
+                                    <span class="info-value">{{ finalMoves.moveTera.finalPower }}</span>
                                 </div>
                             </div>
                             <div class="info-col">
                                 <div class="info-item">
                                     <span class="info-label">目標</span>
-                                    <span class="info-value">{{ pokemon.moveTera.target }}</span>
+                                    <span class="info-value">{{ finalMoves.moveTera.target }}</span>
                                 </div>
                                 <div class="info-item">
                                     <span class="info-label">命中率</span>
-                                    <span class="info-value"> {{ handleMoveAccuracy(pokemon.moveTera) }}</span>
+                                    <span class="info-value"> {{ formatMoveAccuracy(finalMoves.moveTera) }}</span>
                                 </div>
                             </div>
                         </div>
                         <div class="move-desc">
-                            {{ pokemon.moveTera.description }}
+                            {{ finalMoves.moveTera.description }}
                         </div>
                     </div>
 
                     <!-- 拍招-->
-                    <div class="move-card" :class="handleMoveBGColor(pokemon.syncMove.type)" v-if="pokemon.syncMove">
+                    <div class="move-card" :class="getMoveBackgroundColorClass(finalMoves.syncMove.type)"
+                        v-if="finalMoves.syncMove">
                         <!-- 动态绑定同步技能颜色 -->
                         <div class="move-header">
                             <div class="move-title">
-                                <span class="icon" :style="{
-                                    backgroundImage: `var(--iconMove${getTypeInfo(pokemon.syncMove.type).typeSuffix})`,
-                                    backgroundSize: 'contain',
-                                    backgroundRepeat: 'no-repeat',
-                                    backgroundPosition: 'center'
-                                }"></span>
-                                {{ pokemon.syncMove.name }}
+                                <span class="icon" :style="getTypeIconStyle(finalMoves.syncMove.type)"></span>
+                                {{ finalMoves.syncMove.name }}
                             </div>
                         </div>
                         <div class="move-info">
@@ -284,32 +252,28 @@
                                 <div class="info-item">
                                     <span class="info-label">分類</span>
                                     <span class="info-value">
-                                        <span class="icon" :style="{
-                                            backgroundImage: `var(--icon${getCategoryInfo(pokemon.syncMove.category).typeSuffix})`,
-                                            backgroundSize: 'contain',
-                                            backgroundRepeat: 'no-repeat',
-                                            backgroundPosition: 'center'
-                                        }"></span>
+                                        <span class="icon"
+                                            :style="getCategoryIconStyle(finalMoves.syncMove.category)"></span>
                                     </span>
                                 </div>
                                 <div class="info-item">
                                     <span class="info-label">威力</span>
-                                    <span class="info-value">{{ handleMovePower(pokemon.syncMove, "syncMove") }}</span>
+                                    <span class="info-value">{{ finalMoves.syncMove.finalPower }}</span>
                                 </div>
                             </div>
                             <div class="info-col">
                                 <div class="info-item">
                                     <span class="info-label">目標</span>
-                                    <span class="info-value">{{ pokemon.syncMove.target }}</span>
+                                    <span class="info-value">{{ finalMoves.syncMove.target }}</span>
                                 </div>
                                 <div class="info-item">
                                     <span class="info-label">命中率</span>
-                                    <span class="info-value"> {{ handleMoveAccuracy(pokemon.syncMove) }}</span>
+                                    <span class="info-value"> {{ formatMoveAccuracy(finalMoves.syncMove) }}</span>
                                 </div>
                             </div>
                         </div>
                         <div class="move-desc">
-                            {{ pokemon.syncMove.description }}
+                            {{ finalMoves.syncMove.description }}
                         </div>
                     </div>
                 </div>
@@ -344,12 +308,8 @@
                     </div>
 
 
-                    <div class="passive-card" v-for="(passive, index) in pokemon.passives ?? []" :key="index" :style="{
-                        backgroundImage: `var(--bgPassive${handlePassiveBGImage(index)})`,
-                        backgroundSize: 'cover',   // 背景圖覆蓋整個卡片
-                        backgroundRepeat: 'no-repeat',
-                        backgroundPosition: 'center'
-                    }">
+                    <div class="passive-card" v-for="(passive, index) in pokemon.passives ?? []" :key="index"
+                        :style="getPassiveBackgroundStyle(index, trainer.exclusivity)">
                         <div class="passive-header">
                             <div class="passive-name">{{ passive.name }}</div>
                             <button class="passive-detail-btn" v-if="passive.detail?.length > 0"
@@ -373,15 +333,10 @@
                 <!-- 组队技能区域 -->
                 <div v-else-if="activeTab === 'team'" class="theme-container">
                     <!-- 循環渲染每個組隊技能卡片 -->
-                    <div class="theme-card" :class="handleThemeBGColor(index, theme)" v-for="(theme, index) in themes"
-                        :key="index">
+                    <div class="theme-card" :class="getThemeBackgroundColorClass(index, theme.tag)"
+                        v-for="(theme, index) in themes" :key="index">
                         <div class="theme-header">
-                            <span class="icon" :style="{
-                                backgroundImage: `var(--${handleThemeIcon(theme)})`,
-                                backgroundSize: 'contain',
-                                backgroundRepeat: 'no-repeat',
-                                backgroundPosition: 'center'
-                            }"></span>
+                            <span class="icon" :style="getThemeIconStyle(theme)"></span>
                             <h3 class="theme-title">{{ theme.tag }}</h3>
                         </div>
 
@@ -400,9 +355,8 @@
 </template>
 
 <script setup>
-import { getCategoryInfo, getTypeInfo, getTypeInfoWithCNName } from '@/utils/assetsMap';
-import { MovePowerCalculator } from '@/utils/powerValue';
-import { StatValueCalculator } from '@/utils/statValue';
+import { StatValueCalculator } from '@/core/calculators/stat';
+import { formatMoveAccuracy, formatMoveUses, getCategoryIconStyle, getMoveBackgroundColorClass, getPassiveBackgroundStyle, getThemeBackgroundColorClass, getThemeIconStyle, getTypeIconStyle } from '@/utils/format';
 import { ref, watch } from 'vue';
 
 const activeTab = ref('move');
@@ -478,10 +432,16 @@ const props = defineProps({
         required: true,
         default: () => ({ hp: 0, atk: 0, def: 0, spa: 0, spd: 0, spe: 0 })
     },
+    // 最终技能效果
+    finalMoves: {
+        type: Object,
+        required: true,
+        default: () => ({ moves: [], movesDynamax: [], moveTera: {}, syncMove: {} })
+    },
     pokemon: {
         type: Object,
         required: true
-    }
+    },
 });
 
 
@@ -515,74 +475,6 @@ watch(
     { deep: true }
 );
 
-// 计算技能威力
-const handleMovePower = (move, move_category) => {
-
-    let power = move.power
-    if (move.power <= 0) {
-        return '-';
-    }
-    if (props.bonusLevel <= 5) {
-        power = MovePowerCalculator.calculateLevelBonus(power, props.bonusLevel);
-    } else if (props.bonusLevel > 5) {
-        // 超觉醒....
-        power = MovePowerCalculator.calculateAwakeningBonus(power, props.trainer.role, props.bonusLevel, move_category);
-        power = Math.ceil(power + Math.floor(move.power * 0.2));
-    }
-    console.log(power);
-
-    if (props.trainer.exRole === 3 && props.exRoleEnabledValue && move_category === "syncMove") {
-        power = Math.ceil(power * 1.5)
-    }
-
-    return power
-};
-
-// 显示技能使用次数
-const handleMoveUses = (uses) => {
-    if (typeof uses !== 'number' || isNaN(uses)) {
-        return '';
-    }
-    return `${uses}/${uses}`;
-};
-
-// 显示技能命中率
-const handleMoveAccuracy = (move) => {
-    if (move.accuracy != 0) {
-        return move.accuracy;
-    }
-    if (move.group === "Sync" || move.tags === "SureHit") {
-        return "必定命中"
-    }
-
-    return "-"
-};
-
-// 显示拍招效果
-const handleSyncMoveEffect = (move) => {
-
-};
-
-// 技能背景色映射
-const handleMoveBGColor = (type) => {
-    return 'bg_' + getTypeInfo(type).typeSuffix.toLowerCase();
-}
-
-// 被動技能背景圖映射
-const handlePassiveBGImage = (index) => {
-    if (index === 1) {
-        return props.trainer.exclusivity === "Arcsuit" ? props.trainer.exclusivity : "";
-    } else if (index === 0) {
-        if (["Arcsuit", "Master"].includes(props.trainer.exclusivity)) {
-            return props.trainer.exclusivity;
-        } else if (props.trainer.exclusivity === "MasterEX") {
-            return "Master";
-        } else {
-            return "";
-        }
-    }
-    return "";
-};
 
 // 被动技能细节展开项
 const expandedPassives = ref({});
@@ -590,37 +482,6 @@ const expandedPassives = ref({});
 const togglePassiveDetail = (index) => {
     expandedPassives.value[index] = !expandedPassives.value[index];
 };
-
-// 组队技能背景色映射
-const handleThemeBGColor = (index, theme) => {
-    if (index === 0) {
-        // 第一个为属性
-        return 'bg_' + getTypeInfoWithCNName(theme.tag).typeSuffix.toLowerCase();
-    } else {
-        return 'bg_trainer';
-    }
-}
-
-// 组队技能图标映射
-const handleThemeIcon = (theme) => {
-    switch (theme.category) {
-        // 属性
-        case 1:
-            return 'iconMove' + getTypeInfoWithCNName(theme.tag).typeSuffix;
-        // 地区
-        case 2:
-            return 'iconThemeRegion';
-        // 分类
-        case 3:
-            return 'iconThemeTrainerGroup';
-        // 服装
-        case 4:
-            return 'iconThemeFashion';
-        // 其他
-        default:
-            return 'iconThemeOther';
-    }
-}
 
 // 等级输入验证
 const handleLevelInput = () => {
@@ -653,9 +514,6 @@ const handleExRoleChange = () => {
 </script>
 
 <style scoped>
-.info-panel {
-    /* padding: 16px; */
-}
 
 /* 形態切換區域 */
 .variation-switcher {
@@ -691,14 +549,14 @@ const handleExRoleChange = () => {
 /* 让筛选行占满父容器宽度，子项自动四等分 */
 .config-row {
     display: flex;
-    width: 100%;
+    inline-size: 100%;
     gap: 8px;
 }
 
 /* 每个筛选项占1/4宽度，同时设置最小宽度防止过窄 */
 .config-item {
     flex: 1;
-    min-width: 50px;
+    min-inline-size: 50px;
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -721,7 +579,7 @@ const handleExRoleChange = () => {
     /* 去掉line-height: 26px，让文字自然居中 */
     background-color: #fff;
     font-size: 12px;
-    width: 100%;
+    inline-size: 100%;
     box-sizing: border-box;
     outline: none;
     appearance: none;
@@ -748,8 +606,8 @@ const handleExRoleChange = () => {
     grid-template-columns: repeat(6, 1fr);
     gap: 1px;
     /* 间隙略缩小，更紧凑 */
-    width: 100%;
-    margin-top: 6px;
+    inline-size: 100%;
+    margin-block-start: 6px;
     /* 和上方筛选栏的间距也缩小 */
 }
 
@@ -774,7 +632,8 @@ const handleExRoleChange = () => {
     font-weight: 500;
     font-size: 12px;
     /* 字体缩小（原14px） */
-    width: 100%;
+    color: black;
+    inline-size: 100%;
     text-align: center;
     padding: 2px 0;
     /* 内边距缩小 */
@@ -783,17 +642,14 @@ const handleExRoleChange = () => {
 /* 数值样式：字体缩小 */
 .stat-value {
     font-size: 12px;
-    /* font-weight: bolder;
-    color: white; */
+    /* font-weight: bolder; */
+    color: black;
     /* 字体缩小（原16px） */
-    width: 100%;
+    inline-size: 100%;
     text-align: center;
     padding: 4px 0;
     font-family: "GameFont";
     -webkit-text-stroke: 0.2px #333;
-    /* 描边宽度可按需调（0.5-1px），颜色选深灰/黑色 */
-    text-stroke: 0.2px #333;
-    /* 标准属性（部分浏览器需配合前缀） */
 }
 
 /* 每个属性的背景色+文字色 */
@@ -828,9 +684,6 @@ const handleExRoleChange = () => {
 }
 
 /* 拍組信息區域*/
-.sync-page {
-    /* min-height: 100vh; */
-}
 
 /* 顶部切换栏 */
 .tab-bar {
@@ -867,7 +720,7 @@ const handleExRoleChange = () => {
 .content-container {
     padding: 0 12px 12px;
     /* 限制内容容器高度（减去顶部tab栏的高度） */
-    max-height: calc(100vh - 300px);
+    max-block-size: calc(100vh - 300px);
     overflow-y: auto;
     scrollbar-width: thin;
     scrollbar-color: #a5d6e3 #d1e8f5;
@@ -875,7 +728,7 @@ const handleExRoleChange = () => {
 
 /* 美化滚动条（Chrome/Safari） */
 .content-container::-webkit-scrollbar {
-    width: 8px;
+    inline-size: 8px;
 }
 
 .tab-content {
@@ -918,8 +771,8 @@ const handleExRoleChange = () => {
 }
 
 .icon {
-    width: 20px;
-    height: 20px;
+    inline-size: 20px;
+    block-size: 20px;
 }
 
 /* 使用槽块 */
@@ -935,8 +788,8 @@ const handleExRoleChange = () => {
 }
 
 .count-block {
-    width: 20px;
-    height: 15px;
+    inline-size: 20px;
+    block-size: 15px;
 }
 
 .move-uses {
@@ -950,7 +803,7 @@ const handleExRoleChange = () => {
 /* 技能信息栏 */
 .move-info {
     display: flex;
-    width: 100%;
+    inline-size: 100%;
 }
 
 .info-col {
@@ -964,7 +817,7 @@ const handleExRoleChange = () => {
     justify-content: space-between;
     padding: 4px 8px;
     font-size: 14px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    border-block-end: 1px solid rgba(0, 0, 0, 0.08);
     background-color: rgba(255, 255, 255, 0.3);
 }
 
@@ -986,7 +839,7 @@ const handleExRoleChange = () => {
     font-size: 14px;
     font-weight: 700;
     color: #000000ab;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-block-start: 1px solid rgba(0, 0, 0, 0.1);
     line-height: 1.4;
     white-space: pre-line;
 }
@@ -1011,7 +864,7 @@ const handleExRoleChange = () => {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 8px;
+    margin-block-end: 8px;
 }
 
 /* 被动技能名称 */
@@ -1019,14 +872,14 @@ const handleExRoleChange = () => {
     text-align: center;
     font-weight: 700;
     font-size: 15px;
-    margin-bottom: 8px;
+    margin-block-end: 8px;
     color: #ffffffe5;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .passive-detail-btn {
-    width: 24px;
-    height: 24px;
+    inline-size: 24px;
+    block-size: 24px;
     border: none;
     border-radius: 4px;
     background-color: #ffffff;
@@ -1050,13 +903,13 @@ const handleExRoleChange = () => {
 }
 
 .passive-detail .passive-detail-item {
-    margin-bottom: 8px;
-    padding-left: 8px;
-    border-left: 2px solid #666;
+    margin-block-end: 8px;
+    padding-inline-start: 8px;
+    border-inline-start: 2px solid #666;
 }
 
 .passive-detail .passive-detail-item:last-child {
-    margin-bottom: 0;
+    margin-block-end: 0;
 }
 
 /* 被動描述 */
@@ -1087,12 +940,12 @@ const handleExRoleChange = () => {
     display: flex;
     align-items: center;
     gap: 8px;
-    margin-bottom: 8px;
+    margin-block-end: 8px;
 }
 
 .theme-header .icon {
-    width: 24px;
-    height: 24px;
+    inline-size: 24px;
+    block-size: 24px;
     display: inline-block;
 }
 

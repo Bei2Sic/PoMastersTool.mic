@@ -18,25 +18,25 @@
       "name": "蟲屬性／場地",
       "description": "我方全體拍組最大HP提升24\n我方全體拍組的速度提升24",
       "tag": "蟲",
-      "category": 999
+      "category": 1
     },
     {
       "name": "卡洛斯／場地",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的速度提升7",
       "tag": "卡洛斯",
-      "category": 999
+      "category": 2
     },
     {
       "name": "道館館主／場地",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的速度提升7",
       "tag": "道館館主",
-      "category": 999
+      "category": 3
     },
     {
       "name": "季節服裝／場地",
       "description": "我方全體拍組最大HP提升8\n我方全體拍組的速度提升8",
       "tag": "季節服裝",
-      "category": 999
+      "category": 4
     },
     {
       "name": "表演家／場地",

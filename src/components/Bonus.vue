@@ -1,8 +1,8 @@
 <template>
     <div class="custom-rating" :style="{ gap: `${gap}px` }" @mousemove="handleMouseMove">
         <div v-for="index in maxRating" :key="index" class="custom-star" :style="{
-            width: `${starSize}px`,
-            height: `${starSize}px`,
+            inlineSize: `${starSize}px`,
+            blockSize: `${starSize}px`,
             backgroundImage: getStarBg(index),
             cursor: 'pointer'
         }"></div>

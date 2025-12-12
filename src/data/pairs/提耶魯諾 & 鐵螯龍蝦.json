@@ -18,19 +18,19 @@
       "name": "惡屬性／輔助",
       "description": "我方全體拍組最大HP提升60",
       "tag": "惡",
-      "category": 999
+      "category": 1
     },
     {
       "name": "卡洛斯／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "卡洛斯",
-      "category": 999
+      "category": 2
     },
     {
       "name": "勁敵／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "勁敵",
-      "category": 999
+      "category": 3
     },
     {
       "name": "表演家／輔助",

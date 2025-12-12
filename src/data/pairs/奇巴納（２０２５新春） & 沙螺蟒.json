@@ -18,31 +18,31 @@
       "name": "地面屬性／輔助",
       "description": "我方全體拍組最大HP提升60",
       "tag": "地面",
-      "category": 999
+      "category": 1
     },
     {
       "name": "伽勒爾／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "伽勒爾",
-      "category": 999
+      "category": 2
     },
     {
       "name": "道館館主／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "道館館主",
-      "category": 999
+      "category": 3
     },
     {
       "name": "季節服裝／輔助",
       "description": "我方全體拍組最大HP提升15",
       "tag": "季節服裝",
-      "category": 999
+      "category": 4
     },
     {
       "name": "圍巾／輔助",
       "description": "我方全體拍組最大HP提升15",
       "tag": "圍巾",
-      "category": 999
+      "category": 4
     }
   ],
   "specialAwaking": {

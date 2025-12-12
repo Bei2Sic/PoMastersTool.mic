@@ -18,19 +18,19 @@
       "name": "惡屬性／攻擊",
       "description": "僅在我方使出惡屬性攻擊時，攻擊和特攻提升30",
       "tag": "惡",
-      "category": 999
+      "category": 1
     },
     {
       "name": "帕底亞／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "帕底亞",
-      "category": 999
+      "category": 2
     },
     {
       "name": "天星隊／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "天星隊",
-      "category": 999
+      "category": 3
     },
     {
       "name": "表演家／攻擊",

@@ -18,31 +18,31 @@
       "name": "鋼屬性／速戰",
       "description": "僅在我方使出鋼屬性攻擊時，攻擊和特攻提升24\n我方全體拍組的速度提升24",
       "tag": "鋼",
-      "category": 999
+      "category": 1
     },
     {
       "name": "帕希歐／速戰",
       "description": "我方全體拍組的攻擊和特攻提升4\n我方全體拍組的速度提升7",
       "tag": "帕希歐",
-      "category": 999
+      "category": 2
     },
     {
       "name": "勁敵／速戰",
       "description": "我方全體拍組的攻擊和特攻提升4\n我方全體拍組的速度提升7",
       "tag": "勁敵",
-      "category": 999
+      "category": 3
     },
     {
       "name": "美極套裝／速戰",
       "description": "我方全體拍組的攻擊和特攻提升5\n我方全體拍組的速度提升8",
       "tag": "美極套裝",
-      "category": 999
+      "category": 4
     },
     {
       "name": "太陽眼鏡／速戰",
       "description": "我方全體拍組的攻擊和特攻提升5\n我方全體拍組的速度提升8",
       "tag": "太陽眼鏡",
-      "category": 999
+      "category": 4
     }
   ],
   "specialAwaking": {

@@ -18,31 +18,31 @@
       "name": "飛行屬性／複合",
       "description": "我方全體拍組最大HP提升24\n僅在我方使出飛行屬性攻擊時，攻擊和特攻提升24",
       "tag": "飛行",
-      "category": 999
+      "category": 1
     },
     {
       "name": "關都／複合",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "關都",
-      "category": 999
+      "category": 2
     },
     {
       "name": "冠軍／複合",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "冠軍",
-      "category": 999
+      "category": 3
     },
     {
       "name": "阿爾套裝／複合",
       "description": "我方全體拍組最大HP提升8\n我方全體拍組的攻擊和特攻提升5",
       "tag": "阿爾套裝",
-      "category": 999
+      "category": 4
     },
     {
       "name": "勁敵／複合",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "勁敵",
-      "category": 999
+      "category": 3
     }
   ],
   "specialAwaking": {

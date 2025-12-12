@@ -2,97 +2,13 @@
     <div class="root-container">
         <!-- 左侧石盘区域 -->
         <div class="left-panel">
-            <div class="bonus-container">
-                <div class="info-bar">
-                    <div class="info-item">
-                        <span class="info-label">滴晶</span>
-                        <span class="info-value">{{ finalGrid.costOrbs }}</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">剩餘力量</span>
-                        <span class="info-value">{{ finalGrid.lastEnergy }} +{{ Math.min(2 * dynamicState.bonusLevel,
-                            10) }}</span>
-                    </div>
-                </div>
-                <div class="rating-section">
-                    <!-- 移动端：信息切换按钮（默认隐藏，移动端显示） -->
-                    <button v-show="isSingleView" class="floating-btn" @click="showInfo = !showInfo">
-                        {{ '信息' }}
-                    </button>
-                    <Bonus v-model="dynamicState.bonusLevel" :star-size="20" :gap="5"
-                        :max-rating="trainer.maxBonusLevel" />
-                </div>
-            </div>
-
-            <div class="svg-container">
-                <!-- SVG画布：宽高=左侧面板可用高度，中心点(centerX, centerY) -->
-                <svg :width="svgWidth" :height="svgHeight">
-                    <!-- 中心头像（固定在SVG中心点） -->
-                    <image :href="getTrainerUrl(trainer.actorId, dynamicState.currentRarity === 6)"
-                        :x="centerX - pokemonSize / 2 + 6" :y="centerY - pokemonSize / 2" :width="pokemonSize"
-                        :height="pokemonSize" rx="50%" ry="50%"
-                        style="border: 2px solid white; box-shadow: 0 0 8px rgba(0,0,0,0.3);" />
-                    <circle :cx="centerX - pokemonSize / 2 + 28" :cy="centerY - pokemonSize / 2 + 28"
-                        :r="pokemonSize / 2" fill="transparent" style="cursor: pointer; pointer-events: auto;"
-                        @click.stop="showFilterModal = true" />
-
-                    <!-- 六边形石盘（基于SVG中心点计算位置，无重叠） -->
-                    <template v-for="tile in finalGrid.gridData" :key="tile.id">
-                        <!-- 计算石盘在SVG中的坐标 -->
-                        <!-- 先注釋，看看設計後面有無問題
-                        <polygon :points="hexPoints"
-                            :transform="`translate(${calcHexSvgX(tile.x)}, ${calcHexSvgY(tile.x, tile.y)})`" :fill="syncMethods.isTileReachable(tile)
-                                ? (tile.isActive ? `#${tile.color}` : 'transparent')
-                                : 'rgba(160, 160, 160, 0.3)'"
-                            :stroke="tile.isActive ? 'transparent' : `#${tile.color}`"
-                            :stroke-width="tile.isActive ? 2.5 : 2"
-                            :filter="tile.isActive ? 'drop-shadow(0 0 6px rgba(255,69,0,0.5))' : 'none'" :style="{
-                                cursor: syncMethods.isTileReachable(tile) ? 'pointer' : 'not-allowed',
-                                pointerEvents: syncMethods.isTileReachable(tile) ? 'auto' : 'none'
-                            }" @click.stop="syncMethods.toggleTile(tile.id)" 
-                        /> 
-                        -->
-                        <polygon :points="hexPoints"
-                            :transform="`translate(${calcHexSvgX(tile.x)}, ${calcHexSvgY(tile.x, tile.y)})`" :style="{
-                                cursor: syncMethods.isTileReachable(tile) ? 'pointer' : 'not-allowed',
-                                // pointerEvents: syncMethods.isTileReachable(tile) ? 'auto' : 'none'
-                            }" @click.stop="syncMethods.toggleTile(tile.id)" @mouseenter="hoveredTile = tile"
-                            @mouseleave="hoveredTile = null" />
-
-                        <image :href="syncMethods.getTileBorderUrl(tile)" :x="calcHexSvgX(tile.x) - tileUrlWidth / 2"
-                            :y="calcHexSvgY(tile.x, tile.y) - tileUrlHeight / 2" :width="tileUrlWidth"
-                            :height="tileUrlHeight" pointer-events="none" />
-                        <image :href="syncMethods.getTileFillUrl(tile)" :x="calcHexSvgX(tile.x) - tileUrlWidth / 2"
-                            :y="calcHexSvgY(tile.x, tile.y) - tileUrlHeight / 2" :width="tileUrlWidth"
-                            :height="tileUrlHeight" pointer-events="none" />
-                        <foreignObject v-if="hoveredTile" :x="calcTileWinX(hoveredTile.x)"
-                            :y="calcTileWinY(hoveredTile.x, hoveredTile.y)" :width=tileWinWidth :height=tileWinHeight>
-                            <div xmlns="http://www.w3.org/2000/svg" class="tile-window"
-                                :style="{ borderColor: hoveredTile.color }">
-                                <div class="tile-name" :style="{
-                                    backgroundColor: hoveredTile.color,
-                                }">
-                                    {{ hoveredTile.name }}
-                                </div>
-                                <div class="tile-content">
-                                    <p class="tile-descr">{{ hoveredTile.description }}</p>
-                                    <p class="tile-other">
-                                        滴晶：{{ hoveredTile.orb }}&nbsp&nbsp&nbsp&nbsp力量：{{ hoveredTile.energy }}
-                                    </p>
-                                </div>
-                            </div>
-                        </foreignObject>
-                        <!-- 石盘文字 -->
-                        <!-- <foreignObject v-if="hoveredTile != tile" :x="calcHexSvgX(tile.x) - tileTextX"
-                            :y="calcHexSvgY(tile.x, tile.y) - tileTextY" :width="tileUrlWidth" :height="tileUrlHeight"
-                            style="pointer-events: none; isolation: auto;">
-                            <div xmlns="http://www.w3.org/2000/xhtml" class="tile-name-text">{{
-                                syncMethods.fixTileName(tile) }}
-                            </div>
-                        </foreignObject> -->
-                    </template>
-                </svg>
-            </div>
+            <Grid v-model:bonusLevel="dynamicState.bonusLevel" :grid-data="finalGrid.gridData" :trainer="trainer"
+                :current-rarity="dynamicState.currentRarity" :bonus-level="dynamicState.bonusLevel"
+                :cost-orbs="finalGrid.costOrbs" :last-energy="finalGrid.lastEnergy"
+                :is-tile-reachable="syncMethods.isTileReachable" :get-tile-border-url="syncMethods.getTileBorderUrl"
+                :get-tile-fill-url="syncMethods.getTileFillUrl" :get-trainer-avatar-url="getTrainerUrl"
+                :fix-tile-name="syncMethods.fixTileName" :toggle-tile="syncMethods.toggleTile"
+                :check-selected-tiles="syncMethods.checkSelectedTiles" :on-trainer-click="toggleTrainerSelect" />
 
             <!-- 彈窗篩選拍組窗口 -->
             <div v-if="showFilterModal" class="modal-overlay" @click="showFilterModal = false">
@@ -101,6 +17,11 @@
                     <Filter @select-trainer="handleSelectTrainer" @close-modal="showFilterModal = false" />
                 </div>
             </div>
+
+            <!-- 移动端：信息切换按钮（默认隐藏，移动端显示） -->
+            <button v-show="isSingleView" class="floating-btn" @click="showInfo = !showInfo">
+                {{ '信息' }}
+            </button>
 
             <div v-if="showInfo" class="mobile-info-modal" @click="showInfo = false">
                 <div class="mobile-info-content" @click.stop>
@@ -114,7 +35,8 @@
                         :bonus-level="dynamicState.bonusLevel"
                         :selected-pokemon-index="dynamicState.selectedPokemonIndex" :trainer="syncMethods.getTrainer()"
                         :themes="syncMethods.getThemes()" :special-awaking="syncMethods.getSpecialAwaking()"
-                        :variation-list="syncMethods.getvariationList()" :final-stats="finalStats" :pokemon="pokemon"
+                        :variation-list="syncMethods.getvariationList()" :final-stats="finalStats"
+                        :final-moves="finalMoves" :pokemon="pokemon"
                         @update:levelValue="(val) => dynamicState.level = val"
                         @update:currentRarityValue="(val) => dynamicState.currentRarity = val"
                         @update:potentialValue="(val) => dynamicState.potential = val"
@@ -122,11 +44,9 @@
                         @update:selectedPokemonIndex="(val) => dynamicState.selectedPokemonIndex = val" />
                 </div>
             </div>
-
         </div>
 
-        <!-- 右侧信息区域（完全不变） -->
-        <div class=" right-panel">
+        <div class="right-panel">
             <div class="tab-bar">
                 <button class="tab-btn" :class="{ active: curTab === 'grid' }" @click="curTab = 'grid'">
                     石盤一覽
@@ -138,10 +58,10 @@
             <div class="pokemon-name">{{ syncMethods.getSyncName() }}</div>
             <div class="info-content">
                 <div v-if="curTab === 'grid'" class="grid-panel">
-                    <div class="potential-title" @click="togglePotentialPanel">{{
+                    <!-- 潜能区域移除 -->
+                    <!-- <div class="potential-title" @click="togglePotentialPanel">{{
                         finalGrid.potentialCookie ?
                             finalGrid.potentialCookie.cookieName : '潛能' }}</div>
-                    <!-- 中间弹窗（全屏遮罩+窗口） -->
                     <transition name="slide-window" appear>
                         <div class="modal-backdrop" v-if="isPotentialWindowOpen" @click="togglePotentialPanel">
                             <div class="potential-window" @click.stop>
@@ -174,17 +94,17 @@
                                                         {{ l }}
                                                     </div>
                                                 </template>
-                                                <template v-else>
+<template v-else>
                                                     <button class="cookie-select-btn"
                                                         @click="syncMethods.updatePotentialCookie(item); togglePotentialPanel()">選擇</button>
                                                 </template>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </transition>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</transition> -->
                     <div class="selected-info">
                         <div class="selected-content">
                             <div v-for="tile in finalGrid.selectedTiles" :key="tile.id" class="selected-item" :style="{
@@ -202,8 +122,8 @@
                     :ex-role-enabled-value="dynamicState.exRoleEnabled" :bonus-level="dynamicState.bonusLevel"
                     :selected-pokemon-index="dynamicState.selectedPokemonIndex" :trainer="syncMethods.getTrainer()"
                     :themes="syncMethods.getThemes()" :special-awaking="syncMethods.getSpecialAwaking()"
-                    :variation-list="syncMethods.getvariationList()" :final-stats="finalStats" :pokemon="pokemon"
-                    @update:levelValue="(val) => dynamicState.level = val"
+                    :variation-list="syncMethods.getvariationList()" :final-stats="finalStats" :final-moves="finalMoves"
+                    :pokemon="pokemon" @update:levelValue="(val) => dynamicState.level = val"
                     @update:currentRarityValue="(val) => dynamicState.currentRarity = val"
                     @update:potentialValue="(val) => dynamicState.potential = val"
                     @update:exRoleEnabledValue="(val) => dynamicState.exRoleEnabled = val"
@@ -214,184 +134,49 @@
 </template>
 
 <script setup>
-import Bonus from '@/components/Bonus.vue';
+// import Bonus from '@/components/Bonus.vue';
 import Filter from '@/components/Filter.vue';
+import Grid from '@/components/Grid.vue';
 import Info from '@/components/Info.vue';
-import { useSyncElemStore } from "@/store/syncElem";
-import { PotentialCookiesUrl, PotentialSkills } from '@/type/const';
-import { getTrainerUrl } from '@/utils/assetsMap';
-import { computed, nextTick, onMounted, onUnmounted, ref } from 'vue';
+import { useSyncElemStore } from "@/stores/syncElem";
+// import { PotentialSkills } from '@/type/const';
+import { debugParser, parser, validTexts } from '@/core/parse/parse_test';
+import { getTrainerUrl } from '@/utils/format';
+import { computed, onMounted, onUnmounted, ref } from 'vue';
 
 // 缓存数据
 const syncElemStore = useSyncElemStore();
 const finalStats = computed(() => syncElemStore.currentFinalStats);
+const finalMoves = computed(() => syncElemStore.currentFinalMoves);
 const finalGrid = computed(() => syncElemStore.currentGridInfo);
 const syncMethods = computed(() => syncElemStore.exportMethods);
-const dynamicState = computed(() => syncElemStore.currentSyncDynamicState);
+const dynamicState = computed(() => syncElemStore.singleSyncDynamicState);
 const pokemon = computed(() => syncElemStore.currentPokemon);
 const trainer = computed(() => {
     const res = syncMethods.value.getTrainer();
     return res;
 });
-
+// 筛选拍组
 const showFilterModal = ref(false);
-
 // 设备移动端
 const showInfo = ref(false);
-const isSingleView = ref(window.innerWidth <= 1200);
-
-// SVG基础配置（核心：画布尺寸和中心点）
-const svgWidth = ref(0);
-const svgHeight = ref(880); // SVG画布高度
-const centerX = ref(0); // SVG中心点X
-const centerY = ref(0); // SVG中心点Y
-const centerOffsetX = ref(0);
-const centerOffsetY = ref(0);
-const pokemonSize = ref(55); // 拍组头像尺寸
-
-// 六边形配置（SVG绘制正六边形，精准无偏差）
-const hexRadius = ref(40); // 石盘块大小
-const hexPoints = ref(''); // 石盘顶点坐标（动态计算）
-
-// 石盘信息窗口的高度宽度
-const tileWinWidth = ref(300);
-const tileWinHeight = ref(150);
-
-// 石盘资源的高度宽度
-const tileUrlWidth = ref(80);
-const tileUrlHeight = ref(80);
-
-// 石盘文字的X Y以及文字大小
-const tileTextX = ref(30);
-const tileTextY = ref(28);
-
-// 石盘间距配置（避免重叠，可微调）
-const xSpacingRatio = ref(0.8); // 横向间距系数（0.8-0.95）
-const ySpacingRatio = ref(1.05); // 纵向间距系数（1.0-1.2）
-
-const hoveredTile = ref(null);
-
+const isSingleView = ref(window.innerWidth <= 900);
+// 信息切换页
 const curTab = ref('grid');
-const currentType = ref(1);
 
-const filteredPotentials = computed(() => {
-    return PotentialSkills.filter(item => item.type === currentType.value);
-});
+// 潜能相关
+// const currentType = ref(1);
+// const filteredPotentials = computed(() => {
+//     return PotentialSkills.filter(item => item.type === currentType.value);
+// });
+// const isPotentialWindowOpen = ref(false);
+// // 切换窗叶显示/隐藏（点击“潜能区域”或关闭按钮触发）
+// const togglePotentialPanel = () => {
+//     isPotentialWindowOpen.value = !isPotentialWindowOpen.value;
+// };
 
-const isPotentialWindowOpen = ref(false);
-
-// 切换窗叶显示/隐藏（点击“潜能区域”或关闭按钮触发）
-const togglePotentialPanel = () => {
-    isPotentialWindowOpen.value = !isPotentialWindowOpen.value;
-};
-
-const adjustSizeByScreen = () => {
-    const screenWidth = window.innerWidth;
-    isSingleView.value = screenWidth <= 1200;
-    if (screenWidth < 390) {
-        hexRadius.value = 20;
-        pokemonSize.value = 30;
-        tileWinWidth.value = 260;
-        tileWinHeight.value = 200;
-        tileUrlWidth.value = 40;
-        tileUrlHeight.value = 40;
-        ySpacingRatio.value = 1.00;
-        // tileTextX.value = 18;
-        // tileTextY.value = 20;
-        centerOffsetY.value = -200;
-    } else if (screenWidth < 700) {
-        hexRadius.value = 25;
-        pokemonSize.value = 35;
-        tileWinWidth.value = 260;
-        tileWinHeight.value = 200;
-        tileUrlWidth.value = 50;
-        tileUrlHeight.value = 50;
-        ySpacingRatio.value = 1.00
-
-        centerOffsetY.value = -100;
-        centerOffsetX.value = 20;
-
-    }
-    initSvgConfig();
-    calcSvgCenter();
-};
-
-// 初始化SVG配置：画布尺寸、六边形顶点
-const initSvgConfig = () => {
-    const svgContainer = document.querySelector('.svg-container');
-    if (svgContainer) {
-        // SVG画布尺寸 = 容器尺寸（左侧面板除去顶部滴晶栏的高度）
-        svgWidth.value = svgContainer.offsetWidth;
-        // svgHeight.value = svgContainer.offsetHeight; // 保持原固定高度880
-
-        // 计算正六边形的6个顶点（基于外接圆半径，精准无偏差）
-        const points = [];
-        for (let i = 0; i < 6; i++) {
-            const angle = (i * 60) * Math.PI / 180; // 每个顶点间隔60度
-            const x = hexRadius.value * Math.cos(angle);
-            const y = hexRadius.value * Math.sin(angle);
-            points.push(`${x},${y}`);
-        }
-        hexPoints.value = points.join(' '); // SVG polygon的points属性值
-    }
-};
-
-// 计算SVG中心点（头像位置，也是石盘布局中心）
-const calcSvgCenter = () => {
-    centerX.value = svgWidth.value / 2 + centerOffsetX.value; // SVG水平中心
-    centerY.value = svgHeight.value / 2 + centerOffsetY.value; // SVG垂直中心
-};
-
-// 计算石盘在SVG中的X坐标（以头像为中心）
-const calcHexSvgX = (x) => {
-    // 横向间距 = 六边形宽度（2×外接圆半径）× 间距系数
-    const xSpacing = (hexRadius.value * 2) * xSpacingRatio.value;
-    return centerX.value + x * xSpacing;
-};
-
-// 计算石盘在SVG中的Y坐标（以头像为中心，反转Y轴+蜂窝布局）
-const calcHexSvgY = (x, y) => {
-    // 纵向间距 = 六边形高度（√3×外接圆半径）× 间距系数
-    const ySpacing = (hexRadius.value * Math.sqrt(3)) * ySpacingRatio.value;
-    // 1. 反转Y轴（y越小越靠上）；2. 奇数列错位（蜂窝布局），但x轴方向错位相反
-    const absX = Math.abs(x);
-    let cof = absX;
-    if (x > 0) {
-        cof = (-1) * absX;
-    }
-    return centerY.value + (-y) * ySpacing + cof * (ySpacing / 2);
-};
-
-// 计算石盘信息显示窗口X坐标
-const calcTileWinX = (x) => {
-    const tileX = calcHexSvgX(x);
-
-    // 优先尝试显示在六边形正中间位置
-    let calcX = tileX - tileWinWidth.value / 2;
-    if (calcX + tileWinWidth.value + 10 > svgWidth.value) {
-        calcX = calcX - tileWinWidth.value / 2;
-    }
-    if (calcX < 0) {
-        calcX = (svgWidth.value - tileWinWidth.value) / 2;
-    }
-    return calcX;
-}
-
-// 计算石盘信息显示窗口Y坐标
-const calcTileWinY = (x, y) => {
-    // 如果是单页面显示
-    if (isSingleView.value) {
-        return centerY.value + tileWinHeight.value * 1.5;
-    }
-
-    const tileY = calcHexSvgY(x, y);
-
-    // 优先尝试显示在六边形正下方位置
-    let calcY = tileY + hexRadius.value;
-    if (calcY + tileWinHeight.value / 2 > svgHeight.value) {
-        calcY = calcY - tileWinHeight.value * 1.5;
-    }
-    return calcY;
+const toggleTrainerSelect = () => {
+    showFilterModal.value = true;
 }
 
 const handleSelectTrainer = (trainerId) => {
@@ -400,29 +185,20 @@ const handleSelectTrainer = (trainerId) => {
             console.warn('选择失败：拍组 ID 无效');
             return;
         }
-        // 调用 Pinia 的 action 选中拍        syncElemStore.selectCurrentSync(trainerId);
-        syncElemStore.selectCurrentSync(trainerId);
+        // 调用 Pinia 的 action 选中拍        syncElemStore.selectsingleSync(trainerId);
+        syncElemStore.selectsingleSync(trainerId);
         console.log(`成功选中拍组：${trainerId}`);
     } catch (error) {
         console.error('选中拍组失败：', error);
-        // 可选：用户提示（如 ElMessage.error('选中失败，请重试')）
+        // 提示错误
     }
 };
 
-// 窗口大小变化时，重新适配SVG尺寸
-const handleResize = () => {
-    adjustSizeByScreen();
-};
-
 onMounted(() => {
-    nextTick(() => {
-        adjustSizeByScreen();
-        window.addEventListener('resize', handleResize);
-    });
+    debugParser(parser, validTexts);
 });
 
 onUnmounted(() => {
-    window.removeEventListener('resize', handleResize);
 });
 </script>
 
@@ -436,74 +212,29 @@ onUnmounted(() => {
 
 .root-container {
     display: flex;
-    width: 100vw;
-    height: 100vh;
+    inline-size: 100vw;
+    block-size: 100vh;
     overflow: hidden;
     background-color: rgba(255, 255, 255, 0.1);
 }
 
 .left-panel {
-    width: 50vw;
-    height: 100vh;
+    inline-size: 50vw;
+    block-size: 100vh;
     display: flex;
     flex-direction: column;
-    border-right: 1px solid #ddd;
+    border-inline-end: 1px solid #ddd;
 }
 
-/* 宝数及力量区域 */
-/* 整体容器：固定宽度+居中，避免挤压 */
-.bonus-container {
-    width: 250px;
-    /* 适配10星（20px*10 + 4px*9 = 236px），留余量 */
-    margin: 8px auto;
-    /* 整体在父容器中居中 */
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-/* 上层均分信息栏 */
-.info-bar {
-    display: flex;
-    background-color: #0b7a75;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.info-item {
-    flex: 1;
-    padding: 6px 0;
-    text-align: center;
-    color: #fff;
-    font-size: 14px;
-}
-
-.info-label {
-    margin-right: 4px;
-    font-weight: 500;
-}
-
-.info-value {
-    font-weight: bold;
-}
-
-/* 下层星级区域 */
-.rating-section {
-    /* background-color: #7ec8c5; */
-    padding: 8px 12px;
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-}
 
 /* 筛选弹窗区域  */
 /* 弹窗遮罩（半透明背景，覆盖整个页面） */
 .modal-overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    inline-size: 100vw;
+    block-size: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
@@ -514,8 +245,8 @@ onUnmounted(() => {
 
 /* 弹窗内容容器 */
 .modal-content {
-    width: 80%;
-    max-width: 500px;
+    inline-size: 80%;
+    max-inline-size: 500px;
     background-color: #fff;
     border-radius: 12px;
     padding: 20px;
@@ -530,32 +261,18 @@ onUnmounted(() => {
     text-align: center;
 }
 
-
-/* SVG容器：占满左侧剩余高度，可滚动（如果石盘超出范围） */
-.svg-container {
-    flex: 1;
-    overflow: auto;
-    /* background-color: #f0f8ff; */
-}
-
-/* SVG画布：设置最小尺寸，避免过小 */
-svg {
-    min-width: 100%;
-    min-height: 880px;
-}
-
 .right-panel {
-    width: 50vw;
-    height: 100vh;
+    inline-size: 50vw;
+    block-size: 100vh;
     display: flex;
     flex-direction: column;
-    /* max-height: 880px; */
+    /* max-block-size: 880px; */
 }
 
 .tab-bar {
     display: flex;
-    height: 40px;
-    border-bottom: 1px solid #ddd;
+    block-size: 40px;
+    border-block-end: 1px solid #ddd;
 }
 
 .tab-btn {
@@ -577,19 +294,20 @@ svg {
 }
 
 .pokemon-name {
-    height: 40px;
+    block-size: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom: 1px solid #ddd;
+    border-block-end: 1px solid #ddd;
     font-size: 16px;
     font-weight: bold;
+    color: white;
 }
 
 .info-content {
     flex: 1;
-    width: 90%;
-    height: 100%;
+    inline-size: 90%;
+    block-size: 100%;
     /* 相对父容器宽度，已适配 */
     display: flex;
     flex-direction: column;
@@ -600,10 +318,6 @@ svg {
     overflow: hidden;
     background-image: url('../assets/images/bg2.png');
     align-self: center;
-    /* height: calc(100% - 3vh); */
-    /* 减去上下 padding（1.5vh*2），随视口缩放 */
-    /* min-height: 20vh; */
-    /* 兜底最小高度，随视口缩放 */
 }
 
 .potential-title {
@@ -612,27 +326,27 @@ svg {
     padding: 8px 8px;
     text-align: center;
     font-size: 14px;
-    margin-bottom: 8px;
+    margin-block-end: 8px;
     border-radius: 10px;
 }
 
 .grid-panel {
-    width: 100%;
-    /* min-height: 100%; */
+    inline-size: 100%;
+    /* min-block-size: 100%; */
     /* 高度上限=视口高度的70%，缩放时到顶就停 */
     overflow: auto;
 }
 
 .selected-info {
     /* flex: 1; */
-    min-height: 0;
+    min-block-size: 0;
     overflow: auto !important;
-    /* padding-right: 0.5vw; */
+    /* padding-inline-end: 0.5vw; */
 }
 
 /* 浏览器兼容：Webkit内核滚动条 */
 .selected-info::-webkit-scrollbar {
-    width: 5px;
+    inline-size: 5px;
 }
 
 .selected-info::-webkit-scrollbar-thumb {
@@ -697,10 +411,10 @@ svg {
 
 .modal-backdrop {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    inline-size: 100vw;
+    block-size: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
@@ -712,10 +426,10 @@ svg {
 /* 中间弹窗 */
 .potential-window {
     position: fixed;
-    width: 80%;
-    max-width: 700px;
-    height: 100vh;
-    /* max-height: 600px; */
+    inline-size: 80%;
+    max-inline-size: 700px;
+    block-size: 100vh;
+    /* max-block-size: 600px; */
     background-color: #f5d76e;
     border: 2px solid #8b4513;
     border-radius: 4px;
@@ -749,7 +463,7 @@ svg {
 
 /* 弹窗内容 */
 .window-content {
-    height: calc(100% - 40px);
+    block-size: calc(100% - 40px);
     /* 减去头部高度 */
     display: flex;
     flex-direction: column;
@@ -758,8 +472,8 @@ svg {
 /* 顶部标签栏容器 */
 .window-top {
     padding: 8px;
-    border-bottom: 1px solid #8b4513;
-    width: 100%;
+    border-block-end: 1px solid #8b4513;
+    inline-size: 100%;
     /* 占满弹窗宽度 */
 }
 
@@ -768,14 +482,14 @@ svg {
     display: flex;
     justify-content: space-between;
     /* 图标均匀分布 */
-    width: 100%;
+    inline-size: 100%;
     /* 占满父容器宽度 */
 }
 
 /* 单个图标容器：固定宽度+居中 */
 .icon-item {
-    width: 50px;
-    height: 50px;
+    inline-size: 50px;
+    block-size: 50px;
     background-color: #e0e0e0;
     border: 1px solid #8b4513;
     border-radius: 4px;
@@ -790,8 +504,8 @@ svg {
 
 /* 图标图片：占满容器 */
 .cookie-type-icon {
-    width: 100%;
-    height: 100%;
+    inline-size: 100%;
+    block-size: 100%;
     object-fit: contain;
 }
 
@@ -805,7 +519,7 @@ svg {
 .potential-item {
     background-color: #f5d76e;
     border: 1px solid #8b4513;
-    margin-bottom: 6px;
+    margin-block-end: 6px;
     padding: 8px;
     display: grid;
     grid-template-areas:
@@ -834,15 +548,15 @@ svg {
     display: flex;
     justify-content: space-between;
     /* 等级按钮均匀分布 */
-    width: 100%;
-    margin-top: 4px;
+    inline-size: 100%;
+    margin-block-start: 4px;
 }
 
 /* 等级按钮：占满对应区域 */
 .cookie-level-btn {
     flex: 1;
     /* 每个等级按钮平分宽度 */
-    height: 30px;
+    block-size: 30px;
     background-color: #f39c12;
     border: 2px solid #8b4513;
     border-radius: 10px;
@@ -861,7 +575,7 @@ svg {
 
 /* 选择按钮：占满整行 */
 .cookie-select-btn {
-    width: 100%;
+    inline-size: 100%;
     padding: 8px 0;
     background-color: #f39c12;
     border: 1px solid #8b4513;
@@ -871,62 +585,13 @@ svg {
     font-weight: bold;
 }
 
-/* tile悬停窗口样式 */
-.tile-window {
-    background: rgba(235, 230, 215, 0.6);
-    border: 2px solid white;
-    border-radius: 10px;
-    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); */
-    padding: 0;
-    font-size: 13px;
-    line-height: 1.5;
-    color: #000;
-}
-
-.tile-name {
-    font-weight: bold;
-    font-size: 14px;
-    padding: 4px;
-    text-align: center;
-}
-
-.tile-name-text {
-    width: 60px;
-    height: 55px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 10px;
-    font-weight: bolder;
-    color: rgba(255, 255, 255, 0.9);
-    text-align: center;
-    line-height: 1.2;
-}
-
-.tile-content {
-    padding: 6px 6px;
-}
-
-.tile-descr {
-    /* text-indent: 2em; */
-    /* 首行缩进2字符（还原示例格式） */
-    font-weight: lighter;
-    line-height: 1.6;
-}
-
-.tile-other {
-    margin: 0;
-    font-weight: 500;
-    text-align: center;
-}
-
 /* 移动端信息显示 */
 .mobile-info-modal {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    inline-size: 100vw;
+    block-size: 100vh;
     background-color: rgba(0, 0, 0, 0.7);
     display: flex;
     align-items: center;
@@ -937,25 +602,25 @@ svg {
 }
 
 .mobile-info-content {
-    width: 100%;
-    max-width: 800px;
+    inline-size: 100%;
+    max-inline-size: 800px;
     background-color: #fff;
-    background-image: url('../assets/images/bg2.png');
+    background-image: url('../assets/images/bg_tera.png');
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
     position: relative;
-    max-height: 90vh;
+    block-size: 100vh;
     display: flex;
     flex-direction: column;
 }
 
 .mobile-info-close {
     position: absolute;
-    top: 12px;
-    right: 12px;
-    width: 36px;
-    height: 36px;
+    inset-block-start: 12px;
+    inset-inline-end: 12px;
+    inline-size: 36px;
+    block-size: 36px;
     border-radius: 50%;
     background-color: #ff4500;
     color: white;
@@ -970,7 +635,7 @@ svg {
 }
 
 .mobile-info-title {
-    height: 48px;
+    block-size: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -978,7 +643,7 @@ svg {
     color: white;
     font-size: 18px;
     font-weight: bold;
-    border-bottom: 1px solid #eee;
+    border-block-end: 1px solid #eee;
 }
 
 /* Info组件容器：允许滚动 */
@@ -988,20 +653,21 @@ svg {
     padding: 15px;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1000px) {
     .left-panel {
-        width: 100vw !important;
+        inline-size: 100vw !important;
         /* 移动端占满屏幕 */
-        border-right: none;
+        border-inline-end: none;
     }
+
     /* 悬浮按钮基础样式 */
     .floating-btn {
         position: fixed;
         /* 固定定位，脱离文档流 */
-        right: 20px;
-        bottom: 20px;
-        width: 50px;
-        height: 50px;
+        inset-inline-end: 20px;
+        inset-block-end: 20px;
+        inline-size: 50px;
+        block-size: 50px;
         border-radius: 50%;
         background-image: url('../assets/images/bg2.png');
         /* 主题色 */
@@ -1029,10 +695,10 @@ svg {
     /* 右侧信息区域：默认隐藏（平移出屏幕），显示时占满屏幕 */
     .right-panel {
         position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw !important;
-        height: 100vh !important;
+        inset-block-start: 0;
+        inset-inline-start: 0;
+        inline-size: 100vw !important;
+        block-size: 100vh !important;
         z-index: 10000;
         transform: translateX(100%);
         /* 默认隐藏在右侧 */
@@ -1044,91 +710,10 @@ svg {
         /* 显示时平移到屏幕内 */
     }
 
-    /* 适配移动端元素尺寸 */
-    .bonus-container {
-        width: 90% !important;
-        /* 占满左侧宽度 */
-        margin: 8px auto;
-    }
-
-    .info-item {
-        font-size: 13px !important;
-        /* 缩小文字 */
-        padding: 4px 0 !important;
-    }
-
-    .rating-section {
-        padding: 6px 8px !important;
-    }
-
-    /* SVG容器适配 */
-    .svg-container {
-        padding: 10px 0;
-    }
-
-    svg {
-        min-height: 600px !important;
-        /* 移动端缩小SVG高度 */
-    }
-
-    /* 潜能弹窗适配 */
-    .potential-window {
-        width: 90vw !important;
-        height: 80vh !important;
-        top: 10vh !important;
-    }
-
-    .window-icons {
-        flex-wrap: wrap;
-        /* 图标换行显示 */
-        gap: 8px;
-        justify-content: center !important;
-    }
-
-    .icon-item {
-        width: 40px !important;
-        height: 40px !important;
-    }
-
-    /* 按钮触控优化（移动端最小点击区域44px） */
-    .tab-btn {
-        height: 44px !important;
-        font-size: 15px !important;
-    }
-
-    .cookie-level-btn {
-        height: 36px !important;
-        font-size: 14px !important;
-    }
-
-    .cookie-select-btn {
-        height: 36px !important;
-        font-size: 14px !important;
-    }
-
-    .potential-title {
-        padding: 10px 8px !important;
-        font-size: 15px !important;
-    }
-
-    .pokemon-name {
-        font-size: 15px !important;
-        height: 44px !important;
-    }
-
-    /* 石盘信息窗口优化 */
-    .tile-window {
-        font-size: 12px !important;
-    }
-
-    .tile-name {
-        font-size: 13px !important;
-    }
-
     /* 筛选弹窗适配 */
     .modal-content {
-        width: 90% !important;
-        max-width: none !important;
+        inline-size: 90% !important;
+        max-inline-size: none !important;
     }
 }
 </style>

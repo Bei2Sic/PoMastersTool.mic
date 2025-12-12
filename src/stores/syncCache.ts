@@ -1,7 +1,7 @@
 // 本地数据文件动态缓存
-import { loadAllSyncJson } from "@/store/syncLoader";
-import { STORAGE_KEY } from "@/type/const";
-import type { GlobalSyncCache, SyncMeta, SyncRawData } from "@/type/sync";
+import { STORAGE_KEY } from "@/constances/key";
+import type { GlobalSyncCache, SyncMeta, SyncRawData } from "@/types/syncModel";
+import { loadAllSyncJson } from "@/utils/jsonLoader";
 import { defineStore } from "pinia";
 
 export const useSyncCacheStore = defineStore("syncCache", {

@@ -3,16 +3,18 @@
     "paths": {
       "@/*": [
         "./src/*"
-      ] // 保留你的别名配置
+      ]
     },
-    "target": "ES5", // 可保留 ES5 兼容旧环境，不影响 lib 识别
+    "target": "ES2022", 
     "lib": [
-      "ES2017", // 核心：ES2017 包含 Promise、async/await 等，比 ES2015 更全面
-      "DOM", // 前端项目必需（支持 window、document）
+      "ES2022", 
+      "DOM", 
       "DOM.Iterable"
     ],
-    "module": "ESNext",
-    "moduleResolution": "bundler",
+    
+    "module": "ES2022", 
+    "moduleResolution": "bundler", 
+    
     "esModuleInterop": true,
     "strict": false,
     "skipLibCheck": true,

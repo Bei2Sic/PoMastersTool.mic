@@ -1,4 +1,4 @@
-import { BonusIndex, ExRoleIndex, RarityIndex, RoleIndex } from "@/type/const";
+import { BonusIndex, ExRoleIndex, RarityIndex, RoleIndex } from "@/types/indices";
 import { ComputedRef } from "vue";
 
 // ------------------------------ 拍组JSON原始数据类型（与JSON结构完全对应）------------------------------
@@ -82,19 +82,25 @@ export interface MoveBase {
     accuracy: number;
     target: string;
     description: string;
+    group: string;
+    tags: string;
 }
 
 /** 宝可梦普通招式 */
-export interface Move extends MoveBase { }
+export interface Move extends MoveBase {}
 
 /** Sync招式 */
-export interface SyncMove extends MoveBase { }
+export interface SyncMove extends MoveBase {}
 
 /** 极巨化招式 */
-export interface MoveMax extends MoveBase { }
+export interface MoveMax extends MoveBase {}
 
 /** 太晶招式 */
-export interface MoveTera extends MoveBase { }
+export interface MoveTera extends MoveBase {}
+
+export interface MoveFinal extends MoveBase {
+    finalPower: number | '-'; // 實際用於顯示和計算的最終威力值
+}
 
 /** 宝可梦信息（支持多形态） */
 export interface Pokemon {
@@ -112,7 +118,7 @@ export interface Pokemon {
     passives: Passive[];
     moves: Move[];
     syncMove: SyncMove;
-    movesDynamax?: MoveMax;
+    movesDynamax?: MoveMax[];
     moveTera?: MoveTera; // 部分宝可梦有太晶招式
 }
 
@@ -189,6 +195,10 @@ export interface SyncComputed {
     lastEnergy: ComputedRef<number>; // 剩余力量
     selectedTiles: ComputedRef<Tile[]>; // 选中的石盘
     currentPokemon: ComputedRef<Pokemon>; // 当前选中的宝可梦形态
+    finalMoves: ComputedRef<MoveFinal[]>;
+    finalSyncMove: ComputedRef<MoveFinal>;
+    finalMoveMax: ComputedRef<MoveFinal[]>;
+    finalMoveTera: ComputedRef<MoveFinal | null>;
 }
 
 /** Sync操作方法（新增形态切换方法） */
@@ -213,6 +223,7 @@ export interface SyncMethods {
     fixTileName: (tile: Tile) => string;
     // getTrainerUrl: (trainer: Trainer) => string;
     isTileReachable: (tile: Tile) => boolean; // 石盘是否可达
+    checkSelectedTiles: () => void;
     switchPokemonForm: (index: number) => void; // 切换宝可梦形态
 }
 

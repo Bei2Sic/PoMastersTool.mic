@@ -18,25 +18,25 @@
       "name": "超能力屬性／速戰",
       "description": "僅在我方使出超能力屬性攻擊時，攻擊和特攻提升24\n我方全體拍組的速度提升24",
       "tag": "超能力",
-      "category": 999
+      "category": 1
     },
     {
       "name": "關都／速戰",
       "description": "我方全體拍組的攻擊和特攻提升4\n我方全體拍組的速度提升7",
       "tag": "關都",
-      "category": 999
+      "category": 2
     },
     {
       "name": "冠軍／速戰",
       "description": "我方全體拍組的攻擊和特攻提升4\n我方全體拍組的速度提升7",
       "tag": "冠軍",
-      "category": 999
+      "category": 3
     },
     {
       "name": "勁敵／速戰",
       "description": "我方全體拍組的攻擊和特攻提升4\n我方全體拍組的速度提升7",
       "tag": "勁敵",
-      "category": 999
+      "category": 3
     },
     {
       "name": "真新鎮／速戰",

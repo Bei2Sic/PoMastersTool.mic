@@ -18,25 +18,25 @@
       "name": "火屬性／速戰",
       "description": "僅在我方使出火屬性攻擊時，攻擊和特攻提升24\n我方全體拍組的速度提升24",
       "tag": "火",
-      "category": 999
+      "category": 1
     },
     {
       "name": "卡洛斯／速戰",
       "description": "我方全體拍組的攻擊和特攻提升4\n我方全體拍組的速度提升7",
       "tag": "卡洛斯",
-      "category": 999
+      "category": 2
     },
     {
       "name": "四天王／速戰",
       "description": "我方全體拍組的攻擊和特攻提升4\n我方全體拍組的速度提升7",
       "tag": "四天王",
-      "category": 999
+      "category": 3
     },
     {
       "name": "太陽眼鏡／速戰",
       "description": "我方全體拍組的攻擊和特攻提升5\n我方全體拍組的速度提升8",
       "tag": "太陽眼鏡",
-      "category": 999
+      "category": 4
     },
     {
       "name": "大姐姐／速戰",

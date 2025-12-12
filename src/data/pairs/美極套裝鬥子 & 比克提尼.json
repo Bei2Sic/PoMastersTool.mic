@@ -18,25 +18,25 @@
       "name": "火屬性／攻擊",
       "description": "僅在我方使出火屬性攻擊時，攻擊和特攻提升30",
       "tag": "火",
-      "category": 999
+      "category": 1
     },
     {
       "name": "合眾／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "合眾",
-      "category": 999
+      "category": 2
     },
     {
       "name": "主角／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "主角",
-      "category": 999
+      "category": 3
     },
     {
       "name": "美極套裝／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升9",
       "tag": "美極套裝",
-      "category": 999
+      "category": 4
     },
     {
       "name": "合眾的冒險／攻擊",

@@ -18,25 +18,25 @@
       "name": "妖精屬性／速戰",
       "description": "僅在我方使出妖精屬性攻擊時，攻擊和特攻提升24\n我方全體拍組的速度提升24",
       "tag": "妖精",
-      "category": 999
+      "category": 1
     },
     {
       "name": "卡洛斯／速戰",
       "description": "我方全體拍組的攻擊和特攻提升4\n我方全體拍組的速度提升7",
       "tag": "卡洛斯",
-      "category": 999
+      "category": 2
     },
     {
       "name": "勁敵／速戰",
       "description": "我方全體拍組的攻擊和特攻提升4\n我方全體拍組的速度提升7",
       "tag": "勁敵",
-      "category": 999
+      "category": 3
     },
     {
       "name": "雙馬尾／速戰",
       "description": "我方全體拍組的攻擊和特攻提升5\n我方全體拍組的速度提升8",
       "tag": "雙馬尾",
-      "category": 999
+      "category": 4
     }
   ],
   "specialAwaking": {

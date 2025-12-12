@@ -18,25 +18,25 @@
       "name": "飛行屬性／攻擊",
       "description": "僅在我方使出飛行屬性攻擊時，攻擊和特攻提升30",
       "tag": "飛行",
-      "category": 999
+      "category": 1
     },
     {
       "name": "關都／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "關都",
-      "category": 999
+      "category": 2
     },
     {
       "name": "冠軍／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "冠軍",
-      "category": 999
+      "category": 3
     },
     {
       "name": "勁敵／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "勁敵",
-      "category": 999
+      "category": 3
     },
     {
       "name": "真新鎮／攻擊",

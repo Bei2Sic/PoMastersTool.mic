@@ -18,25 +18,25 @@
       "name": "水屬性／輔助",
       "description": "我方全體拍組最大HP提升60",
       "tag": "水",
-      "category": 999
+      "category": 1
     },
     {
       "name": "神奧／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "神奧",
-      "category": 999
+      "category": 2
     },
     {
       "name": "冠軍／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "冠軍",
-      "category": 999
+      "category": 3
     },
     {
       "name": "季節服裝／輔助",
       "description": "我方全體拍組最大HP提升15",
       "tag": "季節服裝",
-      "category": 999
+      "category": 4
     },
     {
       "name": "漣漪鎮／輔助",

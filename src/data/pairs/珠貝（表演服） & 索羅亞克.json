@@ -18,19 +18,19 @@
       "name": "幽靈屬性／攻擊",
       "description": "僅在我方使出幽靈屬性攻擊時，攻擊和特攻提升30",
       "tag": "幽靈",
-      "category": 999
+      "category": 1
     },
     {
       "name": "神奧／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "神奧",
-      "category": 999
+      "category": 2
     },
     {
       "name": "特別服裝／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升9",
       "tag": "特別服裝",
-      "category": 999
+      "category": 4
     },
     {
       "name": "愛好自然之人／攻擊",

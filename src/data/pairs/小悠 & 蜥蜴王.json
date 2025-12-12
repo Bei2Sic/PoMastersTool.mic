@@ -18,19 +18,19 @@
       "name": "草屬性／攻擊",
       "description": "僅在我方使出草屬性攻擊時，攻擊和特攻提升30",
       "tag": "草",
-      "category": 999
+      "category": 1
     },
     {
       "name": "豐緣／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "豐緣",
-      "category": 999
+      "category": 2
     },
     {
       "name": "主角／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "主角",
-      "category": 999
+      "category": 3
     },
     {
       "name": "豐緣的最強父子／攻擊",

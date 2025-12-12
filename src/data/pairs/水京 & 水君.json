@@ -18,19 +18,19 @@
       "name": "水屬性／攻擊",
       "description": "僅在我方使出水屬性攻擊時，攻擊和特攻提升30",
       "tag": "水",
-      "category": 999
+      "category": 1
     },
     {
       "name": "城都／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "城都",
-      "category": 999
+      "category": 2
     },
     {
       "name": "披風／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升9",
       "tag": "披風",
-      "category": 999
+      "category": 4
     },
     {
       "name": "鬥志昂揚／攻擊",

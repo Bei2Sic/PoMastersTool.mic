@@ -18,25 +18,25 @@
       "name": "龍屬性／輔助",
       "description": "我方全體拍組最大HP提升60",
       "tag": "龍",
-      "category": 999
+      "category": 1
     },
     {
       "name": "豐緣／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "豐緣",
-      "category": 999
+      "category": 2
     },
     {
       "name": "主角／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "主角",
-      "category": 999
+      "category": 3
     },
     {
       "name": "美極套裝／輔助",
       "description": "我方全體拍組最大HP提升15",
       "tag": "美極套裝",
-      "category": 999
+      "category": 4
     },
     {
       "name": "宇宙中心／輔助",

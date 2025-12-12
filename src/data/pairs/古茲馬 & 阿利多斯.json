@@ -18,25 +18,25 @@
       "name": "蟲屬性／輔助",
       "description": "我方全體拍組最大HP提升60",
       "tag": "蟲",
-      "category": 999
+      "category": 1
     },
     {
       "name": "阿羅拉／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "阿羅拉",
-      "category": 999
+      "category": 2
     },
     {
       "name": "邪惡組織／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "邪惡組織",
-      "category": 999
+      "category": 3
     },
     {
       "name": "太陽眼鏡／輔助",
       "description": "我方全體拍組最大HP提升15",
       "tag": "太陽眼鏡",
-      "category": 999
+      "category": 4
     }
   ],
   "specialAwaking": {

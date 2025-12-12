@@ -1,11 +1,11 @@
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/main.css';
 
-import { createApp } from 'vue';
+import { useSyncCacheStore } from "@/stores/syncCache";
+import { useSyncElemStore } from "@/stores/syncElem";
 import { createPinia } from "pinia";
+import { createApp } from 'vue';
 import App from './App.vue';
-import { useSyncCacheStore } from "@/store/syncCache";
-import { useSyncElemStore } from "@/store/syncElem";
 
 
 
@@ -19,6 +19,6 @@ const syncCacheStore = useSyncCacheStore();
 await syncCacheStore.initSyncCache();
 const syncElemStore = useSyncElemStore();
 // 默认初始化最新拍组
-syncElemStore.initCurrentSync()
+syncElemStore.initsingleSync()
 
 app.mount("#app");

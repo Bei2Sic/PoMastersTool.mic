@@ -18,13 +18,13 @@
       "name": "惡屬性／輔助",
       "description": "我方全體拍組最大HP提升60",
       "tag": "惡",
-      "category": 999
+      "category": 1
     },
     {
       "name": "太陽眼鏡／輔助",
       "description": "我方全體拍組最大HP提升15",
       "tag": "太陽眼鏡",
-      "category": 999
+      "category": 4
     },
     {
       "name": "鍛鍊精壯的身體／輔助",
@@ -36,7 +36,7 @@
       "name": "帕希歐／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "帕希歐",
-      "category": 999
+      "category": 2
     }
   ],
   "specialAwaking": {

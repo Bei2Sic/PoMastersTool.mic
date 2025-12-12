@@ -18,25 +18,25 @@
       "name": "草屬性／輔助",
       "description": "我方全體拍組最大HP提升60",
       "tag": "草",
-      "category": 999
+      "category": 1
     },
     {
       "name": "合眾／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "合眾",
-      "category": 999
+      "category": 2
     },
     {
       "name": "主角／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "主角",
-      "category": 999
+      "category": 3
     },
     {
       "name": "雙馬尾／輔助",
       "description": "我方全體拍組最大HP提升15",
       "tag": "雙馬尾",
-      "category": 999
+      "category": 4
     },
     {
       "name": "合眾的冒險／輔助",

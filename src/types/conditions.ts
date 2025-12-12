@@ -1,0 +1,133 @@
+export type StatRank = -6 | -5 | -4 | -3 | -2 | -1 | 0 | 1 | 2 | 3 | 4 | 5 | 6; // 能力等級
+export type CtRank = 0 | 1 | 2 | 3; // 能力等級
+export type BoostRank = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10; // 增強等級 (PMUN/SMUN)
+export type GaugeValue = 1 | 2 | 3 | 4 | 5 | 6; // 計量槽值
+export type RebuffRank = -3 | -2 | -1 | 0; // 抵抗等級
+
+// 18種屬性名稱 (Type Names)
+export type PokemonType =
+    | "一般"
+    | "火"
+    | "水"
+    | "草"
+    | "電"
+    | "冰"
+    | "格鬥"
+    | "毒"
+    | "地"
+    | "飛行"
+    | "超能"
+    | "蟲"
+    | "岩石"
+    | "幽靈"
+    | "龍"
+    | "惡"
+    | "鋼"
+    | "妖精";
+
+// ==========================================
+// 2. 環境與場地類型 (Environment Types)
+// ==========================================
+
+export type WeatherType = "無" | "晴天" | "下雨" | "沙暴" | "冰雹";
+export type TerrainType = "無" | "電氣場地" | "青草場地" | "精神場地";
+export type ZoneType =
+    | "無"
+    | "一般領域"
+    | "冰柱領域"
+    | "拳頭領域"
+    | "劇毒領域"
+    | "大地領域"
+    | "藍天領域"
+    | "玉虫領域"
+    | "岩石領域"
+    | "妖怪領域"
+    | "龍之領域"
+    | "鋼鐵領域"
+    | "妖精領域"
+    | "惡顏領域";
+
+// ==========================================
+// 3. 鬥陣類型 (Battle Circles)
+// ==========================================
+
+export type RegionType =
+    | "無"
+    | "關都"
+    | "城都"
+    | "豐緣"
+    | "神奧"
+    | "合眾"
+    | "卡洛斯"
+    | "阿羅拉"
+    | "伽勒爾"
+    | "帕底亞"
+    | "帕希歐";
+export type CircleCategory = "無" | "物理" | "特殊" | "防禦";
+export type CircleLevel = 1 | 2 | 3;
+
+// 鬥陣狀態接口 (支援多開和等級)
+export interface BattleCircle {
+    region: RegionType;
+    category: CircleCategory;
+    isActive: boolean;
+    level: CircleLevel;
+}
+
+// 異常狀態
+export type Abnormal =
+    | "無"
+    | "灼傷"
+    | "中毒"
+    | "劇毒"
+    | "睡眠"
+    | "冰凍"
+    | "麻痺";
+
+export type DamageFieldType =
+    | "無"
+    | "一般傷害場地"
+    | "火傷害場地"
+    | "水傷害場地"
+    | "草傷害場地"
+    | "電傷害場地"
+    | "冰傷害場地"
+    | "格鬥傷害場地"
+    | "毒傷害場地"
+    | "地傷害場地"
+    | "飛行傷害場地"
+    | "超能傷害場地"
+    | "蟲傷害場地"
+    | "岩石傷害場地"
+    | "幽靈傷害場地"
+    | "龍傷害場地"
+    | "惡傷害場地"
+    | "鋼傷害場地"
+    | "妖精傷害場地";
+
+// 抵抗表
+export type TypeRebuffs = Record<PokemonType, RebuffRank>;
+
+// 必須在你的 parseCondition 函數外部（或者至少在函數內部的頂部）定義這個列表
+export const INDIVIDUAL_STATS = [
+    "攻擊",
+    "防禦",
+    "特攻",
+    "特防",
+    "速度",
+    "閃避",
+    "命中率",
+];
+export const STAT_REGEX = new RegExp(`(${INDIVIDUAL_STATS.join("|")})`, "g");
+
+// 輔助列表：用於分類判斷 (放在 parseCondition 函數外部)
+export const ABNORMAL_STATUSES = [
+    "中毒",
+    "劇毒",
+    "冰凍",
+    "麻痺",
+    "睡眠",
+    "灼傷",
+];
+export const HINDRANCE_STATUSES = ["束縛", "混亂", "畏縮", "禁止替換"];
+export const WEATHER_STATUSES = ["晴天", "下雨", "沙暴", "冰雹"];

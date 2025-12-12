@@ -18,19 +18,19 @@
       "name": "幽靈屬性／輔助",
       "description": "我方全體拍組最大HP提升60",
       "tag": "幽靈",
-      "category": 999
+      "category": 1
     },
     {
       "name": "帕希歐／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "帕希歐",
-      "category": 999
+      "category": 2
     },
     {
       "name": "太陽眼鏡／輔助",
       "description": "我方全體拍組最大HP提升15",
       "tag": "太陽眼鏡",
-      "category": 999
+      "category": 4
     },
     {
       "name": "我行我素／輔助",

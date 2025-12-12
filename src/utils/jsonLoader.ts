@@ -1,6 +1,6 @@
 // 本地加载数据文件
-import type { GlobalSyncCache, SyncMeta, SyncRawData } from "@/type/sync";
-import { getRoleInfo, getTypeInfo } from '@/utils/assetsMap';
+import { getRoleInfo, getTypeInfo } from '@/core/exporter/map';
+import type { GlobalSyncCache, SyncMeta, SyncRawData } from "@/types/syncModel";
 export const loadAllSyncJson = async (): Promise<GlobalSyncCache> => {
     const cache: GlobalSyncCache = {};
     try {

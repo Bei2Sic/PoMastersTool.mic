@@ -18,25 +18,25 @@
       "name": "幽靈屬性／輔助",
       "description": "我方全體拍組最大HP提升60",
       "tag": "幽靈",
-      "category": 999
+      "category": 1
     },
     {
       "name": "豐緣／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "豐緣",
-      "category": 999
+      "category": 2
     },
     {
       "name": "四天王／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "四天王",
-      "category": 999
+      "category": 3
     },
     {
       "name": "季節服裝／輔助",
       "description": "我方全體拍組最大HP提升15",
       "tag": "季節服裝",
-      "category": 999
+      "category": 4
     },
     {
       "name": "不可思議的力量／輔助",

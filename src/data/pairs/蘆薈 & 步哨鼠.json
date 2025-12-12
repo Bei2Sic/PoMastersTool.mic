@@ -18,13 +18,13 @@
       "name": "一般屬性／輔助",
       "description": "我方全體拍組最大HP提升60",
       "tag": "一般",
-      "category": 999
+      "category": 1
     },
     {
       "name": "合眾／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "合眾",
-      "category": 999
+      "category": 2
     },
     {
       "name": "知識豐富／輔助",

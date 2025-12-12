@@ -18,19 +18,19 @@
       "name": "草屬性／速戰",
       "description": "僅在我方使出草屬性攻擊時，攻擊和特攻提升24\n我方全體拍組的速度提升24",
       "tag": "草",
-      "category": 999
+      "category": 1
     },
     {
       "name": "帕底亞／速戰",
       "description": "我方全體拍組的攻擊和特攻提升4\n我方全體拍組的速度提升7",
       "tag": "帕底亞",
-      "category": 999
+      "category": 2
     },
     {
       "name": "眼鏡／速戰",
       "description": "我方全體拍組的攻擊和特攻提升5\n我方全體拍組的速度提升8",
       "tag": "眼鏡",
-      "category": 999
+      "category": 4
     },
     {
       "name": "知識豐富／速戰",

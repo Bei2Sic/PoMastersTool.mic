@@ -18,19 +18,19 @@
       "name": "超能力屬性／攻擊",
       "description": "僅在我方使出超能力屬性攻擊時，攻擊和特攻提升30",
       "tag": "超能力",
-      "category": 999
+      "category": 1
     },
     {
       "name": "合眾／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "合眾",
-      "category": 999
+      "category": 2
     },
     {
       "name": "四天王／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "四天王",
-      "category": 999
+      "category": 3
     },
     {
       "name": "大小姐／攻擊",

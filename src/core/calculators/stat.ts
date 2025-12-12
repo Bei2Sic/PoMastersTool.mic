@@ -1,15 +1,12 @@
+import { AwakeningBonusConfig, ExRoleBonusConfig } from "@/constances/bonus";
+import { ExRoleList, NumtoStatKey } from "@/constances/map";
 import {
-    AwakeningBonusConfig,
     BonusIndex,
-    ExRoleBonusConfig,
     ExRoleIndex,
-    ExRoleList,
-    NumToBaseType,
     RarityIndex,
     RoleIndex,
     StatIndex,
-} from "@/type/const";
-
+} from "@/types/indices";
 export interface Input {
     level: number;
     statList: [number, number, number, number, number, number, number]; // 元组类型：固定长度6，顺序不可变
@@ -49,7 +46,7 @@ export class StatValueCalculator {
 
         return Math.floor(value);
     }
-    //
+    // 升星加成
     static calcuateRarityBonus(
         statValue: number,
         oriRarity: RarityIndex,
@@ -79,7 +76,7 @@ export class StatValueCalculator {
 
         return result;
     }
-    // 计算
+    // exrole蛋糕加成
     static calculateExRole(
         statValue: number,
         t: ExRoleIndex,
@@ -89,14 +86,14 @@ export class StatValueCalculator {
             return statValue;
         }
 
-        const baseKey = NumToBaseType[statNum];
+        const statKey = NumtoStatKey[statNum];
         // 类型需减-1找到对应索引
-        const bonusRule = ExRoleBonusConfig[t - 1];
-        const value = statValue + bonusRule[baseKey];
+        const bonusRule = ExRoleBonusConfig[t];
+        const value = statValue + bonusRule[statKey];
 
         return Math.floor(value);
     }
-
+    // 超覺醒加成
     static calculateAwakeningBonus(
         statValue: number,
         role: RoleIndex,
@@ -108,7 +105,7 @@ export class StatValueCalculator {
             return statValue;
         }
 
-        const statKey = NumToBaseType[statNum];
+        const statKey = NumtoStatKey[statNum];
         let finalValue = statValue;
 
         // 遍历超覺醒起始等級到当前等级，累积每个等级的加成
@@ -134,21 +131,25 @@ export class StatValueCalculator {
         }
         return finalValue;
     }
-
+    // 變化形態加成
     static calculateVarietyBonus(
         statValue: number,
         scale: number,
+        isMega: boolean
     ): number {
-        
         if (scale != 100) {
-            statValue = Math.floor(statValue*scale/100)
+            if (isMega) {
+                statValue = Math.ceil((statValue * scale) / 100) - 1;
+            } else {
+                statValue = Math.floor((statValue * scale) / 100);
+            }
         }
 
         return statValue;
     }
 
     static getExRoleText(t: ExRoleIndex | number): string {
-        const text = ExRoleList[t - 1];
+        const text = ExRoleList[t];
 
         return text;
     }

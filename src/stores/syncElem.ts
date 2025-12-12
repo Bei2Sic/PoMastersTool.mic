@@ -1,112 +1,125 @@
-import { useSyncCacheStore } from "@/store/syncCache"; // 原始数据缓存Store
-import { RarityIndex, StatIndex, STORAGE_KEY } from "@/type/const";
+import { STORAGE_KEY } from "@/constances/key";
+import {
+    getFinalStatValue,
+    mapMoveToMoveFinal,
+} from "@/core/exporter/syncData";
+import { useSyncCacheStore } from "@/stores/syncCache"; // 原始数据缓存Store
+import { RarityIndex } from "@/types/indices";
 import {
     LuckCookie,
-    PokemonStat,
     Sync,
     SyncComputed,
     SyncDynamicState,
     SyncMethods,
     SyncRawData,
     Tile,
-} from "@/type/sync"; // 导入你的核心类型
-import { StatValueCalculator } from "@/utils/statValue";
+} from "@/types/syncModel";
 import { defineStore } from "pinia";
 import { computed, reactive } from "vue";
 
 interface SyncElemState {
-    currentSync: Sync | null;
-    teamConfig: Sync[];
+    singleSync: Sync | null;
+    teamSyncs: Sync[];
 }
 
 export const useSyncElemStore = defineStore("syncUse", {
     state: (): SyncElemState => ({
         // ------------------------------ 信息浏览场景 ------------------------------
-        currentSync: null,
+        singleSync: null,
         // ------------------------------ 组队模式场景 ------------------------------
-        teamConfig: [],
+        teamSyncs: [],
     }),
     getters: {
         // 当前Sync的最终六维属性
         currentFinalStats: (state) => {
-            if (!state.currentSync) return null;
+            if (!state.singleSync) return null;
             return {
-                hp: state.currentSync.computed.hp,
-                atk: state.currentSync.computed.atk,
-                def: state.currentSync.computed.def,
-                spa: state.currentSync.computed.spa,
-                spd: state.currentSync.computed.spd,
-                spe: state.currentSync.computed.spe,
+                hp: state.singleSync.computed.hp,
+                atk: state.singleSync.computed.atk,
+                def: state.singleSync.computed.def,
+                spa: state.singleSync.computed.spa,
+                spd: state.singleSync.computed.spd,
+                spe: state.singleSync.computed.spe,
+            };
+        },
+
+        // 当前Sync的最终技能效果
+        currentFinalMoves: (state)=> {
+            if (!state.singleSync) return null;
+            return {
+                moves: state.singleSync.computed.finalMoves,
+                movesDynamax: state.singleSync.computed.finalMoveMax,
+                moveTera: state.singleSync.computed.finalMoveTera,
+                syncMove: state.singleSync.computed.finalSyncMove,
             };
         },
 
         // 当前Sync的石盘信息
         currentGridInfo: (state) => {
-            if (!state.currentSync) return null;
+            if (!state.singleSync) return null;
             return {
-                selectedTiles: state.currentSync.computed.selectedTiles,
-                costOrbs: state.currentSync.computed.costOrbs,
-                lastEnergy: state.currentSync.computed.lastEnergy,
-                gridData: state.currentSync.state.gridData,
-                potentialCookie: state.currentSync.state.potentialCookie,
+                selectedTiles: state.singleSync.computed.selectedTiles,
+                costOrbs: state.singleSync.computed.costOrbs,
+                lastEnergy: state.singleSync.computed.lastEnergy,
+                gridData: state.singleSync.state.gridData,
+                potentialCookie: state.singleSync.state.potentialCookie,
             };
         },
 
         // 当前选中的宝可梦
         currentPokemon: (state) => {
-            if (!state.currentSync) return null;
-            return state.currentSync.computed.currentPokemon;
+            if (!state.singleSync) return null;
+            return state.singleSync.computed.currentPokemon;
         },
 
-        // 动态信息
-        currentSyncDynamicState: (state) => {
-            return state.currentSync?.state || null;
+        // 當前拍組动态信息
+        singleSyncDynamicState: (state) => {
+            return state.singleSync?.state || null;
         },
 
-        // 暴露方法
+        // 暴露方法（用於渲染）
         exportMethods: (state) => {
-            if (!state.currentSync) return null;
-            return state.currentSync.methods;
+            if (!state.singleSync) return null;
+            return state.singleSync.methods;
         },
+
+        // 用於計算的匯總數據方法
+        currentActivePassive: (state) => {},
+
         // ------------------------------ 组队模式：计算属性 ------------------------------
         // 队伍中所有拍组的最终属性（用于伤害计算）
         // todo
     },
     actions: {
         // ------------------------------ 信息浏览场景：核心操作 ------------------------------
-        initCurrentSync() {
+        initsingleSync() {
             const syncCacheStore = useSyncCacheStore();
             const rawData = syncCacheStore.selectedRawData;
             if (!rawData) return;
-            this.currentSync = createSync(rawData);
+            this.singleSync = createSync(rawData);
         },
 
         /**
          * 重置当前拍组的动态状态（恢复默认）
          */
-        resetCurrentSync() {
-            // if (!this.currentSync) return;
-            // const syncId = this.currentSync.baseInfo.id;
-            // this.initCurrentSync(syncId); // 重新创建实例即可重置
+        resetsingleSync() {
+            // if (!this.singleSync) return;
+            // const syncId = this.singleSync.baseInfo.id;
+            // this.initsingleSync(syncId); // 重新创建实例即可重置
         },
 
         // 選擇拍組方法
-        selectCurrentSync(trainer_id: string) {
+        selectsingleSync(trainer_id: string) {
             const syncCacheStore = useSyncCacheStore();
             const rawData = syncCacheStore.getRawDataWithTrainerId(trainer_id);
             if (!rawData) return;
-            this.currentSync = createSync(rawData);
+            this.singleSync = createSync(rawData);
             localStorage.setItem(STORAGE_KEY, trainer_id);
         },
     },
 });
 
-// ================================= Sync工厂函数（重构适配新数据）=================================
-/**
- * 创建Sync实例
- * @param jsonData 完整的拍组JSON数据
- * @returns 完整Sync对象
- */
+// ================================= Sync工厂函数 =================================
 const createSync = (jsonData: SyncRawData): Sync => {
     // 初始化动态状态
     const state: SyncDynamicState = reactive({
@@ -122,12 +135,49 @@ const createSync = (jsonData: SyncRawData): Sync => {
 
     // 计算属性
     const computedProps: SyncComputed = {
-        hp: computed(() => calculateStat("hp")),
-        atk: computed(() => calculateStat("atk")),
-        def: computed(() => calculateStat("def")),
-        spa: computed(() => calculateStat("spa")),
-        spd: computed(() => calculateStat("spd")),
-        spe: computed(() => calculateStat("spe")),
+        hp: computed(() =>
+            getFinalStatValue(jsonData, state, "hp", state.selectedPokemonIndex)
+        ),
+        atk: computed(() =>
+            getFinalStatValue(
+                jsonData,
+                state,
+                "atk",
+                state.selectedPokemonIndex
+            )
+        ),
+        def: computed(() =>
+            getFinalStatValue(
+                jsonData,
+                state,
+                "def",
+                state.selectedPokemonIndex
+            )
+        ),
+        spa: computed(() =>
+            getFinalStatValue(
+                jsonData,
+                state,
+                "spa",
+                state.selectedPokemonIndex
+            )
+        ),
+        spd: computed(() =>
+            getFinalStatValue(
+                jsonData,
+                state,
+                "spd",
+                state.selectedPokemonIndex
+            )
+        ),
+        spe: computed(() =>
+            getFinalStatValue(
+                jsonData,
+                state,
+                "spe",
+                state.selectedPokemonIndex
+            )
+        ),
         costOrbs: computed(() => {
             return state.gridData.reduce(
                 (sum, tile) => sum + (tile.isActive ? tile.orb : 0),
@@ -149,75 +199,43 @@ const createSync = (jsonData: SyncRawData): Sync => {
         currentPokemon: computed(() => {
             return jsonData.pokemon[state.selectedPokemonIndex];
         }),
-    };
-
-    // 内部工具函数：六维属性计算
-    const calculateStat = (statKey: keyof PokemonStat): number => {
-        const originPokemon = jsonData.pokemon[0];
-        const currentPokemon = jsonData.pokemon[state.selectedPokemonIndex];
-        const statList = originPokemon.stat[statKey] as [
-            number,
-            number,
-            number,
-            number,
-            number,
-            number,
-            number
-        ];
-
-        // 等級加成
-        const input = { level: state.level, statList };
-        let result = StatValueCalculator.calculate(input);
-
-        // 超覺醒加成
-        result = StatValueCalculator.calculateAwakeningBonus(
-            result,
-            jsonData.trainer.role,
-            state.bonusLevel,
-            getStatIndexByStatKey(statKey)
-        );
-
-        // 星级加成
-        result = StatValueCalculator.calcuateRarityBonus(
-            result,
-            jsonData.trainer.rarity,
-            state.currentRarity,
-            state.potential,
-            getStatIndexByStatKey(statKey)
-        );
-
-        // EX体系加成
-        if (state.exRoleEnabled) {
-            result = StatValueCalculator.calculateExRole(
-                result,
-                jsonData.trainer.exRole,
-                getStatIndexByStatKey(statKey)
+        // 招式計算
+        finalMoves: computed(() => {
+            const moves = computedProps.currentPokemon.value.moves;
+            if (!moves) return null;
+            return moves.map((move) =>
+                mapMoveToMoveFinal(move, jsonData.trainer, state, "move")
             );
-        }
-        // 如果有加成列表
-        if (currentPokemon?.scale && currentPokemon.scale.length > 0) {
-            let index = getStatIndexByStatKey(statKey) - 1;
-            let scale = currentPokemon.scale[index];
-            result = StatValueCalculator.calculateVarietyBonus(result, scale);
-        }
+        }),
 
-        return Math.floor(result);
+        finalSyncMove: computed(() => {
+            // 使用當前形態的 Sync 招式數據
+            const syncMove = computedProps.currentPokemon.value.syncMove
+            if (!syncMove) return null;
+            return mapMoveToMoveFinal(
+                syncMove,
+                jsonData.trainer,
+                state,
+                "syncMove"
+            );
+        }),
+
+        finalMoveMax: computed(() => {
+            const moveMaxs = computedProps.currentPokemon.value.movesDynamax;
+            if (!moveMaxs) return null;
+            return moveMaxs.map((move) =>
+                mapMoveToMoveFinal(move, jsonData.trainer, state, "moveDynamax")
+            );
+        }),
+
+        finalMoveTera: computed(() => {
+            const moveTera = computedProps.currentPokemon.value.moveTera;
+            if (!moveTera) return null;
+            return mapMoveToMoveFinal(moveTera, jsonData.trainer, state, "move");
+        }),
     };
 
-    // 辅助函数：将statKey转换为StatIndex
-    const getStatIndexByStatKey = (statKey: keyof PokemonStat): StatIndex => {
-        const keyMap: Record<keyof PokemonStat, StatIndex> = {
-            hp: 1,
-            atk: 2,
-            def: 3,
-            spa: 4,
-            spd: 5,
-            spe: 6,
-        };
-        return keyMap[statKey];
-    };
-
-    // 4. Sync操作方法
+    // Sync操作方法
     const methods: SyncMethods = {
         // 初始化用于渲染的石盘数据
         initGridData: () => {
@@ -333,6 +351,16 @@ const createSync = (jsonData: SyncRawData): Sync => {
             return tile.level <= state.bonusLevel;
         },
 
+        // 判斷石盤是否都可符合當前等級
+        checkSelectedTiles: () => {
+            state.gridData.forEach((tile) => {
+                // 已激活但不可达 → 禁用
+                if (tile.isActive && !methods.isTileReachable(tile)) {
+                    tile.isActive = false;
+                }
+            });
+        },
+
         // 获取石盘对应边框图片资源
         getTileBorderUrl: (tile: Tile) => {
             let keyName = "";
@@ -364,6 +392,7 @@ const createSync = (jsonData: SyncRawData): Sync => {
         // 获取石盘对应边框图片资源
         getTileFillUrl: (tile: Tile) => {
             let keyName = "";
+
             if (state.bonusLevel < tile.level) {
                 keyName = "icons/locked-" + tile.level;
                 const imagePath = `../assets/sync-grids/${keyName}.png`;

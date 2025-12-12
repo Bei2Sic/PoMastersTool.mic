@@ -18,25 +18,25 @@
       "name": "格鬥屬性／攻擊",
       "description": "僅在我方使出格鬥屬性攻擊時，攻擊和特攻提升30",
       "tag": "格鬥",
-      "category": 999
+      "category": 1
     },
     {
       "name": "豐緣／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "豐緣",
-      "category": 999
+      "category": 2
     },
     {
       "name": "勁敵／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "勁敵",
-      "category": 999
+      "category": 3
     },
     {
       "name": "對戰設施的強者／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "對戰設施的強者",
-      "category": 999
+      "category": 3
     },
     {
       "name": "鬥志昂揚／攻擊",

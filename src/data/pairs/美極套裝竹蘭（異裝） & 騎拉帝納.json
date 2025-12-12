@@ -18,25 +18,25 @@
       "name": "幽靈屬性／技術",
       "description": "我方全體拍組最大HP提升24\n僅在我方使出幽靈屬性攻擊時，攻擊和特攻提升24",
       "tag": "幽靈",
-      "category": 999
+      "category": 1
     },
     {
       "name": "神奧／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "神奧",
-      "category": 999
+      "category": 2
     },
     {
       "name": "美極套裝／技術",
       "description": "我方全體拍組最大HP提升8\n我方全體拍組的攻擊和特攻提升5",
       "tag": "美極套裝",
-      "category": 999
+      "category": 4
     },
     {
       "name": "對戰設施的強者／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "對戰設施的強者",
-      "category": 999
+      "category": 3
     },
     {
       "name": "鬥志昂揚／技術",

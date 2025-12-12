@@ -1,4 +1,4 @@
-import { TypeMapItem } from "@/type/const";
+import { TypeMapItem } from "@/types/indices";
 
 export const TypeMap: Record<number, TypeMapItem> = {
     0: { typeSuffix: "Trainer", cnName: "訓練家" },
@@ -28,7 +28,6 @@ export const CategoryMap: Record<string, TypeMapItem> = {
     變化: { typeSuffix: "Status", cnName: "變化" },
 };
 
-
 export const RoleMap: Record<string, TypeMapItem> = {
     0: { typeSuffix: "Physical_Strike", cnName: "攻擊型" },
     1: { typeSuffix: "Special_Strike", cnName: "攻擊型" },
@@ -38,3 +37,21 @@ export const RoleMap: Record<string, TypeMapItem> = {
     5: { typeSuffix: "Field", cnName: "場地型" },
     6: { typeSuffix: "Multi", cnName: "複合型" },
 };
+
+export const ExRoleList = [
+    "攻擊型",
+    "攻擊型",
+    "輔助型",
+    "技術型",
+    "速戰型",
+    "場地型",
+] as const;
+
+export const NumtoStatKey = {
+    1: "hp",
+    2: "atk",
+    3: "def",
+    4: "spa",
+    5: "spd",
+    6: "spe",
+} as const;

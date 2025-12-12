@@ -18,19 +18,19 @@
       "name": "岩石屬性／攻擊",
       "description": "僅在我方使出岩石屬性攻擊時，攻擊和特攻提升30",
       "tag": "岩石",
-      "category": 999
+      "category": 1
     },
     {
       "name": "關都／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "關都",
-      "category": 999
+      "category": 2
     },
     {
       "name": "勁敵／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "勁敵",
-      "category": 999
+      "category": 3
     },
     {
       "name": "真新鎮／攻擊",

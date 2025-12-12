@@ -18,25 +18,25 @@
       "name": "龍屬性／輔助",
       "description": "我方全體拍組最大HP提升60",
       "tag": "龍",
-      "category": 999
+      "category": 1
     },
     {
       "name": "城都／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "城都",
-      "category": 999
+      "category": 2
     },
     {
       "name": "道館館主／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "道館館主",
-      "category": 999
+      "category": 3
     },
     {
       "name": "季節服裝／輔助",
       "description": "我方全體拍組最大HP提升15",
       "tag": "季節服裝",
-      "category": 999
+      "category": 4
     }
   ],
   "specialAwaking": {

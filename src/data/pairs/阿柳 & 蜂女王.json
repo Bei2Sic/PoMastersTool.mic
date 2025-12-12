@@ -18,19 +18,19 @@
       "name": "蟲屬性／輔助",
       "description": "我方全體拍組最大HP提升60",
       "tag": "蟲",
-      "category": 999
+      "category": 1
     },
     {
       "name": "神奧／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "神奧",
-      "category": 999
+      "category": 2
     },
     {
       "name": "四天王／輔助",
       "description": "我方全體拍組最大HP提升13",
       "tag": "四天王",
-      "category": 999
+      "category": 3
     },
     {
       "name": "愛好自然之人／輔助",

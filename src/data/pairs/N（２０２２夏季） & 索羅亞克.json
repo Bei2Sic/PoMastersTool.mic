@@ -18,19 +18,19 @@
       "name": "惡屬性／攻擊",
       "description": "僅在我方使出惡屬性攻擊時，攻擊和特攻提升30",
       "tag": "惡",
-      "category": 999
+      "category": 1
     },
     {
       "name": "合眾／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "合眾",
-      "category": 999
+      "category": 2
     },
     {
       "name": "季節服裝／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升9",
       "tag": "季節服裝",
-      "category": 999
+      "category": 4
     },
     {
       "name": "不可思議的力量／攻擊",

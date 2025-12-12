@@ -18,25 +18,25 @@
       "name": "蟲屬性／攻擊",
       "description": "僅在我方使出蟲屬性攻擊時，攻擊和特攻提升30",
       "tag": "蟲",
-      "category": 999
+      "category": 1
     },
     {
       "name": "合眾／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "合眾",
-      "category": 999
+      "category": 2
     },
     {
       "name": "特別服裝／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升9",
       "tag": "特別服裝",
-      "category": 999
+      "category": 4
     },
     {
       "name": "眼鏡／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升9",
       "tag": "眼鏡",
-      "category": 999
+      "category": 4
     },
     {
       "name": "組隊對戰／攻擊",

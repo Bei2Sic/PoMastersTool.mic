@@ -18,25 +18,25 @@
       "name": "惡屬性／攻擊",
       "description": "僅在我方使出惡屬性攻擊時，攻擊和特攻提升30",
       "tag": "惡",
-      "category": 999
+      "category": 1
     },
     {
       "name": "伽勒爾／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "伽勒爾",
-      "category": 999
+      "category": 2
     },
     {
       "name": "冠軍／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升8",
       "tag": "冠軍",
-      "category": 999
+      "category": 3
     },
     {
       "name": "雙馬尾／攻擊",
       "description": "我方全體拍組的攻擊和特攻提升9",
       "tag": "雙馬尾",
-      "category": 999
+      "category": 4
     },
     {
       "name": "伽勒爾的冒險／攻擊",

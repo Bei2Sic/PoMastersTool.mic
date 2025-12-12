@@ -25,10 +25,11 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
-import { useSyncCacheStore } from "@/store/syncCache";
-import { getTrainerUrl,getTypeInfoWithCNName } from '@/utils/assetsMap';
+import { useSyncCacheStore } from "@/stores/syncCache";
+import { getTrainerUrl } from '@/utils/format';
+import { getTypeInfoWithCNName } from '@/core/exporter/map';
 import { Converter } from 'opencc-js';
+import { computed, ref } from 'vue';
 
 const syncCacheStore = useSyncCacheStore();
 const metaTrainer = computed(() => syncCacheStore.getMeta);
@@ -72,11 +73,11 @@ const handleSelect = (trainer) => {
 <style scoped>
 /* 筛选输入框 */
 .filter-input-container {
-    margin-bottom: 16px;
+    margin-block-end: 16px;
 }
 
 .filter-input {
-    width: 100%;
+    inline-size: 100%;
     padding: 8px 12px;
     border: 1px solid #ddd;
     border-radius: 6px;
@@ -85,12 +86,12 @@ const handleSelect = (trainer) => {
 
 /* 拍组列表 */
 .trainer-list {
-    max-height: 400px;
+    max-block-size: 400px;
     overflow-y: auto;
     gap: 8px;
     display: flex;
     flex-direction: column;
-    margin-bottom: 16px;
+    margin-block-end: 16px;
 }
 
 /* 拍组项 */
@@ -111,8 +112,8 @@ const handleSelect = (trainer) => {
 
 /* 拍组头像 */
 .trainer-avatar {
-    width: 40px;
-    height: 40px;
+    inline-size: 40px;
+    block-size: 40px;
     border-radius: 50%;
     object-fit: cover;
     border: 1px solid #eee;
@@ -136,7 +137,7 @@ const handleSelect = (trainer) => {
 
 /* 关闭按钮 */
 .close-btn {
-    width: 100%;
+    inline-size: 100%;
     padding: 10px;
     background-color: #0b7a75;
     color: white;

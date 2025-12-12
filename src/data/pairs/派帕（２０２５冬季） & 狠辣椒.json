@@ -18,25 +18,25 @@
       "name": "火屬性／技術",
       "description": "我方全體拍組最大HP提升24\n僅在我方使出火屬性攻擊時，攻擊和特攻提升24",
       "tag": "火",
-      "category": 999
+      "category": 1
     },
     {
       "name": "帕底亞／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "帕底亞",
-      "category": 999
+      "category": 2
     },
     {
       "name": "勁敵／技術",
       "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
       "tag": "勁敵",
-      "category": 999
+      "category": 3
     },
     {
       "name": "季節服裝／技術",
       "description": "我方全體拍組最大HP提升8\n我方全體拍組的攻擊和特攻提升5",
       "tag": "季節服裝",
-      "category": 999
+      "category": 4
     },
     {
       "name": "烹飪／技術",

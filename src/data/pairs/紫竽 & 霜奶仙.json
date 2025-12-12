@@ -18,19 +18,19 @@
       "name": "妖精屬性／速戰",
       "description": "僅在我方使出妖精屬性攻擊時，攻擊和特攻提升24\n我方全體拍組的速度提升24",
       "tag": "妖精",
-      "category": 999
+      "category": 1
     },
     {
       "name": "帕底亞／速戰",
       "description": "我方全體拍組的攻擊和特攻提升4\n我方全體拍組的速度提升7",
       "tag": "帕底亞",
-      "category": 999
+      "category": 2
     },
     {
       "name": "四天王／速戰",
       "description": "我方全體拍組的攻擊和特攻提升4\n我方全體拍組的速度提升7",
       "tag": "四天王",
-      "category": 999
+      "category": 3
     },
     {
       "name": "大小姐／速戰",
