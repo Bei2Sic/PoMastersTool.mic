@@ -23,6 +23,7 @@ import {
 export interface StatCalcOptions {
     gearBonus?: number;       // 裝備加成
     themeBonus?: number;  // 組隊加成
+    boost?: number; // 白值翻倍加成
 }
 
 function getTileStatBonus(

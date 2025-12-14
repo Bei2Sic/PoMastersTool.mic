@@ -140,8 +140,9 @@ import Grid from '@/components/Grid.vue';
 import Info from '@/components/Info.vue';
 import { useSyncElemStore } from "@/stores/syncElem";
 // import { PotentialSkills } from '@/type/const';
-import { debugParser, parser, validTexts } from '@/core/parse/parse_test';
 import { getTrainerUrl } from '@/utils/format';
+import { useDamageCalculator } from '@/composables/useDamageCalculator';
+import { storeToRefs } from 'pinia';
 import { computed, onMounted, onUnmounted, ref } from 'vue';
 
 // 缓存数据
@@ -163,6 +164,9 @@ const showInfo = ref(false);
 const isSingleView = ref(window.innerWidth <= 900);
 // 信息切换页
 const curTab = ref('grid');
+
+const { singleSync } = storeToRefs(syncElemStore);
+const { finalResult } = useDamageCalculator(singleSync);
 
 // 潜能相关
 // const currentType = ref(1);
@@ -195,7 +199,7 @@ const handleSelectTrainer = (trainerId) => {
 };
 
 onMounted(() => {
-    debugParser(parser, validTexts);
+    console.log(finalResult);
 });
 
 onUnmounted(() => {
