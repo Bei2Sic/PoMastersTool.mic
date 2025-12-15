@@ -3,9 +3,8 @@ export enum MoveScope {
     Sync = "Sync", // 仅拍组招式
     Max = "Max", // 仅极巨化招式
     Tera = "Tera", // 仅太晶化招式
-    Gauge = "Gauge", // 仅计量槽招式
     All = "All", // 所有招式 (通常描述为"威力提升")
-    Specific = "Specific", // 特定招式 (如"破坏光线")
+    Specific = "Specific", // 特定招式
 }
 
 export enum LogicType {
@@ -37,6 +36,7 @@ export enum LogicType {
     Reckless = "Reckless", // 反衝
     SyncType = "SyncType", // 屬性
     Berry = "Berry", // 樹果
+    GaugeCost = "GaugeCost", // 
     // 動態變化類型
     GaugeScaling = "GaugeScaling",
     SingleStatScaling = "SingleStatScaling", // 依单项能力升幅 (e.g. 依攻击升幅)
@@ -61,7 +61,7 @@ export interface PassiveSkillModel {
     // 触发条件
     condition: {
         key: string; // 触发条件 (如 'Sun', 'Paralysis', 'AttackBuff')
-        detail?: string; // 额外信息 (如 'Opponent', 'Self', 'Field')
+        detail: string; // 额外信息 (如 'Opponent', 'Self', 'Field')
     };
 
     // 伤害相关

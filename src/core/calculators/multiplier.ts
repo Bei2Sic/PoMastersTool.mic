@@ -9,7 +9,7 @@ export class DamageEngine {
      */
     static getMultipliers(
         move: MoveBase,
-        category: MoveCategory,
+        category: MoveScope,
         passives: PassiveSkillModel[],
         context: CalcEnvironment
     ): ActiveMultiplier[] {
@@ -18,7 +18,7 @@ export class DamageEngine {
         for (const passive of passives) {
             // 0. 跳過白值類 和 計量槽類 (這兩個由別的方法處理)
             if (passive.statBoost.isStatBoost) continue;
-            if (passive.multiplier?.logic === LogicType.GaugeScaling)
+            if (passive.multiplier?.logic === LogicType.GaugeCost)
                 continue;
 
             const pm = passive.multiplier;
@@ -38,7 +38,7 @@ export class DamageEngine {
             }
 
             // 2. 檢查環境條件
-            if (!this.checkCondition(passive.condition, context)) {
+            if (!this.checkCondition(passive.condition, passive.multiplier.logic, context)) {
                 continue;
             }
 
@@ -59,7 +59,7 @@ export class DamageEngine {
      */
     static getGaugeBoosts(
         move: MoveBase,
-        category: MoveCategory, // 通常 Power Flux 只對普招有效，但也可能未來有別的
+        category: MoveScope,
         passives: PassiveSkillModel[],
         context: CalcEnvironment
     ): ActiveMultiplier[] {
@@ -77,7 +77,7 @@ export class DamageEngine {
             }
 
             // 2. 檢查環境條件
-            if (!this.checkCondition(passive.condition, context)) {
+            if (!this.checkCondition(passive.condition, passive.multiplier.logic, context)) {
                 continue;
             }
 
@@ -101,7 +101,7 @@ export class DamageEngine {
 
     private static isScopeMatch(
         scope: MoveScope | undefined,
-        currentCategory: MoveCategory,
+        currentCategory: MoveScope,
         currentMoveName: string,
         targetMoveName?: string
     ): boolean {
@@ -111,7 +111,7 @@ export class DamageEngine {
             case MoveScope.All:
                 return true; // 適用所有
             case MoveScope.Move:
-                return currentCategory === "Pokemon"; // 僅普招
+                return currentCategory === "Move" || currentCategory === "Max" || currentCategory === "Tera";
             case MoveScope.Sync:
                 return currentCategory === "Sync"; // 僅拍招
             case MoveScope.Max:
@@ -125,13 +125,46 @@ export class DamageEngine {
     }
 
     private static checkCondition(
-        cond: { key: string },
+        cond: { key: string, detail: string },
+        logicType: LogicType,
         env: CalcEnvironment
     ): boolean {
-        // ... (保持原本的環境判斷代碼，如晴天、場地等)
-        if (cond.key === "None" || cond.key === "無條件") return true;
-        if (cond.key === "晴天" && env.weather === "sunny") return true;
-        // ...
+        switch (logicType) {
+            case LogicType.DamageField:
+
+            // DamageField = "DamageField", // 伤害场地
+            // Terrain = "Terrain", // 场地
+            // BattleCircle = "BattleCircle", // 鬥陣
+            // Weather = "Weather", // 天气变化
+            // Abnormal = "Abnormal", // 异常
+            // Hindrance = "Hindrance", // 妨害
+            // Rebuff = "Rebuff", // 抗性下降
+
+            // // 固定值但二元類型
+            // AnyFieldEffect = 'AnyFieldEffect',
+            // WeatherChange = 'WeatherChange',
+            // WeatherNormal = 'WeatherNormal',
+            // TerrainActive = 'TerrainActive',
+            // StatChange = "StatChange", // 某項能力變化（可能多項）
+            // AbnormalActive = "AbnormalActive",
+            // HindranceActive = "HindranceActive",
+            // AllStatNotChange = "AllStatNotChange", // 能力非提升
+            // HPLow = "HPLow", // 危機
+            // HPHighHalf = "HPHighHalf", // 一半以上
+            // HPDecreased = "HPDecreased", // 未滿
+            // Critical = "Critical",
+            // SuperEffective = "SuperEffective",
+            // Effective = "Effective",
+            // Reckless = "Reckless", // 反衝
+            // SyncType = "SyncType", // 屬性
+            // Berry = "Berry", // 樹果
+            // GaugeCost = "GaugeCost", // 
+            // // 動態變化類型
+            // GaugeScaling = "GaugeScaling",
+            // SingleStatScaling = "SingleStatScaling", // 依单项能力升幅 (e.g. 依攻击升幅)
+            // TotalStatScaling = "TotalStatScaling", // 依总能力升降 (e.g. 依对手能力降幅)
+            // HPScaling = "HPScaling", // 依HP比例 (e.g. 隨HP)
+        }
         return false;
     }
 }

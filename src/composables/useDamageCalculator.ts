@@ -80,16 +80,20 @@ function collectActivePassives(
 export function useDamageCalculator(targetSync: Ref<Sync | null>) {
     const damageStore = useDamageCalcStore();
 
-    // 环境快照
-    const envConfig = computed((): CalcEnvironment => {
-        // 從 store 映射到標準結構
-        return {
-            weather: damageStore.weather, // 'sunny'
-            terrain: damageStore.terrain, // 'electric'
-            zone: damageStore.zone,
-            // ...
-        };
-    });
+    // // 环境快照
+    // const envConfig = computed((): CalcEnvironment => {
+    //     const user = damageStore.user;
+    //     const target = damageStore.target;
+    //     const settings = damageStore.settings;
+    //     // 從 store 映射到標準結構
+    //     return {
+    //         weather: damageStore.weather, // 'sunny'
+    //         terrain: damageStore.terrain, // 'electric'
+    //         zone: damageStore.zone,
+    //         damageField: target.damageField,
+
+    //     };
+    // });
 
     // 信息快照(白值, 技能威力)
     const allFormsBattleStats = computed(() => {

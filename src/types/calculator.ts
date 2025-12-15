@@ -1,5 +1,6 @@
 // types/calculator.ts
 import { LogicType } from "@/types/passiveModel";
+import { PokemonType, AbnormalType, WeatherType, TerrainType, ZoneType, DamageFieldType, RebuffRank, BattleCircle } from "@/types/conditions";
 
 // 招式類別 (由業務方在遍歷時指定)
 export type MoveCategory = "Pokemon" | "Sync" | "Max";
@@ -18,25 +19,62 @@ export interface ActiveMultiplier {
 }
 
 export interface CalcEnvironment {
-    weather: string;
-    terrain: string;
-    zone: string;
+    // ==========================================
+    // 1. 環境
+    // ==========================================
+    weather: WeatherType;
+    terrain: TerrainType;
+    zone: ZoneType;
+    battleCircles: BattleCircle[],
 
-    // // --- B. 對手狀態 (Enemy State) ---
-    // // 用於觸發：對手麻痺時威力提升 (Dirty Fighting)、對手防禦下降分威力提升等
-    // enemyStatus: 'none' | 'paralysis' | 'burn' | 'sleep' | 'poison' | 'freeze' | 'confusion' | 'trap';
-    // enemyDefRank: number;   // 對手防禦等級 (-6 ~ +6)
-    // enemySpDefRank: number; // 對手特防等級 (-6 ~ +6)
-    
-    // // --- C. 自身狀態 (Self State) ---
-    // // 用於觸發：HP越多威力越強、下次物理招式威力增強 (PMUN) 等
-    // currentHpPercent: number; // 當前 HP 百分比 (0 - 100)
-    // physicalMoveUpNext: number; // 物理招式威力增強狀態 (0 - 10)
-    // specialMoveUpNext: number;  // 特殊招式威力增強狀態 (0 - 10)
-    // syncBuff: number; // 氣魄加成 (Sync Buff) 層數
+    // ==========================================
+    // 2. 攻擊方 (User)
+    // ==========================================
+    user: {
+        hpPercent: number; // 0-100
+        stats: { [key: string]: number };
+        ranks: { [key: string]: number };
 
-    // // --- D. 數值計算參數 (Calculation Params) ---
-    // // 這些不影響倍率觸發，但影響最終傷害公式
-    // enemyDef: number; // 敵人的實際防禦值/特防值 (輸入框填寫的)
-    // battleType: 'single' | 'multi'; // 單人或多人 (影響某些被動)
+        // 增強狀態
+        boosts: {
+            physical: number;
+            special: number;
+            sync: number;
+        };
+
+        abnormal: AbnormalType;
+        hindrance: {
+            isConfused: boolean;
+            isFlinching: boolean;
+            isTrapped: boolean;
+            isRestrained: boolean;
+        };
+    };
+
+    // ==========================================
+    // 3. 防禦方 (Target)
+    // ==========================================
+    target: {
+        ranks: { [key: string]: number };
+        abnormal: AbnormalType;
+        hindrance: {
+            isConfused: boolean;
+            isFlinching: boolean;
+            isTrapped: boolean;
+            isRestrained: boolean;
+        };
+
+        damageField: DamageFieldType;
+        // 抗性層數 (可以直接用對象)
+        typeRebuffs: Record<PokemonType, RebuffRank>;
+    };
+
+    // ==========================================
+    // 4. 設定
+    // ==========================================
+    settings: {
+        gauge: number;
+        isCritical: boolean;
+        isSuperEffective: boolean;
+    };
 }

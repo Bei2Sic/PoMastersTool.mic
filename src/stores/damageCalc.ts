@@ -37,14 +37,6 @@ export const useDamageCalcStore = defineStore("damageCalc", {
         // I. USER (當前拍組 / 攻擊方)
         // ============================================
         user: {
-            // 基礎數值
-            stats: {
-                atk: 0 as number,
-                def: 0 as number,
-                spa: 0 as number,
-                spd: 0 as number,
-                spe: 0 as number,
-            },
             // 裝備數值
             gear: {
                 atk: 0 as number,
@@ -82,7 +74,7 @@ export const useDamageCalcStore = defineStore("damageCalc", {
             // 自身狀態 (用於 LowHP/Recoil 判斷)
             currentHPPercent: 100 as number,
             // 異常狀態
-            abnormal: "無" as cond.Abnormal,
+            abnormal: "無" as cond.AbnormalType,
             // 妨害狀態
             hindrance: {
                 isConfused: false as boolean, // 混亂
@@ -117,7 +109,7 @@ export const useDamageCalcStore = defineStore("damageCalc", {
             },
 
             // 異常狀態
-            abnormal: "無" as cond.Abnormal,
+            abnormal: "無" as cond.AbnormalType,
 
             // 妨害狀態
             hindrance: {
@@ -141,13 +133,13 @@ export const useDamageCalcStore = defineStore("damageCalc", {
 
         // todo: 大師被動
 
-        move: {
-            power: 100 as number,
-            type: "一般" as cond.PokemonType, // 招式屬性
-            isPhysical: true as boolean, // 物理/特殊
-            isSyncMove: false as boolean,
-            isMaxMove: false as boolean,
-        },
+        // move: {
+        //     power: 100 as number,
+        //     type: "一般" as cond.PokemonType, // 招式屬性
+        //     isPhysical: true as boolean, // 物理/特殊
+        //     isSyncMove: false as boolean,
+        //     isMaxMove: false as boolean,
+        // },
 
         settings: {
             scope: 1 as 1 | 2 | 3, // 攻擊目標數 (1-3)

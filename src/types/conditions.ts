@@ -74,8 +74,10 @@ export interface BattleCircle {
     level: CircleLevel;
 }
 
+export type StatType = "攻擊" | "防禦" | "特攻" | "特防" | "速度";
+
 // 異常狀態
-export type Abnormal =
+export type AbnormalType =
     | "無"
     | "灼傷"
     | "中毒"
