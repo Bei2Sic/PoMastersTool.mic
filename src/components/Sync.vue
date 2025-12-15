@@ -140,10 +140,10 @@ import Grid from '@/components/Grid.vue';
 import Info from '@/components/Info.vue';
 import { useSyncElemStore } from "@/stores/syncElem";
 // import { PotentialSkills } from '@/type/const';
-import { getTrainerUrl } from '@/utils/format';
 import { useDamageCalculator } from '@/composables/useDamageCalculator';
+import { getTrainerUrl } from '@/utils/format';
 import { storeToRefs } from 'pinia';
-import { computed, onMounted, onUnmounted, ref } from 'vue';
+import { computed, onMounted, onUnmounted, ref, watch } from 'vue';
 
 // 缓存数据
 const syncElemStore = useSyncElemStore();
@@ -166,7 +166,7 @@ const isSingleView = ref(window.innerWidth <= 900);
 const curTab = ref('grid');
 
 const { singleSync } = storeToRefs(syncElemStore);
-const { finalResult } = useDamageCalculator(singleSync);
+const { allFormsBattleStats } = useDamageCalculator(singleSync);
 
 // 潜能相关
 // const currentType = ref(1);
@@ -198,8 +198,18 @@ const handleSelectTrainer = (trainerId) => {
     }
 };
 
+watch(allFormsBattleStats, (newValue) => {
+    if (newValue && newValue.length > 0) {
+        console.log("✅ 計算器成功算出數據:", newValue);
+
+        // 打印第一種形態的被動，驗證解析是否成功
+        console.log("第一形態的被動:", newValue[0].passives);
+    } else {
+        console.log("⏳ 計算結果為空 (可能數據尚未加載)");
+    }
+}, { immediate: true });
+
 onMounted(() => {
-    console.log(finalResult);
 });
 
 onUnmounted(() => {

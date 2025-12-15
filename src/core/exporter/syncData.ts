@@ -6,10 +6,7 @@ import {
     getStatIndexByStatKey,
 } from "@/core/exporter/map";
 import { parseMoveTextBonus, parseStatTextBonus } from "@/core/parse/text";
-import {
-    BonusIndex,
-    RarityIndex,
-} from "@/types/indices";
+import { BonusIndex, RarityIndex } from "@/types/indices";
 import {
     MoveBase,
     MoveFinal,
@@ -21,9 +18,16 @@ import {
 } from "@/types/syncModel";
 
 export interface StatCalcOptions {
-    gearBonus?: number;       // 裝備加成
-    themeBonus?: number;  // 組隊加成
+    gearBonus?: number; // 裝備加成
+    themeBonus?: number; // 組隊加成
     boost?: number; // 白值翻倍加成
+}
+
+export interface MoveCalcOptions {
+    gaugeBonus?: number; // 裝備加成
+    scope?: number; // 對象
+    passiveRate?: number; // 被動倍率
+    moveRate?: number; //自身倍率
 }
 
 function getTileStatBonus(
@@ -42,10 +46,7 @@ function getTileStatBonus(
     return bonus;
 }
 
-function getTileMoveBonus(
-    selectedTiles: Tile[],
-    moveName: string,
-): number {
+function getTileMoveBonus(selectedTiles: Tile[], moveName: string): number {
     let bonus = 0;
 
     // 遍歷所有已激活的石盤
@@ -113,8 +114,12 @@ export const getFinalStatValue = (
     if (currentPokemon?.scale && currentPokemon.scale.length > 0) {
         let index = getStatIndexByStatKey(statKey) - 1;
         let scale = currentPokemon.scale[index];
-        const isMega = (currentPokemon.variationType === 1);
-        result = StatValueCalculator.calculateVarietyBonus(result, scale, isMega);
+        const isMega = currentPokemon.variationType === 1;
+        result = StatValueCalculator.calculateVarietyBonus(
+            result,
+            scale,
+            isMega
+        );
     }
 
     // 石盤的白值加成為最後的加算
@@ -123,6 +128,8 @@ export const getFinalStatValue = (
     // 组队技能
     const theme = options.themeBonus || 0;
     result += theme;
+
+    // 倍率
 
     return Math.floor(result);
 };
@@ -134,7 +141,8 @@ export function getFinalMovePower(
     exRoleEnabled: boolean,
     rarity: RarityIndex,
     gridData: Tile[],
-    moveCategory: MoveCategory
+    moveCategory: MoveCategory,
+    options: MoveCalcOptions = {}
 ): number | "-" {
     let power = move.power;
     if (power <= 0) {
@@ -156,13 +164,17 @@ export function getFinalMovePower(
 
     // EX體系加成 (僅限特定EX角色的 Sync 招式)
     if (moveCategory === "syncMove") {
-        if ((trainer.exRole === 3 && exRoleEnabled) || (trainer.role === 3 && rarity === 6))
-        power = Math.ceil(power * 1.5);
+        if (
+            (trainer.exRole === 3 && exRoleEnabled) ||
+            (trainer.role === 3 && rarity === 6)
+        )
+            power = Math.ceil(power * 1.5);
     }
 
-    // 石盤的白值加成為最後的加算
-    power += getTileMoveBonus(gridData, move.name);
+    // 計量槽加成... 怎麼加入進來呢？
 
+    // 石盤（Grid）的白值加成為最後的加算
+    power += getTileMoveBonus(gridData, move.name);
 
     return Math.floor(power);
 }

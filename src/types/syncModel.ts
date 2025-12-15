@@ -1,4 +1,9 @@
-import { BonusIndex, ExRoleIndex, RarityIndex, RoleIndex } from "@/types/indices";
+import {
+    BonusIndex,
+    ExRoleIndex,
+    RarityIndex,
+    RoleIndex,
+} from "@/types/indices";
 import { ComputedRef } from "vue";
 
 // ------------------------------ 拍组JSON原始数据类型（与JSON结构完全对应）------------------------------
@@ -67,7 +72,12 @@ export interface PokemonStat {
 export interface Passive {
     name: string;
     description: string;
-    detail: string[];
+    detail: Detail[];
+}
+
+export interface Detail {
+    name: string;
+    description: string;
 }
 
 /** 招式基础信息 */
@@ -99,7 +109,7 @@ export interface MoveMax extends MoveBase {}
 export interface MoveTera extends MoveBase {}
 
 export interface MoveFinal extends MoveBase {
-    finalPower: number | '-'; // 實際用於顯示和計算的最終威力值
+    finalPower: number | "-"; // 實際用於顯示和計算的最終威力值
 }
 
 /** 宝可梦信息（支持多形态） */
@@ -134,7 +144,7 @@ export interface Theme {
 export interface SpecialAwaking {
     name: string;
     description: string;
-    detail: string[];
+    detail: Detail[];
 }
 
 /** 潜能饼干技能 */
@@ -155,7 +165,7 @@ export interface Grid {
     id: number;
     name: string;
     description: string;
-    detail: string[];
+    detail: Detail[];
     energy: number;
     orb: number;
     level: number;

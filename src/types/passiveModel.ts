@@ -57,6 +57,7 @@ export interface PassiveRawText {
 export interface PassiveSkillModel {
     name: string;
     desc: string;
+    passiveName: string;
     // 触发条件
     condition: {
         key: string; // 触发条件 (如 'Sun', 'Paralysis', 'AttackBuff')

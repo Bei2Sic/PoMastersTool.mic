@@ -291,17 +291,17 @@
                         <div class="passive-header">
                             <div class="passive-name">{{ specialAwaking.name }}</div>
                             <button class="passive-detail-btn" v-if="specialAwaking.detail?.length > 0"
-                                @click="togglePassiveDetail(index)">
+                                @click="togglePassiveDetail('awaking')">
                                 {{ '+' }}
                             </button>
                         </div>
                         <div class="passive-content">
-                            <div class="passive-desc" v-if="!specialAwaking.detail || !expandedPassives[index]">
+                            <div class="passive-desc" v-if="!specialAwaking.detail || !expandedPassives['awaking']">
                                 {{ specialAwaking.description }}
                             </div>
                             <div class="passive-detail" v-else>
                                 <div class="passive-desc" v-for="(item, idx) in specialAwaking.detail" :key="idx">
-                                    {{ item }}
+                                    {{ item.name }}
                                 </div>
                             </div>
                         </div>
@@ -323,7 +323,7 @@
                             </div>
                             <div class="passive-detail" v-else>
                                 <div class="passive-desc" v-for="(item, idx) in passive.detail" :key="idx">
-                                    {{ item }}
+                                    {{ item.name }}
                                 </div>
                             </div>
                         </div>

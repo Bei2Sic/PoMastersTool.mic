@@ -1,25 +1,30 @@
 import { LogicType, MoveScope, PassiveSkillModel } from "@/types/passiveModel";
 // 假設這些常量在您的常量文件中定義
-import { WEATHER_STATUSES, HINDRANCE_STATUSES, ABNORMAL_STATUSES } from "@/types/conditions";
+import {
+    ABNORMAL_STATUSES,
+    HINDRANCE_STATUSES,
+    WEATHER_STATUSES,
+} from "@/types/conditions";
 
 export class PassiveSkillParser {
     private name: string;
     private desc: string;
+    private passiveName: string;
 
-    constructor(name: string, desc: string) {
+    constructor(name: string, desc: string, passiveName: string) {
         this.name = name;
         this.desc = desc;
+        this.passiveName = passiveName;
     }
 
     // 1. 合法性檢查：只處理傷害相關
     public static isValid(name: string, desc: string): boolean {
-
         if (name.includes("威力↓")) return false;
         if (name.includes("屬性防守")) return false;
         if (name.includes("減輕")) return false;
         if (name.includes("效果絕佳威力")) return false;
         if (name.includes("中鋒瀕死")) return false;
-
+        if (name.includes("招式後")) return false;
 
         // 必須包含关键字，且通常涉及威力提升
         // 正則解釋：包含 (招式|威力) 且包含 (提升|↑|倍)
@@ -28,7 +33,9 @@ export class PassiveSkillParser {
         // const isDamage = /(?:招式|威力|攻擊).*(?:提升|↑|強)/.test(desc);
 
         // 白值檢查 (包含 '防禦', '特防', '速度', '特攻', '能力' 且包含 '倍' 或 '提升')
-        const isStatBoost = /(?:防禦|特防|特攻|速度|能力).*(?:倍|提升|↑)/.test(desc);
+        const isStatBoost = /(?:防禦|特防|特攻|速度|能力).*(?:倍|提升|↑)/.test(
+            desc
+        );
 
         return isDamage || isStatBoost;
     }
@@ -43,36 +50,57 @@ export class PassiveSkillParser {
         return {
             name: this.name,
             desc: this.desc,
-            applyToParty: this.name.includes("G") || this.desc.includes("全體拍組"), // 注意全形G
+            passiveName: this.passiveName,
+            applyToParty:
+                this.name.includes("G") || this.desc.includes("全體拍組"), // 注意全形G
             multiplier: {
                 scope: scopeResult.scope,
                 moveName: scopeResult.moveName,
                 value: multiplierResult.value,
-                logic: logicResult.logic
+                logic: logicResult.logic,
             },
             statBoost: statBoost,
             condition: {
                 key: logicResult.key,
-                detail: logicResult.detail
-            }
+                detail: logicResult.detail,
+            },
         };
     }
 
-    // --- A. 解析作用範圍 (Scope) ---
-    private resolveScope(): { scope: MoveScope, moveName?: string } {
+    // --- 解析作用範圍 (Scope) ---
+    private resolveScope(): { scope: MoveScope; moveName?: string } {
         const desc = this.desc;
+        const name = this.name;
 
-        // 1. 特定招式 (通常在描述開頭或包含在內)
-        // 這裡可以根據您的數據擴充列表
-        const specificMoves = ["破壞光線", "終極衝擊", "爆炸烈焰", "加農水炮", "瘋狂植物"];
-        for (const move of specificMoves) {
-            if (desc.includes(move)) return { scope: MoveScope.Specific, moveName: move };
+        // =========================================================
+        // 1. 優先判斷名字中的冒號
+        // =========================================================
+        // "逆鱗：混亂時威力提升5"
+        const colonIndex =
+            name.indexOf("：") !== -1 ? name.indexOf("：") : name.indexOf(":");
+
+        if (colonIndex !== -1) {
+            // 提取冒號前的名稱
+            const prefix = name.substring(0, colonIndex).trim();
+            if (prefix.length > 0) {
+                return { scope: MoveScope.Specific, moveName: prefix };
+            }
         }
 
-        // 2. 優先判斷拍組/極巨
+        // 2. 特定招式
+        const specificMoveMatch = desc.match(/「(.+?)」/);
+        if (specificMoveMatch) {
+            return {
+                scope: MoveScope.Specific,
+                moveName: specificMoveMatch[1],
+            };
+        }
+
+        // 3. 優先判斷拍組/極巨
         if (desc.includes("拍組招式")) {
             // 特例："招式及拍組招式" -> All
-            if (desc.includes("招式及拍組招式")) return { scope: MoveScope.All };
+            if (desc.includes("招式和拍組招式"))
+                return { scope: MoveScope.All };
             return { scope: MoveScope.Sync };
         }
         if (desc.includes("極巨化招式")) return { scope: MoveScope.Max };
@@ -85,106 +113,254 @@ export class PassiveSkillParser {
         return { scope: MoveScope.All };
     }
 
-    // --- B. 解析邏輯與條件 (Logic & Condition) ---
-    private resolveLogicAndCondition(): { logic: LogicType, key: string, detail: string, isDynamic: boolean, statboost?: string[] } {
+    // --- 解析邏輯與條件 (Logic & Condition) ---
+    private resolveLogicAndCondition(): {
+        logic: LogicType;
+        key: string;
+        detail: string;
+        isDynamic: boolean;
+        statboost?: string[];
+    } {
         const desc = this.desc;
-        const cleanDesc = desc.replace(/對手|自身|對象|的時候|時|，|。/g, "");
+        const name = this.name;
+        // const cleanDesc = desc.replace(/對手|自身|對象|的時候|時|，|。/g, "");
 
         // 1. 動態 Scaling 類 (關鍵字：隨...而提高)
-        if (desc.includes("隨") || desc.includes("依")) {
+        if (name.includes("隨") || name.includes("依")) {
             // 招式計量槽 (Power Flux)
-            if (desc.includes("招式計量槽")) {
-                return { logic: LogicType.GaugeScaling, key: "招式計量槽", detail: "自身", isDynamic: true };
+            if (name.includes("招式計量槽")) {
+                return {
+                    logic: LogicType.GaugeScaling,
+                    key: "招式計量槽",
+                    detail: "自身",
+                    isDynamic: true,
+                };
             }
 
             // HP
-            if (desc.includes("HP")) {
+            if (name.includes("HP")) {
                 return {
                     logic: LogicType.HPScaling,
                     key: "HP",
-                    detail: desc.includes("對手") ? "對手" : "自身",
-                    isDynamic: true
+                    detail: name.includes("對手") ? "對手" : "自身",
+                    isDynamic: true,
                 };
             }
 
             // 能力等級 (Stat Scaling) - 這是最複雜的部分
             // 匹配：隨著 (速度) (提升/降低)
-            const statMatch = cleanDesc.match(/(攻擊|特攻|防禦|特防|速度|命中|閃避|能力)(提升|下降|降低|升幅|降幅)/);
+            const statMatch = name.match(
+                /(攻擊|特攻|防禦|特防|速度|命中|閃避|能力)(提升|下降|降低|升幅|降幅)/
+            );
             if (statMatch) {
                 const statName = statMatch[1];
                 const direction = statMatch[2].includes("升") ? "提升" : "下降";
                 const isTotal = statName === "能力";
 
                 return {
-                    logic: isTotal ? LogicType.TotalStatScaling : LogicType.SingleStatScaling,
-                    key: isTotal ? `能力${direction}` : `${statName}${direction}`,
-                    detail: desc.includes("對手") ? "對手" : "自身",
-                    isDynamic: true
+                    logic: isTotal
+                        ? LogicType.TotalStatScaling
+                        : LogicType.SingleStatScaling,
+                    key: isTotal
+                        ? `能力${direction}`
+                        : `${statName}${direction}`,
+                    detail: name.includes("對手") ? "對手" : "自身",
+                    isDynamic: true,
                 };
             }
         }
 
+        // 3. 特殊觸發的二元類
+        if (desc.includes("天氣、場地或領域變化"))
+            return {
+                logic: LogicType.AnyFieldEffect,
+                key: "天氣、場地或領域變化",
+                detail: "自身",
+                isDynamic: false,
+            };
+        if (desc.includes("天氣變化"))
+            return {
+                logic: LogicType.WeatherChange,
+                key: "天氣變化",
+                detail: "自身",
+                isDynamic: false,
+            };
+        if (desc.includes("天氣沒有變化"))
+            return {
+                logic: LogicType.WeatherNormal,
+                key: "天氣沒有變化",
+                detail: "自身",
+                isDynamic: false,
+            };
+        if (desc.includes("場地變化"))
+            return {
+                logic: LogicType.TerrainActive,
+                key: "場地變化",
+                detail: "自身",
+                isDynamic: false,
+            };
+        if (desc.includes("異常狀態"))
+            return {
+                logic: LogicType.AbnormalActive,
+                key: "異常狀態",
+                detail: "自身",
+                isDynamic: false,
+            };
+        if (desc.includes("妨害狀態"))
+            return {
+                logic: LogicType.HindranceActive,
+                key: "妨害狀態",
+                detail: "自身",
+                isDynamic: false,
+            };
+        if (desc.includes("HP非全滿狀態"))
+            return {
+                logic: LogicType.HPDecreased,
+                key: "HP非全滿狀態",
+                detail: "自身",
+                isDynamic: false,
+            };
+        if (desc.includes("沒有處於提高狀態的能力"))
+            return {
+                logic: LogicType.AllStatNotChange,
+                key: "沒有處於提高狀態的能力",
+                detail: desc.includes("自身") ? "自身" : "對手",
+                isDynamic: false,
+            };
+        if (desc.includes("HP非全滿狀態"))
+            return {
+                logic: LogicType.HPDecreased,
+                key: "HP非全滿狀態",
+                detail: "自身",
+                isDynamic: false,
+            };
+        if (desc.includes("HP剩下一半以上"))
+            return {
+                logic: LogicType.HPHighHalf,
+                key: "HP剩下一半以上",
+                detail: "自身",
+                isDynamic: false,
+            };
+        if (desc.includes("危機"))
+            return {
+                logic: LogicType.HPLow,
+                key: "危機",
+                detail: "自身",
+                isDynamic: false,
+            };
+        if (desc.includes("效果絕佳"))
+            return {
+                logic: LogicType.SuperEffective,
+                key: "效果絕佳",
+                detail: "自身",
+                isDynamic: false,
+            };
+        if (desc.includes("不是效果絕佳"))
+            return {
+                logic: LogicType.Effective,
+                key: "不是效果絕佳",
+                detail: "自身",
+                isDynamic: false,
+            };
+        if (desc.includes("擊中") && desc.includes("要害"))
+            return {
+                logic: LogicType.Critical,
+                key: "擊中要害",
+                detail: "自身",
+                isDynamic: false,
+            };
+
         // 2. 環境/狀態類 (固定倍率)
         // 傷害場地
-        if (desc.includes("傷害場地")) {
-            const match = desc.match(/(.+?傷害場地)/);
-            if (match) return { logic: LogicType.DamageField, key: match[1], detail: "對手", isDynamic: false };
+        if (name.includes("傷害場地")) {
+            const match = name.match(/(.+?傷害場地)/);
+            if (match)
+                return {
+                    logic: LogicType.DamageField,
+                    key: match[1],
+                    detail: "對手",
+                    isDynamic: false,
+                };
         }
         // 天氣
         for (const w of WEATHER_STATUSES) {
-            if (desc.includes(w)) return { logic: LogicType.Weather, key: w, detail: "自身", isDynamic: false };
+            if (name.includes(w))
+                return {
+                    logic: LogicType.Weather,
+                    key: w,
+                    detail: "自身",
+                    isDynamic: false,
+                };
         }
         // 場地 (領域/場地)
-        if (desc.includes("場地") || desc.includes("領域")) {
-            const match = desc.match(/(.+?[場地|領域])/);
-            if (match) return { logic: LogicType.Terrain, key: match[1], detail: "自身", isDynamic: false };
+        if (name.includes("場地") || name.includes("領域")) {
+            const match = name.match(/(.+?(場地|領域))/);
+            if (match)
+                return {
+                    logic: LogicType.Terrain,
+                    key: match[1],
+                    detail: "自身",
+                    isDynamic: false,
+                };
         }
         // 鬥陣
-        if (desc.includes("鬥陣")) {
-            const match = desc.match(/(.+?鬥陣(?:[（(].+?[)）])?)/);
-            if (match) return { logic: LogicType.BattleCircle, key: match[1], detail: "自身", isDynamic: false };
+        if (name.includes("鬥陣")) {
+            const match = name.match(/(.+?鬥陣(?:[（(].+?[)）])?)/);
+            if (match)
+                return {
+                    logic: LogicType.BattleCircle,
+                    key: match[1],
+                    detail: "自身",
+                    isDynamic: false,
+                };
         }
         // 異常
-        for (const s of [...ABNORMAL_STATUSES, "異常狀態"]) {
-            if (desc.includes(s)) return { logic: LogicType.Abnormal, key: s, detail: desc.includes("自身") ? "自身" : "對手", isDynamic: false };
+        for (const s of ABNORMAL_STATUSES) {
+            if (name.includes(s))
+                return {
+                    logic: LogicType.Abnormal,
+                    key: s,
+                    detail: desc.includes("自身") ? "自身" : "對手",
+                    isDynamic: false,
+                };
         }
         // 妨害
-        for (const s of [...HINDRANCE_STATUSES, "妨害狀態"]) {
-            if (desc.includes(s)) return { logic: LogicType.Hindrance, key: s, detail: "對手", isDynamic: false };
+        for (const s of HINDRANCE_STATUSES) {
+            if (name.includes(s))
+                return {
+                    logic: LogicType.Hindrance,
+                    key: s,
+                    detail: "對手",
+                    isDynamic: false,
+                };
         }
 
-        // 3. 特殊觸發的二元類
-        if (desc.includes("天氣、場地或領域變化")) return { logic: LogicType.AnyFieldEffect, key: "天氣、場地或領域變化", detail: "自身", isDynamic: false };
-        if (desc.includes("天氣變化")) return { logic: LogicType.WeatherChange, key: "天氣變化", detail: "自身", isDynamic: false };
-        if (desc.includes("天氣沒有變化")) return { logic: LogicType.WeatherNormal, key: "天氣沒有變化", detail: "自身", isDynamic: false };
-        if (desc.includes("場地變化")) return { logic: LogicType.TerrainActive, key: "場地變化", detail: "自身", isDynamic: false };
-        if (desc.includes("異常狀態")) return { logic: LogicType.AbnormalActive, key: "異常狀態", detail: "自身", isDynamic: false };
-        if (desc.includes("妨害狀態")) return { logic: LogicType.HindranceActive, key: "妨害狀態", detail: "自身", isDynamic: false };
-        if (desc.includes("HP非全滿狀態")) return { logic: LogicType.HPDecreased, key: "HP非全滿狀態", detail: "自身", isDynamic: false };
-        if (desc.includes("沒有處於提高狀態的能力")) return { logic: LogicType.AllStatNotChange, key: "沒有處於提高狀態的能力", detail: desc.includes("自身") ? "自身" : "對手", isDynamic: false };
-        if (desc.includes("HP非全滿狀態")) return { logic: LogicType.HPDecreased, key: "HP非全滿狀態", detail: "自身", isDynamic: false };
-        if (desc.includes("HP剩下一半以上")) return { logic: LogicType.HPHighHalf, key: "HP剩下一半以上", detail: "自身", isDynamic: false };
-        if (desc.includes("危機")) return { logic: LogicType.HPLow, key: "危機", detail: "自身", isDynamic: false };
-        if (desc.includes("效果絕佳")) return { logic: LogicType.SuperEffective, key: "效果絕佳", detail: "自身", isDynamic: false };
-        if (desc.includes("不是效果絕佳")) return { logic: LogicType.Effective, key: "不是效果絕佳", detail: "自身", isDynamic: false };
-        if (desc.includes("擊中") && desc.includes("要害")) return { logic: LogicType.Critical, key: "擊中要害", detail: "自身", isDynamic: false };
-
         // 4. 能力等級 (非 Scaling，二元判斷，如：速度提升時威力提升)
-        const statCheck = cleanDesc.match(/(攻擊|特攻|防禦|特防|速度|命中|閃避|能力).*(提升|下降|降低)/);
+        const statCheck = name.match(
+            /(攻擊|特攻|防禦|特防|速度|命中|閃避|能力).*(提升|下降|降低)/
+        );
         if (statCheck) {
+            const isStatDown = name.includes("下降") || name.includes("↓");
+            const direction = isStatDown ? "下降" : "提升";
+
             return {
                 logic: LogicType.StatChange,
-                key: statCheck[0],
-                detail: desc.includes("對手") ? "對手" : "自身",
-                isDynamic: false
+                key: statCheck[1] + direction,
+                detail: name.includes("對手") ? "對手" : "自身",
+                isDynamic: false,
             };
         }
 
         // 5. 兜底
-        return { logic: LogicType.Complex, key: "通用", detail: "自身", isDynamic: false };
+        return {
+            logic: LogicType.Complex,
+            key: "通用",
+            detail: "自身",
+            isDynamic: false,
+        };
     }
 
-    // --- C. 解析數值 (Multiplier) ---
+    // --- 解析數值 (Multiplier) ---
     private resolveMultiplier(isDynamic: boolean): { value: number } {
         // 如果邏輯判斷是動態的 (Scaling)，直接返回 0 (或其他標記值)，交由計算器處理
         if (isDynamic) {
@@ -213,21 +389,25 @@ export class PassiveSkillParser {
         return { value: 1.0 };
     }
 
-    // --- D. 解析白值增益的方法 ---
-    private resolveStatBoost(): { isStatBoost: boolean, stats: string[], value: number } {
+    // --- 解析白值增益類 ---
+    private resolveStatBoost(): {
+        isStatBoost: boolean;
+        stats: string[];
+        value: number;
+    } {
         const stats: string[] = [];
         const desc = this.desc;
         let isStatBoost = false;
 
         // 1. 解析受影響的屬性
         if (desc.includes("所有能力") || desc.includes("5種能力")) {
-            stats.push('攻擊', '防禦', '特攻', '特防', '速度');
+            stats.push("攻擊", "防禦", "特攻", "特防", "速度");
         } else {
-            if (desc.includes("攻擊")) stats.push('攻擊');
-            if (desc.includes("防禦")) stats.push('防禦');
-            if (desc.includes("特攻")) stats.push('特攻');
-            if (desc.includes("特防")) stats.push('特防');
-            if (desc.includes("速度")) stats.push('速度');
+            if (desc.includes("攻擊")) stats.push("攻擊");
+            if (desc.includes("防禦")) stats.push("防禦");
+            if (desc.includes("特攻")) stats.push("特攻");
+            if (desc.includes("特防")) stats.push("特防");
+            if (desc.includes("速度")) stats.push("速度");
         }
 
         // 2. 解析數值 (Value)
