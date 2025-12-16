@@ -171,7 +171,7 @@ export class PassiveSkillParser {
             }
         }
 
-        // 3. 特殊觸發的二元類
+        // 2. 特殊觸發的二元類
         if (desc.includes("天氣、場地或領域變化"))
             return {
                 logic: LogicType.AnyFieldEffect,
@@ -276,6 +276,20 @@ export class PassiveSkillParser {
                 logic: LogicType.Rebuff,
                 key: "任意",
                 detail: "對手",
+                isDynamic: false,
+            };
+        if (desc.includes("招式计量槽加速状态"))
+            return {
+                logic: LogicType.GaugeSpeedBoostOn,
+                key: "招式计量槽加速场地",
+                detail: "自身",
+                isDynamic: false,
+            };
+        if (name.includes("计量槽消耗增加"))
+            return {
+                logic: LogicType.GaugeCost,
+                key: "计量槽消耗增加",
+                detail: "自身",
                 isDynamic: false,
             };
 

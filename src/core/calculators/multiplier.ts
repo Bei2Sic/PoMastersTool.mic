@@ -1,11 +1,12 @@
 // core/calculator/DamageEngine.ts
-import { getStatKeyByStatCNname } from "@/core/exporter/map";
+import { getStatKeyByStatCNname, getTypeCNnameByTypeIndex } from "@/core/exporter/map";
 import { ActiveMultiplier, CalcEnvironment } from "@/types/calculator";
 import { HindranceType, PokemonType } from "@/types/conditions";
 import { LogicType, MoveScope, PassiveSkillModel } from "@/types/passiveModel";
 import { MoveBase } from "@/types/syncModel";
 
 export class DamageEngine {
+    // 被动技能处理
     static getMultipliers(
         move: MoveBase,
         category: MoveScope,
@@ -44,6 +45,7 @@ export class DamageEngine {
                         passive.condition,
                         passive.multiplier.logic,
                         context,
+                        move.type,
                         move.tags
                     )
                 ) {
@@ -53,7 +55,7 @@ export class DamageEngine {
 
             result.push({
                 name: passive.passiveName,
-                value: value,
+                value: value * 100,
                 logic: pm.logic,
             });
         }
@@ -65,7 +67,6 @@ export class DamageEngine {
         move: MoveBase,
         category: MoveScope,
         passives: PassiveSkillModel[],
-        context: CalcEnvironment
     ): ActiveMultiplier[] {
         const result: ActiveMultiplier[] = [];
 
@@ -94,10 +95,7 @@ export class DamageEngine {
         return result;
     }
 
-    // =================================================================
-    // 內部判斷邏輯
-    // =================================================================
-
+    
     private static isScopeMatch(
         scope: MoveScope | undefined,
         currentCategory: MoveScope,
@@ -126,7 +124,9 @@ export class DamageEngine {
         }
     }
 
-    private static isScaling(logicType: LogicType): boolean {
+    private static isScaling(
+        logicType: LogicType
+    ): boolean {
         switch (logicType) {
             case LogicType.SingleStatScaling ||
                 LogicType.TotalStatScaling ||
@@ -138,11 +138,14 @@ export class DamageEngine {
         }
     }
 
+    private static getScalingMultiplier(){}
+
     private static checkCondition(
         cond: { key: string; detail: string; direction?: string },
         logicType: LogicType,
         env: CalcEnvironment,
-        moveType: string
+        moveType: number,
+        moveTag: string
     ): boolean {
         switch (logicType) {
             case LogicType.DamageField:
@@ -241,14 +244,22 @@ export class DamageEngine {
                     if (isActive) return true;
                 });
                 return false;
-            // AllStatNotInHigh = "AllStatNotInHigh", // 能力非提升
+
             case LogicType.AllStatNotInHigh:
                 const allstats = cond.detail.includes("對手")
                     ? env.target.ranks
                     : env.user.ranks;
-                const rankSum = Object.keys(allstats).some(())
-                return rankSum <= 0;
-            // AnyStatInLow = "AnyStatInLow" // 能力降低
+                return Object.values(allstats)
+                    .filter((value) => typeof value === "number")
+                    .every((value) => value <= 0);
+
+            case LogicType.AnyStatInLow:
+                const anystats = cond.detail.includes("對手")
+                    ? env.target.ranks
+                    : env.user.ranks;
+                return Object.values(anystats)
+                    .filter((value) => typeof value === "number")
+                    .some((value) => value < 0);
 
             case LogicType.HPLow:
                 return env.user.hpPercent <= 20;
@@ -270,9 +281,14 @@ export class DamageEngine {
                 }
 
             case LogicType.Recoil:
-                return moveType === "反衝";
-            // SyncType = "SyncType", // 屬性
-            // Berry = "Berry", // 樹果
+                return moveTag === "反衝";
+
+            case LogicType.SyncType:
+                const typeName = getTypeCNnameByTypeIndex(moveType)
+                return cond.key.includes(typeName);
+
+            case LogicType.Berry:
+                return env.settings.berry === 0;
 
         }
         return false;

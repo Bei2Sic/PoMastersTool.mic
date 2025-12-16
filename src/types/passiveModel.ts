@@ -36,6 +36,7 @@ export enum LogicType {
     Recoil = "Recoil", // 反衝
     SyncType = "SyncType", // 屬性
     Berry = "Berry", // 樹果
+    GaugeSpeedBoostOn = "GaugeSpeedBoostOn", 
     GaugeCost = "GaugeCost", // 
     // 動態變化類型
     GaugeScaling = "GaugeScaling",

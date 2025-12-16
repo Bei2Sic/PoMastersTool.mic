@@ -17,12 +17,11 @@ import {
 import { LogicType } from "@/types/passiveModel";
 
 
-
-// 返回給業務方的結果 (簡單明瞭)
 export interface ActiveMultiplier {
-    name: string; // 來源名稱 (如 "晴天時威力提升3")
-    value: number; // 數值 (如 0.3)
-    logic: LogicType; // 用於業務方決定是 "乘算" 還是 "加算"
+    name: string; // 
+    value: number; // 
+    logic: LogicType; //
+    stat?: string;
 }
 
 export interface CalcEnvironment {

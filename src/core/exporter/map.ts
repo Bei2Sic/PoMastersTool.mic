@@ -2,12 +2,12 @@ import { CategoryMap, RoleMap, StatMap, TypeMap } from "@/constances/map";
 import { StatIndex, TypeMapItem } from "@/types/indices";
 
 export const getTypeInfo = (
-    typeNum: number | undefined | null
+    typeIndex: number | undefined | null
 ): TypeMapItem => {
-    if (typeNum === undefined || typeNum === null || !TypeMap[typeNum]) {
+    if (typeIndex === undefined || typeIndex === null || !TypeMap[typeIndex]) {
         return TypeMap[0];
     }
-    return TypeMap[typeNum];
+    return TypeMap[typeIndex];
 };
 
 export const getTypeInfoWithCNName = (cnName: string): TypeMapItem => {
@@ -15,6 +15,10 @@ export const getTypeInfoWithCNName = (cnName: string): TypeMapItem => {
     const matchedType = typeList.find((item) => item.cnName === cnName);
     return matchedType ?? TypeMap[0];
 };
+
+export const getTypeCNnameByTypeIndex = (typeIndex: number): string => {
+    return TypeMap[typeIndex].cnName;
+} 
 
 export const getCategoryInfo = (
     typeStr: string | undefined | null
