@@ -1,12 +1,11 @@
 // core/calculator/DamageEngine.ts
-import { ActiveMultiplier, CalcEnvironment, MoveBase, MoveCategory } from "@/types/calculator";
+import { getStatKeyByStatCNname } from "@/core/exporter/map";
+import { ActiveMultiplier, CalcEnvironment } from "@/types/calculator";
+import { HindranceType, PokemonType } from "@/types/conditions";
 import { LogicType, MoveScope, PassiveSkillModel } from "@/types/passiveModel";
+import { MoveBase } from "@/types/syncModel";
 
 export class DamageEngine {
-    /**
-     * 方法 1: 獲取該技能的 [倍率加成列表]
-     * 包含：通用條件倍率 (如 CS2, 晴天) + 特定招式倍率 (如 逆鱗威力提升)
-     */
     static getMultipliers(
         move: MoveBase,
         category: MoveScope,
@@ -16,16 +15,14 @@ export class DamageEngine {
         const result: ActiveMultiplier[] = [];
 
         for (const passive of passives) {
-            // 0. 跳過白值類 和 計量槽類 (這兩個由別的方法處理)
+            // 0. 跳過白值類 和 計量槽消耗增加類 (這兩個由別的方法處理)
             if (passive.statBoost.isStatBoost) continue;
-            if (passive.multiplier?.logic === LogicType.GaugeCost)
-                continue;
+            if (passive.multiplier?.logic === LogicType.GaugeCost) continue;
 
             const pm = passive.multiplier;
             if (!pm) continue;
 
-            // 1. 檢查作用範圍 (Scope)
-            // 這裡同時處理了 "通用範圍" 和 "特定技能(Specific)"
+            // 1. 先判断效果作用对象是否符合
             if (
                 !this.isScopeMatch(
                     pm.scope,
@@ -37,15 +34,26 @@ export class DamageEngine {
                 continue;
             }
 
-            // 2. 檢查環境條件
-            if (!this.checkCondition(passive.condition, passive.multiplier.logic, context)) {
-                continue;
+            // 判断是否是 scaling类
+            const isScaling = this.isScaling(passive.multiplier.logic);
+            let value = pm.value;
+            if (isScaling) {
+            } else {
+                if (
+                    !this.checkCondition(
+                        passive.condition,
+                        passive.multiplier.logic,
+                        context,
+                        move.tags
+                    )
+                ) {
+                    continue;
+                }
             }
 
-            // 3. 加入結果
             result.push({
                 name: passive.passiveName,
-                value: pm.value,
+                value: value,
                 logic: pm.logic,
             });
         }
@@ -53,10 +61,6 @@ export class DamageEngine {
         return result;
     }
 
-    /**
-     * 方法 2: 獲取該技能的 [計量槽增益列表] (Power Flux)
-     * 專門處理 "計量槽消耗增加威力提升" 這類直接修正 BP 的被動
-     */
     static getGaugeBoosts(
         move: MoveBase,
         category: MoveScope,
@@ -69,21 +73,16 @@ export class DamageEngine {
             // 只處理 GaugeScaling 類型
             if (passive.statBoost.isStatBoost) continue;
             const pm = passive.multiplier;
-            if (pm?.logic !== LogicType.GaugeScaling) continue;
+            if (pm?.logic !== LogicType.GaugeCost) continue;
 
-            // 1. 檢查範圍 (通常 Power Flux 是 MoveScope.Move)
+            // 檢查範圍，计量槽消耗增加类一般仅适用于小招或者特定招式
             if (!this.isScopeMatch(pm.scope, category, move.name)) {
-                continue;
-            }
-
-            // 2. 檢查環境條件
-            if (!this.checkCondition(passive.condition, passive.multiplier.logic, context)) {
                 continue;
             }
 
             // 3. 計算實際加成 (Rank * 0.1 * 耗氣)
             // 假設 maxVal 已經是 Rank * 0.1
-            const finalValue = pm.value * move.gaugeCost;
+            const finalValue = pm.value * move.gauge;
 
             result.push({
                 name: passive.passiveName,
@@ -111,59 +110,170 @@ export class DamageEngine {
             case MoveScope.All:
                 return true; // 適用所有
             case MoveScope.Move:
-                return currentCategory === "Move" || currentCategory === "Max" || currentCategory === "Tera";
+                return (
+                    currentCategory === "Move" ||
+                    currentCategory === "Max" ||
+                    currentCategory === "Tera"
+                );
             case MoveScope.Sync:
                 return currentCategory === "Sync"; // 僅拍招
             case MoveScope.Max:
                 return currentCategory === "Max"; // 僅極巨
             case MoveScope.Specific:
-                // 關鍵：如果是特定招式，必須名字完全一樣
                 return targetMoveName === currentMoveName;
             default:
                 return false;
         }
     }
 
+    private static isScaling(logicType: LogicType): boolean {
+        switch (logicType) {
+            case LogicType.SingleStatScaling ||
+                LogicType.TotalStatScaling ||
+                LogicType.HPScaling ||
+                LogicType.GaugeScaling:
+                return true;
+            default:
+                return false;
+        }
+    }
+
     private static checkCondition(
-        cond: { key: string, detail: string },
+        cond: { key: string; detail: string; direction?: string },
         logicType: LogicType,
-        env: CalcEnvironment
+        env: CalcEnvironment,
+        moveType: string
     ): boolean {
         switch (logicType) {
             case LogicType.DamageField:
+                return cond.key.includes(env.target.damageField);
 
-            // DamageField = "DamageField", // 伤害场地
-            // Terrain = "Terrain", // 场地
-            // BattleCircle = "BattleCircle", // 鬥陣
-            // Weather = "Weather", // 天气变化
-            // Abnormal = "Abnormal", // 异常
-            // Hindrance = "Hindrance", // 妨害
-            // Rebuff = "Rebuff", // 抗性下降
+            case LogicType.Terrain:
+                return cond.key.includes(env.terrain);
+
+            case LogicType.Weather:
+                return cond.key.includes(env.weather);
+
+            case LogicType.BattleCircle:
+                env.battleCircles.forEach((bc) => {
+                    if (
+                        cond.key.includes(bc.region) &&
+                        cond.key.includes(bc.category)
+                    ) {
+                        return bc.isActive;
+                    }
+                });
+
+            case LogicType.Abnormal:
+                const abnormal = cond.detail.includes("對手")
+                    ? env.target.abnormal
+                    : env.user.abnormal;
+                return cond.key.includes(abnormal);
+
+            case LogicType.Hindrance:
+                const hindrance = cond.detail.includes("對手")
+                    ? env.target.hindrance
+                    : env.user.hindrance;
+                Object.keys(hindrance).some((status) => {
+                    const isActive = hindrance[status as HindranceType];
+                    if (!isActive) return false;
+
+                    return cond.key.includes(status);
+                });
+
+            case LogicType.Rebuff:
+                const rebuffs = env.target.typeRebuffs;
+                Object.keys(rebuffs).some((rebuff) => {
+                    const rebuffRank = hindrance[rebuff as PokemonType];
+                    if (cond.key == "任意") {
+                        if (rebuffRank !== 0) {
+                            return true;
+                        }
+                    } else {
+                        if (cond.key.includes(rebuff)) {
+                            return rebuffRank !== 0;
+                        }
+                    }
+                });
+                return false;
 
             // // 固定值但二元類型
-            // AnyFieldEffect = 'AnyFieldEffect',
-            // WeatherChange = 'WeatherChange',
-            // WeatherNormal = 'WeatherNormal',
-            // TerrainActive = 'TerrainActive',
-            // StatChange = "StatChange", // 某項能力變化（可能多項）
-            // AbnormalActive = "AbnormalActive",
-            // HindranceActive = "HindranceActive",
-            // AllStatNotChange = "AllStatNotChange", // 能力非提升
-            // HPLow = "HPLow", // 危機
-            // HPHighHalf = "HPHighHalf", // 一半以上
-            // HPDecreased = "HPDecreased", // 未滿
-            // Critical = "Critical",
-            // SuperEffective = "SuperEffective",
-            // Effective = "Effective",
-            // Reckless = "Reckless", // 反衝
+            case LogicType.AnyFieldEffect:
+                return (
+                    env.terrain !== "無" ||
+                    env.weather !== "無" ||
+                    env.zone !== "無"
+                );
+
+            case LogicType.WeatherChange:
+                return env.weather !== "無";
+
+            case LogicType.WeatherNormal:
+                return env.weather === "無";
+
+            case LogicType.TerrainActive:
+                return env.terrain !== "無" || env.zone !== "無";
+
+            case LogicType.StatChange:
+                const stats = cond.detail.includes("對手")
+                    ? env.target.ranks
+                    : env.user.ranks;
+                const statKey = getStatKeyByStatCNname(cond.key);
+                const rankValue = stats[statKey];
+                if (cond.direction.includes("下降")) {
+                    return rankValue < 0;
+                } else {
+                    return rankValue > 0;
+                }
+
+            case LogicType.AbnormalActive:
+                const activeAbnormal = cond.detail.includes("對手")
+                    ? env.target.abnormal
+                    : env.user.abnormal;
+                return activeAbnormal !== "無";
+
+            case LogicType.HindranceActive:
+                const activeHindrance = cond.detail.includes("對手")
+                    ? env.target.hindrance
+                    : env.user.hindrance;
+                Object.keys(activeHindrance).some((status) => {
+                    const isActive = hindrance[status as HindranceType];
+                    if (isActive) return true;
+                });
+                return false;
+            // AllStatNotInHigh = "AllStatNotInHigh", // 能力非提升
+            case LogicType.AllStatNotInHigh:
+                const allstats = cond.detail.includes("對手")
+                    ? env.target.ranks
+                    : env.user.ranks;
+                const rankSum = Object.keys(allstats).some(())
+                return rankSum <= 0;
+            // AnyStatInLow = "AnyStatInLow" // 能力降低
+
+            case LogicType.HPLow:
+                return env.user.hpPercent <= 20;
+
+            case LogicType.HPHighHalf:
+                return env.user.hpPercent >= 50;
+
+            case LogicType.HPDecreased:
+                return env.user.hpPercent < 100;
+
+            case LogicType.Critical:
+                return env.settings.isCritical;
+
+            case LogicType.SuperEffective:
+                if (cond.direction?.includes("非")) {
+                    return !env.settings.isSuperEffective;
+                } else {
+                    return env.settings.isSuperEffective;
+                }
+
+            case LogicType.Recoil:
+                return moveType === "反衝";
             // SyncType = "SyncType", // 屬性
             // Berry = "Berry", // 樹果
-            // GaugeCost = "GaugeCost", // 
-            // // 動態變化類型
-            // GaugeScaling = "GaugeScaling",
-            // SingleStatScaling = "SingleStatScaling", // 依单项能力升幅 (e.g. 依攻击升幅)
-            // TotalStatScaling = "TotalStatScaling", // 依总能力升降 (e.g. 依对手能力降幅)
-            // HPScaling = "HPScaling", // 依HP比例 (e.g. 隨HP)
+
         }
         return false;
     }

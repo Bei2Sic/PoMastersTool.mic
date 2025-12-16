@@ -26,14 +26,14 @@ export enum LogicType {
     StatChange = "StatChange", // 某項能力變化（可能多項）
     AbnormalActive = "AbnormalActive",
     HindranceActive = "HindranceActive",
-    AllStatNotChange = "AllStatNotChange", // 能力非提升
+    AllStatNotInHigh = "AllStatNotInHigh", // 能力非提升
+    AnyStatInLow = "AnyStatInLow", // 能力降低
     HPLow = "HPLow", // 危機
     HPHighHalf = "HPHighHalf", // 一半以上
     HPDecreased = "HPDecreased", // 未滿
     Critical = "Critical",
     SuperEffective = "SuperEffective",
-    Effective = "Effective",
-    Reckless = "Reckless", // 反衝
+    Recoil = "Recoil", // 反衝
     SyncType = "SyncType", // 屬性
     Berry = "Berry", // 樹果
     GaugeCost = "GaugeCost", // 
@@ -62,6 +62,7 @@ export interface PassiveSkillModel {
     condition: {
         key: string; // 触发条件 (如 'Sun', 'Paralysis', 'AttackBuff')
         detail: string; // 额外信息 (如 'Opponent', 'Self', 'Field')
+        direction?: string;
     };
 
     // 伤害相关

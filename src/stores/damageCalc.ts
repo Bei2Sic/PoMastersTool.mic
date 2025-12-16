@@ -31,6 +31,12 @@ const initRebuffs = (): cond.TypeRebuffs => {
     );
 };
 
+const initHindrances = (): Record<cond.HindranceType, boolean> => {
+    return Object.fromEntries(
+        cond.HINDRANCE_STATUSES.map((status) => [status, false])
+    ) as Record<cond.HindranceType, boolean>;
+};
+
 export const useDamageCalcStore = defineStore("damageCalc", {
     state: () => ({
         // ============================================
@@ -76,12 +82,7 @@ export const useDamageCalcStore = defineStore("damageCalc", {
             // 異常狀態
             abnormal: "無" as cond.AbnormalType,
             // 妨害狀態
-            hindrance: {
-                isConfused: false as boolean, // 混亂
-                isFlinching: false as boolean, // 畏縮
-                isTrapped: false as boolean, // 束縛
-                isRestrained: false as boolean, // 禁止替換
-            },
+            hindrance: initHindrances(),
         },
 
         // ============================================
@@ -105,19 +106,13 @@ export const useDamageCalcStore = defineStore("damageCalc", {
                 spe: 0 as cond.StatRank,
                 acc: 0 as cond.StatRank,
                 eva: 0 as cond.StatRank,
-                ct: 0 as cond.CtRank,
             },
 
             // 異常狀態
             abnormal: "無" as cond.AbnormalType,
 
             // 妨害狀態
-            hindrance: {
-                isConfused: false as boolean, // 混亂
-                isFlinching: false as boolean, // 畏縮
-                isTrapped: false as boolean, // 束縛
-                isRestrained: false as boolean, // 禁止替換
-            },
+            hindrance: initHindrances(),
 
             // 傷害場地
             damageField: "無" as cond.DamageFieldType,
@@ -133,107 +128,19 @@ export const useDamageCalcStore = defineStore("damageCalc", {
 
         // todo: 大師被動
 
-        // move: {
-        //     power: 100 as number,
-        //     type: "一般" as cond.PokemonType, // 招式屬性
-        //     isPhysical: true as boolean, // 物理/特殊
-        //     isSyncMove: false as boolean,
-        //     isMaxMove: false as boolean,
-        // },
-
         settings: {
-            scope: 1 as 1 | 2 | 3, // 攻擊目標數 (1-3)
+            scope: 1 as cond.TargetScope, // 攻擊目標數 (1-3)
             gauge: 6 as cond.GaugeValue, // 剩餘計數槽 (1-6)
             isCritical: false as boolean, // 命中要害
             isEffective: false as boolean, // 效果絕佳
             effectiveType: "無" as cond.PokemonType,
+            berry: 0 as cond.BerryNum,
         },
-
-        minDamage: 0 as number,
-        maxDamage: 0 as number,
     }),
 
     getters: {
-        // Getter: 獲取指定鬥陣的等級 (如果沒有則為 0)
-        getCircleLevel:
-            (state) =>
-            (
-                region: cond.RegionType,
-                category: cond.CircleCategory
-            ): cond.CircleLevel | 0 => {
-                const circle = state.battleCircles.find(
-                    (c) => c.region === region && c.category === category
-                );
-                return circle ? circle.level : 0;
-            },
-
-        // 目標是否處於異常狀態
-        isTargetInAbnormal: (state) => {
-            return state.target.abnormal !== "無";
-        },
-        // 目標是否處於妨害狀態
-        isTargetHindered: (state) => {
-            const h = state.target.hindrance;
-            return (
-                h.isConfused || h.isFlinching || h.isTrapped || h.isRestrained
-            );
-        },
-        // 判斷目標是否處於能力非提升狀態
-        isTargetStatsNotRaised: (state) => {
-            const ranks = state.target.ranks;
-            // 檢查所有相關能力等級是否小於等於 0
-            return (
-                // 攻擊能力等級
-                ranks.atk <= 0 &&
-                ranks.spa <= 0 &&
-                // 防禦能力等級
-                ranks.def <= 0 &&
-                ranks.spd <= 0 &&
-                // 速度、命中、閃避，要害
-                ranks.spe <= 0 &&
-                ranks.acc <= 0 &&
-                ranks.eva <= 0 &&
-                ranks.ct <= 0
-            );
-        },
-        // 判断是否天气正常
-        isWeatherInNoramal: (state) => {
-            return state.weather === "無";
-        },
-        // 判斷是否有場地效果
-        hasFieldEffect:(state)=>{
-            // zone & terrian & circle
-        },
     },
 
     actions: {
-        // Action: 設置或更新鬥陣狀態 (支援多開和等級)
-        setCircle(
-            region: cond.RegionType,
-            category: cond.CircleCategory,
-            level: cond.CircleLevel | 0
-        ) {
-            if (region === "無" || category === "無") return;
-
-            const index = this.battleCircles.findIndex(
-                (c) => c.region === region && c.category === category
-            );
-
-            if (level > 0) {
-                if (index > -1) {
-                    this.battleCircles[index].level = level as cond.CircleLevel; // 更新等級
-                } else {
-                    this.battleCircles.push({
-                        region,
-                        category,
-                        level: level as cond.CircleLevel,
-                    }); // 新增鬥陣
-                }
-            } else if (index > -1) {
-                this.battleCircles.splice(index, 1); // 等級為 0，則移除
-            }
-        },
-
-        // 其他如 setWeather, updateStatRank 等 action...
     },
 });

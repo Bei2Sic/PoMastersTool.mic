@@ -1,4 +1,3 @@
-import { PokemonStat } from "@/types/syncModel";
 
 export type RarityIndex = 3 | 4 | 5 | 6;
 export type RoleIndex = 0 | 1 | 2 | 3 | 4 | 5 | 6;
@@ -7,7 +6,7 @@ export type StatIndex = 1 | 2 | 3 | 4 | 5 | 6;
 export type BonusIndex = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
 
 export interface TypeMapItem {
-    typeSuffix: string;
+    key: string;
     cnName: string;
 }
 

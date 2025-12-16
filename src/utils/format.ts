@@ -1,9 +1,9 @@
-import { MoveBase, Theme } from "@/types/syncModel";
 import {
     getCategoryInfo,
     getTypeInfo,
     getTypeInfoWithCNName,
 } from "@/core/exporter/map";
+import { MoveBase, Theme } from "@/types/syncModel";
 // Move
 // 格式化使用次數
 export const formatMoveUses = (uses: string | number | undefined) => {
@@ -57,19 +57,19 @@ export const getStyle = (
 
 // 獲取技能屬性 icon 樣式
 export const getTypeIconStyle = (type: number) => {
-    const suffix = getTypeInfo(type).typeSuffix;
+    const suffix = getTypeInfo(type).key;
     return getStyle(`Move${suffix}`); // 組合成 --iconMoveFire
 };
 
 // 獲取技能分類 icon 樣式
 export const getCategoryIconStyle = (category: string) => {
-    const suffix = getCategoryInfo(category).typeSuffix;
+    const suffix = getCategoryInfo(category).key;
     return getStyle(suffix); // 組合成 --iconPhysical
 };
 
 // 獲取技能背景顏色 Class
 export const getMoveBackgroundColorClass = (type: number) => {
-    return "bg_" + getTypeInfo(type).typeSuffix.toLowerCase();
+    return "bg_" + getTypeInfo(type).key.toLowerCase();
 };
 
 // 獲取被動技能背景圖片樣式
@@ -94,7 +94,7 @@ export const getPassiveBackgroundStyle = (
 export const getThemeBackgroundColorClass = (index: number, tag: string) => {
     if (index === 0) {
         // 第一个为属性
-        return "bg_" + getTypeInfoWithCNName(tag).typeSuffix.toLowerCase();
+        return "bg_" + getTypeInfoWithCNName(tag).key.toLowerCase();
     } else {
         return "bg_trainer";
     }
@@ -106,7 +106,7 @@ export const getThemeIconStyle = (theme: Theme) => {
     switch (theme.category) {
         // 属性
         case 1:
-            suffix = `Move${getTypeInfoWithCNName(theme.tag).typeSuffix}`
+            suffix = `Move${getTypeInfoWithCNName(theme.tag).key}`
             break;
         // 地区
         case 2:

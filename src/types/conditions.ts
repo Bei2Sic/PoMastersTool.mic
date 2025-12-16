@@ -2,7 +2,20 @@ export type StatRank = -6 | -5 | -4 | -3 | -2 | -1 | 0 | 1 | 2 | 3 | 4 | 5 | 6; 
 export type CtRank = 0 | 1 | 2 | 3; // 能力等級
 export type BoostRank = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10; // 增強等級 (PMUN/SMUN)
 export type GaugeValue = 1 | 2 | 3 | 4 | 5 | 6; // 計量槽值
+export type TargetScope = 1 | 2 | 3;
 export type RebuffRank = -3 | -2 | -1 | 0; // 抵抗等級
+export type BerryNum = 0 | 1 | 2;
+
+export interface BattleRanks {
+    atk: StatRank;
+    def: StatRank;
+    spa: StatRank;
+    spd: StatRank;
+    spe: StatRank;
+    acc: StatRank;
+    eva: StatRank;
+    ct?: CtRank;
+}
 
 // 18種屬性名稱 (Type Names)
 export type PokemonType =
@@ -86,6 +99,9 @@ export type AbnormalType =
     | "冰凍"
     | "麻痺";
 
+// 妨害狀態
+export type HindranceType = "束縛" | "混亂" | "畏縮" | "禁止替換";
+
 export type DamageFieldType =
     | "無"
     | "一般傷害場地"
@@ -109,6 +125,9 @@ export type DamageFieldType =
 
 // 抵抗表
 export type TypeRebuffs = Record<PokemonType, RebuffRank>;
+
+// 技能类型
+export type MoveType = "無" | "反衝" | "快攻" | "連續" | "必中";
 
 // 必須在你的 parseCondition 函數外部（或者至少在函數內部的頂部）定義這個列表
 export const INDIVIDUAL_STATS = [

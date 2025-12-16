@@ -63,6 +63,7 @@ export class PassiveSkillParser {
             condition: {
                 key: logicResult.key,
                 detail: logicResult.detail,
+                direction: logicResult.direction,
             },
         };
     }
@@ -119,6 +120,7 @@ export class PassiveSkillParser {
         key: string;
         detail: string;
         isDynamic: boolean;
+        direction?: string;
         statboost?: string[];
     } {
         const desc = this.desc;
@@ -161,10 +163,9 @@ export class PassiveSkillParser {
                     logic: isTotal
                         ? LogicType.TotalStatScaling
                         : LogicType.SingleStatScaling,
-                    key: isTotal
-                        ? `能力${direction}`
-                        : `${statName}${direction}`,
+                    key: isTotal ? `能力` : `${statName}`,
                     detail: name.includes("對手") ? "對手" : "自身",
+                    direction: direction,
                     isDynamic: true,
                 };
             }
@@ -222,8 +223,15 @@ export class PassiveSkillParser {
             };
         if (desc.includes("沒有處於提高狀態的能力"))
             return {
-                logic: LogicType.AllStatNotChange,
+                logic: LogicType.AllStatNotInHigh,
                 key: "沒有處於提高狀態的能力",
+                detail: desc.includes("自身") ? "自身" : "對手",
+                isDynamic: false,
+            };
+        if (desc.includes("能力降低"))
+            return {
+                logic: LogicType.AnyStatInLow,
+                key: "能力降低",
                 detail: desc.includes("自身") ? "自身" : "對手",
                 isDynamic: false,
             };
@@ -253,13 +261,7 @@ export class PassiveSkillParser {
                 logic: LogicType.SuperEffective,
                 key: "效果絕佳",
                 detail: "自身",
-                isDynamic: false,
-            };
-        if (desc.includes("不是效果絕佳"))
-            return {
-                logic: LogicType.Effective,
-                key: "不是效果絕佳",
-                detail: "自身",
+                direction: desc.includes("不是效果絕佳") ? "非" : "是",
                 isDynamic: false,
             };
         if (desc.includes("擊中") && desc.includes("要害"))
@@ -267,6 +269,13 @@ export class PassiveSkillParser {
                 logic: LogicType.Critical,
                 key: "擊中要害",
                 detail: "自身",
+                isDynamic: false,
+            };
+        if (desc.includes("属性抵抗降低"))
+            return {
+                logic: LogicType.Rebuff,
+                key: "任意",
+                detail: "對手",
                 isDynamic: false,
             };
 
@@ -337,7 +346,7 @@ export class PassiveSkillParser {
 
         // 4. 能力等級 (非 Scaling，二元判斷，如：速度提升時威力提升)
         const statCheck = name.match(
-            /(攻擊|特攻|防禦|特防|速度|命中|閃避|能力).*(提升|下降|降低)/
+            /(攻擊|特攻|防禦|特防|速度|命中|閃避).*(提升|下降|降低)/
         );
         if (statCheck) {
             const isStatDown = name.includes("下降") || name.includes("↓");
@@ -345,8 +354,9 @@ export class PassiveSkillParser {
 
             return {
                 logic: LogicType.StatChange,
-                key: statCheck[1] + direction,
+                key: statCheck[1],
                 detail: name.includes("對手") ? "對手" : "自身",
+                direction: direction,
                 isDynamic: false,
             };
         }

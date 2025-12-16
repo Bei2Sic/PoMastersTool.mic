@@ -1,5 +1,5 @@
 import { AwakeningBonusConfig, ExRoleBonusConfig } from "@/constances/bonus";
-import { ExRoleList, NumtoStatKey } from "@/constances/map";
+import { ExRoleList, StatMap } from "@/constances/map";
 import {
     BonusIndex,
     ExRoleIndex,
@@ -86,7 +86,7 @@ export class StatValueCalculator {
             return statValue;
         }
 
-        const statKey = NumtoStatKey[statNum];
+        const statKey = StatMap[statNum].key;
         // 类型需减-1找到对应索引
         const bonusRule = ExRoleBonusConfig[t];
         const value = statValue + bonusRule[statKey];
@@ -105,7 +105,7 @@ export class StatValueCalculator {
             return statValue;
         }
 
-        const statKey = NumtoStatKey[statNum];
+        const statKey = StatMap[statNum].key;
         let finalValue = statValue;
 
         // 遍历超覺醒起始等級到当前等级，累积每个等级的加成

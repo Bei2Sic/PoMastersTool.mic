@@ -81,19 +81,44 @@ export function useDamageCalculator(targetSync: Ref<Sync | null>) {
     const damageStore = useDamageCalcStore();
 
     // // 环境快照
-    // const envConfig = computed((): CalcEnvironment => {
-    //     const user = damageStore.user;
-    //     const target = damageStore.target;
-    //     const settings = damageStore.settings;
-    //     // 從 store 映射到標準結構
-    //     return {
-    //         weather: damageStore.weather, // 'sunny'
-    //         terrain: damageStore.terrain, // 'electric'
-    //         zone: damageStore.zone,
-    //         damageField: target.damageField,
+    const envSnapshot = computed((): CalcEnvironment => {
+        const u = damageStore.user;
+        const t = damageStore.target;
 
-    //     };
-    // });
+        return {
+            // 直接傳遞中文值
+            weather: damageStore.weather,
+            terrain: damageStore.terrain,
+            zone: damageStore.zone,
+            battleCircles: damageStore.battleCircles,
+            user: {
+                hpPercent: u.currentHPPercent,
+                ranks: u.ranks,
+                boosts: {
+                    physical: u.boosts.physical,
+                    special: u.boosts.special,
+                    sync: u.boosts.sync,
+                },
+                abnormal: u.abnormal,
+                hindrance: u.hindrance,
+            },
+
+            target: {
+                ranks: t.ranks,
+                abnormal: t.abnormal,
+                hindrance: t.hindrance,
+                damageField: t.damageField,
+                typeRebuffs: t.typeRebuffs,
+            },
+
+            settings: {
+                gauge: damageStore.settings.gauge,
+                berry: damageStore.settings.berry,
+                isCritical: damageStore.settings.isCritical,
+                isSuperEffective: damageStore.settings.isEffective,
+            },
+        };
+    });
 
     // 信息快照(白值, 技能威力)
     const allFormsBattleStats = computed(() => {
