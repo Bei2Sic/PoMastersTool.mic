@@ -1,5 +1,6 @@
 export enum MoveScope {
     Move = "Move", // 小昭
+    MaxAndSync = "MaxAndSync",
     Sync = "Sync", // 仅拍组招式
     Max = "Max", // 仅极巨化招式
     Tera = "Tera", // 仅太晶化招式
@@ -34,7 +35,8 @@ export enum LogicType {
     Critical = "Critical",
     SuperEffective = "SuperEffective",
     Recoil = "Recoil", // 反衝
-    SyncType = "SyncType", // 屬性
+    MoveType = "MoveType", // 技能屬性
+    SyncType = "SyncType", // 拍組屬性
     Berry = "Berry", // 樹果
     GaugeSpeedBoostOn = "GaugeSpeedBoostOn", 
     GaugeCost = "GaugeCost", // 
@@ -48,7 +50,11 @@ export enum LogicType {
     FixedMulti = "FixedMulti", // 固定高倍率 (e.g. 威力10倍)
 
     // 白值能力加成
-    StatBaseBoost = 'StatBaseBoost',
+    StatBaseBoost = "StatBaseBoost",
+
+    // 特殊效果
+    NoDecay = "NoDecay"
+    
 }
 
 export interface PassiveRawText {

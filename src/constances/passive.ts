@@ -56,7 +56,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             multiplier: {
                 scope: MoveScope.Move,
                 value: 0.2,
-                logic: LogicType.SyncType,
+                logic: LogicType.MoveType,
             },
             condition: {
                 key: "鋼屬性",
@@ -68,28 +68,6 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
                 value: 0,
             },
             applyToParty: false,
-        },
-    ],
-    挖掘化石的成果: [
-        {
-            name: "挖掘化石的成果",
-            desc: "",
-            passiveName: "挖掘化石的成果",
-            multiplier: {
-                scope: MoveScope.Move,
-                value: 0.2,
-                logic: LogicType.SyncType,
-            },
-            condition: {
-                key: "岩石屬性",
-                detail: "自身",
-            },
-            statBoost: {
-                isStatBoost: false,
-                stats: [],
-                value: 0,
-            },
-            applyToParty: true,
         },
     ],
     紅髮的叛逆心: [
@@ -104,50 +82,6 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             },
             condition: {
                 key: "沙暴",
-                detail: "自身",
-            },
-            statBoost: {
-                isStatBoost: false,
-                stats: [],
-                value: 0,
-            },
-            applyToParty: true,
-        },
-    ],
-    "我活力十足喔~!": [
-        {
-            name: "我活力十足喔~!",
-            desc: "",
-            passiveName: "我活力十足喔~!",
-            multiplier: {
-                scope: MoveScope.Move,
-                value: 0.2,
-                logic: LogicType.SyncType,
-            },
-            condition: {
-                key: "一般屬性",
-                detail: "自身",
-            },
-            statBoost: {
-                isStatBoost: false,
-                stats: [],
-                value: 0,
-            },
-            applyToParty: true,
-        },
-    ],
-    高峰上感受到的風: [
-        {
-            name: "高峰上感受到的風",
-            desc: "",
-            passiveName: "高峰上感受到的風",
-            multiplier: {
-                scope: MoveScope.Move,
-                value: 0.2,
-                logic: LogicType.SyncType,
-            },
-            condition: {
-                key: "飛行屬性",
                 detail: "自身",
             },
             statBoost: {
@@ -179,28 +113,6 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
                 value: 0,
             },
             applyToParty: false,
-        },
-    ],
-    幽靈們的輪舞曲: [
-        {
-            name: "幽靈們的輪舞曲",
-            desc: "",
-            passiveName: "幽靈們的輪舞曲",
-            multiplier: {
-                scope: MoveScope.Move,
-                value: 0.2,
-                logic: LogicType.SyncType,
-            },
-            condition: {
-                key: "幽靈屬性",
-                detail: "自身",
-            },
-            statBoost: {
-                isStatBoost: false,
-                stats: [],
-                value: 0,
-            },
-            applyToParty: true,
         },
     ],
     工廠頭目的知識: [
@@ -268,18 +180,18 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             applyToParty: false,
         },
     ],
-    極巨化・伸展台: [
+    百聞不如一見: [
         {
-            name: "極巨化・伸展台",
+            name: "百聞不如一見",
             desc: "",
-            passiveName: "極巨化・伸展台",
+            passiveName: "百聞不如一見",
             multiplier: {
-                scope: MoveScope.Max,
-                value: 0.9,
-                logic: LogicType.Weather,
+                scope: MoveScope.Move,
+                value: 0.5,
+                logic: LogicType.GaugeCost,
             },
             condition: {
-                key: "下雨",
+                key: "计量槽消耗增加",
                 detail: "自身",
             },
             statBoost: {
@@ -288,6 +200,270 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
                 value: 0,
             },
             applyToParty: false,
+        },
+    ],
+    首席冠軍的才華: [
+        {
+            name: "首席冠軍的才華",
+            desc: "",
+            passiveName: "首席冠軍的才華",
+            multiplier: {
+                scope: MoveScope.Specific,
+                moveName: "百花怒放晶光轉轉",
+                value: 1.0,
+                logic: LogicType.GaugeCost,
+            },
+            condition: {
+                key: "计量槽消耗增加",
+                detail: "自身",
+            },
+            statBoost: {
+                isStatBoost: false,
+                stats: [],
+                value: 0,
+            },
+            applyToParty: false,
+        },
+        {
+            name: "首席冠軍的才華",
+            desc: "",
+            passiveName: "首席冠軍的才華",
+            multiplier: {
+                scope: MoveScope.Specific,
+                moveName: "晶光轉轉",
+                value: 1.0,
+                logic: LogicType.GaugeCost,
+            },
+            condition: {
+                key: "计量槽消耗增加",
+                detail: "自身",
+            },
+            statBoost: {
+                isStatBoost: false,
+                stats: [],
+                value: 0,
+            },
+            applyToParty: false,
+        },
+    ],
+    王家的財力: [
+        {
+            name: "王家的財力",
+            desc: "",
+            passiveName: "王家的財力",
+            multiplier: {
+                scope: MoveScope.All,
+                value: 0.4,
+                logic: LogicType.BattleCircle,
+            },
+            condition: {
+                key: "帕希歐鬥陣(防禦)",
+                detail: "自身",
+            },
+            statBoost: {
+                isStatBoost: false,
+                stats: [],
+                value: 0,
+            },
+            applyToParty: true,
+        },
+    ],
+    真新的啟程: [
+        {
+            name: "真新的啟程",
+            desc: "",
+            passiveName: "真新的啟程",
+            multiplier: {
+                scope: MoveScope.Sync,
+                value: 0.1,
+                logic: LogicType.BoostScaling,
+            },
+            condition: {
+                key: "特殊招式威力增强",
+                detail: "自身",
+            },
+            statBoost: {
+                isStatBoost: false,
+                stats: [],
+                value: 0,
+            },
+            applyToParty: false,
+        },
+    ],
+    豐緣的熱忱: [
+        {
+            name: "豐緣的熱忱",
+            desc: "",
+            passiveName: "豐緣的熱忱",
+            multiplier: {
+                scope: MoveScope.All,
+                value: 0.2,
+                logic: LogicType.Weather,
+            },
+            condition: {
+                key: "晴天",
+                detail: "自身",
+            },
+            statBoost: {
+                isStatBoost: false,
+                stats: [],
+                value: 0,
+            },
+            applyToParty: true,
+        },
+        {
+            name: "豐緣的熱忱",
+            desc: "",
+            passiveName: "豐緣的熱忱",
+            multiplier: {
+                scope: MoveScope.All,
+                value: 0.2,
+                logic: LogicType.Weather,
+            },
+            condition: {
+                key: "晴天",
+                detail: "自身",
+            },
+            statBoost: {
+                isStatBoost: false,
+                stats: [],
+                value: 0,
+            },
+            applyToParty: true,
+        },
+    ],
+    洗翠流動的時間: [
+        {
+            name: "洗翠流動的時間",
+            desc: "",
+            passiveName: "洗翠流動的時間",
+            multiplier: {
+                scope: MoveScope.Move,
+                value: 0.5,
+                logic: LogicType.Weather,
+            },
+            condition: {
+                key: "晴天",
+                detail: "自身",
+            },
+            statBoost: {
+                isStatBoost: false,
+                stats: [],
+                value: 0,
+            },
+            applyToParty: false,
+        },
+    ],
+    破壞的本能: [
+        {
+            name: "破壞的本能",
+            desc: "",
+            passiveName: "破壞的本能",
+            multiplier: {
+                scope: MoveScope.All,
+                value: 0.5,
+                logic: LogicType.Weather,
+            },
+            condition: {
+                key: "沙暴",
+                detail: "自身",
+            },
+            statBoost: {
+                isStatBoost: false,
+                stats: [],
+                value: 0,
+            },
+            applyToParty: false,
+        },
+    ],
+    力大無窮: [
+        {
+            name: "力大無窮",
+            desc: "",
+            passiveName: "力大無窮",
+            multiplier: {
+                scope: MoveScope.Specific,
+                moveName: "地震",
+                value: 0.9,
+                logic: LogicType.Complex,
+            },
+            condition: {
+                key: "",
+                detail: "自身",
+            },
+            statBoost: {
+                isStatBoost: false,
+                stats: [],
+                value: 0,
+            },
+            applyToParty: false,
+        },
+    ],
+    攻擊程式: [
+        {
+            name: "攻擊程式",
+            desc: "",
+            passiveName: "攻擊程式",
+            multiplier: {
+                scope: MoveScope.Specific,
+                moveName: "破壞光綫",
+                value: 0.5,
+                logic: LogicType.Complex,
+            },
+            condition: {
+                key: "",
+                detail: "自身",
+            },
+            statBoost: {
+                isStatBoost: false,
+                stats: [],
+                value: 0,
+            },
+            applyToParty: false,
+        },
+    ],
+    保護夥伴的決心: [
+        {
+            name: "保護夥伴的決心",
+            desc: "",
+            passiveName: "保護夥伴的決心",
+            multiplier: {
+                scope: MoveScope.All,
+                value: 0.2,
+                logic: LogicType.BattleCircle,
+            },
+            condition: {
+                key: "合眾鬥陣(防禦)",
+                detail: "自身",
+            },
+            statBoost: {
+                isStatBoost: false,
+                stats: [],
+                value: 0,
+            },
+            applyToParty: true,
+        },
+    ],
+    熾烈熱舞: [
+        {
+            name: "熾烈熱舞",
+            desc: "",
+            passiveName: "熾烈熱舞",
+            multiplier: {
+                scope: MoveScope.Move,
+                value: 0.5,
+                logic: LogicType.AbnormalActive,
+            },
+            condition: {
+                key: "異常狀態",
+                detail: "自身",
+            },
+            statBoost: {
+                isStatBoost: false,
+                stats: [],
+                value: 0,
+            },
+            applyToParty: true,
         },
     ],
 };

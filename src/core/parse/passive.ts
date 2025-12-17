@@ -100,6 +100,8 @@ export class PassiveSkillParser {
         // 3. 優先判斷拍組/極巨
         if (desc.includes("拍組招式")) {
             // 特例："招式及拍組招式" -> All
+            if (desc.includes("拍組招式和拍組極巨化招式"))
+                return { scope: MoveScope.MaxAndSync }
             if (desc.includes("招式和拍組招式"))
                 return { scope: MoveScope.All };
             return { scope: MoveScope.Sync };
@@ -437,7 +439,12 @@ export class PassiveSkillParser {
     } {
         const stats: string[] = [];
         const desc = this.desc;
+        let value = 1;
         let isStatBoost = false;
+
+        if (/(?:招式|威力).*變成\s*[0-9\.]+\s*倍/.test(desc)) {
+            return { isStatBoost: false, stats: [], value: 1 };
+        }
 
         // 1. 解析受影響的屬性
         if (desc.includes("所有能力") || desc.includes("5種能力")) {
@@ -450,14 +457,17 @@ export class PassiveSkillParser {
             if (desc.includes("速度")) stats.push("速度");
         }
 
-        // 2. 解析數值 (Value)
-        let value = 1;
-
         const timesMatch = desc.match(/變成\s*([0-9\.]+)\s*倍/);
         if (timesMatch) {
             // 直接提取數值： "1.3" -> 1.3, "3" -> 3.0
             value = parseFloat(timesMatch[1]);
+        }
+
+        if (stats.length > 0 && value !== 1) {
             isStatBoost = true;
+        } else {
+            isStatBoost = false;
+            value = 1;
         }
 
         return { isStatBoost, stats, value };

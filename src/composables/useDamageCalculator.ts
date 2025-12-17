@@ -19,6 +19,9 @@ function collectActivePassives(
     if (currentPokemon && currentPokemon.passives) {
         // 假設 passive 結構是數組
         currentPokemon.passives.forEach((p) => {
+
+            // 先從字典裏找特殊被動，找到了則跳過
+
             if (p.detail?.length > 0) {
                 p.detail.forEach((detail) => {
                     passives.push({
@@ -187,7 +190,7 @@ export function useDamageCalculator(targetSync: Ref<Sync | null>) {
         // const gear = damageStore.user.gear;
 
         // 遍歷每一個形態
-        return rawData.pokemon.map((pokemon, formIndex) => {
+        return rawData.pokemon.map((p, formIndex) => {
             const currentPassives = formPassivesList[formIndex].passives;
 
             // const userStats = {
@@ -315,7 +318,8 @@ export function useDamageCalculator(targetSync: Ref<Sync | null>) {
             // ------------------------------------------------
 
             // // 1. 普通招式
-            const moveResults = pokemon.moves.map((m) => {
+            console.log(p.moves)
+            const moveResults = p.moves?.map((m) => {
                 if (m.power > 0) {
                     const multi = DamageEngine.getMultipliers(
                         m,
@@ -334,7 +338,7 @@ export function useDamageCalculator(targetSync: Ref<Sync | null>) {
             // const maxResults = pokemon.movesDynamax ? pokemon.movesDynamax.map(m => calculateMoveDamage(m, 'Max', true)) : [];
 
             return {
-                formName: pokemon.form || "基礎形態",
+                formName: p.form || "基礎形態",
                 // stats: userStats, // 展示該形態白值
                 moves: moveResults,
                 // syncMove: syncResult,

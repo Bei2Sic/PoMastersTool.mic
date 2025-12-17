@@ -133,11 +133,17 @@ export class DamageEngine {
                     currentCategory === "Max" ||
                     currentCategory === "Tera"
                 );
+            case MoveScope.MaxAndSync:
+                return (
+                    currentCategory === "Max" ||
+                    currentCategory === "Sync"
+                );
             case MoveScope.Sync:
                 return currentCategory === "Sync"; // 僅拍招
             case MoveScope.Max:
                 return currentCategory === "Max"; // 僅極巨
             case MoveScope.Specific:
+                console.log(targetMoveName === currentMoveName)
                 return targetMoveName === currentMoveName;
             default:
                 return false;
@@ -400,7 +406,7 @@ export class DamageEngine {
             case LogicType.Recoil:
                 return moveTag === "反衝";
 
-            case LogicType.SyncType:
+            case LogicType.MoveType:
                 const typeName = getTypeCNnameByTypeIndex(moveType);
                 return cond.key.includes(typeName);
 

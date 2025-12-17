@@ -215,6 +215,7 @@ watch(finalDamageResult, (newValue) => {
 
         // 打印第一種形態的被動，驗證解析是否成功
         console.log("第一形態的技能倍率:", newValue[0].moves);
+        console.log("第二形態的技能倍率:", newValue[1]?.moves);
     } else {
         console.log("⏳ 計算結果為空 (可能數據尚未加載)");
     }
