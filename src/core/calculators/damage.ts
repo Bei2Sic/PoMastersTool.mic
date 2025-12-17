@@ -1,5 +1,17 @@
 // core/calculator/DamageEngine.ts
-import { getStatKeyByStatCNname, getTypeCNnameByTypeIndex } from "@/core/exporter/map";
+import {
+    GAUGE_SYNC_MULTIPLIERS,
+    HP_LESS_THRESHOLD,
+    HP_MORE_THRESHOLD,
+    SINGLE_STAT_MOVE_MULTIPLIERS,
+    SINGLE_STAT_SYNC_MULTIPLIERS,
+    TOTAL_STAT_MOVE_MULTIPLIERS,
+    TOTAL_STAT_SYNC_MULTIPLIERS,
+} from "@/constances/rate";
+import {
+    getStatKeyByStatCNname,
+    getTypeCNnameByTypeIndex,
+} from "@/core/exporter/map";
 import { ActiveMultiplier, CalcEnvironment } from "@/types/calculator";
 import { HindranceType, PokemonType } from "@/types/conditions";
 import { LogicType, MoveScope, PassiveSkillModel } from "@/types/passiveModel";
@@ -9,7 +21,7 @@ export class DamageEngine {
     // 被动技能处理
     static getMultipliers(
         move: MoveBase,
-        category: MoveScope,
+        scope: MoveScope,
         passives: PassiveSkillModel[],
         context: CalcEnvironment
     ): ActiveMultiplier[] {
@@ -27,7 +39,7 @@ export class DamageEngine {
             if (
                 !this.isScopeMatch(
                     pm.scope,
-                    category,
+                    scope,
                     move.name,
                     passive.multiplier.moveName
                 )
@@ -39,11 +51,20 @@ export class DamageEngine {
             const isScaling = this.isScaling(passive.multiplier.logic);
             let value = pm.value;
             if (isScaling) {
+                const scalingValue = this.getScalingMultiplier(
+                    passive.condition,
+                    pm.logic,
+                    scope,
+                    context,
+                    value
+                );
+                console.log(`multi:${scalingValue}`);
+                value = scalingValue;
             } else {
                 if (
                     !this.checkCondition(
                         passive.condition,
-                        passive.multiplier.logic,
+                        pm.logic,
                         context,
                         move.type,
                         move.tags
@@ -63,10 +84,10 @@ export class DamageEngine {
         return result;
     }
 
-    static getGaugeBoosts(
+    static getGaugeCostBoosts(
         move: MoveBase,
-        category: MoveScope,
-        passives: PassiveSkillModel[],
+        scope: MoveScope,
+        passives: PassiveSkillModel[]
     ): ActiveMultiplier[] {
         const result: ActiveMultiplier[] = [];
 
@@ -77,7 +98,7 @@ export class DamageEngine {
             if (pm?.logic !== LogicType.GaugeCost) continue;
 
             // 檢查範圍，计量槽消耗增加类一般仅适用于小招或者特定招式
-            if (!this.isScopeMatch(pm.scope, category, move.name)) {
+            if (!this.isScopeMatch(pm.scope, scope, move.name)) {
                 continue;
             }
 
@@ -95,7 +116,6 @@ export class DamageEngine {
         return result;
     }
 
-    
     private static isScopeMatch(
         scope: MoveScope | undefined,
         currentCategory: MoveScope,
@@ -124,9 +144,7 @@ export class DamageEngine {
         }
     }
 
-    private static isScaling(
-        logicType: LogicType
-    ): boolean {
+    private static isScaling(logicType: LogicType): boolean {
         switch (logicType) {
             case LogicType.SingleStatScaling ||
                 LogicType.TotalStatScaling ||
@@ -138,7 +156,106 @@ export class DamageEngine {
         }
     }
 
-    private static getScalingMultiplier(){}
+    private static getScalingMultiplier(
+        cond: { key: string; detail: string; direction?: string },
+        logicType: LogicType,
+        scope: MoveScope,
+        env: CalcEnvironment,
+        specialRate?: number
+    ): number {
+        let value = 0;
+        switch (logicType) {
+            case LogicType.SingleStatScaling: // 可能有多项，以_分割
+                const stats = cond.detail.includes("對手")
+                    ? env.target.ranks
+                    : env.user.ranks;
+                const statsList = cond.key.split("_");
+                const multiplierTable =
+                    scope === "Sync"
+                        ? SINGLE_STAT_SYNC_MULTIPLIERS
+                        : SINGLE_STAT_MOVE_MULTIPLIERS;
+                statsList.forEach((statName) => {
+                    const statKey = getStatKeyByStatCNname(statName);
+                    const rankValue = stats[statKey];
+                    let effectiveRank = 0;
+                    if (cond.direction?.includes("下降") && rankValue < 0) {
+                        effectiveRank = Math.abs(rankValue);
+                    } else if (
+                        cond.direction?.includes("提升") &&
+                        rankValue > 0
+                    ) {
+                        effectiveRank = rankValue;
+                    }
+                    const safeIndex = Math.min(effectiveRank, 6);
+
+                    value += multiplierTable[safeIndex];
+                });
+                return value;
+
+            case LogicType.TotalStatScaling:
+                const totalStats = cond.detail.includes("對手")
+                    ? env.target.ranks
+                    : env.user.ranks;
+                const isStatLow = cond.direction?.includes("下降");
+                let totalRank = 0;
+                statsList.forEach((statName) => {
+                    const totalStatKey = getStatKeyByStatCNname(statName);
+                    const totalRankValue = totalStats[totalStatKey];
+                    if (isStatLow) {
+                        totalRank +=
+                            totalRankValue < 0 ? Math.abs(totalRankValue) : 0;
+                    } else {
+                        totalRank += totalRankValue < 0 ? 0 : totalRankValue;
+                    }
+                });
+                if (scope === "Sync") {
+                    const safeIndex = Math.min(
+                        totalRank,
+                        TOTAL_STAT_SYNC_MULTIPLIERS.length - 1
+                    );
+                    value = TOTAL_STAT_SYNC_MULTIPLIERS[safeIndex];
+                } else {
+                    const safeIndex = Math.min(
+                        totalRank,
+                        TOTAL_STAT_MOVE_MULTIPLIERS.length - 1
+                    );
+                    value = TOTAL_STAT_MOVE_MULTIPLIERS[safeIndex];
+                }
+                return value;
+
+            case LogicType.GaugeScaling:
+                if (scope === "Sync") {
+                    return GAUGE_SYNC_MULTIPLIERS[env.settings.gauge] ?? 0;
+                } else {
+                    return env.settings.gauge * specialRate * 0.01;
+                }
+
+            case LogicType.HPScaling:
+                const hpPercent = cond.detail.includes("對手")
+                    ? env.target.hpPercent
+                    : env.user.hpPercent;
+                const factor = cond.detail.includes("對手") ? 0.1 : 0.05;
+                const thresholdTable = cond.direction?.includes("下降")
+                    ? HP_LESS_THRESHOLD
+                    : HP_MORE_THRESHOLD;
+                let threshold = 0;
+                if (hpPercent === 100) {
+                    threshold = thresholdTable[0];
+                } else if (hpPercent <= 99 && hpPercent >= 51) {
+                    threshold = thresholdTable[1];
+                } else if (hpPercent <= 50 && hpPercent >= 34) {
+                    threshold = thresholdTable[2];
+                } else {
+                    threshold = thresholdTable[3];
+                }
+                const rawValue = (specialRate || 0) * factor * threshold;
+                value = Math.ceil(rawValue * 100) / 100;
+
+                return value;
+        }
+
+        return 0;
+    }
 
     private static checkCondition(
         cond: { key: string; detail: string; direction?: string },
@@ -284,12 +401,11 @@ export class DamageEngine {
                 return moveTag === "反衝";
 
             case LogicType.SyncType:
-                const typeName = getTypeCNnameByTypeIndex(moveType)
+                const typeName = getTypeCNnameByTypeIndex(moveType);
                 return cond.key.includes(typeName);
 
             case LogicType.Berry:
                 return env.settings.berry === 0;
-
         }
         return false;
     }

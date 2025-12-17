@@ -166,7 +166,7 @@ const isSingleView = ref(window.innerWidth <= 900);
 const curTab = ref('grid');
 
 const { singleSync } = storeToRefs(syncElemStore);
-const { allFormsBattleStats } = useDamageCalculator(singleSync);
+const { passiveSnapshot, finalDamageResult } = useDamageCalculator(singleSync);
 
 // 潜能相关
 // const currentType = ref(1);
@@ -198,12 +198,23 @@ const handleSelectTrainer = (trainerId) => {
     }
 };
 
-watch(allFormsBattleStats, (newValue) => {
+watch(passiveSnapshot, (newValue) => {
     if (newValue && newValue.length > 0) {
         console.log("✅ 計算器成功算出數據:", newValue);
 
         // 打印第一種形態的被動，驗證解析是否成功
         console.log("第一形態的被動:", newValue[0].passives);
+    } else {
+        console.log("⏳ 計算結果為空 (可能數據尚未加載)");
+    }
+}, { immediate: true });
+
+watch(finalDamageResult, (newValue) => {
+    if (newValue && newValue.length > 0) {
+        console.log("✅ 計算器成功算出數據:", newValue);
+
+        // 打印第一種形態的被動，驗證解析是否成功
+        console.log("第一形態的技能倍率:", newValue[0].moves);
     } else {
         console.log("⏳ 計算結果為空 (可能數據尚未加載)");
     }

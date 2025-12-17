@@ -1,8 +1,9 @@
 // @/composables/useDamageCalculator.ts
-import { getFinalStatValue } from "@/core/exporter/syncData";
+import { DamageEngine } from "@/core/calculators/damage";
 import { PassiveSkillParser } from "@/core/parse/passive";
 import { useDamageCalcStore } from "@/stores/damageCalc";
 import { CalcEnvironment } from "@/types/calculator";
+import { MoveScope } from "@/types/passiveModel";
 import { Sync } from "@/types/syncModel";
 import { computed, Ref } from "vue";
 
@@ -76,8 +77,6 @@ function collectActivePassives(
     // 5. 队友被动也要计入
 
     return passives;
-
-
 }
 
 export function useDamageCalculator(targetSync: Ref<Sync | null>) {
@@ -109,6 +108,7 @@ export function useDamageCalculator(targetSync: Ref<Sync | null>) {
             target: {
                 // 目标白值(def&spd)
                 ranks: t.ranks,
+                hpPercent: t.currentHPPercent,
                 abnormal: t.abnormal,
                 hindrance: t.hindrance,
                 damageField: t.damageField,
@@ -162,7 +162,7 @@ export function useDamageCalculator(targetSync: Ref<Sync | null>) {
         });
     });
 
-    // 伤害计算 
+    // 伤害计算
     // 遍历每个形态，逐一遍历 moves, movesDynamax?, moveTera?, syncMove
     // 获取当前move收到被动的增益
     // 获取当前move自身的增益(部分move有, 需要有一个方法去实现)
@@ -183,23 +183,21 @@ export function useDamageCalculator(targetSync: Ref<Sync | null>) {
         if (!sync || !formPassivesList.length) return [];
 
         const rawData = sync.rawData;
-        const state = sync.state;
-        const gear = damageStore.user.gear; // 裝備加成
+        // const state = sync.state;
+        // const gear = damageStore.user.gear;
 
         // 遍歷每一個形態
         return rawData.pokemon.map((pokemon, formIndex) => {
-
-            // ------------------------------------------------
-            // A. 準備該形態的戰鬥白值 (User Stats)
-            // ------------------------------------------------
-            // 使用之前解析好的被動 (formPassivesList[formIndex].passives) 
-            // 傳給 getFinalStatValue 以處理 "攻擊變成2倍" 等被動
             const currentPassives = formPassivesList[formIndex].passives;
 
-            const userStats = {
-                atk: getFinalStatValue(rawData, state, "atk", formIndex, { gearBonus: gear.atk }),
-                spa: getFinalStatValue(rawData, state, "spa", formIndex, { gearBonus: gear.spa }),
-            };
+            // const userStats = {
+            //     atk: getFinalStatValue(rawData, state, "atk", formIndex, {
+            //         gearBonus: gear.atk,
+            //     }),
+            //     spa: getFinalStatValue(rawData, state, "spa", formIndex, {
+            //         gearBonus: gear.spa,
+            //     }),
+            // };
 
             // // ------------------------------------------------
             // // B. 定義單個技能的計算函數 (避免 Move 和 Sync 代碼重複)
@@ -317,7 +315,17 @@ export function useDamageCalculator(targetSync: Ref<Sync | null>) {
             // ------------------------------------------------
 
             // // 1. 普通招式
-            // const moveResults = pokemon.moves.map(m => calculateMoveDamage(m, 'Pokemon'));
+            const moveResults = pokemon.moves.map((m) => {
+                if (m.power > 0) {
+                    const multi = DamageEngine.getMultipliers(
+                        m,
+                        MoveScope.Move,
+                        currentPassives,
+                        env
+                    );
+                    return { multi: multi };
+                }
+            });
 
             // // 2. 拍組招式 (Sync Move)
             // const syncResult = calculateMoveDamage(pokemon.syncMove, 'Sync');
@@ -325,18 +333,18 @@ export function useDamageCalculator(targetSync: Ref<Sync | null>) {
             // // 3. 極巨化招式 (如果有的話)
             // const maxResults = pokemon.movesDynamax ? pokemon.movesDynamax.map(m => calculateMoveDamage(m, 'Max', true)) : [];
 
-            // return {
-            //     formName: pokemon.form || "基礎形態",
-            //     stats: userStats, // 展示該形態白值
-            //     moves: moveResults,
-            //     syncMove: syncResult,
-            //     maxMoves: maxResults
-            // };
+            return {
+                formName: pokemon.form || "基礎形態",
+                // stats: userStats, // 展示該形態白值
+                moves: moveResults,
+                // syncMove: syncResult,
+                // maxMoves: maxResults
+            };
         });
     });
 
-
     return {
         passiveSnapshot,
+        finalDamageResult,
     };
 }

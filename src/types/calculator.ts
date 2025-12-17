@@ -1,8 +1,8 @@
 // types/calculator.ts
 import {
-    BattleRanks,
     AbnormalType,
     BattleCircle,
+    BattleRanks,
     BerryNum,
     BoostRank,
     DamageFieldType,
@@ -55,8 +55,9 @@ export interface CalcEnvironment {
     // 3. 防禦方 (Target)
     // ==========================================
     target: {
-        abnormal: AbnormalType;
+        hpPercent: number;
         ranks: BattleRanks;
+        abnormal: AbnormalType;
         hindrance: Record<HindranceType, boolean>;
         damageField: DamageFieldType;
         typeRebuffs: Record<PokemonType, RebuffRank>;

@@ -32,8 +32,8 @@ export class PassiveSkillParser {
 
         // const isDamage = /(?:招式|威力|攻擊).*(?:提升|↑|強)/.test(desc);
 
-        // 白值檢查 (包含 '防禦', '特防', '速度', '特攻', '能力' 且包含 '倍' 或 '提升')
-        const isStatBoost = /(?:防禦|特防|特攻|速度|能力).*(?:倍|提升|↑)/.test(
+        // 白值檢查 (包含 '防禦', '特防', '速度', '特攻', 且包含 '倍' 或 '提升')
+        const isStatBoost = /(?:攻击|防禦|特防|特攻|速度).*(?:倍|提升|↑)/.test(
             desc
         );
 
@@ -135,7 +135,7 @@ export class PassiveSkillParser {
                     logic: LogicType.GaugeScaling,
                     key: "招式計量槽",
                     detail: "自身",
-                    isDynamic: true,
+                    isDynamic: false, // 动态的，但 [随招式计量槽提升] 的倍率是写在名字里的
                 };
             }
 
@@ -145,25 +145,41 @@ export class PassiveSkillParser {
                     logic: LogicType.HPScaling,
                     key: "HP",
                     detail: name.includes("對手") ? "對手" : "自身",
-                    isDynamic: true,
+                    direction: name.includes("降幅") ? "下降" : "提升",
+                    isDynamic: false,
                 };
             }
 
             // 能力等級 (Stat Scaling) - 這是最複雜的部分
             // 匹配：隨著 (速度) (提升/降低)
             const statMatch = name.match(
-                /(攻擊|特攻|防禦|特防|速度|命中|閃避|能力)(提升|下降|降低|升幅|降幅)/
+                new RegExp(
+                    `((?:攻擊|特攻|防禦|特防|速度|命中|閃避|能力)+)((?:提升|下降|降低|升幅|降幅))`
+                )
             );
             if (statMatch) {
-                const statName = statMatch[1];
+                const statsString = statMatch[1];
                 const direction = statMatch[2].includes("升") ? "提升" : "下降";
-                const isTotal = statName === "能力";
+                const isTotal = statsString === "能力";
+                let key = statsString;
+
+                if (!isTotal) {
+                    const individualStats = statsString.match(
+                        new RegExp(
+                            "攻擊|特攻|防禦|特防|速度|命中|閃避|能力",
+                            "g"
+                        )
+                    );
+                    if (individualStats) {
+                        key = individualStats.join("_");
+                    }
+                }
 
                 return {
                     logic: isTotal
                         ? LogicType.TotalStatScaling
                         : LogicType.SingleStatScaling,
-                    key: isTotal ? `能力` : `${statName}`,
+                    key: isTotal ? `能力` : key,
                     detail: name.includes("對手") ? "對手" : "自身",
                     direction: direction,
                     isDynamic: true,

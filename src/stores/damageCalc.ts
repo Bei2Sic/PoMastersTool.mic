@@ -99,13 +99,13 @@ export const useDamageCalcStore = defineStore("damageCalc", {
             },
             // 能力等級 (Stat Ranks)
             ranks: {
-                atk: 0 as cond.StatRank,
-                def: 0 as cond.StatRank,
-                spa: 0 as cond.StatRank,
-                spd: 0 as cond.StatRank,
-                spe: 0 as cond.StatRank,
-                acc: 0 as cond.StatRank,
-                eva: 0 as cond.StatRank,
+                atk: -6 as cond.StatRank,
+                def: -6 as cond.StatRank,
+                spa: -6 as cond.StatRank,
+                spd: -6 as cond.StatRank,
+                spe: -6 as cond.StatRank,
+                acc: -6 as cond.StatRank,
+                eva: -6 as cond.StatRank,
             },
 
             // 異常狀態
@@ -116,6 +116,8 @@ export const useDamageCalcStore = defineStore("damageCalc", {
 
             // 傷害場地
             damageField: "無" as cond.DamageFieldType,
+
+            currentHPPercent: 100 as number,
 
             // 屬性抵抗 (Rebuffs)
             typeRebuffs: initRebuffs(),
