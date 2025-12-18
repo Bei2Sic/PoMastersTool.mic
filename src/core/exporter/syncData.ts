@@ -1,5 +1,5 @@
 // 假設你將這些類型定義提取出來
-import { MoveCategory, MovePowerCalculator } from "@/core/calculators/power";
+import { MovePowerCalculator, PowerMoveScope } from "@/core/calculators/power";
 import { StatValueCalculator } from "@/core/calculators/stat";
 import {
     getStatCNnameByStatKey,
@@ -24,10 +24,10 @@ export interface StatCalcOptions {
 }
 
 export interface MoveCalcOptions {
-    gaugeBonus?: number; // 裝備加成
     scope?: number; // 對象
-    passiveRate?: number; // 被動倍率
-    moveRate?: number; //自身倍率
+    passiveBoost?: number; // 被動倍率
+    moveBoost?: number; //自身倍率
+    gaugeBoost?: number;
 }
 
 function getTileStatBonus(
@@ -130,8 +130,9 @@ export const getFinalStatValue = (
     result += theme;
 
     // 倍率
+    const boost = options.boost || 1.0;
 
-    return Math.floor(result);
+    return Math.floor(result * boost);
 };
 
 export function getFinalMovePower(
@@ -141,7 +142,7 @@ export function getFinalMovePower(
     exRoleEnabled: boolean,
     rarity: RarityIndex,
     gridData: Tile[],
-    moveCategory: MoveCategory,
+    powerMoveScope: PowerMoveScope,
     options: MoveCalcOptions = {}
 ): number | "-" {
     let power = move.power;
@@ -158,12 +159,12 @@ export function getFinalMovePower(
             power,
             trainer.role,
             bonusLevel,
-            moveCategory
+            powerMoveScope
         );
     }
 
     // EX體系加成 (僅限特定EX角色的 Sync 招式)
-    if (moveCategory === "syncMove") {
+    if (powerMoveScope === PowerMoveScope.Sync) {
         if (
             (trainer.exRole === 3 && exRoleEnabled) ||
             (trainer.role === 3 && rarity === 6)
@@ -171,10 +172,23 @@ export function getFinalMovePower(
             power = Math.ceil(power * 1.5);
     }
 
-    // 計量槽加成... 怎麼加入進來呢？
+    // 計量槽消耗增加 威力提升 LogicType.GaugeCost
+    if (options.gaugeBoost) {
+        power = Math.floor(power * (1 + options.gaugeBoost));
+    }
 
     // 石盤（Grid）的白值加成為最後的加算
     power += getTileMoveBonus(gridData, move.name);
+
+    // 自身倍率
+    if (options.moveBoost) {
+        power = Math.floor(power * (1 + options.moveBoost));
+    }
+
+    // 被動倍率
+    if (options.passiveBoost) {
+        power = Math.floor(power * (1 + options.passiveBoost));
+    }
 
     return Math.floor(power);
 }
@@ -184,7 +198,7 @@ export function mapMoveToMoveFinal(
     move: MoveBase,
     trainer: Trainer,
     state: SyncDynamicState,
-    moveCategory: MoveCategory
+    powerMoveScope: PowerMoveScope
 ): MoveFinal {
     if (!move) {
         return null;
@@ -196,7 +210,7 @@ export function mapMoveToMoveFinal(
         state.exRoleEnabled,
         state.currentRarity,
         state.gridData,
-        moveCategory
+        powerMoveScope
     );
     // 組合原始數據和計算結果
     return { ...move, finalPower };

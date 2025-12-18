@@ -1,4 +1,5 @@
 import { STORAGE_KEY } from "@/constances/key";
+import { PowerMoveScope } from "@/core/calculators/power";
 import {
     getFinalStatValue,
     mapMoveToMoveFinal,
@@ -204,7 +205,7 @@ const createSync = (jsonData: SyncRawData): Sync => {
             const moves = computedProps.currentPokemon.value.moves;
             if (!moves) return null;
             return moves.map((move) =>
-                mapMoveToMoveFinal(move, jsonData.trainer, state, "move")
+                mapMoveToMoveFinal(move, jsonData.trainer, state, PowerMoveScope.Move)
             );
         }),
 
@@ -216,7 +217,7 @@ const createSync = (jsonData: SyncRawData): Sync => {
                 syncMove,
                 jsonData.trainer,
                 state,
-                "syncMove"
+                PowerMoveScope.Sync
             );
         }),
 
@@ -224,14 +225,14 @@ const createSync = (jsonData: SyncRawData): Sync => {
             const moveMaxs = computedProps.currentPokemon.value.movesDynamax;
             if (!moveMaxs) return null;
             return moveMaxs.map((move) =>
-                mapMoveToMoveFinal(move, jsonData.trainer, state, "moveDynamax")
+                mapMoveToMoveFinal(move, jsonData.trainer, state, PowerMoveScope.Max)
             );
         }),
 
         finalMoveTera: computed(() => {
             const moveTera = computedProps.currentPokemon.value.moveTera;
             if (!moveTera) return null;
-            return mapMoveToMoveFinal(moveTera, jsonData.trainer, state, "move");
+            return mapMoveToMoveFinal(moveTera, jsonData.trainer, state, PowerMoveScope.Move);
         }),
     };
 
@@ -291,6 +292,7 @@ const createSync = (jsonData: SyncRawData): Sync => {
             }
 
             const variationList = jsonData.pokemon.map((item) => {
+                console.log(item.form);
                 switch (item.variationType) {
                     case 1:
                         return "Mega形態";

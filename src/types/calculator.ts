@@ -16,10 +16,27 @@ import {
 } from "@/types/conditions";
 import { LogicType } from "@/types/passiveModel";
 
+export interface ThemeContext {
+    // 標籤計數
+    tagCounts: Record<string, number>;
+    // 固定加成
+    flatBonuses: {
+        atk: number;
+        spa: number;
+        hp: number;
+    };
+    // 特定属性Tag
+    tagType: PokemonType;
+    // 特定属性加成
+    typeBonuses: {
+        atk: number;
+        spa: number;
+    };
+}
 
 export interface ActiveMultiplier {
-    name: string; // 
-    value: number; // 
+    name: string; //
+    value: number; //
     logic: LogicType; //
     stat?: string;
 }
@@ -32,6 +49,7 @@ export interface CalcEnvironment {
     terrain: TerrainType;
     zone: ZoneType;
     battleCircles: BattleCircle[];
+    gaugeSpeedBoost: boolean;
 
     // ==========================================
     // 2. 攻擊方 (User)

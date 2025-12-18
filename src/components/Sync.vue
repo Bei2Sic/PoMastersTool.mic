@@ -166,7 +166,7 @@ const isSingleView = ref(window.innerWidth <= 900);
 const curTab = ref('grid');
 
 const { singleSync } = storeToRefs(syncElemStore);
-const { passiveSnapshot, finalDamageResult } = useDamageCalculator(singleSync);
+const { themeSnapshot, passiveSnapshot, finalDamageResult } = useDamageCalculator(singleSync);
 
 // 潜能相关
 // const currentType = ref(1);
@@ -197,13 +197,17 @@ const handleSelectTrainer = (trainerId) => {
         // 提示错误
     }
 };
+watch(themeSnapshot, (newValue) => {
+    if (newValue) {
+        console.log("✅ 計算器成功算出組隊技能:", newValue);
+    } else {
+        console.log("⏳ 計算結果為空 (可能數據尚未加載)");
+    }
+}, { immediate: true });
 
 watch(passiveSnapshot, (newValue) => {
     if (newValue && newValue.length > 0) {
-        console.log("✅ 計算器成功算出數據:", newValue);
-
-        // 打印第一種形態的被動，驗證解析是否成功
-        console.log("第一形態的被動:", newValue[0].passives);
+        console.log("✅ 計算器成功算出被動技能:", newValue);
     } else {
         console.log("⏳ 計算結果為空 (可能數據尚未加載)");
     }
@@ -211,11 +215,7 @@ watch(passiveSnapshot, (newValue) => {
 
 watch(finalDamageResult, (newValue) => {
     if (newValue && newValue.length > 0) {
-        console.log("✅ 計算器成功算出數據:", newValue);
-
-        // 打印第一種形態的被動，驗證解析是否成功
-        console.log("第一形態的技能倍率:", newValue[0].moves);
-        console.log("第二形態的技能倍率:", newValue[1]?.moves);
+        console.log("✅ 計算器成功算出普通技能傷害加成:", newValue);
     } else {
         console.log("⏳ 計算結果為空 (可能數據尚未加載)");
     }

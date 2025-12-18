@@ -127,6 +127,7 @@ export const useDamageCalcStore = defineStore("damageCalc", {
         terrain: "無" as cond.TerrainType,
         zone: "無" as cond.ZoneType,
         battleCircles: [] as cond.BattleCircle[],
+        gaugeSpeedBoost: false,
 
         // todo: 大師被動
 

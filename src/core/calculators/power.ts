@@ -3,12 +3,13 @@ import { AwakeningBonusConfig } from "@/constances/bonus";
 import { BonusIndex, RoleIndex } from "@/types/indices";
 
 /** 技能类型 */
-export type MoveCategory =
-    | "move"
-    | "syncMove"
-    | "moveDynamax"
-    | "moveTera"
-    | "none";
+export enum PowerMoveScope {
+    Move = "move",
+    Sync = "syncMove",
+    Max = "moveDynamax",
+    Tera = "moveTera",
+    None = "none"
+}
 
 export class MovePowerCalculator {
     static calculateLevelBonus(power: number, level: BonusIndex): number {
@@ -24,7 +25,7 @@ export class MovePowerCalculator {
         power: number,
         role: RoleIndex,
         level: BonusIndex,
-        moveCategory: MoveCategory
+        powerMoveScope: PowerMoveScope
     ): number {
         // 6 以上，基礎倍率從 120% (即整數 120) 開始計算
         // 用整數百分比來計算：120 代表 1.2
@@ -34,7 +35,7 @@ export class MovePowerCalculator {
             const levelConfig = AwakeningBonusConfig[role]?.[l - 6];
             if (!levelConfig) continue;
 
-            const moveConfig = levelConfig[moveCategory];
+            const moveConfig = levelConfig[powerMoveScope];
             if (!moveConfig || moveConfig.mode === "none") continue;
 
             switch (moveConfig.mode) {

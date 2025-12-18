@@ -1,8 +1,10 @@
 // @/composables/useDamageCalculator.ts
+import { PASSIVE_OVERRIDES } from "@/constances/passive";
 import { DamageEngine } from "@/core/calculators/damage";
+import { ThemeContextResolver } from "@/core/calculators/theme";
 import { PassiveSkillParser } from "@/core/parse/passive";
 import { useDamageCalcStore } from "@/stores/damageCalc";
-import { CalcEnvironment } from "@/types/calculator";
+import { CalcEnvironment, ThemeContext } from "@/types/calculator";
 import { MoveScope } from "@/types/passiveModel";
 import { Sync } from "@/types/syncModel";
 import { computed, Ref } from "vue";
@@ -19,8 +21,14 @@ function collectActivePassives(
     if (currentPokemon && currentPokemon.passives) {
         // 假設 passive 結構是數組
         currentPokemon.passives.forEach((p) => {
-
-            // 先從字典裏找特殊被動，找到了則跳過
+            if (PASSIVE_OVERRIDES[p.name]) {
+                passives.push({
+                    name: p.name,
+                    desc: p.description,
+                    passiveName: p.name,
+                });
+                return;
+            }
 
             if (p.detail?.length > 0) {
                 p.detail.forEach((detail) => {
@@ -82,8 +90,18 @@ function collectActivePassives(
     return passives;
 }
 
-export function useDamageCalculator(targetSync: Ref<Sync | null>) {
+export function useDamageCalculator(
+    targetSync: Ref<Sync | null>,
+    teamSyncs: Ref<Sync | null>[] = []
+) {
     const damageStore = useDamageCalcStore();
+
+    // 標籤快照
+    const themeSnapshot = computed((): ThemeContext => {
+        const team = [targetSync.value, ...teamSyncs.map((r) => r.value)];
+        const contextTheme = ThemeContextResolver.resolve(team);
+        return contextTheme;
+    });
 
     // 环境快照
     const envSnapshot = computed((): CalcEnvironment => {
@@ -96,6 +114,7 @@ export function useDamageCalculator(targetSync: Ref<Sync | null>) {
             terrain: damageStore.terrain,
             zone: damageStore.zone,
             battleCircles: damageStore.battleCircles,
+            gaugeSpeedBoost: damageStore.gaugeSpeedBoost,
             user: {
                 hpPercent: u.currentHPPercent,
                 ranks: u.ranks,
@@ -135,29 +154,43 @@ export function useDamageCalculator(targetSync: Ref<Sync | null>) {
         const rawData = sync.rawData;
         // 核心：遍歷每一個形態 (Base, Mega, Dynamax...)
         return rawData.pokemon.map((pokemon, formIndex) => {
-            // ====================================================
-            // 收集該形態下的被動（包括队友被动）
-            // ====================================================
+            console.log(`formIndex: ${formIndex}`);
             const rawPassives = collectActivePassives(sync, formIndex);
-            const validRawPassives = rawPassives.filter((p) => {
-                // 調用靜態方法，傳入名字和描述
-                return PassiveSkillParser.isValid(p.name, p.desc);
-            });
-            // ====================================================
-            // 解析被動
-            // ====================================================
-            const passiveModels = validRawPassives.map((p) => {
-                // 判断合法
+
+            const passiveModels = rawPassives.flatMap((p) => {
+                // 大师被动
+
+                const override = PASSIVE_OVERRIDES[p.passiveName];
+                if (override) {
+                    console.log(override);
+                    return override;
+                }
+
+                const isValid = PassiveSkillParser.isValid(p.name, p.desc);
+                if (!isValid) {
+                    return [];
+                }
+                // 通用解析
                 const parser = new PassiveSkillParser(
                     p.name,
                     p.desc,
                     p.passiveName
                 );
-                return parser.result;
+                return [parser.result];
             });
-            // ====================================================
-            // 返回該形態的被动
-            // ====================================================
+            // const validRawPassives = rawPassives.filter((p) => {
+            //     // 調用靜態方法，傳入名字和描述
+            //     return PassiveSkillParser.isValid(p.name, p.desc);
+            // });
+            // const passiveModels = validRawPassives.map((p) => {
+            //     // 判断合法
+            //     const parser = new PassiveSkillParser(
+            //         p.name,
+            //         p.desc,
+            //         p.passiveName
+            //     );
+            //     return parser.result;
+            // });
             return {
                 formName: pokemon.form || "基礎形態",
                 passives: passiveModels,
@@ -318,7 +351,7 @@ export function useDamageCalculator(targetSync: Ref<Sync | null>) {
             // ------------------------------------------------
 
             // // 1. 普通招式
-            console.log(p.moves)
+            console.log(p.moves);
             const moveResults = p.moves?.map((m) => {
                 if (m.power > 0) {
                     const multi = DamageEngine.getMultipliers(
@@ -348,6 +381,7 @@ export function useDamageCalculator(targetSync: Ref<Sync | null>) {
     });
 
     return {
+        themeSnapshot,
         passiveSnapshot,
         finalDamageResult,
     };

@@ -57,13 +57,13 @@ export class PassiveSkillParser {
                 scope: scopeResult.scope,
                 moveName: scopeResult.moveName,
                 value: multiplierResult.value,
-                logic: logicResult.logic,
             },
             statBoost: statBoost,
             condition: {
                 key: logicResult.key,
                 detail: logicResult.detail,
                 direction: logicResult.direction,
+                logic: logicResult.logic,
             },
         };
     }
@@ -97,20 +97,24 @@ export class PassiveSkillParser {
             };
         }
 
-        // 3. 優先判斷拍組/極巨
+        // 先判断名字,这类文本描述太复杂
+        if (name.includes("寶可夢/拍組/拍組極巨化招式")) {
+            return { scope: MoveScope.All };
+        }
+
+        // S-move
         if (desc.includes("拍組招式")) {
-            // 特例："招式及拍組招式" -> All
             if (desc.includes("拍組招式和拍組極巨化招式"))
-                return { scope: MoveScope.MaxAndSync }
+                return { scope: MoveScope.MaxAndSync };
             if (desc.includes("招式和拍組招式"))
-                return { scope: MoveScope.All };
+                return { scope: MoveScope.MoveAndSync };
             return { scope: MoveScope.Sync };
         }
-        if (desc.includes("極巨化招式")) return { scope: MoveScope.Max };
+        // M-move
+        if (desc.includes("拍組極巨化招式")) return { scope: MoveScope.Max };
 
-        // 3. 一般招式
-        // 註：中文文本中，"招式" 通常指 Pokemon Move (P-Move)
-        if (desc.includes("招式")) return { scope: MoveScope.Move };
+        // P-move
+        if (desc.includes("招式的威力")) return { scope: MoveScope.Move };
 
         // 4. 兜底 (該攻擊、攻擊時) -> All
         return { scope: MoveScope.All };
@@ -395,7 +399,7 @@ export class PassiveSkillParser {
 
         // 5. 兜底
         return {
-            logic: LogicType.Complex,
+            logic: LogicType.Direct,
             key: "通用",
             detail: "自身",
             isDynamic: false,

@@ -1,7 +1,5 @@
-// @/core/constants/skillOverrides.ts
-import { LogicType, MoveScope, PassiveSkillModel } from "@/types/passiveModel"; // 假設路徑
+import { LogicType, MoveScope, PassiveSkillModel } from "@/types/passiveModel";
 
-// 這是一個映射表：技能名稱 -> 手寫的解析結果
 export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
     小智的熱忱: [
         {
@@ -12,11 +10,11 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
                 scope: MoveScope.Specific,
                 moveName: "打雷",
                 value: 0.3,
-                logic: LogicType.Complex,
             },
             condition: {
                 key: "",
                 detail: "自身",
+                logic: LogicType.Direct,
             },
             statBoost: {
                 isStatBoost: false,
@@ -34,11 +32,11 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             multiplier: {
                 scope: MoveScope.Move,
                 value: 0.5,
-                logic: LogicType.Weather,
             },
             condition: {
                 key: "沙暴",
                 detail: "自身",
+                logic: LogicType.Weather,
             },
             statBoost: {
                 isStatBoost: false,
@@ -56,11 +54,11 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             multiplier: {
                 scope: MoveScope.Move,
                 value: 0.2,
-                logic: LogicType.MoveType,
             },
             condition: {
                 key: "鋼屬性",
                 detail: "自身",
+                logic: LogicType.MoveType,
             },
             statBoost: {
                 isStatBoost: false,
@@ -78,11 +76,11 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             multiplier: {
                 scope: MoveScope.Move,
                 value: 0.2,
-                logic: LogicType.Weather,
             },
             condition: {
                 key: "沙暴",
                 detail: "自身",
+                logic: LogicType.Weather,
             },
             statBoost: {
                 isStatBoost: false,
@@ -101,11 +99,11 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
                 scope: MoveScope.Specific,
                 moveName: "近身戰",
                 value: 0.5,
-                logic: LogicType.Complex,
             },
             condition: {
                 key: "",
                 detail: "自身",
+                logic: LogicType.Direct,
             },
             statBoost: {
                 isStatBoost: false,
@@ -123,11 +121,11 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             multiplier: {
                 scope: MoveScope.Move,
                 value: 0.2,
-                logic: LogicType.Hindrance,
             },
             condition: {
                 key: "禁止替換",
                 detail: "對手",
+                logic: LogicType.Hindrance,
             },
             statBoost: {
                 isStatBoost: false,
@@ -145,12 +143,12 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             multiplier: {
                 scope: MoveScope.Move,
                 value: 0.05,
-                logic: LogicType.BoostScaling,
             },
             condition: {
                 key: "物理招式威力增強",
                 detail: "自身",
                 direction: "提升",
+                logic: LogicType.BoostScaling,
             },
             statBoost: {
                 isStatBoost: false,
@@ -166,11 +164,12 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             multiplier: {
                 scope: MoveScope.Sync,
                 value: 0.1,
-                logic: LogicType.BoostScaling,
             },
             condition: {
-                key: "禁止替換",
-                detail: "對手",
+                key: "物理招式威力增強",
+                detail: "自身",
+                direction: "提升",
+                logic: LogicType.BoostScaling,
             },
             statBoost: {
                 isStatBoost: false,
@@ -188,11 +187,11 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             multiplier: {
                 scope: MoveScope.Move,
                 value: 0.5,
-                logic: LogicType.GaugeCost,
             },
             condition: {
                 key: "计量槽消耗增加",
                 detail: "自身",
+                logic: LogicType.GaugeCost,
             },
             statBoost: {
                 isStatBoost: false,
@@ -211,11 +210,11 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
                 scope: MoveScope.Specific,
                 moveName: "百花怒放晶光轉轉",
                 value: 1.0,
-                logic: LogicType.GaugeCost,
             },
             condition: {
                 key: "计量槽消耗增加",
                 detail: "自身",
+                logic: LogicType.GaugeCost,
             },
             statBoost: {
                 isStatBoost: false,
@@ -232,11 +231,11 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
                 scope: MoveScope.Specific,
                 moveName: "晶光轉轉",
                 value: 1.0,
-                logic: LogicType.GaugeCost,
             },
             condition: {
                 key: "计量槽消耗增加",
                 detail: "自身",
+                logic: LogicType.GaugeCost,
             },
             statBoost: {
                 isStatBoost: false,
@@ -254,11 +253,11 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             multiplier: {
                 scope: MoveScope.All,
                 value: 0.4,
-                logic: LogicType.BattleCircle,
             },
             condition: {
                 key: "帕希歐鬥陣(防禦)",
                 detail: "自身",
+                logic: LogicType.BattleCircle,
             },
             statBoost: {
                 isStatBoost: false,
@@ -276,11 +275,12 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             multiplier: {
                 scope: MoveScope.Sync,
                 value: 0.1,
-                logic: LogicType.BoostScaling,
             },
             condition: {
                 key: "特殊招式威力增强",
                 detail: "自身",
+                direction: "提升",
+                logic: LogicType.BoostScaling,
             },
             statBoost: {
                 isStatBoost: false,
@@ -298,11 +298,11 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             multiplier: {
                 scope: MoveScope.All,
                 value: 0.2,
-                logic: LogicType.Weather,
             },
             condition: {
                 key: "晴天",
                 detail: "自身",
+                logic: LogicType.Weather,
             },
             statBoost: {
                 isStatBoost: false,
@@ -318,12 +318,24 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             multiplier: {
                 scope: MoveScope.All,
                 value: 0.2,
-                logic: LogicType.Weather,
             },
             condition: {
-                key: "晴天",
+                key: "複合條件",
                 detail: "自身",
+                logic: LogicType.Compound,
             },
+            conditions: [
+                {
+                    key: "晴天",
+                    detail: "自身",
+                    logic: LogicType.Weather,
+                },
+                {
+                    key: "地面屬性",
+                    detail: "自身",
+                    logic: LogicType.MoveType,
+                },
+            ],
             statBoost: {
                 isStatBoost: false,
                 stats: [],
@@ -340,11 +352,11 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             multiplier: {
                 scope: MoveScope.Move,
                 value: 0.5,
-                logic: LogicType.Weather,
             },
             condition: {
                 key: "晴天",
                 detail: "自身",
+                logic: LogicType.Weather,
             },
             statBoost: {
                 isStatBoost: false,
@@ -362,11 +374,11 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             multiplier: {
                 scope: MoveScope.All,
                 value: 0.5,
-                logic: LogicType.Weather,
             },
             condition: {
                 key: "沙暴",
                 detail: "自身",
+                logic: LogicType.Weather,
             },
             statBoost: {
                 isStatBoost: false,
@@ -385,11 +397,11 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
                 scope: MoveScope.Specific,
                 moveName: "地震",
                 value: 0.9,
-                logic: LogicType.Complex,
             },
             condition: {
                 key: "",
                 detail: "自身",
+                logic: LogicType.Direct,
             },
             statBoost: {
                 isStatBoost: false,
@@ -408,11 +420,11 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
                 scope: MoveScope.Specific,
                 moveName: "破壞光綫",
                 value: 0.5,
-                logic: LogicType.Complex,
             },
             condition: {
                 key: "",
                 detail: "自身",
+                logic: LogicType.Direct,
             },
             statBoost: {
                 isStatBoost: false,
@@ -430,11 +442,11 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             multiplier: {
                 scope: MoveScope.All,
                 value: 0.2,
-                logic: LogicType.BattleCircle,
             },
             condition: {
                 key: "合眾鬥陣(防禦)",
                 detail: "自身",
+                logic: LogicType.BattleCircle,
             },
             statBoost: {
                 isStatBoost: false,
@@ -452,18 +464,18 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             multiplier: {
                 scope: MoveScope.Move,
                 value: 0.5,
-                logic: LogicType.AbnormalActive,
             },
             condition: {
                 key: "異常狀態",
                 detail: "自身",
+                logic: LogicType.AbnormalActive,
             },
             statBoost: {
                 isStatBoost: false,
                 stats: [],
                 value: 0,
             },
-            applyToParty: true,
+            applyToParty: false,
         },
     ],
 };

@@ -14,7 +14,12 @@ import {
 } from "@/core/exporter/map";
 import { ActiveMultiplier, CalcEnvironment } from "@/types/calculator";
 import { HindranceType, PokemonType } from "@/types/conditions";
-import { LogicType, MoveScope, PassiveSkillModel } from "@/types/passiveModel";
+import {
+    LogicType,
+    MoveScope,
+    PassiveCondition,
+    PassiveSkillModel,
+} from "@/types/passiveModel";
 import { MoveBase } from "@/types/syncModel";
 
 export class DamageEngine {
@@ -30,7 +35,7 @@ export class DamageEngine {
         for (const passive of passives) {
             // 0. 跳過白值類 和 計量槽消耗增加類 (這兩個由別的方法處理)
             if (passive.statBoost.isStatBoost) continue;
-            if (passive.multiplier?.logic === LogicType.GaugeCost) continue;
+            // if (passive.condition.logic === LogicType.GaugeCost) continue;
 
             const pm = passive.multiplier;
             if (!pm) continue;
@@ -48,12 +53,11 @@ export class DamageEngine {
             }
 
             // 判断是否是 scaling类
-            const isScaling = this.isScaling(passive.multiplier.logic);
+            const isScaling = this.isScaling(passive.condition.logic);
             let value = pm.value;
             if (isScaling) {
                 const scalingValue = this.getScalingMultiplier(
                     passive.condition,
-                    pm.logic,
                     scope,
                     context,
                     value
@@ -64,7 +68,6 @@ export class DamageEngine {
                 if (
                     !this.checkCondition(
                         passive.condition,
-                        pm.logic,
                         context,
                         move.type,
                         move.tags
@@ -77,48 +80,45 @@ export class DamageEngine {
             result.push({
                 name: passive.passiveName,
                 value: value * 100,
-                logic: pm.logic,
+                logic: passive.condition.logic,
             });
         }
 
         return result;
     }
 
-    static getGaugeCostBoosts(
-        move: MoveBase,
-        scope: MoveScope,
-        passives: PassiveSkillModel[]
-    ): ActiveMultiplier[] {
-        const result: ActiveMultiplier[] = [];
+    // static getGaugeCostBoosts(
+    //     move: MoveBase,
+    //     scope: MoveScope,
+    //     passives: PassiveSkillModel[]
+    // ): ActiveMultiplier[] {
+    //     const result: ActiveMultiplier[] = [];
 
-        for (const passive of passives) {
-            // 只處理 GaugeScaling 類型
-            if (passive.statBoost.isStatBoost) continue;
-            const pm = passive.multiplier;
-            if (pm?.logic !== LogicType.GaugeCost) continue;
+    //     for (const passive of passives) {
+    //         // 只處理 GaugeScaling 類型
+    //         if (passive.statBoost.isStatBoost) continue;
+    //         const pm = passive.multiplier;
+    //         if (passive.condition.logic !== LogicType.GaugeCost) continue;
 
-            // 檢查範圍，计量槽消耗增加类一般仅适用于小招或者特定招式
-            if (!this.isScopeMatch(pm.scope, scope, move.name)) {
-                continue;
-            }
+    //         if (!this.isScopeMatch(pm.scope, scope, move.name)) {
+    //             continue;
+    //         }
 
-            // 3. 計算實際加成 (Rank * 0.1 * 耗氣)
-            // 假設 maxVal 已經是 Rank * 0.1
-            const finalValue = pm.value * move.gauge;
+    //         const finalValue = pm.value * 0.1;
 
-            result.push({
-                name: passive.passiveName,
-                value: finalValue,
-                logic: LogicType.GaugeScaling,
-            });
-        }
+    //         result.push({
+    //             name: passive.passiveName,
+    //             value: finalValue,
+    //             logic: LogicType.GaugeCost,
+    //         });
+    //     }
 
-        return result;
-    }
+    //     return result;
+    // }
 
     private static isScopeMatch(
         scope: MoveScope | undefined,
-        currentCategory: MoveScope,
+        currentScope: MoveScope,
         currentMoveName: string,
         targetMoveName?: string
     ): boolean {
@@ -128,22 +128,19 @@ export class DamageEngine {
             case MoveScope.All:
                 return true; // 適用所有
             case MoveScope.Move:
-                return (
-                    currentCategory === "Move" ||
-                    currentCategory === "Max" ||
-                    currentCategory === "Tera"
-                );
-            case MoveScope.MaxAndSync:
-                return (
-                    currentCategory === "Max" ||
-                    currentCategory === "Sync"
-                );
+                return currentScope === "Move";
             case MoveScope.Sync:
-                return currentCategory === "Sync"; // 僅拍招
+                return currentScope === "Sync"; // 僅拍招
             case MoveScope.Max:
-                return currentCategory === "Max"; // 僅極巨
+                return currentScope === "Max"; // 僅極巨
+            case MoveScope.MoveAndMax:
+                return currentScope === "Move" || currentScope === "Max";
+            case MoveScope.MaxAndSync:
+                return currentScope === "Max" || currentScope === "Sync";
+            case MoveScope.MoveAndSync:
+                return currentScope === "Move" || currentScope === "Sync";
             case MoveScope.Specific:
-                console.log(targetMoveName === currentMoveName)
+                console.log(targetMoveName === currentMoveName);
                 return targetMoveName === currentMoveName;
             default:
                 return false;
@@ -163,14 +160,13 @@ export class DamageEngine {
     }
 
     private static getScalingMultiplier(
-        cond: { key: string; detail: string; direction?: string },
-        logicType: LogicType,
+        cond: PassiveCondition,
         scope: MoveScope,
         env: CalcEnvironment,
         specialRate?: number
     ): number {
         let value = 0;
-        switch (logicType) {
+        switch (cond.logic) {
             case LogicType.SingleStatScaling: // 可能有多项，以_分割
                 const stats = cond.detail.includes("對手")
                     ? env.target.ranks
@@ -264,13 +260,17 @@ export class DamageEngine {
     }
 
     private static checkCondition(
-        cond: { key: string; detail: string; direction?: string },
-        logicType: LogicType,
+        cond: PassiveCondition,
         env: CalcEnvironment,
         moveType: number,
-        moveTag: string
+        moveTag: string,
+        conds?: PassiveCondition[]
     ): boolean {
-        switch (logicType) {
+        switch (cond.logic) {
+            // 直接返回
+            case LogicType.Direct || LogicType.GaugeCost:
+                return true;
+
             case LogicType.DamageField:
                 return cond.key.includes(env.target.damageField);
 
@@ -289,6 +289,9 @@ export class DamageEngine {
                         return bc.isActive;
                     }
                 });
+
+            case LogicType.GaugeSpeedBoostOn:
+                return env.gaugeSpeedBoost;
 
             case LogicType.Abnormal:
                 const abnormal = cond.detail.includes("對手")
@@ -412,6 +415,13 @@ export class DamageEngine {
 
             case LogicType.Berry:
                 return env.settings.berry === 0;
+
+            // 复合类型
+            case LogicType.Compound:
+                if (!conds || conds.length === 0) return true;
+                return conds.every((subCond) =>
+                    this.checkCondition(subCond, env, moveType, moveTag)
+                );
         }
         return false;
     }
