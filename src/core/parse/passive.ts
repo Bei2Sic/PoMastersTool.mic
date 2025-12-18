@@ -1,4 +1,4 @@
-import { LogicType, MoveScope, PassiveSkillModel } from "@/types/passiveModel";
+import { LogicType, MoveScope, PassiveSkillModel, PassiveStatBoost } from "@/types/passiveModel";
 // 假設這些常量在您的常量文件中定義
 import {
     ABNORMAL_STATUSES,
@@ -17,8 +17,67 @@ export class PassiveSkillParser {
         this.passiveName = passiveName;
     }
 
-    // 1. 合法性檢查：只處理傷害相關
-    public static isValid(name: string, desc: string): boolean {
+    // 獲取解析結果
+    public get result(): PassiveSkillModel {
+
+        // 处理大师被动&阿尔被动
+        if (this.isTeamWorker(this.name)) {
+            return this.resolveTeamWorker(this.name, this.desc);
+        }
+        if (this.isMaster(this.name)) {
+            return this.resolveMaster(this.name, this.desc);
+        }
+        if (this.isArcSuit(this.name)) {
+            return this.resolveArcSuit(this.name, this.desc);
+        }
+
+        // 处理通用被动
+        const isValid = this.isValid(this.name, this.desc);
+        if (!isValid) {
+            return null;
+        }
+        const scopeResult = this.resolveScope();
+        const logicResult = this.resolveLogicAndCondition();
+        const boostValue = this.resolveBoostValue(logicResult.isDynamic);
+        const statBoost = this.resolveStatBoost();
+        return {
+            name: this.name,
+            desc: this.desc,
+            passiveName: this.passiveName,
+            applyToParty:
+                this.name.includes("G") || this.desc.includes("全體拍組"), // 注意全形G
+            boost: {
+                scope: scopeResult.scope,
+                moveName: scopeResult.moveName,
+                value: boostValue.value,
+            },
+            statBoost: statBoost,
+            condition: {
+                key: logicResult.key,
+                detail: logicResult.detail,
+                direction: logicResult.direction,
+                logic: logicResult.logic,
+            },
+        };
+    }
+
+    // 小大師被動
+    private isTeamWorker(name: string): boolean {
+        return /領袖$/.test(name);
+    }
+
+    // 大师被动
+    private isMaster(name: string): boolean {
+        return /(?:先驅|鬥志|信念)$/.test(name);
+    }
+
+    // 阿爾被動
+    private isArcSuit(name: string): boolean {
+        return /神話$/.test(name);
+    }
+
+    // 合法性檢查：只處理傷害相關
+    private isValid(name: string, desc: string): boolean {
         if (name.includes("威力↓")) return false;
         if (name.includes("屬性防守")) return false;
         if (name.includes("減輕")) return false;
@@ -40,32 +99,114 @@ export class PassiveSkillParser {
         return isDamage || isStatBoost;
     }
 
-    // 2. 獲取解析結果
-    public get result(): PassiveSkillModel {
-        const scopeResult = this.resolveScope();
-        const logicResult = this.resolveLogicAndCondition();
-        const multiplierResult = this.resolveMultiplier(logicResult.isDynamic);
-        const statBoost = this.resolveStatBoost();
+    private resolveTeamWorker(name: string, desc: string): PassiveSkillModel {
+        const prefix = name.substring(0, 2);
+        const key = prefix.split("之")[0];
+        return {
+            name: name,
+            desc: desc,
+            passiveName: name,
+            statBoost: {
+                isStatBoost: false,
+                stats: [],
+                value: 1.0
+            },
+            condition: {
+                key: key,
+                detail: "自身",
+                logic: LogicType.ArcSuitPassive,
+            },
+            boost: {
+                scope: MoveScope.Move,
+                value: 0.1,
+                baseValue: 0.1,
+            },
+            applyToParty: true,
+        }
+    }
+
+    private resolveMaster(name: string, desc: string): PassiveSkillModel {
+        const match = name.match(/^(.+?)(?:的|’s)\s*(先驅|鬥志|信念)$/);
+        const key = match[1];
+        let scope = MoveScope.Move;
+        let value = 0.0;
+        let baseValue = 0.0;
+
+        if (name.includes("先驅")) { scope = MoveScope.Move, value = 0.1, baseValue = 0.1 };
+        if (name.includes("鬥志")) { scope = MoveScope.MovePhysical, value = 0.15, baseValue = 0.2 };
+        if (name.includes("信念")) { scope = MoveScope.MoveSpecial, value = 0.15, baseValue = 0.2 };
 
         return {
-            name: this.name,
-            desc: this.desc,
-            passiveName: this.passiveName,
-            applyToParty:
-                this.name.includes("G") || this.desc.includes("全體拍組"), // 注意全形G
-            multiplier: {
-                scope: scopeResult.scope,
-                moveName: scopeResult.moveName,
-                value: multiplierResult.value,
+            name: name,
+            desc: desc,
+            passiveName: name,
+            statBoost: {
+                isStatBoost: false,
+                stats: [],
+                value: 1.0
             },
-            statBoost: statBoost,
             condition: {
-                key: logicResult.key,
-                detail: logicResult.detail,
-                direction: logicResult.direction,
-                logic: logicResult.logic,
+                key: key,
+                detail: "自身",
+                logic: LogicType.MasterPassive,
             },
-        };
+            boost: {
+                scope: scope,
+                value: value,
+                baseValue: baseValue,
+            },
+            applyToParty: true,
+
+        }
+    }
+
+    private resolveArcSuit(name: string, desc: string): PassiveSkillModel {
+        const key = name.substring(0, 2);
+        // let key = "一般";
+        // switch (prefix) {
+        //     case "火球":
+        //         key = "火";
+        //         break;
+        //     case "大地":
+        //         key = "地面";
+        //         break;
+        //     case "蓝天":
+        //         key = "飛行";
+        //         break;
+        //     case "玉蟲":
+        //         key = "蟲";
+        //         break;
+        //     case "龙之":
+        //         key = "龍";
+        //         break;
+        //     case "惡顔":
+        //         key = "惡顔";
+        //         break;
+        //     case "钢铁":
+        //         key = "鋼";
+        //         break;
+        // }
+        return {
+            name: name,
+            desc: desc,
+            passiveName: name,
+            statBoost: {
+                isStatBoost: false,
+                stats: [],
+                value: 1.0
+            },
+            condition: {
+                key: key,
+                detail: "自身",
+                logic: LogicType.ArcSuitPassive,
+            },
+            boost: {
+                scope: MoveScope.Move,
+                value: 0.1,
+                baseValue: 0.1,
+            },
+            applyToParty: true,
+        }
     }
 
     // --- 解析作用範圍 (Scope) ---
@@ -407,7 +548,7 @@ export class PassiveSkillParser {
     }
 
     // --- 解析數值 (Multiplier) ---
-    private resolveMultiplier(isDynamic: boolean): { value: number } {
+    private resolveBoostValue(isDynamic: boolean): { value: number } {
         // 如果邏輯判斷是動態的 (Scaling)，直接返回 0 (或其他標記值)，交由計算器處理
         if (isDynamic) {
             return { value: 0 };
@@ -436,11 +577,7 @@ export class PassiveSkillParser {
     }
 
     // --- 解析白值增益類 ---
-    private resolveStatBoost(): {
-        isStatBoost: boolean;
-        stats: string[];
-        value: number;
-    } {
+    private resolveStatBoost(): PassiveStatBoost {
         const stats: string[] = [];
         const desc = this.desc;
         let value = 1;
@@ -474,6 +611,10 @@ export class PassiveSkillParser {
             value = 1;
         }
 
-        return { isStatBoost, stats, value };
+        return {
+            isStatBoost: isStatBoost,
+            stats: stats,
+            value: value,
+        };
     }
 }

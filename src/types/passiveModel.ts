@@ -5,6 +5,8 @@ export enum MoveScope {
     MoveAndMax = "MoveAndMax",
     MaxAndSync = "MaxAndSync",
     MoveAndSync = "MoveAndSync",
+    MoveSpecial = "MoveSpecial",
+    MovePhysical = "MovePhysical",
     All = "All", // 所有招式 (通常描述为"威力提升")
     Specific = "Specific", // 特定招式
 }
@@ -56,6 +58,11 @@ export enum LogicType {
     // 特殊效果
     Compound = "Compound",
     NoDecay = "NoDecay",
+
+    // 特殊被動
+    MasterPassive = "MasterPassive",
+    ArcSuitPassive = "ArcSuitPassive",
+    TeamWorkPassive = "TeamWorkPassive"
 }
 
 export interface PassiveRawText {
@@ -70,27 +77,32 @@ export interface PassiveCondition {
     direction?: string;
 }
 
+export interface PassiveBoost {
+    scope: MoveScope;
+    moveName?: string;
+    value: number;
+    baseValue?: number;
+}
+
+export interface PassiveStatBoost {
+    isStatBoost: boolean;
+    stats: string[]; // ['atk', 'def', ...]
+    value: number; // 乘算倍数
+}
+
 export interface PassiveSkillModel {
     name: string;
     desc: string;
     passiveName: string;
     // 触发条件
-    condition: PassiveCondition;
     // LogicType.Compound 才會使用
+    condition: PassiveCondition;
     conditions?: PassiveCondition[];
     // 伤害相关
-    multiplier: {
-        scope: MoveScope;
-        moveName?: string; // 如果 scope 是 Specific，这里存招式名
-        value: number; // 最大倍率 (如 0.5, 1.0, 9.0)
-    };
+    boost: PassiveBoost;
 
     // 白值加成类，影响的白值
-    statBoost: {
-        isStatBoost: boolean;
-        stats: string[]; // ['atk', 'def', ...]
-        value: number; // 乘算倍数
-    };
+    statBoost: PassiveStatBoost;
 
     applyToParty: boolean; // 是否全队生效 (G标)
 }

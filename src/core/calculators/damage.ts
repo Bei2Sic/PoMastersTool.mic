@@ -12,11 +12,12 @@ import {
     getStatKeyByStatCNname,
     getTypeCNnameByTypeIndex,
 } from "@/core/exporter/map";
-import { ActiveMultiplier, CalcEnvironment } from "@/types/calculator";
+import { ActiveMultiplier, CalcEnvironment, ThemeContext } from "@/types/calculator";
 import { HindranceType, PokemonType } from "@/types/conditions";
 import {
     LogicType,
     MoveScope,
+    PassiveBoost,
     PassiveCondition,
     PassiveSkillModel,
 } from "@/types/passiveModel";
@@ -28,16 +29,17 @@ export class DamageEngine {
         move: MoveBase,
         scope: MoveScope,
         passives: PassiveSkillModel[],
-        context: CalcEnvironment
+        context: CalcEnvironment,
+        theme: ThemeContext,
     ): ActiveMultiplier[] {
         const result: ActiveMultiplier[] = [];
 
         for (const passive of passives) {
-            // 0. 跳過白值類 和 計量槽消耗增加類 (這兩個由別的方法處理)
+            // 跳過白值類
             if (passive.statBoost.isStatBoost) continue;
             // if (passive.condition.logic === LogicType.GaugeCost) continue;
 
-            const pm = passive.multiplier;
+            const pm = passive.boost;
             if (!pm) continue;
 
             // 1. 先判断效果作用对象是否符合
@@ -45,8 +47,9 @@ export class DamageEngine {
                 !this.isScopeMatch(
                     pm.scope,
                     scope,
+                    move.category,
                     move.name,
-                    passive.multiplier.moveName
+                    pm.moveName
                 )
             ) {
                 continue;
@@ -60,9 +63,9 @@ export class DamageEngine {
                     passive.condition,
                     scope,
                     context,
-                    value
+                    passive.boost,
+                    theme,
                 );
-                console.log(`multi:${scalingValue}`);
                 value = scalingValue;
             } else {
                 if (
@@ -117,8 +120,9 @@ export class DamageEngine {
     // }
 
     private static isScopeMatch(
-        scope: MoveScope | undefined,
+        scope: MoveScope,
         currentScope: MoveScope,
+        category: string,
         currentMoveName: string,
         targetMoveName?: string
     ): boolean {
@@ -128,17 +132,21 @@ export class DamageEngine {
             case MoveScope.All:
                 return true; // 適用所有
             case MoveScope.Move:
-                return currentScope === "Move";
+                return currentScope === MoveScope.Move;
             case MoveScope.Sync:
-                return currentScope === "Sync"; // 僅拍招
+                return currentScope === MoveScope.Sync; // 僅拍招
             case MoveScope.Max:
-                return currentScope === "Max"; // 僅極巨
+                return currentScope === MoveScope.Max; // 僅極巨
             case MoveScope.MoveAndMax:
-                return currentScope === "Move" || currentScope === "Max";
+                return currentScope === MoveScope.Move || currentScope === MoveScope.Max;
             case MoveScope.MaxAndSync:
-                return currentScope === "Max" || currentScope === "Sync";
+                return currentScope === MoveScope.Sync || currentScope === MoveScope.Max;
             case MoveScope.MoveAndSync:
-                return currentScope === "Move" || currentScope === "Sync";
+                return currentScope === MoveScope.Move || currentScope === MoveScope.Sync;
+            case MoveScope.MovePhysical:
+                return currentScope === MoveScope.Move && category === "物理";
+            case MoveScope.MoveSpecial:
+                return currentScope === MoveScope.Move && category === "特殊";
             case MoveScope.Specific:
                 console.log(targetMoveName === currentMoveName);
                 return targetMoveName === currentMoveName;
@@ -149,10 +157,13 @@ export class DamageEngine {
 
     private static isScaling(logicType: LogicType): boolean {
         switch (logicType) {
-            case LogicType.SingleStatScaling ||
-                LogicType.TotalStatScaling ||
-                LogicType.HPScaling ||
-                LogicType.GaugeScaling:
+            case LogicType.SingleStatScaling:
+            case LogicType.TotalStatScaling:
+            case LogicType.HPScaling:
+            case LogicType.GaugeScaling:
+            case LogicType.MasterPassive:
+            case LogicType.TeamWorkPassive:
+            case LogicType.ArcSuitPassive:
                 return true;
             default:
                 return false;
@@ -163,7 +174,8 @@ export class DamageEngine {
         cond: PassiveCondition,
         scope: MoveScope,
         env: CalcEnvironment,
-        specialRate?: number
+        boost: PassiveBoost,
+        theme: ThemeContext,
     ): number {
         let value = 0;
         switch (cond.logic) {
@@ -229,7 +241,7 @@ export class DamageEngine {
                 if (scope === "Sync") {
                     return GAUGE_SYNC_MULTIPLIERS[env.settings.gauge] ?? 0;
                 } else {
-                    return env.settings.gauge * specialRate * 0.01;
+                    return env.settings.gauge * boost.value * 0.01;
                 }
 
             case LogicType.HPScaling:
@@ -250,9 +262,18 @@ export class DamageEngine {
                 } else {
                     threshold = thresholdTable[3];
                 }
-                const rawValue = (specialRate || 0) * factor * threshold;
+                const rawValue = (boost.value || 0) * factor * threshold;
                 value = Math.ceil(rawValue * 100) / 100;
 
+                return value;
+
+            case LogicType.TeamWorkPassive:
+            case LogicType.MasterPassive:
+            case LogicType.ArcSuitPassive:
+                const count = theme.tagCounts[cond.key] || 0;
+                value = (boost.baseValue || 0.0) + (count - 1) * boost.value;
+
+                console.log(`value:${value}`);
                 return value;
         }
 

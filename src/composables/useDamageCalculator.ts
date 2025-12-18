@@ -158,25 +158,23 @@ export function useDamageCalculator(
             const rawPassives = collectActivePassives(sync, formIndex);
 
             const passiveModels = rawPassives.flatMap((p) => {
-                // 大师被动
-
+                // 特殊被动查表
                 const override = PASSIVE_OVERRIDES[p.passiveName];
                 if (override) {
-                    console.log(override);
                     return override;
                 }
 
-                const isValid = PassiveSkillParser.isValid(p.name, p.desc);
-                if (!isValid) {
-                    return [];
-                }
                 // 通用解析
                 const parser = new PassiveSkillParser(
                     p.name,
                     p.desc,
                     p.passiveName
                 );
-                return [parser.result];
+                const result = parser.result;
+                if (result !== null) {
+                    return [result];
+                }
+                return [];
             });
             // const validRawPassives = rawPassives.filter((p) => {
             //     // 調用靜態方法，傳入名字和描述
@@ -214,6 +212,7 @@ export function useDamageCalculator(
     const finalDamageResult = computed(() => {
         const sync = targetSync.value;
         const env = envSnapshot.value;
+        const theme = themeSnapshot.value;
         const formPassivesList = passiveSnapshot.value; // 拿到剛剛解析好的被動列表
 
         if (!sync || !formPassivesList.length) return [];
@@ -358,7 +357,8 @@ export function useDamageCalculator(
                         m,
                         MoveScope.Move,
                         currentPassives,
-                        env
+                        env,
+                        theme,
                     );
                     return { multi: multi };
                 }

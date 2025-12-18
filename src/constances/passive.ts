@@ -6,7 +6,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "小智的熱忱",
             desc: "",
             passiveName: "小智的熱忱",
-            multiplier: {
+            boost: {
                 scope: MoveScope.Specific,
                 moveName: "打雷",
                 value: 0.3,
@@ -29,7 +29,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "坂木的經驗",
             desc: "",
             passiveName: "坂木的經驗",
-            multiplier: {
+            boost: {
                 scope: MoveScope.Move,
                 value: 0.5,
             },
@@ -51,7 +51,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "洛茲的成就",
             desc: "",
             passiveName: "洛茲的成就",
-            multiplier: {
+            boost: {
                 scope: MoveScope.Move,
                 value: 0.2,
             },
@@ -73,7 +73,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "紅髮的叛逆心",
             desc: "",
             passiveName: "紅髮的叛逆心",
-            multiplier: {
+            boost: {
                 scope: MoveScope.Move,
                 value: 0.2,
             },
@@ -95,7 +95,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "莽撞又衝動",
             desc: "",
             passiveName: "莽撞又衝動",
-            multiplier: {
+            boost: {
                 scope: MoveScope.Specific,
                 moveName: "近身戰",
                 value: 0.5,
@@ -118,7 +118,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "工廠頭目的知識",
             desc: "",
             passiveName: "工廠頭目的知識",
-            multiplier: {
+            boost: {
                 scope: MoveScope.Move,
                 value: 0.2,
             },
@@ -140,7 +140,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "新手老師的機智",
             desc: "",
             passiveName: "新手老師的機智",
-            multiplier: {
+            boost: {
                 scope: MoveScope.Move,
                 value: 0.05,
             },
@@ -161,7 +161,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "新手老師的機智",
             desc: "",
             passiveName: "新手老師的機智",
-            multiplier: {
+            boost: {
                 scope: MoveScope.Sync,
                 value: 0.1,
             },
@@ -184,7 +184,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "百聞不如一見",
             desc: "",
             passiveName: "百聞不如一見",
-            multiplier: {
+            boost: {
                 scope: MoveScope.Move,
                 value: 0.5,
             },
@@ -206,7 +206,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "首席冠軍的才華",
             desc: "",
             passiveName: "首席冠軍的才華",
-            multiplier: {
+            boost: {
                 scope: MoveScope.Specific,
                 moveName: "百花怒放晶光轉轉",
                 value: 1.0,
@@ -227,7 +227,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "首席冠軍的才華",
             desc: "",
             passiveName: "首席冠軍的才華",
-            multiplier: {
+            boost: {
                 scope: MoveScope.Specific,
                 moveName: "晶光轉轉",
                 value: 1.0,
@@ -250,7 +250,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "王家的財力",
             desc: "",
             passiveName: "王家的財力",
-            multiplier: {
+            boost: {
                 scope: MoveScope.All,
                 value: 0.4,
             },
@@ -272,7 +272,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "真新的啟程",
             desc: "",
             passiveName: "真新的啟程",
-            multiplier: {
+            boost: {
                 scope: MoveScope.Sync,
                 value: 0.1,
             },
@@ -295,7 +295,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "豐緣的熱忱",
             desc: "",
             passiveName: "豐緣的熱忱",
-            multiplier: {
+            boost: {
                 scope: MoveScope.All,
                 value: 0.2,
             },
@@ -315,7 +315,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "豐緣的熱忱",
             desc: "",
             passiveName: "豐緣的熱忱",
-            multiplier: {
+            boost: {
                 scope: MoveScope.All,
                 value: 0.2,
             },
@@ -349,7 +349,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "洗翠流動的時間",
             desc: "",
             passiveName: "洗翠流動的時間",
-            multiplier: {
+            boost: {
                 scope: MoveScope.Move,
                 value: 0.5,
             },
@@ -371,7 +371,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "破壞的本能",
             desc: "",
             passiveName: "破壞的本能",
-            multiplier: {
+            boost: {
                 scope: MoveScope.All,
                 value: 0.5,
             },
@@ -393,7 +393,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "力大無窮",
             desc: "",
             passiveName: "力大無窮",
-            multiplier: {
+            boost: {
                 scope: MoveScope.Specific,
                 moveName: "地震",
                 value: 0.9,
@@ -416,7 +416,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "攻擊程式",
             desc: "",
             passiveName: "攻擊程式",
-            multiplier: {
+            boost: {
                 scope: MoveScope.Specific,
                 moveName: "破壞光綫",
                 value: 0.5,
@@ -439,7 +439,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "保護夥伴的決心",
             desc: "",
             passiveName: "保護夥伴的決心",
-            multiplier: {
+            boost: {
                 scope: MoveScope.All,
                 value: 0.2,
             },
@@ -461,7 +461,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "熾烈熱舞",
             desc: "",
             passiveName: "熾烈熱舞",
-            multiplier: {
+            boost: {
                 scope: MoveScope.Move,
                 value: 0.5,
             },

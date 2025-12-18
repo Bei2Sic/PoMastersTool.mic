@@ -8,6 +8,7 @@ export type BonusIndex = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
 export interface TypeMapItem {
     key: string;
     cnName: string;
+    specialName?: string;
 }
 
 // temp: 潜能饼干类型资源

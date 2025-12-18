@@ -11,13 +11,17 @@ export const getTypeInfo = (
 };
 
 export const getTypeInfoWithCNName = (cnName: string): TypeMapItem => {
-    const typeList = Object.values(TypeMap);
-    const matchedType = typeList.find((item) => item.cnName === cnName);
+    const matchedType = Object.values(TypeMap).find((item) => item.cnName === cnName);
     return matchedType ?? TypeMap[0];
 };
 
 export const getTypeCNnameByTypeIndex = (typeIndex: number): string => {
     return TypeMap[typeIndex].cnName;
+}
+
+export const getTypeCNnameByTypeSpecialName = (specialName: string): string => {
+    const item = Object.values(TypeMap).find((val) => val.specialName === specialName);
+    return item ? item.cnName : specialName;
 } 
 
 export const getCategoryInfo = (
