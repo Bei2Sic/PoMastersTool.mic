@@ -1,10 +1,10 @@
-import { LogicType, MoveScope, PassiveSkillModel, PassiveStatBoost } from "@/types/passiveModel";
-// 假設這些常量在您的常量文件中定義
+import { LogicType, MoveScope } from "@/types/calculator";
 import {
     ABNORMAL_STATUSES,
     HINDRANCE_STATUSES,
     WEATHER_STATUSES,
 } from "@/types/conditions";
+import { PassiveSkillModel, PassiveStatBoost } from "@/types/passiveModel";
 
 export class PassiveSkillParser {
     private name: string;
@@ -19,6 +19,10 @@ export class PassiveSkillParser {
 
     // 獲取解析結果
     public get result(): PassiveSkillModel {
+        // 屬性替換
+        if (this.isTypeShift(this.name)) {
+            return this.resolveTypeShift(this.name, this.desc);
+        }
 
         // 处理大师被动&阿尔被动
         if (this.isTeamWorker(this.name)) {
@@ -76,6 +80,10 @@ export class PassiveSkillParser {
         return /神話$/.test(name);
     }
 
+    private isTypeShift(name: string): boolean {
+        return name.includes("屬性替換");
+    }
+
     // 合法性檢查：只處理傷害相關
     private isValid(name: string, desc: string): boolean {
         if (name.includes("威力↓")) return false;
@@ -109,7 +117,7 @@ export class PassiveSkillParser {
             statBoost: {
                 isStatBoost: false,
                 stats: [],
-                value: 1.0
+                value: 1.0,
             },
             condition: {
                 key: key,
@@ -122,7 +130,7 @@ export class PassiveSkillParser {
                 baseValue: 0.1,
             },
             applyToParty: true,
-        }
+        };
     }
 
     private resolveMaster(name: string, desc: string): PassiveSkillModel {
@@ -132,9 +140,15 @@ export class PassiveSkillParser {
         let value = 0.0;
         let baseValue = 0.0;
 
-        if (name.includes("先驅")) { scope = MoveScope.Move, value = 0.1, baseValue = 0.1 };
-        if (name.includes("鬥志")) { scope = MoveScope.MovePhysical, value = 0.15, baseValue = 0.2 };
-        if (name.includes("信念")) { scope = MoveScope.MoveSpecial, value = 0.15, baseValue = 0.2 };
+        if (name.includes("先驅")) {
+            (scope = MoveScope.Move), (value = 0.1), (baseValue = 0.1);
+        }
+        if (name.includes("鬥志")) {
+            (scope = MoveScope.MovePhysical), (value = 0.15), (baseValue = 0.2);
+        }
+        if (name.includes("信念")) {
+            (scope = MoveScope.MoveSpecial), (value = 0.15), (baseValue = 0.2);
+        }
 
         return {
             name: name,
@@ -143,7 +157,7 @@ export class PassiveSkillParser {
             statBoost: {
                 isStatBoost: false,
                 stats: [],
-                value: 1.0
+                value: 1.0,
             },
             condition: {
                 key: key,
@@ -156,8 +170,7 @@ export class PassiveSkillParser {
                 baseValue: baseValue,
             },
             applyToParty: true,
-
-        }
+        };
     }
 
     private resolveArcSuit(name: string, desc: string): PassiveSkillModel {
@@ -193,7 +206,7 @@ export class PassiveSkillParser {
             statBoost: {
                 isStatBoost: false,
                 stats: [],
-                value: 1.0
+                value: 1.0,
             },
             condition: {
                 key: key,
@@ -206,7 +219,31 @@ export class PassiveSkillParser {
                 baseValue: 0.1,
             },
             applyToParty: true,
-        }
+        };
+    }
+
+    private resolveTypeShift(name: string, desc: string): PassiveSkillModel {
+        const key = name.replace("屬性替換", "").trim();
+        return {
+            name: name,
+            desc: desc,
+            passiveName: name,
+            statBoost: {
+                isStatBoost: false,
+                stats: [],
+                value: 1.0,
+            },
+            condition: {
+                key: key,
+                detail: "自身",
+                logic: LogicType.TypeShift,
+            },
+            boost: {
+                scope: MoveScope.Move,
+                value: 0.0,
+            },
+            applyToParty: false,
+        };
     }
 
     // --- 解析作用範圍 (Scope) ---
@@ -367,14 +404,14 @@ export class PassiveSkillParser {
             return {
                 logic: LogicType.AbnormalActive,
                 key: "異常狀態",
-                detail: "自身",
+                detail: desc.includes("對手") ? "對手" : "自身",
                 isDynamic: false,
             };
         if (desc.includes("妨害狀態"))
             return {
                 logic: LogicType.HindranceActive,
                 key: "妨害狀態",
-                detail: "自身",
+                detail: desc.includes("對手") ? "對手" : "自身",
                 isDynamic: false,
             };
         if (desc.includes("HP非全滿狀態"))
@@ -388,14 +425,14 @@ export class PassiveSkillParser {
             return {
                 logic: LogicType.AllStatNotInHigh,
                 key: "沒有處於提高狀態的能力",
-                detail: desc.includes("自身") ? "自身" : "對手",
+                detail: desc.includes("對手") ? "對手" : "自身",
                 isDynamic: false,
             };
         if (desc.includes("能力降低"))
             return {
                 logic: LogicType.AnyStatInLow,
                 key: "能力降低",
-                detail: desc.includes("自身") ? "自身" : "對手",
+                detail: desc.includes("對手") ? "對手" : "自身",
                 isDynamic: false,
             };
         if (desc.includes("HP非全滿狀態"))
@@ -506,7 +543,7 @@ export class PassiveSkillParser {
                 return {
                     logic: LogicType.Abnormal,
                     key: s,
-                    detail: desc.includes("自身") ? "自身" : "對手",
+                    detail: desc.includes("對手") ? "對手" : "自身",
                     isDynamic: false,
                 };
         }
@@ -516,9 +553,21 @@ export class PassiveSkillParser {
                 return {
                     logic: LogicType.Hindrance,
                     key: s,
-                    detail: "對手",
+                    detail: desc.includes("對手") ? "對手" : "自身",
                     isDynamic: false,
                 };
+        }
+        // 屬性招式威力
+        if (name.includes("屬性威力")) {
+            let match = name.match(/(.+?屬性)/);
+            if (match) {
+                return {
+                    logic: LogicType.MoveType,
+                    key: match[1].replace("屬性", "").trim(),
+                    detail: "自身",
+                    isDynamic: false,
+                };
+            }
         }
 
         // 4. 能力等級 (非 Scaling，二元判斷，如：速度提升時威力提升)

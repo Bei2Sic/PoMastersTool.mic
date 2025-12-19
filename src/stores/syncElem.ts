@@ -301,10 +301,10 @@ const createSync = (jsonData: SyncRawData): Sync => {
                     case 7:
                         return "太晶化形態";
                     default:
-                        return item.form ?? "未知形態";
+                        return item.form ?? "基礎形態";
                 }
             });
-            variationList[0] = "基礎形態";
+            // variationList[0] = "基礎形態";
 
             return variationList;
         },

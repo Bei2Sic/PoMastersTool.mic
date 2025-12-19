@@ -1,4 +1,5 @@
-import { LogicType, MoveScope, PassiveSkillModel } from "@/types/passiveModel";
+import { LogicType, MoveScope } from "@/types/calculator";
+import { PassiveSkillModel } from "@/types/passiveModel";
 
 export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
     小智的熱忱: [
@@ -19,7 +20,29 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             statBoost: {
                 isStatBoost: false,
                 stats: [],
-                value: 0,
+                value: 1.0,
+            },
+            applyToParty: false,
+        },
+    ],
+    坂木的本領: [
+        {
+            name: "坂木的本領",
+            desc: "",
+            passiveName: "坂木的本領",
+            boost: {
+                scope: MoveScope.Move,
+                value: 1.0,
+            },
+            condition: {
+                key: "地面",
+                detail: "自身",
+                logic: LogicType.TypeShift,
+            },
+            statBoost: {
+                isStatBoost: false,
+                stats: [],
+                value: 1.0,
             },
             applyToParty: false,
         },
@@ -41,7 +64,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             statBoost: {
                 isStatBoost: false,
                 stats: [],
-                value: 0,
+                value: 1.0,
             },
             applyToParty: false,
         },
@@ -63,7 +86,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             statBoost: {
                 isStatBoost: false,
                 stats: [],
-                value: 0,
+                value: 1.0,
             },
             applyToParty: false,
         },
@@ -85,7 +108,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             statBoost: {
                 isStatBoost: false,
                 stats: [],
-                value: 0,
+                value: 1.0,
             },
             applyToParty: true,
         },
@@ -108,7 +131,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             statBoost: {
                 isStatBoost: false,
                 stats: [],
-                value: 0,
+                value: 1.0,
             },
             applyToParty: false,
         },
@@ -130,7 +153,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             statBoost: {
                 isStatBoost: false,
                 stats: [],
-                value: 0,
+                value: 1.0,
             },
             applyToParty: true,
         },
@@ -153,7 +176,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             statBoost: {
                 isStatBoost: false,
                 stats: [],
-                value: 0,
+                value: 1.0,
             },
             applyToParty: false,
         },
@@ -174,7 +197,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             statBoost: {
                 isStatBoost: false,
                 stats: [],
-                value: 0,
+                value: 1.0,
             },
             applyToParty: false,
         },
@@ -196,7 +219,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             statBoost: {
                 isStatBoost: false,
                 stats: [],
-                value: 0,
+                value: 1.0,
             },
             applyToParty: false,
         },
@@ -219,7 +242,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             statBoost: {
                 isStatBoost: false,
                 stats: [],
-                value: 0,
+                value: 1.0,
             },
             applyToParty: false,
         },
@@ -240,7 +263,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             statBoost: {
                 isStatBoost: false,
                 stats: [],
-                value: 0,
+                value: 1.0,
             },
             applyToParty: false,
         },
@@ -262,7 +285,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             statBoost: {
                 isStatBoost: false,
                 stats: [],
-                value: 0,
+                value: 1.0,
             },
             applyToParty: true,
         },
@@ -285,7 +308,29 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             statBoost: {
                 isStatBoost: false,
                 stats: [],
-                value: 0,
+                value: 1.0,
+            },
+            applyToParty: false,
+        },
+    ],
+    披著披風的龍之使者: [
+        {
+            name: "披著披風的龍之使者",
+            desc: "",
+            passiveName: "披著披風的龍之使者",
+            boost: {
+                scope: MoveScope.Move,
+                value: 0.0,
+            },
+            condition: {
+                key: "龍",
+                detail: "自身",
+                logic: LogicType.TypeShift,
+            },
+            statBoost: {
+                isStatBoost: false,
+                stats: [],
+                value: 1.0,
             },
             applyToParty: false,
         },
@@ -307,7 +352,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             statBoost: {
                 isStatBoost: false,
                 stats: [],
-                value: 0,
+                value: 1.0,
             },
             applyToParty: true,
         },
@@ -331,7 +376,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
                     logic: LogicType.Weather,
                 },
                 {
-                    key: "地面屬性",
+                    key: "地面",
                     detail: "自身",
                     logic: LogicType.MoveType,
                 },
@@ -339,7 +384,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             statBoost: {
                 isStatBoost: false,
                 stats: [],
-                value: 0,
+                value: 1.0,
             },
             applyToParty: true,
         },
@@ -361,7 +406,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             statBoost: {
                 isStatBoost: false,
                 stats: [],
-                value: 0,
+                value: 1.0,
             },
             applyToParty: false,
         },
@@ -383,7 +428,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             statBoost: {
                 isStatBoost: false,
                 stats: [],
-                value: 0,
+                value: 1.0,
             },
             applyToParty: false,
         },
@@ -406,7 +451,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             statBoost: {
                 isStatBoost: false,
                 stats: [],
-                value: 0,
+                value: 1.0,
             },
             applyToParty: false,
         },
@@ -429,7 +474,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             statBoost: {
                 isStatBoost: false,
                 stats: [],
-                value: 0,
+                value: 1.0,
             },
             applyToParty: false,
         },
@@ -451,7 +496,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             statBoost: {
                 isStatBoost: false,
                 stats: [],
-                value: 0,
+                value: 1.0,
             },
             applyToParty: true,
         },
@@ -473,9 +518,170 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             statBoost: {
                 isStatBoost: false,
                 stats: [],
-                value: 0,
+                value: 1.0,
             },
             applyToParty: false,
+        },
+    ],
+    關都的耀眼傳說: [
+        {
+            name: "關都的耀眼傳說",
+            desc: "",
+            passiveName: "關都的耀眼傳說",
+            boost: {
+                scope: MoveScope.MoveAndSync,
+                value: 0.15,
+                baseValue: 0.2,
+            },
+            condition: {
+                key: "關都",
+                detail: "自身",
+                logic: LogicType.MasterPassive,
+            },
+            statBoost: {
+                isStatBoost: false,
+                stats: [],
+                value: 1.0,
+            },
+            applyToParty: true,
+        },
+    ],
+    洗翠的耀眼珍珠: [
+        {
+            name: "洗翠的耀眼珍珠",
+            desc: "",
+            passiveName: "洗翠的耀眼珍珠",
+            boost: {
+                scope: MoveScope.MoveAndSync,
+                value: 0.15,
+                baseValue: 0.2,
+            },
+            condition: {
+                key: "神奧",
+                detail: "自身",
+                logic: LogicType.MasterPassive,
+            },
+            statBoost: {
+                isStatBoost: false,
+                stats: [],
+                value: 1.0,
+            },
+            applyToParty: true,
+        },
+    ],
+    洗翠的寶可夢馴化師: [
+        {
+            name: "洗翠的寶可夢馴化師",
+            desc: "",
+            passiveName: "洗翠的寶可夢馴化師",
+            boost: {
+                scope: MoveScope.MoveAndSync,
+                value: 0.15,
+                baseValue: 0.2,
+            },
+            condition: {
+                key: "神奧",
+                detail: "自身",
+                logic: LogicType.MasterPassive,
+            },
+            statBoost: {
+                isStatBoost: false,
+                stats: [],
+                value: 1.0,
+            },
+            applyToParty: true,
+        },
+    ],
+    合眾的溫柔英雄: [
+        {
+            name: "合眾的溫柔英雄",
+            desc: "",
+            passiveName: "合眾的溫柔英雄",
+            boost: {
+                scope: MoveScope.MoveAndSync,
+                value: 0.15,
+                baseValue: 0.2,
+            },
+            condition: {
+                key: "合眾",
+                detail: "自身",
+                logic: LogicType.MasterPassive,
+            },
+            statBoost: {
+                isStatBoost: false,
+                stats: [],
+                value: 1.0,
+            },
+            applyToParty: true,
+        },
+    ],
+    合眾的熱血少女: [
+        {
+            name: "合眾的熱血少女",
+            desc: "",
+            passiveName: "合眾的熱血少女",
+            boost: {
+                scope: MoveScope.MoveAndSync,
+                value: 0.15,
+                baseValue: 0.2,
+            },
+            condition: {
+                key: "合眾",
+                detail: "自身",
+                logic: LogicType.MasterPassive,
+            },
+            statBoost: {
+                isStatBoost: false,
+                stats: [],
+                value: 1.0,
+            },
+            applyToParty: true,
+        },
+    ],
+    伽勒爾的耀眼王牌: [
+        {
+            name: "伽勒爾的耀眼王牌",
+            desc: "",
+            passiveName: "伽勒爾的耀眼王牌",
+            boost: {
+                scope: MoveScope.MoveAndSync,
+                value: 0.15,
+                baseValue: 0.2,
+            },
+            condition: {
+                key: "伽勒爾",
+                detail: "自身",
+                logic: LogicType.MasterPassive,
+            },
+            statBoost: {
+                isStatBoost: false,
+                stats: [],
+                value: 1.0,
+            },
+            applyToParty: true,
+        },
+    ],
+    夯到不行的北上潮女: [
+        {
+            name: "夯到不行的北上潮女",
+            desc: "",
+            passiveName: "夯到不行的北上潮女",
+            boost: {
+                scope: MoveScope.MoveAndSync,
+                value: 0.15,
+                baseValue: 0.2,
+            },
+            condition: {
+                key: "帕底亞",
+                detail: "自身",
+                logic: LogicType.MasterPassive,
+            },
+            statBoost: {
+                isStatBoost: false,
+                stats: [],
+                value: 1.0,
+            },
+            applyToParty: true,
         },
     ],
 };

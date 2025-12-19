@@ -4,8 +4,7 @@ import { DamageEngine } from "@/core/calculators/damage";
 import { ThemeContextResolver } from "@/core/calculators/theme";
 import { PassiveSkillParser } from "@/core/parse/passive";
 import { useDamageCalcStore } from "@/stores/damageCalc";
-import { CalcEnvironment, ThemeContext } from "@/types/calculator";
-import { MoveScope } from "@/types/passiveModel";
+import { CalcEnvironment, MoveScope, ThemeContext } from "@/types/calculator";
 import { Sync } from "@/types/syncModel";
 import { computed, Ref } from "vue";
 
@@ -358,7 +357,7 @@ export function useDamageCalculator(
                         MoveScope.Move,
                         currentPassives,
                         env,
-                        theme,
+                        theme
                     );
                     return { multi: multi };
                 }

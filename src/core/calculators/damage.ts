@@ -12,15 +12,16 @@ import {
     getStatKeyByStatCNname,
     getTypeCNnameByTypeIndex,
 } from "@/core/exporter/map";
-import { ActiveMultiplier, CalcEnvironment, ThemeContext } from "@/types/calculator";
-import { HindranceType, PokemonType } from "@/types/conditions";
 import {
+    ActiveMultiplier,
+    CalcEnvironment,
     LogicType,
     MoveScope,
-    PassiveBoost,
-    PassiveCondition,
-    PassiveSkillModel,
-} from "@/types/passiveModel";
+    ThemeContext,
+} from "@/types/calculator";
+import { HindranceType, PokemonType } from "@/types/conditions";
+import { PassiveBoost, PassiveSkillModel } from "@/types/passiveModel";
+import { Condition } from "@/types/calculator";
 import { MoveBase } from "@/types/syncModel";
 
 export class DamageEngine {
@@ -30,14 +31,14 @@ export class DamageEngine {
         scope: MoveScope,
         passives: PassiveSkillModel[],
         context: CalcEnvironment,
-        theme: ThemeContext,
+        theme: ThemeContext
     ): ActiveMultiplier[] {
         const result: ActiveMultiplier[] = [];
 
         for (const passive of passives) {
             // 跳過白值類
             if (passive.statBoost.isStatBoost) continue;
-            // if (passive.condition.logic === LogicType.GaugeCost) continue;
+            if (passive.condition.logic === LogicType.TypeShift) continue;
 
             const pm = passive.boost;
             if (!pm) continue;
@@ -64,7 +65,7 @@ export class DamageEngine {
                     scope,
                     context,
                     passive.boost,
-                    theme,
+                    theme
                 );
                 value = scalingValue;
             } else {
@@ -90,34 +91,11 @@ export class DamageEngine {
         return result;
     }
 
-    // static getGaugeCostBoosts(
-    //     move: MoveBase,
-    //     scope: MoveScope,
-    //     passives: PassiveSkillModel[]
-    // ): ActiveMultiplier[] {
-    //     const result: ActiveMultiplier[] = [];
+    // 獲取白值變化的被動
+    static getStatBoostPassive() {}
 
-    //     for (const passive of passives) {
-    //         // 只處理 GaugeScaling 類型
-    //         if (passive.statBoost.isStatBoost) continue;
-    //         const pm = passive.multiplier;
-    //         if (passive.condition.logic !== LogicType.GaugeCost) continue;
-
-    //         if (!this.isScopeMatch(pm.scope, scope, move.name)) {
-    //             continue;
-    //         }
-
-    //         const finalValue = pm.value * 0.1;
-
-    //         result.push({
-    //             name: passive.passiveName,
-    //             value: finalValue,
-    //             logic: LogicType.GaugeCost,
-    //         });
-    //     }
-
-    //     return result;
-    // }
+    // 獲取屬性替換的被動（一般唯一）
+    static getTypeShiftPassive() {}
 
     private static isScopeMatch(
         scope: MoveScope,
@@ -138,11 +116,20 @@ export class DamageEngine {
             case MoveScope.Max:
                 return currentScope === MoveScope.Max; // 僅極巨
             case MoveScope.MoveAndMax:
-                return currentScope === MoveScope.Move || currentScope === MoveScope.Max;
+                return (
+                    currentScope === MoveScope.Move ||
+                    currentScope === MoveScope.Max
+                );
             case MoveScope.MaxAndSync:
-                return currentScope === MoveScope.Sync || currentScope === MoveScope.Max;
+                return (
+                    currentScope === MoveScope.Sync ||
+                    currentScope === MoveScope.Max
+                );
             case MoveScope.MoveAndSync:
-                return currentScope === MoveScope.Move || currentScope === MoveScope.Sync;
+                return (
+                    currentScope === MoveScope.Move ||
+                    currentScope === MoveScope.Sync
+                );
             case MoveScope.MovePhysical:
                 return currentScope === MoveScope.Move && category === "物理";
             case MoveScope.MoveSpecial:
@@ -171,11 +158,11 @@ export class DamageEngine {
     }
 
     private static getScalingMultiplier(
-        cond: PassiveCondition,
+        cond: Condition,
         scope: MoveScope,
         env: CalcEnvironment,
         boost: PassiveBoost,
-        theme: ThemeContext,
+        theme: ThemeContext
     ): number {
         let value = 0;
         switch (cond.logic) {
@@ -281,11 +268,11 @@ export class DamageEngine {
     }
 
     private static checkCondition(
-        cond: PassiveCondition,
+        cond: Condition,
         env: CalcEnvironment,
         moveType: number,
         moveTag: string,
-        conds?: PassiveCondition[]
+        conds?: Condition[]
     ): boolean {
         switch (cond.logic) {
             // 直接返回
