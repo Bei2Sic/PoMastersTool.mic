@@ -142,7 +142,7 @@
           "type": 17,
           "gauge": 3,
           "uses": "−",
-          "category": "物理",
+          "category": 1,
           "power": 100,
           "accuracy": 100,
           "target": "對手１對拍組",
@@ -157,7 +157,7 @@
           "type": 0,
           "gauge": 0,
           "uses": 2,
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "我方１對拍組",
@@ -172,7 +172,7 @@
           "type": 17,
           "gauge": 0,
           "uses": "−",
-          "category": "物理",
+          "category": 1,
           "power": 150,
           "accuracy": 100,
           "target": "對手全體拍組",
@@ -187,7 +187,7 @@
           "type": 0,
           "gauge": 0,
           "uses": 1,
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "自己",
@@ -203,7 +203,7 @@
         "type": 17,
         "gauge": 0,
         "uses": "−",
-        "category": "物理",
+        "category": 1,
         "power": 200,
         "accuracy": 0,
         "target": "對手１對拍組",
@@ -218,9 +218,8 @@
       "cookieName": "莉莉艾（2024週年慶）專用潛能餅乾１",
       "skills": [
         {
-          "name": "首次上場時場地招式計量槽加速",
+          "name": [],
           "description": "首次上場時,會讓我方場地變成招式計量槽加速狀態。",
-          "detail": [],
           "rate": 100
         }
       ]
@@ -458,7 +457,7 @@
       "level": 1,
       "x": -2,
       "y": 0,
-      "color": "#47D147",
+      "color": "#BF80FF",
       "type": 17
     },
     {
@@ -484,7 +483,7 @@
       "level": 2,
       "x": -3,
       "y": 0,
-      "color": "#47D147",
+      "color": "#BF80FF",
       "type": 17
     },
     {
@@ -601,7 +600,7 @@
       "level": 1,
       "x": 2,
       "y": -4,
-      "color": "#47D147",
+      "color": "#BF80FF",
       "type": 17
     },
     {
@@ -614,7 +613,7 @@
       "level": 1,
       "x": 3,
       "y": -5,
-      "color": "#47D147",
+      "color": "#BF80FF",
       "type": 17
     },
     {
@@ -627,7 +626,7 @@
       "level": 2,
       "x": 1,
       "y": -4,
-      "color": "#47D147",
+      "color": "#BF80FF",
       "type": 17
     },
     {

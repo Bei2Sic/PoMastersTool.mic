@@ -7,26 +7,59 @@ import {
     SINGLE_STAT_SYNC_MULTIPLIERS,
     TOTAL_STAT_MOVE_MULTIPLIERS,
     TOTAL_STAT_SYNC_MULTIPLIERS,
+    ATK_CIRCLE_MULTIPLIERS,
+    DEF_CIRCLE_MULTIPLIERS,
+    GENERAL_RANK_MULTIPLIERS,
+    SPEED_RANK_MULTIPLIERS,
+    REBUFF_MULTIPLIERS,
 } from "@/constances/rate";
 import {
-    getStatKeyByStatCNname,
-    getTypeCNnameByTypeIndex,
+    getStatKeyByStatCnName,
+    getTypeCnNameByTypeIndex,
+    getTypeSpecialNameByTypeIndex,
+    getTypeIndexByCnName
 } from "@/core/exporter/map";
 import {
     ActiveMultiplier,
     CalcEnvironment,
+    ExtraLogic,
     LogicType,
     MoveScope,
     ThemeContext,
 } from "@/types/calculator";
-import { HindranceType, PokemonType } from "@/types/conditions";
+import { HindranceType, PokemonType, CircleCategory, RegionType, STATS, PokemonStats } from "@/types/conditions";
 import { PassiveBoost, PassiveSkillModel } from "@/types/passiveModel";
 import { Condition } from "@/types/calculator";
 import { MoveBase } from "@/types/syncModel";
+import { DEFAULT_HANDLER, MoveSkillModel } from "@/types/moveModel";
 
 export class DamageEngine {
+
+    // 獲取屬性替換的被動（一般唯一）
+    static getTypeShiftPassive(move: MoveBase, passives: PassiveSkillModel[]): number {
+
+        // 一般屬性的才會變化，先判斷是不是一般屬性的
+        if (getTypeCnNameByTypeIndex(move.type) !== "一般") {
+            return move.type
+        }
+
+        const shiftPassive = passives.find(p =>
+            p.condition.logic === LogicType.NoEffect &&
+            p.condition.extra === ExtraLogic.TypeShift
+        );
+
+        if (shiftPassive) {
+            const targetTypeKey = shiftPassive.condition.key;
+            const newTypeIndex = getTypeIndexByCnName(targetTypeKey);
+            return newTypeIndex;
+        }
+
+        return move.type;
+
+    }
+
     // 被动技能处理
-    static getMultipliers(
+    static getPassiveMultipliers(
         move: MoveBase,
         scope: MoveScope,
         passives: PassiveSkillModel[],
@@ -38,7 +71,7 @@ export class DamageEngine {
         for (const passive of passives) {
             // 跳過白值類
             if (passive.statBoost.isStatBoost) continue;
-            if (passive.condition.logic === LogicType.TypeShift) continue;
+            if (passive.condition.logic === LogicType.NoEffect) continue;
 
             const pm = passive.boost;
             if (!pm) continue;
@@ -60,7 +93,7 @@ export class DamageEngine {
             const isScaling = this.isScaling(passive.condition.logic);
             let value = pm.value;
             if (isScaling) {
-                const scalingValue = this.getScalingMultiplier(
+                const scalingValue = this.getPassiveScalingMultiplier(
                     passive.condition,
                     scope,
                     context,
@@ -91,16 +124,242 @@ export class DamageEngine {
         return result;
     }
 
-    // 獲取白值變化的被動
-    static getStatBoostPassive() {}
+    static resolvePassiveSum(activePassives: ActiveMultiplier[]): number {
+        const totalPercent = activePassives.reduce((sum, item) => sum + item.value, 0);
 
-    // 獲取屬性替換的被動（一般唯一）
-    static getTypeShiftPassive() {}
+        return totalPercent;
+    }
+
+    static resolveBoosts(scope: MoveScope, category: number, context: CalcEnvironment): number {
+        let value = 0;
+        switch (scope) {
+            case MoveScope.Sync:
+                const syncBoost = context.user.boosts.sync;
+                value = syncBoost * 10;
+                return value;
+            case MoveScope.Move:
+                const moveBoost = category === 1 ? context.user.boosts.physical : context.user.boosts.special;
+                value = moveBoost * 40;
+                return value;
+            default:
+                return value;
+        }
+    }
+
+    static resolveMoveMultiplier(
+        move: MoveBase,
+        moveSkill: MoveSkillModel,
+        context: CalcEnvironment,
+    ): number {
+
+        //  默認技能模型沒有名字
+        if (moveSkill.name !== move.name) {
+            return 100;
+        }
+
+        // 判斷是不是特殊倍率類型
+        if (moveSkill.condition.logic === LogicType.SpecialHandler) {
+            const handler = moveSkill.handler ?? DEFAULT_HANDLER;
+            return handler(context, move);
+        }
+
+        // 判断是否是 scaling类
+        const isScaling = this.isScaling(moveSkill.condition.logic);
+        let value = moveSkill.boost;
+        if (isScaling) {
+            const scalingValue = this.getSyncMoveScalingMultiplier(
+                moveSkill.condition, context
+            )
+            value = scalingValue * 100;
+        } else {
+
+            if (!this.checkCondition(
+                moveSkill.condition,
+                context,
+                move.type,
+                move.tags
+            )) {
+                value = 100;
+            }
+        }
+
+        return value;
+    }
+
+    static resolveEnvMultipliers(
+        move: MoveBase,
+        scope: MoveScope,
+        context: CalcEnvironment,
+    ): number {
+        let boost = 100;
+        // 轉化下屬性
+        const typeCnName = getTypeCnNameByTypeIndex(move.type);
+        const typeSpecialName = getTypeSpecialNameByTypeIndex(move.type);
+
+        // 场地/天气/领域
+        switch (typeCnName) {
+            case "火":
+                if (context.weather === '晴天') {
+                    if (context.isEXWeather) {
+                        boost *= 3.0;
+                    } else {
+                        boost *= 1.5;
+                    }
+                }
+                break;
+            case "水":
+                if (context.weather === '下雨') {
+                    if (context.isEXWeather) {
+                        boost *= 3.0;
+                    } else {
+                        boost *= 1.5;
+                    }
+                }
+                break;
+            default:
+                if (context.terrain.includes(typeSpecialName)) {
+                    if (context.isEXTerrain) {
+                        boost *= 3.0;
+                    } else {
+                        boost *= 1.5;
+                    }
+                } else if (context.zone.includes(typeSpecialName)) {
+                    if (context.isEXZone) {
+                        boost *= 3.0;
+                    } else {
+                        boost *= 1.5;
+                    }
+                }
+        }
+
+        // 鬥陣(小招和拍招才可以享受，極巨化不行)
+        if ([MoveScope.Move, MoveScope.Sync].includes(scope)) {
+            const battleCircles = context.battleCircles;
+            Object.values(battleCircles).forEach((regionState) => {
+                const level = regionState.level;
+                if (move.category === 1) {
+                    if (regionState.actives["物理"] && level > 0) {
+                        boost *= ATK_CIRCLE_MULTIPLIERS[level];
+                    }
+                }
+                if (move.category === 2) {
+                    if (regionState.actives["特殊"] && level > 0) {
+                        boost *= ATK_CIRCLE_MULTIPLIERS[level];
+                    }
+                }
+                if (regionState.actives["防禦"] && level > 0) {
+                    boost *= DEF_CIRCLE_MULTIPLIERS[level]
+                }
+            });
+        }
+
+        // 抗性
+        const rebuffRank = context.target.typeRebuffs[typeCnName]
+        const rebuffBoost = REBUFF_MULTIPLIERS[Math.abs(rebuffRank)];
+        boost *= rebuffBoost;
+
+
+        // 效果絕佳 & 效果絕佳强化
+        if (context.settings.effectiveType === typeCnName) {
+            boost *= 2;
+            if (context.settings.isSuperEffective) {
+                boost *= 1.5;
+            }
+        }
+
+        // 擊中要害
+        if (context.settings.isCritical) {
+            boost *= 2;
+        }
+
+        return boost;
+    }
+
+    // 获取白值加成
+    static resolveStatBoost(
+        passives: PassiveSkillModel[],
+        context: CalcEnvironment,
+        stat: keyof PokemonStats,
+        ignoreBurn?: boolean,
+    ): number {
+        let boost = 100;
+        // 被动白值变化
+        passives.forEach(passive => {
+            if (passive.statBoost.isStatBoost) {
+                // 判断条件是否达成
+                if (this.checkCondition(passive.condition, context)) {
+                    passive.statBoost.stats.forEach((s) => {
+                        const statKey = getStatKeyByStatCnName(s)
+                        if (statKey === stat) {
+                            boost *= passive.statBoost.value; // (eg: *1.5)
+                        }
+                    })
+                }
+            }
+        });
+
+        // 获取对应白值属性的变化, 倍率查表
+        // todo: 增加白值属性抗性
+        const currentRank = context.user.ranks[stat] || 0;
+        const rankIndex = currentRank + 6;
+        let rankMultiplier = 1.0;
+        if (stat === 'spe') {
+            rankMultiplier = SPEED_RANK_MULTIPLIERS[rankIndex];
+        } else {
+            rankMultiplier = GENERAL_RANK_MULTIPLIERS[rankIndex];
+        }
+        boost *= rankMultiplier;
+
+        // todo: 增加灼傷抗性
+        // 灼伤影响(只针对攻击) (*0.8)
+        if (stat === 'atk') {
+            console.log(context.user.abnormal);
+            if (context.user.abnormal === '灼傷' && !ignoreBurn) {
+                console.log('灼伤效果触发');
+                boost *= 0.8;
+            }
+        }
+
+        return boost;
+    }
+
+    // 计算目标白值
+    static resolveTargetStatValue(
+        context: CalcEnvironment,
+        stat: keyof PokemonStats,
+    ): number {
+        let value = context.target.stats[stat] || 0;
+        let boost = 100;
+
+        // todo: 增加白值属性抗性, 现在先用 全种类抵抗5
+        const mitigation = 0.5;
+        const currentRank = context.target.ranks[stat] || 0;
+        const rankIndex = currentRank + 6;
+        let rankMultiplier = 1.0;
+        if (stat === 'spe') {
+            rankMultiplier = SPEED_RANK_MULTIPLIERS[rankIndex];
+        } else {
+            rankMultiplier = GENERAL_RANK_MULTIPLIERS[rankIndex];
+        }
+
+        if (currentRank < 0) {
+            // 下降
+            rankMultiplier = 1.0 - (1.0-rankMultiplier)*(1-mitigation);
+        }
+
+        boost *= rankMultiplier;
+
+        value = Math.floor(value * boost / 100);
+
+        return value;
+    }
+
+
 
     private static isScopeMatch(
         scope: MoveScope,
         currentScope: MoveScope,
-        category: string,
+        category: number,
         currentMoveName: string,
         targetMoveName?: string
     ): boolean {
@@ -131,11 +390,10 @@ export class DamageEngine {
                     currentScope === MoveScope.Sync
                 );
             case MoveScope.MovePhysical:
-                return currentScope === MoveScope.Move && category === "物理";
+                return currentScope === MoveScope.Move && category === 1;
             case MoveScope.MoveSpecial:
-                return currentScope === MoveScope.Move && category === "特殊";
+                return currentScope === MoveScope.Move && category === 2;
             case MoveScope.Specific:
-                console.log(targetMoveName === currentMoveName);
                 return targetMoveName === currentMoveName;
             default:
                 return false;
@@ -157,121 +415,11 @@ export class DamageEngine {
         }
     }
 
-    private static getScalingMultiplier(
-        cond: Condition,
-        scope: MoveScope,
-        env: CalcEnvironment,
-        boost: PassiveBoost,
-        theme: ThemeContext
-    ): number {
-        let value = 0;
-        switch (cond.logic) {
-            case LogicType.SingleStatScaling: // 可能有多项，以_分割
-                const stats = cond.detail.includes("對手")
-                    ? env.target.ranks
-                    : env.user.ranks;
-                const statsList = cond.key.split("_");
-                const multiplierTable =
-                    scope === "Sync"
-                        ? SINGLE_STAT_SYNC_MULTIPLIERS
-                        : SINGLE_STAT_MOVE_MULTIPLIERS;
-                statsList.forEach((statName) => {
-                    const statKey = getStatKeyByStatCNname(statName);
-                    const rankValue = stats[statKey];
-                    let effectiveRank = 0;
-                    if (cond.direction?.includes("下降") && rankValue < 0) {
-                        effectiveRank = Math.abs(rankValue);
-                    } else if (
-                        cond.direction?.includes("提升") &&
-                        rankValue > 0
-                    ) {
-                        effectiveRank = rankValue;
-                    }
-                    const safeIndex = Math.min(effectiveRank, 6);
-
-                    value += multiplierTable[safeIndex];
-                });
-                return value;
-
-            case LogicType.TotalStatScaling:
-                const totalStats = cond.detail.includes("對手")
-                    ? env.target.ranks
-                    : env.user.ranks;
-                const isStatLow = cond.direction?.includes("下降");
-                let totalRank = 0;
-                statsList.forEach((statName) => {
-                    const totalStatKey = getStatKeyByStatCNname(statName);
-                    const totalRankValue = totalStats[totalStatKey];
-                    if (isStatLow) {
-                        totalRank +=
-                            totalRankValue < 0 ? Math.abs(totalRankValue) : 0;
-                    } else {
-                        totalRank += totalRankValue < 0 ? 0 : totalRankValue;
-                    }
-                });
-                if (scope === "Sync") {
-                    const safeIndex = Math.min(
-                        totalRank,
-                        TOTAL_STAT_SYNC_MULTIPLIERS.length - 1
-                    );
-                    value = TOTAL_STAT_SYNC_MULTIPLIERS[safeIndex];
-                } else {
-                    const safeIndex = Math.min(
-                        totalRank,
-                        TOTAL_STAT_MOVE_MULTIPLIERS.length - 1
-                    );
-                    value = TOTAL_STAT_MOVE_MULTIPLIERS[safeIndex];
-                }
-                return value;
-
-            case LogicType.GaugeScaling:
-                if (scope === "Sync") {
-                    return GAUGE_SYNC_MULTIPLIERS[env.settings.gauge] ?? 0;
-                } else {
-                    return env.settings.gauge * boost.value * 0.01;
-                }
-
-            case LogicType.HPScaling:
-                const hpPercent = cond.detail.includes("對手")
-                    ? env.target.hpPercent
-                    : env.user.hpPercent;
-                const factor = cond.detail.includes("對手") ? 0.1 : 0.05;
-                const thresholdTable = cond.direction?.includes("下降")
-                    ? HP_LESS_THRESHOLD
-                    : HP_MORE_THRESHOLD;
-                let threshold = 0;
-                if (hpPercent === 100) {
-                    threshold = thresholdTable[0];
-                } else if (hpPercent <= 99 && hpPercent >= 51) {
-                    threshold = thresholdTable[1];
-                } else if (hpPercent <= 50 && hpPercent >= 34) {
-                    threshold = thresholdTable[2];
-                } else {
-                    threshold = thresholdTable[3];
-                }
-                const rawValue = (boost.value || 0) * factor * threshold;
-                value = Math.ceil(rawValue * 100) / 100;
-
-                return value;
-
-            case LogicType.TeamWorkPassive:
-            case LogicType.MasterPassive:
-            case LogicType.ArcSuitPassive:
-                const count = theme.tagCounts[cond.key] || 0;
-                value = (boost.baseValue || 0.0) + (count - 1) * boost.value;
-
-                console.log(`value:${value}`);
-                return value;
-        }
-
-        return 0;
-    }
-
     private static checkCondition(
         cond: Condition,
         env: CalcEnvironment,
-        moveType: number,
-        moveTag: string,
+        moveType?: number,
+        moveTag?: string,
         conds?: Condition[]
     ): boolean {
         switch (cond.logic) {
@@ -289,14 +437,13 @@ export class DamageEngine {
                 return cond.key.includes(env.weather);
 
             case LogicType.BattleCircle:
-                env.battleCircles.forEach((bc) => {
-                    if (
-                        cond.key.includes(bc.region) &&
-                        cond.key.includes(bc.category)
-                    ) {
-                        return bc.isActive;
-                    }
-                });
+                const parts = cond.key.split('_');
+                if (parts.length !== 2) return false;
+
+                const [circleRegion, circleCategory] = parts;
+                const region = circleRegion as RegionType;
+                const category = circleCategory as CircleCategory;
+                return env.battleCircles[region][category].isActive;
 
             case LogicType.GaugeSpeedBoostOn:
                 return env.gaugeSpeedBoost;
@@ -355,7 +502,7 @@ export class DamageEngine {
                 const stats = cond.detail.includes("對手")
                     ? env.target.ranks
                     : env.user.ranks;
-                const statKey = getStatKeyByStatCNname(cond.key);
+                const statKey = getStatKeyByStatCnName(cond.key);
                 const rankValue = stats[statKey];
                 if (cond.direction.includes("下降")) {
                     return rankValue < 0;
@@ -398,8 +545,13 @@ export class DamageEngine {
             case LogicType.HPLow:
                 return env.user.hpPercent <= 20;
 
-            case LogicType.HPHighHalf:
-                return env.user.hpPercent >= 50;
+            case LogicType.HPHalf:
+                const hpPercent = cond.detail.includes("對手") ? env.target.hpPercent : env.user.hpPercent;
+                if (cond.direction?.includes("以上")) {
+                    return hpPercent > 50;
+                } else {
+                    return hpPercent < 50;
+                }
 
             case LogicType.HPDecreased:
                 return env.user.hpPercent < 100;
@@ -418,7 +570,7 @@ export class DamageEngine {
                 return moveTag === "反衝";
 
             case LogicType.MoveType:
-                const typeName = getTypeCNnameByTypeIndex(moveType);
+                const typeName = getTypeCnNameByTypeIndex(moveType);
                 return cond.key.includes(typeName);
 
             case LogicType.Berry:
@@ -432,5 +584,169 @@ export class DamageEngine {
                 );
         }
         return false;
+    }
+
+    private static getPassiveScalingMultiplier(
+        cond: Condition,
+        scope: MoveScope,
+        env: CalcEnvironment,
+        boost: PassiveBoost,
+        theme: ThemeContext
+    ): number {
+        let value = 0;
+        switch (cond.logic) {
+            case LogicType.SingleStatScaling: // 可能有多项，以_分割
+                const stats = cond.detail.includes("對手")
+                    ? env.target.ranks
+                    : env.user.ranks;
+                const statsList = cond.key.split("_");
+                const multiplierTable =
+                    scope === MoveScope.Sync
+                        ? SINGLE_STAT_SYNC_MULTIPLIERS
+                        : SINGLE_STAT_MOVE_MULTIPLIERS;
+                statsList.forEach((statName) => {
+                    const statKey = getStatKeyByStatCnName(statName);
+                    const rankValue = stats[statKey];
+                    let effectiveRank = 0;
+                    if (cond.direction?.includes("下降") && rankValue < 0) {
+                        effectiveRank = Math.abs(rankValue);
+                    } else if (
+                        cond.direction?.includes("提升") &&
+                        rankValue > 0
+                    ) {
+                        effectiveRank = rankValue;
+                    }
+                    const singleSafeIndex = Math.min(effectiveRank, 6);
+
+                    value += multiplierTable[singleSafeIndex];
+                });
+                return value;
+
+            case LogicType.TotalStatScaling:
+                const totalStats = cond.detail.includes("對手")
+                    ? env.target.ranks
+                    : env.user.ranks;
+                const isStatLow = cond.direction?.includes("下降");
+                let totalRank = 0;
+                STATS.forEach((statName) => {
+                    const totalStatKey = getStatKeyByStatCnName(statName);
+                    const totalRankValue = totalStats[totalStatKey];
+                    if (isStatLow) {
+                        totalRank +=
+                            totalRankValue < 0 ? Math.abs(totalRankValue) : 0;
+                    } else {
+                        totalRank += totalRankValue < 0 ? 0 : totalRankValue;
+                    }
+                });
+                if (scope === MoveScope.Sync) {
+                    const totalSafeIndex = Math.min(
+                        totalRank,
+                        TOTAL_STAT_SYNC_MULTIPLIERS.length - 1
+                    );
+                    value = TOTAL_STAT_SYNC_MULTIPLIERS[totalSafeIndex];
+                } else {
+                    const totalSafeIndex = Math.min(
+                        totalRank,
+                        TOTAL_STAT_MOVE_MULTIPLIERS.length - 1
+                    );
+                    value = TOTAL_STAT_MOVE_MULTIPLIERS[totalSafeIndex];
+                }
+                return value;
+
+            case LogicType.GaugeScaling:
+                if (scope === MoveScope.Sync) {
+                    return GAUGE_SYNC_MULTIPLIERS[env.settings.gauge] ?? 0;
+                } else {
+                    return env.settings.gauge * boost.value * 0.01;
+                }
+
+            case LogicType.HPScaling:
+                const hpPercent = cond.detail.includes("對手")
+                    ? env.target.hpPercent
+                    : env.user.hpPercent;
+                const factor = cond.detail.includes("對手") ? 0.1 : 0.05;
+                const thresholdTable = cond.direction?.includes("下降")
+                    ? HP_LESS_THRESHOLD
+                    : HP_MORE_THRESHOLD;
+                let threshold = 0;
+                if (hpPercent === 100) {
+                    threshold = thresholdTable[0];
+                } else if (hpPercent <= 99 && hpPercent >= 51) {
+                    threshold = thresholdTable[1];
+                } else if (hpPercent <= 50 && hpPercent >= 34) {
+                    threshold = thresholdTable[2];
+                } else {
+                    threshold = thresholdTable[3];
+                }
+                const rawValue = (boost.value || 0) * factor * threshold;
+                value = Math.ceil(rawValue * 100) / 100;
+
+                return value;
+
+            case LogicType.TeamWorkPassive:
+            case LogicType.MasterPassive:
+            case LogicType.ArcSuitPassive:
+                const count = theme.tagCounts[cond.key] || 0;
+                value = (boost.baseValue ?? 0.0) + (count - 1) * boost.value;
+
+                console.log(`value:${value}`);
+                return value;
+        }
+
+        return 0;
+    }
+
+    // 動態的只針對拍組招式
+    private static getSyncMoveScalingMultiplier(
+        cond: Condition,
+        env: CalcEnvironment,
+    ): number {
+        let value = 0;
+        switch (cond.logic) {
+            case LogicType.SingleStatScaling: // 只會有單項?後續可能有多項嗎
+                const stats = cond.detail.includes("對手")
+                    ? env.target.ranks
+                    : env.user.ranks;
+                const statKey = getStatKeyByStatCnName(cond.key);
+                const rankValue = stats[statKey];
+                let effectiveRank = 0;
+                if (cond.direction?.includes("下降") && rankValue < 0) {
+                    effectiveRank = Math.abs(rankValue);
+                } else if (
+                    cond.direction?.includes("提升") &&
+                    rankValue > 0
+                ) {
+                    effectiveRank = rankValue;
+                }
+                const singleSafeIndex = Math.min(effectiveRank, 6);
+                value = SINGLE_STAT_SYNC_MULTIPLIERS[singleSafeIndex] + 1.0;
+                return value;
+
+            case LogicType.TotalStatScaling:
+                const totalStats = cond.detail.includes("對手")
+                    ? env.target.ranks
+                    : env.user.ranks;
+                const isStatLow = cond.direction?.includes("下降");
+                let totalRank = 0;
+                STATS.forEach((statName) => {
+                    const totalStatKey = getStatKeyByStatCnName(statName);
+                    const totalRankValue = totalStats[totalStatKey];
+                    if (isStatLow) {
+                        totalRank +=
+                            totalRankValue < 0 ? Math.abs(totalRankValue) : 0;
+                    } else {
+                        totalRank += totalRankValue < 0 ? 0 : totalRankValue;
+                    }
+                });
+                const totalSafeIndex = Math.min(
+                    totalRank,
+                    TOTAL_STAT_SYNC_MULTIPLIERS.length - 1
+                );
+                value = TOTAL_STAT_SYNC_MULTIPLIERS[totalSafeIndex] + 1.0;
+
+                return value;
+        }
+
+        return 1.0;
     }
 }

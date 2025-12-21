@@ -155,7 +155,7 @@
           "type": 13,
           "gauge": 2,
           "uses": "−",
-          "category": "物理",
+          "category": 1,
           "power": 39,
           "accuracy": 95,
           "target": "對手１對拍組",
@@ -170,7 +170,7 @@
           "type": 0,
           "gauge": 2,
           "uses": 2,
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "全場地",
@@ -185,7 +185,7 @@
           "type": 13,
           "gauge": 2,
           "uses": "−",
-          "category": "物理",
+          "category": 1,
           "power": 163,
           "accuracy": 100,
           "target": "對手全體拍組",
@@ -200,7 +200,7 @@
           "type": 0,
           "gauge": 0,
           "uses": 1,
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "自己",
@@ -216,7 +216,7 @@
         "type": 13,
         "gauge": 0,
         "uses": "−",
-        "category": "物理",
+        "category": 1,
         "power": 160,
         "accuracy": 0,
         "target": "對手１對拍組",
@@ -233,8 +233,8 @@
       "actor": "pm0772_51_megadiancie_rare",
       "gender": 3,
       "is_shiny": true,
-      "type": 13,
-      "weakness": 17,
+      "type": "-1",
+      "weakness": "-1",
       "stat": {
         "hp": [
           98,
@@ -316,7 +316,7 @@
           "type": 13,
           "gauge": 2,
           "uses": "−",
-          "category": "物理",
+          "category": 1,
           "power": 39,
           "accuracy": 95,
           "target": "對手１對拍組",
@@ -331,7 +331,7 @@
           "type": 0,
           "gauge": 2,
           "uses": 2,
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "全場地",
@@ -346,7 +346,7 @@
           "type": 13,
           "gauge": 2,
           "uses": "−",
-          "category": "物理",
+          "category": 1,
           "power": 163,
           "accuracy": 100,
           "target": "對手全體拍組",
@@ -361,7 +361,7 @@
           "type": 0,
           "gauge": 0,
           "uses": 1,
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "自己",
@@ -377,22 +377,14 @@
         "type": 13,
         "gauge": 0,
         "uses": "−",
-        "category": "物理",
+        "category": 1,
         "power": 160,
         "accuracy": 0,
         "target": "對手１對拍組",
         "description": "變成超級蒂安希直到對戰結束。當領域為岩石領域時,威力會提高。",
         "tags": "none",
         "group": "Sync"
-      },
-      "scale": [
-        100,
-        120,
-        120,
-        100,
-        100,
-        100
-      ]
+      }
     }
   ],
   "luckCookies": [
@@ -400,21 +392,18 @@
       "cookieName": "美極套裝卡露妮專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "拍組招式效果絕佳時威力↑5",
+          "name": [],
           "description": "當效果絕佳時,會提高該拍組招式的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時拍組招式增強5",
+          "name": [],
           "description": "首次上場時,會提高自己的下次拍組招式威力增強5階段。",
-          "detail": [],
           "rate": 33
         }
       ]
@@ -756,7 +745,7 @@
       "level": 1,
       "x": -2,
       "y": 0,
-      "color": "#47D147",
+      "color": "#BF80FF",
       "type": 13
     },
     {
@@ -782,7 +771,7 @@
       "level": 1,
       "x": -1,
       "y": -1,
-      "color": "#47D147",
+      "color": "#BF80FF",
       "type": 13
     },
     {
@@ -1003,7 +992,7 @@
       "level": 1,
       "x": -3,
       "y": 4,
-      "color": "#47D147",
+      "color": "#BF80FF",
       "type": 13
     },
     {
@@ -1016,7 +1005,7 @@
       "level": 1,
       "x": -2,
       "y": 4,
-      "color": "#47D147",
+      "color": "#BF80FF",
       "type": 13
     },
     {
@@ -1029,7 +1018,7 @@
       "level": 1,
       "x": -3,
       "y": 5,
-      "color": "#47D147",
+      "color": "#BF80FF",
       "type": 13
     },
     {

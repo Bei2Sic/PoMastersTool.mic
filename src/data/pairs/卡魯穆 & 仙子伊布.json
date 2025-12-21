@@ -136,7 +136,7 @@
           "type": 18,
           "gauge": 2,
           "uses": "−",
-          "category": "特殊",
+          "category": 2,
           "power": 50,
           "accuracy": 100,
           "target": "對手全體拍組",
@@ -151,7 +151,7 @@
           "type": 18,
           "gauge": 2,
           "uses": "−",
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 100,
           "target": "對手１對拍組",
@@ -166,7 +166,7 @@
           "type": 18,
           "gauge": 3,
           "uses": "−",
-          "category": "特殊",
+          "category": 2,
           "power": 98,
           "accuracy": 100,
           "target": "對手１對拍組",
@@ -181,7 +181,7 @@
           "type": 0,
           "gauge": 0,
           "uses": 1,
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "我方全體拍組",
@@ -197,7 +197,7 @@
         "type": 18,
         "gauge": 0,
         "uses": "−",
-        "category": "特殊",
+        "category": 2,
         "power": 200,
         "accuracy": 0,
         "target": "對手１對拍組",
@@ -212,21 +212,18 @@
       "cookieName": "卡魯穆專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "拍組招式效果絕佳時威力↑5",
+          "name": [],
           "description": "當效果絕佳時,會提高該拍組招式的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時拍組招式增強5",
+          "name": [],
           "description": "首次上場時,會提高自己的下次拍組招式威力增強5階段。",
-          "detail": [],
           "rate": 33
         }
       ]
@@ -235,9 +232,8 @@
       "cookieName": "卡魯穆專用潛能餅乾１",
       "skills": [
         {
-          "name": "首次拍組招式後妖精屬性抵抗↓G1",
+          "name": [],
           "description": "首次使出拍組招式時,會降低對手全體拍組的妖精屬性抵抗1階段。",
-          "detail": [],
           "rate": 100
         }
       ]

@@ -137,7 +137,7 @@
           "type": 11,
           "gauge": 2,
           "uses": "−",
-          "category": "特殊",
+          "category": 2,
           "power": 48,
           "accuracy": 100,
           "target": "對手１對拍組",
@@ -152,7 +152,7 @@
           "type": 0,
           "gauge": 0,
           "uses": 2,
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "自己",
@@ -167,7 +167,7 @@
           "type": 4,
           "gauge": 2,
           "uses": "−",
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 90,
           "target": "對手１對拍組",
@@ -182,7 +182,7 @@
           "type": 0,
           "gauge": 0,
           "uses": 2,
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "自己",
@@ -198,7 +198,7 @@
         "type": 11,
         "gauge": 0,
         "uses": "−",
-        "category": "特殊",
+        "category": 2,
         "power": 200,
         "accuracy": 0,
         "target": "對手１對拍組",
@@ -213,9 +213,7 @@
       "cookieName": "卡魯穆專用的塔潛能餅乾２",
       "skills": [
         {
-          "name": "卡魯穆的全心全意",
-          "description": "在寶可夢首次使出變化招式時,會讓發動拍組招式所需的行動數減少2次。在寶可夢使出變化招式時,會讓自己變成下次計量槽消耗0狀態。",
-          "detail": [
+          "name": [
             {
               "name": "寶可夢首次使出變化招式時計數加速2",
               "description": "在寶可夢首次使出變化招式時,會讓發動拍組招式所需的行動數減少2次。"
@@ -225,6 +223,7 @@
               "description": "在寶可夢使出變化招式時,會讓自己變成下次計量槽消耗0狀態。"
             }
           ],
+          "description": "在寶可夢首次使出變化招式時,會讓發動拍組招式所需的行動數減少2次。在寶可夢使出變化招式時,會讓自己變成下次計量槽消耗0狀態。",
           "rate": 100
         }
       ]
@@ -233,21 +232,18 @@
       "cookieName": "卡魯穆專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "拍組招式效果絕佳時威力↑5",
+          "name": [],
           "description": "當效果絕佳時,會提高該拍組招式的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時拍組招式增強5",
+          "name": [],
           "description": "首次上場時,會提高自己的下次拍組招式威力增強5階段。",
-          "detail": [],
           "rate": 33
         }
       ]

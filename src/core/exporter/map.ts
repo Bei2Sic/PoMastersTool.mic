@@ -10,24 +10,34 @@ export const getTypeInfo = (
     return TypeMap[typeIndex];
 };
 
-export const getTypeInfoWithCNName = (cnName: string): TypeMapItem => {
+export const getTypeInfoWithCnName = (cnName: string): TypeMapItem => {
     const matchedType = Object.values(TypeMap).find((item) => item.cnName === cnName);
     return matchedType ?? TypeMap[0];
 };
 
-export const getTypeCNnameByTypeIndex = (typeIndex: number): string => {
+export const getTypeCnNameByTypeIndex = (typeIndex: number): string => {
     return TypeMap[typeIndex].cnName;
 }
 
-export const getTypeCNnameByTypeSpecialName = (specialName: string): string => {
+export const getTypeSpecialNameByTypeIndex = (typeIndex: number): string => {
+    return TypeMap[typeIndex].specialName;
+}
+
+export function getTypeIndexByCnName(cnName: string): number {
+    const entry = Object.entries(TypeMap).find(([_, item]) => item.cnName === cnName);
+
+    return entry ? Number(entry[0]) : 1;
+}
+
+export const getTypeCnNameByTypeSpecialName = (specialName: string): string => {
     const item = Object.values(TypeMap).find((val) => val.specialName === specialName);
     return item ? item.cnName : specialName;
-} 
+}
 
 export const getCategoryInfo = (
-    typeStr: string | undefined | null
+    category: number
 ): TypeMapItem => {
-    return CategoryMap[typeStr];
+    return CategoryMap[category];
 };
 
 export const getRoleInfo = (roleNum: number): TypeMapItem => {
@@ -45,12 +55,12 @@ export const getStatIndexByStatKey = (statKey: string): StatIndex => {
     return 0 as StatIndex;
 };
 
-export const getStatCNnameByStatKey = (statKey: string): string => {
+export const getStatCnNameByStatKey = (statKey: string): string => {
     const item = Object.values(StatMap).find((val) => val.key === statKey);
     return item ? item.cnName : statKey;
 };
 
-export const getStatKeyByStatCNname = (statCNname: string): string => {
+export const getStatKeyByStatCnName = (statCNname: string): string => {
     const item = Object.values(StatMap).find((val) => val.cnName === statCNname);
     return item ? item.key : statCNname;
 };

@@ -24,7 +24,7 @@ export class ThemeContextResolver {
         activeMembers.forEach((member) => {
             member.rawData.themes.forEach((theme) => {
                 const tagCount = counts[theme.tag] || 0;
-                if (tagCount >= 1) {
+                if (tagCount >= 2) {
                     const { flat: fBonus, conditional: cBonus } =
                         parseComplexThemeSkill(theme.description);
                     // 累加固定加成

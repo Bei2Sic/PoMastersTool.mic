@@ -37,21 +37,44 @@ const initHindrances = (): Record<cond.HindranceType, boolean> => {
     ) as Record<cond.HindranceType, boolean>;
 };
 
+const initBattleCircles = (): cond.BattleCircle => {
+    const map: Partial<cond.BattleCircle> = {};
+    const BATTLE_REGIONS = [
+        "關都",
+        "城都",
+        "豐緣",
+        "神奧",
+        "合眾",
+        "卡洛斯",
+        "阿羅拉",
+        "伽勒爾",
+        "帕底亞",
+        "帕希歐"
+    ]
+    BATTLE_REGIONS.forEach((region) => {
+        map[region] = {
+            level: 0,
+            actives: {
+                "物理": false,
+                "特殊": false,
+                "防禦": false
+            }
+        };
+    });
+    return map as cond.BattleCircle;
+};
+
 export const useDamageCalcStore = defineStore("damageCalc", {
     state: () => ({
-        // ============================================
-        // I. USER (當前拍組 / 攻擊方)
-        // ============================================
         user: {
-            // 裝備數值
             gear: {
-                atk: 0 as number,
-                def: 0 as number,
-                spa: 0 as number,
-                spd: 0 as number,
-                spe: 0 as number,
-            },
-            // 組隊加成
+                hp: 100 as number,
+                atk: 40 as number,
+                def: 40 as number,
+                spa: 40 as number,
+                spd: 40 as number,
+                spe: 40 as number,
+            } as cond.PokemonStats,
             theme: {
                 hp: 0 as number,
                 atk: 0 as number,
@@ -59,45 +82,37 @@ export const useDamageCalcStore = defineStore("damageCalc", {
                 spa: 0 as number,
                 spd: 0 as number,
                 spe: 0 as number,
-            },
-            // 能力等級 (Stat Ranks)
+            } as cond.PokemonStats,
             ranks: {
-                atk: 0 as cond.StatRank,
-                def: 0 as cond.StatRank,
-                spa: 0 as cond.StatRank,
-                spd: 0 as cond.StatRank,
-                spe: 0 as cond.StatRank,
-                acc: 0 as cond.StatRank,
-                eva: 0 as cond.StatRank,
-                ct: 0 as cond.CtRank,
+                atk: 6 as cond.StatRank,
+                def: 6 as cond.StatRank,
+                spa: 6 as cond.StatRank,
+                spd: 6 as cond.StatRank,
+                spe: 6 as cond.StatRank,
+                acc: 6 as cond.StatRank,
+                eva: 6 as cond.StatRank,
+                ct: 3 as cond.CtRank,
             },
-            // 增強狀態 (Boosts: 0-10)
             boosts: {
-                physical: 0 as cond.BoostRank, // 物理招式增強 (PMUN)
-                special: 0 as cond.BoostRank, // 特殊招式增強 (SMUN)
-                sync: 0 as cond.BoostRank, // 拍組招式增強 (Sync Buff)
+                physical: 0 as cond.BoostRank, // 物理招式增強
+                special: 0 as cond.BoostRank, // 特殊招式增強
+                sync: 0 as cond.BoostRank, // 拍組招式增強
             },
-            // 自身狀態 (用於 LowHP/Recoil 判斷)
             currentHPPercent: 100 as number,
             // 異常狀態
-            abnormal: "無" as cond.AbnormalType,
+            abnormal: '灼傷' as cond.AbnormalType,
             // 妨害狀態
             hindrance: initHindrances(),
         },
 
-        // ============================================
-        // II. TARGET (目標拍組 / 防禦方)
-        // ============================================
         target: {
-            // 基礎數值
             stats: {
-                atk: 0 as number,
-                def: 0 as number,
-                spa: 0 as number,
-                spd: 0 as number,
-                spe: 0 as number,
-            },
-            // 能力等級 (Stat Ranks)
+                atk: 114 as number,
+                def: 114 as number,
+                spa: 114 as number,
+                spd: 114 as number,
+                spe: 114 as number,
+            } as cond.PokemonStats,
             ranks: {
                 atk: -6 as cond.StatRank,
                 def: -6 as cond.StatRank,
@@ -107,37 +122,34 @@ export const useDamageCalcStore = defineStore("damageCalc", {
                 acc: -6 as cond.StatRank,
                 eva: -6 as cond.StatRank,
             },
-
-            // 異常狀態
             abnormal: "無" as cond.AbnormalType,
 
-            // 妨害狀態
             hindrance: initHindrances(),
 
-            // 傷害場地
             damageField: "無" as cond.DamageFieldType,
 
             currentHPPercent: 100 as number,
 
-            // 屬性抵抗 (Rebuffs)
             typeRebuffs: initRebuffs(),
         },
 
         weather: "無" as cond.WeatherType,
+        isEXWeather: false,
         terrain: "無" as cond.TerrainType,
+        isEXTerrain: false,
         zone: "無" as cond.ZoneType,
-        battleCircles: [] as cond.BattleCircle[],
+        isEXZone: false,
+        battleCircles: initBattleCircles(),
         gaugeSpeedBoost: false,
 
-        // todo: 大師被動
-
         settings: {
-            scope: 1 as cond.TargetScope, // 攻擊目標數 (1-3)
-            gauge: 6 as cond.GaugeValue, // 剩餘計數槽 (1-6)
-            isCritical: false as boolean, // 命中要害
-            isEffective: false as boolean, // 效果絕佳
+            scope: 1 as cond.TargetScope,
+            gauge: 6 as cond.GaugeValue,
+            isCritical: false as boolean,
+            isSuperEffective: false as boolean, // 效果絕佳强化
             effectiveType: "無" as cond.PokemonType,
-            berry: 0 as cond.BerryNum,
+            berry: 3 as cond.BerryNum,
+            moveuse: 108,
         },
     }),
 

@@ -142,7 +142,7 @@
           "type": 3,
           "gauge": 3,
           "uses": "−",
-          "category": "特殊",
+          "category": 2,
           "power": 116,
           "accuracy": 85,
           "target": "對手全體拍組",
@@ -157,7 +157,7 @@
           "type": 3,
           "gauge": 2,
           "uses": 2,
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "全場地",
@@ -172,7 +172,7 @@
           "type": 9,
           "gauge": 3,
           "uses": "−",
-          "category": "特殊",
+          "category": 2,
           "power": 99,
           "accuracy": 100,
           "target": "對手１對拍組",
@@ -187,7 +187,7 @@
           "type": 0,
           "gauge": 0,
           "uses": 2,
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "自己",
@@ -203,7 +203,7 @@
         "type": 3,
         "gauge": 0,
         "uses": "−",
-        "category": "特殊",
+        "category": 2,
         "power": 160,
         "accuracy": 0,
         "target": "對手１對拍組",
@@ -220,8 +220,8 @@
       "actor": "pm0260_51_megalaglarge",
       "gender": 2,
       "is_shiny": false,
-      "type": 3,
-      "weakness": 5,
+      "type": "-1",
+      "weakness": "-1",
       "stat": {
         "hp": [
           152,
@@ -303,7 +303,7 @@
           "type": 3,
           "gauge": 3,
           "uses": "−",
-          "category": "特殊",
+          "category": 2,
           "power": 116,
           "accuracy": 85,
           "target": "對手全體拍組",
@@ -318,7 +318,7 @@
           "type": 3,
           "gauge": 2,
           "uses": 2,
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "全場地",
@@ -333,7 +333,7 @@
           "type": 9,
           "gauge": 3,
           "uses": "−",
-          "category": "特殊",
+          "category": 2,
           "power": 99,
           "accuracy": 100,
           "target": "對手１對拍組",
@@ -348,7 +348,7 @@
           "type": 0,
           "gauge": 0,
           "uses": 2,
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "自己",
@@ -364,22 +364,14 @@
         "type": 3,
         "gauge": 0,
         "uses": "−",
-        "category": "特殊",
+        "category": 2,
         "power": 160,
         "accuracy": 0,
         "target": "對手１對拍組",
         "description": "變成超級巨沼怪直到對戰結束。當天氣為下雨時,威力會提高。",
         "tags": "none",
         "group": "Sync"
-      },
-      "scale": [
-        100,
-        100,
-        120,
-        120,
-        100,
-        100
-      ]
+      }
     }
   ],
   "luckCookies": [
@@ -387,9 +379,7 @@
       "cookieName": "小遙專用的塔潛能餅乾２",
       "skills": [
         {
-          "name": "小遙的全神貫注",
-          "description": "首次上場時,會將天氣變成下雨。天氣變成下雨的瞬間在場上時,會延長下雨的持續時間。",
-          "detail": [
+          "name": [
             {
               "name": "首次上場時變成下雨",
               "description": "首次上場時,會將天氣變成下雨。"
@@ -399,6 +389,7 @@
               "description": "天氣變成下雨的瞬間在場上時,會延長下雨的持續時間。"
             }
           ],
+          "description": "首次上場時,會將天氣變成下雨。天氣變成下雨的瞬間在場上時,會延長下雨的持續時間。",
           "rate": 100
         }
       ]
@@ -407,21 +398,18 @@
       "cookieName": "小遙專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "拍組招式效果絕佳時威力↑5",
+          "name": [],
           "description": "當效果絕佳時,會提高該拍組招式的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時拍組招式增強5",
+          "name": [],
           "description": "首次上場時,會提高自己的下次拍組招式威力增強5階段。",
-          "detail": [],
           "rate": 33
         }
       ]

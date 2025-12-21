@@ -1,12 +1,15 @@
-// @/composables/useDamageCalculator.ts
 import { PASSIVE_OVERRIDES } from "@/constances/passive";
+import { MOVE_OVERRIDES } from "@/constances/move";
 import { DamageEngine } from "@/core/calculators/damage";
 import { ThemeContextResolver } from "@/core/calculators/theme";
 import { PassiveSkillParser } from "@/core/parse/passive";
 import { useDamageCalcStore } from "@/stores/damageCalc";
-import { CalcEnvironment, MoveScope, ThemeContext } from "@/types/calculator";
+import { CalcEnvironment, ExtraLogic, LogicType, MoveScope, ThemeContext } from "@/types/calculator";
 import { Sync } from "@/types/syncModel";
 import { computed, Ref } from "vue";
+import { DEFAULT_HANDLER, DEFAULT_MOVE_SKILL } from "@/types/moveModel";
+import { getFinalStatValue } from "@/core/exporter/syncData";
+import { getTypeCnNameByTypeIndex } from "@/core/exporter/map";
 
 // ... 其他導入
 function collectActivePassives(
@@ -106,17 +109,21 @@ export function useDamageCalculator(
     const envSnapshot = computed((): CalcEnvironment => {
         const u = damageStore.user;
         const t = damageStore.target;
-
+        console.log(u.abnormal);
         return {
             // 直接傳遞中文值
             weather: damageStore.weather,
+            isEXWeather: damageStore.isEXWeather,
             terrain: damageStore.terrain,
+            isEXTerrain: damageStore.isEXTerrain,
             zone: damageStore.zone,
+            isEXZone: damageStore.isEXZone,
             battleCircles: damageStore.battleCircles,
             gaugeSpeedBoost: damageStore.gaugeSpeedBoost,
             user: {
                 hpPercent: u.currentHPPercent,
                 ranks: u.ranks,
+                gear: u.gear,
                 boosts: {
                     physical: u.boosts.physical,
                     special: u.boosts.special,
@@ -127,7 +134,7 @@ export function useDamageCalculator(
             },
 
             target: {
-                // 目标白值(def&spd)
+                stats: t.stats,
                 ranks: t.ranks,
                 hpPercent: t.currentHPPercent,
                 abnormal: t.abnormal,
@@ -139,8 +146,10 @@ export function useDamageCalculator(
             settings: {
                 gauge: damageStore.settings.gauge,
                 berry: damageStore.settings.berry,
+                moveuse: damageStore.settings.moveuse,
                 isCritical: damageStore.settings.isCritical,
-                isSuperEffective: damageStore.settings.isEffective,
+                isSuperEffective: damageStore.settings.isSuperEffective,
+                effectiveType: damageStore.settings.effectiveType,
             },
         };
     });
@@ -153,7 +162,6 @@ export function useDamageCalculator(
         const rawData = sync.rawData;
         // 核心：遍歷每一個形態 (Base, Mega, Dynamax...)
         return rawData.pokemon.map((pokemon, formIndex) => {
-            console.log(`formIndex: ${formIndex}`);
             const rawPassives = collectActivePassives(sync, formIndex);
 
             const passiveModels = rawPassives.flatMap((p) => {
@@ -175,25 +183,104 @@ export function useDamageCalculator(
                 }
                 return [];
             });
-            // const validRawPassives = rawPassives.filter((p) => {
-            //     // 調用靜態方法，傳入名字和描述
-            //     return PassiveSkillParser.isValid(p.name, p.desc);
-            // });
-            // const passiveModels = validRawPassives.map((p) => {
-            //     // 判断合法
-            //     const parser = new PassiveSkillParser(
-            //         p.name,
-            //         p.desc,
-            //         p.passiveName
-            //     );
-            //     return parser.result;
-            // });
+
             return {
                 formName: pokemon.form || "基礎形態",
                 passives: passiveModels,
             };
         });
     });
+
+    // 计算当前的白值倍率(rank/被动/灼伤)
+    const statsRatioSnapshot = computed(() => {
+        const sync = targetSync.value;
+        if (!sync) return [];
+
+        const env = envSnapshot.value;
+        const passives = passiveSnapshot.value;
+
+        const rawData = sync.rawData;
+
+        return rawData.pokemon.map((pokemon, formIndex) => {
+            const currentPassives = passives[formIndex].passives;
+            return {
+                atk: DamageEngine.resolveStatBoost(currentPassives, env, 'atk'),
+                def: DamageEngine.resolveStatBoost(currentPassives, env, 'def'),
+                spa: DamageEngine.resolveStatBoost(currentPassives, env, 'spa'),
+                spd: DamageEngine.resolveStatBoost(currentPassives, env, 'spd'),
+                spe: DamageEngine.resolveStatBoost(currentPassives, env, 'spe'),
+            }
+        })
+
+    });
+
+    // 用于显示的效果
+    const statSnapshot = computed(() => {
+        const sync = targetSync.value;
+        if (!sync) return [];
+
+        const env = envSnapshot.value;
+        const theme = themeSnapshot.value;
+        const statsRatio = statsRatioSnapshot.value;
+        const rawData = sync.rawData;
+        const state = sync.state;
+
+        return rawData.pokemon.map((pokemon, formIndex) => {
+            const currentStatsRatio = statsRatio[formIndex];
+            const statsValue = {
+                hp: getFinalStatValue(rawData, state, 'hp', formIndex, {
+                    gearBonus: env.user.gear.hp,
+                    themeBonus: theme.flatBonuses.hp,
+                }),
+                atk: getFinalStatValue(rawData, state, 'atk', formIndex, {
+                    gearBonus: env.user.gear.atk,
+                    themeBonus: theme.flatBonuses.atk,
+                    boost: currentStatsRatio['atk'] || 100,
+                }),
+                def: getFinalStatValue(rawData, state, 'def', formIndex, {
+                    gearBonus: env.user.gear.def,
+                    boost: currentStatsRatio['def'] || 100,
+                }),
+                spa: getFinalStatValue(rawData, state, 'spa', formIndex, {
+                    gearBonus: env.user.gear.spa,
+                    themeBonus: theme.flatBonuses.spa,
+                    boost: currentStatsRatio['spa'] || 100,
+                }),
+                spd: getFinalStatValue(rawData, state, 'spd', formIndex, {
+                    gearBonus: env.user.gear.spd,
+                    boost: currentStatsRatio['spd'] || 100,
+                }),
+                spe: getFinalStatValue(rawData, state, 'spe', formIndex, {
+                    gearBonus: env.user.gear.spe,
+                    themeBonus: theme.flatBonuses.spe,
+                    boost: currentStatsRatio['spe'] || 100,
+                })
+            }
+
+            return {
+                formName: pokemon.form || "基礎形態",
+                stats: statsValue,
+            };
+        })
+    })
+
+    // 目标的白值(用于显示和计算)
+    const targetStatsSnapshot = computed(() => {
+        const sync = targetSync.value;
+        if (!sync) return {};
+
+        const env = envSnapshot.value;
+        return {
+            atk: DamageEngine.resolveTargetStatValue(env, 'atk'),
+            def: DamageEngine.resolveTargetStatValue(env, 'def'),
+            spa: DamageEngine.resolveTargetStatValue(env, 'spa'),
+            spd: DamageEngine.resolveTargetStatValue(env, 'spd'),
+            spe: DamageEngine.resolveTargetStatValue(env, 'spe'),
+        }
+
+    })
+
+    // 白值(这里全部都计算，用于显示，后续伤害计算)
 
     // 伤害计算
     // 遍历每个形态，逐一遍历 moves, movesDynamax?, moveTera?, syncMove
@@ -212,17 +299,17 @@ export function useDamageCalculator(
         const sync = targetSync.value;
         const env = envSnapshot.value;
         const theme = themeSnapshot.value;
-        const formPassivesList = passiveSnapshot.value; // 拿到剛剛解析好的被動列表
+        const passives = passiveSnapshot.value;
+        const targeStats = targetStatsSnapshot.value;
 
-        if (!sync || !formPassivesList.length) return [];
+        if (!sync || !passives.length) return [];
 
         const rawData = sync.rawData;
-        // const state = sync.state;
-        // const gear = damageStore.user.gear;
+        const state = sync.state;
 
         // 遍歷每一個形態
         return rawData.pokemon.map((p, formIndex) => {
-            const currentPassives = formPassivesList[formIndex].passives;
+            const currentPassives = passives[formIndex].passives;
 
             // const userStats = {
             //     atk: getFinalStatValue(rawData, state, "atk", formIndex, {
@@ -349,18 +436,75 @@ export function useDamageCalculator(
             // ------------------------------------------------
 
             // // 1. 普通招式
-            console.log(p.moves);
             const moveResults = p.moves?.map((m) => {
-                if (m.power > 0) {
-                    const multi = DamageEngine.getMultipliers(
-                        m,
-                        MoveScope.Move,
-                        currentPassives,
-                        env,
-                        theme
-                    );
-                    return { multi: multi };
+                if (m.power === 0) {
+                    return null;
                 }
+                let activeMove = m; // 默認使用原始招式
+                // 属性替换被动
+                const newType = DamageEngine.getTypeShiftPassive(m, currentPassives);
+                if (newType !== m.type) {
+                    activeMove = {
+                        ...m,
+                        type: newType,
+                    };
+                }
+
+                // 获取当前技能属性
+                const moveTypeCnName = getTypeCnNameByTypeIndex(activeMove.type);
+
+                // 获取被动加成列表
+                const passiveMultis = DamageEngine.getPassiveMultipliers(
+                    activeMove,
+                    MoveScope.Move,
+                    currentPassives,
+                    env,
+                    theme
+                );
+                // 計算被动倍率
+                const passiveSum = DamageEngine.resolvePassiveSum(passiveMultis)
+                // 计算增强提供的倍率
+                const powerBoost = DamageEngine.resolveBoosts(MoveScope.Move, activeMove.category, env);
+                const passiveBoost = passiveSum + powerBoost;
+
+                // 获取主动技能自身的倍率
+                const moveSkill = MOVE_OVERRIDES[activeMove.name] ?? DEFAULT_MOVE_SKILL;
+                // 主動技能自身倍率
+                const moveBoost = DamageEngine.resolveMoveMultiplier(activeMove, moveSkill, env);
+
+                // 获取环境提供的倍率
+                const envBoost = DamageEngine.resolveEnvMultipliers(activeMove, MoveScope.Move, env);
+
+                // 获取攻击力
+                // 组队技能的加成
+                let userStat = 0;
+                if (activeMove.category === 1) {
+                    const ignoreBurn = (moveSkill.condition.extra === ExtraLogic.BurnUseless)
+                    // 物理攻击
+                    userStat = getFinalStatValue(rawData, state, 'atk', formIndex, {
+                        gearBonus: env.user.gear.atk,
+                        themeBonus: moveTypeCnName === theme.tagType ? theme.flatBonuses.atk + theme.typeBonuses.atk : theme.flatBonuses.atk,
+                        boost: DamageEngine.resolveStatBoost(currentPassives, env, 'atk', ignoreBurn)
+                    })
+                } else {
+                    // 特殊攻击
+                    userStat = getFinalStatValue(rawData, state, 'spa', formIndex, {
+                        gearBonus: env.user.gear.atk,
+                        themeBonus: moveTypeCnName === theme.tagType ? theme.flatBonuses.spa + theme.typeBonuses.spa : theme.flatBonuses.spa,
+                        boost: DamageEngine.resolveStatBoost(currentPassives, env, 'spa')
+                    })
+                }
+
+                // 获取目标防御力
+                let targetStat = 0;
+                if (activeMove.category === 1) {
+                    targetStat = targeStats.def;
+                } else {
+                    targetStat = targeStats.spd;
+                }
+
+
+                return { move: activeMove, passiveBoost: passiveBoost, moveBoost: moveBoost, envBoost: envBoost, userStat: userStat, targetStat: targetStat };
             });
 
             // // 2. 拍組招式 (Sync Move)
@@ -382,6 +526,7 @@ export function useDamageCalculator(
     return {
         themeSnapshot,
         passiveSnapshot,
+        statSnapshot,
         finalDamageResult,
     };
 }

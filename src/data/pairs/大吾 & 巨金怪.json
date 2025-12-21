@@ -150,7 +150,7 @@
           "type": 17,
           "gauge": 2,
           "uses": "−",
-          "category": "物理",
+          "category": 1,
           "power": 55,
           "accuracy": 90,
           "target": "對手１對拍組",
@@ -165,7 +165,7 @@
           "type": 0,
           "gauge": 0,
           "uses": 2,
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "自己",
@@ -180,7 +180,7 @@
           "type": 17,
           "gauge": 3,
           "uses": "−",
-          "category": "物理",
+          "category": 1,
           "power": 92,
           "accuracy": 100,
           "target": "對手１對拍組",
@@ -195,7 +195,7 @@
           "type": 0,
           "gauge": 0,
           "uses": 2,
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "自己",
@@ -211,7 +211,7 @@
         "type": 17,
         "gauge": 0,
         "uses": "−",
-        "category": "物理",
+        "category": 1,
         "power": 160,
         "accuracy": 0,
         "target": "對手１對拍組",
@@ -228,8 +228,8 @@
       "actor": "pm0376_51_megametagross",
       "gender": 3,
       "is_shiny": false,
-      "type": 17,
-      "weakness": 14,
+      "type": "-1",
+      "weakness": "-1",
       "stat": {
         "hp": [
           80,
@@ -306,7 +306,7 @@
           "type": 17,
           "gauge": 3,
           "uses": "−",
-          "category": "物理",
+          "category": 1,
           "power": 92,
           "accuracy": 100,
           "target": "對手１對拍組",
@@ -321,7 +321,7 @@
           "type": 0,
           "gauge": 0,
           "uses": 2,
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "自己",
@@ -336,7 +336,7 @@
           "type": 17,
           "gauge": 0,
           "uses": 3,
-          "category": "物理",
+          "category": 1,
           "power": 75,
           "accuracy": 100,
           "target": "對手１對拍組",
@@ -351,7 +351,7 @@
           "type": 0,
           "gauge": 0,
           "uses": 2,
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "自己",
@@ -367,22 +367,14 @@
         "type": 17,
         "gauge": 0,
         "uses": "−",
-        "category": "物理",
+        "category": 1,
         "power": 160,
         "accuracy": 0,
         "target": "對手１對拍組",
         "description": "變成超級巨金怪直到對戰結束。",
         "tags": "none",
         "group": "Sync"
-      },
-      "scale": [
-        100,
-        120,
-        110,
-        100,
-        110,
-        100
-      ]
+      }
     }
   ],
   "luckCookies": [
@@ -390,21 +382,18 @@
       "cookieName": "大吾專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "效果絕佳時威力提升5",
+          "name": [],
           "description": "當效果絕佳時,會提高該招式的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時賦予物理/特殊增強2",
+          "name": [],
           "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
-          "detail": [],
           "rate": 33
         }
       ]

@@ -9,7 +9,7 @@
         <div v-if="filteredTrainers.length === 0" class="no-result">
             未找到匹配的拍组，请更换关键词～
         </div>
-        <div v-for="trainer in filteredTrainers" :key="trainer.id" class="trainer-item" :class="'bg_' + getTypeInfoWithCNName(trainer.type).key.toLowerCase()" @click="handleSelect(trainer)">
+        <div v-for="trainer in filteredTrainers" :key="trainer.id" class="trainer-item" :class="'bg_' + getTypeInfoWithCnName(trainer.type).key.toLowerCase()" @click="handleSelect(trainer)">
             <!-- 拍组头像 -->
             <img :src="getTrainerUrl(trainer.actorId, false)" alt="trainer" class="trainer-avatar" />
             <!-- 拍组信息 -->
@@ -25,7 +25,7 @@
 </template>
 
 <script setup>
-import { getTypeInfoWithCNName } from '@/core/exporter/map';
+import { getTypeInfoWithCnName } from '@/core/exporter/map';
 import { useSyncCacheStore } from "@/stores/syncCache";
 import { getTrainerUrl } from '@/utils/format';
 import { Converter } from 'opencc-js';

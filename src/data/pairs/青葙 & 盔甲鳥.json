@@ -155,7 +155,7 @@
           "type": 17,
           "gauge": 1,
           "uses": "−",
-          "category": "物理",
+          "category": 1,
           "power": 21,
           "accuracy": 95,
           "target": "對手１對拍組",
@@ -170,7 +170,7 @@
           "type": 0,
           "gauge": 0,
           "uses": 2,
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "我方全體拍組",
@@ -185,7 +185,7 @@
           "type": 1,
           "gauge": 2,
           "uses": "−",
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "自己",
@@ -200,7 +200,7 @@
           "type": 0,
           "gauge": 0,
           "uses": 1,
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "我方全體拍組",
@@ -216,7 +216,7 @@
         "type": 17,
         "gauge": 0,
         "uses": "−",
-        "category": "物理",
+        "category": 1,
         "power": 250,
         "accuracy": 0,
         "target": "對手１對拍組",
@@ -233,8 +233,8 @@
       "actor": "pm0227_81_00_airmd",
       "gender": 2,
       "is_shiny": false,
-      "type": 17,
-      "weakness": 2,
+      "type": "-1",
+      "weakness": "-1",
       "stat": {
         "hp": [
           101,
@@ -310,14 +310,6 @@
       ],
       "moves": null,
       "syncMove": null,
-      "scale": [
-        100,
-        100,
-        100,
-        100,
-        100,
-        100
-      ],
       "movesDynamax": [
         {
           "id": 7019,
@@ -326,7 +318,7 @@
           "type": 17,
           "gauge": 0,
           "uses": "−",
-          "category": "物理",
+          "category": 1,
           "power": 400,
           "accuracy": 0,
           "target": "對手１對拍組",
@@ -341,7 +333,7 @@
           "type": 1,
           "gauge": 0,
           "uses": "−",
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "我方１對拍組",
@@ -357,21 +349,18 @@
       "cookieName": "青葙專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "被攻擊時HP回復G9",
+          "name": [],
           "description": "受到招式攻擊時,會回復我方全體拍組的HP。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時物理/特殊增強G1",
+          "name": [],
           "description": "首次上場時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時拍組招式增強G3",
+          "name": [],
           "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
-          "detail": [],
           "rate": 33
         }
       ]

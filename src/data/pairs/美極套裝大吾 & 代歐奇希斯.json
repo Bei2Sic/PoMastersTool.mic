@@ -155,7 +155,7 @@
           "type": 0,
           "gauge": 0,
           "uses": "−",
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "全場地",
@@ -170,7 +170,7 @@
           "type": 0,
           "gauge": 0,
           "uses": "−",
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "自己",
@@ -185,7 +185,7 @@
           "type": 0,
           "gauge": 0,
           "uses": "−",
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "自己",
@@ -200,7 +200,7 @@
           "type": 0,
           "gauge": 0,
           "uses": "−",
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "我方全體拍組",
@@ -216,7 +216,7 @@
         "type": 11,
         "gauge": 0,
         "uses": "−",
-        "category": "特殊",
+        "category": 2,
         "power": 200,
         "accuracy": 0,
         "target": "對手１對拍組",
@@ -233,8 +233,8 @@
       "actor": "pm0386_12_deoxys",
       "gender": 3,
       "is_shiny": false,
-      "type": 11,
-      "weakness": 16,
+      "type": "-1",
+      "weakness": "-1",
       "stat": {
         "hp": [
           101,
@@ -316,7 +316,7 @@
           "type": 11,
           "gauge": 4,
           "uses": "−",
-          "category": "特殊",
+          "category": 2,
           "power": 200,
           "accuracy": 90,
           "target": "對手１對拍組",
@@ -331,7 +331,7 @@
           "type": 1,
           "gauge": 2,
           "uses": 1,
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "自己",
@@ -346,7 +346,7 @@
           "type": 11,
           "gauge": 2,
           "uses": "−",
-          "category": "物理",
+          "category": 1,
           "power": 51,
           "accuracy": 90,
           "target": "對手１對拍組",
@@ -361,7 +361,7 @@
           "type": 11,
           "gauge": 2,
           "uses": "−",
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "自己",
@@ -377,22 +377,14 @@
         "type": 11,
         "gauge": 0,
         "uses": "−",
-        "category": "特殊",
+        "category": 2,
         "power": 200,
         "accuracy": 0,
         "target": "對手１對拍組",
         "description": "自己的能力提高得越多,威力就越大。",
         "tags": "none",
         "group": "Sync"
-      },
-      "scale": [
-        100,
-        200,
-        70,
-        200,
-        70,
-        100
-      ]
+      }
     },
     {
       "id": "20090100000",
@@ -402,8 +394,8 @@
       "actor": "pm0386_14_deoxys",
       "gender": 3,
       "is_shiny": false,
-      "type": 11,
-      "weakness": 16,
+      "type": "-1",
+      "weakness": "-1",
       "stat": {
         "hp": [
           101,
@@ -485,7 +477,7 @@
           "type": 11,
           "gauge": 4,
           "uses": "−",
-          "category": "特殊",
+          "category": 2,
           "power": 200,
           "accuracy": 90,
           "target": "對手１對拍組",
@@ -500,7 +492,7 @@
           "type": 1,
           "gauge": 2,
           "uses": 2,
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "自己",
@@ -515,7 +507,7 @@
           "type": 11,
           "gauge": 2,
           "uses": "−",
-          "category": "物理",
+          "category": 1,
           "power": 51,
           "accuracy": 90,
           "target": "對手１對拍組",
@@ -530,7 +522,7 @@
           "type": 1,
           "gauge": 1,
           "uses": "−",
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "自己",
@@ -546,22 +538,14 @@
         "type": 11,
         "gauge": 0,
         "uses": "−",
-        "category": "特殊",
+        "category": 2,
         "power": 200,
         "accuracy": 0,
         "target": "對手１對拍組",
         "description": "自己的能力提高得越多,威力就越大。",
         "tags": "none",
         "group": "Sync"
-      },
-      "scale": [
-        100,
-        100,
-        130,
-        100,
-        130,
-        160
-      ]
+      }
     },
     {
       "id": "20090100000",
@@ -571,8 +555,8 @@
       "actor": "pm0386_13_deoxys",
       "gender": 3,
       "is_shiny": false,
-      "type": 11,
-      "weakness": 16,
+      "type": "-1",
+      "weakness": "-1",
       "stat": {
         "hp": [
           101,
@@ -654,7 +638,7 @@
           "type": 11,
           "gauge": 4,
           "uses": "−",
-          "category": "特殊",
+          "category": 2,
           "power": 200,
           "accuracy": 90,
           "target": "對手１對拍組",
@@ -669,7 +653,7 @@
           "type": 1,
           "gauge": 2,
           "uses": 2,
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "自己",
@@ -684,7 +668,7 @@
           "type": 11,
           "gauge": 2,
           "uses": "−",
-          "category": "物理",
+          "category": 1,
           "power": 51,
           "accuracy": 90,
           "target": "對手１對拍組",
@@ -699,7 +683,7 @@
           "type": 17,
           "gauge": 2,
           "uses": "−",
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "自己",
@@ -715,22 +699,14 @@
         "type": 11,
         "gauge": 0,
         "uses": "−",
-        "category": "特殊",
+        "category": 2,
         "power": 200,
         "accuracy": 0,
         "target": "對手１對拍組",
         "description": "自己的能力提高得越多,威力就越大。",
         "tags": "none",
         "group": "Sync"
-      },
-      "scale": [
-        100,
-        50,
-        200,
-        50,
-        200,
-        50
-      ]
+      }
     },
     {
       "id": "20090100000",
@@ -740,8 +716,8 @@
       "actor": "pm0386_11_deoxys",
       "gender": 3,
       "is_shiny": false,
-      "type": 11,
-      "weakness": 16,
+      "type": "-1",
+      "weakness": "-1",
       "stat": {
         "hp": [
           101,
@@ -823,7 +799,7 @@
           "type": 11,
           "gauge": 4,
           "uses": "−",
-          "category": "特殊",
+          "category": 2,
           "power": 200,
           "accuracy": 90,
           "target": "對手１對拍組",
@@ -838,7 +814,7 @@
           "type": 1,
           "gauge": 2,
           "uses": 2,
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "自己",
@@ -853,7 +829,7 @@
           "type": 11,
           "gauge": 2,
           "uses": "−",
-          "category": "物理",
+          "category": 1,
           "power": 51,
           "accuracy": 90,
           "target": "對手１對拍組",
@@ -868,7 +844,7 @@
           "type": 11,
           "gauge": 2,
           "uses": "−",
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "自己",
@@ -884,22 +860,14 @@
         "type": 11,
         "gauge": 0,
         "uses": "−",
-        "category": "特殊",
+        "category": 2,
         "power": 200,
         "accuracy": 0,
         "target": "對手１對拍組",
         "description": "自己的能力提高得越多,威力就越大。",
         "tags": "none",
         "group": "Sync"
-      },
-      "scale": [
-        100,
-        100,
-        100,
-        100,
-        100,
-        100
-      ]
+      }
     }
   ],
   "luckCookies": [
@@ -907,21 +875,18 @@
       "cookieName": "美極套裝大吾專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "拍組招式效果絕佳時威力↑5",
+          "name": [],
           "description": "當效果絕佳時,會提高該拍組招式的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時拍組招式增強5",
+          "name": [],
           "description": "首次上場時,會提高自己的下次拍組招式威力增強5階段。",
-          "detail": [],
           "rate": 33
         }
       ]

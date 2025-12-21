@@ -1,4 +1,4 @@
-import { LogicType, MoveScope } from "@/types/calculator";
+import { ExtraLogic, LogicType, MoveScope } from "@/types/calculator";
 import { PassiveSkillModel } from "@/types/passiveModel";
 
 export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
@@ -37,7 +37,8 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             condition: {
                 key: "地面",
                 detail: "自身",
-                logic: LogicType.TypeShift,
+                logic: LogicType.NoEffect,
+                extra: ExtraLogic.TypeShift,
             },
             statBoost: {
                 isStatBoost: false,
@@ -325,7 +326,31 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             condition: {
                 key: "龍",
                 detail: "自身",
-                logic: LogicType.TypeShift,
+                logic: LogicType.NoEffect,
+                extra: ExtraLogic.TypeShift,
+            },
+            statBoost: {
+                isStatBoost: false,
+                stats: [],
+                value: 1.0,
+            },
+            applyToParty: false,
+        },
+    ],
+    浪跡天涯的冠軍: [
+        {
+            name: "浪跡天涯的冠軍",
+            desc: "",
+            passiveName: "浪跡天涯的冠軍",
+            boost: {
+                scope: MoveScope.Move,
+                value: 0.0,
+            },
+            condition: {
+                key: "蟲",
+                detail: "自身",
+                logic: LogicType.NoEffect,
+                extra: ExtraLogic.TypeShift,
             },
             statBoost: {
                 isStatBoost: false,

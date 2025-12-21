@@ -166,7 +166,7 @@ const isSingleView = ref(window.innerWidth <= 900);
 const curTab = ref('grid');
 
 const { singleSync } = storeToRefs(syncElemStore);
-const { themeSnapshot, passiveSnapshot, finalDamageResult } = useDamageCalculator(singleSync);
+const { themeSnapshot, passiveSnapshot, statSnapshot, finalDamageResult } = useDamageCalculator(singleSync);
 
 // 潜能相关
 // const currentType = ref(1);
@@ -208,6 +208,14 @@ watch(themeSnapshot, (newValue) => {
 watch(passiveSnapshot, (newValue) => {
     if (newValue && newValue.length > 0) {
         console.log("✅ 計算器成功算出被動技能:", newValue);
+    } else {
+        console.log("⏳ 計算結果為空 (可能數據尚未加載)");
+    }
+}, { immediate: true });
+
+watch(statSnapshot, (newValue) => {
+    if (newValue && newValue.length > 0) {
+        console.log("✅ 計算器成功算出白值數據:", newValue);
     } else {
         console.log("⏳ 計算結果為空 (可能數據尚未加載)");
     }

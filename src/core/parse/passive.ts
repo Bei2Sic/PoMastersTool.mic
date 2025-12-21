@@ -1,10 +1,11 @@
-import { LogicType, MoveScope } from "@/types/calculator";
+import { ExtraLogic, LogicType, MoveScope } from "@/types/calculator";
 import {
     ABNORMAL_STATUSES,
     HINDRANCE_STATUSES,
     WEATHER_STATUSES,
 } from "@/types/conditions";
 import { PassiveSkillModel, PassiveStatBoost } from "@/types/passiveModel";
+import { getTypeCnNameByTypeSpecialName } from "../exporter/map";
 
 export class PassiveSkillParser {
     private name: string;
@@ -122,7 +123,7 @@ export class PassiveSkillParser {
             condition: {
                 key: key,
                 detail: "自身",
-                logic: LogicType.ArcSuitPassive,
+                logic: LogicType.TeamWorkPassive,
             },
             boost: {
                 scope: MoveScope.Move,
@@ -174,31 +175,8 @@ export class PassiveSkillParser {
     }
 
     private resolveArcSuit(name: string, desc: string): PassiveSkillModel {
-        const key = name.substring(0, 2);
-        // let key = "一般";
-        // switch (prefix) {
-        //     case "火球":
-        //         key = "火";
-        //         break;
-        //     case "大地":
-        //         key = "地面";
-        //         break;
-        //     case "蓝天":
-        //         key = "飛行";
-        //         break;
-        //     case "玉蟲":
-        //         key = "蟲";
-        //         break;
-        //     case "龙之":
-        //         key = "龍";
-        //         break;
-        //     case "惡顔":
-        //         key = "惡顔";
-        //         break;
-        //     case "钢铁":
-        //         key = "鋼";
-        //         break;
-        // }
+        const specialName = name.substring(0, 2);
+        const key = getTypeCnNameByTypeSpecialName(specialName)
         return {
             name: name,
             desc: desc,
@@ -236,7 +214,8 @@ export class PassiveSkillParser {
             condition: {
                 key: key,
                 detail: "自身",
-                logic: LogicType.TypeShift,
+                logic: LogicType.NoEffect,
+                extra: ExtraLogic.TypeShift,
             },
             boost: {
                 scope: MoveScope.Move,
@@ -334,7 +313,7 @@ export class PassiveSkillParser {
                 };
             }
 
-            // 能力等級 (Stat Scaling) - 這是最複雜的部分
+            // 能力等級 (Stat Scaling)
             // 匹配：隨著 (速度) (提升/降低)
             const statMatch = name.match(
                 new RegExp(
@@ -442,11 +421,12 @@ export class PassiveSkillParser {
                 detail: "自身",
                 isDynamic: false,
             };
-        if (desc.includes("HP剩下一半以上"))
+        if (desc.includes("HP剩下一半"))
             return {
-                logic: LogicType.HPHighHalf,
-                key: "HP剩下一半以上",
-                detail: "自身",
+                logic: LogicType.HPHalf,
+                key: "HP剩下一半",
+                detail: desc.includes("對手") ? "對手" : "自身",
+                direction: desc.includes("HP剩下一半以上") ? "以上" : "以下",
                 isDynamic: false,
             };
         if (desc.includes("危機"))
@@ -471,7 +451,7 @@ export class PassiveSkillParser {
                 detail: "自身",
                 isDynamic: false,
             };
-        if (desc.includes("属性抵抗降低"))
+        if (desc.includes("屬性抵抗降低"))
             return {
                 logic: LogicType.Rebuff,
                 key: "任意",
@@ -493,7 +473,7 @@ export class PassiveSkillParser {
                 isDynamic: false,
             };
 
-        // 2. 環境/狀態類 (固定倍率)
+        // 2. 環境/狀態類
         // 傷害場地
         if (name.includes("傷害場地")) {
             const match = name.match(/(.+?傷害場地)/);
@@ -528,11 +508,12 @@ export class PassiveSkillParser {
         }
         // 鬥陣
         if (name.includes("鬥陣")) {
-            const match = name.match(/(.+?鬥陣(?:[（(].+?[)）])?)/);
+            // const match = name.match(/(.+?鬥陣(?:[（(].+?[)）])?)/);
+            const match = name.match(/(.+?)鬥陣[（(](.+?)[)）]/);
             if (match)
                 return {
                     logic: LogicType.BattleCircle,
-                    key: match[1],
+                    key: `${match[1]}_${match[2]}`,
                     detail: "自身",
                     isDynamic: false,
                 };
@@ -608,7 +589,7 @@ export class PassiveSkillParser {
         const nameMatch = this.name.match(/(\d+)$/);
         if (nameMatch) {
             const rank = parseInt(nameMatch[1], 10);
-            return { value: rank * 0.1 }; // Rank 3 = +30%
+            return { value: rank / 10 }; // Rank 3 = +30%
         }
 
         // 2. 嘗試從描述提取 (特殊寫法)

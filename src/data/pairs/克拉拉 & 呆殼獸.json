@@ -155,7 +155,7 @@
           "type": 8,
           "gauge": 3,
           "uses": "−",
-          "category": "特殊",
+          "category": 2,
           "power": 92,
           "accuracy": 100,
           "target": "對手１對拍組",
@@ -170,7 +170,7 @@
           "type": 8,
           "gauge": 3,
           "uses": "−",
-          "category": "物理",
+          "category": 1,
           "power": 92,
           "accuracy": 100,
           "target": "對手１對拍組",
@@ -185,7 +185,7 @@
           "type": 8,
           "gauge": 2,
           "uses": "−",
-          "category": "特殊",
+          "category": 2,
           "power": 240,
           "accuracy": 0,
           "target": "對手１對拍組",
@@ -200,7 +200,7 @@
           "type": 0,
           "gauge": 0,
           "uses": 1,
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "自己",
@@ -216,7 +216,7 @@
         "type": 8,
         "gauge": 0,
         "uses": "−",
-        "category": "特殊",
+        "category": 2,
         "power": 200,
         "accuracy": 0,
         "target": "對手１對拍組",
@@ -233,8 +233,8 @@
       "actor": "pm0080_00_31_dyadoran",
       "gender": 2,
       "is_shiny": false,
-      "type": 8,
-      "weakness": 14,
+      "type": "-1",
+      "weakness": "-1",
       "stat": {
         "hp": [
           108,
@@ -316,7 +316,7 @@
           "type": 8,
           "gauge": 3,
           "uses": "−",
-          "category": "特殊",
+          "category": 2,
           "power": 92,
           "accuracy": 100,
           "target": "對手１對拍組",
@@ -331,7 +331,7 @@
           "type": 8,
           "gauge": 3,
           "uses": "−",
-          "category": "物理",
+          "category": 1,
           "power": 92,
           "accuracy": 100,
           "target": "對手１對拍組",
@@ -346,7 +346,7 @@
           "type": 8,
           "gauge": 2,
           "uses": "−",
-          "category": "物理",
+          "category": 1,
           "power": 240,
           "accuracy": 0,
           "target": "對手１對拍組",
@@ -361,7 +361,7 @@
           "type": 0,
           "gauge": 0,
           "uses": 1,
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "自己",
@@ -377,22 +377,14 @@
         "type": 8,
         "gauge": 0,
         "uses": "−",
-        "category": "特殊",
+        "category": 2,
         "power": 200,
         "accuracy": 0,
         "target": "對手１對拍組",
         "description": "自己的特攻提高得越多,威力就越大。",
         "tags": "none",
         "group": "Sync"
-      },
-      "scale": [
-        100,
-        100,
-        100,
-        100,
-        100,
-        100
-      ]
+      }
     },
     {
       "id": "20272000000",
@@ -402,8 +394,8 @@
       "actor": "pm0080_81_31_dyadoran",
       "gender": 2,
       "is_shiny": false,
-      "type": 8,
-      "weakness": 14,
+      "type": "-1",
+      "weakness": "-1",
       "stat": {
         "hp": [
           108,
@@ -479,14 +471,6 @@
       ],
       "moves": null,
       "syncMove": null,
-      "scale": [
-        100,
-        100,
-        100,
-        100,
-        100,
-        100
-      ],
       "movesDynamax": [
         {
           "id": 7010,
@@ -495,7 +479,7 @@
           "type": 8,
           "gauge": 0,
           "uses": "−",
-          "category": "特殊",
+          "category": 2,
           "power": 400,
           "accuracy": 0,
           "target": "對手１對拍組",
@@ -510,7 +494,7 @@
           "type": 8,
           "gauge": 0,
           "uses": "−",
-          "category": "物理",
+          "category": 1,
           "power": 400,
           "accuracy": 0,
           "target": "對手１對拍組",
@@ -525,7 +509,7 @@
           "type": 8,
           "gauge": 0,
           "uses": "−",
-          "category": "特殊",
+          "category": 2,
           "power": 400,
           "accuracy": 0,
           "target": "對手１對拍組",
@@ -541,9 +525,8 @@
       "cookieName": "克拉拉專用潛能餅乾１",
       "skills": [
         {
-          "name": "對手中毒時拍組招式↑4",
+          "name": [],
           "description": "當對手陷入中毒或劇毒狀態時,會提高自己的拍組招式的威力。",
-          "detail": [],
           "rate": 100
         }
       ]
@@ -552,21 +535,18 @@
       "cookieName": "克拉拉專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "拍組招式效果絕佳時威力↑5",
+          "name": [],
           "description": "當效果絕佳時,會提高該拍組招式的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時拍組招式增強5",
+          "name": [],
           "description": "首次上場時,會提高自己的下次拍組招式威力增強5階段。",
-          "detail": [],
           "rate": 33
         }
       ]

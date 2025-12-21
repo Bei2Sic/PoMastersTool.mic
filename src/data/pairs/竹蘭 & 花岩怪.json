@@ -173,7 +173,7 @@
           "type": 14,
           "gauge": 2,
           "uses": "−",
-          "category": "特殊",
+          "category": 2,
           "power": 38,
           "accuracy": 100,
           "target": "對手１對拍組",
@@ -188,7 +188,7 @@
           "type": 2,
           "gauge": 2,
           "uses": "−",
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 90,
           "target": "對手１對拍組",
@@ -203,7 +203,7 @@
           "type": 14,
           "gauge": 2,
           "uses": 108,
-          "category": "特殊",
+          "category": 2,
           "power": 90,
           "accuracy": 0,
           "target": "對手１對拍組",
@@ -218,7 +218,7 @@
           "type": 0,
           "gauge": 0,
           "uses": 1,
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "我方全體拍組",
@@ -234,7 +234,7 @@
         "type": 14,
         "gauge": 0,
         "uses": "−",
-        "category": "特殊",
+        "category": 2,
         "power": 200,
         "accuracy": 0,
         "target": "對手１對拍組",
@@ -249,21 +249,17 @@
       "cookieName": "竹蘭專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "招式後招式計量槽增加9",
+          "name": [],
           "description": "招式成功時,會幫自己增加1條招式計量槽。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時&首次拍組招式後計數加速1",
-          "description": "首次上場時,發動拍組招式所需的行動數會減少1次。首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。",
-          "detail": [
+          "name": [
             {
               "name": "首次上場時計數加速1",
               "description": "首次上場時,發動拍組招式所需的行動數會減少1次。"
@@ -273,6 +269,7 @@
               "description": "首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。"
             }
           ],
+          "description": "首次上場時,發動拍組招式所需的行動數會減少1次。首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。",
           "rate": 33
         }
       ]
@@ -393,7 +390,7 @@
       "level": 1,
       "x": 2,
       "y": 0,
-      "color": "#47D147",
+      "color": "#BF80FF",
       "type": 14
     },
     {
@@ -406,7 +403,7 @@
       "level": 1,
       "x": 1,
       "y": 1,
-      "color": "#47D147",
+      "color": "#BF80FF",
       "type": 14
     },
     {
@@ -419,7 +416,7 @@
       "level": 2,
       "x": 3,
       "y": 0,
-      "color": "#47D147",
+      "color": "#BF80FF",
       "type": 14
     },
     {
@@ -796,7 +793,7 @@
       "level": 1,
       "x": -2,
       "y": 4,
-      "color": "#47D147",
+      "color": "#BF80FF",
       "type": 14
     },
     {
@@ -809,7 +806,7 @@
       "level": 1,
       "x": -3,
       "y": 5,
-      "color": "#47D147",
+      "color": "#BF80FF",
       "type": 14
     },
     {

@@ -165,7 +165,7 @@
           "type": 3,
           "gauge": 4,
           "uses": "−",
-          "category": "特殊",
+          "category": 2,
           "power": 189,
           "accuracy": 85,
           "target": "對手全體拍組",
@@ -180,7 +180,7 @@
           "type": 4,
           "gauge": 3,
           "uses": "−",
-          "category": "特殊",
+          "category": 2,
           "power": 124,
           "accuracy": 70,
           "target": "對手１對拍組",
@@ -195,7 +195,7 @@
           "type": 3,
           "gauge": 4,
           "uses": 1,
-          "category": "特殊",
+          "category": 2,
           "power": 600,
           "accuracy": 100,
           "target": "對手全體拍組",
@@ -210,7 +210,7 @@
           "type": 0,
           "gauge": 0,
           "uses": 2,
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "我方１對拍組",
@@ -226,7 +226,7 @@
         "type": 3,
         "gauge": 0,
         "uses": "−",
-        "category": "特殊",
+        "category": 2,
         "power": 250,
         "accuracy": 0,
         "target": "對手１對拍組",
@@ -243,8 +243,8 @@
       "actor": "pm0382_51_kyogresp_rare",
       "gender": 3,
       "is_shiny": true,
-      "type": 3,
-      "weakness": 5,
+      "type": "-1",
+      "weakness": "-1",
       "stat": {
         "hp": [
           106,
@@ -349,7 +349,7 @@
           "type": 3,
           "gauge": 4,
           "uses": "−",
-          "category": "特殊",
+          "category": 2,
           "power": 189,
           "accuracy": 85,
           "target": "對手全體拍組",
@@ -364,7 +364,7 @@
           "type": 4,
           "gauge": 3,
           "uses": "−",
-          "category": "特殊",
+          "category": 2,
           "power": 124,
           "accuracy": 70,
           "target": "對手１對拍組",
@@ -379,7 +379,7 @@
           "type": 3,
           "gauge": 4,
           "uses": 1,
-          "category": "特殊",
+          "category": 2,
           "power": 600,
           "accuracy": 100,
           "target": "對手全體拍組",
@@ -394,7 +394,7 @@
           "type": 0,
           "gauge": 0,
           "uses": 2,
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "我方１對拍組",
@@ -410,22 +410,14 @@
         "type": 3,
         "gauge": 0,
         "uses": "−",
-        "category": "特殊",
+        "category": 2,
         "power": 250,
         "accuracy": 0,
         "target": "對手１對拍組",
         "description": "沒有追加效果。",
         "tags": "none",
         "group": "Sync"
-      },
-      "scale": [
-        100,
-        100,
-        100,
-        100,
-        100,
-        100
-      ]
+      }
     }
   ],
   "luckCookies": [
@@ -433,9 +425,8 @@
       "cookieName": "小遙（冠軍）專用潛能餅乾１",
       "skills": [
         {
-          "name": "下雨時拍組招式提升4",
+          "name": [],
           "description": "當天氣為下雨時,會提高拍組招式的威力。",
-          "detail": [],
           "rate": 100
         }
       ]
@@ -444,21 +435,18 @@
       "cookieName": "小遙（冠軍）專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "天氣場地領域變化時計量槽加速2",
+          "name": [],
           "description": "只有在天氣、場地或領域變化時,招式計量槽會累積得較快。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "天氣場地領域變化時拍組招式↑G2",
+          "name": [],
           "description": "只有在天氣、場地或領域變化時,會提高我方全體拍組的拍組招式的威力。",
-          "detail": [],
           "rate": 33
         }
       ]
@@ -891,7 +879,7 @@
       "level": 1,
       "x": 2,
       "y": -4,
-      "color": "#47D147",
+      "color": "#BF80FF",
       "type": 3
     },
     {
@@ -904,7 +892,7 @@
       "level": 1,
       "x": 1,
       "y": -4,
-      "color": "#47D147",
+      "color": "#BF80FF",
       "type": 3
     },
     {
@@ -917,7 +905,7 @@
       "level": 2,
       "x": 3,
       "y": -5,
-      "color": "#47D147",
+      "color": "#BF80FF",
       "type": 3
     },
     {

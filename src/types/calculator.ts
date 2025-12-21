@@ -8,6 +8,7 @@ import {
     DamageFieldType,
     GaugeValue,
     HindranceType,
+    PokemonStats,
     PokemonType,
     RebuffRank,
     TerrainType,
@@ -51,13 +52,15 @@ export enum LogicType {
     AllStatNotInHigh = "AllStatNotInHigh", // 能力非提升
     AnyStatInLow = "AnyStatInLow", // 能力降低
     HPLow = "HPLow", // 危機
-    HPHighHalf = "HPHighHalf", // 一半以上
+    HPHalf = "HPHalf", // 一半以上
+    HPLowHalf = "HPLowHalf", // 一半以下
     HPDecreased = "HPDecreased", // 未滿
     Critical = "Critical",
     SuperEffective = "SuperEffective",
     Recoil = "Recoil", // 反衝
     MoveType = "MoveType", // 技能屬性
     SyncType = "SyncType", // 拍組屬性
+    SyncBuffs = "SyncBuffs", // 气魄状态
     Berry = "Berry", // 樹果
     GaugeSpeedBoostOn = "GaugeSpeedBoostOn",
     GaugeCost = "GaugeCost", //
@@ -73,15 +76,30 @@ export enum LogicType {
     // 白值能力加成
     StatBaseBoost = "StatBaseBoost",
 
-    // 特殊效果
-    Compound = "Compound",
-    NoDecay = "NoDecay",
-    TypeShift = "TypeShift",
+    // Mega狀態
+    IsMega = "IsMega",
+
+    // 無效果
+    NoEffect = "NoEffect",
 
     // 特殊被動
     MasterPassive = "MasterPassive",
     ArcSuitPassive = "ArcSuitPassive",
     TeamWorkPassive = "TeamWorkPassive",
+
+    // 組合邏輯
+    Compound = "Compound",
+    MultiStatusActive = "MultiStatusActive", // 複合狀態(特殊異常列表/特殊妨害列表/或者組合列表)
+
+    // 特殊倍率的move
+    SpecialHandler = "SpecialHandler",
+}
+
+// 主動效果的追加補充邏輯
+export enum ExtraLogic {
+    BurnUseless = "BurnUseless",
+    NoDecay = "NoDecay", // 無衰減
+    TypeShift = "TypeShift", //屬性替換
 }
 
 export interface Condition {
@@ -89,6 +107,8 @@ export interface Condition {
     detail: string;
     logic: LogicType;
     direction?: string;
+    extra?: ExtraLogic;
+    keys?: any; // 針對一些特殊組合邏輯, 複合key,
 }
 
 export interface ThemeContext {
@@ -98,6 +118,7 @@ export interface ThemeContext {
     flatBonuses: {
         atk: number;
         spa: number;
+        spe: number;
         hp: number;
     };
     // 特定属性Tag
@@ -117,23 +138,19 @@ export interface ActiveMultiplier {
 }
 
 export interface CalcEnvironment {
-    // ==========================================
-    // 1. 環境
-    // ==========================================
     weather: WeatherType;
+    isEXWeather: boolean;
     terrain: TerrainType;
+    isEXTerrain: boolean;
     zone: ZoneType;
-    battleCircles: BattleCircle[];
+    isEXZone: boolean;
     gaugeSpeedBoost: boolean;
+    battleCircles: BattleCircle;
 
-    // ==========================================
-    // 2. 攻擊方 (User)
-    // ==========================================
     user: {
         hpPercent: number; // 0-100
+        gear: PokemonStats,
         ranks: BattleRanks;
-
-        // 增強狀態
         boosts: {
             physical: BoostRank;
             special: BoostRank;
@@ -144,11 +161,9 @@ export interface CalcEnvironment {
         hindrance: Record<HindranceType, boolean>;
     };
 
-    // ==========================================
-    // 3. 防禦方 (Target)
-    // ==========================================
     target: {
         hpPercent: number;
+        stats: PokemonStats;
         ranks: BattleRanks;
         abnormal: AbnormalType;
         hindrance: Record<HindranceType, boolean>;
@@ -161,8 +176,10 @@ export interface CalcEnvironment {
     // ==========================================
     settings: {
         gauge: GaugeValue;
-        berry: BerryNum;
+        berry: BerryNum; // 
+        moveuse: number; // 針對 邪惡靈魂暗影球
         isCritical: boolean;
+        effectiveType: PokemonType;
         isSuperEffective: boolean;
     };
 }

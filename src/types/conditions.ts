@@ -4,7 +4,7 @@ export type BoostRank = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10; // 增強等
 export type GaugeValue = 1 | 2 | 3 | 4 | 5 | 6; // 計量槽值
 export type TargetScope = 1 | 2 | 3;
 export type RebuffRank = -3 | -2 | -1 | 0; // 抵抗等級
-export type BerryNum = 0 | 1 | 2;
+export type BerryNum = 0 | 1 | 2 | 3;
 
 export interface BattleRanks {
     atk: StatRank;
@@ -19,6 +19,7 @@ export interface BattleRanks {
 
 // 18種屬性名稱 (Type Names)
 export type PokemonType =
+    | "無"
     | "一般"
     | "火"
     | "水"
@@ -79,13 +80,24 @@ export type RegionType =
 export type CircleCategory = "無" | "物理" | "特殊" | "防禦";
 export type CircleLevel = 1 | 2 | 3;
 
-// 鬥陣狀態接口 (支援多開和等級)
-export interface BattleCircle {
-    region: RegionType;
-    category: CircleCategory;
-    isActive: boolean;
+// 鬥陣
+// export interface BattleCircle {
+//     region: RegionType;
+//     category: CircleCategory;
+//     isActive: boolean;
+//     level: CircleLevel;
+// }
+
+export interface RegionCircleState {
     level: CircleLevel;
+    actives: {
+        [key in CircleCategory]: boolean;
+    };
 }
+// 所有地區的映射
+export type BattleCircle = {
+    [key in RegionType]: RegionCircleState;
+};
 
 export type StatType = "攻擊" | "防禦" | "特攻" | "特防" | "速度";
 
@@ -129,17 +141,26 @@ export type TypeRebuffs = Record<PokemonType, RebuffRank>;
 // 技能类型
 export type MoveType = "無" | "反衝" | "快攻" | "連續" | "必中";
 
-// 必須在你的 parseCondition 函數外部（或者至少在函數內部的頂部）定義這個列表
-export const INDIVIDUAL_STATS = [
+export interface PokemonStats {
+    hp?: number,
+    atk: number,
+    def: number,
+    spa: number,
+    spd: number,
+    spe: number,
+}
+
+export const STATS = [
     "攻擊",
     "防禦",
     "特攻",
     "特防",
     "速度",
-    "閃避",
+    "閃避率",
     "命中率",
+    "擊中要害率"
 ];
-export const STAT_REGEX = new RegExp(`(${INDIVIDUAL_STATS.join("|")})`, "g");
+// export const STAT_REGEX = new RegExp(`(${INDIVIDUAL_STATS.join("|")})`, "g");
 
 // 輔助列表：用於分類判斷 (放在 parseCondition 函數外部)
 export const ABNORMAL_STATUSES = [

@@ -131,7 +131,7 @@
           "type": 1,
           "gauge": 2,
           "uses": "−",
-          "category": "特殊",
+          "category": 2,
           "power": 57,
           "accuracy": 0,
           "target": "對手全體拍組",
@@ -146,7 +146,7 @@
           "type": 0,
           "gauge": 0,
           "uses": 2,
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "自己",
@@ -161,7 +161,7 @@
           "type": 11,
           "gauge": 3,
           "uses": "−",
-          "category": "特殊",
+          "category": 2,
           "power": 99,
           "accuracy": 100,
           "target": "對手１對拍組",
@@ -176,7 +176,7 @@
           "type": 0,
           "gauge": 0,
           "uses": 2,
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "自己",
@@ -192,7 +192,7 @@
         "type": 11,
         "gauge": 0,
         "uses": "−",
-        "category": "特殊",
+        "category": 2,
         "power": 250,
         "accuracy": 0,
         "target": "對手１對拍組",
@@ -209,8 +209,8 @@
       "actor": "pm0151_00_mew",
       "gender": 3,
       "is_shiny": false,
-      "type": 11,
-      "weakness": 12,
+      "type": "-1",
+      "weakness": "-1",
       "stat": {
         "hp": [
           100,
@@ -287,7 +287,7 @@
           "type": 2,
           "gauge": 3,
           "uses": "−",
-          "category": "特殊",
+          "category": 2,
           "power": 116,
           "accuracy": 85,
           "target": "對手１對拍組",
@@ -302,7 +302,7 @@
           "type": 4,
           "gauge": 3,
           "uses": "−",
-          "category": "特殊",
+          "category": 2,
           "power": 124,
           "accuracy": 70,
           "target": "對手１對拍組",
@@ -317,7 +317,7 @@
           "type": 11,
           "gauge": 3,
           "uses": "−",
-          "category": "特殊",
+          "category": 2,
           "power": 99,
           "accuracy": 100,
           "target": "對手１對拍組",
@@ -332,7 +332,7 @@
           "type": 6,
           "gauge": 3,
           "uses": "−",
-          "category": "特殊",
+          "category": 2,
           "power": 126,
           "accuracy": 70,
           "target": "對手全體拍組",
@@ -348,22 +348,14 @@
         "type": 11,
         "gauge": 0,
         "uses": "−",
-        "category": "特殊",
+        "category": 2,
         "power": 250,
         "accuracy": 0,
         "target": "對手１對拍組",
         "description": "沒有追加效果。",
         "tags": "none",
         "group": "Sync"
-      },
-      "scale": [
-        100,
-        100,
-        100,
-        100,
-        100,
-        100
-      ]
+      }
     }
   ],
   "luckCookies": [
@@ -371,9 +363,8 @@
       "cookieName": "大木專用潛能餅乾１",
       "skills": [
         {
-          "name": "攻擊時招式計量槽增加5",
+          "name": [],
           "description": "使出招式攻擊成功時,有60%的機率會幫自己增加1條招式計量槽。",
-          "detail": [],
           "rate": 100
         }
       ]
@@ -382,21 +373,18 @@
       "cookieName": "大木專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "拍組招式效果絕佳時威力↑5",
+          "name": [],
           "description": "當效果絕佳時,會提高該拍組招式的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時拍組招式增強5",
+          "name": [],
           "description": "首次上場時,會提高自己的下次拍組招式威力增強5階段。",
-          "detail": [],
           "rate": 33
         }
       ]

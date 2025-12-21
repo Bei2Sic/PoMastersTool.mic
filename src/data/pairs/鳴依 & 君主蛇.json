@@ -132,7 +132,7 @@
           "type": 5,
           "gauge": 2,
           "uses": "−",
-          "category": "特殊",
+          "category": 2,
           "power": 49,
           "accuracy": 100,
           "target": "對手１對拍組",
@@ -147,7 +147,7 @@
           "type": 0,
           "gauge": 0,
           "uses": 2,
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "我方全體拍組",
@@ -162,7 +162,7 @@
           "type": 0,
           "gauge": 0,
           "uses": 2,
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "我方全體拍組",
@@ -177,7 +177,7 @@
           "type": 5,
           "gauge": 3,
           "uses": "−",
-          "category": "特殊",
+          "category": 2,
           "power": 91,
           "accuracy": 100,
           "target": "對手１對拍組",
@@ -193,7 +193,7 @@
         "type": 5,
         "gauge": 0,
         "uses": "−",
-        "category": "特殊",
+        "category": 2,
         "power": 250,
         "accuracy": 0,
         "target": "對手１對拍組",
@@ -208,9 +208,8 @@
       "cookieName": "鳴依專用潛能餅乾１",
       "skills": [
         {
-          "name": "招式後特防提升G1",
+          "name": [],
           "description": "招式成功時,會提高我方全體拍組的特防1階段。",
-          "detail": [],
           "rate": 100
         }
       ]
@@ -219,9 +218,7 @@
       "cookieName": "鳴依專用的塔潛能餅乾２",
       "skills": [
         {
-          "name": "鳴依的全心全意",
-          "description": "在寶可夢使出招式時,會讓自己變成下次計量槽消耗0狀態。在訓練家使出招式時,會提高我方全體拍組的下次特殊招式威力增強1階段。",
-          "detail": [
+          "name": [
             {
               "name": "寶可夢出招後下次不消耗計量槽9",
               "description": "在寶可夢使出招式時,會讓自己變成下次計量槽消耗0狀態。"
@@ -231,6 +228,7 @@
               "description": "在訓練家使出招式時,會提高我方全體拍組的下次特殊招式威力增強1階段。"
             }
           ],
+          "description": "在寶可夢使出招式時,會讓自己變成下次計量槽消耗0狀態。在訓練家使出招式時,會提高我方全體拍組的下次特殊招式威力增強1階段。",
           "rate": 100
         }
       ]
@@ -239,21 +237,18 @@
       "cookieName": "鳴依專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "被攻擊時HP回復G9",
+          "name": [],
           "description": "受到招式攻擊時,會回復我方全體拍組的HP。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時物理/特殊增強G1",
+          "name": [],
           "description": "首次上場時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時拍組招式增強G3",
+          "name": [],
           "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
-          "detail": [],
           "rate": 33
         }
       ]

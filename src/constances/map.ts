@@ -23,9 +23,9 @@ export const TypeMap: Record<number, TypeMapItem> = {
 };
 
 export const CategoryMap: Record<string, TypeMapItem> = {
-    物理: { key: "Physical", cnName: "物理" },
-    特殊: { key: "Special", cnName: "特殊" },
-    變化: { key: "Status", cnName: "變化" },
+    0: { key: "Status", cnName: "變化" },
+    1: { key: "Physical", cnName: "物理" },
+    2: { key: "Special", cnName: "特殊" },
 };
 
 export const RoleMap: Record<string, TypeMapItem> = {

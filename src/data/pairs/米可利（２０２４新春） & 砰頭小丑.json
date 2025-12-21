@@ -142,7 +142,7 @@
           "type": 14,
           "gauge": 3,
           "uses": "−",
-          "category": "特殊",
+          "category": 2,
           "power": 99,
           "accuracy": 100,
           "target": "對手１對拍組",
@@ -157,7 +157,7 @@
           "type": 0,
           "gauge": 2,
           "uses": 2,
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "我方場地",
@@ -172,7 +172,7 @@
           "type": 2,
           "gauge": 4,
           "uses": "−",
-          "category": "特殊",
+          "category": 2,
           "power": 200,
           "accuracy": 100,
           "target": "對手全體拍組",
@@ -187,7 +187,7 @@
           "type": 0,
           "gauge": 0,
           "uses": 1,
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "我方１對拍組",
@@ -203,7 +203,7 @@
         "type": 2,
         "gauge": 0,
         "uses": "−",
-        "category": "特殊",
+        "category": 2,
         "power": 250,
         "accuracy": 0,
         "target": "對手１對拍組",
@@ -220,8 +220,8 @@
       "actor": "pm0806_81_00_zugadoon",
       "gender": 3,
       "is_shiny": false,
-      "type": 2,
-      "weakness": 16,
+      "type": "-1",
+      "weakness": "-1",
       "stat": {
         "hp": [
           96,
@@ -297,14 +297,6 @@
       ],
       "moves": null,
       "syncMove": null,
-      "scale": [
-        100,
-        100,
-        100,
-        100,
-        100,
-        100
-      ],
       "movesDynamax": [
         {
           "id": 7018,
@@ -313,7 +305,7 @@
           "type": 14,
           "gauge": 0,
           "uses": "−",
-          "category": "特殊",
+          "category": 2,
           "power": 400,
           "accuracy": 0,
           "target": "對手１對拍組",
@@ -328,7 +320,7 @@
           "type": 2,
           "gauge": 0,
           "uses": "−",
-          "category": "特殊",
+          "category": 2,
           "power": 400,
           "accuracy": 0,
           "target": "對手１對拍組",
@@ -344,21 +336,18 @@
       "cookieName": "米可利（２０２４新春）專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "天氣場地領域變化時計量槽加速2",
+          "name": [],
           "description": "只有在天氣、場地或領域變化時,招式計量槽會累積得較快。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "天氣場地領域變化時拍組招式↑G2",
+          "name": [],
           "description": "只有在天氣、場地或領域變化時,會提高我方全體拍組的拍組招式的威力。",
-          "detail": [],
           "rate": 33
         }
       ]
@@ -492,7 +481,7 @@
       "level": 1,
       "x": 1,
       "y": 1,
-      "color": "#47D147",
+      "color": "#BF80FF",
       "type": 2
     },
     {
@@ -531,7 +520,7 @@
       "level": 2,
       "x": 3,
       "y": 0,
-      "color": "#47D147",
+      "color": "#BF80FF",
       "type": 2
     },
     {
@@ -843,7 +832,7 @@
       "level": 3,
       "x": 2,
       "y": -6,
-      "color": "#47D147",
+      "color": "#BF80FF",
       "type": 14
     },
     {
@@ -869,7 +858,7 @@
       "level": 1,
       "x": -3,
       "y": 2,
-      "color": "#47D147",
+      "color": "#BF80FF",
       "type": 2
     },
     {
@@ -882,7 +871,7 @@
       "level": 1,
       "x": -2,
       "y": 2,
-      "color": "#47D147",
+      "color": "#BF80FF",
       "type": 2
     },
     {
@@ -895,7 +884,7 @@
       "level": 1,
       "x": -1,
       "y": 2,
-      "color": "#47D147",
+      "color": "#BF80FF",
       "type": 2
     },
     {
@@ -960,7 +949,7 @@
       "level": 3,
       "x": -2,
       "y": 4,
-      "color": "#47D147",
+      "color": "#BF80FF",
       "type": 2
     },
     {

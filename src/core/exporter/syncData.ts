@@ -2,7 +2,7 @@
 import { MovePowerCalculator, PowerMoveScope } from "@/core/calculators/power";
 import { StatValueCalculator } from "@/core/calculators/stat";
 import {
-    getStatCNnameByStatKey,
+    getStatCnNameByStatKey,
     getStatIndexByStatKey,
 } from "@/core/exporter/map";
 import { parseMoveTextBonus, parseStatTextBonus } from "@/core/parse/text";
@@ -36,7 +36,7 @@ function getTileStatBonus(
 ): number {
     let bonus = 0;
 
-    const statName = getStatCNnameByStatKey(statKey);
+    const statName = getStatCnNameByStatKey(statKey);
     // 遍歷所有已激活的石盤
     for (const tile of selectedTiles) {
         if (tile.isActive && tile.color === "#779EFF") {
@@ -130,9 +130,9 @@ export const getFinalStatValue = (
     result += theme;
 
     // 倍率
-    const boost = options.boost || 1.0;
+    const boost = options.boost || 100;
 
-    return Math.floor(result * boost);
+    return Math.floor(result * boost / 100);
 };
 
 export function getFinalMovePower(

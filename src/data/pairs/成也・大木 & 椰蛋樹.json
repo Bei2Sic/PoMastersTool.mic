@@ -142,7 +142,7 @@
           "type": 5,
           "gauge": 2,
           "uses": "−",
-          "category": "物理",
+          "category": 1,
           "power": 15,
           "accuracy": 100,
           "target": "對手１對拍組",
@@ -157,7 +157,7 @@
           "type": 0,
           "gauge": 0,
           "uses": 3,
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "我方１對拍組",
@@ -172,7 +172,7 @@
           "type": 15,
           "gauge": 2,
           "uses": "−",
-          "category": "物理",
+          "category": 1,
           "power": 200,
           "accuracy": 100,
           "target": "對手１對拍組",
@@ -187,7 +187,7 @@
           "type": 0,
           "gauge": 0,
           "uses": 1,
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "我方全體拍組",
@@ -203,7 +203,7 @@
         "type": 15,
         "gauge": 0,
         "uses": "−",
-        "category": "物理",
+        "category": 1,
         "power": 250,
         "accuracy": 0,
         "target": "對手１對拍組",
@@ -220,8 +220,8 @@
       "actor": "pm0103_84_00_anassy",
       "gender": 1,
       "is_shiny": false,
-      "type": 15,
-      "weakness": 8,
+      "type": "-1",
+      "weakness": "-1",
       "stat": {
         "hp": [
           97,
@@ -297,14 +297,6 @@
       ],
       "moves": null,
       "syncMove": null,
-      "scale": [
-        100,
-        100,
-        100,
-        100,
-        100,
-        100
-      ],
       "movesDynamax": [
         {
           "id": 7025,
@@ -313,7 +305,7 @@
           "type": 5,
           "gauge": 0,
           "uses": "−",
-          "category": "物理",
+          "category": 1,
           "power": 400,
           "accuracy": 0,
           "target": "對手１對拍組",
@@ -328,7 +320,7 @@
           "type": 15,
           "gauge": 0,
           "uses": "−",
-          "category": "物理",
+          "category": 1,
           "power": 400,
           "accuracy": 0,
           "target": "對手１對拍組",
@@ -344,9 +336,8 @@
       "cookieName": "成也專用潛能餅乾１",
       "skills": [
         {
-          "name": "招式後招式計量槽增加3",
+          "name": [],
           "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
-          "detail": [],
           "rate": 100
         }
       ]
@@ -355,21 +346,18 @@
       "cookieName": "成也・大木專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "被攻擊時HP回復G9",
+          "name": [],
           "description": "受到招式攻擊時,會回復我方全體拍組的HP。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時物理/特殊增強G1",
+          "name": [],
           "description": "首次上場時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時拍組招式增強G3",
+          "name": [],
           "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
-          "detail": [],
           "rate": 33
         }
       ]
@@ -581,7 +569,7 @@
       "level": 2,
       "x": 3,
       "y": 3,
-      "color": "#47D147",
+      "color": "#BF80FF",
       "type": 5
     },
     {
@@ -620,7 +608,7 @@
       "level": 1,
       "x": -3,
       "y": 0,
-      "color": "#47D147",
+      "color": "#BF80FF",
       "type": 15
     },
     {
@@ -646,7 +634,7 @@
       "level": 1,
       "x": -2,
       "y": -1,
-      "color": "#47D147",
+      "color": "#BF80FF",
       "type": 15
     },
     {
@@ -672,7 +660,7 @@
       "level": 2,
       "x": -1,
       "y": -2,
-      "color": "#47D147",
+      "color": "#BF80FF",
       "type": 15
     },
     {
@@ -776,7 +764,7 @@
       "level": 1,
       "x": 2,
       "y": -4,
-      "color": "#47D147",
+      "color": "#BF80FF",
       "type": 15
     },
     {
@@ -802,7 +790,7 @@
       "level": 1,
       "x": 3,
       "y": -5,
-      "color": "#47D147",
+      "color": "#BF80FF",
       "type": 15
     },
     {
@@ -841,7 +829,7 @@
       "level": 2,
       "x": 3,
       "y": -6,
-      "color": "#47D147",
+      "color": "#BF80FF",
       "type": 15
     },
     {

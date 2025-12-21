@@ -142,7 +142,7 @@
           "type": 6,
           "gauge": 2,
           "uses": "−",
-          "category": "物理",
+          "category": 1,
           "power": 15,
           "accuracy": 100,
           "target": "對手１對拍組",
@@ -157,7 +157,7 @@
           "type": 0,
           "gauge": 0,
           "uses": 2,
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "自己",
@@ -172,7 +172,7 @@
           "type": 6,
           "gauge": 3,
           "uses": "−",
-          "category": "物理",
+          "category": 1,
           "power": 105,
           "accuracy": 90,
           "target": "對手１對拍組",
@@ -187,7 +187,7 @@
           "type": 0,
           "gauge": 0,
           "uses": 2,
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "自己",
@@ -203,7 +203,7 @@
         "type": 6,
         "gauge": 0,
         "uses": "−",
-        "category": "物理",
+        "category": 1,
         "power": 250,
         "accuracy": 0,
         "target": "對手１對拍組",
@@ -218,21 +218,18 @@
       "cookieName": "大吾（２０２０夏季）專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "效果絕佳時威力提升5",
+          "name": [],
           "description": "當效果絕佳時,會提高該招式的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時賦予物理/特殊增強2",
+          "name": [],
           "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
-          "detail": [],
           "rate": 33
         }
       ]

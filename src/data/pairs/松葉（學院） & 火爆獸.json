@@ -154,7 +154,7 @@
           "type": 14,
           "gauge": 4,
           "uses": "−",
-          "category": "特殊",
+          "category": 2,
           "power": 90,
           "accuracy": 100,
           "target": "對手１對拍組",
@@ -169,7 +169,7 @@
           "type": 0,
           "gauge": 2,
           "uses": 2,
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "我方場地",
@@ -184,7 +184,7 @@
           "type": 14,
           "gauge": 4,
           "uses": "−",
-          "category": "特殊",
+          "category": 2,
           "power": 200,
           "accuracy": 0,
           "target": "對手１對拍組",
@@ -199,7 +199,7 @@
           "type": 0,
           "gauge": 0,
           "uses": 1,
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "自己",
@@ -215,7 +215,7 @@
         "type": 14,
         "gauge": 0,
         "uses": "−",
-        "category": "特殊",
+        "category": 2,
         "power": 200,
         "accuracy": 0,
         "target": "對手１對拍組",
@@ -230,21 +230,18 @@
       "cookieName": "松葉（學院）專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "拍組招式效果絕佳時威力↑5",
+          "name": [],
           "description": "當效果絕佳時,會提高該拍組招式的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時拍組招式增強5",
+          "name": [],
           "description": "首次上場時,會提高自己的下次拍組招式威力增強5階段。",
-          "detail": [],
           "rate": 33
         }
       ]
@@ -508,7 +505,7 @@
       "level": 1,
       "x": -2,
       "y": 0,
-      "color": "#47D147",
+      "color": "#BF80FF",
       "type": 14
     },
     {
@@ -521,7 +518,7 @@
       "level": 2,
       "x": -3,
       "y": 0,
-      "color": "#47D147",
+      "color": "#BF80FF",
       "type": 14
     },
     {
@@ -534,7 +531,7 @@
       "level": 1,
       "x": -1,
       "y": -1,
-      "color": "#47D147",
+      "color": "#BF80FF",
       "type": 14
     },
     {
@@ -625,7 +622,7 @@
       "level": 1,
       "x": 2,
       "y": -2,
-      "color": "#47D147",
+      "color": "#BF80FF",
       "type": 14
     },
     {
@@ -638,7 +635,7 @@
       "level": 1,
       "x": 1,
       "y": -2,
-      "color": "#47D147",
+      "color": "#BF80FF",
       "type": 14
     },
     {

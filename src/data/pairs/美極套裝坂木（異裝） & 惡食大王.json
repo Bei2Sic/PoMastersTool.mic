@@ -147,7 +147,7 @@
           "type": 1,
           "gauge": 2,
           "uses": "−",
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "自己",
@@ -162,7 +162,7 @@
           "type": 1,
           "gauge": 2,
           "uses": 2,
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "我方全體拍組",
@@ -177,7 +177,7 @@
           "type": 16,
           "gauge": 2,
           "uses": "−",
-          "category": "物理",
+          "category": 1,
           "power": 100,
           "accuracy": 100,
           "target": "對手１對拍組",
@@ -192,7 +192,7 @@
           "type": 0,
           "gauge": 0,
           "uses": 1,
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "我方全體拍組",
@@ -208,7 +208,7 @@
         "type": 16,
         "gauge": 0,
         "uses": "−",
-        "category": "物理",
+        "category": 1,
         "power": 250,
         "accuracy": 0,
         "target": "對手１對拍組",
@@ -223,9 +223,8 @@
       "cookieName": "美極套裝坂木（異裝）專用潛能餅乾１",
       "skills": [
         {
-          "name": "首次上場時場地招式計量槽加速",
+          "name": [],
           "description": "首次上場時,會讓我方場地變成招式計量槽加速狀態。",
-          "detail": [],
           "rate": 100
         }
       ]
@@ -234,21 +233,18 @@
       "cookieName": "美極套裝坂木（異裝）專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "被攻擊時HP回復G9",
+          "name": [],
           "description": "受到招式攻擊時,會回復我方全體拍組的HP。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時物理/特殊增強G1",
+          "name": [],
           "description": "首次上場時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時拍組招式增強G3",
+          "name": [],
           "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
-          "detail": [],
           "rate": 33
         }
       ]
@@ -395,7 +391,7 @@
       "level": 1,
       "x": 2,
       "y": 2,
-      "color": "#47D147",
+      "color": "#BF80FF",
       "type": 16
     },
     {
@@ -408,7 +404,7 @@
       "level": 2,
       "x": 1,
       "y": 3,
-      "color": "#47D147",
+      "color": "#BF80FF",
       "type": 16
     },
     {
@@ -421,7 +417,7 @@
       "level": 1,
       "x": 3,
       "y": 2,
-      "color": "#47D147",
+      "color": "#BF80FF",
       "type": 16
     },
     {
@@ -772,7 +768,7 @@
       "level": 1,
       "x": -3,
       "y": 3,
-      "color": "#47D147",
+      "color": "#BF80FF",
       "type": 16
     },
     {
@@ -785,7 +781,7 @@
       "level": 1,
       "x": -2,
       "y": 3,
-      "color": "#47D147",
+      "color": "#BF80FF",
       "type": 16
     },
     {

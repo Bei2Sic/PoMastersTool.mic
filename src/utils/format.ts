@@ -1,7 +1,7 @@
 import {
     getCategoryInfo,
     getTypeInfo,
-    getTypeInfoWithCNName,
+    getTypeInfoWithCnName,
 } from "@/core/exporter/map";
 import { MoveBase, Theme } from "@/types/syncModel";
 // Move
@@ -62,7 +62,7 @@ export const getTypeIconStyle = (type: number) => {
 };
 
 // 獲取技能分類 icon 樣式
-export const getCategoryIconStyle = (category: string) => {
+export const getCategoryIconStyle = (category: number) => {
     const suffix = getCategoryInfo(category).key;
     return getStyle(suffix); // 組合成 --iconPhysical
 };
@@ -94,7 +94,7 @@ export const getPassiveBackgroundStyle = (
 export const getThemeBackgroundColorClass = (index: number, tag: string) => {
     if (index === 0) {
         // 第一个为属性
-        return "bg_" + getTypeInfoWithCNName(tag).key.toLowerCase();
+        return "bg_" + getTypeInfoWithCnName(tag).key.toLowerCase();
     } else {
         return "bg_trainer";
     }
@@ -106,7 +106,7 @@ export const getThemeIconStyle = (theme: Theme) => {
     switch (theme.category) {
         // 属性
         case 1:
-            suffix = `Move${getTypeInfoWithCNName(theme.tag).key}`
+            suffix = `Move${getTypeInfoWithCnName(theme.tag).key}`
             break;
         // 地区
         case 2:

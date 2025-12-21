@@ -87,7 +87,7 @@ export interface MoveBase {
     type: number;
     gauge: number;
     uses: string | number;
-    category: string;
+    category: number;
     power: number;
     accuracy: number;
     target: string;

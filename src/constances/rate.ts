@@ -82,3 +82,26 @@ export const GAUGE_SYNC_MULTIPLIERS = [
 export const HP_LESS_THRESHOLD = [0.0, 0.25, 0.5, 1] as const;
 
 export const HP_MORE_THRESHOLD = [1.0, 0.5, 0.25, 0.0] as const;
+
+// 物理 & 特殊鬥陣倍率表
+export const ATK_CIRCLE_MULTIPLIERS = [1.1, 1.2, 1.3, 1.4];
+
+// 防禦鬥陣
+export const DEF_CIRCLE_MULTIPLIERS = [1.05, 1.1, 1.15, 1.2];
+
+// 抗性倍率
+export const REBUFF_MULTIPLIERS = [1.0, 1.3, 1.5, 1.6];
+
+// 基礎能力等級倍率表
+export const GENERAL_RANK_MULTIPLIERS = [
+    0.55, 0.58, 0.62, 0.66, 0.71, 0.80, // -6 ~ -1
+    1.00,                               // 0
+    1.25, 1.40, 1.50, 1.60, 1.70, 1.80  // +1 ~ +6
+];
+
+// 速度能力等級倍率
+export const SPEED_RANK_MULTIPLIERS = [
+    0.38, 0.41, 0.45, 0.50, 0.55, 0.66, // -6 ~ -1
+    1.00,                               // 0
+    1.50, 1.80, 2.00, 2.20, 2.40, 2.60  // +1 ~ +6
+];

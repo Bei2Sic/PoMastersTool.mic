@@ -168,7 +168,7 @@
           "type": 8,
           "gauge": 4,
           "uses": "−",
-          "category": "特殊",
+          "category": 2,
           "power": 200,
           "accuracy": 100,
           "target": "對手１對拍組",
@@ -183,7 +183,7 @@
           "type": 0,
           "gauge": 0,
           "uses": 2,
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "自己",
@@ -198,7 +198,7 @@
           "type": 8,
           "gauge": 2,
           "uses": 1,
-          "category": "特殊",
+          "category": 2,
           "power": 400,
           "accuracy": 0,
           "target": "對手全體拍組",
@@ -213,7 +213,7 @@
           "type": 0,
           "gauge": 0,
           "uses": 1,
-          "category": "變化",
+          "category": 0,
           "power": 0,
           "accuracy": 0,
           "target": "自己",
@@ -229,7 +229,7 @@
         "type": 8,
         "gauge": 0,
         "uses": "−",
-        "category": "特殊",
+        "category": 2,
         "power": 250,
         "accuracy": 0,
         "target": "對手１對拍組",
@@ -244,9 +244,8 @@
       "cookieName": "美極套裝丹瑜專用潛能餅乾１",
       "skills": [
         {
-          "name": "攻擊中毒中的對手時能力下降9",
+          "name": [],
           "description": "當對手陷入中毒或劇毒狀態且使出招式攻擊成功時,會降低對手的攻擊、防禦、特攻、特防、速度、命中率和閃避率中的一種能力1階段。",
-          "detail": [],
           "rate": 100
         }
       ]
@@ -255,21 +254,18 @@
       "cookieName": "美極套裝丹瑜專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "效果絕佳時威力提升5",
+          "name": [],
           "description": "當效果絕佳時,會提高該招式的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時賦予物理/特殊增強2",
+          "name": [],
           "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
-          "detail": [],
           "rate": 33
         }
       ]
@@ -585,7 +581,7 @@
       "level": 1,
       "x": -2,
       "y": -2,
-      "color": "#47D147",
+      "color": "#BF80FF",
       "type": 8
     },
     {
@@ -598,7 +594,7 @@
       "level": 1,
       "x": -3,
       "y": -2,
-      "color": "#47D147",
+      "color": "#BF80FF",
       "type": 8
     },
     {
@@ -702,7 +698,7 @@
       "level": 1,
       "x": 2,
       "y": -2,
-      "color": "#47D147",
+      "color": "#BF80FF",
       "type": 8
     },
     {
@@ -715,7 +711,7 @@
       "level": 1,
       "x": 1,
       "y": -2,
-      "color": "#47D147",
+      "color": "#BF80FF",
       "type": 8
     },
     {
@@ -741,7 +737,7 @@
       "level": 2,
       "x": 2,
       "y": -3,
-      "color": "#47D147",
+      "color": "#BF80FF",
       "type": 8
     },
     {
