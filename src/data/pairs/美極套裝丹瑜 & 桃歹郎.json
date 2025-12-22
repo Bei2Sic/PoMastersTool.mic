@@ -48,11 +48,12 @@
     {
       "id": "20356100000",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "桃歹郎",
       "form": "",
       "actor": "pm1025_00_00_momowarou",
       "gender": 3,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 8,
       "weakness": 11,
       "stat": {
@@ -244,8 +245,9 @@
       "cookieName": "美極套裝丹瑜專用潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "攻擊中毒中的對手時能力下降9",
           "description": "當對手陷入中毒或劇毒狀態且使出招式攻擊成功時,會降低對手的攻擊、防禦、特攻、特防、速度、命中率和閃避率中的一種能力1階段。",
+          "detail": [],
           "rate": 100
         }
       ]
@@ -254,18 +256,21 @@
       "cookieName": "美極套裝丹瑜專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "效果絕佳時威力提升5",
           "description": "當效果絕佳時,會提高該招式的威力。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "擊中要害時威力提升3",
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "首次上場時賦予物理/特殊增強2",
           "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
+          "detail": [],
           "rate": 33
         }
       ]
@@ -581,7 +586,7 @@
       "level": 1,
       "x": -2,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 8
     },
     {
@@ -594,7 +599,7 @@
       "level": 1,
       "x": -3,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 8
     },
     {
@@ -698,7 +703,7 @@
       "level": 1,
       "x": 2,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 8
     },
     {
@@ -711,7 +716,7 @@
       "level": 1,
       "x": 1,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 8
     },
     {
@@ -737,7 +742,7 @@
       "level": 2,
       "x": 2,
       "y": -3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 8
     },
     {

@@ -54,11 +54,12 @@
     {
       "id": "20245000002",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "頭巾混混",
       "form": "",
       "actor": "pm0560_00_zuruzukin",
       "gender": 2,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 16,
       "weakness": 18,
       "stat": {

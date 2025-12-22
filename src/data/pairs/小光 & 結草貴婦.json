@@ -54,11 +54,12 @@
     {
       "id": "20116000003",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "結草貴婦",
       "form": "草木蓑衣",
       "actor": "pm0413_11_minomadam",
       "gender": 2,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 12,
       "weakness": 10,
       "stat": {

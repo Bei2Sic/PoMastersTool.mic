@@ -54,11 +54,12 @@
     {
       "id": "20106000001",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "電電蟲",
       "form": "",
       "actor": "pm0595_00_bachuru",
       "gender": 2,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 4,
       "weakness": 2,
       "stat": {

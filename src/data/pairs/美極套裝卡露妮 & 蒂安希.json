@@ -67,11 +67,12 @@
     {
       "id": "20158100000",
       "variationType": 0,
+      "vAfterSm": true,
       "name": "蒂安希",
       "form": "",
       "actor": "pm0772_00_pinkdiamond_rare",
       "gender": 3,
-      "is_shiny": true,
+      "isShiny": true,
       "type": 13,
       "weakness": 17,
       "stat": {
@@ -228,13 +229,14 @@
     {
       "id": "20158100000",
       "variationType": 1,
+      "vAfterSm": true,
       "name": "超級蒂安希",
       "form": "",
       "actor": "pm0772_51_megadiancie_rare",
       "gender": 3,
-      "is_shiny": true,
-      "type": "-1",
-      "weakness": "-1",
+      "isShiny": true,
+      "type": 13,
+      "weakness": 17,
       "stat": {
         "hp": [
           98,
@@ -384,7 +386,15 @@
         "description": "變成超級蒂安希直到對戰結束。當領域為岩石領域時,威力會提高。",
         "tags": "none",
         "group": "Sync"
-      }
+      },
+      "scale": [
+        100,
+        120,
+        120,
+        100,
+        100,
+        100
+      ]
     }
   ],
   "luckCookies": [
@@ -392,18 +402,21 @@
       "cookieName": "美極套裝卡露妮專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "擊中要害時威力提升3",
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "拍組招式效果絕佳時威力↑5",
           "description": "當效果絕佳時,會提高該拍組招式的威力。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "首次上場時拍組招式增強5",
           "description": "首次上場時,會提高自己的下次拍組招式威力增強5階段。",
+          "detail": [],
           "rate": 33
         }
       ]
@@ -745,7 +758,7 @@
       "level": 1,
       "x": -2,
       "y": 0,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 13
     },
     {
@@ -771,7 +784,7 @@
       "level": 1,
       "x": -1,
       "y": -1,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 13
     },
     {
@@ -992,7 +1005,7 @@
       "level": 1,
       "x": -3,
       "y": 4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 13
     },
     {
@@ -1005,7 +1018,7 @@
       "level": 1,
       "x": -2,
       "y": 4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 13
     },
     {
@@ -1018,7 +1031,7 @@
       "level": 1,
       "x": -3,
       "y": 5,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 13
     },
     {

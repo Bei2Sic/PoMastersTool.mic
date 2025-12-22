@@ -48,11 +48,12 @@
     {
       "id": "20094000000",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "暴飛龍",
       "form": "",
       "actor": "pm0373_00_bohmander",
       "gender": 1,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 15,
       "weakness": 18,
       "stat": {
@@ -202,18 +203,21 @@
       "cookieName": "源治專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "被攻擊時HP回復G9",
           "description": "受到招式攻擊時,會回復我方全體拍組的HP。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "首次上場時物理/特殊增強G1",
           "description": "首次上場時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "首次上場時拍組招式增強G3",
           "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
+          "detail": [],
           "rate": 33
         }
       ]

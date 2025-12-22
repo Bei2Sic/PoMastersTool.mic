@@ -54,11 +54,12 @@
     {
       "id": "20096100000",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "章魚桶",
       "form": "",
       "actor": "pm0224_00_okutank",
       "gender": 1,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 3,
       "weakness": 4,
       "stat": {
@@ -218,18 +219,21 @@
       "cookieName": "志米（２０１９冬季）專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "擊中要害時威力提升3",
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "拍組招式效果絕佳時威力↑5",
           "description": "當效果絕佳時,會提高該拍組招式的威力。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "首次上場時拍組招式增強5",
           "description": "首次上場時,會提高自己的下次拍組招式威力增強5階段。",
+          "detail": [],
           "rate": 33
         }
       ]
@@ -238,8 +242,9 @@
       "cookieName": "志米（２０１９冬季）專用潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "攻擊時命中率下降4",
           "description": "使出招式攻擊成功時,有50%的機率會降低對手的命中率1階段。",
+          "detail": [],
           "rate": 100
         }
       ]

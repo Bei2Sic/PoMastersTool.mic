@@ -54,11 +54,12 @@
     {
       "id": "20302000001",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "鯰魚王",
       "form": "",
       "actor": "pm0340_00_namazun",
       "gender": 1,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 9,
       "weakness": 5,
       "stat": {

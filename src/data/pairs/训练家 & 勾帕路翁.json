@@ -42,11 +42,12 @@
     {
       "id": "28000020531",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "勾帕路翁",
       "form": "",
       "actor": "pm0638_00_cobalon",
       "gender": 3,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 7,
       "weakness": 2,
       "stat": {

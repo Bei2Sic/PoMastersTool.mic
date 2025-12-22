@@ -54,11 +54,12 @@
     {
       "id": "20101900000",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "美洛耶塔",
       "form": "歌聲形態",
       "actor": "pm0648_11_meloetta",
       "gender": 3,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 11,
       "weakness": 12,
       "stat": {
@@ -220,13 +221,14 @@
     {
       "id": "20101900000",
       "variationType": 2,
+      "vAfterSm": false,
       "name": "美洛耶塔",
       "form": "舞步形態",
       "actor": "pm0648_12_meloetta",
       "gender": 3,
-      "is_shiny": false,
-      "type": "7",
-      "weakness": "10",
+      "isShiny": false,
+      "type": 7,
+      "weakness": 10,
       "stat": {
         "hp": [
           100,
@@ -381,7 +383,15 @@
         "description": "沒有追加效果。",
         "tags": "none",
         "group": "Sync"
-      }
+      },
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
     }
   ],
   "luckCookies": [
@@ -389,18 +399,21 @@
       "cookieName": "鳴依（冠軍）專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "被攻擊時HP回復G9",
           "description": "受到招式攻擊時,會回復我方全體拍組的HP。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "首次上場時物理/特殊增強G1",
           "description": "首次上場時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "首次上場時拍組招式增強G3",
           "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
+          "detail": [],
           "rate": 33
         }
       ]
@@ -547,7 +560,7 @@
       "level": 1,
       "x": 2,
       "y": 2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 1
     },
     {
@@ -560,7 +573,7 @@
       "level": 2,
       "x": 1,
       "y": 3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 1
     },
     {
@@ -573,7 +586,7 @@
       "level": 1,
       "x": 3,
       "y": 2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 1
     },
     {
@@ -664,7 +677,7 @@
       "level": 1,
       "x": -1,
       "y": -1,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 1
     },
     {
@@ -677,7 +690,7 @@
       "level": 1,
       "x": -2,
       "y": -1,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 1
     },
     {

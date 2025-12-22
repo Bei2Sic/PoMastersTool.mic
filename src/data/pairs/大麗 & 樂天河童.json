@@ -67,11 +67,12 @@
     {
       "id": "20202000000",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "樂天河童",
       "form": "",
       "actor": "pm0272_01_runpappa",
       "gender": 2,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 3,
       "weakness": 12,
       "stat": {
@@ -228,13 +229,14 @@
     {
       "id": "20202000000",
       "variationType": 4,
+      "vAfterSm": false,
       "name": "樂天河童",
       "form": "",
       "actor": "pm0272_82_00_runpappa",
       "gender": 2,
-      "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "isShiny": false,
+      "type": 3,
+      "weakness": 12,
       "stat": {
         "hp": [
           101,
@@ -310,6 +312,14 @@
       ],
       "moves": null,
       "syncMove": null,
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
       "movesDynamax": [
         {
           "id": 7024,
@@ -364,18 +374,21 @@
       "cookieName": "大麗專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "擊中要害時威力提升3",
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "拍組招式效果絕佳時威力↑5",
           "description": "當效果絕佳時,會提高該拍組招式的威力。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "首次上場時拍組招式增強5",
           "description": "首次上場時,會提高自己的下次拍組招式威力增強5階段。",
+          "detail": [],
           "rate": 33
         }
       ]
@@ -899,7 +912,7 @@
       "level": 2,
       "x": 3,
       "y": -4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 5
     },
     {
@@ -1029,7 +1042,7 @@
       "level": 2,
       "x": -3,
       "y": 6,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 3
     },
     {

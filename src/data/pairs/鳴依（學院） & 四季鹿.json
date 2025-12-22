@@ -48,11 +48,12 @@
     {
       "id": "20101420001",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "四季鹿",
       "form": "夏天的樣子",
       "actor": "pm0585_12_shikijika",
       "gender": 1,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 5,
       "weakness": 10,
       "stat": {

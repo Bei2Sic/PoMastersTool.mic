@@ -67,11 +67,12 @@
     {
       "id": "20318000000",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "狂歡浪舞鴨",
       "form": "",
       "actor": "pm0914_00_00_wanival",
       "gender": 1,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 3,
       "weakness": 10,
       "stat": {
@@ -231,8 +232,9 @@
       "cookieName": "克拉韋爾專用潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "下雨時拍組招式提升4",
           "description": "當天氣為下雨時,會提高拍組招式的威力。",
+          "detail": [],
           "rate": 100
         }
       ]
@@ -241,17 +243,21 @@
       "cookieName": "克拉韋爾專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "招式後招式計量槽增加9",
           "description": "招式成功時,會幫自己增加1條招式計量槽。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "擊中要害時威力提升3",
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [
+          "name": "首次上場時&首次拍組招式後計數加速1",
+          "description": "首次上場時,發動拍組招式所需的行動數會減少1次。首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。",
+          "detail": [
             {
               "name": "首次上場時計數加速1",
               "description": "首次上場時,發動拍組招式所需的行動數會減少1次。"
@@ -261,7 +267,6 @@
               "description": "首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。"
             }
           ],
-          "description": "首次上場時,發動拍組招式所需的行動數會減少1次。首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。",
           "rate": 33
         }
       ]
@@ -577,7 +582,7 @@
       "level": 1,
       "x": -2,
       "y": 0,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 3
     },
     {
@@ -590,7 +595,7 @@
       "level": 1,
       "x": -1,
       "y": -1,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 3
     },
     {
@@ -863,7 +868,7 @@
       "level": 1,
       "x": -2,
       "y": 4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 3
     },
     {
@@ -876,7 +881,7 @@
       "level": 1,
       "x": -3,
       "y": 5,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 3
     },
     {
@@ -889,7 +894,7 @@
       "level": 2,
       "x": -1,
       "y": 4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 3
     },
     {

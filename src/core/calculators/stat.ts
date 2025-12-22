@@ -135,10 +135,10 @@ export class StatValueCalculator {
     static calculateVarietyBonus(
         statValue: number,
         scale: number,
-        isMega: boolean
+        isMega?: boolean
     ): number {
         if (scale != 100) {
-            if (isMega) {
+            if (scale % 100 === 0) {
                 statValue = Math.ceil((statValue * scale) / 100) - 1;
             } else {
                 statValue = Math.floor((statValue * scale) / 100);

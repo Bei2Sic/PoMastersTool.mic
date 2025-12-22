@@ -54,11 +54,12 @@
     {
       "id": "20021910000",
       "variationType": 0,
+      "vAfterSm": true,
       "name": "大比鳥",
       "form": "",
       "actor": "pm0018_00_pigeot",
       "gender": 1,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 10,
       "weakness": 13,
       "stat": {
@@ -256,13 +257,14 @@
     {
       "id": "20021910000",
       "variationType": 1,
+      "vAfterSm": true,
       "name": "超級大比鳥",
       "form": "",
       "actor": "pm0018_51_megapigeot",
       "gender": 1,
-      "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "isShiny": false,
+      "type": 10,
+      "weakness": 13,
       "stat": {
         "hp": [
           115,
@@ -453,7 +455,15 @@
         "description": "變成超級大比鳥直到對戰結束。首次使出拍組招式時,會讓自己變成挺住狀態。",
         "tags": 67108864,
         "group": "Sync"
-      }
+      },
+      "scale": [
+        100,
+        110,
+        110,
+        110,
+        110,
+        110
+      ]
     }
   ],
   "luckCookies": [
@@ -461,8 +471,9 @@
       "cookieName": "阿爾套裝青綠專用潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "上場時特殊增強1",
           "description": "上場時,會提高自己的下次特殊招式威力增強1階段。",
+          "detail": [],
           "rate": 100
         }
       ]
@@ -471,18 +482,21 @@
       "cookieName": "阿爾套裝青綠專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "招式後招式計量槽增加9",
           "description": "招式成功時,會幫自己增加1條招式計量槽。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "擊中要害時威力提升3",
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "首次上場時拍組招式增強G3",
           "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
+          "detail": [],
           "rate": 33
         }
       ]
@@ -686,7 +700,7 @@
       "level": 1,
       "x": 2,
       "y": 1,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 10
     },
     {
@@ -699,7 +713,7 @@
       "level": 1,
       "x": 3,
       "y": 0,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 10
     },
     {
@@ -803,7 +817,7 @@
       "level": 1,
       "x": -2,
       "y": -1,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 10
     },
     {
@@ -816,7 +830,7 @@
       "level": 1,
       "x": -1,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 10
     },
     {
@@ -1089,7 +1103,7 @@
       "level": 1,
       "x": -2,
       "y": 3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 10
     },
     {
@@ -1102,7 +1116,7 @@
       "level": 2,
       "x": -3,
       "y": 4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 10
     },
     {

@@ -54,11 +54,12 @@
     {
       "id": "20244000003",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "啪嚓海膽",
       "form": "",
       "actor": "pm0871_00_00_bachinuni",
       "gender": 2,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 4,
       "weakness": 9,
       "stat": {

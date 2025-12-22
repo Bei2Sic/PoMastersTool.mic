@@ -42,11 +42,12 @@
     {
       "id": "20653680000",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "瑪力露麗",
       "form": "",
       "actor": "pm0184_00_marilli",
       "gender": 2,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 18,
       "weakness": 4,
       "stat": {

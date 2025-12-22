@@ -54,11 +54,12 @@
     {
       "id": "20205000000",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "炎帝",
       "form": "",
       "actor": "pm0244_00_entei",
       "gender": 3,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 2,
       "weakness": 3,
       "stat": {

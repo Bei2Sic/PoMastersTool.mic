@@ -67,11 +67,12 @@
     {
       "id": "20128100000",
       "variationType": 0,
+      "vAfterSm": true,
       "name": "沙奈朵",
       "form": "",
       "actor": "pm0282_00_sirnight_rare",
       "gender": 1,
-      "is_shiny": true,
+      "isShiny": true,
       "type": 18,
       "weakness": 14,
       "stat": {
@@ -228,13 +229,14 @@
     {
       "id": "20128100000",
       "variationType": 1,
+      "vAfterSm": true,
       "name": "超級沙奈朵",
       "form": "",
       "actor": "pm0282_51_megasrnight_rare",
       "gender": 1,
-      "is_shiny": true,
-      "type": "-1",
-      "weakness": "-1",
+      "isShiny": true,
+      "type": 18,
+      "weakness": 14,
       "stat": {
         "hp": [
           92,
@@ -384,7 +386,15 @@
         "description": "變成超級沙奈朵直到對戰結束。當領域為妖精領域時,威力會提高。",
         "tags": "none",
         "group": "Sync"
-      }
+      },
+      "scale": [
+        100,
+        100,
+        100,
+        120,
+        120,
+        100
+      ]
     }
   ],
   "luckCookies": [
@@ -392,18 +402,21 @@
       "cookieName": "美極套裝滿充專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "擊中要害時威力提升3",
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "拍組招式效果絕佳時威力↑5",
           "description": "當效果絕佳時,會提高該拍組招式的威力。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "首次上場時拍組招式增強5",
           "description": "首次上場時,會提高自己的下次拍組招式威力增強5階段。",
+          "detail": [],
           "rate": 33
         }
       ]
@@ -745,7 +758,7 @@
       "level": 1,
       "x": -2,
       "y": 0,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 18
     },
     {
@@ -784,7 +797,7 @@
       "level": 2,
       "x": -2,
       "y": -1,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 18
     },
     {
@@ -1005,7 +1018,7 @@
       "level": 1,
       "x": -2,
       "y": 4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 18
     },
     {
@@ -1018,7 +1031,7 @@
       "level": 1,
       "x": -3,
       "y": 5,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 18
     },
     {
@@ -1031,7 +1044,7 @@
       "level": 2,
       "x": -1,
       "y": 4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 18
     },
     {

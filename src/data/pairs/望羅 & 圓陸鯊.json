@@ -48,11 +48,12 @@
     {
       "id": "20297000001",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "圓陸鯊",
       "form": "",
       "actor": "pm0443_00_fukamaru",
       "gender": 1,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 9,
       "weakness": 6,
       "stat": {

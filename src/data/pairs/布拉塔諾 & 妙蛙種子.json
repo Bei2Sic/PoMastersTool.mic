@@ -48,11 +48,12 @@
     {
       "id": "20136000001",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "妙蛙種子",
       "form": "",
       "actor": "pm0001_00_fushigidane",
       "gender": 1,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 5,
       "weakness": 11,
       "stat": {

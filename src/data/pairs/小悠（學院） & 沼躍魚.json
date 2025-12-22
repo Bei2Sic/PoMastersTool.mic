@@ -48,11 +48,12 @@
     {
       "id": "20019400000",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "沼躍魚",
       "form": "",
       "actor": "pm0259_00_numacraw",
       "gender": 1,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 3,
       "weakness": 5,
       "stat": {

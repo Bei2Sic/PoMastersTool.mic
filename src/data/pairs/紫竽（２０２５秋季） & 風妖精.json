@@ -54,11 +54,12 @@
     {
       "id": "20352400000",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "風妖精",
       "form": "太晶屬性：惡",
       "actor": "pm0547_00_elfuun",
       "gender": 2,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 16,
       "weakness": 12,
       "stat": {
@@ -215,13 +216,14 @@
     {
       "id": "20352400000",
       "variationType": 7,
+      "vAfterSm": false,
       "name": "風妖精",
       "form": "太晶屬性：惡",
       "actor": "pm0547_71_16_elfuun",
       "gender": 2,
-      "is_shiny": false,
-      "type": "16",
-      "weakness": "-1",
+      "isShiny": false,
+      "type": 16,
+      "weakness": 12,
       "stat": {
         "hp": [
           100,
@@ -381,6 +383,14 @@
         "tags": "none",
         "group": "Sync"
       },
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
       "moveTera": {
         "id": 4046,
         "user": "寶可夢",
@@ -403,8 +413,9 @@
       "cookieName": "紫竽（２０２５秋季）專用潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "惡顏領域時攻擊招式威力↓2",
           "description": "當領域為惡顏領域時,會減輕受到招式攻擊時的傷害。",
+          "detail": [],
           "rate": 100
         }
       ]
@@ -413,18 +424,21 @@
       "cookieName": "紫竽（２０２５秋季）專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "被攻擊時HP回復G9",
           "description": "受到招式攻擊時,會回復我方全體拍組的HP。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "首次上場時物理/特殊增強G1",
           "description": "首次上場時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "首次上場時拍組招式增強G3",
           "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
+          "detail": [],
           "rate": 33
         }
       ]

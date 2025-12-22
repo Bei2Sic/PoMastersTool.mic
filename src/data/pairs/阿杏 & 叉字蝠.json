@@ -48,11 +48,12 @@
     {
       "id": "20060000001",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "叉字蝠",
       "form": "",
       "actor": "pm0169_00_crobat",
       "gender": 2,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 8,
       "weakness": 4,
       "stat": {

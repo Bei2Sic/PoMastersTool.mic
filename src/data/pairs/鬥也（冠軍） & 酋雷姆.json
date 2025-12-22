@@ -54,11 +54,12 @@
     {
       "id": "20020900000",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "酋雷姆",
       "form": "焰白酋雷姆",
       "actor": "pm0646_12_kyurem_rare",
       "gender": 3,
-      "is_shiny": true,
+      "isShiny": true,
       "type": 6,
       "weakness": 17,
       "stat": {
@@ -262,8 +263,9 @@
       "cookieName": "鬥也（冠軍）專用潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "寶可夢首次使出變化招式時場地招式計量槽加速",
           "description": "在寶可夢首次使出變化招式時,會讓我方場地變成招式計量槽加速狀態。",
+          "detail": [],
           "rate": 100
         }
       ]
@@ -272,18 +274,21 @@
       "cookieName": "鬥也（冠軍）專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "天氣場地領域變化時計量槽加速2",
           "description": "只有在天氣、場地或領域變化時,招式計量槽會累積得較快。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "擊中要害時威力提升3",
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "天氣場地領域變化時拍組招式↑G2",
           "description": "只有在天氣、場地或領域變化時,會提高我方全體拍組的拍組招式的威力。",
+          "detail": [],
           "rate": 33
         }
       ]
@@ -582,7 +587,7 @@
       "level": 1,
       "x": -2,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 6
     },
     {
@@ -595,7 +600,7 @@
       "level": 1,
       "x": -1,
       "y": -3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 6
     },
     {
@@ -608,7 +613,7 @@
       "level": 2,
       "x": -3,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 6
     },
     {
@@ -725,7 +730,7 @@
       "level": 1,
       "x": 2,
       "y": -4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 6
     },
     {
@@ -738,7 +743,7 @@
       "level": 1,
       "x": 1,
       "y": -4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 6
     },
     {

@@ -48,11 +48,12 @@
     {
       "id": "20017000001",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "皮可西",
       "form": "",
       "actor": "pm0036_00_pixy",
       "gender": 2,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 18,
       "weakness": 17,
       "stat": {

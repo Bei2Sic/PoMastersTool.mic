@@ -54,11 +54,12 @@
     {
       "id": "20090000002",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "盔甲鳥",
       "form": "",
       "actor": "pm0227_00_00_airmd",
       "gender": 1,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 17,
       "weakness": 2,
       "stat": {

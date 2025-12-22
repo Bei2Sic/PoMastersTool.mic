@@ -48,11 +48,12 @@
     {
       "id": "20241000000",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "雙彈瓦斯",
       "form": "",
       "actor": "pm0110_00_matadogas",
       "gender": 1,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 8,
       "weakness": 11,
       "stat": {

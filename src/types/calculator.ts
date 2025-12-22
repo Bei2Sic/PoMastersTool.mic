@@ -59,7 +59,6 @@ export enum LogicType {
     SuperEffective = "SuperEffective",
     Recoil = "Recoil", // 反衝
     MoveType = "MoveType", // 技能屬性
-    SyncType = "SyncType", // 拍組屬性
     SyncBuffs = "SyncBuffs", // 气魄状态
     Berry = "Berry", // 樹果
     GaugeSpeedBoostOn = "GaugeSpeedBoostOn",
@@ -71,7 +70,7 @@ export enum LogicType {
     HPScaling = "HPScaling", // 依HP比例 (e.g. 隨HP)
     BoostScaling = "BoostScaling",
     // 技能威力成倍增長類型
-    FixedMulti = "FixedMulti", // 固定高倍率 (e.g. 威力10倍)
+    // FixedMulti = "FixedMulti", // 固定高倍率 (e.g. 威力10倍)
 
     // 白值能力加成
     StatBaseBoost = "StatBaseBoost",
@@ -149,14 +148,14 @@ export interface CalcEnvironment {
 
     user: {
         hpPercent: number; // 0-100
-        gear: PokemonStats,
+        gear: PokemonStats;
         ranks: BattleRanks;
         boosts: {
             physical: BoostRank;
             special: BoostRank;
             sync: BoostRank;
         };
-
+        syncBuff: number;
         abnormal: AbnormalType;
         hindrance: Record<HindranceType, boolean>;
     };
@@ -165,21 +164,24 @@ export interface CalcEnvironment {
         hpPercent: number;
         stats: PokemonStats;
         ranks: BattleRanks;
+        syncBuff: number;
         abnormal: AbnormalType;
         hindrance: Record<HindranceType, boolean>;
         damageField: DamageFieldType;
         typeRebuffs: Record<PokemonType, RebuffRank>;
     };
 
-    // ==========================================
-    // 4. 設定
-    // ==========================================
     settings: {
         gauge: GaugeValue;
-        berry: BerryNum; // 
+        berry: BerryNum; //
         moveuse: number; // 針對 邪惡靈魂暗影球
         isCritical: boolean;
         effectiveType: PokemonType;
         isSuperEffective: boolean;
+    };
+
+    // 额外的属性
+    special: {
+        isMega: boolean;
     };
 }

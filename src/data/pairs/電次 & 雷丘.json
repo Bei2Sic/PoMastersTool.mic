@@ -48,11 +48,12 @@
     {
       "id": "20115000001",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "雷丘",
       "form": "",
       "actor": "pm0026_00_raichu",
       "gender": 1,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 4,
       "weakness": 9,
       "stat": {

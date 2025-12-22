@@ -54,11 +54,12 @@
     {
       "id": "20004000002",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "炎武王",
       "form": "",
       "actor": "pm0500_00_enbuoh",
       "gender": 2,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 2,
       "weakness": 3,
       "stat": {
@@ -213,18 +214,21 @@
       "cookieName": "鬥子專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "效果絕佳時威力提升5",
           "description": "當效果絕佳時,會提高該招式的威力。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "擊中要害時威力提升3",
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "首次上場時賦予物理/特殊增強2",
           "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
+          "detail": [],
           "rate": 33
         }
       ]

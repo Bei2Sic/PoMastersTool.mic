@@ -80,7 +80,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
                 value: 0.2,
             },
             condition: {
-                key: "鋼屬性",
+                key: "鋼",
                 detail: "自身",
                 logic: LogicType.MoveType,
             },
@@ -638,6 +638,29 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
                 value: 1.0,
             },
             applyToParty: true,
+        },
+    ],
+    極低溫冷氣: [
+        {
+            name: "極低溫冷氣",
+            desc: "",
+            passiveName: "極低溫冷氣",
+            boost: {
+                scope: MoveScope.Specific,
+                moveName: "冰凍光束",
+                value: 1.0,
+            },
+            condition: {
+                key: "",
+                detail: "自身",
+                logic: LogicType.Direct,
+            },
+            statBoost: {
+                isStatBoost: false,
+                stats: [],
+                value: 1.0,
+            },
+            applyToParty: false,
         },
     ],
     合眾的熱血少女: [

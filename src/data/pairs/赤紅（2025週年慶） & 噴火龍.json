@@ -54,11 +54,12 @@
     {
       "id": "20000400000",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "噴火龍",
       "form": "太晶屬性：龍",
       "actor": "pm0006_00_lizardon",
       "gender": 1,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 15,
       "weakness": 6,
       "stat": {
@@ -251,13 +252,14 @@
     {
       "id": "20000400000",
       "variationType": 7,
+      "vAfterSm": false,
       "name": "噴火龍",
       "form": "太晶屬性：龍",
       "actor": "pm0006_71_15_lizardon",
       "gender": 1,
-      "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "isShiny": false,
+      "type": 15,
+      "weakness": 6,
       "stat": {
         "hp": [
           110,
@@ -457,6 +459,14 @@
         "tags": "none",
         "group": "Sync"
       },
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
       "moveTera": {
         "id": 4043,
         "user": "寶可夢",
@@ -479,8 +489,9 @@
       "cookieName": "赤紅（2025週年慶）專用潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "龍之領域時拍組招式威力提升4",
           "description": "當領域為龍之領域時,會提高拍組招式的威力。",
+          "detail": [],
           "rate": 100
         }
       ]
@@ -489,8 +500,9 @@
       "cookieName": "赤紅（2025週年慶）專用潛能餅乾２",
       "skills": [
         {
-          "name": [],
+          "name": "異常狀態妨害無效",
           "description": "不會陷入異常狀態,或畏縮、混亂、束縛的狀態變化。",
+          "detail": [],
           "rate": 100
         }
       ]
@@ -499,18 +511,21 @@
       "cookieName": "赤紅（2025週年慶）專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "效果絕佳時威力提升5",
           "description": "當效果絕佳時,會提高該招式的威力。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "擊中要害時威力提升3",
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "首次上場時賦予物理/特殊增強2",
           "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
+          "detail": [],
           "rate": 33
         }
       ]
@@ -826,7 +841,7 @@
       "level": 1,
       "x": -2,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 15
     },
     {
@@ -839,7 +854,7 @@
       "level": 1,
       "x": -3,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 15
     },
     {
@@ -852,7 +867,7 @@
       "level": 2,
       "x": -1,
       "y": -3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 15
     },
     {
@@ -943,7 +958,7 @@
       "level": 1,
       "x": 2,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 15
     },
     {
@@ -956,7 +971,7 @@
       "level": 1,
       "x": 1,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 15
     },
     {

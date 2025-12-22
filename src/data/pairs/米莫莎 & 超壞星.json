@@ -61,11 +61,12 @@
     {
       "id": "20336000000",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "超壞星",
       "form": "太晶屬性：毒",
       "actor": "pm0748_00_00_dohidoide",
       "gender": 2,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 8,
       "weakness": 11,
       "stat": {
@@ -227,13 +228,14 @@
     {
       "id": "20336000000",
       "variationType": 7,
+      "vAfterSm": false,
       "name": "超壞星",
       "form": "太晶屬性：毒",
       "actor": "pm0748_71_08_dohidoide",
       "gender": 2,
-      "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "isShiny": false,
+      "type": 8,
+      "weakness": 11,
       "stat": {
         "hp": [
           110,
@@ -389,6 +391,14 @@
         "tags": "none",
         "group": "Sync"
       },
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
       "moveTera": {
         "id": 4047,
         "user": "寶可夢",
@@ -411,8 +421,9 @@
       "cookieName": "米莫莎專用潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "寶可夢首次使出變化招式時場地招式計量槽加速",
           "description": "在寶可夢首次使出變化招式時,會讓我方場地變成招式計量槽加速狀態。",
+          "detail": [],
           "rate": 100
         }
       ]
@@ -421,18 +432,21 @@
       "cookieName": "米莫莎專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "被攻擊時HP回復G9",
           "description": "受到招式攻擊時,會回復我方全體拍組的HP。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "首次上場時物理/特殊增強G1",
           "description": "首次上場時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "首次上場時拍組招式增強G3",
           "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
+          "detail": [],
           "rate": 33
         }
       ]

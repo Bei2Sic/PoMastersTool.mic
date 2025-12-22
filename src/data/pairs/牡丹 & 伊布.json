@@ -54,11 +54,12 @@
     {
       "id": "20293000001",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "伊布",
       "form": "",
       "actor": "pm0133_01_00_eievui",
       "gender": 2,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 1,
       "weakness": 7,
       "stat": {

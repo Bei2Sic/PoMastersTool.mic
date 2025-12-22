@@ -67,11 +67,12 @@
     {
       "id": "20000000000",
       "variationType": 0,
+      "vAfterSm": true,
       "name": "噴火龍",
       "form": "",
       "actor": "pm0006_00_lizardon",
       "gender": 1,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 2,
       "weakness": 13,
       "stat": {
@@ -228,13 +229,14 @@
     {
       "id": "20000000000",
       "variationType": 1,
-      "name": "超級噴火龍",
+      "vAfterSm": true,
+      "name": "超級噴火龍X",
       "form": "",
       "actor": "pm0006_51_megalizardonX",
       "gender": 1,
-      "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "isShiny": false,
+      "type": 2,
+      "weakness": 13,
       "stat": {
         "hp": [
           90,
@@ -384,7 +386,15 @@
         "description": "變成超級噴火龍X直到對戰結束。提高自己的擊中要害率1階段。",
         "tags": "none",
         "group": "Sync"
-      }
+      },
+      "scale": [
+        100,
+        120,
+        100,
+        120,
+        100,
+        100
+      ]
     }
   ],
   "luckCookies": [
@@ -392,7 +402,9 @@
       "cookieName": "美極套裝赤紅專用的塔潛能餅乾２",
       "skills": [
         {
-          "name": [
+          "name": "美極套裝赤紅的全力以赴",
+          "description": "首次上場時,會將天氣變成日照強烈的狀態。天氣變成日照強烈的瞬間在場上時,會延長日照強烈的狀態的持續時間。",
+          "detail": [
             {
               "name": "首次上場時變成晴天",
               "description": "首次上場時,會將天氣變成日照強烈的狀態。"
@@ -402,7 +414,6 @@
               "description": "天氣變成日照強烈的瞬間在場上時,會延長日照強烈的狀態的持續時間。"
             }
           ],
-          "description": "首次上場時,會將天氣變成日照強烈的狀態。天氣變成日照強烈的瞬間在場上時,會延長日照強烈的狀態的持續時間。",
           "rate": 100
         }
       ]
@@ -411,18 +422,21 @@
       "cookieName": "美極套裝赤紅專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "效果絕佳時威力提升5",
           "description": "當效果絕佳時,會提高該招式的威力。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "擊中要害時威力提升3",
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "首次上場時賦予物理/特殊增強2",
           "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
+          "detail": [],
           "rate": 33
         }
       ]
@@ -431,8 +445,9 @@
       "cookieName": "美極套裝赤紅專用潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "晴天時拍組招式威力提升9",
           "description": "當天氣為日照強烈時,會提高拍組招式的威力。",
+          "detail": [],
           "rate": 100
         }
       ]

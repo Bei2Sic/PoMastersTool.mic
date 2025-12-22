@@ -42,11 +42,12 @@
     {
       "id": "20364000000",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "蟲滾泥",
       "form": "",
       "actor": "pm0953_00_00_shigaroko_rare",
       "gender": 1,
-      "is_shiny": true,
+      "isShiny": true,
       "type": 12,
       "weakness": 10,
       "stat": {

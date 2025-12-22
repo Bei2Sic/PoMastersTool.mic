@@ -67,11 +67,12 @@
     {
       "id": "20158000000",
       "variationType": 0,
+      "vAfterSm": true,
       "name": "沙奈朵",
       "form": "",
       "actor": "pm0282_00_sirnight",
       "gender": 2,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 18,
       "weakness": 14,
       "stat": {
@@ -228,13 +229,14 @@
     {
       "id": "20158000000",
       "variationType": 1,
+      "vAfterSm": true,
       "name": "超級沙奈朵",
       "form": "",
       "actor": "pm0282_51_megasrnight",
       "gender": 2,
-      "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "isShiny": false,
+      "type": 18,
+      "weakness": 14,
       "stat": {
         "hp": [
           99,
@@ -384,7 +386,15 @@
         "description": "變成超級沙奈朵直到對戰結束。",
         "tags": "none",
         "group": "Sync"
-      }
+      },
+      "scale": [
+        100,
+        100,
+        100,
+        120,
+        120,
+        100
+      ]
     }
   ],
   "luckCookies": [
@@ -392,7 +402,9 @@
       "cookieName": "卡露妮專用的塔潛能餅乾２",
       "skills": [
         {
-          "name": [
+          "name": "卡露妮的全神貫注",
+          "description": "首次使出拍組招式時,會將領域變成妖精領域。(妖精領域會提高妖精屬性的攻擊的威力。)領域變成妖精領域的瞬間在場上時,會延長妖精領域的持續時間。",
+          "detail": [
             {
               "name": "首次拍組招式後變成妖精領域",
               "description": "首次使出拍組招式時,會將領域變成妖精領域。(妖精領域會提高妖精屬性的攻擊的威力。)"
@@ -402,7 +414,6 @@
               "description": "領域變成妖精領域的瞬間在場上時,會延長妖精領域的持續時間。"
             }
           ],
-          "description": "首次使出拍組招式時,會將領域變成妖精領域。(妖精領域會提高妖精屬性的攻擊的威力。)領域變成妖精領域的瞬間在場上時,會延長妖精領域的持續時間。",
           "rate": 100
         }
       ]
@@ -411,18 +422,21 @@
       "cookieName": "卡露妮專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "效果絕佳時威力提升5",
           "description": "當效果絕佳時,會提高該招式的威力。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "擊中要害時威力提升3",
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "首次上場時賦予物理/特殊增強2",
           "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
+          "detail": [],
           "rate": 33
         }
       ]

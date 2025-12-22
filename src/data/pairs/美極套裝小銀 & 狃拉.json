@@ -67,11 +67,12 @@
     {
       "id": "20133100000",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "狃拉",
       "form": "",
       "actor": "pm0215_00_nyula",
       "gender": 1,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 6,
       "weakness": 7,
       "stat": {
@@ -231,7 +232,9 @@
       "cookieName": "美極套裝小銀專用的塔潛能餅乾２",
       "skills": [
         {
-          "name": [
+          "name": "美極套裝小銀的全心全意",
+          "description": "首次上場時,發動拍組招式所需的行動數會減少1次。招式必定會命中。首次上場時,會讓自己變成下次傷害防禦狀態。",
+          "detail": [
             {
               "name": "首次上場時計數加速1",
               "description": "首次上場時,發動拍組招式所需的行動數會減少1次。"
@@ -245,7 +248,6 @@
               "description": "首次上場時,會讓自己變成下次傷害防禦狀態。"
             }
           ],
-          "description": "首次上場時,發動拍組招式所需的行動數會減少1次。招式必定會命中。首次上場時,會讓自己變成下次傷害防禦狀態。",
           "rate": 100
         }
       ]
@@ -254,18 +256,21 @@
       "cookieName": "美極套裝小銀專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "擊中要害時威力提升3",
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "拍組招式效果絕佳時威力↑5",
           "description": "當效果絕佳時,會提高該拍組招式的威力。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "首次上場時拍組招式增強5",
           "description": "首次上場時,會提高自己的下次拍組招式威力增強5階段。",
+          "detail": [],
           "rate": 33
         }
       ]
@@ -867,7 +872,7 @@
       "level": 1,
       "x": -2,
       "y": 4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 6
     },
     {
@@ -880,7 +885,7 @@
       "level": 1,
       "x": -3,
       "y": 5,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 6
     },
     {
@@ -893,7 +898,7 @@
       "level": 2,
       "x": -1,
       "y": 4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 6
     },
     {
@@ -906,7 +911,7 @@
       "level": 2,
       "x": -2,
       "y": 5,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 6
     },
     {

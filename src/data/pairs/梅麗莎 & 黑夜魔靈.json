@@ -67,11 +67,12 @@
     {
       "id": "20151000001",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "黑夜魔靈",
       "form": "",
       "actor": "pm0477_00_yonoir",
       "gender": 2,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 14,
       "weakness": 16,
       "stat": {

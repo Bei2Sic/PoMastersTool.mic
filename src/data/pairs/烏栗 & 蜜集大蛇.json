@@ -48,11 +48,12 @@
     {
       "id": "20357000000",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "蜜集大蛇",
       "form": "太晶屬性：格鬥",
       "actor": "pm1019_00_00_kamitsuorochi",
       "gender": 1,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 7,
       "weakness": 10,
       "stat": {
@@ -227,13 +228,14 @@
     {
       "id": "20357000000",
       "variationType": 7,
+      "vAfterSm": false,
       "name": "蜜集大蛇",
       "form": "太晶屬性：格鬥",
       "actor": "pm1019_71_07_kamitsuorochi",
       "gender": 1,
-      "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "isShiny": false,
+      "type": 7,
+      "weakness": 10,
       "stat": {
         "hp": [
           110,
@@ -411,6 +413,14 @@
         "tags": "none",
         "group": "Sync"
       },
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
       "moveTera": {
         "id": 4041,
         "user": "寶可夢",
@@ -433,8 +443,9 @@
       "cookieName": "烏栗專用潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "晴天時招式計量槽加速2",
           "description": "當天氣為日照強烈時,招式計量槽會累積得較快。",
+          "detail": [],
           "rate": 100
         }
       ]
@@ -443,18 +454,21 @@
       "cookieName": "烏栗專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "天氣場地領域變化時計量槽加速2",
           "description": "只有在天氣、場地或領域變化時,招式計量槽會累積得較快。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "擊中要害時威力提升3",
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "天氣場地領域變化時拍組招式↑G2",
           "description": "只有在天氣、場地或領域變化時,會提高我方全體拍組的拍組招式的威力。",
+          "detail": [],
           "rate": 33
         }
       ]

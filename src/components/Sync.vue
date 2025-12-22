@@ -54,6 +54,9 @@
                 <button class="tab-btn" :class="{ active: curTab === 'info' }" @click="curTab = 'info'">
                     拍組信息
                 </button>
+                <button class="tab-btn" :class="{ active: curTab === 'calc' }" @click="curTab = 'calc'">
+                    傷害計算
+                </button>
             </div>
             <div class="pokemon-name">{{ syncMethods.getSyncName() }}</div>
             <div class="info-content">
@@ -129,12 +132,26 @@
                     @update:exRoleEnabledValue="(val) => dynamicState.exRoleEnabled = val"
                     @update:selectedPokemonIndex="(val) => dynamicState.selectedPokemonIndex = val" />
             </div>
+            <!-- 傷害計算窗口 -->
+            <div v-if="curTab === 'calc'" class="calc-tab-container">
+                <div class="calc-intro">
+                    <h3>傷害計算器</h3>
+                    <p>點擊下方按鈕開啟詳細設定視窗</p>
+                    <button class="open-calc-btn" @click="showDamageCalc = true">
+                        開啟計算視窗
+                    </button>
+                </div>
+            </div>
         </div>
+
+        <Damage :visible="showDamageCalc" :targetSync="singleSync" :teamSyncs="null"
+            @close="showDamageCalc = false" />
     </div>
 </template>
 
 <script setup>
 // import Bonus from '@/components/Bonus.vue';
+import Damage from '@/components/Damage.vue';
 import Filter from '@/components/Filter.vue';
 import Grid from '@/components/Grid.vue';
 import Info from '@/components/Info.vue';
@@ -164,6 +181,8 @@ const showInfo = ref(false);
 const isSingleView = ref(window.innerWidth <= 900);
 // 信息切换页
 const curTab = ref('grid');
+
+const showDamageCalc = ref(false);
 
 const { singleSync } = storeToRefs(syncElemStore);
 const { themeSnapshot, passiveSnapshot, statSnapshot, finalDamageResult } = useDamageCalculator(singleSync);
@@ -685,6 +704,31 @@ onUnmounted(() => {
     flex: 1;
     overflow-y: auto;
     padding: 15px;
+}
+
+/* 簡單樣式範例 */
+.calc-tab-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+.open-calc-btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #009688;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.open-calc-btn:hover {
+    background-color: #00796b;
 }
 
 @media (max-width: 1000px) {

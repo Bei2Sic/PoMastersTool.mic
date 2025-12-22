@@ -54,11 +54,12 @@
     {
       "id": "20148000001",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "夢妖魔",
       "form": "",
       "actor": "pm0429_00_mumargi",
       "gender": 2,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 14,
       "weakness": 16,
       "stat": {

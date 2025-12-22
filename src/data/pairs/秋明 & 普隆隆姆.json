@@ -67,11 +67,12 @@
     {
       "id": "20328000000",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "普隆隆姆",
       "form": "",
       "actor": "pm0966_00_00_burororoom",
       "gender": 1,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 8,
       "weakness": 9,
       "stat": {
@@ -240,8 +241,9 @@
       "cookieName": "秋明專用潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "首次上場時場地招式計量槽加速",
           "description": "首次上場時,會讓我方場地變成招式計量槽加速狀態。",
+          "detail": [],
           "rate": 100
         }
       ]
@@ -250,18 +252,21 @@
       "cookieName": "秋明專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "被攻擊時HP回復G9",
           "description": "受到招式攻擊時,會回復我方全體拍組的HP。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "首次上場時物理/特殊增強G1",
           "description": "首次上場時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "首次上場時拍組招式增強G3",
           "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
+          "detail": [],
           "rate": 33
         }
       ]
@@ -603,7 +608,7 @@
       "level": 1,
       "x": -1,
       "y": -1,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 8
     },
     {
@@ -616,7 +621,7 @@
       "level": 1,
       "x": -2,
       "y": -1,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 8
     },
     {
@@ -629,7 +634,7 @@
       "level": 2,
       "x": -3,
       "y": -1,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 8
     },
     {
@@ -863,7 +868,7 @@
       "level": 1,
       "x": -3,
       "y": 3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 8
     },
     {
@@ -876,7 +881,7 @@
       "level": 1,
       "x": -2,
       "y": 3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 8
     },
     {

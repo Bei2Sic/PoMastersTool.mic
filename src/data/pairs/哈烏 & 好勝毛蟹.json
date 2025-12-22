@@ -48,11 +48,12 @@
     {
       "id": "20098000001",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "好勝毛蟹",
       "form": "",
       "actor": "pm0860_00_yashigani2",
       "gender": 1,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 6,
       "weakness": 2,
       "stat": {

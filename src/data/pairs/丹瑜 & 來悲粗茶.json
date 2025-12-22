@@ -61,11 +61,12 @@
     {
       "id": "20356000000",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "來悲粗茶",
       "form": "凡作的樣子／太晶屬性：草",
       "actor": "pm1013_11_00_yabasocha",
       "gender": 3,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 5,
       "weakness": 2,
       "stat": {
@@ -231,13 +232,14 @@
     {
       "id": "20356000000",
       "variationType": 7,
+      "vAfterSm": false,
       "name": "來悲粗茶",
       "form": "凡作的樣子／太晶屬性：草",
       "actor": "pm1013_71_05_yabasocha",
       "gender": 3,
-      "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "isShiny": false,
+      "type": 5,
+      "weakness": 2,
       "stat": {
         "hp": [
           95,
@@ -406,6 +408,14 @@
         "tags": "none",
         "group": "Sync"
       },
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
       "moveTera": {
         "id": 4042,
         "user": "寶可夢",
@@ -428,8 +438,9 @@
       "cookieName": "丹瑜專用潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "寶可夢首次使出變化招式時下次傷害防禦",
           "description": "在寶可夢首次使出變化招式時,會讓自己變成下次傷害防禦狀態。",
+          "detail": [],
           "rate": 100
         }
       ]
@@ -438,18 +449,21 @@
       "cookieName": "丹瑜專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "被攻擊時HP回復G9",
           "description": "受到招式攻擊時,會回復我方全體拍組的HP。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "首次上場時物理/特殊增強G1",
           "description": "首次上場時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "首次上場時拍組招式增強G3",
           "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
+          "detail": [],
           "rate": 33
         }
       ]

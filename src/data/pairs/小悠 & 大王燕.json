@@ -48,11 +48,12 @@
     {
       "id": "20019000004",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "大王燕",
       "form": "",
       "actor": "pm0277_00_ohsubame",
       "gender": 1,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 10,
       "weakness": 13,
       "stat": {

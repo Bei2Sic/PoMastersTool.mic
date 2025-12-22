@@ -54,11 +54,12 @@
     {
       "id": "20120000002",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "美納斯",
       "form": "",
       "actor": "pm0350_01_milokaross",
       "gender": 2,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 3,
       "weakness": 4,
       "stat": {

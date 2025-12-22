@@ -67,11 +67,12 @@
     {
       "id": "20106110000",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "雷電雲",
       "form": "靈獸形態",
       "actor": "pm0642_12_00_voltolos",
       "gender": 1,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 4,
       "weakness": 6,
       "stat": {
@@ -246,13 +247,14 @@
     {
       "id": "20106110000",
       "variationType": 4,
+      "vAfterSm": false,
       "name": "雷電雲",
       "form": "靈獸形態",
       "actor": "pm0642_84_00_voltolos",
       "gender": 1,
-      "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "isShiny": false,
+      "type": 4,
+      "weakness": 6,
       "stat": {
         "hp": [
           98,
@@ -346,6 +348,14 @@
       ],
       "moves": null,
       "syncMove": null,
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
       "movesDynamax": [
         {
           "id": 7028,
@@ -400,8 +410,9 @@
       "cookieName": "美極套裝小菊兒（異裝）專用潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "電氣場地時攻擊招式威力↓2",
           "description": "當場地為電氣場地時,會減輕受到招式攻擊時的傷害。",
+          "detail": [],
           "rate": 100
         }
       ]
@@ -410,18 +421,21 @@
       "cookieName": "美極套裝小菊兒（異裝）專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "天氣場地領域變化時計量槽加速2",
           "description": "只有在天氣、場地或領域變化時,招式計量槽會累積得較快。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "擊中要害時威力提升3",
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "天氣場地領域變化時拍組招式↑G2",
           "description": "只有在天氣、場地或領域變化時,會提高我方全體拍組的拍組招式的威力。",
+          "detail": [],
           "rate": 33
         }
       ]
@@ -685,7 +699,7 @@
       "level": 3,
       "x": 2,
       "y": 2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 4
     },
     {
@@ -919,7 +933,7 @@
       "level": 1,
       "x": 1,
       "y": -4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 4
     },
     {
@@ -932,7 +946,7 @@
       "level": 2,
       "x": 3,
       "y": -5,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 4
     },
     {
@@ -1036,7 +1050,7 @@
       "level": 1,
       "x": -1,
       "y": 2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 4
     },
     {
@@ -1049,7 +1063,7 @@
       "level": 2,
       "x": -3,
       "y": 3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 4
     },
     {

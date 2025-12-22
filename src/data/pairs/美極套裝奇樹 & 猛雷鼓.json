@@ -67,11 +67,12 @@
     {
       "id": "20296100000",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "猛雷鼓",
       "form": "",
       "actor": "pm1021_00_00_takeruraiko",
       "gender": 3,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 4,
       "weakness": 9,
       "stat": {
@@ -231,8 +232,9 @@
       "cookieName": "美極套裝奇樹專用潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "訓練家招式後賦予特殊增強(1)9",
           "description": "在訓練家使出招式時,會提高自己的下次特殊招式威力增強1階段。",
+          "detail": [],
           "rate": 100
         }
       ]
@@ -241,18 +243,21 @@
       "cookieName": "美極套裝奇樹專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "天氣場地領域變化時計量槽加速2",
           "description": "只有在天氣、場地或領域變化時,招式計量槽會累積得較快。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "擊中要害時威力提升3",
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "天氣場地領域變化時拍組招式↑G2",
           "description": "只有在天氣、場地或領域變化時,會提高我方全體拍組的拍組招式的威力。",
+          "detail": [],
           "rate": 33
         }
       ]
@@ -737,7 +742,7 @@
       "level": 1,
       "x": 2,
       "y": -4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 4
     },
     {
@@ -750,7 +755,7 @@
       "level": 1,
       "x": 1,
       "y": -4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 4
     },
     {
@@ -763,7 +768,7 @@
       "level": 2,
       "x": 3,
       "y": -5,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 4
     },
     {
@@ -867,7 +872,7 @@
       "level": 1,
       "x": -1,
       "y": 2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 4
     },
     {
@@ -880,7 +885,7 @@
       "level": 2,
       "x": -3,
       "y": 3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 4
     },
     {

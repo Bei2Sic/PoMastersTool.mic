@@ -54,11 +54,12 @@
     {
       "id": "20021000001",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "椰蛋樹",
       "form": "",
       "actor": "pm0103_00_nassy",
       "gender": 1,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 5,
       "weakness": 12,
       "stat": {

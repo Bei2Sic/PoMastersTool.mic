@@ -54,11 +54,12 @@
     {
       "id": "20051000001",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "小碎鑽",
       "form": "",
       "actor": "pm0766_00_diamond",
       "gender": 3,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 13,
       "weakness": 17,
       "stat": {

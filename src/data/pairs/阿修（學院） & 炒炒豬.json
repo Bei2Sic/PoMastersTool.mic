@@ -48,11 +48,12 @@
     {
       "id": "20147400000",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "炒炒豬",
       "form": "",
       "actor": "pm0499_00_chaoboo",
       "gender": 1,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 2,
       "weakness": 3,
       "stat": {

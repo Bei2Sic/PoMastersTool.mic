@@ -295,7 +295,7 @@ const createSync = (jsonData: SyncRawData): Sync => {
                 console.log(item.form);
                 switch (item.variationType) {
                     case 1:
-                        return "Mega形態";
+                        return "超級進化";
                     case 4:
                         return "極巨化形態";
                     case 7:

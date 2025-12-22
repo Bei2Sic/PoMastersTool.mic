@@ -48,11 +48,12 @@
     {
       "id": "20254000001",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "龜足巨鎧",
       "form": "",
       "actor": "pm0748_00_kamenote2",
       "gender": 1,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 13,
       "weakness": 5,
       "stat": {
@@ -212,8 +213,9 @@
       "cookieName": "瑪瓜專用潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "無傷上場時附帶回復",
           "description": "在HP全滿的狀態上場時,會讓自己變成附帶回復狀態。",
+          "detail": [],
           "rate": 100
         }
       ]
@@ -222,18 +224,21 @@
       "cookieName": "瑪瓜專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "被攻擊時HP回復G9",
           "description": "受到招式攻擊時,會回復我方全體拍組的HP。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "首次上場時物理/特殊增強G1",
           "description": "首次上場時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "首次上場時拍組招式增強G3",
           "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
+          "detail": [],
           "rate": 33
         }
       ]

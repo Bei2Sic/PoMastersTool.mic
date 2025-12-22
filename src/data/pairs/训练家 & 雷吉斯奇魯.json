@@ -42,11 +42,12 @@
     {
       "id": "28000020711",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "雷吉斯奇魯",
       "form": "",
       "actor": "pm0379_00_registeel",
       "gender": 3,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 17,
       "weakness": 9,
       "stat": {

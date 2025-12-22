@@ -42,11 +42,12 @@
     {
       "id": "28000020521",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "雷吉洛克",
       "form": "",
       "actor": "pm0377_00_regirock",
       "gender": 3,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 13,
       "weakness": 7,
       "stat": {

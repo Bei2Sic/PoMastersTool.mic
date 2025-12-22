@@ -48,11 +48,12 @@
     {
       "id": "20048800001",
       "variationType": 0,
+      "vAfterSm": true,
       "name": "阿勃梭魯",
       "form": "",
       "actor": "pm0359_00_absol",
       "gender": 2,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 16,
       "weakness": 12,
       "stat": {
@@ -209,13 +210,14 @@
     {
       "id": "20048800001",
       "variationType": 1,
+      "vAfterSm": true,
       "name": "超級阿勃梭魯",
       "form": "",
       "actor": "pm0359_51_megaabsol",
       "gender": 2,
-      "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "isShiny": false,
+      "type": 16,
+      "weakness": 12,
       "stat": {
         "hp": [
           99,
@@ -365,7 +367,15 @@
         "description": "變成超級阿勃梭魯直到對戰結束。自己的攻擊提高得越多,威力就越大。",
         "tags": "none",
         "group": "Sync"
-      }
+      },
+      "scale": [
+        100,
+        120,
+        100,
+        100,
+        100,
+        120
+      ]
     }
   ],
   "luckCookies": [
@@ -373,17 +383,21 @@
       "cookieName": "越橘（便裝）專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "招式後招式計量槽增加9",
           "description": "招式成功時,會幫自己增加1條招式計量槽。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "擊中要害時威力提升3",
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [
+          "name": "首次上場時&首次拍組招式後計數加速1",
+          "description": "首次上場時,發動拍組招式所需的行動數會減少1次。首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。",
+          "detail": [
             {
               "name": "首次上場時計數加速1",
               "description": "首次上場時,發動拍組招式所需的行動數會減少1次。"
@@ -393,7 +407,6 @@
               "description": "首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。"
             }
           ],
-          "description": "首次上場時,發動拍組招式所需的行動數會減少1次。首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。",
           "rate": 33
         }
       ]
@@ -761,7 +774,7 @@
       "level": 1,
       "x": 1,
       "y": -3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 16
     },
     {
@@ -774,7 +787,7 @@
       "level": 1,
       "x": 2,
       "y": -4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 16
     },
     {
@@ -787,7 +800,7 @@
       "level": 1,
       "x": 3,
       "y": -5,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 16
     },
     {
@@ -917,7 +930,7 @@
       "level": 1,
       "x": -2,
       "y": 4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 16
     },
     {
@@ -930,7 +943,7 @@
       "level": 1,
       "x": -3,
       "y": 5,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 16
     },
     {
@@ -943,7 +956,7 @@
       "level": 2,
       "x": -1,
       "y": 4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 16
     },
     {

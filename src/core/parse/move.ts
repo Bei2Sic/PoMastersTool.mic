@@ -1,5 +1,6 @@
+import { MOVE_OVERRIDES } from "@/constances/move";
 import { LogicType } from "@/types/calculator";
-import { MoveSkillModel } from "@/types/moveModel";
+import { DEFAULT_MOVE_SKILL, MoveSkillModel } from "@/types/moveModel";
 // 假設這些常量在您的常量文件中定義
 import {
     ABNORMAL_STATUSES,
@@ -18,12 +19,28 @@ export class MoveSkillParser {
 
     // 獲取解析結果
     public get result(): MoveSkillModel {
+        const defaultMoveSkill = {
+            ...DEFAULT_MOVE_SKILL,
+            name: this.name,
+            desc: this.desc,
+        };
+
+        // 直接查表
+        const moveSkill = MOVE_OVERRIDES[this.name] ?? defaultMoveSkill;
+        if (moveSkill) {
+            return moveSkill;
+        }
+
         // 处理通用被动
         const isValid = this.isValid(this.desc);
         if (!isValid) {
-            return null;
+            return defaultMoveSkill;
         }
         const logicResult = this.resolveLogicAndCondition();
+
+        if (logicResult.logic === LogicType.NoEffect) {
+            return defaultMoveSkill;
+        }
 
         return {
             name: this.name,
@@ -198,7 +215,7 @@ export class MoveSkillParser {
 
         // 兜底
         return {
-            logic: LogicType.Direct,
+            logic: LogicType.NoEffect,
             key: "通用",
             detail: "自身",
         };

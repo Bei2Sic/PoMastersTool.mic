@@ -54,11 +54,12 @@
     {
       "id": "20285410000",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "火爆獸",
       "form": "洗翠的樣子／太晶屬性：毒",
       "actor": "pm0157_00_41_bakphoon",
       "gender": 2,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 8,
       "weakness": 9,
       "stat": {
@@ -247,13 +248,14 @@
     {
       "id": "20285410000",
       "variationType": 7,
+      "vAfterSm": false,
       "name": "火爆獸",
       "form": "洗翠的樣子／太晶屬性：毒",
       "actor": "pm0157_74_08_bakphoon",
       "gender": 2,
-      "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "isShiny": false,
+      "type": 8,
+      "weakness": 9,
       "stat": {
         "hp": [
           96,
@@ -445,6 +447,14 @@
         "tags": "none",
         "group": "Sync"
       },
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
       "moveTera": {
         "id": 4045,
         "user": "寶可夢",
@@ -467,8 +477,9 @@
       "cookieName": "珠貝（2025週年慶）專用潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "對手中毒時拍組招式↑4",
           "description": "當對手陷入中毒或劇毒狀態時,會提高自己的拍組招式的威力。",
+          "detail": [],
           "rate": 100
         }
       ]
@@ -477,18 +488,21 @@
       "cookieName": "珠貝（2025週年慶）專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "天氣場地領域變化時計量槽加速2",
           "description": "只有在天氣、場地或領域變化時,招式計量槽會累積得較快。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "擊中要害時威力提升3",
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "天氣場地領域變化時拍組招式↑G2",
           "description": "只有在天氣、場地或領域變化時,會提高我方全體拍組的拍組招式的威力。",
+          "detail": [],
           "rate": 33
         }
       ]
@@ -778,7 +792,7 @@
       "level": 1,
       "x": -2,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 1
     },
     {
@@ -791,7 +805,7 @@
       "level": 1,
       "x": -1,
       "y": -3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 1
     },
     {
@@ -1038,7 +1052,7 @@
       "level": 1,
       "x": -2,
       "y": 2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 14
     },
     {
@@ -1051,7 +1065,7 @@
       "level": 1,
       "x": -1,
       "y": 2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 14
     },
     {

@@ -67,11 +67,12 @@
     {
       "id": "20291000000",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "大劍鬼",
       "form": "洗翠的樣子",
       "actor": "pm0503_00_41_daikenki",
       "gender": 1,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 16,
       "weakness": 18,
       "stat": {
@@ -231,8 +232,9 @@
       "cookieName": "小照專用潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "攻擊時防禦下降4",
           "description": "使出招式攻擊成功時,有50%的機率會降低對手的防禦1階段。",
+          "detail": [],
           "rate": 100
         }
       ]
@@ -241,18 +243,21 @@
       "cookieName": "小照專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "天氣場地領域變化時計量槽加速2",
           "description": "只有在天氣、場地或領域變化時,招式計量槽會累積得較快。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "擊中要害時威力提升3",
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "天氣場地領域變化時拍組招式↑G2",
           "description": "只有在天氣、場地或領域變化時,會提高我方全體拍組的拍組招式的威力。",
+          "detail": [],
           "rate": 33
         }
       ]
@@ -737,7 +742,7 @@
       "level": 1,
       "x": 2,
       "y": -4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 16
     },
     {
@@ -750,7 +755,7 @@
       "level": 1,
       "x": 1,
       "y": -4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 16
     },
     {
@@ -763,7 +768,7 @@
       "level": 2,
       "x": 3,
       "y": -5,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 16
     },
     {
@@ -867,7 +872,7 @@
       "level": 1,
       "x": -1,
       "y": 2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 16
     },
     {
@@ -880,7 +885,7 @@
       "level": 2,
       "x": -3,
       "y": 3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 16
     },
     {

@@ -36,11 +36,12 @@
     {
       "id": "20657000000",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "皮卡丘",
       "form": "",
       "actor": "pm0025_01_pikachu",
       "gender": 2,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 4,
       "weakness": 9,
       "stat": {

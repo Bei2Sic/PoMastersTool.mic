@@ -48,11 +48,12 @@
     {
       "id": "20356000001",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "寶包繭",
       "form": "",
       "actor": "pm0541_00_kurumayu",
       "gender": 2,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 12,
       "weakness": 2,
       "stat": {

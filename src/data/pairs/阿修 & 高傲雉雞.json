@@ -54,11 +54,12 @@
     {
       "id": "20147000001",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "高傲雉雞",
       "form": "",
       "actor": "pm0521_00_kenhallow",
       "gender": 1,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 10,
       "weakness": 13,
       "stat": {

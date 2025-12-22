@@ -54,11 +54,12 @@
     {
       "id": "20118510000",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "索爾迦雷歐",
       "form": "",
       "actor": "pm0873_00_sun",
       "gender": 3,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 17,
       "weakness": 9,
       "stat": {
@@ -218,8 +219,9 @@
       "cookieName": "莉莉艾（2024週年慶）專用潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "首次上場時場地招式計量槽加速",
           "description": "首次上場時,會讓我方場地變成招式計量槽加速狀態。",
+          "detail": [],
           "rate": 100
         }
       ]
@@ -457,7 +459,7 @@
       "level": 1,
       "x": -2,
       "y": 0,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 17
     },
     {
@@ -483,7 +485,7 @@
       "level": 2,
       "x": -3,
       "y": 0,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 17
     },
     {
@@ -600,7 +602,7 @@
       "level": 1,
       "x": 2,
       "y": -4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 17
     },
     {
@@ -613,7 +615,7 @@
       "level": 1,
       "x": 3,
       "y": -5,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 17
     },
     {
@@ -626,7 +628,7 @@
       "level": 2,
       "x": 1,
       "y": -4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 17
     },
     {

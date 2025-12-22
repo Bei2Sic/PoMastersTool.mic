@@ -67,11 +67,12 @@
     {
       "id": "20021800000",
       "variationType": 0,
+      "vAfterSm": true,
       "name": "化石翼龍",
       "form": "",
       "actor": "pm0142_00_ptera",
       "gender": 1,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 13,
       "weakness": 3,
       "stat": {
@@ -228,13 +229,14 @@
     {
       "id": "20021800000",
       "variationType": 1,
+      "vAfterSm": true,
       "name": "超級化石翼龍",
       "form": "",
       "actor": "pm0142_51_megaptera",
       "gender": 1,
-      "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "isShiny": false,
+      "type": 13,
+      "weakness": 3,
       "stat": {
         "hp": [
           91,
@@ -384,7 +386,15 @@
         "description": "變成超級化石翼龍直到對戰結束。",
         "tags": "none",
         "group": "Sync"
-      }
+      },
+      "scale": [
+        100,
+        120,
+        100,
+        120,
+        100,
+        100
+      ]
     }
   ],
   "luckCookies": [
@@ -392,18 +402,21 @@
       "cookieName": "青綠（關都）專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "效果絕佳時威力提升5",
           "description": "當效果絕佳時,會提高該招式的威力。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "擊中要害時威力提升3",
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "首次上場時賦予物理/特殊增強2",
           "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
+          "detail": [],
           "rate": 33
         }
       ]

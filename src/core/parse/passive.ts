@@ -176,7 +176,7 @@ export class PassiveSkillParser {
 
     private resolveArcSuit(name: string, desc: string): PassiveSkillModel {
         const specialName = name.substring(0, 2);
-        const key = getTypeCnNameByTypeSpecialName(specialName)
+        const key = getTypeCnNameByTypeSpecialName(specialName);
         return {
             name: name,
             desc: desc,

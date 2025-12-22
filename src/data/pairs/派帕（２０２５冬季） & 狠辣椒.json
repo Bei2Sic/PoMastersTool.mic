@@ -54,11 +54,12 @@
     {
       "id": "20317400000",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "狠辣椒",
       "form": "",
       "actor": "pm0952_00_00_scovillain",
       "gender": 2,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 2,
       "weakness": 13,
       "stat": {
@@ -218,8 +219,9 @@
       "cookieName": "派帕（２０２５冬季）專用潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "上場時賦予特殊增強G1",
           "description": "上場時,會提高我方全體拍組的下次特殊招式威力增強1階段。",
+          "detail": [],
           "rate": 100
         }
       ]
@@ -228,18 +230,21 @@
       "cookieName": "派帕（２０２５冬季）專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "擊中要害時威力提升3",
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "拍組招式效果絕佳時威力↑5",
           "description": "當效果絕佳時,會提高該拍組招式的威力。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "首次上場時拍組招式增強5",
           "description": "首次上場時,會提高自己的下次拍組招式威力增強5階段。",
+          "detail": [],
           "rate": 33
         }
       ]
@@ -503,7 +508,7 @@
       "level": 1,
       "x": -2,
       "y": 0,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 2
     },
     {
@@ -516,7 +521,7 @@
       "level": 2,
       "x": -3,
       "y": 0,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 2
     },
     {
@@ -529,7 +534,7 @@
       "level": 1,
       "x": -1,
       "y": -1,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 2
     },
     {
@@ -620,7 +625,7 @@
       "level": 1,
       "x": 2,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 2
     },
     {
@@ -633,7 +638,7 @@
       "level": 1,
       "x": 1,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 2
     },
     {

@@ -17,7 +17,27 @@ export interface BattleRanks {
     ct?: CtRank;
 }
 
-// 18種屬性名稱 (Type Names)
+export interface RegionCircleState {
+    level: CircleLevel;
+    actives: {
+        [key in CircleCategory]: boolean;
+    };
+}
+// 所有地區的映射
+export type BattleCircle = {
+    [key in RegionType]: RegionCircleState;
+};
+
+export interface PokemonStats {
+    hp?: number;
+    atk: number;
+    def: number;
+    spa: number;
+    spd: number;
+    spe: number;
+}
+
+// 18種屬性名稱
 export type PokemonType =
     | "無"
     | "一般"
@@ -28,9 +48,9 @@ export type PokemonType =
     | "冰"
     | "格鬥"
     | "毒"
-    | "地"
+    | "地面"
     | "飛行"
-    | "超能"
+    | "超能力"
     | "蟲"
     | "岩石"
     | "幽靈"
@@ -77,27 +97,8 @@ export type RegionType =
     | "伽勒爾"
     | "帕底亞"
     | "帕希歐";
-export type CircleCategory = "無" | "物理" | "特殊" | "防禦";
-export type CircleLevel = 1 | 2 | 3;
-
-// 鬥陣
-// export interface BattleCircle {
-//     region: RegionType;
-//     category: CircleCategory;
-//     isActive: boolean;
-//     level: CircleLevel;
-// }
-
-export interface RegionCircleState {
-    level: CircleLevel;
-    actives: {
-        [key in CircleCategory]: boolean;
-    };
-}
-// 所有地區的映射
-export type BattleCircle = {
-    [key in RegionType]: RegionCircleState;
-};
+export type CircleCategory = "物理" | "特殊" | "防禦";
+export type CircleLevel = 0 | 1 | 2 | 3;
 
 export type StatType = "攻擊" | "防禦" | "特攻" | "特防" | "速度";
 
@@ -141,15 +142,6 @@ export type TypeRebuffs = Record<PokemonType, RebuffRank>;
 // 技能类型
 export type MoveType = "無" | "反衝" | "快攻" | "連續" | "必中";
 
-export interface PokemonStats {
-    hp?: number,
-    atk: number,
-    def: number,
-    spa: number,
-    spd: number,
-    spe: number,
-}
-
 export const STATS = [
     "攻擊",
     "防禦",
@@ -158,11 +150,9 @@ export const STATS = [
     "速度",
     "閃避率",
     "命中率",
-    "擊中要害率"
+    "擊中要害率",
 ];
-// export const STAT_REGEX = new RegExp(`(${INDIVIDUAL_STATS.join("|")})`, "g");
 
-// 輔助列表：用於分類判斷 (放在 parseCondition 函數外部)
 export const ABNORMAL_STATUSES = [
     "中毒",
     "劇毒",

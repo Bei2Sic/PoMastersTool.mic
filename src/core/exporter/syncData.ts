@@ -24,7 +24,6 @@ export interface StatCalcOptions {
 }
 
 export interface MoveCalcOptions {
-    scope?: number; // 對象
     passiveBoost?: number; // 被動倍率
     moveBoost?: number; //自身倍率
     gaugeBoost?: number;
@@ -114,11 +113,9 @@ export const getFinalStatValue = (
     if (currentPokemon?.scale && currentPokemon.scale.length > 0) {
         let index = getStatIndexByStatKey(statKey) - 1;
         let scale = currentPokemon.scale[index];
-        const isMega = currentPokemon.variationType === 1;
         result = StatValueCalculator.calculateVarietyBonus(
             result,
             scale,
-            isMega
         );
     }
 
@@ -132,7 +129,7 @@ export const getFinalStatValue = (
     // 倍率
     const boost = options.boost || 100;
 
-    return Math.floor(result * boost / 100);
+    return Math.floor((result * boost) / 100);
 };
 
 export function getFinalMovePower(
@@ -174,7 +171,7 @@ export function getFinalMovePower(
 
     // 計量槽消耗增加 威力提升 LogicType.GaugeCost
     if (options.gaugeBoost) {
-        power = Math.floor(power * (1 + options.gaugeBoost));
+        power = Math.floor((power * (100 + options.gaugeBoost)) / 100);
     }
 
     // 石盤（Grid）的白值加成為最後的加算
@@ -182,12 +179,12 @@ export function getFinalMovePower(
 
     // 自身倍率
     if (options.moveBoost) {
-        power = Math.floor(power * (1 + options.moveBoost));
+        power = Math.floor(power * options.moveBoost / 100);
     }
 
     // 被動倍率
     if (options.passiveBoost) {
-        power = Math.floor(power * (1 + options.passiveBoost));
+        power = Math.floor((power * (100 + options.passiveBoost)) / 100);
     }
 
     return Math.floor(power);

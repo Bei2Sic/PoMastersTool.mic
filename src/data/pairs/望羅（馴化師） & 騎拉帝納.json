@@ -48,11 +48,12 @@
     {
       "id": "20359000000",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "騎拉帝納",
       "form": "起源形態",
       "actor": "pm0487_12_giratina",
       "gender": 3,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 14,
       "weakness": 18,
       "stat": {
@@ -257,8 +258,9 @@
       "cookieName": "望羅（馴化師）專用潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "首次上場時賦予物理/特殊增強1",
           "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強1階段。",
+          "detail": [],
           "rate": 100
         }
       ]
@@ -267,18 +269,21 @@
       "cookieName": "望羅（馴化師）專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "天氣場地領域變化時計量槽加速2",
           "description": "只有在天氣、場地或領域變化時,招式計量槽會累積得較快。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "擊中要害時威力提升3",
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "天氣場地領域變化時拍組招式↑G2",
           "description": "只有在天氣、場地或領域變化時,會提高我方全體拍組的拍組招式的威力。",
+          "detail": [],
           "rate": 33
         }
       ]
@@ -707,7 +712,7 @@
       "level": 1,
       "x": 3,
       "y": -4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 14
     },
     {
@@ -720,7 +725,7 @@
       "level": 1,
       "x": 2,
       "y": -4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 14
     },
     {
@@ -837,7 +842,7 @@
       "level": 1,
       "x": -2,
       "y": 2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 14
     },
     {
@@ -863,7 +868,7 @@
       "level": 2,
       "x": -3,
       "y": 3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 14
     },
     {

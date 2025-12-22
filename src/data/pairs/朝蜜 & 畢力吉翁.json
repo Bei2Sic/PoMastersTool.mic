@@ -54,11 +54,12 @@
     {
       "id": "20207000000",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "畢力吉翁",
       "form": "",
       "actor": "pm0640_00_virizion",
       "gender": 3,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 5,
       "weakness": 10,
       "stat": {

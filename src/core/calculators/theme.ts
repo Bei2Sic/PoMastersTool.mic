@@ -49,4 +49,22 @@ export class ThemeContextResolver {
             typeBonuses: typeBonus,
         };
     }
+
+    static resolveRegion(team: (Sync | null)[]): Record<string, number> {
+        const counts: Record<string, number> = {};
+        // 过滤空队友
+        const activeMembers = team.filter((m): m is Sync => m !== null);
+
+        // 统计标签数量
+        activeMembers.forEach((member) => {
+            member.rawData.themes.forEach((theme) => {
+                if (theme.category === 2) {
+                    // 地區的分類
+                    counts[theme.tag] = (counts[theme.tag] || 0) + 1;
+                }
+            });
+        });
+
+        return counts;
+    }
 }

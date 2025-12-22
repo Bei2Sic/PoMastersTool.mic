@@ -54,11 +54,12 @@
     {
       "id": "20160000001",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "電燈怪",
       "form": "",
       "actor": "pm0171_00_lantern",
       "gender": 2,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 3,
       "weakness": 9,
       "stat": {

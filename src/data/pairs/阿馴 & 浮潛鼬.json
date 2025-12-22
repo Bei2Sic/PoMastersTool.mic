@@ -54,11 +54,12 @@
     {
       "id": "20099000004",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "浮潛鼬",
       "form": "",
       "actor": "pm0419_00_floazel",
       "gender": 1,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 3,
       "weakness": 5,
       "stat": {

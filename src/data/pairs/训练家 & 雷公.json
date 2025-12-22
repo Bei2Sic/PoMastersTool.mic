@@ -42,11 +42,12 @@
     {
       "id": "28000020961",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "雷公",
       "form": "",
       "actor": "pm0243_00_raikou",
       "gender": 3,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 4,
       "weakness": 9,
       "stat": {

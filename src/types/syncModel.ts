@@ -120,7 +120,8 @@ export interface Pokemon {
     form: string;
     actor: string;
     gender: number;
-    is_shiny: boolean;
+    isShiny: boolean;
+    vAfterSm: boolean;
     type: number;
     weakness: number;
     stat: PokemonStat;

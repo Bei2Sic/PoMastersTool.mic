@@ -54,11 +54,12 @@
     {
       "id": "20089000002",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "始祖大鳥",
       "form": "",
       "actor": "pm0567_00_archeos",
       "gender": 1,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 13,
       "weakness": 17,
       "stat": {

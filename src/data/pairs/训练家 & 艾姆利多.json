@@ -42,11 +42,12 @@
     {
       "id": "28000020641",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "艾姆利多",
       "form": "",
       "actor": "pm0481_00_emrit",
       "gender": 3,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 11,
       "weakness": 16,
       "stat": {

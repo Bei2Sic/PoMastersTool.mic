@@ -54,11 +54,12 @@
     {
       "id": "20019900000",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "固拉多",
       "form": "",
       "actor": "pm0383_00_groudon_rare",
       "gender": 3,
-      "is_shiny": true,
+      "isShiny": true,
       "type": 9,
       "weakness": 3,
       "stat": {
@@ -238,13 +239,14 @@
     {
       "id": "20019900000",
       "variationType": 6,
+      "vAfterSm": false,
       "name": "固拉多",
       "form": "",
       "actor": "pm0383_51_groudonsp_rare",
       "gender": 3,
-      "is_shiny": true,
-      "type": "-1",
-      "weakness": "-1",
+      "isShiny": true,
+      "type": 9,
+      "weakness": 3,
       "stat": {
         "hp": [
           106,
@@ -417,7 +419,15 @@
         "description": "沒有追加效果。",
         "tags": "none",
         "group": "Sync"
-      }
+      },
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
     }
   ],
   "luckCookies": [
@@ -425,8 +435,9 @@
       "cookieName": "小悠（冠軍）專用潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "晴天時拍組招式威力提升4",
           "description": "當天氣為日照強烈時,會提高拍組招式的威力。",
+          "detail": [],
           "rate": 100
         }
       ]
@@ -435,18 +446,21 @@
       "cookieName": "小悠（冠軍）專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "天氣場地領域變化時計量槽加速2",
           "description": "只有在天氣、場地或領域變化時,招式計量槽會累積得較快。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "擊中要害時威力提升3",
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "天氣場地領域變化時拍組招式↑G2",
           "description": "只有在天氣、場地或領域變化時,會提高我方全體拍組的拍組招式的威力。",
+          "detail": [],
           "rate": 33
         }
       ]
@@ -736,7 +750,7 @@
       "level": 1,
       "x": -2,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 9
     },
     {
@@ -749,7 +763,7 @@
       "level": 1,
       "x": -1,
       "y": -3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 9
     },
     {
@@ -762,7 +776,7 @@
       "level": 2,
       "x": -3,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 9
     },
     {
@@ -866,7 +880,7 @@
       "level": 1,
       "x": 3,
       "y": -4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 9
     },
     {
@@ -892,7 +906,7 @@
       "level": 1,
       "x": 1,
       "y": -4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 9
     },
     {

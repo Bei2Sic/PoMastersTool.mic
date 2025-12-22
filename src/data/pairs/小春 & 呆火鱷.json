@@ -54,11 +54,12 @@
     {
       "id": "20286000002",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "呆火鱷",
       "form": "",
       "actor": "pm0909_00_00_hogator",
       "gender": 1,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 2,
       "weakness": 9,
       "stat": {

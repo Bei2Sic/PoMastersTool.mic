@@ -13,7 +13,7 @@ export interface MoveSkillModel {
 }
 
 export const DEFAULT_MOVE_SKILL = {
-
+    
 } as MoveSkillModel;
 
 export const DEFAULT_HANDLER = (env: CalcEnvironment, move: MoveBase): number => {

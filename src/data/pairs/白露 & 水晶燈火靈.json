@@ -54,11 +54,12 @@
     {
       "id": "20102000001",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "水晶燈火靈",
       "form": "",
       "actor": "pm0609_00_chandela",
       "gender": 2,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 2,
       "weakness": 3,
       "stat": {

@@ -42,11 +42,12 @@
     {
       "id": "20351000000",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "奇魯莉安",
       "form": "",
       "actor": "pm0281_00_kirlia",
       "gender": 2,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 18,
       "weakness": 17,
       "stat": {

@@ -54,11 +54,12 @@
     {
       "id": "20286000001",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "愛吃豚",
       "form": "",
       "actor": "pm0915_00_00_gourton",
       "gender": 1,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 1,
       "weakness": 7,
       "stat": {

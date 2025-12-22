@@ -67,11 +67,12 @@
     {
       "id": "20021010000",
       "variationType": 0,
+      "vAfterSm": true,
       "name": "水箭龜",
       "form": "",
       "actor": "pm0009_00_kamex",
       "gender": 1,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 3,
       "weakness": 4,
       "stat": {
@@ -228,13 +229,14 @@
     {
       "id": "20021010000",
       "variationType": 1,
+      "vAfterSm": true,
       "name": "超級水箭龜",
       "form": "",
       "actor": "pm0009_51_megamex",
       "gender": 1,
-      "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "isShiny": false,
+      "type": 3,
+      "weakness": 4,
       "stat": {
         "hp": [
           89,
@@ -384,7 +386,15 @@
         "description": "變成超級水箭龜直到對戰結束。自己的防禦提高得越多,威力就越大。",
         "tags": "none",
         "group": "Sync"
-      }
+      },
+      "scale": [
+        100,
+        100,
+        120,
+        100,
+        120,
+        100
+      ]
     }
   ],
   "luckCookies": [
@@ -392,18 +402,21 @@
       "cookieName": "美極套裝青綠專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "被攻擊時HP回復G9",
           "description": "受到招式攻擊時,會回復我方全體拍組的HP。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "首次上場時物理/特殊增強G1",
           "description": "首次上場時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "首次上場時拍組招式增強G3",
           "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
+          "detail": [],
           "rate": 33
         }
       ]

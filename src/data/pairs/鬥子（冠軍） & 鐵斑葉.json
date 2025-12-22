@@ -54,11 +54,12 @@
     {
       "id": "20004900000",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "鐵斑葉",
       "form": "",
       "actor": "pm1010_00_00_tetsunoisaha",
       "gender": 3,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 11,
       "weakness": 12,
       "stat": {
@@ -250,8 +251,9 @@
       "cookieName": "鬥子（冠軍）專用潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "拍組招式效果絕佳時威力↑4",
           "description": "當效果絕佳時,會提高該拍組招式的威力。",
+          "detail": [],
           "rate": 100
         }
       ]
@@ -260,18 +262,21 @@
       "cookieName": "鬥子（冠軍）專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "效果絕佳時威力提升5",
           "description": "當效果絕佳時,會提高該招式的威力。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "擊中要害時威力提升3",
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "首次上場時賦予物理/特殊增強2",
           "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
+          "detail": [],
           "rate": 33
         }
       ]
@@ -587,7 +592,7 @@
       "level": 1,
       "x": -2,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 11
     },
     {
@@ -600,7 +605,7 @@
       "level": 1,
       "x": -3,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 11
     },
     {
@@ -613,7 +618,7 @@
       "level": 2,
       "x": -1,
       "y": -3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 11
     },
     {
@@ -704,7 +709,7 @@
       "level": 1,
       "x": 2,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 11
     },
     {
@@ -717,7 +722,7 @@
       "level": 1,
       "x": 1,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 11
     },
     {

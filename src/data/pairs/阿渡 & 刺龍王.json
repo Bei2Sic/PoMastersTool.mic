@@ -48,11 +48,12 @@
     {
       "id": "20111000002",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "刺龍王",
       "form": "",
       "actor": "pm0230_00_kingdra",
       "gender": 1,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 15,
       "weakness": 18,
       "stat": {

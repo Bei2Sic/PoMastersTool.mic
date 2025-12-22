@@ -54,11 +54,12 @@
     {
       "id": "20014010001",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "扒手貓",
       "form": "",
       "actor": "pm0509_00_choroneko",
       "gender": 1,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 16,
       "weakness": 7,
       "stat": {

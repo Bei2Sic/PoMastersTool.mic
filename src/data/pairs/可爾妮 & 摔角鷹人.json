@@ -61,11 +61,12 @@
     {
       "id": "20012000001",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "摔角鷹人",
       "form": "",
       "actor": "pm0761_00_rutya",
       "gender": 2,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 7,
       "weakness": 6,
       "stat": {

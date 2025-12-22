@@ -54,11 +54,12 @@
     {
       "id": "20158000001",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "怪顎龍",
       "form": "",
       "actor": "pm0738_00_tyranno2",
       "gender": 1,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 13,
       "weakness": 7,
       "stat": {

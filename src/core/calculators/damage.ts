@@ -1,51 +1,60 @@
 // core/calculator/DamageEngine.ts
 import {
-    GAUGE_SYNC_MULTIPLIERS,
-    HP_LESS_THRESHOLD,
-    HP_MORE_THRESHOLD,
-    SINGLE_STAT_MOVE_MULTIPLIERS,
-    SINGLE_STAT_SYNC_MULTIPLIERS,
-    TOTAL_STAT_MOVE_MULTIPLIERS,
-    TOTAL_STAT_SYNC_MULTIPLIERS,
     ATK_CIRCLE_MULTIPLIERS,
     DEF_CIRCLE_MULTIPLIERS,
+    GAUGE_SYNC_MULTIPLIERS,
     GENERAL_RANK_MULTIPLIERS,
-    SPEED_RANK_MULTIPLIERS,
+    HP_LESS_THRESHOLD,
+    HP_MORE_THRESHOLD,
     REBUFF_MULTIPLIERS,
+    SINGLE_STAT_MOVE_MULTIPLIERS,
+    SINGLE_STAT_SYNC_MULTIPLIERS,
+    SPEED_RANK_MULTIPLIERS,
+    TOTAL_STAT_MOVE_MULTIPLIERS,
+    TOTAL_STAT_SYNC_MULTIPLIERS,
 } from "@/constances/rate";
 import {
     getStatKeyByStatCnName,
     getTypeCnNameByTypeIndex,
+    getTypeIndexByCnName,
     getTypeSpecialNameByTypeIndex,
-    getTypeIndexByCnName
 } from "@/core/exporter/map";
 import {
     ActiveMultiplier,
     CalcEnvironment,
+    Condition,
     ExtraLogic,
     LogicType,
     MoveScope,
     ThemeContext,
 } from "@/types/calculator";
-import { HindranceType, PokemonType, CircleCategory, RegionType, STATS, PokemonStats } from "@/types/conditions";
-import { PassiveBoost, PassiveSkillModel } from "@/types/passiveModel";
-import { Condition } from "@/types/calculator";
-import { MoveBase } from "@/types/syncModel";
+import {
+    CircleCategory,
+    HindranceType,
+    PokemonStats,
+    PokemonType,
+    RegionType,
+    STATS,
+} from "@/types/conditions";
 import { DEFAULT_HANDLER, MoveSkillModel } from "@/types/moveModel";
+import { PassiveBoost, PassiveSkillModel } from "@/types/passiveModel";
+import { MoveBase } from "@/types/syncModel";
 
 export class DamageEngine {
-
     // 獲取屬性替換的被動（一般唯一）
-    static getTypeShiftPassive(move: MoveBase, passives: PassiveSkillModel[]): number {
-
+    static getTypeShiftPassive(
+        move: MoveBase,
+        passives: PassiveSkillModel[]
+    ): number {
         // 一般屬性的才會變化，先判斷是不是一般屬性的
         if (getTypeCnNameByTypeIndex(move.type) !== "一般") {
-            return move.type
+            return move.type;
         }
 
-        const shiftPassive = passives.find(p =>
-            p.condition.logic === LogicType.NoEffect &&
-            p.condition.extra === ExtraLogic.TypeShift
+        const shiftPassive = passives.find(
+            (p) =>
+                p.condition.logic === LogicType.NoEffect &&
+                p.condition.extra === ExtraLogic.TypeShift
         );
 
         if (shiftPassive) {
@@ -55,7 +64,6 @@ export class DamageEngine {
         }
 
         return move.type;
-
     }
 
     // 被动技能处理
@@ -125,12 +133,34 @@ export class DamageEngine {
     }
 
     static resolvePassiveSum(activePassives: ActiveMultiplier[]): number {
-        const totalPercent = activePassives.reduce((sum, item) => sum + item.value, 0);
+        const totalPercent = activePassives.reduce((sum, item) => {
+            if (item.logic !== LogicType.GaugeCost) {
+                return sum + item.value;
+            }
+            return sum;
+        }, 0);
 
         return totalPercent;
     }
 
-    static resolveBoosts(scope: MoveScope, category: number, context: CalcEnvironment): number {
+    static resolvePassiveIsGaugeCost(
+        activePassives: ActiveMultiplier[]
+    ): number {
+        const totalPercent = activePassives.reduce((sum, item) => {
+            if (item.logic === LogicType.GaugeCost) {
+                return sum + item.value;
+            }
+            return sum;
+        }, 0);
+
+        return totalPercent;
+    }
+
+    static resolveBoosts(
+        scope: MoveScope,
+        category: number,
+        context: CalcEnvironment
+    ): number {
         let value = 0;
         switch (scope) {
             case MoveScope.Sync:
@@ -138,7 +168,10 @@ export class DamageEngine {
                 value = syncBoost * 10;
                 return value;
             case MoveScope.Move:
-                const moveBoost = category === 1 ? context.user.boosts.physical : context.user.boosts.special;
+                const moveBoost =
+                    category === 1
+                        ? context.user.boosts.physical
+                        : context.user.boosts.special;
                 value = moveBoost * 40;
                 return value;
             default:
@@ -149,11 +182,14 @@ export class DamageEngine {
     static resolveMoveMultiplier(
         move: MoveBase,
         moveSkill: MoveSkillModel,
-        context: CalcEnvironment,
+        context: CalcEnvironment
     ): number {
-
         //  默認技能模型沒有名字
         if (moveSkill.name !== move.name) {
+            return 100;
+        }
+
+        if (!moveSkill.condition?.logic) {
             return 100;
         }
 
@@ -168,17 +204,19 @@ export class DamageEngine {
         let value = moveSkill.boost;
         if (isScaling) {
             const scalingValue = this.getSyncMoveScalingMultiplier(
-                moveSkill.condition, context
-            )
+                moveSkill.condition,
+                context
+            );
             value = scalingValue * 100;
         } else {
-
-            if (!this.checkCondition(
-                moveSkill.condition,
-                context,
-                move.type,
-                move.tags
-            )) {
+            if (
+                !this.checkCondition(
+                    moveSkill.condition,
+                    context,
+                    move.type,
+                    move.tags
+                )
+            ) {
                 value = 100;
             }
         }
@@ -189,9 +227,9 @@ export class DamageEngine {
     static resolveEnvMultipliers(
         move: MoveBase,
         scope: MoveScope,
-        context: CalcEnvironment,
+        context: CalcEnvironment
     ): number {
-        let boost = 100;
+        let boost = 1;
         // 轉化下屬性
         const typeCnName = getTypeCnNameByTypeIndex(move.type);
         const typeSpecialName = getTypeSpecialNameByTypeIndex(move.type);
@@ -199,7 +237,7 @@ export class DamageEngine {
         // 场地/天气/领域
         switch (typeCnName) {
             case "火":
-                if (context.weather === '晴天') {
+                if (context.weather === "晴天") {
                     if (context.isEXWeather) {
                         boost *= 3.0;
                     } else {
@@ -208,7 +246,7 @@ export class DamageEngine {
                 }
                 break;
             case "水":
-                if (context.weather === '下雨') {
+                if (context.weather === "下雨") {
                     if (context.isEXWeather) {
                         boost *= 3.0;
                     } else {
@@ -232,6 +270,8 @@ export class DamageEngine {
                 }
         }
 
+        console.log(`場地後:${boost}`);
+
         // 鬥陣(小招和拍招才可以享受，極巨化不行)
         if ([MoveScope.Move, MoveScope.Sync].includes(scope)) {
             const battleCircles = context.battleCircles;
@@ -248,30 +288,45 @@ export class DamageEngine {
                     }
                 }
                 if (regionState.actives["防禦"] && level > 0) {
-                    boost *= DEF_CIRCLE_MULTIPLIERS[level]
+                    boost *= DEF_CIRCLE_MULTIPLIERS[level];
                 }
             });
         }
 
+        console.log(`鬥陣後:${boost}`);
+
         // 抗性
-        const rebuffRank = context.target.typeRebuffs[typeCnName]
+        const rebuffRank = context.target.typeRebuffs[typeCnName];
         const rebuffBoost = REBUFF_MULTIPLIERS[Math.abs(rebuffRank)];
         boost *= rebuffBoost;
 
+        console.log(`減抗後:${boost}`);
 
         // 效果絕佳 & 效果絕佳强化
         if (context.settings.effectiveType === typeCnName) {
-            boost *= 2;
+            boost *= 2.0;
             if (context.settings.isSuperEffective) {
                 boost *= 1.5;
             }
         }
 
+        console.log(`效果絕佳後:${boost}`);
+
         // 擊中要害
         if (context.settings.isCritical) {
-            boost *= 2;
+            boost *= 1.5;
         }
 
+        console.log(`擊中要害後:${boost}`);
+
+        // 气魄
+        if (context.user.syncBuff != 0) {
+            boost *= 1 + context.user.syncBuff * 0.5;
+        }
+        console.log(`气魄数:${context.user.syncBuff}`);
+        console.log(`氣魄後:${boost}`);
+
+        // 不用处理直接返回
         return boost;
     }
 
@@ -280,20 +335,20 @@ export class DamageEngine {
         passives: PassiveSkillModel[],
         context: CalcEnvironment,
         stat: keyof PokemonStats,
-        ignoreBurn?: boolean,
+        ignoreBurn?: boolean
     ): number {
         let boost = 100;
         // 被动白值变化
-        passives.forEach(passive => {
+        passives.forEach((passive) => {
             if (passive.statBoost.isStatBoost) {
                 // 判断条件是否达成
                 if (this.checkCondition(passive.condition, context)) {
                     passive.statBoost.stats.forEach((s) => {
-                        const statKey = getStatKeyByStatCnName(s)
+                        const statKey = getStatKeyByStatCnName(s);
                         if (statKey === stat) {
                             boost *= passive.statBoost.value; // (eg: *1.5)
                         }
-                    })
+                    });
                 }
             }
         });
@@ -303,7 +358,7 @@ export class DamageEngine {
         const currentRank = context.user.ranks[stat] || 0;
         const rankIndex = currentRank + 6;
         let rankMultiplier = 1.0;
-        if (stat === 'spe') {
+        if (stat === "spe") {
             rankMultiplier = SPEED_RANK_MULTIPLIERS[rankIndex];
         } else {
             rankMultiplier = GENERAL_RANK_MULTIPLIERS[rankIndex];
@@ -312,10 +367,9 @@ export class DamageEngine {
 
         // todo: 增加灼傷抗性
         // 灼伤影响(只针对攻击) (*0.8)
-        if (stat === 'atk') {
-            console.log(context.user.abnormal);
-            if (context.user.abnormal === '灼傷' && !ignoreBurn) {
-                console.log('灼伤效果触发');
+        if (stat === "atk") {
+            if (context.user.abnormal === "灼傷" && !ignoreBurn) {
+                console.log("灼伤效果触发");
                 boost *= 0.8;
             }
         }
@@ -326,17 +380,23 @@ export class DamageEngine {
     // 计算目标白值
     static resolveTargetStatValue(
         context: CalcEnvironment,
-        stat: keyof PokemonStats,
+        stat: keyof PokemonStats
     ): number {
         let value = context.target.stats[stat] || 0;
         let boost = 100;
 
         // todo: 增加白值属性抗性, 现在先用 全种类抵抗5
         const mitigation = 0.5;
-        const currentRank = context.target.ranks[stat] || 0;
+        let currentRank = context.target.ranks[stat] || 0;
+
+        // 如果命中要害, 无视对手的提升
+        if (context.settings.isCritical && currentRank > 0) {
+            currentRank = 0;
+        }
+
         const rankIndex = currentRank + 6;
         let rankMultiplier = 1.0;
-        if (stat === 'spe') {
+        if (stat === "spe") {
             rankMultiplier = SPEED_RANK_MULTIPLIERS[rankIndex];
         } else {
             rankMultiplier = GENERAL_RANK_MULTIPLIERS[rankIndex];
@@ -344,17 +404,15 @@ export class DamageEngine {
 
         if (currentRank < 0) {
             // 下降
-            rankMultiplier = 1.0 - (1.0-rankMultiplier)*(1-mitigation);
+            rankMultiplier = 1.0 - (1.0 - rankMultiplier) * (1 - mitigation);
         }
 
         boost *= rankMultiplier;
 
-        value = Math.floor(value * boost / 100);
+        value = Math.floor((value * boost) / 100);
 
         return value;
     }
-
-
 
     private static isScopeMatch(
         scope: MoveScope,
@@ -437,7 +495,7 @@ export class DamageEngine {
                 return cond.key.includes(env.weather);
 
             case LogicType.BattleCircle:
-                const parts = cond.key.split('_');
+                const parts = cond.key.split("_");
                 if (parts.length !== 2) return false;
 
                 const [circleRegion, circleCategory] = parts;
@@ -546,7 +604,9 @@ export class DamageEngine {
                 return env.user.hpPercent <= 20;
 
             case LogicType.HPHalf:
-                const hpPercent = cond.detail.includes("對手") ? env.target.hpPercent : env.user.hpPercent;
+                const hpPercent = cond.detail.includes("對手")
+                    ? env.target.hpPercent
+                    : env.user.hpPercent;
                 if (cond.direction?.includes("以上")) {
                     return hpPercent > 50;
                 } else {
@@ -572,6 +632,16 @@ export class DamageEngine {
             case LogicType.MoveType:
                 const typeName = getTypeCnNameByTypeIndex(moveType);
                 return cond.key.includes(typeName);
+
+            case LogicType.SyncBuffs:
+                const syncBuffs = cond.detail.includes("對手")
+                    ? env.target.syncBuff
+                    : env.user.syncBuff;
+                if (cond.direction?.includes("充滿")) {
+                    return syncBuffs > 0;
+                } else {
+                    return syncBuffs === 0;
+                }
 
             case LogicType.Berry:
                 return env.settings.berry === 0;
@@ -699,7 +769,7 @@ export class DamageEngine {
     // 動態的只針對拍組招式
     private static getSyncMoveScalingMultiplier(
         cond: Condition,
-        env: CalcEnvironment,
+        env: CalcEnvironment
     ): number {
         let value = 0;
         switch (cond.logic) {
@@ -712,10 +782,7 @@ export class DamageEngine {
                 let effectiveRank = 0;
                 if (cond.direction?.includes("下降") && rankValue < 0) {
                     effectiveRank = Math.abs(rankValue);
-                } else if (
-                    cond.direction?.includes("提升") &&
-                    rankValue > 0
-                ) {
+                } else if (cond.direction?.includes("提升") && rankValue > 0) {
                     effectiveRank = rankValue;
                 }
                 const singleSafeIndex = Math.min(effectiveRank, 6);

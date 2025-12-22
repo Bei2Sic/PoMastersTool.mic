@@ -67,11 +67,12 @@
     {
       "id": "20011000002",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "灰塵山",
       "form": "",
       "actor": "pm0569_00_00_dustdas",
       "gender": 2,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 8,
       "weakness": 11,
       "stat": {

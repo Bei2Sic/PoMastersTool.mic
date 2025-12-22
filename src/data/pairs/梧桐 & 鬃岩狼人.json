@@ -61,11 +61,12 @@
     {
       "id": "20064010000",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "鬃岩狼人",
       "form": "黃昏的樣子",
       "actor": "pm0745_13_00_lugarugan",
       "gender": 1,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 13,
       "weakness": 9,
       "stat": {
@@ -222,13 +223,14 @@
     {
       "id": "20064010000",
       "variationType": 4,
+      "vAfterSm": false,
       "name": "鬃岩狼人",
       "form": "黃昏的樣子",
       "actor": "pm0745_83_00_lugarugan",
       "gender": 1,
-      "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "isShiny": false,
+      "type": 13,
+      "weakness": 9,
       "stat": {
         "hp": [
           96,
@@ -304,6 +306,14 @@
       ],
       "moves": null,
       "syncMove": null,
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
       "movesDynamax": [
         {
           "id": 7013,
@@ -358,8 +368,9 @@
       "cookieName": "梧桐專用潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "攻擊時能力下降9",
           "description": "使出招式攻擊成功時,會降低對手的攻擊、防禦、特攻、特防、速度、命中率、閃避率中的一種能力1階段。",
+          "detail": [],
           "rate": 100
         }
       ]
@@ -368,17 +379,21 @@
       "cookieName": "梧桐專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "招式後招式計量槽增加9",
           "description": "招式成功時,會幫自己增加1條招式計量槽。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "擊中要害時威力提升3",
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [
+          "name": "首次上場時&首次拍組招式後計數加速1",
+          "description": "首次上場時,發動拍組招式所需的行動數會減少1次。首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。",
+          "detail": [
             {
               "name": "首次上場時計數加速1",
               "description": "首次上場時,發動拍組招式所需的行動數會減少1次。"
@@ -388,7 +403,6 @@
               "description": "首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。"
             }
           ],
-          "description": "首次上場時,發動拍組招式所需的行動數會減少1次。首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。",
           "rate": 33
         }
       ]
@@ -1055,7 +1069,7 @@
       "level": 3,
       "x": -1,
       "y": 5,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 13
     },
     {

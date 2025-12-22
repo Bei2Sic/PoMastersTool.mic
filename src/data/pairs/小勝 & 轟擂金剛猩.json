@@ -61,11 +61,12 @@
     {
       "id": "20242000000",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "轟擂金剛猩",
       "form": "",
       "actor": "pm0812_00_00_gorirander",
       "gender": 1,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 5,
       "weakness": 2,
       "stat": {
@@ -222,13 +223,14 @@
     {
       "id": "20242000000",
       "variationType": 4,
+      "vAfterSm": false,
       "name": "轟擂金剛猩",
       "form": "",
       "actor": "pm0812_81_00_ggorirander",
       "gender": 1,
-      "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "isShiny": false,
+      "type": 5,
+      "weakness": 2,
       "stat": {
         "hp": [
           95,
@@ -304,6 +306,14 @@
       ],
       "moves": null,
       "syncMove": null,
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
       "movesDynamax": [
         {
           "id": 7045,
@@ -343,18 +353,21 @@
       "cookieName": "小勝專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "效果絕佳時威力提升5",
           "description": "當效果絕佳時,會提高該招式的威力。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "擊中要害時威力提升3",
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "首次上場時賦予物理/特殊增強2",
           "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
+          "detail": [],
           "rate": 33
         }
       ]
@@ -800,7 +813,7 @@
       "level": 3,
       "x": -2,
       "y": -4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 9
     },
     {
@@ -1034,7 +1047,7 @@
       "level": 3,
       "x": -2,
       "y": 4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 5
     },
     {

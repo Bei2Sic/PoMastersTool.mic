@@ -54,11 +54,12 @@
     {
       "id": "20099000003",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "羅絲雷朵",
       "form": "",
       "actor": "pm0407_00_roserade",
       "gender": 1,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 5,
       "weakness": 6,
       "stat": {

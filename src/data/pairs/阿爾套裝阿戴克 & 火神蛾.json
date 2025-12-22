@@ -54,11 +54,12 @@
     {
       "id": "20132900000",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "火神蛾",
       "form": "",
       "actor": "pm0637_00_ulgamoth",
       "gender": 1,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 12,
       "weakness": 13,
       "stat": {
@@ -246,8 +247,9 @@
       "cookieName": "阿爾套裝阿戴克專用潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "拍組招式後場地招式計量槽加速",
           "description": "使出拍組招式後,會讓我方場地變成招式計量槽加速狀態。",
+          "detail": [],
           "rate": 100
         }
       ]
@@ -256,18 +258,21 @@
       "cookieName": "阿爾套裝阿戴克專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "招式後招式計量槽增加9",
           "description": "招式成功時,會幫自己增加1條招式計量槽。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "擊中要害時威力提升3",
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "首次上場時拍組招式增強G3",
           "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
+          "detail": [],
           "rate": 33
         }
       ]
@@ -700,7 +705,7 @@
       "level": 1,
       "x": 2,
       "y": -3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 1
     },
     {
@@ -713,7 +718,7 @@
       "level": 1,
       "x": 1,
       "y": -3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 1
     },
     {
@@ -726,7 +731,7 @@
       "level": 1,
       "x": 1,
       "y": -4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 1
     },
     {
@@ -856,7 +861,7 @@
       "level": 1,
       "x": -2,
       "y": 3,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 1
     },
     {
@@ -869,7 +874,7 @@
       "level": 2,
       "x": -3,
       "y": 4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 1
     },
     {

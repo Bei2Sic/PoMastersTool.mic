@@ -48,11 +48,12 @@
     {
       "id": "20036000001",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "隆隆岩",
       "form": "阿羅拉的樣子",
       "actor": "pm0076_61_agolonya",
       "gender": 1,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 4,
       "weakness": 9,
       "stat": {

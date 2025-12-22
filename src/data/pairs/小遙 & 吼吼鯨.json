@@ -54,11 +54,12 @@
     {
       "id": "20126000003",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "吼吼鯨",
       "form": "",
       "actor": "pm0320_00_hoeruko",
       "gender": 2,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 3,
       "weakness": 5,
       "stat": {

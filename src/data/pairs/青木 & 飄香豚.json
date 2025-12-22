@@ -54,11 +54,12 @@
     {
       "id": "20304000001",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "飄香豚",
       "form": "雌性的樣子",
       "actor": "pm0916_01_00_perfuton",
       "gender": 2,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 1,
       "weakness": 7,
       "stat": {

@@ -48,11 +48,12 @@
     {
       "id": "20240000000",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "阿柏怪",
       "form": "",
       "actor": "pm0024_00_arbok",
       "gender": 1,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 8,
       "weakness": 9,
       "stat": {

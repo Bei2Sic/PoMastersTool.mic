@@ -54,11 +54,12 @@
     {
       "id": "20091100000",
       "variationType": 0,
+      "vAfterSm": true,
       "name": "路卡利歐",
       "form": "",
       "actor": "pm0448_00_lucario",
       "gender": 1,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 7,
       "weakness": 2,
       "stat": {
@@ -220,13 +221,14 @@
     {
       "id": "20091100000",
       "variationType": 1,
+      "vAfterSm": true,
       "name": "超級路卡利歐",
       "form": "",
       "actor": "pm0448_51_megalucario",
       "gender": 1,
-      "is_shiny": false,
-      "type": "-1",
-      "weakness": "-1",
+      "isShiny": false,
+      "type": 7,
+      "weakness": 2,
       "stat": {
         "hp": [
           110,
@@ -381,7 +383,15 @@
         "description": "變成超級路卡利歐直到對戰結束。",
         "tags": "none",
         "group": "Sync"
-      }
+      },
+      "scale": [
+        100,
+        100,
+        120,
+        100,
+        120,
+        100
+      ]
     }
   ],
   "luckCookies": [
@@ -389,7 +399,9 @@
       "cookieName": "美極套裝竹蘭（異裝２）專用的塔潛能餅乾２",
       "skills": [
         {
-          "name": [
+          "name": "美極套裝竹蘭(異裝2)的全力以赴",
+          "description": "當領域為拳頭領域時,會提高我方全體拍組的招式的威力。領域變成拳頭領域的瞬間在場上時,會延長拳頭領域的持續時間。",
+          "detail": [
             {
               "name": "拳頭領域時威力↑G2",
               "description": "當領域為拳頭領域時,會提高我方全體拍組的招式的威力。"
@@ -399,7 +411,6 @@
               "description": "領域變成拳頭領域的瞬間在場上時,會延長拳頭領域的持續時間。"
             }
           ],
-          "description": "當領域為拳頭領域時,會提高我方全體拍組的招式的威力。領域變成拳頭領域的瞬間在場上時,會延長拳頭領域的持續時間。",
           "rate": 100
         }
       ]
@@ -408,18 +419,21 @@
       "cookieName": "美極套裝竹蘭（異裝２）專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": [],
+          "name": "被攻擊時HP回復G9",
           "description": "受到招式攻擊時,會回復我方全體拍組的HP。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "首次上場時物理/特殊增強G1",
           "description": "首次上場時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
+          "detail": [],
           "rate": 33
         },
         {
-          "name": [],
+          "name": "首次上場時拍組招式增強G3",
           "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
+          "detail": [],
           "rate": 33
         }
       ]
@@ -683,7 +697,7 @@
       "level": 1,
       "x": -1,
       "y": -1,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 7
     },
     {
@@ -696,7 +710,7 @@
       "level": 1,
       "x": -2,
       "y": -1,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 7
     },
     {
@@ -722,7 +736,7 @@
       "level": 2,
       "x": -1,
       "y": -2,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 7
     },
     {
@@ -839,7 +853,7 @@
       "level": 2,
       "x": 1,
       "y": -4,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 7
     },
     {
@@ -852,7 +866,7 @@
       "level": 1,
       "x": 3,
       "y": -5,
-      "color": "#BF80FF",
+      "color": "#47D147",
       "type": 7
     },
     {

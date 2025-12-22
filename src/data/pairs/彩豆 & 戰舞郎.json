@@ -54,11 +54,12 @@
     {
       "id": "20250000001",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "戰舞郎",
       "form": "",
       "actor": "pm0237_00_kapoerer",
       "gender": 1,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 7,
       "weakness": 11,
       "stat": {

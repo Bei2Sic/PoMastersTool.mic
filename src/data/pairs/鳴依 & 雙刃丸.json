@@ -54,11 +54,12 @@
     {
       "id": "20101000003",
       "variationType": 0,
+      "vAfterSm": false,
       "name": "雙刃丸",
       "form": "",
       "actor": "pm0502_00_futachimaru",
       "gender": 1,
-      "is_shiny": false,
+      "isShiny": false,
       "type": 3,
       "weakness": 4,
       "stat": {
