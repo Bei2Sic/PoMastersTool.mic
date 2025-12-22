@@ -132,20 +132,9 @@
                     @update:exRoleEnabledValue="(val) => dynamicState.exRoleEnabled = val"
                     @update:selectedPokemonIndex="(val) => dynamicState.selectedPokemonIndex = val" />
             </div>
-            <!-- 傷害計算窗口 -->
-            <div v-if="curTab === 'calc'" class="calc-tab-container">
-                <div class="calc-intro">
-                    <h3>傷害計算器</h3>
-                    <p>點擊下方按鈕開啟詳細設定視窗</p>
-                    <button class="open-calc-btn" @click="showDamageCalc = true">
-                        開啟計算視窗
-                    </button>
-                </div>
-            </div>
         </div>
 
-        <Damage :visible="showDamageCalc" :targetSync="singleSync" :teamSyncs="null"
-            @close="showDamageCalc = false" />
+        <Damage :visible="showDamageCalc" :targetSync="singleSync" :teamSyncs="null" @close="handleCloseCalc" />
     </div>
 </template>
 
@@ -216,6 +205,18 @@ const handleSelectTrainer = (trainerId) => {
         // 提示错误
     }
 };
+
+const handleCloseCalc = () => {
+    showDamageCalc.value = false;
+    curTab.value = 'grid';
+};
+
+watch(curTab, (newTab) => {
+    if (newTab === 'calc') {
+        showDamageCalc.value = true;
+    }
+});
+
 watch(themeSnapshot, (newValue) => {
     if (newValue) {
         console.log("✅ 計算器成功算出組隊技能:", newValue);

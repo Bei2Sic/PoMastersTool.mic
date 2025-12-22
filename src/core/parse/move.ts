@@ -1,12 +1,7 @@
 import { MOVE_OVERRIDES } from "@/constances/move";
 import { LogicType } from "@/types/calculator";
 import { DEFAULT_MOVE_SKILL, MoveSkillModel } from "@/types/moveModel";
-// 假設這些常量在您的常量文件中定義
-import {
-    ABNORMAL_STATUSES,
-    HINDRANCE_STATUSES,
-    WEATHER_STATUSES,
-} from "@/types/conditions";
+import { ABNORMAL_STATUSES, HINDRANCE_STATUSES, WEATHER_TYPES } from "@/constances/battle";
 
 export class MoveSkillParser {
     private name: string;
@@ -166,7 +161,7 @@ export class MoveSkillParser {
                 };
         }
         // 天氣
-        for (const w of WEATHER_STATUSES) {
+        for (const w of WEATHER_TYPES) {
             if (desc.includes(w))
                 return {
                     logic: LogicType.Weather,

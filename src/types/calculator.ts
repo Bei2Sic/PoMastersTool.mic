@@ -14,6 +14,7 @@ import {
     TerrainType,
     WeatherType,
     ZoneType,
+    CritBuffType,
 } from "@/types/conditions";
 
 export enum MoveScope {
@@ -143,7 +144,7 @@ export interface CalcEnvironment {
     isEXTerrain: boolean;
     zone: ZoneType;
     isEXZone: boolean;
-    gaugeSpeedBoost: boolean;
+    gaugeAcceleration: boolean;
     battleCircles: BattleCircle;
 
     user: {
@@ -169,6 +170,7 @@ export interface CalcEnvironment {
         hindrance: Record<HindranceType, boolean>;
         damageField: DamageFieldType;
         typeRebuffs: Record<PokemonType, RebuffRank>;
+        crtiBuffs: Record<CritBuffType, boolean>;
     };
 
     settings: {

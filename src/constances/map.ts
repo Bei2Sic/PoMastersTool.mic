@@ -12,7 +12,7 @@ export const TypeMap: Record<number, TypeMapItem> = {
     8: { key: "Poison", cnName: "毒", specialName: "劇毒" },
     9: { key: "Ground", cnName: "地面", specialName: "大地" },
     10: { key: "Flying", cnName: "飛行", specialName: "藍天" },
-    11: { key: "Psychic", cnName: "超能力", specialName: "超能" },
+    11: { key: "Psychic", cnName: "超能力", specialName: "精神" },
     12: { key: "Bug", cnName: "蟲", specialName: "玉蟲" },
     13: { key: "Rock", cnName: "岩石", specialName: "岩石" },
     14: { key: "Ghost", cnName: "幽靈", specialName: "妖怪" },
@@ -36,6 +36,36 @@ export const RoleMap: Record<string, TypeMapItem> = {
     4: { key: "Sprint", cnName: "速戰型" },
     5: { key: "Field", cnName: "場地型" },
     6: { key: "Multi", cnName: "複合型" },
+};
+
+export const AbnormalMap: Record<string, TypeMapItem> = {
+    0: { key: "Healthy", cnName: "健康" },
+    1: { key: "Poisoned", cnName: "中毒" },
+    2: { key: "BadlyPoisoned", cnName: "劇毒" },
+    3: { key: "Burned", cnName: "灼傷" },
+    4: { key: "Paralyzed", cnName: "麻痹" },
+    5: { key: "Forzen", cnName: "冰凍" },
+    6: { key: "Asleep", cnName: "睡眠" },
+};
+
+export const HindranceMap: Record<string, TypeMapItem> = {
+    0: { key: "Cofused", cnName: "混亂" },
+    1: { key: "Flinching", cnName: "畏縮" },
+    2: { key: "Trapped", cnName: "束縛" },
+    3: { key: "Restrained", cnName: "禁止替換" },
+};
+
+export const CrtibuffsMap: Record<string, TypeMapItem> = {
+    0: { key: "Physical", cnName: "物理爆傷" },
+    1: { key: "Special", cnName: "特殊爆傷" },
+    2: { key: "Sync", cnName: "拍招爆傷" },
+};
+
+export const WeatherMap: Record<string, TypeMapItem> = {
+    0: { key: "Rainy", cnName: "下雨" },
+    1: { key: "Sunny", cnName: "晴天" },
+    2: { key: "Sandstorm", cnName: "沙暴" },
+    3: { key: "Hailstorm", cnName: "冰雹" },
 };
 
 export const ExRoleList = [

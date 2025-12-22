@@ -25,7 +25,6 @@ export const POKEMON_TYPES = [
 
 // 2. 異常與妨害
 export const ABNORMAL_STATUSES = [
-    "無",
     "灼傷",
     "麻痺",
     "冰凍",
@@ -36,32 +35,35 @@ export const ABNORMAL_STATUSES = [
 
 export const HINDRANCE_STATUSES = ["混亂", "畏縮", "束縛", "禁止替換"] as const;
 
+export const CRITBUFF_STATUSES = [
+    "物理爆傷",
+    "特殊爆傷",
+    "拍招爆傷",
+] as const;
+
 // 3. 環境與場地
-export const WEATHER_TYPES = ["無", "晴天", "下雨", "沙暴", "冰雹"] as const;
+export const WEATHER_TYPES = ["晴天", "下雨", "沙暴", "冰雹"] as const;
 
 export const TERRAIN_TYPES = [
-    "無",
     "電氣場地",
     "青草場地",
     "精神場地",
-    "薄霧場地",
 ] as const;
 
 export const ZONE_TYPES = [
-    "無",
     "一般領域",
     "冰柱領域",
     "拳頭領域",
     "劇毒領域",
     "大地領域",
     "藍天領域",
-    "玉虫領域",
+    "玉蟲領域",
     "岩石領域",
     "妖怪領域",
     "龍之領域",
     "鋼鐵領域",
     "妖精領域",
-    "惡顏領域",
+    "惡顔領域",
 ] as const;
 
 // 4. 地區與鬥陣
@@ -111,4 +113,17 @@ export const STAT_KEYS = [
     "spe",
     "acc",
     "eva",
+    "ct"
+] as const;
+
+export const STATS = [
+    "HP",
+    "攻擊",
+    "防禦",
+    "特攻",
+    "特防",
+    "速度",
+    "閃避率",
+    "命中率",
+    "擊中要害率",
 ] as const;

@@ -2,38 +2,25 @@
 
 import * as cond from "@/types/conditions"; // 導入上面的類型
 import { defineStore } from "pinia";
+import { ABNORMAL_STATUSES, HINDRANCE_STATUSES, STATS, POKEMON_TYPES, CRITBUFF_STATUSES } from "@/constances/battle";
 
 // 輔助函數：初始化 18 種屬性抵抗表 (全為 0)
 const initRebuffs = (): cond.TypeRebuffs => {
-    const types: cond.PokemonType[] = [
-        "一般",
-        "火",
-        "水",
-        "草",
-        "電",
-        "冰",
-        "格鬥",
-        "毒",
-        "地面",
-        "飛行",
-        "超能力",
-        "蟲",
-        "岩石",
-        "幽靈",
-        "龍",
-        "惡",
-        "鋼",
-        "妖精",
-    ];
-    return types.reduce(
+    return POKEMON_TYPES.reduce(
         (acc, type) => ({ ...acc, [type]: -1 }),
         {} as cond.TypeRebuffs
     );
 };
 
+const initCritbuffs = (): Record<cond.CritBuffType, boolean> => {
+    return Object.fromEntries(
+        CRITBUFF_STATUSES.map((status) => [status, false])
+    ) as Record<cond.CritBuffType, boolean>;
+};
+
 const initHindrances = (): Record<cond.HindranceType, boolean> => {
     return Object.fromEntries(
-        cond.HINDRANCE_STATUSES.map((status) => [status, false])
+        HINDRANCE_STATUSES.map((status) => [status, false])
     ) as Record<cond.HindranceType, boolean>;
 };
 
@@ -133,6 +120,7 @@ export const useDamageCalcStore = defineStore("damageCalc", {
             currentHPPercent: 100 as number,
 
             typeRebuffs: initRebuffs(),
+            critBuffs: initCritbuffs(),
         },
 
         weather: "晴天" as cond.WeatherType,
@@ -142,7 +130,7 @@ export const useDamageCalcStore = defineStore("damageCalc", {
         zone: "大地領域" as cond.ZoneType,
         isEXZone: true,
         battleCircles: initBattleCircles(),
-        gaugeSpeedBoost: false,
+        gaugeAcceleration: false,
 
         settings: {
             scope: 1 as cond.TargetScope,

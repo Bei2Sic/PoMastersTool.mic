@@ -23,6 +23,11 @@ export const getTypeSpecialNameByTypeIndex = (typeIndex: number): string => {
     return TypeMap[typeIndex].specialName;
 }
 
+export const getTypeKeyByCnNameOrSpecialName = (cnName: string): string => {
+    const entry = Object.values(TypeMap).find(t => cnName.includes(t.specialName || t.cnName));
+    return entry ? entry.key.toLowerCase() : 'normal';
+};
+
 export function getTypeIndexByCnName(cnName: string): number {
     const entry = Object.entries(TypeMap).find(([_, item]) => item.cnName === cnName);
 

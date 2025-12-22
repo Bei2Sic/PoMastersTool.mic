@@ -1,9 +1,17 @@
 <script setup lang="ts">
 import { useDamageCalculator } from "@/composables/useDamageCalculator";
 import { useDamageCalcStore } from "@/stores/damageCalc";
-import * as cond from "@/types/conditions";
+import {
+    TERRAIN_TYPES,
+    WEATHER_TYPES,
+    ZONE_TYPES,
+    POKEMON_TYPES
+} from "@/constances/battle";
 import type { Sync } from "@/types/syncModel";
 import { computed } from "vue";
+import { StatMap, AbnormalMap, HindranceMap, TypeMap, WeatherMap, CrtibuffsMap } from "@/constances/map";
+import { RegionType } from "@/types/conditions";
+import { getTypeKeyByCnNameOrSpecialName } from "@/core/exporter/map"
 
 // --- Props & Emits ---
 const props = defineProps<{
@@ -24,36 +32,122 @@ const teamSyncsRef = props.teamSyncs
 
 const { finalDamageResult } = useDamageCalculator(targetSyncRef, teamSyncsRef);
 
-// --- 常量定义 ---
-const statsKeys: (keyof cond.PokemonStats)[] = ["atk", "def", "spa", "spd", "spe"];
-const rankOptions = Array.from({ length: 13 }, (_, i) => i - 7); // -6 ~ +6
+// --- Constants ---
+const weatherOptions = ["無", ...WEATHER_TYPES] as const;
+const terrainOptions = ["無", ...TERRAIN_TYPES] as const;
+const zoneOptions = ["無", ...ZONE_TYPES] as const;
+const effectiveTypeOptions = POKEMON_TYPES.filter(t => t !== '無');
 
-// 异常状态列表 (互斥)
-const abnormalOptions: cond.AbnormalType[] = ["無", "灼傷", "麻痺", "冰凍", "中毒", "劇毒", "睡眠"];
+const orderedStats = Object.entries(StatMap)
+    .sort(([a], [b]) => Number(a) - Number(b))
+    .map(([_, val]) => val);
 
-// 妨害状态列表 (可多选) - 对应 store.user.hindrance 的 key
-const hindranceKeys = cond.HINDRANCE_STATUSES;
+const orderedTypes = POKEMON_TYPES.filter(t => t !== '無');
 
-// 天气/场地/领域
-const weatherOptions: cond.WeatherType[] = ["無", "晴天", "下雨", "沙暴", "冰雹"];
-const terrainOptions: cond.TerrainType[] = ["無", "電氣場地", "青草場地", ];
-const zoneOptions: cond.ZoneType[] = ["無", "妖怪領域", "龍之領域", "鋼鐵領域", "大地領域", "妖精領域"];
 
-// --- 辅助函数 ---
-const handleRankChange = (target: "user" | "target", stat: keyof cond.PokemonStats, event: Event) => {
-    const val = parseInt((event.target as HTMLSelectElement).value);
-    if (target === "user") store.user.ranks[stat] = val as cond.StatRank;
-    else store.target.ranks[stat] = val as cond.StatRank;
+// --- Icon Helpers ---
+const getUiIcon = (name: string) => {
+    return new URL(`../assets/images/icon_${name}.png`, import.meta.url).href;
+}
+
+const getIcon = (key: string, target: 'user' | 'target') => {
+    if (!key) return "";
+    const lowerKey = key.toLowerCase();
+    const field = target === 'user' ? '' : 't_';
+    const name = `stat_${field}${lowerKey}`;
+    return getUiIcon(name);
 };
 
-// 地区颜色
+const getStatusIcon = (key: string, status: 'abnormal' | 'hindrance') => {
+    if (!key) return "";
+    const name = `${status}_${key.toLowerCase()}`;
+    return getUiIcon(name);
+}
+
+// 增强圖標
+const getBoostIcon = (type: 'physical' | 'special' | 'sync') => {
+    const name = `boost_${type}`;
+    return getUiIcon(name);
+}
+
+// 鬥陣圖標
+const getCirclesIcon = (type: 'atk' | 'spa' | 'hp') => {
+    const name = `stat_${type}`;
+    return getUiIcon(name);
+};
+
+// 爆伤图标 
+const getCritbuffIcon = (key: string) => {
+    if (!key) return "";
+    const name = `break_${key.toLowerCase()}`;
+    return getUiIcon(name);
+}
+
+const getRebuffIcon = (typeName: string) => {
+    const entry = Object.values(TypeMap).find(t => t.cnName === typeName);
+    const key = entry ? entry.key.toLowerCase() : 'normal';
+    return new URL(`../assets/images/type_${key}.png`, import.meta.url).href;
+};
+
+const getEnvIcon = (category: 'weather' | 'terrain' | 'zone', name: string) => {
+    if (name === '無') return new URL(`../assets/images/b_move_chain.png`, import.meta.url).href;
+    let filename = '';
+    if (category === 'weather') {
+        const entry = Object.values(WeatherMap).find(t => name.includes(t.cnName));
+        const key = entry ? entry.key.toLowerCase() : 'sunny';
+        filename = `icon_weather_${key}`;
+    } else {
+        const typeKey = getTypeKeyByCnNameOrSpecialName(name);
+        filename = `move_${typeKey}`;
+    }
+    return new URL(`../assets/images/${filename}.png`, import.meta.url).href;
+};
+
+// --- Other Helpers ---
+const getHeaderColor = (key: string) => {
+    const colors: Record<string, string> = {
+        hp: "bg-green-100", atk: "bg-orange-100", def: "bg-yellow-100",
+        spa: "bg-blue-100", spd: "bg-indigo-100", spe: "bg-pink-100",
+        acc: "bg-gray-50", eva: "bg-gray-50", ct: "bg-red-50",
+    };
+    return colors[key] || "bg-gray-50";
+};
+
+const hasBaseStat = (key: string) => !["acc", "eva", "ct"].includes(key);
+const isHP = (key: string) => key === "hp";
+
+const getRankOptions = (key: string) => {
+    if (key === "ct") return [0, 1, 2, 3];
+    return Array.from({ length: 13 }, (_, i) => i - 6);
+};
+const getRebuffOptions = () => Array.from({ length: 7 }, (_, i) => i - 3);
+const getBoostOptions = () => Array.from({ length: 11 }, (_, i) => i);
+
 const getRegionClass = (region: string) => {
-    const map: Record<string, string> = {
-        "关都": "region-kanto", "城都": "region-johto", "丰缘": "region-hoenn",
-        "神奥": "region-sinnoh", "合众": "region-unova", "卡洛斯": "region-kalos",
-        "阿罗拉": "region-alola", "伽勒尔": "region-galar", "帕底亚": "region-paldea", "帕希欧": "region-pasio",
+    const map: Record<RegionType, string> = {
+        "關都": "region-kanto", "城都": "region-johto", "豐緣": "region-hoenn",
+        "神奧": "region-sinnoh", "合眾": "region-unova", "卡洛斯": "region-kalos",
+        "阿羅拉": "region-alola", "伽勒爾": "region-galar", "帕底亞": "region-paldea", "帕希歐": "region-pasio",
     };
     return map[region] || "region-default";
+};
+
+// --- Handlers ---
+const handleAbnormalClick = (target: 'user' | 'target', item: any) => {
+    const valueName = (item.key === 'Healthy' || item.cnName === '健康') ? '無' : item.cnName;
+    if (target === 'user') store.user.abnormal = store.user.abnormal === valueName ? '無' : valueName;
+    else store.target.abnormal = store.target.abnormal === valueName ? '無' : valueName;
+};
+
+const isAbnormalActive = (target: 'user' | 'target', item: any) => {
+    const current = target === 'user' ? store.user.abnormal : store.target.abnormal;
+    const valueName = (item.key === 'Healthy' || item.cnName === '健康') ? '無' : item.cnName;
+    return current === valueName;
+};
+
+const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
+    if (target === 'user') store.user.hindrance[cnName] = !store.user.hindrance[cnName];
+    else store.target.hindrance[cnName] = !store.target.hindrance[cnName];
 };
 </script>
 
@@ -70,148 +164,167 @@ const getRegionClass = (region: string) => {
 
                 <div class="section-group">
                     <div class="section-title">1. 我方状态 (User)</div>
-
                     <div class="panel-card">
-                        <div class="sub-section">
-                            <div class="sub-title">基础与装备加成</div>
-                            <div class="stats-grid-row header-row">
-                                <span>属性</span>
-                                <span>装备(Gear)</span>
-                                <span>能力等级</span>
-                            </div>
-                            <div v-for="stat in statsKeys" :key="stat" class="stats-grid-row">
-                                <span class="stat-label">{{ stat.toUpperCase() }}</span>
-                                <input type="number" v-model.number="store.user.gear[stat]" placeholder="0"
-                                    class="input-cell">
-                                <select :value="store.user.ranks[stat]" @change="handleRankChange('user', stat, $event)"
-                                    class="select-cell">
-                                    <option v-for="r in rankOptions" :key="r" :value="r">{{ r > 0 ? '+' + r : r }}
-                                    </option>
-                                </select>
-                            </div>
-                            <div class="extra-ranks">
-                                <label>命中 <select v-model.number="store.user.ranks.acc">
-                                        <option v-for="r in rankOptions" :value="r">{{ r }}</option>
-                                    </select></label>
-                                <label>闪避 <select v-model.number="store.user.ranks.eva">
-                                        <option v-for="r in rankOptions" :value="r">{{ r }}</option>
-                                    </select></label>
-                                <label>击中要害 <select v-model.number="store.user.ranks.ct">
-                                        <option v-for="r in [0, 1, 2, 3]" :value="r">{{ r }}</option>
-                                    </select></label>
+                        <div class="stat-table-container">
+                            <div v-for="stat in orderedStats" :key="stat.key" class="stat-col">
+                                <div class="stat-cell header-cell" :class="getHeaderColor(stat.key)">
+                                    <img :src="getIcon(stat.key, 'user')" :alt="stat.cnName" class="stat-icon" />
+                                </div>
+                                <div class="stat-cell">
+                                    <template v-if="isHP(stat.key)">
+                                        <input type="number" v-model.number="store.user.currentHPPercent"
+                                            class="val-input text-green-600" placeholder="%" title="剩余HP%">
+                                    </template>
+                                    <select v-else v-model.number="store.user.ranks[stat.key]" class="rank-select"
+                                        :class="{ 'rank-pos': store.user.ranks[stat.key] > 0, 'rank-neg': store.user.ranks[stat.key] < 0 }">
+                                        <option v-for="r in getRankOptions(stat.key)" :key="r" :value="r">{{ r > 0 ? '+'
+                                            + r : r }}</option>
+                                    </select>
+                                </div>
+                                <div class="stat-cell">
+                                    <template v-if="isHP(stat.key)">
+                                        <input type="number" v-model.number="store.user.gear[stat.key]"
+                                            class="val-input" placeholder="0">
+                                    </template>
+                                    <template v-else-if="hasBaseStat(stat.key)">
+                                        <input type="number" v-model.number="store.user.gear[stat.key]"
+                                            class="val-input" placeholder="0">
+                                    </template>
+                                    <div v-else class="placeholder">-</div>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="divider"></div>
-
-                        <div class="grid-2-col">
-                            <div class="sub-section">
-                                <div class="sub-title">异常与妨害</div>
-                                <div class="form-row">
-                                    <label>异常状态</label>
-                                    <select v-model="store.user.abnormal" class="full-width">
-                                        <option v-for="ab in abnormalOptions" :key="ab" :value="ab">{{ ab }}</option>
-                                    </select>
+                        <div class="status-bar">
+                            <div class="status-group">
+                                <span class="status-label">異常</span>
+                                <div class="icon-row">
+                                    <button v-for="(item, idx) in Object.values(AbnormalMap)" :key="idx"
+                                        class="icon-btn" :class="{ active: isAbnormalActive('user', item) }"
+                                        @click="handleAbnormalClick('user', item)" :title="item.cnName">
+                                        <img :src="getStatusIcon(item.key, 'abnormal')" />
+                                    </button>
                                 </div>
-                                <div class="hindrance-group">
-                                    <label>妨害:</label>
-                                    <div class="tags-container">
-                                        <button v-for="h in hindranceKeys" :key="h" class="tag-btn"
-                                            :class="{ active: store.user.hindrance[h] }"
-                                            @click="store.user.hindrance[h] = !store.user.hindrance[h]">
-                                            {{ h }}
-                                        </button>
-                                    </div>
+                            </div>
+                            <div class="status-group">
+                                <span class="status-label">妨害</span>
+                                <div class="icon-row">
+                                    <button v-for="(item, idx) in Object.values(HindranceMap)" :key="idx"
+                                        class="icon-btn" :class="{ active: store.user.hindrance[item.cnName] }"
+                                        @click="handleHindranceClick('user', item.cnName)" :title="item.cnName">
+                                        <img :src="getStatusIcon(item.key, 'hindrance')" />
+                                    </button>
                                 </div>
                             </div>
 
-                            <div class="sub-section">
-                                <div class="sub-title">其他加成</div>
-                                <div class="form-grid-compact">
-                                    <label>剩余HP%</label> <input type="number"
-                                        v-model.number="store.user.currentHPPercent" min="0" max="100">
-                                    <label>拍组强化(Buff)</label> <input type="number" v-model.number="store.user.syncBuff"
-                                        min="0">
-                                    <label>物理威力增强</label> <input type="number"
-                                        v-model.number="store.user.boosts.physical" min="0">
-                                    <label>特殊威力增强</label> <input type="number"
-                                        v-model.number="store.user.boosts.special" min="0">
-                                    <label>拍招威力增强</label> <input type="number" v-model.number="store.user.boosts.sync"
-                                        min="0">
-                                </div>
+                            <div class="status-group">
+                                <span class="status-label">加速</span>
+                                <button class="icon-btn" :class="{ active: store.gaugeAcceleration }"
+                                    @click="store.gaugeAcceleration = !store.gaugeAcceleration" title="计量槽加速">
+                                    <img :src="getUiIcon('acceleration')" />
+                                </button>
+                            </div>
+
+                            <div class="status-group">
+                                <span class="status-label">氣魄</span>
+                                <input type="number" v-model.number="store.user.syncBuff" class="sync-input" />
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="section-group">
-                    <div class="section-title">2. 目标状态 (Target)</div>
+                    <div class="section-title">目标状态 (Target)</div>
                     <div class="panel-card">
-
-                        <div class="grid-2-col">
-                            <div class="sub-section">
-                                <div class="sub-title">面板数值</div>
-                                <div class="stats-grid-row header-row">
-                                    <span>属性</span>
-                                    <span>数值</span>
-                                    <span>能力等级</span>
+                        <div class="stat-table-container bg-red-50/20">
+                            <div v-for="stat in orderedStats" :key="'t-' + stat.key" class="stat-col">
+                                <div class="stat-cell header-cell" :class="getHeaderColor(stat.key)">
+                                    <img :src="getIcon(stat.key, 'target')" :alt="stat.cnName" class="stat-icon" />
                                 </div>
-                                <div v-for="stat in statsKeys" :key="'t-' + stat" class="stats-grid-row">
-                                    <span class="stat-label">{{ stat.toUpperCase() }}</span>
-                                    <input type="number" v-model.number="store.target.stats[stat]"
-                                        class="input-cell bg-red-50">
-                                    <select :value="store.target.ranks[stat]"
-                                        @change="handleRankChange('target', stat, $event)" class="select-cell">
-                                        <option v-for="r in rankOptions" :key="r" :value="r">{{ r > 0 ? '+' + r : r }}
+                                <div class="stat-cell">
+                                    <div v-if="stat.key === 'ct'" class="placeholder">-</div>
+                                    <template v-else-if="isHP(stat.key)">
+                                        <input type="number" v-model.number="store.target.currentHPPercent"
+                                            class="val-input text-green-600" placeholder="%">
+                                    </template>
+                                    <select v-else v-model.number="store.target.ranks[stat.key]" class="rank-select"
+                                        :class="{ 'rank-pos': store.target.ranks[stat.key] > 0, 'rank-neg': store.target.ranks[stat.key] < 0 }">
+                                        <option v-for="r in getRankOptions(stat.key)" :key="r" :value="r">{{ r > 0 ? '+'
+                                            + r : r }}
                                         </option>
                                     </select>
                                 </div>
-                                <div class="extra-ranks">
-                                    <label>闪避 <select v-model.number="store.target.ranks.eva">
-                                            <option v-for="r in rankOptions" :value="r">{{ r }}</option>
-                                        </select></label>
-                                    <label>命中 <select v-model.number="store.target.ranks.acc">
-                                            <option v-for="r in rankOptions" :value="r">{{ r }}</option>
-                                        </select></label>
-                                </div>
-                            </div>
-
-                            <div class="sub-section">
-                                <div class="sub-title">异常与妨害</div>
-                                <div class="form-row">
-                                    <label>异常状态</label>
-                                    <select v-model="store.target.abnormal" class="full-width">
-                                        <option v-for="ab in abnormalOptions" :key="ab" :value="ab">{{ ab }}</option>
-                                    </select>
-                                </div>
-                                <div class="hindrance-group">
-                                    <label>妨害:</label>
-                                    <div class="tags-container">
-                                        <button v-for="h in hindranceKeys" :key="h" class="tag-btn"
-                                            :class="{ active: store.target.hindrance[h] }"
-                                            @click="store.target.hindrance[h] = !store.target.hindrance[h]">
-                                            {{ h }}
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <div class="divider"></div>
-
-                                <div class="sub-title">其他</div>
-                                <div class="form-grid-compact">
-                                    <label>剩余HP%</label> <input type="number"
-                                        v-model.number="store.target.currentHPPercent" min="0" max="100">
-                                    <label>拍组Buff</label> <input type="number" v-model.number="store.target.syncBuff"
-                                        min="0">
-                                    <label>伤害场</label>
-                                    <select v-model="store.target.damageField">
-                                        <option value="无">无</option>
-                                        <option value="物理">物理伤害场</option>
-                                        <option value="特殊">特殊伤害场</option>
-                                    </select>
+                                <div class="stat-cell">
+                                    <div v-if="isHP(stat.key) || stat.key === 'ct'" class="placeholder">-</div>
+                                    <template v-else-if="hasBaseStat(stat.key)">
+                                        <input type="number" v-model.number="store.target.stats[stat.key]"
+                                            class="val-input target-val" placeholder="0">
+                                    </template>
+                                    <div v-else class="placeholder">-</div>
                                 </div>
                             </div>
                         </div>
+
+                        <div class="status-bar">
+                            <div class="status-group">
+                                <span class="status-label">異常</span>
+                                <div class="icon-row">
+                                    <button v-for="(item, idx) in Object.values(AbnormalMap)" :key="idx"
+                                        class="icon-btn" :class="{ active: isAbnormalActive('target', item) }"
+                                        @click="handleAbnormalClick('target', item)" :title="item.cnName">
+                                        <img :src="getStatusIcon(item.key, 'abnormal')" />
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="status-group">
+                                <span class="status-label">妨害</span>
+                                <div class="icon-row">
+                                    <button v-for="(item, idx) in Object.values(HindranceMap)" :key="idx"
+                                        class="icon-btn" :class="{ active: store.target.hindrance[item.cnName] }"
+                                        @click="handleHindranceClick('target', item.cnName)" :title="item.cnName">
+                                        <img :src="getStatusIcon(item.key, 'hindrance')" />
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="status-group">
+                                <span class="status-label">爆傷</span>
+                                <div class="icon-row">
+                                    <button v-for="(item, idx) in Object.values(CrtibuffsMap)" :key="idx"
+                                        class="icon-btn" :class="{ active: store.target.critBuffs[item.cnName] }"
+                                        @click="store.target.critBuffs[item.cnName] = !store.target.critBuffs[item.cnName]"
+                                        :title=item.cnName>
+                                        <img :src="getCritbuffIcon(item.key)" />
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="status-group">
+                                <span class="status-label">氣魄</span>
+                                <input type="number" v-model.number="store.target.syncBuff" class="sync-input" />
+                            </div>
+                        </div>
+
+                        <div class="rebuff-section">
+                            <div class="section-label">屬性抵抗 (Rebuff)</div>
+                            <div class="rebuff-scroll-container">
+                                <div v-for="type in orderedTypes" :key="type" class="rebuff-col">
+                                    <div class="stat-cell header-cell">
+                                        <img :src="getRebuffIcon(type)" :alt="type" class="stat-icon rebuff-icon" />
+                                    </div>
+                                    <div class="stat-cell">
+                                        <select v-model.number="store.target.typeRebuffs[type]"
+                                            class="rank-select rebuff-select"
+                                            :class="{ 'rank-neg': store.target.typeRebuffs[type] < 0, 'rank-pos': store.target.typeRebuffs[type] > 0 }">
+                                            <option v-for="r in getRebuffOptions()" :key="r" :value="r">
+                                                {{ r > 0 ? '+' + r : r }}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
@@ -219,29 +332,117 @@ const getRegionClass = (region: string) => {
                     <div class="section-title">3. 环境配置</div>
 
                     <div class="panel-card mb-4">
-                        <div class="env-row">
-                            <div class="env-group">
-                                <label>天气</label>
-                                <select v-model="store.weather">
-                                    <option v-for="w in weatherOptions" :key="w" :value="w">{{ w }}</option>
-                                </select>
-                                <label class="check-box"><input type="checkbox" v-model="store.isEXWeather">EX</label>
+
+                        <div class="env-row-icons">
+                            <div class="env-toolbar">
+                                <div class="label-col">天氣</div>
+                                <div class="env-scroll-container">
+                                    <button class="ex-btn" :class="{ active: store.isEXWeather }"
+                                        @click="store.isEXWeather = !store.isEXWeather">
+                                        EX
+                                    </button>
+                                    <button v-for="w in weatherOptions" :key="w" class="env-btn"
+                                        :class="{ active: store.weather === w }" @click="store.weather = w" :title="w">
+                                        <img :src="getEnvIcon('weather', w)" />
+                                    </button>
+                                </div>
                             </div>
-                            <div class="env-group">
-                                <label>场地</label>
-                                <select v-model="store.terrain">
-                                    <option v-for="t in terrainOptions" :key="t" :value="t">{{ t }}</option>
-                                </select>
-                                <label class="check-box"><input type="checkbox" v-model="store.isEXTerrain">EX</label>
+                            <div class="env-toolbar">
+                                <div class="label-col">場地</div>
+                                <div class="env-scroll-container">
+                                    <button class="ex-btn" :class="{ active: store.isEXTerrain }"
+                                        @click="store.isEXTerrain = !store.isEXTerrain">
+                                        EX
+                                    </button>
+                                    <button v-for="t in terrainOptions" :key="t" class="env-btn"
+                                        :class="{ active: store.terrain === t }" @click="store.terrain = t" :title="t">
+                                        <img :src="getEnvIcon('terrain', t)" />
+                                    </button>
+                                </div>
                             </div>
-                            <div class="env-group">
-                                <label>领域</label>
-                                <select v-model="store.zone">
-                                    <option v-for="z in zoneOptions" :key="z" :value="z">{{ z }}</option>
-                                </select>
-                                <label class="check-box"><input type="checkbox" v-model="store.isEXZone">EX</label>
+                            <div class="env-toolbar">
+                                <div class="label-col">領域</div>
+                                <div class="env-scroll-container">
+                                    <button class="ex-btn" :class="{ active: store.isEXZone }"
+                                        @click="store.isEXZone = !store.isEXZone">
+                                        EX
+                                    </button>
+                                    <button v-for="z in zoneOptions" :key="z" class="env-btn"
+                                        :class="{ active: store.zone === z }" @click="store.zone = z" :title="z">
+                                        <img :src="getEnvIcon('zone', z)" />
+                                    </button>
+                                </div>
                             </div>
                         </div>
+
+                        <div class="boost-section-wrapper">
+                            <div class="section-label">威力增强 (Boosts)</div>
+                            <div class="boost-section">
+                                <div class="boost-group">
+                                    <div class="boost-icon"><img :src="getBoostIcon('physical')" title="物理威力增强" /></div>
+                                    <select v-model.number="store.user.boosts.physical" class="boost-select">
+                                        <option v-for="n in getBoostOptions()" :key="n" :value="n">{{ n }}</option>
+                                    </select>
+                                </div>
+                                <div class="boost-group">
+                                    <div class="boost-icon"><img :src="getBoostIcon('special')" title="特殊威力增强" /></div>
+                                    <select v-model.number="store.user.boosts.special" class="boost-select">
+                                        <option v-for="n in getBoostOptions()" :key="n" :value="n">{{ n }}</option>
+                                    </select>
+                                </div>
+                                <div class="boost-group">
+                                    <div class="boost-icon"><img :src="getBoostIcon('sync')" title="拍组招式威力增强" /></div>
+                                    <select v-model.number="store.user.boosts.sync" class="boost-select">
+                                        <option v-for="n in getBoostOptions()" :key="n" :value="n">{{ n }}</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="battle-settings-bar">
+
+                            <div class="bs-row full-width-row">
+                                <select v-model="store.settings.effectiveType" class="type-select">
+                                    <option value="無">無</option>
+                                    <option v-for="t in effectiveTypeOptions" :key="t" :value="t">{{ t }}</option>
+                                </select>
+
+                                <button class="text-toggle-btn" :class="{ active: store.settings.isCritical }"
+                                    @click="store.settings.isCritical = !store.settings.isCritical">
+                                    要害
+                                </button>
+
+                                <button class="text-toggle-btn" :class="{ active: store.settings.isSuperEffective }"
+                                    @click="store.settings.isSuperEffective = !store.settings.isSuperEffective">
+                                    效果絕佳↑
+                                </button>
+                            </div>
+
+                            <div class="bs-row full-width-row space-between">
+
+                                <div class="control-group">
+                                    <span class="common-label">目標</span>
+                                    <div class="segment-control">
+                                        <button v-for="n in 3" :key="n" :class="{ active: store.settings.scope === n }"
+                                            @click="store.settings.scope = n as any">
+                                            {{ n }}
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <span class="common-label">氣槽</span>
+                                    <div class="gauge-control">
+                                        <button v-for="n in 6" :key="n" :class="{ active: store.settings.gauge >= n }"
+                                            @click="store.settings.gauge = n as any">
+                                            {{ n }}
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
                     </div>
 
                     <div class="circle-scroll-wrapper">
@@ -250,19 +451,21 @@ const getRegionClass = (region: string) => {
                                 <div class="circle-header" :class="getRegionClass(region as string)">
                                     {{ region }}
                                 </div>
-
                                 <div class="circle-toggles">
                                     <button class="toggle-circle-btn" :class="{ active: data.actives['物理'] }"
-                                        @click="data.actives['物理'] = !data.actives['物理']">物</button>
+                                        @click="data.actives['物理'] = !data.actives['物理']" title="物理傷害減輕">
+                                        <img :src="getCirclesIcon('atk')" alt="物理" />
+                                    </button>
                                     <button class="toggle-circle-btn" :class="{ active: data.actives['特殊'] }"
-                                        @click="data.actives['特殊'] = !data.actives['特殊']">特</button>
+                                        @click="data.actives['特殊'] = !data.actives['特殊']" title="特殊傷害減輕">
+                                        <img :src="getCirclesIcon('spa')" alt="特殊" />
+                                    </button>
                                     <button class="toggle-circle-btn" :class="{ active: data.actives['防禦'] }"
-                                        @click="data.actives['防禦'] = !data.actives['防禦']">防</button>
+                                        @click="data.actives['防禦'] = !data.actives['防禦']" title="防禦/特防提升">
+                                        <img :src="getCirclesIcon('hp')" alt="防禦" />
+                                    </button>
                                 </div>
-
-                                <div class="circle-level-display">
-                                    Lv. {{ data.level }}
-                                </div>
+                                <div class="circle-level-display">Lv. {{ data.level }}</div>
                             </div>
                         </div>
                     </div>
@@ -270,15 +473,12 @@ const getRegionClass = (region: string) => {
 
                 <div class="section-group">
                     <div class="section-title">4. 计算结果</div>
-
                     <div v-if="!finalDamageResult || finalDamageResult.length === 0" class="empty-tip">
                         暂无数据，请检查拍组数据
                     </div>
-
                     <div v-else>
                         <div v-for="(formResult, idx) in finalDamageResult" :key="idx" class="result-card">
                             <div class="form-name">{{ formResult.formName }}</div>
-
                             <table class="result-table">
                                 <thead>
                                     <tr>
@@ -292,42 +492,31 @@ const getRegionClass = (region: string) => {
                                 <tbody>
                                     <template v-for="(res, mIdx) in formResult?.moves" :key="'move-'+mIdx">
                                         <tr v-if="res">
-                                            <td class="move-name">
-                                                {{ res.move.name }}
-                                                <span class="sub-text">{{ res.move.type }}</span>
-                                            </td>
-                                            <td>
-                                                <span class="tag"
-                                                    :class="res.move.category === 1 ? 'tag-phy' : 'tag-sp'">
-                                                    {{ res.move.category === 1 ? '物' : '特' }}
-                                                </span>
-                                            </td>
+                                            <td class="move-name">{{ res.move.name }}<span class="sub-text">{{
+                                                res.move.type }}</span></td>
+                                            <td><span class="tag"
+                                                    :class="res.move.category === 1 ? 'tag-phy' : 'tag-sp'">{{
+                                                        res.move.category === 1 ? '物' : '特' }}</span></td>
                                             <td>{{ res.movePower }}</td>
-                                            <td class="damage-val">
-                                                {{ Math.min(...res.moveDamage) }} ~ {{ Math.max(...res.moveDamage) }}
-                                            </td>
+                                            <td class="damage-val">{{ Math.min(...res.moveDamage) }} ~ {{
+                                                Math.max(...res.moveDamage) }}</td>
                                             <td class="details">
                                                 <div>E:x{{ res.envBoost / 100 }}</div>
                                                 <div>M:x{{ res.moveBoost / 100 }}</div>
                                             </td>
                                         </tr>
                                     </template>
-
                                     <tr v-if="formResult.syncMove" class="row-sync">
                                         <td class="move-name">[拍] {{ formResult.syncMove.move.name }}</td>
-                                        <td>
-                                            <span class="tag"
-                                                :class="formResult.syncMove.move.category === 1 ? 'tag-phy' : 'tag-sp'">
-                                                {{ formResult.syncMove.move.category === 1 ? '物' : '特' }}
-                                            </span>
-                                        </td>
+                                        <td><span class="tag"
+                                                :class="formResult.syncMove.move.category === 1 ? 'tag-phy' : 'tag-sp'">{{
+                                                    formResult.syncMove.move.category === 1 ? '物' : '特' }}</span></td>
                                         <td>{{ formResult.syncMove.movePower }}</td>
-                                        <td class="damage-val sync-val">
-                                            {{ Math.min(...formResult.syncMove.moveDamage) }} ~ {{
-                                                Math.max(...formResult.syncMove.moveDamage) }}
-                                        </td>
+                                        <td class="damage-val sync-val">{{ Math.min(...formResult.syncMove.moveDamage)
+                                            }} ~ {{
+                                                Math.max(...formResult.syncMove.moveDamage) }}</td>
                                         <td class="details">
-                                            <div>气: {{ store.user.syncBuff }}</div>
+                                            <div>氣: {{ store.user.syncBuff }}</div>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -337,16 +526,13 @@ const getRegionClass = (region: string) => {
                 </div>
 
             </div>
-
-            <div class="window-footer">
-                <button class="btn btn-primary" @click="emit('close')">关闭</button>
-            </div>
+            <div class="window-footer"><button class="btn btn-primary" @click="emit('close')">關閉</button></div>
         </div>
     </div>
 </template>
 
 <style scoped>
-/* --- 模态框基础 --- */
+/* Basic Styles (Same as before) */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -408,7 +594,6 @@ const getRegionClass = (region: string) => {
     text-align: right;
 }
 
-/* --- 通用布局组件 --- */
 .section-group {
     margin-bottom: 20px;
 }
@@ -423,150 +608,491 @@ const getRegionClass = (region: string) => {
 }
 
 .panel-card {
-    background: white;
+    background: #f8fcfd;
     padding: 15px;
     border-radius: 6px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-.sub-title {
-    font-size: 0.85rem;
-    font-weight: bold;
-    color: #666;
-    margin-bottom: 8px;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 4px;
-}
-
-.grid-2-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.divider {
-    height: 1px;
-    background: #eee;
-    margin: 15px 0;
-}
-
-.full-width {
+/* Stat Tables */
+.stat-table-container {
+    display: flex;
+    flexDirection: row;
+    overflow-x: auto;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    background: white;
     width: 100%;
 }
 
-/* --- 表单样式 --- */
-.stats-grid-row {
-    display: grid;
-    grid-template-columns: 80px 1fr 1fr;
-    gap: 8px;
-    align-items: center;
-    margin-bottom: 6px;
+.stat-col {
+    flex: 1;
+    min-width: 45px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #eee;
 }
 
-.header-row {
+.stat-col:last-child {
+    border-right: none;
+}
+
+.stat-cell {
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #f5f5f5;
+    padding: 2px;
+}
+
+.header-cell {
+    height: 40px;
+    border-bottom: 1px solid #eee;
+}
+
+.bg-green-100 {
+    background-color: #dcfce7;
+}
+
+.bg-orange-100 {
+    background-color: #ffedd5;
+}
+
+.bg-yellow-100 {
+    background-color: #fef9c3;
+}
+
+.bg-blue-100 {
+    background-color: #dbeafe;
+}
+
+.bg-indigo-100 {
+    background-color: #e0e7ff;
+}
+
+.bg-pink-100 {
+    background-color: #fce7f3;
+}
+
+.bg-gray-50 {
+    background-color: #f9fafb;
+}
+
+.bg-red-50 {
+    background-color: #fef2f2;
+}
+
+.stat-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.val-input,
+.rank-select {
+    width: 100%;
+    height: 100%;
+    border: none;
+    text-align: center;
+    background: transparent;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #444;
+}
+
+.val-input:focus,
+.rank-select:focus {
+    outline: none;
+    background: #f0f8ff;
+}
+
+.placeholder {
+    color: #ddd;
+    font-size: 0.8rem;
+}
+
+.target-val {
+    background: #fff5f5;
+}
+
+.rank-pos {
+    color: #e65100;
+}
+
+.rank-neg {
+    color: #1a237e;
+}
+
+.text-green-600 {
+    color: #16a34a;
+}
+
+/* Status Bar */
+.status-bar {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    gap: 10px;
+    padding: 15px 10px;
+    background: #f8fcfd;
+    border-top: 1px solid #eee;
+    flex-wrap: wrap;
+}
+
+.status-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    min-width: 80px;
+}
+
+.status-label {
     font-size: 0.75rem;
     color: #888;
     font-weight: bold;
-    text-align: center;
 }
 
-.stat-label {
+.common-label {
+    font-size: 0.85rem;
+    color: #333;
     font-weight: bold;
-    font-size: 0.8rem;
-    color: #555;
-    text-align: center;
 }
 
-.input-cell,
-.select-cell {
-    width: 100%;
+.icon-row {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.icon-btn {
+    width: 34px;
+    height: 34px;
+    border: 1px solid #ddd;
+    background: white;
+    cursor: pointer;
+    border-radius: 6px;
     padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    opacity: 0.5;
+}
+
+.icon-btn:hover {
+    border-color: #aaa;
+    opacity: 0.8;
+}
+
+.icon-btn.active {
+    border-color: #2196f3;
+    background: #e3f2fd;
+    opacity: 1;
+    box-shadow: 0 1px 3px rgba(33, 150, 243, 0.3);
+}
+
+.icon-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.sync-input {
+    width: 50px;
+    padding: 6px;
     border: 1px solid #ccc;
     border-radius: 4px;
     text-align: center;
+    font-weight: bold;
+    font-size: 1rem;
 }
 
-.extra-ranks {
+/* Boost Section */
+.boost-section-wrapper {
+    padding: 10px;
+    background: #f8fcfd;
+    border-top: 1px dashed #eee;
+    margin-top: 10px;
+}
+
+.boost-section {
     display: flex;
-    gap: 10px;
-    margin-top: 8px;
-    font-size: 0.8rem;
+    justify-content: space-around;
 }
 
-.extra-ranks select {
-    margin-left: 4px;
-    border: 1px solid #ddd;
-    border-radius: 3px;
-}
-
-.form-grid-compact {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 8px 10px;
+.boost-group {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    font-size: 0.85rem;
-}
-
-.form-grid-compact input,
-.form-grid-compact select {
-    width: 100%;
-    padding: 3px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-}
-
-.form-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 8px;
-    font-size: 0.9rem;
-}
-
-/* 状态Tag按钮 */
-.tags-container {
-    display: flex;
-    flex-wrap: wrap;
     gap: 4px;
-    margin-top: 4px;
+    width: 60px;
 }
 
-.tag-btn {
-    font-size: 0.75rem;
-    padding: 2px 8px;
-    border: 1px solid #ccc;
-    border-radius: 12px;
-    background: #fff;
-    cursor: pointer;
+.boost-icon img {
+    width: 28px;
+    height: 28px;
 }
 
-.tag-btn.active {
-    background: #ff9800;
-    color: white;
-    border-color: #f57c00;
-}
-
-/* --- 环境与斗阵 --- */
-.env-row {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.env-group {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.9rem;
-}
-
-.check-box {
+.boost-select {
+    width: 100%;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 2px;
     font-size: 0.8rem;
+}
+
+/* Battle Settings Bar */
+.battle-settings-bar {
+    padding: 10px;
+    background: #f8fcfd;
+    border-top: 1px solid #eee;
+    margin-top: 10px;
     display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.bs-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.full-width-row {
+    justify-content: center;
+    width: 100%;
+}
+
+.space-between {
+    justify-content: space-evenly;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.type-select {
+    padding: 4px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    width: 100px;
+}
+
+.text-toggle-btn {
+    padding: 4px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: white;
+    font-size: 0.75rem;
+    cursor: pointer;
+    color: #666;
+}
+
+.text-toggle-btn.active {
+    background: #b2dfdb;
+    border-color: #009688;
+    color: #00695c;
+    font-weight: bold;
+}
+
+.segment-control {
+    display: flex;
+    border: 1px solid #009688;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.segment-control button {
+    padding: 4px 16px;
+    border: none;
+    background: white;
+    color: #009688;
+    cursor: pointer;
+    font-weight: bold;
+    border-right: 1px solid #009688;
+}
+
+.segment-control button:last-child {
+    border-right: none;
+}
+
+.segment-control button.active {
+    background: #b2dfdb;
+    color: #004d40;
+}
+
+.gauge-control {
+    display: flex;
+    border: 1px solid #00acc1;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.gauge-control button {
+    padding: 4px 10px;
+    border: none;
+    background: #e0f7fa;
+    color: #006064;
+    cursor: pointer;
+    font-size: 0.8rem;
+    border-right: 1px solid #80deea;
+}
+
+.gauge-control button:last-child {
+    border-right: none;
+}
+
+.gauge-control button.active {
+    background: #00acc1;
+    color: white;
+}
+
+/* Rebuff Section */
+.rebuff-section {
+    padding: 10px;
+    background: #f8fcfd;
+    border-top: 1px solid #eee;
+    margin-top: 5px;
+}
+
+.section-label {
+    font-size: 0.75rem;
+    color: black;
+    font-weight: bold;
+    margin-bottom: 7px;
+    text-align: center;
+}
+
+.rebuff-scroll-container {
+    display: flex;
+    overflow-x: auto;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    background: white;
+    width: 100%;
+}
+
+.rebuff-col {
+    flex: 1;
+    min-width: 35px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #f5f5f5;
     align-items: center;
 }
 
-/* 斗阵样式 */
+.rebuff-col:last-child {
+    border-right: none;
+}
+
+.rebuff-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.rebuff-select {
+    font-size: 0.8rem;
+    background: #fafafa;
+}
+
+/* Environment (Icons + EX) */
+.env-row-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.env-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px dashed #eee;
+    padding-bottom: 8px;
+}
+
+.env-toolbar:last-child {
+    border-bottom: none;
+}
+
+.label-col {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #555;
+    width: 40px;
+    border-left: 3px solid #009688;
+    padding-left: 6px;
+}
+
+.env-scroll-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 6px;
+    flex: 1;
+    padding-bottom: 2px;
+}
+
+.env-btn {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.5;
+    padding: 4px;
+    flex-shrink: 0;
+}
+
+.env-btn:hover {
+    opacity: 0.8;
+}
+
+.env-btn.active {
+    border-color: #009688;
+    background: #e0f2f1;
+    opacity: 1;
+    box-shadow: 0 1px 3px rgba(0, 150, 136, 0.3);
+}
+
+.env-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.ex-btn {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #009688;
+    border-radius: 4px;
+    background: white;
+    color: #009688;
+    font-weight: bold;
+    font-size: 0.8rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.ex-btn.active {
+    background: #009688;
+    color: white;
+}
+
+/* Circles & Results */
 .circle-scroll-wrapper {
     background: white;
     padding: 10px;
@@ -601,28 +1127,45 @@ const getRegionClass = (region: string) => {
 
 .circle-toggles {
     display: flex;
-    justify-content: space-between;
-    padding: 4px;
+    justify-content: space-evenly;
+    padding: 6px 4px;
     background: #f9f9f9;
     border-bottom: 1px solid #eee;
 }
 
 .toggle-circle-btn {
-    font-size: 0.7rem;
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
     border: 1px solid #ccc;
     background: white;
-    color: #999;
     cursor: pointer;
-    padding: 0;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    filter: grayscale(100%);
+    opacity: 0.6;
+}
+
+.toggle-circle-btn:hover {
+    opacity: 1;
+    border-color: #999;
 }
 
 .toggle-circle-btn.active {
-    background: #2196f3;
-    color: white;
-    border-color: #1976d2;
+    filter: none;
+    opacity: 1;
+    border-color: #2196f3;
+    background: white;
+    box-shadow: 0 0 4px rgba(33, 150, 243, 0.4);
+}
+
+.toggle-circle-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .circle-level-display {
@@ -633,53 +1176,56 @@ const getRegionClass = (region: string) => {
     color: #444;
 }
 
-/* 地区颜色 */
+[class*="region-"] {
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
 .region-kanto {
-    background: #4caf50;
+    background: linear-gradient(120deg, #558B2F 50%, #D32F2F 50%);
 }
 
 .region-johto {
-    background: #cddc39;
-    color: #333;
+    background: linear-gradient(120deg, #C0A143 50%, #9E9E9E 50%);
 }
 
 .region-hoenn {
-    background: #f44336;
+    background: linear-gradient(120deg, #D32F2F 50%, #1976D2 50%);
 }
 
 .region-sinnoh {
-    background: #9c27b0;
+    background: linear-gradient(120deg, #1565C0 50%, #C2185B 50%);
 }
 
 .region-unova {
-    background: #607d8b;
+    background: linear-gradient(120deg, #212121 50%, #9E9E9E 50%);
 }
 
 .region-kalos {
-    background: #2196f3;
+    background: linear-gradient(120deg, #0D47A1 50%, #AD1457 50%);
 }
 
 .region-alola {
-    background: #ff9800;
+    background: linear-gradient(120deg, #F57C00 50%, #4FC3F7 50%);
 }
 
 .region-galar {
-    background: #e91e63;
+    background: linear-gradient(120deg, #00ACC1 50%, #E91E63 50%);
 }
 
 .region-paldea {
-    background: #3f51b5;
+    background: linear-gradient(120deg, #B71C1C 50%, #7B1FA2 50%);
 }
 
 .region-pasio {
-    background: #00bcd4;
+    background: linear-gradient(120deg, #304FFE 50%, #90CAF9 50%);
 }
 
 .region-default {
     background: #999;
 }
 
-/* --- 结果表格 --- */
+/* ... (Results Table Keep) ... */
 .result-card {
     background: white;
     margin-bottom: 15px;
@@ -762,7 +1308,6 @@ const getRegionClass = (region: string) => {
     color: white;
 }
 
-/* 滚动条 */
 ::-webkit-scrollbar {
     width: 6px;
     height: 6px;

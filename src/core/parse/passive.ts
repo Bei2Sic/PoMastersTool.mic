@@ -1,9 +1,5 @@
 import { ExtraLogic, LogicType, MoveScope } from "@/types/calculator";
-import {
-    ABNORMAL_STATUSES,
-    HINDRANCE_STATUSES,
-    WEATHER_STATUSES,
-} from "@/types/conditions";
+import { ABNORMAL_STATUSES, HINDRANCE_STATUSES, WEATHER_TYPES } from "@/constances/battle";
 import { PassiveSkillModel, PassiveStatBoost } from "@/types/passiveModel";
 import { getTypeCnNameByTypeSpecialName } from "../exporter/map";
 
@@ -486,7 +482,7 @@ export class PassiveSkillParser {
                 };
         }
         // 天氣
-        for (const w of WEATHER_STATUSES) {
+        for (const w of WEATHER_TYPES) {
             if (name.includes(w))
                 return {
                     logic: LogicType.Weather,

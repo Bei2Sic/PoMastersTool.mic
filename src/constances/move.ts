@@ -1,6 +1,6 @@
 import { ExtraLogic, LogicType } from "@/types/calculator";
 import { MoveSkillModel } from "@/types/moveModel";
-import { ABNORMAL_STATUSES, HINDRANCE_STATUSES, STATS } from "@/types/conditions";
+import { ABNORMAL_STATUSES, HINDRANCE_STATUSES, STATS } from "@/constances/battle";
 import {
     getStatKeyByStatCnName,
 } from "@/core/exporter/map";

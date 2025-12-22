@@ -150,7 +150,7 @@ export function useDamageCalculator(
             zone: damageStore.zone,
             isEXZone: damageStore.isEXZone,
             battleCircles: damageStore.battleCircles,
-            gaugeSpeedBoost: damageStore.gaugeSpeedBoost,
+            gaugeAcceleration: damageStore.gaugeAcceleration,
             user: {
                 hpPercent: u.currentHPPercent,
                 ranks: u.ranks,
@@ -174,6 +174,7 @@ export function useDamageCalculator(
                 hindrance: t.hindrance,
                 damageField: t.damageField,
                 typeRebuffs: t.typeRebuffs,
+                crtiBuffs: t.critBuffs,
             },
 
             settings: {
@@ -448,7 +449,7 @@ export function useDamageCalculator(
                         themeBonus:
                             moveTypeCnName === theme.tagType
                                 ? theme.flatBonuses[statType] +
-                                  theme.typeBonuses[statType]
+                                theme.typeBonuses[statType]
                                 : theme.flatBonuses[statType],
                         boost: DamageEngine.resolveStatBoost(
                             currentPassives,
@@ -488,9 +489,9 @@ export function useDamageCalculator(
                     ([index, roll]) => {
                         return Math.floor(
                             movePower *
-                                (((userStat * 0.5) / targetStat) *
-                                    envBoost *
-                                    roll)
+                            (((userStat * 0.5) / targetStat) *
+                                envBoost *
+                                roll)
                         );
                     }
                 );

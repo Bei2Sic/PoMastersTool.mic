@@ -34,8 +34,8 @@ import {
     PokemonStats,
     PokemonType,
     RegionType,
-    STATS,
 } from "@/types/conditions";
+import { ABNORMAL_STATUSES, HINDRANCE_STATUSES, STATS } from "@/constances/battle";
 import { DEFAULT_HANDLER, MoveSkillModel } from "@/types/moveModel";
 import { PassiveBoost, PassiveSkillModel } from "@/types/passiveModel";
 import { MoveBase } from "@/types/syncModel";
@@ -504,7 +504,7 @@ export class DamageEngine {
                 return env.battleCircles[region][category].isActive;
 
             case LogicType.GaugeSpeedBoostOn:
-                return env.gaugeSpeedBoost;
+                return env.gaugeAcceleration;
 
             case LogicType.Abnormal:
                 const abnormal = cond.detail.includes("對手")

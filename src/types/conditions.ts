@@ -73,20 +73,19 @@ export type ZoneType =
     | "劇毒領域"
     | "大地領域"
     | "藍天領域"
-    | "玉虫領域"
+    | "玉蟲領域"
     | "岩石領域"
     | "妖怪領域"
     | "龍之領域"
     | "鋼鐵領域"
     | "妖精領域"
-    | "惡顏領域";
+    | "惡顔領域";
 
 // ==========================================
 // 3. 鬥陣類型 (Battle Circles)
 // ==========================================
 
 export type RegionType =
-    | "無"
     | "關都"
     | "城都"
     | "豐緣"
@@ -101,6 +100,12 @@ export type CircleCategory = "物理" | "特殊" | "防禦";
 export type CircleLevel = 0 | 1 | 2 | 3;
 
 export type StatType = "攻擊" | "防禦" | "特攻" | "特防" | "速度";
+
+// 爆傷狀態
+export type CritBuffType = 
+    | "物理爆傷"
+    | "特殊爆傷"
+    | "拍招爆傷"
 
 // 異常狀態
 export type AbnormalType =
@@ -142,24 +147,3 @@ export type TypeRebuffs = Record<PokemonType, RebuffRank>;
 // 技能类型
 export type MoveType = "無" | "反衝" | "快攻" | "連續" | "必中";
 
-export const STATS = [
-    "攻擊",
-    "防禦",
-    "特攻",
-    "特防",
-    "速度",
-    "閃避率",
-    "命中率",
-    "擊中要害率",
-];
-
-export const ABNORMAL_STATUSES = [
-    "中毒",
-    "劇毒",
-    "冰凍",
-    "麻痺",
-    "睡眠",
-    "灼傷",
-];
-export const HINDRANCE_STATUSES = ["束縛", "混亂", "畏縮", "禁止替換"];
-export const WEATHER_STATUSES = ["晴天", "下雨", "沙暴", "冰雹"];
