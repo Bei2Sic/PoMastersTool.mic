@@ -1,7 +1,11 @@
+import {
+    ABNORMAL_STATUSES,
+    HINDRANCE_STATUSES,
+    WEATHER_TYPES,
+} from "@/constances/battle";
 import { MOVE_OVERRIDES } from "@/constances/move";
 import { LogicType } from "@/types/calculator";
 import { DEFAULT_MOVE_SKILL, MoveSkillModel } from "@/types/moveModel";
-import { ABNORMAL_STATUSES, HINDRANCE_STATUSES, WEATHER_TYPES } from "@/constances/battle";
 
 export class MoveSkillParser {
     private name: string;
@@ -21,18 +25,19 @@ export class MoveSkillParser {
         };
 
         // 直接查表
-        const moveSkill = MOVE_OVERRIDES[this.name] ?? defaultMoveSkill;
+        const moveSkill = MOVE_OVERRIDES[this.name];
         if (moveSkill) {
             return moveSkill;
         }
 
         // 处理通用被动
         const isValid = this.isValid(this.desc);
+
         if (!isValid) {
             return defaultMoveSkill;
         }
         const logicResult = this.resolveLogicAndCondition();
-
+        console.log(logicResult);
         if (logicResult.logic === LogicType.NoEffect) {
             return defaultMoveSkill;
         }
@@ -171,7 +176,10 @@ export class MoveSkillParser {
         }
         // 場地 (領域/場地)
         if (desc.includes("場地") || desc.includes("領域")) {
-            const match = desc.match(/(.+?(場地|領域))/);
+            const cleanDesc = desc
+                .replace("當場地為", "")
+                .replace("當領域為", "");
+            const match = cleanDesc.match(/(.+?(場地|領域))/);
             if (match)
                 return {
                     logic: LogicType.Terrain,

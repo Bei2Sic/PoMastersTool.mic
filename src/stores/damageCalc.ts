@@ -1,8 +1,12 @@
 // useDamageCalcStore.ts
 
+import {
+    CRITBUFF_STATUSES,
+    HINDRANCE_STATUSES,
+    POKEMON_TYPES,
+} from "@/constances/battle";
 import * as cond from "@/types/conditions"; // 導入上面的類型
 import { defineStore } from "pinia";
-import { ABNORMAL_STATUSES, HINDRANCE_STATUSES, STATS, POKEMON_TYPES, CRITBUFF_STATUSES } from "@/constances/battle";
 
 // 輔助函數：初始化 18 種屬性抵抗表 (全為 0)
 const initRebuffs = (): cond.TypeRebuffs => {
@@ -70,6 +74,8 @@ export const useDamageCalcStore = defineStore("damageCalc", {
                 spd: 0 as number,
                 spe: 0 as number,
             } as cond.PokemonStats,
+            themeType: "無" as cond.PokemonType,
+            themeTypeAdd: 0 as number,
             ranks: {
                 atk: 6 as cond.StatRank,
                 def: 6 as cond.StatRank,
@@ -88,7 +94,7 @@ export const useDamageCalcStore = defineStore("damageCalc", {
             syncBuff: 2 as number,
             currentHPPercent: 100 as number,
             // 異常狀態
-            abnormal: '无' as cond.AbnormalType,
+            abnormal: "无" as cond.AbnormalType,
             // 妨害狀態
             hindrance: initHindrances(),
         },
@@ -133,7 +139,7 @@ export const useDamageCalcStore = defineStore("damageCalc", {
         gaugeAcceleration: false,
 
         settings: {
-            scope: 1 as cond.TargetScope,
+            targetScope: 1 as cond.TargetScope,
             gauge: 6 as cond.GaugeValue,
             isCritical: true as boolean,
             isSuperEffective: false as boolean, // 效果絕佳强化
@@ -145,11 +151,18 @@ export const useDamageCalcStore = defineStore("damageCalc", {
         special: {
             isMega: false,
         },
+
+        config: {
+            physical: 0 as number,
+            special: 0 as number,
+            sync: 0 as number,
+        },
     }),
 
     getters: {},
 
     actions: {
+        // 更新斗阵等级
         updateBattleCircleLevel(
             region: cond.RegionType,
             level: cond.CircleLevel
@@ -161,6 +174,21 @@ export const useDamageCalcStore = defineStore("damageCalc", {
                 return;
             }
             this.battleCircles[region].level = level;
+        },
+
+        // 更新组队技能字段
+        updateThemeStats(themeStats: cond.PokemonStats) {
+            this.user.theme = themeStats;
+        },
+
+        // 更新组队特定属性
+        updateThemeType(type: cond.PokemonType) {
+            this.user.themeType = type;
+        },
+
+        // 更新组队特定属性
+        updateThemeTypeAdd(add: number) {
+            this.user.themeTypeAdd = add;
         },
     },
 });

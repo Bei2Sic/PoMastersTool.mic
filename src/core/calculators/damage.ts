@@ -1,4 +1,5 @@
 // core/calculator/DamageEngine.ts
+import { STATS } from "@/constances/battle";
 import {
     ATK_CIRCLE_MULTIPLIERS,
     DEF_CIRCLE_MULTIPLIERS,
@@ -12,6 +13,7 @@ import {
     SPEED_RANK_MULTIPLIERS,
     TOTAL_STAT_MOVE_MULTIPLIERS,
     TOTAL_STAT_SYNC_MULTIPLIERS,
+    TARGET_SCOPE_MULTIPLIERS,
 } from "@/constances/rate";
 import {
     getStatKeyByStatCnName,
@@ -35,7 +37,6 @@ import {
     PokemonType,
     RegionType,
 } from "@/types/conditions";
-import { ABNORMAL_STATUSES, HINDRANCE_STATUSES, STATS } from "@/constances/battle";
 import { DEFAULT_HANDLER, MoveSkillModel } from "@/types/moveModel";
 import { PassiveBoost, PassiveSkillModel } from "@/types/passiveModel";
 import { MoveBase } from "@/types/syncModel";
@@ -179,6 +180,29 @@ export class DamageEngine {
         }
     }
 
+    static resolveConfigBoosts(
+        scope: MoveScope,
+        category: number,
+        context: CalcEnvironment
+    ): number {
+        let value = 0;
+        switch (scope) {
+            case MoveScope.Sync:
+                const syncBoost = context.config.sync;
+                value = syncBoost;
+                return value;
+            case MoveScope.Move:
+                const moveBoost =
+                    category === 1
+                        ? context.config.physical
+                        : context.config.special;
+                value = moveBoost;
+                return value;
+            default:
+                return value;
+        }
+    }
+
     static resolveMoveMultiplier(
         move: MoveBase,
         moveSkill: MoveSkillModel,
@@ -201,7 +225,7 @@ export class DamageEngine {
 
         // 判断是否是 scaling类
         const isScaling = this.isScaling(moveSkill.condition.logic);
-        let value = moveSkill.boost;
+        let value = moveSkill?.boost || 200;
         if (isScaling) {
             const scalingValue = this.getSyncMoveScalingMultiplier(
                 moveSkill.condition,
@@ -319,12 +343,37 @@ export class DamageEngine {
 
         console.log(`擊中要害後:${boost}`);
 
+        // 目標
+        const scopeBoost =
+            TARGET_SCOPE_MULTIPLIERS[context.settings.targetScope];
+        boost *= scopeBoost;
+
+        console.log(`計算衰減後:${boost}`);
+
         // 气魄
         if (context.user.syncBuff != 0) {
             boost *= 1 + context.user.syncBuff * 0.5;
         }
         console.log(`气魄数:${context.user.syncBuff}`);
         console.log(`氣魄後:${boost}`);
+
+        // 爆擊狀態
+        if (scope === MoveScope.Sync) {
+            if (context.target.crtiBuffs["拍招爆傷"]) {
+                boost *= 1.5;
+            }
+        } else if (scope === MoveScope.Move) {
+            if (context.target.crtiBuffs["物理爆傷"] && move.category === 1) {
+                boost *= 1.5;
+            } else if (
+                context.target.crtiBuffs["特殊爆傷"] &&
+                move.category === 2
+            ) {
+                boost *= 1.5;
+            }
+        }
+
+        console.log(`爆擊狀態後:${boost}`);
 
         // 不用处理直接返回
         return boost;

@@ -5,6 +5,7 @@ import {
     BattleRanks,
     BerryNum,
     BoostRank,
+    CritBuffType,
     DamageFieldType,
     GaugeValue,
     HindranceType,
@@ -14,7 +15,6 @@ import {
     TerrainType,
     WeatherType,
     ZoneType,
-    CritBuffType,
 } from "@/types/conditions";
 
 export enum MoveScope {
@@ -100,6 +100,7 @@ export enum ExtraLogic {
     BurnUseless = "BurnUseless",
     NoDecay = "NoDecay", // 無衰減
     TypeShift = "TypeShift", //屬性替換
+    UseDef = "UseDef", //使用物防結算
 }
 
 export interface Condition {
@@ -115,19 +116,11 @@ export interface ThemeContext {
     // 標籤計數
     tagCounts: Record<string, number>;
     // 固定加成
-    flatBonuses: {
-        atk: number;
-        spa: number;
-        spe: number;
-        hp: number;
-    };
+    flatBonuses: PokemonStats;
     // 特定属性Tag
     tagType: PokemonType;
     // 特定属性加成
-    typeBonuses: {
-        atk: number;
-        spa: number;
-    };
+    tagAdd: number;
 }
 
 export interface ActiveMultiplier {
@@ -151,6 +144,9 @@ export interface CalcEnvironment {
         hpPercent: number; // 0-100
         gear: PokemonStats;
         ranks: BattleRanks;
+        theme: PokemonStats;
+        themeType: PokemonType;
+        themeTypeAdd: number;
         boosts: {
             physical: BoostRank;
             special: BoostRank;
@@ -175,6 +171,7 @@ export interface CalcEnvironment {
 
     settings: {
         gauge: GaugeValue;
+        targetScope: number;
         berry: BerryNum; //
         moveuse: number; // 針對 邪惡靈魂暗影球
         isCritical: boolean;
@@ -186,4 +183,10 @@ export interface CalcEnvironment {
     special: {
         isMega: boolean;
     };
+
+    config: {
+        physical: number;
+        special: number;
+        sync: number;
+    }
 }

@@ -545,15 +545,12 @@ const handleExRoleChange = () => {
     transform: scale(0.98);
 }
 
-
-/* 让筛选行占满父容器宽度，子项自动四等分 */
 .config-row {
     display: flex;
     inline-size: 100%;
     gap: 8px;
 }
 
-/* 每个筛选项占1/4宽度，同时设置最小宽度防止过窄 */
 .config-item {
     flex: 1;
     min-inline-size: 50px;
@@ -569,21 +566,17 @@ const handleExRoleChange = () => {
     text-align: center;
 }
 
-/* 4. 重新调整表单元素样式 */
 .level-input,
 .config-select {
     border: 1px solid #8cb3c9;
     border-radius: 8px;
     padding: 6px 6px;
-    /* 上下padding大一点，给内容足够空间 */
-    /* 去掉line-height: 26px，让文字自然居中 */
     background-color: #fff;
     font-size: 12px;
     inline-size: 100%;
     box-sizing: border-box;
     outline: none;
     appearance: none;
-    /* 调整下拉箭头位置，避免遮挡文字 */
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='%238cb3c9'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 8px center;

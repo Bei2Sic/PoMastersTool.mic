@@ -2,6 +2,10 @@
     <div class="root-container">
         <!-- 左侧石盘区域 -->
         <div class="left-panel">
+            <button v-show="isSingleView" class="floating-btn" @click="showMobilePanel = !showMobilePanel">
+                菜单
+            </button>
+
             <Grid v-model:bonusLevel="dynamicState.bonusLevel" :grid-data="finalGrid.gridData" :trainer="trainer"
                 :current-rarity="dynamicState.currentRarity" :bonus-level="dynamicState.bonusLevel"
                 :cost-orbs="finalGrid.costOrbs" :last-energy="finalGrid.lastEnergy"
@@ -19,17 +23,14 @@
             </div>
 
             <!-- 移动端：信息切换按钮（默认隐藏，移动端显示） -->
-            <button v-show="isSingleView" class="floating-btn" @click="showInfo = !showInfo">
+            <!-- <button v-show="isSingleView" class="floating-btn" @click="showInfo = !showInfo">
                 {{ '信息' }}
-            </button>
+            </button> -->
 
-            <div v-if="showInfo" class="mobile-info-modal" @click="showInfo = false">
+            <!-- <div v-if="showInfo" class="mobile-info-modal" @click="showInfo = false">
                 <div class="mobile-info-content" @click.stop>
-                    <!-- 关闭按钮 -->
                     <button class="mobile-info-close" @click="showInfo = false">×</button>
-                    <!-- 拍组名称标题栏 -->
                     <div class="mobile-info-title">{{ syncMethods.getSyncName() }}</div>
-                    <!-- 核心：Info组件（完整功能保留） -->
                     <Info :level-value="dynamicState.level" :current-rarity-value="dynamicState.currentRarity"
                         :potential-value="dynamicState.potential" :ex-role-enabled-value="dynamicState.exRoleEnabled"
                         :bonus-level="dynamicState.bonusLevel"
@@ -43,20 +44,25 @@
                         @update:exRoleEnabledValue="(val) => dynamicState.exRoleEnabled = val"
                         @update:selectedPokemonIndex="(val) => dynamicState.selectedPokemonIndex = val" />
                 </div>
-            </div>
+            </div> -->
         </div>
 
-        <div class="right-panel">
-            <div class="tab-bar">
-                <button class="tab-btn" :class="{ active: curTab === 'grid' }" @click="curTab = 'grid'">
-                    石盤一覽
-                </button>
-                <button class="tab-btn" :class="{ active: curTab === 'info' }" @click="curTab = 'info'">
-                    拍組信息
-                </button>
-                <button class="tab-btn" :class="{ active: curTab === 'calc' }" @click="curTab = 'calc'">
-                    傷害計算
-                </button>
+        <div class="right-panel" :class="{ 'mobile-show': showMobilePanel }">
+            <button v-if="isSingleView" class="mobile-panel-close" @click="showMobilePanel = false">
+                ×
+            </button>
+            <div class="tab-bar segmented-bar">
+                <div class="tab-inner">
+                    <button class="tab-btn" :class="{ active: curTab === 'grid' }" @click="curTab = 'grid'">
+                        石盤一覽
+                    </button>
+                    <button class="tab-btn" :class="{ active: curTab === 'info' }" @click="curTab = 'info'">
+                        拍組信息
+                    </button>
+                    <button class="tab-btn" :class="{ active: curTab === 'calc' }" @click="curTab = 'calc'">
+                        傷害計算
+                    </button>
+                </div>
             </div>
             <div class="pokemon-name">{{ syncMethods.getSyncName() }}</div>
             <div class="info-content">
@@ -166,8 +172,9 @@ const trainer = computed(() => {
 // 筛选拍组
 const showFilterModal = ref(false);
 // 设备移动端
-const showInfo = ref(false);
+// const showInfo = ref(false);
 const isSingleView = ref(window.innerWidth <= 900);
+const showMobilePanel = ref(false);
 // 信息切换页
 const curTab = ref('grid');
 
@@ -293,8 +300,7 @@ onUnmounted(() => {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 9999;
-    /* 确保在最上层 */
+    z-index: 20000 !important;
 }
 
 /* 弹窗内容容器 */
@@ -323,28 +329,78 @@ onUnmounted(() => {
     /* max-block-size: 880px; */
 }
 
-.tab-bar {
+.tab-bar.segmented-bar {
     display: flex;
-    block-size: 40px;
-    border-block-end: 1px solid #ddd;
+    align-items: center;
+    padding: 5px;
+    background-color: #f5f7fa;
+    /* 淺灰背景 */
+    border-block-end: 1px solid #e2e8f0;
+}
+
+/* 內部膠囊槽 */
+.tab-inner {
+    display: flex;
+    background-color: #e2e8f0;
+    /* 槽位顏色 */
+    padding: 4px;
+    border-radius: 8px;
+    /* 圓角 */
+    flex: 1;
+    /* 佔滿剩餘空間 */
+    margin-inline-end: 10px;
+    /* 給關閉按鈕留空隙 */
 }
 
 .tab-btn {
     flex: 1;
     border: none;
-    background-color: #f8f9fa;
+    background: transparent;
+    padding: 6px 12px;
     font-size: 14px;
+    font-weight: 600;
+    color: #64748b;
+    /* 未選中文字顏色 */
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+/* 選中狀態：變成白色卡片，浮起來 */
+.tab-btn.active {
+    background-color: #fff;
+    color: #568dd1;
+    /* 主題藍色 */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    /* 柔和陰影 */
+}
+
+.tab-btn:hover:not(.active) {
+    color: #334155;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* 獨立的關閉按鈕樣式 */
+.close-icon-btn {
+    inline-size: 32px;
+    block-size: 32px;
+    border-radius: 50%;
+    border: none;
+    background-color: #e2e8f0;
+    color: #64748b;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     transition: all 0.2s;
 }
 
-.tab-btn.active {
-    background-color: #568dd1;
-    color: white;
-}
-
-.tab-btn:hover:not(.active) {
-    background-color: #eee;
+.close-icon-btn:hover {
+    background-color: #cbd5e1;
+    color: #ef4444;
+    /* 紅色 */
 }
 
 .pokemon-name {
@@ -355,7 +411,7 @@ onUnmounted(() => {
     border-block-end: 1px solid #ddd;
     font-size: 16px;
     font-weight: bold;
-    color: white;
+    color: black;
 }
 
 .info-content {
@@ -370,7 +426,7 @@ onUnmounted(() => {
     gap: 1vh;
     /* 间距随视口缩放 */
     overflow: hidden;
-    background-image: url('../assets/images/bg2.png');
+    background-image: url('../assets/images/bg1.png');
     align-self: center;
 }
 
@@ -385,11 +441,32 @@ onUnmounted(() => {
 }
 
 .grid-panel {
-    inline-size: 100%;
-    /* min-block-size: 100%; */
-    /* 高度上限=视口高度的70%，缩放时到顶就停 */
-    overflow: auto;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #568dd1 #f0f4f8;
 }
+
+/* Chrome, Safari, Edge 專用樣式 (Webkit 內核) */
+.grid-panel::-webkit-scrollbar {
+    inline-size: 8px;
+    block-size: 8px;
+}
+
+.grid-panel::-webkit-scrollbar-track {
+    background-color: #f0f4f8;
+    border-radius: 4px;
+}
+
+.grid-panel::-webkit-scrollbar-thumb {
+    background-color: #568dd1;
+    border-radius: 4px;
+    border: 2px solid #f0f4f8;
+}
+
+.grid-panel::-webkit-scrollbar-thumb:hover {
+    background-color: #4a7bb3;
+}
+
 
 .selected-info {
     /* flex: 1; */
@@ -712,13 +789,13 @@ onUnmounted(() => {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    block-size: 100%;
     padding: 20px;
     text-align: center;
 }
 
 .open-calc-btn {
-    margin-top: 15px;
+    margin-block-start: 15px;
     padding: 10px 20px;
     background-color: #009688;
     color: white;
@@ -735,43 +812,35 @@ onUnmounted(() => {
 @media (max-width: 1000px) {
     .left-panel {
         inline-size: 100vw !important;
-        /* 移动端占满屏幕 */
         border-inline-end: none;
     }
 
-    /* 悬浮按钮基础样式 */
+    /* 悬浮按钮样式 (保持你原有的，稍微改一下位置或文字) */
     .floating-btn {
         position: fixed;
-        /* 固定定位，脱离文档流 */
         inset-inline-end: 20px;
         inset-block-end: 20px;
         inline-size: 50px;
         block-size: 50px;
         border-radius: 50%;
-        background-image: url('../assets/images/bg2.png');
-        /* 主题色 */
         color: black;
         border: none;
-        font-size: 15px;
+        font-size: 14px;
+        /* 字体稍微改小一点以放下“菜单” */
         font-weight: bold;
         cursor: pointer;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        /* 阴影增强悬浮感 */
         display: flex;
         align-items: center;
         justify-content: center;
         z-index: 999;
-        /* 保证在其他元素上方 */
-        transition: background-color 0.2s;
-        /*  hover动画 */
+        transition: transform 0.2s;
     }
 
-    /*  hover效果 */
-    .floating-btn:hover {
-        background-color: #337ECC;
+    .floating-btn:active {
+        transform: scale(0.9);
     }
 
-    /* 右侧信息区域：默认隐藏（平移出屏幕），显示时占满屏幕 */
     .right-panel {
         position: fixed;
         inset-block-start: 0;
@@ -779,14 +848,39 @@ onUnmounted(() => {
         inline-size: 100vw !important;
         block-size: 100vh !important;
         z-index: 10000;
+        background-color: white;
+        background-image: url('../assets/images/bg3.png');
         transform: translateX(100%);
-        /* 默认隐藏在右侧 */
-        background-color: #fff;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
     }
 
     .right-panel.mobile-show {
         transform: translateX(0);
-        /* 显示时平移到屏幕内 */
+    }
+
+    .mobile-panel-close {
+        position: absolute;
+        inset-block-start: 5px;
+        inset-inline-end: 10px;
+        inline-size: 30px;
+        block-size: 30px;
+        background: rgba(0, 0, 0, 0.1);
+        border: none;
+        border-radius: 50%;
+        color: #333;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 10001;
+        /* 确保在 Tab 之上 */
+    }
+
+    /* 稍微调整 Tab Bar 给关闭按钮留位置 */
+    .tab-bar {
+        padding-inline-end: 40px;
     }
 
     /* 筛选弹窗适配 */

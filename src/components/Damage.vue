@@ -1,17 +1,17 @@
 <script setup lang="ts">
 import { useDamageCalculator } from "@/composables/useDamageCalculator";
-import { useDamageCalcStore } from "@/stores/damageCalc";
 import {
+    POKEMON_TYPES,
     TERRAIN_TYPES,
     WEATHER_TYPES,
-    ZONE_TYPES,
-    POKEMON_TYPES
+    ZONE_TYPES
 } from "@/constances/battle";
+import { AbnormalMap, CrtibuffsMap, HindranceMap, StatMap, TypeMap, WeatherMap } from "@/constances/map";
+import { getTypeKeyByCnNameOrSpecialName } from "@/core/exporter/map";
+import { useDamageCalcStore } from "@/stores/damageCalc";
+import { RegionType } from "@/types/conditions";
 import type { Sync } from "@/types/syncModel";
 import { computed } from "vue";
-import { StatMap, AbnormalMap, HindranceMap, TypeMap, WeatherMap, CrtibuffsMap } from "@/constances/map";
-import { RegionType } from "@/types/conditions";
-import { getTypeKeyByCnNameOrSpecialName } from "@/core/exporter/map"
 
 // --- Props & Emits ---
 const props = defineProps<{
@@ -30,13 +30,13 @@ const teamSyncsRef = props.teamSyncs
     ? props.teamSyncs.map((s) => computed(() => s))
     : [];
 
-const { finalDamageResult } = useDamageCalculator(targetSyncRef, teamSyncsRef);
+const { finalDamageResult, themeSnapshot } = useDamageCalculator(targetSyncRef, teamSyncsRef);
 
 // --- Constants ---
 const weatherOptions = ["無", ...WEATHER_TYPES] as const;
 const terrainOptions = ["無", ...TERRAIN_TYPES] as const;
 const zoneOptions = ["無", ...ZONE_TYPES] as const;
-const effectiveTypeOptions = POKEMON_TYPES.filter(t => t !== '無');
+const typeOptions = POKEMON_TYPES;
 
 const orderedStats = Object.entries(StatMap)
     .sort(([a], [b]) => Number(a) - Number(b))
@@ -44,63 +44,35 @@ const orderedStats = Object.entries(StatMap)
 
 const orderedTypes = POKEMON_TYPES.filter(t => t !== '無');
 
-
 // --- Icon Helpers ---
-const getUiIcon = (name: string) => {
-    return new URL(`../assets/images/icon_${name}.png`, import.meta.url).href;
-}
+const getUiIcon = (name: string) => new URL(`../assets/images/icon_${name}.png`, import.meta.url).href;
 
 const getIcon = (key: string, target: 'user' | 'target') => {
     if (!key) return "";
     const lowerKey = key.toLowerCase();
     const field = target === 'user' ? '' : 't_';
-    const name = `stat_${field}${lowerKey}`;
-    return getUiIcon(name);
+    return getUiIcon(`stat_${field}${lowerKey}`);
 };
 
-const getStatusIcon = (key: string, status: 'abnormal' | 'hindrance') => {
-    if (!key) return "";
-    const name = `${status}_${key.toLowerCase()}`;
-    return getUiIcon(name);
-}
-
-// 增强圖標
-const getBoostIcon = (type: 'physical' | 'special' | 'sync') => {
-    const name = `boost_${type}`;
-    return getUiIcon(name);
-}
-
-// 鬥陣圖標
-const getCirclesIcon = (type: 'atk' | 'spa' | 'hp') => {
-    const name = `stat_${type}`;
-    return getUiIcon(name);
-};
-
-// 爆伤图标 
-const getCritbuffIcon = (key: string) => {
-    if (!key) return "";
-    const name = `break_${key.toLowerCase()}`;
-    return getUiIcon(name);
-}
-
+const getStatusIcon = (key: string, status: 'abnormal' | 'hindrance') => key ? getUiIcon(`${status}_${key.toLowerCase()}`) : "";
+const getBoostIcon = (type: 'physical' | 'special' | 'sync') => getUiIcon(`boost_${type}`);
+const getCirclesIcon = (type: 'atk' | 'spa' | 'hp') => getUiIcon(`stat_${type}`);
+const getCritbuffIcon = (key: string) => key ? getUiIcon(`break_${key.toLowerCase()}`) : "";
 const getRebuffIcon = (typeName: string) => {
     const entry = Object.values(TypeMap).find(t => t.cnName === typeName);
     const key = entry ? entry.key.toLowerCase() : 'normal';
     return new URL(`../assets/images/type_${key}.png`, import.meta.url).href;
 };
-
 const getEnvIcon = (category: 'weather' | 'terrain' | 'zone', name: string) => {
     if (name === '無') return new URL(`../assets/images/b_move_chain.png`, import.meta.url).href;
-    let filename = '';
     if (category === 'weather') {
         const entry = Object.values(WeatherMap).find(t => name.includes(t.cnName));
         const key = entry ? entry.key.toLowerCase() : 'sunny';
-        filename = `icon_weather_${key}`;
+        return new URL(`../assets/images/icon_weather_${key}.png`, import.meta.url).href;
     } else {
         const typeKey = getTypeKeyByCnNameOrSpecialName(name);
-        filename = `move_${typeKey}`;
+        return new URL(`../assets/images/move_${typeKey}.png`, import.meta.url).href;
     }
-    return new URL(`../assets/images/${filename}.png`, import.meta.url).href;
 };
 
 // --- Other Helpers ---
@@ -111,6 +83,16 @@ const getHeaderColor = (key: string) => {
         acc: "bg-gray-50", eva: "bg-gray-50", ct: "bg-red-50",
     };
     return colors[key] || "bg-gray-50";
+};
+
+const getTypeBgClass = (typeIndex: number) => {
+    const key = TypeMap[typeIndex]?.key.toLowerCase() || 'normal';
+    return `bg_${key}`;
+};
+
+const getBoostTooltip = (res: any) => {
+    if (!res.boostDetails || res.boostDetails.length === 0) return "无倍率加成";
+    return res.boostDetails.map((b: string) => `• ${b}`).join('\n');
 };
 
 const hasBaseStat = (key: string) => !["acc", "eva", "ct"].includes(key);
@@ -130,6 +112,16 @@ const getRegionClass = (region: string) => {
         "阿羅拉": "region-alola", "伽勒爾": "region-galar", "帕底亞": "region-paldea", "帕希歐": "region-pasio",
     };
     return map[region] || "region-default";
+};
+
+const getRegionLevelOptions = (region: string) => {
+    const count = themeSnapshot.value?.tagCounts[region] || 0;
+    const minLevel = count > 0 ? 1 : 0;
+    const levels = [];
+    for (let i = minLevel; i <= 3; i++) {
+        levels.push(i);
+    }
+    return levels;
 };
 
 // --- Handlers ---
@@ -156,20 +148,21 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
         <div class="modal-window">
 
             <div class="window-header">
-                <h2>伤害计算器</h2>
+                <h2>伤害计算</h2>
                 <button class="close-btn" @click="emit('close')">×</button>
             </div>
 
             <div class="window-content">
 
                 <div class="section-group">
-                    <div class="section-title">1. 我方状态 (User)</div>
+                    <div class="section-title">我方状态</div>
                     <div class="panel-card">
                         <div class="stat-table-container">
                             <div v-for="stat in orderedStats" :key="stat.key" class="stat-col">
                                 <div class="stat-cell header-cell" :class="getHeaderColor(stat.key)">
                                     <img :src="getIcon(stat.key, 'user')" :alt="stat.cnName" class="stat-icon" />
                                 </div>
+
                                 <div class="stat-cell">
                                     <template v-if="isHP(stat.key)">
                                         <input type="number" v-model.number="store.user.currentHPPercent"
@@ -181,23 +174,30 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
                                             + r : r }}</option>
                                     </select>
                                 </div>
-                                <div class="stat-cell">
-                                    <template v-if="isHP(stat.key)">
+
+                                <div class="stat-cell double-cell">
+                                    <template v-if="isHP(stat.key) || hasBaseStat(stat.key)">
                                         <input type="number" v-model.number="store.user.gear[stat.key]"
-                                            class="val-input" placeholder="0">
+                                            class="val-input half-input top-input" placeholder="0" title="裝備加成">
+                                        <input type="number" v-model.number="store.user.theme[stat.key]"
+                                            class="val-input half-input bottom-input text-blue-600" placeholder="0"
+                                            title="組隊技能">
                                     </template>
-                                    <template v-else-if="hasBaseStat(stat.key)">
-                                        <input type="number" v-model.number="store.user.gear[stat.key]"
-                                            class="val-input" placeholder="0">
-                                    </template>
+
+                                    <div v-else-if="stat.key === 'acc'" class="stacked-label">
+                                        <span class="row-label">裝備</span>
+                                        <div class="label-divider"></div>
+                                        <span class="row-label text-blue-600">隊伍技能</span>
+                                    </div>
                                     <div v-else class="placeholder">-</div>
                                 </div>
+
                             </div>
                         </div>
 
                         <div class="status-bar">
                             <div class="status-group">
-                                <span class="status-label">異常</span>
+                                <span class="common-label">異常</span>
                                 <div class="icon-row">
                                     <button v-for="(item, idx) in Object.values(AbnormalMap)" :key="idx"
                                         class="icon-btn" :class="{ active: isAbnormalActive('user', item) }"
@@ -207,7 +207,7 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
                                 </div>
                             </div>
                             <div class="status-group">
-                                <span class="status-label">妨害</span>
+                                <span class="common-label">妨害</span>
                                 <div class="icon-row">
                                     <button v-for="(item, idx) in Object.values(HindranceMap)" :key="idx"
                                         class="icon-btn" :class="{ active: store.user.hindrance[item.cnName] }"
@@ -216,17 +216,15 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
                                     </button>
                                 </div>
                             </div>
-
                             <div class="status-group">
-                                <span class="status-label">加速</span>
+                                <span class="common-label">計量槽加速場地</span>
                                 <button class="icon-btn" :class="{ active: store.gaugeAcceleration }"
                                     @click="store.gaugeAcceleration = !store.gaugeAcceleration" title="计量槽加速">
                                     <img :src="getUiIcon('acceleration')" />
                                 </button>
                             </div>
-
                             <div class="status-group">
-                                <span class="status-label">氣魄</span>
+                                <span class="common-label">氣魄</span>
                                 <input type="number" v-model.number="store.user.syncBuff" class="sync-input" />
                             </div>
                         </div>
@@ -234,7 +232,7 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
                 </div>
 
                 <div class="section-group">
-                    <div class="section-title">目标状态 (Target)</div>
+                    <div class="section-title">目标状态</div>
                     <div class="panel-card">
                         <div class="stat-table-container bg-red-50/20">
                             <div v-for="stat in orderedStats" :key="'t-' + stat.key" class="stat-col">
@@ -267,7 +265,7 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
 
                         <div class="status-bar">
                             <div class="status-group">
-                                <span class="status-label">異常</span>
+                                <span class="common-label">異常</span>
                                 <div class="icon-row">
                                     <button v-for="(item, idx) in Object.values(AbnormalMap)" :key="idx"
                                         class="icon-btn" :class="{ active: isAbnormalActive('target', item) }"
@@ -277,7 +275,7 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
                                 </div>
                             </div>
                             <div class="status-group">
-                                <span class="status-label">妨害</span>
+                                <span class="common-label">妨害</span>
                                 <div class="icon-row">
                                     <button v-for="(item, idx) in Object.values(HindranceMap)" :key="idx"
                                         class="icon-btn" :class="{ active: store.target.hindrance[item.cnName] }"
@@ -286,27 +284,25 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
                                     </button>
                                 </div>
                             </div>
-
                             <div class="status-group">
-                                <span class="status-label">爆傷</span>
+                                <span class="common-label">爆傷</span>
                                 <div class="icon-row">
                                     <button v-for="(item, idx) in Object.values(CrtibuffsMap)" :key="idx"
                                         class="icon-btn" :class="{ active: store.target.critBuffs[item.cnName] }"
                                         @click="store.target.critBuffs[item.cnName] = !store.target.critBuffs[item.cnName]"
-                                        :title=item.cnName>
+                                        :title="item.cnName">
                                         <img :src="getCritbuffIcon(item.key)" />
                                     </button>
                                 </div>
                             </div>
-
                             <div class="status-group">
-                                <span class="status-label">氣魄</span>
+                                <span class="common-label">氣魄</span>
                                 <input type="number" v-model.number="store.target.syncBuff" class="sync-input" />
                             </div>
                         </div>
 
                         <div class="rebuff-section">
-                            <div class="section-label">屬性抵抗 (Rebuff)</div>
+                            <div class="section-label">屬性抵抗</div>
                             <div class="rebuff-scroll-container">
                                 <div v-for="type in orderedTypes" :key="type" class="rebuff-col">
                                     <div class="stat-cell header-cell">
@@ -324,12 +320,11 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
 
                 <div class="section-group">
-                    <div class="section-title">3. 环境配置</div>
+                    <div class="section-title">环境配置</div>
 
                     <div class="panel-card mb-4">
 
@@ -376,7 +371,7 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
                         </div>
 
                         <div class="boost-section-wrapper">
-                            <div class="section-label">威力增强 (Boosts)</div>
+                            <div class="section-label">威力增强</div>
                             <div class="boost-section">
                                 <div class="boost-group">
                                     <div class="boost-icon"><img :src="getBoostIcon('physical')" title="物理威力增强" /></div>
@@ -400,36 +395,29 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
                         </div>
 
                         <div class="battle-settings-bar">
-
                             <div class="bs-row full-width-row">
                                 <select v-model="store.settings.effectiveType" class="type-select">
-                                    <option value="無">無</option>
-                                    <option v-for="t in effectiveTypeOptions" :key="t" :value="t">{{ t }}</option>
+                                    <option v-for="t in typeOptions" :key="t" :value="t">{{ t }}</option>
                                 </select>
-
                                 <button class="text-toggle-btn" :class="{ active: store.settings.isCritical }"
                                     @click="store.settings.isCritical = !store.settings.isCritical">
                                     要害
                                 </button>
-
                                 <button class="text-toggle-btn" :class="{ active: store.settings.isSuperEffective }"
                                     @click="store.settings.isSuperEffective = !store.settings.isSuperEffective">
                                     效果絕佳↑
                                 </button>
                             </div>
-
                             <div class="bs-row full-width-row space-between">
-
                                 <div class="control-group">
                                     <span class="common-label">目標</span>
                                     <div class="segment-control">
-                                        <button v-for="n in 3" :key="n" :class="{ active: store.settings.scope === n }"
-                                            @click="store.settings.scope = n as any">
+                                        <button v-for="n in 3" :key="n" :class="{ active: store.settings.targetScope === n }"
+                                            @click="store.settings.targetScope = n as any">
                                             {{ n }}
                                         </button>
                                     </div>
                                 </div>
-
                                 <div class="control-group">
                                     <span class="common-label">氣槽</span>
                                     <div class="gauge-control">
@@ -439,10 +427,40 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
                                         </button>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
 
+                    </div>
+
+                    <div class="section-group">
+                        <div class="section-title">其他配置</div>
+                        <div class="panel-card other-bar">
+                            <div class="other-item">
+                                <label>物理+</label>
+                                <input type="number" v-model.number="store.config.physical" class="other-input"
+                                    placeholder="0">
+                            </div>
+                            <div class="other-item">
+                                <label>特殊+</label>
+                                <input type="number" v-model.number="store.config.special" class="other-input"
+                                    placeholder="0">
+                            </div>
+                            <div class="other-item">
+                                <label>拍招+</label>
+                                <input type="number" v-model.number="store.config.sync" class="other-input"
+                                    placeholder="0">
+                            </div>
+                            <div class="other-item">
+                                <label>組隊+</label>
+                                <div class="row-inputs">
+                                    <select v-model="store.user.themeType" class="type-select-small">
+                                        <option v-for="t in typeOptions" :key="t" :value="t">{{ t }}</option>
+                                    </select>
+                                    <input type="number" v-model.number="store.user.themeTypeAdd" class="other-input"
+                                        placeholder="0">
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="circle-scroll-wrapper">
@@ -465,62 +483,182 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
                                         <img :src="getCirclesIcon('hp')" alt="防禦" />
                                     </button>
                                 </div>
-                                <div class="circle-level-display">Lv. {{ data.level }}</div>
+                                <div class="circle-level-display">
+                                    Lv.
+                                    <select v-model.number="data.level" class="level-select">
+                                        <option v-for="lvl in getRegionLevelOptions(region as string)" :key="lvl"
+                                            :value="lvl">
+                                            {{ lvl }}
+                                        </option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="section-group">
-                    <div class="section-title">4. 计算结果</div>
+                    <div class="section-title">计算结果</div>
                     <div v-if="!finalDamageResult || finalDamageResult.length === 0" class="empty-tip">
                         暂无数据，请检查拍组数据
                     </div>
-                    <div v-else>
-                        <div v-for="(formResult, idx) in finalDamageResult" :key="idx" class="result-card">
-                            <div class="form-name">{{ formResult.formName }}</div>
-                            <table class="result-table">
-                                <thead>
-                                    <tr>
-                                        <th style="width: 35%">招式</th>
-                                        <th>类型</th>
-                                        <th>威力</th>
-                                        <th>伤害区间</th>
-                                        <th>倍率</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <template v-for="(res, mIdx) in formResult?.moves" :key="'move-'+mIdx">
-                                        <tr v-if="res">
-                                            <td class="move-name">{{ res.move.name }}<span class="sub-text">{{
-                                                res.move.type }}</span></td>
-                                            <td><span class="tag"
-                                                    :class="res.move.category === 1 ? 'tag-phy' : 'tag-sp'">{{
-                                                        res.move.category === 1 ? '物' : '特' }}</span></td>
-                                            <td>{{ res.movePower }}</td>
-                                            <td class="damage-val">{{ Math.min(...res.moveDamage) }} ~ {{
-                                                Math.max(...res.moveDamage) }}</td>
-                                            <td class="details">
-                                                <div>E:x{{ res.envBoost / 100 }}</div>
-                                                <div>M:x{{ res.moveBoost / 100 }}</div>
-                                            </td>
-                                        </tr>
-                                    </template>
-                                    <tr v-if="formResult.syncMove" class="row-sync">
-                                        <td class="move-name">[拍] {{ formResult.syncMove.move.name }}</td>
-                                        <td><span class="tag"
-                                                :class="formResult.syncMove.move.category === 1 ? 'tag-phy' : 'tag-sp'">{{
-                                                    formResult.syncMove.move.category === 1 ? '物' : '特' }}</span></td>
-                                        <td>{{ formResult.syncMove.movePower }}</td>
-                                        <td class="damage-val sync-val">{{ Math.min(...formResult.syncMove.moveDamage)
-                                            }} ~ {{
-                                                Math.max(...formResult.syncMove.moveDamage) }}</td>
-                                        <td class="details">
-                                            <div>氣: {{ store.user.syncBuff }}</div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                    <div v-else class="result-container">
+                        <div v-for="(formResult, idx) in finalDamageResult" :key="idx" class="form-block">
+                            <div class="form-title">{{ formResult.formName }}</div>
+                            <div class="move-list">
+
+                                <template v-for="(res, mIdx) in formResult?.moves" :key="'move-'+mIdx">
+                                    <div v-if="res" class="move-card" :class="getTypeBgClass(res.move.type)">
+                                        <div class="move-header">
+                                            <div class="header-content-left relative group">
+                                                <div class="move-name-row">
+                                                    <span class="move-name">{{ res.move.name }}</span>
+                                                    <span class="power-badge">威力 {{ res.movePower }}</span>
+                                                </div>
+
+                                                <div class="custom-tooltip"
+                                                    :class="mIdx < 2 ? 'tooltip-down' : 'tooltip-up'">
+                                                    <div class="tooltip-title">倍率加成</div>
+                                                    <div class="tooltip-content"
+                                                        v-html="getBoostTooltip(res).replace(/\n/g, '<br/>')"></div>
+                                                    <div class="tooltip-footer">
+                                                        <div>环境倍率: x{{ (res.envBoost / 100).toFixed(2) }}</div>
+                                                        <div>招式倍率: x{{ (res.moveBoost / 100).toFixed(2) }}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="header-content-right">
+                                                <span class="stat-simple-badge">{{ res.userStat }} / {{
+                                                    res.targetStat }}</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="damage-text-area">
+                                            <template v-for="(dmg, i) in res.moveDamage" :key="i">
+                                                <span class="dmg-num">
+                                                    {{ dmg }}
+                                                </span>
+                                                <span v-if="i < res.moveDamage.length - 1" class="separator">, </span>
+                                            </template>
+                                        </div>
+                                    </div>
+                                </template>
+
+                                <div v-if="formResult.teraMove" class="move-card sync-card"
+                                    :class="getTypeBgClass(formResult.teraMove?.move.type)">
+                                    <div class="move-header">
+                                        <div class="header-content-left relative group">
+                                            <div class="move-name-row">
+                                                <span class="move-name">{{ formResult.teraMove?.move.name
+                                                }}</span>
+                                                <span class="power-badge">威力 {{ formResult.teraMove?.movePower
+                                                }}</span>
+                                            </div>
+
+                                            <div class="custom-tooltip tooltip-up">
+                                                <div class="tooltip-title">倍率加成</div>
+                                                <div class="tooltip-content"
+                                                    v-html="getBoostTooltip(formResult.teraMove).replace(/\n/g, '<br/>')">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="header-content-right">
+                                            <span class="stat-simple-badge">{{ formResult.teraMove?.userStat }} /
+                                                {{ formResult.teraMove?.targetStat }}</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="damage-text-area">
+                                        <template v-for="(dmg, i) in formResult.teraMove?.moveDamage" :key="i">
+                                            <span class="dmg-num">
+                                                {{ dmg }}
+                                            </span>
+                                            <span v-if="i < formResult.teraMove?.moveDamage.length - 1"
+                                                class="separator">, </span>
+                                        </template>
+                                    </div>
+
+                                </div>
+
+                                <template v-for="(res, mIdx) in formResult?.maxMoves" :key="'maxMove-'+mIdx">
+                                    <div v-if="res" class="move-card" :class="getTypeBgClass(res.move.type)">
+                                        <div class="move-header">
+                                            <div class="header-content-left relative group">
+                                                <div class="move-name-row">
+                                                    <span class="move-name">{{ res.move.name }}</span>
+                                                    <span class="power-badge">威力 {{ res.movePower }}</span>
+                                                </div>
+
+                                                <div class="custom-tooltip"
+                                                    :class="mIdx < 2 ? 'tooltip-down' : 'tooltip-up'">
+                                                    <div class="tooltip-title">倍率加成</div>
+                                                    <div class="tooltip-content"
+                                                        v-html="getBoostTooltip(res).replace(/\n/g, '<br/>')"></div>
+                                                    <div class="tooltip-footer">
+                                                        <div>环境倍率: x{{ (res.envBoost / 100).toFixed(2) }}</div>
+                                                        <div>招式倍率: x{{ (res.moveBoost / 100).toFixed(2) }}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="header-content-right">
+                                                <span class="stat-simple-badge">{{ res.userStat }} / {{
+                                                    res.targetStat }}</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="damage-text-area">
+                                            <template v-for="(dmg, i) in res.moveDamage" :key="i">
+                                                <span class="dmg-num">
+                                                    {{ dmg }}
+                                                </span>
+                                                <span v-if="i < res.moveDamage.length - 1" class="separator">, </span>
+                                            </template>
+                                        </div>
+
+                                    </div>
+                                </template>
+
+                                <div v-if="formResult.syncMove" class="move-card sync-card"
+                                    :class="getTypeBgClass(formResult.syncMove.move.type)">
+                                    <div class="move-header">
+                                        <div class="header-content-left relative group">
+                                            <div class="move-name-row">
+                                                <span class="move-name text-lg">{{ formResult.syncMove.move.name
+                                                }}</span>
+                                                <span class="power-badge">威力 {{ formResult.syncMove.movePower
+                                                }}</span>
+                                            </div>
+
+                                            <div class="custom-tooltip tooltip-up">
+                                                <div class="tooltip-title">倍率加成</div>
+                                                <div class="tooltip-content"
+                                                    v-html="getBoostTooltip(formResult.syncMove).replace(/\n/g, '<br/>')">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="header-content-right">
+                                            <span class="stat-simple-badge">{{ formResult.syncMove.userStat }} /
+                                                {{
+                                                    formResult.syncMove.targetStat }}</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="damage-text-area">
+                                        <template v-for="(dmg, i) in formResult.syncMove.moveDamage" :key="i">
+                                            <span class="dmg-num">
+                                                {{ dmg }}
+                                            </span>
+                                            <span v-if="i < formResult.syncMove.moveDamage.length - 1"
+                                                class="separator">, </span>
+                                        </template>
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -532,7 +670,6 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
 </template>
 
 <style scoped>
-/* Basic Styles (Same as before) */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -584,7 +721,7 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
     flex: 1;
     overflow-y: auto;
     padding: 20px;
-    background: #f2f2f2;
+    background-image: url('../assets/images/bg2.png');
 }
 
 .window-footer {
@@ -608,7 +745,7 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
 }
 
 .panel-card {
-    background: #f8fcfd;
+    background-image: url('../assets/images/bg3.png');
     padding: 15px;
     border-radius: 6px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
@@ -726,6 +863,54 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
 
 .text-green-600 {
     color: #16a34a;
+}
+
+.text-blue-600 {
+    color: #2563eb;
+}
+
+/* ✨ Double Height Cell & Merged Inputs */
+.double-cell {
+    height: 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.half-input {
+    height: 32px;
+    width: 100%;
+    border: none;
+    font-size: 0.85rem;
+}
+
+.top-input {
+    border-bottom: 1px dashed #eee;
+    color: #444;
+}
+
+.bottom-input {}
+
+.stacked-label {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    align-items: center;
+    width: 100%;
+}
+
+.label-divider {
+    width: 80%;
+    height: 1px;
+    background: #eee;
+}
+
+.row-label {
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #666;
 }
 
 /* Status Bar */
@@ -860,6 +1045,7 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
     display: flex;
     align-items: center;
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 .full-width-row {
@@ -964,7 +1150,7 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
 }
 
 .section-label {
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     color: black;
     font-weight: bold;
     margin-bottom: 7px;
@@ -1003,7 +1189,7 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
     background: #fafafa;
 }
 
-/* Environment (Icons + EX) */
+/* Environment Row */
 .env-row-icons {
     display: flex;
     flex-direction: column;
@@ -1092,7 +1278,7 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
     color: white;
 }
 
-/* Circles & Results */
+/* Circles */
 .circle-scroll-wrapper {
     background: white;
     padding: 10px;
@@ -1176,6 +1362,15 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
     color: #444;
 }
 
+.level-select {
+    border: none;
+    background: transparent;
+    font-weight: bold;
+    color: #444;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
 [class*="region-"] {
     color: white;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
@@ -1225,76 +1420,6 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
     background: #999;
 }
 
-/* ... (Results Table Keep) ... */
-.result-card {
-    background: white;
-    margin-bottom: 15px;
-    border-radius: 6px;
-    overflow: hidden;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-.form-name {
-    background: #444;
-    color: white;
-    padding: 5px 15px;
-    font-weight: bold;
-    font-size: 0.85rem;
-}
-
-.result-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.85rem;
-}
-
-.result-table th {
-    background: #eee;
-    padding: 6px;
-    text-align: left;
-    color: #555;
-}
-
-.result-table td {
-    padding: 6px;
-    border-bottom: 1px solid #f0f0f0;
-}
-
-.tag {
-    padding: 1px 4px;
-    border-radius: 3px;
-    font-size: 0.7rem;
-}
-
-.tag-phy {
-    background: #ffe0b2;
-    color: #e65100;
-}
-
-.tag-sp {
-    background: #bbdefb;
-    color: #0d47a1;
-}
-
-.damage-val {
-    font-family: monospace;
-    font-weight: bold;
-    color: #d32f2f;
-}
-
-.sync-val {
-    font-size: 1rem;
-}
-
-.row-sync {
-    background: #fffde7;
-}
-
-.details {
-    font-size: 0.7rem;
-    color: #777;
-}
-
 .btn {
     padding: 6px 16px;
     border-radius: 4px;
@@ -1320,5 +1445,286 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
 ::-webkit-scrollbar-thumb {
     background: #ccc;
     border-radius: 3px;
+}
+
+/* 4. Result Section Styles */
+.result-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-block {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: white;
+    margin-bottom: 10px;
+}
+
+.form-title {
+    background: #444;
+    color: white;
+    padding: 6px 12px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    border-radius: 8px 8px 0 0;
+}
+
+.move-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.move-card {
+    border-bottom: 1px solid #eee;
+    position: relative;
+    z-index: 1;
+}
+
+.move-card:hover {
+    z-index: 50;
+}
+
+/* Fix Tooltip overlap */
+.move-card:last-child {
+    border-bottom: none;
+    border-radius: 0 0 8px 8px;
+}
+
+/* Move Header: Dark Overlay using pseudo-element */
+.move-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    position: relative;
+    z-index: 10;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.move-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.25);
+    z-index: -1;
+}
+
+/* Left Content */
+.header-content-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    z-index: 20;
+}
+
+/* Right Content */
+.header-content-right {
+    margin-left: auto;
+    position: relative;
+    z-index: 20;
+}
+
+.move-name {
+    font-weight: bold;
+    font-size: clamp(0.8rem, 2.5vw, 0.95rem);
+    color: white;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.power-badge {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: clamp(0.7rem, 2.5vw, 0.75rem);
+    font-weight: bold;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    display: inline-block;
+    margin-left: 6px;
+}
+
+.stat-simple-badge {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: clamp(0.7rem, 2.5vw, 0.75rem);
+    font-weight: bold;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Damage Rolls: Light Overlay */
+.damage-text-area {
+    padding: 8px 12px;
+    font-size: clamp(0.75rem, 2.5vw, 0.95rem);
+    /* 字體稍大一點點 */
+    /* font-family: "Roboto Mono", monospace; */
+    /* 等寬字體 */
+    font-weight: 800;
+    /* 加粗字體 */
+    line-height: 1.6;
+    background: rgba(255, 255, 255, 0.15);
+    color: black;
+    /* text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6); */
+
+    position: relative;
+    z-index: 1;
+    word-break: break-word;
+    border-radius: 4px;
+    /* 稍微加點圓角更柔和 */
+}
+
+/* 分隔符 (逗號) */
+.separator {
+    color: rgba(0, 0, 0, 0.7);
+    /* 逗號稍微淡一點 */
+    margin-right: 4px;
+}
+
+/* 最小值：改用亮青色/淺藍色，在深色背景更明顯 */
+.min-text {
+    color: #81d4fa;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
+    /* 加強陰影 */
+    text-decoration: underline;
+    /* 可選：加下劃線強調 */
+}
+
+/* 最大值：改用亮紅色/粉紅色 */
+.max-text {
+    color: #ff8a80;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
+}
+
+.sync-card {
+    border-top: 3px solid #FFD700;
+}
+
+.sync-power {
+    background: #FFD700;
+    color: #fff;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.sync-rolls .roll-item {
+    font-size: 1rem;
+}
+
+/* Tooltip Styles */
+.move-info {
+    cursor: help;
+    position: relative;
+}
+
+.custom-tooltip {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    background: rgba(33, 33, 33, 0.95);
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    width: 240px;
+    z-index: 999;
+    transition: opacity 0.2s;
+    pointer-events: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    margin: 8px 0;
+    text-align: left;
+}
+
+.tooltip-up {
+    bottom: 100%;
+    margin-bottom: 8px;
+}
+
+.tooltip-down {
+    top: 100%;
+    margin-top: 8px;
+}
+
+.group:hover .custom-tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tooltip-title {
+    font-size: 0.85rem;
+    font-weight: bold;
+    border-bottom: 1px solid #555;
+    padding-bottom: 4px;
+    margin-bottom: 4px;
+    color: #FFD700;
+}
+
+.tooltip-content {
+    font-size: 0.75rem;
+    line-height: 1.5;
+    color: #ddd;
+    white-space: pre-wrap;
+}
+
+.tooltip-footer {
+    margin-top: 8px;
+    padding-top: 4px;
+    border-top: 1px dashed #555;
+    font-size: 0.75rem;
+    color: #aaa;
+}
+
+/* ✨ Debug Bar Styles */
+.row-inputs {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.type-select-small {
+    padding: 4px 2px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    font-size: 0.85rem;
+    width: 60px;
+    text-align: center;
+    background-color: white;
+}
+
+.other-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.other-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.other-item label {
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #555;
+}
+
+.other-input {
+    width: 60px;
+    padding: 4px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.9rem;
 }
 </style>

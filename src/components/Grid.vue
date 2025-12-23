@@ -434,7 +434,6 @@ onUnmounted(() => {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* SVG容器：占满顶层容器，透明背景 */
 .svg-wrapper {
     inline-size: 100%;
     block-size: 100%;
@@ -442,12 +441,38 @@ onUnmounted(() => {
     -webkit-tap-highlight-color: transparent;
     outline: none;
     position: relative;
-    /* 为悬浮窗绝对定位提供参考 */
     background: transparent;
-    /* 透明背景，和你的原始设计一致 */
+
+    scrollbar-width: thin;
+    scrollbar-color: #568dd1 #f0f4f8;
 }
 
-/* SVG画布：最小尺寸保障，透明背景 */
+.svg-wrapper::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    /* 水平滚动条的高度 */
+}
+
+.svg-wrapper::-webkit-scrollbar-track {
+    background-color: #f0f4f8;
+    /* 浅灰蓝轨道 */
+    border-radius: 4px;
+}
+
+.svg-wrapper::-webkit-scrollbar-thumb {
+    background-color: #568dd1;
+    /* 蓝色滑块 */
+    border-radius: 4px;
+    border: 2px solid #f0f4f8;
+    /* 白色边框制造悬浮感 */
+}
+
+.svg-wrapper::-webkit-scrollbar-thumb:hover {
+    background-color: #4a7bb3;
+    /* 悬停变深 */
+}
+
+
 svg {
     min-inline-size: 100%;
     min-block-size: 700px;

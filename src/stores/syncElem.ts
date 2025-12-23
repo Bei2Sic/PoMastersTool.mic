@@ -45,7 +45,7 @@ export const useSyncElemStore = defineStore("syncUse", {
         },
 
         // 当前Sync的最终技能效果
-        currentFinalMoves: (state)=> {
+        currentFinalMoves: (state) => {
             if (!state.singleSync) return null;
             return {
                 moves: state.singleSync.computed.finalMoves,
@@ -205,13 +205,18 @@ const createSync = (jsonData: SyncRawData): Sync => {
             const moves = computedProps.currentPokemon.value.moves;
             if (!moves) return null;
             return moves.map((move) =>
-                mapMoveToMoveFinal(move, jsonData.trainer, state, PowerMoveScope.Move)
+                mapMoveToMoveFinal(
+                    move,
+                    jsonData.trainer,
+                    state,
+                    PowerMoveScope.Move
+                )
             );
         }),
 
         finalSyncMove: computed(() => {
             // 使用當前形態的 Sync 招式數據
-            const syncMove = computedProps.currentPokemon.value.syncMove
+            const syncMove = computedProps.currentPokemon.value.syncMove;
             if (!syncMove) return null;
             return mapMoveToMoveFinal(
                 syncMove,
@@ -225,14 +230,24 @@ const createSync = (jsonData: SyncRawData): Sync => {
             const moveMaxs = computedProps.currentPokemon.value.movesDynamax;
             if (!moveMaxs) return null;
             return moveMaxs.map((move) =>
-                mapMoveToMoveFinal(move, jsonData.trainer, state, PowerMoveScope.Max)
+                mapMoveToMoveFinal(
+                    move,
+                    jsonData.trainer,
+                    state,
+                    PowerMoveScope.Max
+                )
             );
         }),
 
         finalMoveTera: computed(() => {
             const moveTera = computedProps.currentPokemon.value.moveTera;
             if (!moveTera) return null;
-            return mapMoveToMoveFinal(moveTera, jsonData.trainer, state, PowerMoveScope.Move);
+            return mapMoveToMoveFinal(
+                moveTera,
+                jsonData.trainer,
+                state,
+                PowerMoveScope.Move
+            );
         }),
     };
 
@@ -298,14 +313,10 @@ const createSync = (jsonData: SyncRawData): Sync => {
                         return "超級進化";
                     case 4:
                         return "極巨化形態";
-                    case 7:
-                        return "太晶化形態";
                     default:
-                        return item.form ?? "基礎形態";
+                        return item.form!=''? item.form:"基礎形態";
                 }
             });
-            // variationList[0] = "基礎形態";
-
             return variationList;
         },
 
@@ -371,7 +382,11 @@ const createSync = (jsonData: SyncRawData): Sync => {
                     keyName = "statsup";
                     break;
                 case "#47D147":
-                    keyName = "movepowerup";
+                    if (tile.name.includes("極巨")) {
+                        keyName = "dynamaxmove";
+                    } else {
+                        keyName = "movepowerup";
+                    }
                     break;
                 case "#FF0066":
                     keyName = "moveeffect";

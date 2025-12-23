@@ -89,6 +89,9 @@ export const ATK_CIRCLE_MULTIPLIERS = [1.0, 1.2, 1.3, 1.4];
 // 防禦鬥陣
 export const DEF_CIRCLE_MULTIPLIERS = [1.0, 1.1, 1.15, 1.2];
 
+// 衰減倍率
+export const TARGET_SCOPE_MULTIPLIERS = [1.0, 1.0, 0.6666, 0.5];
+
 // 抗性倍率
 export const REBUFF_MULTIPLIERS = [1.0, 1.3, 1.5, 1.6];
 

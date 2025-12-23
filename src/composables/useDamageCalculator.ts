@@ -115,15 +115,18 @@ export function useDamageCalculator(
     watch(
         currentTeam,
         (newTeam) => {
-            const themeRegions = ThemeContextResolver.resolveRegion(
-                currentTeam.value
-            );
+            const themeRegions = ThemeContextResolver.resolveRegion(newTeam);
             Object.entries(themeRegions).forEach(([region, count]) => {
                 damageStore.updateBattleCircleLevel(
                     region as RegionType,
                     Math.min(count, 3) as CircleLevel
                 );
             });
+
+            const contextTheme = ThemeContextResolver.resolve(newTeam);
+            damageStore.updateThemeStats(contextTheme.flatBonuses);
+            damageStore.updateThemeType(contextTheme.tagType);
+            damageStore.updateThemeTypeAdd(contextTheme.tagAdd);
         },
         {
             deep: true,
@@ -155,6 +158,9 @@ export function useDamageCalculator(
                 hpPercent: u.currentHPPercent,
                 ranks: u.ranks,
                 gear: u.gear,
+                theme: u.theme,
+                themeType: u.themeType,
+                themeTypeAdd: u.themeTypeAdd,
                 boosts: {
                     physical: u.boosts.physical,
                     special: u.boosts.special,
@@ -179,6 +185,7 @@ export function useDamageCalculator(
 
             settings: {
                 gauge: damageStore.settings.gauge,
+                targetScope: damageStore.settings.targetScope,
                 berry: damageStore.settings.berry,
                 moveuse: damageStore.settings.moveuse,
                 isCritical: damageStore.settings.isCritical,
@@ -188,6 +195,12 @@ export function useDamageCalculator(
 
             special: {
                 isMega: damageStore.special.isMega,
+            },
+
+            config: {
+                physical: damageStore.config.physical,
+                special: damageStore.config.special,
+                sync: damageStore.config.sync,
             },
         };
     });
@@ -257,7 +270,7 @@ export function useDamageCalculator(
         if (!sync) return [];
 
         const env = envSnapshot.value;
-        const theme = themeSnapshot.value;
+        // const theme = themeSnapshot.value;
         const statsBoost = statsBoostSnapshot.value;
         const rawData = sync.rawData;
         const state = sync.state;
@@ -267,29 +280,31 @@ export function useDamageCalculator(
             const statsValue = {
                 hp: getFinalStatValue(rawData, state, "hp", formIndex, {
                     gearBonus: env.user.gear.hp,
-                    themeBonus: theme.flatBonuses.hp,
+                    themeBonus: env.user.theme.hp,
                 }),
                 atk: getFinalStatValue(rawData, state, "atk", formIndex, {
                     gearBonus: env.user.gear.atk,
-                    themeBonus: theme.flatBonuses.atk,
+                    themeBonus: env.user.theme.atk,
                     boost: currentstatsBoost["atk"] || 100,
                 }),
                 def: getFinalStatValue(rawData, state, "def", formIndex, {
                     gearBonus: env.user.gear.def,
+                    themeBonus: env.user.theme.def,
                     boost: currentstatsBoost["def"] || 100,
                 }),
                 spa: getFinalStatValue(rawData, state, "spa", formIndex, {
                     gearBonus: env.user.gear.spa,
-                    themeBonus: theme.flatBonuses.spa,
+                    themeBonus: env.user.theme.spa,
                     boost: currentstatsBoost["spa"] || 100,
                 }),
                 spd: getFinalStatValue(rawData, state, "spd", formIndex, {
                     gearBonus: env.user.gear.spd,
+                    themeBonus: env.user.theme.spd,
                     boost: currentstatsBoost["spd"] || 100,
                 }),
                 spe: getFinalStatValue(rawData, state, "spe", formIndex, {
                     gearBonus: env.user.gear.spe,
-                    themeBonus: theme.flatBonuses.spe,
+                    themeBonus: env.user.theme.spe,
                     boost: currentstatsBoost["spe"] || 100,
                 }),
             };
@@ -367,6 +382,7 @@ export function useDamageCalculator(
                     activeMove.description
                 );
                 const moveSkill = parser.result;
+                console.log(moveSkill);
 
                 // 获取当前技能属性中文名 (用于主题技能匹配)
                 const moveTypeCnName = getTypeCnNameByTypeIndex(
@@ -385,14 +401,26 @@ export function useDamageCalculator(
                 // 3. 计算各种倍率
                 const passiveSum =
                     DamageEngine.resolvePassiveSum(passiveMultis);
+                // 被动加成信息(包括计量槽)
+                const passiveStrings = passiveMultis.map((mult) => {
+                    return `${mult.name}: +${mult.value}%`;
+                });
 
                 const powerBoost = DamageEngine.resolveBoosts(
                     scope,
                     activeMove.category,
                     localEnv
                 );
+                passiveStrings.push(`增強: +${powerBoost}%`);
 
-                const passiveBoost = passiveSum + powerBoost;
+                const configBoost = DamageEngine.resolveConfigBoosts(
+                    scope,
+                    activeMove.category,
+                    localEnv
+                );
+                passiveStrings.push(`配置增強: +${configBoost}%`);
+
+                const passiveBoost = passiveSum + powerBoost + configBoost;
 
                 // 计量槽倍率 (通常只对普通 Move 有效，Sync/Max 可能会返回 0，视你的实现而定)
                 const gaugeBoost =
@@ -447,10 +475,10 @@ export function useDamageCalculator(
                     {
                         gearBonus: localEnv.user.gear[statType],
                         themeBonus:
-                            moveTypeCnName === theme.tagType
-                                ? theme.flatBonuses[statType] +
-                                theme.typeBonuses[statType]
-                                : theme.flatBonuses[statType],
+                            moveTypeCnName === localEnv.user.themeType
+                                ? localEnv.user.theme[statType] +
+                                  localEnv.user.themeTypeAdd
+                                : localEnv.user.theme[statType],
                         boost: DamageEngine.resolveStatBoost(
                             currentPassives,
                             localEnv,
@@ -480,8 +508,11 @@ export function useDamageCalculator(
                 if (activeMove.category === 1) {
                     targetStat = targeStats.def; // 物理招式看物防
                 } else {
-                    // 比如: if (moveSkill.logic === LogicType.UseDef) targetStat = targeStats.def;
-                    targetStat = targeStats.spd;
+                    if (moveSkill.condition?.extra === ExtraLogic.UseDef) {
+                        targetStat = targeStats.def;
+                    } else {
+                        targetStat = targeStats.spd;
+                    }
                 }
 
                 // 8. 最终伤害 Roll 计算
@@ -489,9 +520,9 @@ export function useDamageCalculator(
                     ([index, roll]) => {
                         return Math.floor(
                             movePower *
-                            (((userStat * 0.5) / targetStat) *
-                                envBoost *
-                                roll)
+                                (((userStat * 0.5) / targetStat) *
+                                    envBoost *
+                                    roll)
                         );
                     }
                 );
@@ -507,10 +538,11 @@ export function useDamageCalculator(
                     targetStat,
                     moveDamage,
                     scope,
+                    boostDetails: [...passiveStrings],
                 };
             };
 
-            // // 1. 普通招式
+            // 普通招式
             const moveResults = p.moves
                 ?.map((m) => {
                     if (m.power === 0) {
@@ -535,178 +567,18 @@ export function useDamageCalculator(
                         PowerMoveScope.Move,
                         formIndex
                     );
-
-                    // // 获取当前技能属性
-                    // const moveTypeCnName = getTypeCnNameByTypeIndex(
-                    //     activeMove.type
-                    // );
-
-                    // // 获取被动加成列表
-                    // const passiveMultis = DamageEngine.getPassiveMultipliers(
-                    //     activeMove,
-                    //     MoveScope.Move,
-                    //     currentPassives,
-                    //     env,
-                    //     theme
-                    // );
-                    // // 計算被动倍率
-                    // const passiveSum =
-                    //     DamageEngine.resolvePassiveSum(passiveMultis);
-                    // // 计算增强提供的倍率
-                    // const powerBoost = DamageEngine.resolveBoosts(
-                    //     MoveScope.Move,
-                    //     activeMove.category,
-                    //     env
-                    // );
-                    // const passiveBoost = passiveSum + powerBoost;
-
-                    // // 获取计量槽倍率
-                    // const gaugeBoost =
-                    //     DamageEngine.resolvePassiveIsGaugeCost(passiveMultis);
-
-                    // // 获取主动技能自身的倍率
-                    // const moveSkill =
-                    //     MOVE_OVERRIDES[activeMove.name] ?? DEFAULT_MOVE_SKILL;
-                    // // 主動技能自身倍率
-                    // const moveBoost = DamageEngine.resolveMoveMultiplier(
-                    //     activeMove,
-                    //     moveSkill,
-                    //     env
-                    // );
-                    // // 技能威力
-                    // const movePower = getFinalMovePower(
-                    //     activeMove,
-                    //     rawData.trainer,
-                    //     state.bonusLevel,
-                    //     state.exRoleEnabled,
-                    //     state.currentRarity,
-                    //     state.gridData,
-                    //     PowerMoveScope.Move,
-                    //     {
-                    //         passiveBoost: passiveBoost,
-                    //         moveBoost: moveBoost,
-                    //         gaugeBoost: gaugeBoost,
-                    //     }
-                    // ) as number;
-
-                    // // 获取环境提供的倍率
-                    // const envBoost = DamageEngine.resolveEnvMultipliers(
-                    //     activeMove,
-                    //     MoveScope.Move,
-                    //     env
-                    // );
-
-                    // // 获取攻击力
-                    // // 组队技能的加成
-                    // let userStat = 0;
-                    // if (activeMove.category === 1) {
-                    //     const ignoreBurn =
-                    //         moveSkill.condition?.extra === ExtraLogic.BurnUseless;
-                    //     // 物理攻击
-                    //     const userVariationStat = getFinalStatValue(
-                    //         rawData,
-                    //         state,
-                    //         "atk",
-                    //         formIndex,
-                    //         {
-                    //             gearBonus: env.user.gear.atk,
-                    //             themeBonus:
-                    //                 moveTypeCnName === theme.tagType
-                    //                     ? theme.flatBonuses.atk +
-                    //                       theme.typeBonuses.atk
-                    //                     : theme.flatBonuses.atk,
-                    //             boost: DamageEngine.resolveStatBoost(
-                    //                 currentPassives,
-                    //                 env,
-                    //                 "atk",
-                    //                 ignoreBurn
-                    //             ),
-                    //         }
-                    //     );
-                    //     const userBaseStat = getFinalStatValue(
-                    //         rawData,
-                    //         state,
-                    //         "atk",
-                    //         formIndex,
-                    //         {
-                    //             gearBonus: env.user.gear.atk,
-                    //         }
-                    //     );
-
-                    //     userStat = env.settings.isCritical
-                    //         ? userVariationStat
-                    //         : Math.max(userVariationStat, userBaseStat);
-                    // } else {
-                    //     // 特殊攻击
-                    //     const userVariationStat = getFinalStatValue(
-                    //         rawData,
-                    //         state,
-                    //         "spa",
-                    //         formIndex,
-                    //         {
-                    //             gearBonus: env.user.gear.spa,
-                    //             themeBonus:
-                    //                 moveTypeCnName === theme.tagType
-                    //                     ? theme.flatBonuses.spa +
-                    //                       theme.typeBonuses.spa
-                    //                     : theme.flatBonuses.spa,
-                    //             boost: DamageEngine.resolveStatBoost(
-                    //                 currentPassives,
-                    //                 env,
-                    //                 "spa"
-                    //             ),
-                    //         }
-                    //     );
-                    //     const userBaseStat = getFinalStatValue(
-                    //         rawData,
-                    //         state,
-                    //         "spa",
-                    //         formIndex,
-                    //         {
-                    //             gearBonus: env.user.gear.spa,
-                    //         }
-                    //     );
-
-                    //     userStat = env.settings.isCritical
-                    //         ? userVariationStat
-                    //         : Math.max(userVariationStat, userBaseStat);
-                    // }
-
-                    // // 获取目标防御力
-                    // let targetStat = 0;
-                    // if (activeMove.category === 1) {
-                    //     targetStat = targeStats.def;
-                    // } else {
-                    //     targetStat = targeStats.spd;
-                    // }
-
-                    // // 伤害计算
-                    // const moveDamage = Object.entries(DAMAGE_ROLLS).map(
-                    //     ([index, roll]) => {
-                    //         return Math.floor(
-                    //             movePower *
-                    //                 ((userStat / (targetStat * 2)) *
-                    //                     (envBoost / 100) *
-                    //                     roll)
-                    //         );
-                    //     }
-                    // );
-
-                    // return {
-                    //     move: activeMove,
-                    //     passiveBoost: passiveBoost,
-                    //     moveBoost: moveBoost,
-                    //     gaugeBoost: gaugeBoost,
-                    //     movePower: movePower,
-                    //     envBoost: envBoost,
-                    //     userStat: userStat,
-                    //     targetStat: targetStat,
-                    //     moveDamage: moveDamage,
-                    // };
                 })
                 .filter(Boolean);
 
-            // 2. 拍組招式 (Sync Move)
+            
+            const teraResult = calculateMoveDamage(
+                p.moveTera,
+                MoveScope.Move,
+                PowerMoveScope.Move,
+                formIndex
+            );
+
+            // 拍組招式
             const syncResult = calculateMoveDamage(
                 p.syncMove,
                 MoveScope.Sync,
@@ -714,7 +586,7 @@ export function useDamageCalculator(
                 p.vAfterSm && formIndex === 0 ? formIndex + 1 : formIndex
             );
 
-            // // 3. 極巨化招式 (如果有的話)
+            // 極巨化招式
             const maxResults = p.movesDynamax
                 ?.map((m) => {
                     return calculateMoveDamage(
@@ -731,6 +603,7 @@ export function useDamageCalculator(
                 moves: moveResults,
                 syncMove: syncResult,
                 maxMoves: maxResults,
+                teraMove: teraResult,
             };
         });
     });

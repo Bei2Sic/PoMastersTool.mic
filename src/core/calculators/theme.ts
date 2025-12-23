@@ -6,9 +6,9 @@ import { Sync } from "@/types/syncModel";
 export class ThemeContextResolver {
     static resolve(team: (Sync | null)[]): ThemeContext {
         const counts: Record<string, number> = {};
-        const flat = { atk: 0, spa: 0, hp: 0, spe: 0 };
-        let tagType = "一般" as PokemonType;
-        const typeBonus = { atk: 0, spa: 0 };
+        const flat = { atk: 0, spa: 0, hp: 0, spe: 0, def: 0, spd: 0 };
+        let tagType = "無" as PokemonType;
+        let tagAdd = 0;
 
         // 过滤空队友
         const activeMembers = team.filter((m): m is Sync => m !== null);
@@ -35,8 +35,7 @@ export class ThemeContextResolver {
                     // 累加条件加成
                     if (cBonus) {
                         tagType = cBonus.type;
-                        typeBonus.atk += cBonus.atk;
-                        typeBonus.spa += cBonus.spa;
+                        tagAdd = cBonus.atk; // 攻擊和特攻加成是一致的
                     }
                 }
             });
@@ -46,7 +45,7 @@ export class ThemeContextResolver {
             tagCounts: counts,
             flatBonuses: flat,
             tagType: tagType,
-            typeBonuses: typeBonus,
+            tagAdd: tagAdd,
         };
     }
 
