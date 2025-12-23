@@ -50,7 +50,7 @@ function getTileMoveBonus(selectedTiles: Tile[], moveName: string): number {
 
     // 遍歷所有已激活的石盤
     for (const tile of selectedTiles) {
-        if (tile.isActive && tile.color === "#47D147") {
+        if (tile.isActive && (tile.color === "#47D147" || tile.color === "#BF80FF")) {
             bonus += parseMoveTextBonus(tile.name, moveName);
         }
     }

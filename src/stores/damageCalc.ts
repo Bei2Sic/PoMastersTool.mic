@@ -11,7 +11,7 @@ import { defineStore } from "pinia";
 // 輔助函數：初始化 18 種屬性抵抗表 (全為 0)
 const initRebuffs = (): cond.TypeRebuffs => {
     return POKEMON_TYPES.reduce(
-        (acc, type) => ({ ...acc, [type]: -1 }),
+        (acc, type) => ({ ...acc, [type]: 0 }),
         {} as cond.TypeRebuffs
     );
 };
@@ -46,9 +46,9 @@ const initBattleCircles = (): cond.BattleCircle => {
         map[region] = {
             level: 0,
             actives: {
-                物理: true,
-                特殊: true,
-                防禦: true,
+                物理: false,
+                特殊: false,
+                防禦: false,
             },
         };
     });
@@ -94,7 +94,7 @@ export const useDamageCalcStore = defineStore("damageCalc", {
             syncBuff: 2 as number,
             currentHPPercent: 100 as number,
             // 異常狀態
-            abnormal: "无" as cond.AbnormalType,
+            abnormal: "無" as cond.AbnormalType,
             // 妨害狀態
             hindrance: initHindrances(),
         },
@@ -129,11 +129,11 @@ export const useDamageCalcStore = defineStore("damageCalc", {
             critBuffs: initCritbuffs(),
         },
 
-        weather: "晴天" as cond.WeatherType,
+        weather: "無" as cond.WeatherType,
         isEXWeather: true,
         terrain: "無`" as cond.TerrainType,
         isEXTerrain: false,
-        zone: "大地領域" as cond.ZoneType,
+        zone: "無" as cond.ZoneType,
         isEXZone: true,
         battleCircles: initBattleCircles(),
         gaugeAcceleration: false,

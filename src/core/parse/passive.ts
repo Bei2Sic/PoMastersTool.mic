@@ -259,7 +259,7 @@ export class PassiveSkillParser {
         if (desc.includes("拍組招式")) {
             if (desc.includes("拍組招式和拍組極巨化招式"))
                 return { scope: MoveScope.MaxAndSync };
-            if (desc.includes("招式和拍組招式"))
+            if (desc.includes("招式和拍組招式") || name.includes("寶可夢招式及拍組招式"))
                 return { scope: MoveScope.MoveAndSync };
             return { scope: MoveScope.Sync };
         }

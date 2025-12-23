@@ -97,7 +97,6 @@ export class DamageEngine {
             ) {
                 continue;
             }
-
             // 判断是否是 scaling类
             const isScaling = this.isScaling(passive.condition.logic);
             let value = pm.value;
@@ -116,13 +115,13 @@ export class DamageEngine {
                         passive.condition,
                         context,
                         move.type,
-                        move.tags
+                        move.tags,
+                        passive.conditions,
                     )
                 ) {
                     continue;
                 }
             }
-
             result.push({
                 name: passive.passiveName,
                 value: value * 100,
@@ -238,7 +237,7 @@ export class DamageEngine {
                     moveSkill.condition,
                     context,
                     move.type,
-                    move.tags
+                    move.tags,
                 )
             ) {
                 value = 100;
@@ -698,9 +697,10 @@ export class DamageEngine {
             // 复合类型
             case LogicType.Compound:
                 if (!conds || conds.length === 0) return true;
-                return conds.every((subCond) =>
+                return conds.every((subCond) => {
                     this.checkCondition(subCond, env, moveType, moveTag)
-                );
+                });
+
         }
         return false;
     }

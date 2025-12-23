@@ -365,7 +365,6 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-/* 核心样式调整：还原你的原始布局 */
 .sync-grid-container {
     inline-size: 100%;
     block-size: 100%;
@@ -374,16 +373,13 @@ onUnmounted(() => {
     contain: paint;
 }
 
-/* 顶层容器：透明背景，bonus-container 和 SVG 同层布局 */
 .top-container {
     inline-size: 100%;
     block-size: 100%;
     position: relative;
     background: transparent;
-    /* 透明背景，和你的原始设计一致 */
 }
 
-/* 滴晶+星级区域：悬浮在SVG上方，透明背景 */
 .bonus-container {
     position: absolute;
     inset-block-start: 10px;
@@ -450,26 +446,21 @@ onUnmounted(() => {
 .svg-wrapper::-webkit-scrollbar {
     width: 8px;
     height: 8px;
-    /* 水平滚动条的高度 */
 }
 
 .svg-wrapper::-webkit-scrollbar-track {
     background-color: #f0f4f8;
-    /* 浅灰蓝轨道 */
     border-radius: 4px;
 }
 
 .svg-wrapper::-webkit-scrollbar-thumb {
     background-color: #568dd1;
-    /* 蓝色滑块 */
     border-radius: 4px;
     border: 2px solid #f0f4f8;
-    /* 白色边框制造悬浮感 */
 }
 
 .svg-wrapper::-webkit-scrollbar-thumb:hover {
     background-color: #4a7bb3;
-    /* 悬停变深 */
 }
 
 
@@ -481,7 +472,6 @@ svg {
     background: transparent;
 }
 
-/* Tile信息窗 */
 .tile-window {
     position: fixed;
     inset-block-start: 10%;
@@ -490,7 +480,6 @@ svg {
     z-index: 1000;
     pointer-events: none;
     inline-size: v-bind('tileWinWidth + "px"');
-    /* 固定高度（也可以用 v-bind 绑定 tileWinHeight） */
     background: rgba(235, 230, 215, 0.98);
     border: 2px solid #fff;
     border-radius: 10px;
@@ -514,6 +503,11 @@ svg {
     color: #fff;
     border-start-start-radius: 8px;
     border-start-end-radius: 8px;
+    text-shadow:
+        1px 1px 0 #555,
+        -1px 1px 0 #555,
+        1px -1px 0 #555,
+        -1px -1px 0 #555;
 }
 
 .tile-content {
@@ -535,7 +529,6 @@ svg {
     font-size: 11px;
 }
 
-/* 移动端适配（还原你的原始适配逻辑） */
 @media (max-width: 1000px) {
     .bonus-container {
         inline-size: 90%;

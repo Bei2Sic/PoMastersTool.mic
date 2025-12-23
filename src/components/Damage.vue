@@ -91,7 +91,7 @@ const getTypeBgClass = (typeIndex: number) => {
 };
 
 const getBoostTooltip = (res: any) => {
-    if (!res.boostDetails || res.boostDetails.length === 0) return "无倍率加成";
+    if (!res.boostDetails || res.boostDetails.length === 0) return "无技能威力提升";
     return res.boostDetails.map((b: string) => `• ${b}`).join('\n');
 };
 
@@ -412,7 +412,8 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
                                 <div class="control-group">
                                     <span class="common-label">目標</span>
                                     <div class="segment-control">
-                                        <button v-for="n in 3" :key="n" :class="{ active: store.settings.targetScope === n }"
+                                        <button v-for="n in 3" :key="n"
+                                            :class="{ active: store.settings.targetScope === n }"
                                             @click="store.settings.targetScope = n as any">
                                             {{ n }}
                                         </button>
@@ -518,11 +519,11 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
 
                                                 <div class="custom-tooltip"
                                                     :class="mIdx < 2 ? 'tooltip-down' : 'tooltip-up'">
-                                                    <div class="tooltip-title">倍率加成</div>
+                                                    <div class="tooltip-title">技能威力提升</div>
                                                     <div class="tooltip-content"
                                                         v-html="getBoostTooltip(res).replace(/\n/g, '<br/>')"></div>
                                                     <div class="tooltip-footer">
-                                                        <div>环境倍率: x{{ (res.envBoost / 100).toFixed(2) }}</div>
+                                                        <div>环境倍率: x{{ res.envBoost }}</div>
                                                         <div>招式倍率: x{{ (res.moveBoost / 100).toFixed(2) }}</div>
                                                     </div>
                                                 </div>
@@ -557,9 +558,14 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
                                             </div>
 
                                             <div class="custom-tooltip tooltip-up">
-                                                <div class="tooltip-title">倍率加成</div>
+                                                <div class="tooltip-title">技能威力提升</div>
                                                 <div class="tooltip-content"
                                                     v-html="getBoostTooltip(formResult.teraMove).replace(/\n/g, '<br/>')">
+                                                </div>
+                                                <div class="tooltip-footer">
+                                                    <div>环境倍率: x{{ formResult.teraMove?.envBoost }}</div>
+                                                    <div>招式倍率: x{{ (formResult.teraMove?.moveBoost / 100).toFixed(2) }}
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -593,11 +599,11 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
 
                                                 <div class="custom-tooltip"
                                                     :class="mIdx < 2 ? 'tooltip-down' : 'tooltip-up'">
-                                                    <div class="tooltip-title">倍率加成</div>
+                                                    <div class="tooltip-title">技能威力提升</div>
                                                     <div class="tooltip-content"
                                                         v-html="getBoostTooltip(res).replace(/\n/g, '<br/>')"></div>
                                                     <div class="tooltip-footer">
-                                                        <div>环境倍率: x{{ (res.envBoost / 100).toFixed(2) }}</div>
+                                                        <div>环境倍率: x{{ res.envBoost }}</div>
                                                         <div>招式倍率: x{{ (res.moveBoost / 100).toFixed(2) }}</div>
                                                     </div>
                                                 </div>
@@ -633,9 +639,14 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
                                             </div>
 
                                             <div class="custom-tooltip tooltip-up">
-                                                <div class="tooltip-title">倍率加成</div>
+                                                <div class="tooltip-title">技能威力提升</div>
                                                 <div class="tooltip-content"
                                                     v-html="getBoostTooltip(formResult.syncMove).replace(/\n/g, '<br/>')">
+                                                </div>
+                                                <div class="tooltip-footer">
+                                                    <div>环境倍率: x{{ formResult.syncMove.envBoost }}</div>
+                                                    <div>招式倍率: x{{ (formResult.syncMove.moveBoost / 100).toFixed(2) }}
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

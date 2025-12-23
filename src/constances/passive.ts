@@ -370,26 +370,6 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
                 value: 0.2,
             },
             condition: {
-                key: "晴天",
-                detail: "自身",
-                logic: LogicType.Weather,
-            },
-            statBoost: {
-                isStatBoost: false,
-                stats: [],
-                value: 1.0,
-            },
-            applyToParty: true,
-        },
-        {
-            name: "豐緣的熱忱",
-            desc: "",
-            passiveName: "豐緣的熱忱",
-            boost: {
-                scope: MoveScope.All,
-                value: 0.2,
-            },
-            condition: {
                 key: "複合條件",
                 detail: "自身",
                 logic: LogicType.Compound,
