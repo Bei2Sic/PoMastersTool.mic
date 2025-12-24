@@ -35,6 +35,7 @@ export enum LogicType {
     Direct = "Direct",
     DamageField = "DamageField", // 伤害场地
     Terrain = "Terrain", // 场地
+    Zone = "Zone", // 领域
     BattleCircle = "BattleCircle", // 鬥陣
     Weather = "Weather", // 天气变化
     Abnormal = "Abnormal", // 异常

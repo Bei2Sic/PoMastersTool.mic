@@ -54,12 +54,11 @@
     {
       "id": "20243000001",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "啪咚猴",
       "form": "",
       "actor": "pm0811_00_00_bachinkey",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 5,
       "weakness": 2,
       "stat": {

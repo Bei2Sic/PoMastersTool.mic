@@ -48,12 +48,11 @@
     {
       "id": "20112000002",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "火爆獸",
       "form": "",
       "actor": "pm0157_00_bakphoon",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 2,
       "weakness": 13,
       "stat": {
@@ -203,21 +202,18 @@
       "cookieName": "阿響專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "效果絕佳時威力提升5",
+          "name": [],
           "description": "當效果絕佳時,會提高該招式的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時賦予物理/特殊增強2",
+          "name": [],
           "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
-          "detail": [],
           "rate": 33
         }
       ]

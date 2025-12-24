@@ -48,12 +48,11 @@
     {
       "id": "20066010001",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "流氓鱷",
       "form": "",
       "actor": "pm0553_00_waruvial",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 16,
       "weakness": 6,
       "stat": {

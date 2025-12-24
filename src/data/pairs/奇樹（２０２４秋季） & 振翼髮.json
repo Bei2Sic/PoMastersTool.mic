@@ -54,12 +54,11 @@
     {
       "id": "20296400000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "振翼髮",
       "form": "",
       "actor": "pm0987_00_00_habatakukami",
       "gender": 3,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 14,
       "weakness": 17,
       "stat": {
@@ -179,7 +178,7 @@
           "target": "對手全體拍組",
           "description": "【開放條件】\n自己使出1次招式時\n【封印條件】\n使出此招式時\n\n攻擊必定會命中。降低對手的特防2階段。首次使出此招式攻擊成功時,會降低對手的幽靈屬性抵抗1階段。即使對象為複數,招式的威力也不會降低。",
           "tags": "SureHit",
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 12968,
@@ -219,9 +218,8 @@
       "cookieName": "奇樹（２０２４秋季）專用潛能餅乾１",
       "skills": [
         {
-          "name": "首次上場時場地招式計量槽加速",
+          "name": [],
           "description": "首次上場時,會讓我方場地變成招式計量槽加速狀態。",
-          "detail": [],
           "rate": 100
         }
       ]
@@ -230,21 +228,18 @@
       "cookieName": "奇樹（２０２４秋季）專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "效果絕佳時威力提升5",
+          "name": [],
           "description": "當效果絕佳時,會提高該招式的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時賦予物理/特殊增強2",
+          "name": [],
           "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
-          "detail": [],
           "rate": 33
         }
       ]

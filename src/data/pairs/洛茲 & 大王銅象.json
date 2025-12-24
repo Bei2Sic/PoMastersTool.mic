@@ -61,12 +61,11 @@
     {
       "id": "20262000000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "大王銅象",
       "form": "",
       "actor": "pm0879_00_00_daioudou",
       "gender": 2,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 17,
       "weakness": 7,
       "stat": {
@@ -223,14 +222,13 @@
     {
       "id": "20262000000",
       "variationType": 4,
-      "vAfterSm": false,
       "name": "大王銅象",
       "form": "",
       "actor": "pm0879_81_00_gdaioudou",
       "gender": 2,
-      "isShiny": false,
-      "type": 17,
-      "weakness": 7,
+      "is_shiny": false,
+      "type": "-1",
+      "weakness": "-1",
       "stat": {
         "hp": [
           104,
@@ -306,14 +304,6 @@
       ],
       "moves": null,
       "syncMove": null,
-      "scale": [
-        100,
-        100,
-        100,
-        100,
-        100,
-        100
-      ],
       "movesDynamax": [
         {
           "id": 7049,
@@ -328,7 +318,7 @@
           "target": "對手１對拍組",
           "description": "讓對手場地變成鋼傷害場地。 (鋼傷害場地:此狀態會讓拍組在每次行動時受到鋼屬性的傷害。)",
           "tags": "none",
-          "group": 5
+          "group": "Regular"
         },
         {
           "id": 7013,
@@ -343,7 +333,7 @@
           "target": "對手１對拍組",
           "description": "會將天氣變成沙暴。",
           "tags": "none",
-          "group": 5
+          "group": "Regular"
         },
         {
           "id": 7011,
@@ -358,7 +348,7 @@
           "target": "對手１對拍組",
           "description": "提高我方全體拍組的特防2階段。",
           "tags": "none",
-          "group": 5
+          "group": "Regular"
         }
       ]
     }
@@ -368,9 +358,8 @@
       "cookieName": "洛茲專用潛能餅乾１",
       "skills": [
         {
-          "name": "拍組招式後場地招式計量槽加速",
+          "name": [],
           "description": "使出拍組招式後,會讓我方場地變成招式計量槽加速狀態。",
-          "detail": [],
           "rate": 100
         }
       ]
@@ -379,21 +368,18 @@
       "cookieName": "洛茲專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "效果絕佳時威力提升5",
+          "name": [],
           "description": "當效果絕佳時,會提高該招式的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時賦予物理/特殊增強2",
+          "name": [],
           "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
-          "detail": [],
           "rate": 33
         }
       ]

@@ -54,12 +54,11 @@
     {
       "id": "20285400000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "索羅亞克",
       "form": "洗翠的樣子",
       "actor": "pm0571_00_41_zoroark",
       "gender": 2,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 14,
       "weakness": 16,
       "stat": {
@@ -179,7 +178,7 @@
           "target": "對手１對拍組",
           "description": "【開放條件】\n我方使出3次招式時\n【封印條件】\n使出此招式時\n\n當對手陷入異常狀態,或畏縮、混亂、束縛的狀態變化時,威力會變成2倍。降低對手的攻擊4階段。讓對手陷入畏縮狀態。",
           "tags": "QuickMove",
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 12854,
@@ -219,9 +218,8 @@
       "cookieName": "珠貝（表演服）專用潛能餅乾１",
       "skills": [
         {
-          "name": "對手束縛時拍組招式↑4",
+          "name": [],
           "description": "當對手陷入束縛狀態時,會提高自己的拍組招式的威力。",
-          "detail": [],
           "rate": 100
         }
       ]
@@ -230,21 +228,18 @@
       "cookieName": "珠貝（表演服）專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "效果絕佳時威力提升5",
+          "name": [],
           "description": "當效果絕佳時,會提高該招式的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時賦予物理/特殊增強2",
+          "name": [],
           "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
-          "detail": [],
           "rate": 33
         }
       ]

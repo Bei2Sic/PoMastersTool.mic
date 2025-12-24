@@ -61,12 +61,11 @@
     {
       "id": "20188000000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "太陽伊布",
       "form": "",
       "actor": "pm0196_00_eifie",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 11,
       "weakness": 16,
       "stat": {
@@ -186,7 +185,7 @@
           "target": "對手１對拍組",
           "description": "【開放條件】\n自己的特攻處於提高狀態時\n【封印條件】\n自己的特攻未處於提高狀態時\n\n攻擊必定會命中。降低對手的特防2階段。讓自己變成下次計量槽消耗0狀態。提高自己的下次特殊招式威力增強1階段。使出此招式攻擊且自己的「木子果」的剩餘次數為1以上時,會減少該使用次數1次並幫自己的同步招式的使用次數回復1次。",
           "tags": "SureHit",
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 11880,
@@ -226,9 +225,8 @@
       "cookieName": "德克希歐專用潛能餅乾１",
       "skills": [
         {
-          "name": "上場時下次計量槽消耗0",
+          "name": [],
           "description": "上場時,會讓自己變成下次計量槽消耗0狀態。",
-          "detail": [],
           "rate": 100
         }
       ]
@@ -237,21 +235,18 @@
       "cookieName": "德克希歐專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "拍組招式效果絕佳時威力↑5",
+          "name": [],
           "description": "當效果絕佳時,會提高該拍組招式的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時拍組招式增強5",
+          "name": [],
           "description": "首次上場時,會提高自己的下次拍組招式威力增強5階段。",
-          "detail": [],
           "rate": 33
         }
       ]

@@ -48,12 +48,11 @@
     {
       "id": "20256000001",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "坦克臭鼬",
       "form": "",
       "actor": "pm0435_00_skutank",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 16,
       "weakness": 9,
       "stat": {

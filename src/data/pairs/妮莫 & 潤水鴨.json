@@ -54,12 +54,11 @@
     {
       "id": "20289000002",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "潤水鴨",
       "form": "",
       "actor": "pm0912_00_00_kuwassu",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 3,
       "weakness": 4,
       "stat": {

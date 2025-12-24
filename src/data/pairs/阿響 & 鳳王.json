@@ -48,12 +48,11 @@
     {
       "id": "20112000003",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "鳳王",
       "form": "",
       "actor": "pm0250_00_houou",
       "gender": 3,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 2,
       "weakness": 13,
       "stat": {
@@ -186,7 +185,7 @@
           "target": "對手１對拍組",
           "description": "【開放條件】\n天氣變成日照強烈的狀態時\n【封印條件】\n日照強烈被解除時\n\n解除自己的冰凍狀態。降低對手的防禦和特防1階段。讓對手陷入灼傷狀態。",
           "tags": "OkWhileFrozen",
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 11129,
@@ -226,21 +225,17 @@
       "cookieName": "阿響專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "招式後招式計量槽增加9",
+          "name": [],
           "description": "招式成功時,會幫自己增加1條招式計量槽。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時&首次拍組招式後計數加速1",
-          "description": "首次上場時,發動拍組招式所需的行動數會減少1次。首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。",
-          "detail": [
+          "name": [
             {
               "name": "首次上場時計數加速1",
               "description": "首次上場時,發動拍組招式所需的行動數會減少1次。"
@@ -250,6 +245,7 @@
               "description": "首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。"
             }
           ],
+          "description": "首次上場時,發動拍組招式所需的行動數會減少1次。首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。",
           "rate": 33
         }
       ]

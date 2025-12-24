@@ -54,12 +54,11 @@
     {
       "id": "20004000004",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "功夫鼬",
       "form": "",
       "actor": "pm0619_00_kojofu",
       "gender": 2,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 7,
       "weakness": 10,
       "stat": {

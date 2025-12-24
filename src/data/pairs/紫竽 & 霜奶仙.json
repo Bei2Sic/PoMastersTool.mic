@@ -48,12 +48,11 @@
     {
       "id": "20352000001",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "霜奶仙",
       "form": "",
       "actor": "pm0869_17_27_mawhip",
       "gender": 2,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 18,
       "weakness": 8,
       "stat": {

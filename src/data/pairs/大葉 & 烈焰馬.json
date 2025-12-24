@@ -48,12 +48,11 @@
     {
       "id": "20006000001",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "烈焰馬",
       "form": "",
       "actor": "pm0078_00_gallop",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 2,
       "weakness": 13,
       "stat": {

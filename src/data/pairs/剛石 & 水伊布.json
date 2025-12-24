@@ -54,12 +54,11 @@
     {
       "id": "20284000001",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "水伊布",
       "form": "",
       "actor": "pm0134_00_showers",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 3,
       "weakness": 4,
       "stat": {

@@ -54,12 +54,11 @@
     {
       "id": "20126900000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "蓋歐卡",
       "form": "",
       "actor": "pm0382_00_kyogre_rare",
       "gender": 3,
-      "isShiny": true,
+      "is_shiny": true,
       "type": 3,
       "weakness": 5,
       "stat": {
@@ -202,7 +201,7 @@
           "target": "對手全體拍組",
           "description": "【開放條件】\n天氣變成EX下雨時\n【封印條件】\nEX下雨被解除時\n\n讓對手陷入畏縮狀態。",
           "tags": "none",
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 11267,
@@ -239,14 +238,13 @@
     {
       "id": "20126900000",
       "variationType": 6,
-      "vAfterSm": false,
       "name": "蓋歐卡",
-      "form": "原始迴歸",
+      "form": "",
       "actor": "pm0382_51_kyogresp_rare",
       "gender": 3,
-      "isShiny": true,
-      "type": 3,
-      "weakness": 5,
+      "is_shiny": true,
+      "type": "-1",
+      "weakness": "-1",
       "stat": {
         "hp": [
           106,
@@ -387,7 +385,7 @@
           "target": "對手全體拍組",
           "description": "【開放條件】\n天氣變成EX下雨時\n【封印條件】\nEX下雨被解除時\n\n讓對手陷入畏縮狀態。",
           "tags": "none",
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 11267,
@@ -419,15 +417,7 @@
         "description": "沒有追加效果。",
         "tags": "none",
         "group": "Sync"
-      },
-      "scale": [
-        100,
-        100,
-        100,
-        100,
-        100,
-        100
-      ]
+      }
     }
   ],
   "luckCookies": [
@@ -435,9 +425,8 @@
       "cookieName": "小遙（冠軍）專用潛能餅乾１",
       "skills": [
         {
-          "name": "下雨時拍組招式提升4",
+          "name": [],
           "description": "當天氣為下雨時,會提高拍組招式的威力。",
-          "detail": [],
           "rate": 100
         }
       ]
@@ -446,21 +435,18 @@
       "cookieName": "小遙（冠軍）專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "天氣場地領域變化時計量槽加速2",
+          "name": [],
           "description": "只有在天氣、場地或領域變化時,招式計量槽會累積得較快。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "天氣場地領域變化時拍組招式↑G2",
+          "name": [],
           "description": "只有在天氣、場地或領域變化時,會提高我方全體拍組的拍組招式的威力。",
-          "detail": [],
           "rate": 33
         }
       ]

@@ -54,12 +54,11 @@
     {
       "id": "20119000001",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "大嘴蝠",
       "form": "",
       "actor": "pm0042_00_golbat",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 8,
       "weakness": 13,
       "stat": {

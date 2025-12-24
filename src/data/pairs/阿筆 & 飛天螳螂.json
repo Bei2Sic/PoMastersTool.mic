@@ -54,12 +54,11 @@
     {
       "id": "20045900000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "飛天螳螂",
       "form": "",
       "actor": "pm0123_00_strike",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 12,
       "weakness": 13,
       "stat": {

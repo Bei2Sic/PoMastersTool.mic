@@ -54,12 +54,11 @@
     {
       "id": "20287000001",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "新葉喵",
       "form": "",
       "actor": "pm0906_00_00_nyahoja",
       "gender": 2,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 5,
       "weakness": 8,
       "stat": {

@@ -48,12 +48,11 @@
     {
       "id": "20003000002",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "火狐狸",
       "form": "",
       "actor": "pm0717_00_fox1",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 2,
       "weakness": 9,
       "stat": {

@@ -54,12 +54,11 @@
     {
       "id": "20289100000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "吼叫尾",
       "form": "",
       "actor": "pm0985_00_00_sakebushippo",
       "gender": 3,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 18,
       "weakness": 8,
       "stat": {
@@ -154,7 +153,7 @@
           "target": "對手全體拍組",
           "description": "【開放條件】\n自己使出1次招式時\n【封印條件】\n無\n\n攻擊必定會命中。降低對手的攻擊和防禦1階段。即使對象為複數,招式的威力也不會降低。",
           "tags": "SureHit",
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 19170,
@@ -224,9 +223,8 @@
       "cookieName": "美極套裝妮莫專用潛能餅乾１",
       "skills": [
         {
-          "name": "晴天時拍組招式威力提升4",
+          "name": [],
           "description": "當天氣為日照強烈時,會提高拍組招式的威力。",
-          "detail": [],
           "rate": 100
         }
       ]
@@ -235,21 +233,18 @@
       "cookieName": "美極套裝妮莫專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "效果絕佳時威力提升5",
+          "name": [],
           "description": "當效果絕佳時,會提高該招式的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時賦予物理/特殊增強2",
+          "name": [],
           "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
-          "detail": [],
           "rate": 33
         }
       ]

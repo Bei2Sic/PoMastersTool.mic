@@ -54,12 +54,11 @@
     {
       "id": "20011000001",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "蜈蚣王",
       "form": "",
       "actor": "pm0545_00_pendror",
       "gender": 2,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 8,
       "weakness": 11,
       "stat": {
@@ -209,21 +208,18 @@
       "cookieName": "霍米加專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "效果絕佳時威力提升5",
+          "name": [],
           "description": "當效果絕佳時,會提高該招式的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時賦予物理/特殊增強2",
+          "name": [],
           "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
-          "detail": [],
           "rate": 33
         }
       ]

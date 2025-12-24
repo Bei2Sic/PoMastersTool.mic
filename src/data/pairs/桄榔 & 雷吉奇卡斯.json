@@ -67,12 +67,11 @@
     {
       "id": "20134000000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "雷吉奇卡斯",
       "form": "",
       "actor": "pm0486_00_00_regigigas",
       "gender": 3,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 1,
       "weakness": 7,
       "stat": {
@@ -192,7 +191,7 @@
           "target": "對手１對拍組",
           "description": "【開放條件】\n自己使出招式、拍組招式或拍組極巨化招式共5次時\n【封印條件】\n使出此招式時\n\n降低對手的防禦6階段。回復自己的HP,約為自己最大HP的50%。",
           "tags": "Heals",
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 11340,
@@ -229,14 +228,13 @@
     {
       "id": "20134000000",
       "variationType": 4,
-      "vAfterSm": false,
       "name": "雷吉奇卡斯",
       "form": "",
       "actor": "pm0486_81_00_regigigas",
       "gender": 3,
-      "isShiny": false,
-      "type": 1,
-      "weakness": 7,
+      "is_shiny": false,
+      "type": "-1",
+      "weakness": "-1",
       "stat": {
         "hp": [
           110,
@@ -312,14 +310,6 @@
       ],
       "moves": null,
       "syncMove": null,
-      "scale": [
-        100,
-        100,
-        100,
-        100,
-        100,
-        100
-      ],
       "movesDynamax": [
         {
           "id": 7003,
@@ -334,7 +324,7 @@
           "target": "對手１對拍組",
           "description": "降低對手全體拍組的速度2階段。",
           "tags": "none",
-          "group": 5
+          "group": "Regular"
         },
         {
           "id": 7003,
@@ -349,7 +339,7 @@
           "target": "對手１對拍組",
           "description": "降低對手全體拍組的速度2階段。",
           "tags": "none",
-          "group": 5
+          "group": "Regular"
         }
       ]
     }
@@ -359,21 +349,18 @@
       "cookieName": "桄榔專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "效果絕佳時威力提升5",
+          "name": [],
           "description": "當效果絕佳時,會提高該招式的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時賦予物理/特殊增強2",
+          "name": [],
           "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
-          "detail": [],
           "rate": 33
         }
       ]

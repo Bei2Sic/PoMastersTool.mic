@@ -54,12 +54,11 @@
     {
       "id": "20008000001",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "蔓藤怪",
       "form": "",
       "actor": "pm0114_00_monjara",
       "gender": 2,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 5,
       "weakness": 6,
       "stat": {

@@ -54,12 +54,11 @@
     {
       "id": "20257410000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "沙螺蟒",
       "form": "",
       "actor": "pm0844_00_00_sadaija",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 9,
       "weakness": 3,
       "stat": {
@@ -192,7 +191,7 @@
           "target": "對手全體拍組",
           "description": "【開放條件】\n天氣變成沙暴時\n【封印條件】\n沙暴被解除時\n\n招式必定會命中。降低對手的防禦、特防和速度1階段。讓對手陷入麻痺狀態。",
           "tags": "SureHit",
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 12578,
@@ -229,14 +228,13 @@
     {
       "id": "20257410000",
       "variationType": 4,
-      "vAfterSm": false,
       "name": "沙螺蟒",
       "form": "",
       "actor": "pm0844_83_00_sadaija",
       "gender": 1,
-      "isShiny": false,
-      "type": 9,
-      "weakness": 3,
+      "is_shiny": false,
+      "type": "-1",
+      "weakness": "-1",
       "stat": {
         "hp": [
           96,
@@ -325,14 +323,6 @@
       ],
       "moves": null,
       "syncMove": null,
-      "scale": [
-        100,
-        100,
-        100,
-        100,
-        100,
-        100
-      ],
       "movesDynamax": [
         {
           "id": 7012,
@@ -347,7 +337,7 @@
           "target": "對手１對拍組",
           "description": "提高我方全體拍組的特防2階段。",
           "tags": "none",
-          "group": 5
+          "group": "Regular"
         },
         {
           "id": 7013,
@@ -362,7 +352,7 @@
           "target": "對手１對拍組",
           "description": "會將天氣變成沙暴。",
           "tags": "none",
-          "group": 5
+          "group": "Regular"
         },
         {
           "id": 7039,
@@ -377,7 +367,7 @@
           "target": "我方１對拍組",
           "description": "讓我方變成下次傷害防禦狀態。",
           "tags": "none",
-          "group": 5
+          "group": "Regular"
         }
       ]
     }
@@ -387,9 +377,8 @@
       "cookieName": "奇巴納（２０２５新春）專用潛能餅乾１",
       "skills": [
         {
-          "name": "首次拍組招式後HP中回復G1",
+          "name": [],
           "description": "首次使出拍組招式時,會回復我方全體拍組的HP,約為最大HP的20%。",
-          "detail": [],
           "rate": 100
         }
       ]
@@ -398,21 +387,18 @@
       "cookieName": "奇巴納（２０２５新春）專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "被攻擊時HP回復G9",
+          "name": [],
           "description": "受到招式攻擊時,會回復我方全體拍組的HP。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時物理/特殊增強G1",
+          "name": [],
           "description": "首次上場時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時拍組招式增強G3",
+          "name": [],
           "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
-          "detail": [],
           "rate": 33
         }
       ]

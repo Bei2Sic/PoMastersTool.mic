@@ -42,12 +42,11 @@
     {
       "id": "20651780000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "穿山王",
       "form": "",
       "actor": "pm0028_00_sandpan",
       "gender": 2,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 9,
       "weakness": 3,
       "stat": {

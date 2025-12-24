@@ -54,12 +54,11 @@
     {
       "id": "20129400000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "狐大盜",
       "form": "",
       "actor": "pm0828_00_00_foxly",
       "gender": 2,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 16,
       "weakness": 12,
       "stat": {
@@ -179,7 +178,7 @@
           "target": "對手全體拍組",
           "description": "【開放條件】\n對手的場地上有惡屬性抵抗降低的寶可夢時\n【封印條件】\n對手的場地上變為沒有惡屬性抵抗降低的寶可夢時\n\n攻擊必定會命中。當對手的能力處於提高狀態時,會讓自己的能力也同等提高,並讓對手的能力回到初始狀態後攻擊。除了特定情況之外,只要攻擊命中就必定會擊中要害。讓對手場地變成能力無法提升狀態。",
           "tags": "SureHit",
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 11298,
@@ -219,21 +218,18 @@
       "cookieName": "希嘉娜（怪盜）專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "拍組招式效果絕佳時威力↑5",
+          "name": [],
           "description": "當效果絕佳時,會提高該拍組招式的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時拍組招式增強5",
+          "name": [],
           "description": "首次上場時,會提高自己的下次拍組招式威力增強5階段。",
-          "detail": [],
           "rate": 33
         }
       ]

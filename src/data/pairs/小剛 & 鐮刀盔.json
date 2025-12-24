@@ -67,12 +67,11 @@
     {
       "id": "20015000001",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "鐮刀盔",
       "form": "",
       "actor": "pm0141_00_kabutops",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 13,
       "weakness": 5,
       "stat": {

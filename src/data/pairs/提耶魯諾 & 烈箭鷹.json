@@ -48,12 +48,11 @@
     {
       "id": "20180000001",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "烈箭鷹",
       "form": "",
       "actor": "pm0755_00_robin3",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 2,
       "weakness": 4,
       "stat": {

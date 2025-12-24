@@ -54,12 +54,11 @@
     {
       "id": "20090000001",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "搖籃百合",
       "form": "",
       "actor": "pm0346_00_yuradle",
       "gender": 2,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 13,
       "weakness": 17,
       "stat": {

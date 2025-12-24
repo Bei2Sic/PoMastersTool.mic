@@ -54,12 +54,11 @@
     {
       "id": "20014010002",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "酷豹",
       "form": "",
       "actor": "pm0510_00_lepardas",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 16,
       "weakness": 12,
       "stat": {

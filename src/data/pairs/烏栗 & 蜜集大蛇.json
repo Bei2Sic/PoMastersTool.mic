@@ -48,12 +48,11 @@
     {
       "id": "20357000000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "蜜集大蛇",
       "form": "太晶屬性：格鬥",
       "actor": "pm1019_00_00_kamitsuorochi",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 7,
       "weakness": 10,
       "stat": {
@@ -191,7 +190,7 @@
           "target": "我方全體拍組",
           "description": "【開放條件】\n自己的HP為50%以上時\n【封印條件】\n自己的HP不到50%時\n\n會將天氣變成日照強烈的狀態。自己發動拍組招式所需的行動數會減少1次。提高我方全體拍組的下次拍組招式威力增強2階段。",
           "tags": 8388608,
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 13570,
@@ -228,14 +227,13 @@
     {
       "id": "20357000000",
       "variationType": 7,
-      "vAfterSm": false,
       "name": "蜜集大蛇",
       "form": "太晶屬性：格鬥",
       "actor": "pm1019_71_07_kamitsuorochi",
       "gender": 1,
-      "isShiny": false,
-      "type": 7,
-      "weakness": 10,
+      "is_shiny": false,
+      "type": "-1",
+      "weakness": "-1",
       "stat": {
         "hp": [
           110,
@@ -380,7 +378,7 @@
           "target": "我方全體拍組",
           "description": "【開放條件】\n自己的HP為50%以上時\n【封印條件】\n自己的HP不到50%時\n\n會將天氣變成日照強烈的狀態。自己發動拍組招式所需的行動數會減少1次。提高我方全體拍組的下次拍組招式威力增強2階段。",
           "tags": 8388608,
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 13570,
@@ -413,14 +411,6 @@
         "tags": "none",
         "group": "Sync"
       },
-      "scale": [
-        100,
-        100,
-        100,
-        100,
-        100,
-        100
-      ],
       "moveTera": {
         "id": 4041,
         "user": "寶可夢",
@@ -443,9 +433,8 @@
       "cookieName": "烏栗專用潛能餅乾１",
       "skills": [
         {
-          "name": "晴天時招式計量槽加速2",
+          "name": [],
           "description": "當天氣為日照強烈時,招式計量槽會累積得較快。",
-          "detail": [],
           "rate": 100
         }
       ]
@@ -454,21 +443,18 @@
       "cookieName": "烏栗專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "天氣場地領域變化時計量槽加速2",
+          "name": [],
           "description": "只有在天氣、場地或領域變化時,招式計量槽會累積得較快。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "天氣場地領域變化時拍組招式↑G2",
+          "name": [],
           "description": "只有在天氣、場地或領域變化時,會提高我方全體拍組的拍組招式的威力。",
-          "detail": [],
           "rate": 33
         }
       ]

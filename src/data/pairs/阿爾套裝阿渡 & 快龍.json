@@ -54,12 +54,11 @@
     {
       "id": "20111900000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "快龍",
       "form": "",
       "actor": "pm0149_00_kairyu",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 15,
       "weakness": 6,
       "stat": {
@@ -189,7 +188,7 @@
           "target": "對手１對拍組",
           "description": "【開放條件】\n我方的寶可夢使出3次招式時\n【封印條件】\n無\n\n攻擊必定會命中。對手的防禦和特防降低得越多,威力就越大。",
           "tags": "SureHit",
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 11118,
@@ -229,9 +228,8 @@
       "cookieName": "阿爾套裝阿渡專用潛能餅乾１",
       "skills": [
         {
-          "name": "上場時下次傷害防禦",
+          "name": [],
           "description": "上場時,會讓自己變成下次傷害防禦狀態。",
-          "detail": [],
           "rate": 100
         }
       ]
@@ -240,21 +238,18 @@
       "cookieName": "阿爾套裝阿渡專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "招式後招式計量槽增加9",
+          "name": [],
           "description": "招式成功時,會幫自己增加1條招式計量槽。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時拍組招式增強G3",
+          "name": [],
           "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
-          "detail": [],
           "rate": 33
         }
       ]

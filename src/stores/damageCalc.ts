@@ -131,7 +131,7 @@ export const useDamageCalcStore = defineStore("damageCalc", {
 
         weather: "無" as cond.WeatherType,
         isEXWeather: true,
-        terrain: "無`" as cond.TerrainType,
+        terrain: "無" as cond.TerrainType,
         isEXTerrain: false,
         zone: "無" as cond.ZoneType,
         isEXZone: true,

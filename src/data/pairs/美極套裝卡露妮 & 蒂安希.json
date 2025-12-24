@@ -67,12 +67,11 @@
     {
       "id": "20158100000",
       "variationType": 0,
-      "vAfterSm": true,
       "name": "蒂安希",
       "form": "",
       "actor": "pm0772_00_pinkdiamond_rare",
       "gender": 3,
-      "isShiny": true,
+      "is_shiny": true,
       "type": 13,
       "weakness": 17,
       "stat": {
@@ -192,7 +191,7 @@
           "target": "對手全體拍組",
           "description": "【開放條件】\n領域變成岩石領域時\n【封印條件】\n岩石領域被解除時\n\n降低對手的防禦2階段。提高我方全體拍組的防禦2階段。",
           "tags": "none",
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 11581,
@@ -229,14 +228,13 @@
     {
       "id": "20158100000",
       "variationType": 1,
-      "vAfterSm": true,
       "name": "超級蒂安希",
       "form": "",
       "actor": "pm0772_51_megadiancie_rare",
       "gender": 3,
-      "isShiny": true,
-      "type": 13,
-      "weakness": 17,
+      "is_shiny": true,
+      "type": "-1",
+      "weakness": "-1",
       "stat": {
         "hp": [
           98,
@@ -354,7 +352,7 @@
           "target": "對手全體拍組",
           "description": "【開放條件】\n領域變成岩石領域時\n【封印條件】\n岩石領域被解除時\n\n降低對手的防禦2階段。提高我方全體拍組的防禦2階段。",
           "tags": "none",
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 11581,
@@ -386,15 +384,7 @@
         "description": "變成超級蒂安希直到對戰結束。當領域為岩石領域時,威力會提高。",
         "tags": "none",
         "group": "Sync"
-      },
-      "scale": [
-        100,
-        120,
-        120,
-        100,
-        100,
-        100
-      ]
+      }
     }
   ],
   "luckCookies": [
@@ -402,21 +392,18 @@
       "cookieName": "美極套裝卡露妮專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "拍組招式效果絕佳時威力↑5",
+          "name": [],
           "description": "當效果絕佳時,會提高該拍組招式的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時拍組招式增強5",
+          "name": [],
           "description": "首次上場時,會提高自己的下次拍組招式威力增強5階段。",
-          "detail": [],
           "rate": 33
         }
       ]

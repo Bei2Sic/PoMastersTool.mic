@@ -54,12 +54,11 @@
     {
       "id": "20358000000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "敗露球菇",
       "form": "",
       "actor": "pm0591_00_morobareru",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 8,
       "weakness": 10,
       "stat": {
@@ -179,7 +178,7 @@
           "target": "對手全體拍組",
           "description": "【開放條件】\n自己使出1次招式時\n【封印條件】\n無\n\n招式必定會命中。降低對手全體拍組的閃避率2階段。讓對手全體拍組陷入畏縮、混亂或束縛中的任一狀態。分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。回復自己的HP,約為自己最大HP的10%。讓對手的目標暫時集中於自己。",
           "tags": 8388872,
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 13580,
@@ -219,9 +218,8 @@
       "cookieName": "聶凱專用潛能餅乾１",
       "skills": [
         {
-          "name": "首次拍組招式後下次傷害防禦",
+          "name": [],
           "description": "首次使出拍組招式時,會讓自己變成下次傷害防禦狀態。",
-          "detail": [],
           "rate": 100
         }
       ]
@@ -230,21 +228,18 @@
       "cookieName": "克拉韋爾專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "拍組招式效果絕佳時威力↑5",
+          "name": [],
           "description": "當效果絕佳時,會提高該拍組招式的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時拍組招式增強5",
+          "name": [],
           "description": "首次上場時,會提高自己的下次拍組招式威力增強5階段。",
-          "detail": [],
           "rate": 33
         }
       ]

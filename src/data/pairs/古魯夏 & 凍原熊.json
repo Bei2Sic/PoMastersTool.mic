@@ -67,12 +67,11 @@
     {
       "id": "20294000001",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "凍原熊",
       "form": "",
       "actor": "pm0614_00_tunbear",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 6,
       "weakness": 2,
       "stat": {

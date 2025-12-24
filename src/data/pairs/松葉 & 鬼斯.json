@@ -54,12 +54,11 @@
     {
       "id": "20148000002",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "鬼斯",
       "form": "",
       "actor": "pm0092_00_ghos",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 14,
       "weakness": 16,
       "stat": {

@@ -54,12 +54,11 @@
     {
       "id": "20303400000",
       "variationType": 0,
-      "vAfterSm": true,
       "name": "大鋼蛇",
       "form": "",
       "actor": "pm0208_01_haganeil_rare",
       "gender": 2,
-      "isShiny": true,
+      "is_shiny": true,
       "type": 17,
       "weakness": 2,
       "stat": {
@@ -192,7 +191,7 @@
           "target": "對手全體拍組",
           "description": "【開放條件】\n領域變成鋼鐵領域時\n【封印條件】\n鋼鐵領域被解除時\n\n降低對手的攻擊和特攻1階段。有30%的機率會讓對手陷入畏縮狀態。當大鋼蛇已經變成超級大鋼蛇時,還會再降低對手的速度1階段。提高我方全體拍組的防禦和特防1階段。當大鋼蛇已經變成超級大鋼蛇時,還會再提高我方全體拍組的速度1階段。",
           "tags": "none",
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 13034,
@@ -229,14 +228,13 @@
     {
       "id": "20303400000",
       "variationType": 1,
-      "vAfterSm": true,
       "name": "超級大鋼蛇",
       "form": "",
       "actor": "pm0208_51_megahaganeil_rare",
       "gender": 2,
-      "isShiny": true,
-      "type": 17,
-      "weakness": 2,
+      "is_shiny": true,
+      "type": "-1",
+      "weakness": "-1",
       "stat": {
         "hp": [
           94,
@@ -367,7 +365,7 @@
           "target": "對手全體拍組",
           "description": "【開放條件】\n領域變成鋼鐵領域時\n【封印條件】\n鋼鐵領域被解除時\n\n降低對手的攻擊和特攻1階段。有30%的機率會讓對手陷入畏縮狀態。當大鋼蛇已經變成超級大鋼蛇時,還會再降低對手的速度1階段。提高我方全體拍組的防禦和特防1階段。當大鋼蛇已經變成超級大鋼蛇時,還會再提高我方全體拍組的速度1階段。",
           "tags": "none",
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 13034,
@@ -399,15 +397,7 @@
         "description": "變成超級大鋼蛇直到對戰結束。",
         "tags": "none",
         "group": "Sync"
-      },
-      "scale": [
-        100,
-        120,
-        120,
-        100,
-        100,
-        100
-      ]
+      }
     }
   ],
   "luckCookies": [
@@ -415,9 +405,8 @@
       "cookieName": "波琵（２０２５新春）專用潛能餅乾１",
       "skills": [
         {
-          "name": "無傷上場時挺住",
+          "name": [],
           "description": "在HP全滿的狀態上場時,會讓自己變成挺住狀態。",
-          "detail": [],
           "rate": 100
         }
       ]
@@ -426,21 +415,18 @@
       "cookieName": "波琵（２０２５新春）專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "天氣場地領域變化時計量槽加速2",
+          "name": [],
           "description": "只有在天氣、場地或領域變化時,招式計量槽會累積得較快。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "天氣場地領域變化時拍組招式↑G2",
+          "name": [],
           "description": "只有在天氣、場地或領域變化時,會提高我方全體拍組的拍組招式的威力。",
-          "detail": [],
           "rate": 33
         }
       ]

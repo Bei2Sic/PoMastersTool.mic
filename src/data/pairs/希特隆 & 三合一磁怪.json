@@ -54,12 +54,11 @@
     {
       "id": "20131000001",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "三合一磁怪",
       "form": "",
       "actor": "pm0082_00_rarecoil",
       "gender": 3,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 4,
       "weakness": 9,
       "stat": {

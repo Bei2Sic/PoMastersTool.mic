@@ -54,12 +54,11 @@
     {
       "id": "20140110000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "惡食大王",
       "form": "",
       "actor": "pm0876_00_beastorange",
       "gender": 3,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 16,
       "weakness": 18,
       "stat": {
@@ -169,7 +168,7 @@
           "target": "我方全體拍組",
           "description": "【開放條件】\n使出「蓄力」時\n【封印條件】\n使出此招式時\n\n回復我方全體拍組的HP,約為最大HP的20%。自己的防禦和特防提高得越多,還會再讓自己的HP回復得越多。消耗自己提高的所有防禦和特防。",
           "tags": 8388864,
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 6095,
@@ -184,7 +183,7 @@
           "target": "對手１對拍組",
           "description": "【開放條件】\n自己的防禦和特防總計為6階段以上時\n【封印條件】\n自己的防禦和特防總計為5階段以下時\n\n自己的防禦或特防提高得越多,威力就越大。降低對手的防禦和特防1階段。消耗自己提高的所有防禦和特防。",
           "tags": "none",
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 11406,
@@ -224,9 +223,8 @@
       "cookieName": "美極套裝坂木（異裝）專用潛能餅乾１",
       "skills": [
         {
-          "name": "首次上場時場地招式計量槽加速",
+          "name": [],
           "description": "首次上場時,會讓我方場地變成招式計量槽加速狀態。",
-          "detail": [],
           "rate": 100
         }
       ]
@@ -235,21 +233,18 @@
       "cookieName": "美極套裝坂木（異裝）專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "被攻擊時HP回復G9",
+          "name": [],
           "description": "受到招式攻擊時,會回復我方全體拍組的HP。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時物理/特殊增強G1",
+          "name": [],
           "description": "首次上場時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時拍組招式增強G3",
+          "name": [],
           "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
-          "detail": [],
           "rate": 33
         }
       ]

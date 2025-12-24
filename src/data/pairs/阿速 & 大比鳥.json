@@ -48,12 +48,11 @@
     {
       "id": "20150000001",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "大比鳥",
       "form": "",
       "actor": "pm0018_00_pigeot",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 10,
       "weakness": 4,
       "stat": {

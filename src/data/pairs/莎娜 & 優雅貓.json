@@ -48,12 +48,11 @@
     {
       "id": "20139000001",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "優雅貓",
       "form": "",
       "actor": "pm0301_00_enekororo",
       "gender": 2,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 1,
       "weakness": 7,
       "stat": {

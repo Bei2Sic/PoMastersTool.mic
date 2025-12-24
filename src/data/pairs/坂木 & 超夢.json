@@ -48,12 +48,11 @@
     {
       "id": "20140000001",
       "variationType": 0,
-      "vAfterSm": true,
       "name": "超夢",
       "form": "",
       "actor": "pm0150_00_mewtwo",
       "gender": 3,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 11,
       "weakness": 16,
       "stat": {
@@ -200,14 +199,13 @@
     {
       "id": "20140000001",
       "variationType": 1,
-      "vAfterSm": true,
-      "name": "超級超夢Y",
+      "name": "超級超夢",
       "form": "",
       "actor": "pm0150_52_megamewtwoY",
       "gender": 3,
-      "isShiny": false,
-      "type": 11,
-      "weakness": 16,
+      "is_shiny": false,
+      "type": "-1",
+      "weakness": "-1",
       "stat": {
         "hp": [
           82,
@@ -347,15 +345,7 @@
         "description": "變成超級超夢Y直到對戰結束。",
         "tags": "none",
         "group": "Sync"
-      },
-      "scale": [
-        100,
-        100,
-        100,
-        120,
-        100,
-        120
-      ]
+      }
     }
   ],
   "luckCookies": [
@@ -363,21 +353,18 @@
       "cookieName": "坂木專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "效果絕佳時威力提升5",
+          "name": [],
           "description": "當效果絕佳時,會提高該招式的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時賦予物理/特殊增強2",
+          "name": [],
           "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
-          "detail": [],
           "rate": 33
         }
       ]
@@ -386,9 +373,8 @@
       "cookieName": "坂木專用潛能餅乾１",
       "skills": [
         {
-          "name": "攻擊時特防下降9",
+          "name": [],
           "description": "使出招式攻擊成功時,會降低對手的特防1階段。",
-          "detail": [],
           "rate": 100
         }
       ]

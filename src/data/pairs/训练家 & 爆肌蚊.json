@@ -42,12 +42,11 @@
     {
       "id": "28000021011",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "爆肌蚊",
       "form": "",
       "actor": "pm0877_00_beastyellow",
       "gender": 3,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 12,
       "weakness": 10,
       "stat": {

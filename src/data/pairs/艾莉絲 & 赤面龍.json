@@ -48,12 +48,11 @@
     {
       "id": "20092000001",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "赤面龍",
       "form": "",
       "actor": "pm0621_00_crimgan",
       "gender": 2,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 15,
       "weakness": 18,
       "stat": {

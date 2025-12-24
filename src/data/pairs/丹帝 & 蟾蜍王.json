@@ -54,12 +54,11 @@
     {
       "id": "20247000001",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "蟾蜍王",
       "form": "",
       "actor": "pm0537_00_gamageroge",
       "gender": 2,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 9,
       "weakness": 5,
       "stat": {

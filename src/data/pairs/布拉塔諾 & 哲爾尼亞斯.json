@@ -54,12 +54,11 @@
     {
       "id": "20136000002",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "哲爾尼亞斯",
       "form": "",
       "actor": "pm0768_00_pokemonX",
       "gender": 3,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 18,
       "weakness": 17,
       "stat": {
@@ -214,9 +213,8 @@
       "cookieName": "布拉塔諾專用潛能餅乾１",
       "skills": [
         {
-          "name": "上場時攻擊提升G1",
+          "name": [],
           "description": "上場時,會提高我方全體拍組的攻擊1階段。",
-          "detail": [],
           "rate": 100
         }
       ]
@@ -225,21 +223,18 @@
       "cookieName": "布拉塔諾專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "被攻擊時HP回復G9",
+          "name": [],
           "description": "受到招式攻擊時,會回復我方全體拍組的HP。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時物理/特殊增強G1",
+          "name": [],
           "description": "首次上場時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時拍組招式增強G3",
+          "name": [],
           "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
-          "detail": [],
           "rate": 33
         }
       ]
@@ -248,9 +243,8 @@
       "cookieName": "布拉塔諾專用潛能餅乾２",
       "skills": [
         {
-          "name": "妨害狀態無效",
+          "name": [],
           "description": "不會陷入畏縮狀態、混亂狀態或束縛狀態。",
-          "detail": [],
           "rate": 100
         }
       ]

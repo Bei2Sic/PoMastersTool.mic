@@ -54,12 +54,11 @@
     {
       "id": "20021900000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "風速狗",
       "form": "",
       "actor": "pm0059_00_windie",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 2,
       "weakness": 9,
       "stat": {

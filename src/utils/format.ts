@@ -140,7 +140,7 @@ export const getThemeIconStyle = (theme: Theme) => {
 // 获取对应的训练家图片资源
 export const getTrainerUrl = (actorId: string, exEnabled: boolean): string => {
     if (exEnabled) {
-        actorId += "_expose";
+        actorId += "_01_expose";
     }
     const imagePath = `../assets/trainer/${actorId}_128.png`;
     const url = new URL(imagePath, import.meta.url).href;

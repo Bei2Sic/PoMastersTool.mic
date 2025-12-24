@@ -48,12 +48,11 @@
     {
       "id": "20047000001",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "呆殼獸",
       "form": "",
       "actor": "pm0080_00_yadoran",
       "gender": 2,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 11,
       "weakness": 4,
       "stat": {

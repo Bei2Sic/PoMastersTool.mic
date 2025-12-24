@@ -54,12 +54,11 @@
     {
       "id": "20244000002",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "轟擂金剛猩",
       "form": "",
       "actor": "pm0812_00_00_gorirander",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 5,
       "weakness": 2,
       "stat": {
@@ -188,7 +187,7 @@
           "target": "對手全體拍組",
           "description": "【開放條件】\n我方隊伍使出1次拍組極巨化招式時\n【封印條件】\n使出此招式時\n\n即使對象為複數,招式的威力也不會降低。降低對手的速度1階段。",
           "tags": "none",
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 12447,
@@ -225,14 +224,13 @@
     {
       "id": "20244000002",
       "variationType": 4,
-      "vAfterSm": false,
       "name": "轟擂金剛猩",
       "form": "",
       "actor": "pm0812_83_00_gorirander",
       "gender": 1,
-      "isShiny": false,
-      "type": 5,
-      "weakness": 2,
+      "is_shiny": false,
+      "type": "-1",
+      "weakness": "-1",
       "stat": {
         "hp": [
           108,
@@ -317,14 +315,6 @@
       ],
       "moves": null,
       "syncMove": null,
-      "scale": [
-        100,
-        100,
-        100,
-        100,
-        100,
-        100
-      ],
       "movesDynamax": [
         {
           "id": 7025,
@@ -339,7 +329,7 @@
           "target": "對手１對拍組",
           "description": "將場地變成青草場地。",
           "tags": "none",
-          "group": 5
+          "group": "Regular"
         },
         {
           "id": 7039,
@@ -354,7 +344,7 @@
           "target": "我方１對拍組",
           "description": "讓我方變成下次傷害防禦狀態。",
           "tags": "none",
-          "group": 5
+          "group": "Regular"
         },
         {
           "id": 7025,
@@ -369,7 +359,7 @@
           "target": "對手１對拍組",
           "description": "將場地變成青草場地。",
           "tags": "none",
-          "group": 5
+          "group": "Regular"
         }
       ]
     }
@@ -379,21 +369,18 @@
       "cookieName": "赫普專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "天氣場地領域變化時計量槽加速2",
+          "name": [],
           "description": "只有在天氣、場地或領域變化時,招式計量槽會累積得較快。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "天氣場地領域變化時拍組招式↑G2",
+          "name": [],
           "description": "只有在天氣、場地或領域變化時,會提高我方全體拍組的拍組招式的威力。",
-          "detail": [],
           "rate": 33
         }
       ]

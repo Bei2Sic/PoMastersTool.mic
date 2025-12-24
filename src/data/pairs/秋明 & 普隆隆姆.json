@@ -67,12 +67,11 @@
     {
       "id": "20328000000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "普隆隆姆",
       "form": "",
       "actor": "pm0966_00_00_burororoom",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 8,
       "weakness": 9,
       "stat": {
@@ -201,7 +200,7 @@
           "target": "對手全體拍組",
           "description": "【開放條件】\n對手場地變成毒傷害場地時\n【封印條件】\n對手場地的毒傷害場地被解除時\n\n讓對手陷入劇毒狀態。首次使出此招式攻擊成功時,會降低對手的毒屬性抵抗1階段。提高我方全體拍組的防禦和特防2階段。",
           "tags": "none",
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 13280,
@@ -241,9 +240,8 @@
       "cookieName": "秋明專用潛能餅乾１",
       "skills": [
         {
-          "name": "首次上場時場地招式計量槽加速",
+          "name": [],
           "description": "首次上場時,會讓我方場地變成招式計量槽加速狀態。",
-          "detail": [],
           "rate": 100
         }
       ]
@@ -252,21 +250,18 @@
       "cookieName": "秋明專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "被攻擊時HP回復G9",
+          "name": [],
           "description": "受到招式攻擊時,會回復我方全體拍組的HP。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時物理/特殊增強G1",
+          "name": [],
           "description": "首次上場時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時拍組招式增強G3",
+          "name": [],
           "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
-          "detail": [],
           "rate": 33
         }
       ]

@@ -42,12 +42,11 @@
     {
       "id": "20140000003",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "尼多力諾",
       "form": "",
       "actor": "pm0033_00_nidorino",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 8,
       "weakness": 9,
       "stat": {

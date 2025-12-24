@@ -54,12 +54,11 @@
     {
       "id": "20021910000",
       "variationType": 0,
-      "vAfterSm": true,
       "name": "大比鳥",
       "form": "",
       "actor": "pm0018_00_pigeot",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 10,
       "weakness": 13,
       "stat": {
@@ -190,7 +189,7 @@
           "target": "對手全體拍組",
           "description": "【開放條件】\n自己的特攻處於提高狀態時\n【封印條件】\n無\n\n攻擊必定會命中。讓對手陷入混亂狀態。即使對象為複數,招式的威力也不會降低。當大比鳥已經變成超級大比鳥時,威力還會再變成2倍。當自己的氣魄沒有提高時,還會讓自己發動拍組招式所需的行動數減少3次。",
           "tags": 4259848,
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 182,
@@ -257,14 +256,13 @@
     {
       "id": "20021910000",
       "variationType": 1,
-      "vAfterSm": true,
       "name": "超級大比鳥",
       "form": "",
       "actor": "pm0018_51_megapigeot",
       "gender": 1,
-      "isShiny": false,
-      "type": 10,
-      "weakness": 13,
+      "is_shiny": false,
+      "type": "-1",
+      "weakness": "-1",
       "stat": {
         "hp": [
           115,
@@ -393,7 +391,7 @@
           "target": "對手全體拍組",
           "description": "【開放條件】\n自己的特攻處於提高狀態時\n【封印條件】\n無\n\n攻擊必定會命中。讓對手陷入混亂狀態。即使對象為複數,招式的威力也不會降低。當大比鳥已經變成超級大比鳥時,威力還會再變成2倍。當自己的氣魄沒有提高時,還會讓自己發動拍組招式所需的行動數減少3次。",
           "tags": 4259848,
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 182,
@@ -423,7 +421,7 @@
           "target": "對手１對拍組",
           "description": "【開放條件】\n自己的特攻處於提高狀態時\n【封印條件】\n無\n\n攻擊必定會命中。讓對手陷入畏縮狀態。",
           "tags": 12,
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 10213,
@@ -455,15 +453,7 @@
         "description": "變成超級大比鳥直到對戰結束。首次使出拍組招式時,會讓自己變成挺住狀態。",
         "tags": 67108864,
         "group": "Sync"
-      },
-      "scale": [
-        100,
-        110,
-        110,
-        110,
-        110,
-        110
-      ]
+      }
     }
   ],
   "luckCookies": [
@@ -471,9 +461,8 @@
       "cookieName": "阿爾套裝青綠專用潛能餅乾１",
       "skills": [
         {
-          "name": "上場時特殊增強1",
+          "name": [],
           "description": "上場時,會提高自己的下次特殊招式威力增強1階段。",
-          "detail": [],
           "rate": 100
         }
       ]
@@ -482,21 +471,18 @@
       "cookieName": "阿爾套裝青綠專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "招式後招式計量槽增加9",
+          "name": [],
           "description": "招式成功時,會幫自己增加1條招式計量槽。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時拍組招式增強G3",
+          "name": [],
           "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
-          "detail": [],
           "rate": 33
         }
       ]

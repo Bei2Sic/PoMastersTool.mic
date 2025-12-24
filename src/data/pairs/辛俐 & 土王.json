@@ -67,12 +67,11 @@
     {
       "id": "20302000000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "土王",
       "form": "",
       "actor": "pm0980_00_51_dooh",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 9,
       "weakness": 6,
       "stat": {
@@ -192,7 +191,7 @@
           "target": "對手全體拍組",
           "description": "【開放條件】\n受到1次招式攻擊時\n【封印條件】\n使出此招式時\n\n攻擊必定會命中。降低對手的命中率2階段。讓對手陷入中毒狀態。將領域變成大地領域。(大地領域會提高地面屬性的攻擊的威力。)分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強2階段。",
           "tags": "SureHit",
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 13020,
@@ -232,9 +231,8 @@
       "cookieName": "辛俐專用潛能餅乾１",
       "skills": [
         {
-          "name": "首次拍組招式後HP中回復G1",
+          "name": [],
           "description": "首次使出拍組招式時,會回復我方全體拍組的HP,約為最大HP的20%。",
-          "detail": [],
           "rate": 100
         }
       ]
@@ -243,21 +241,18 @@
       "cookieName": "辛俐專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "被攻擊時HP回復G9",
+          "name": [],
           "description": "受到招式攻擊時,會回復我方全體拍組的HP。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時物理/特殊增強G1",
+          "name": [],
           "description": "首次上場時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時拍組招式增強G3",
+          "name": [],
           "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
-          "detail": [],
           "rate": 33
         }
       ]

@@ -54,12 +54,11 @@
     {
       "id": "20123400000",
       "variationType": 0,
-      "vAfterSm": true,
       "name": "巨鉗螳螂",
       "form": "",
       "actor": "pm0212_01_hassam",
       "gender": 2,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 17,
       "weakness": 2,
       "stat": {
@@ -179,7 +178,7 @@
           "target": "對手１對拍組",
           "description": "【開放條件】\n領域變成鋼鐵領域時\n【封印條件】\n鋼鐵領域被解除時\n\n攻擊必定會命中。讓對手陷入畏縮狀態。當巨鉗螳螂已經變成超級巨鉗螳螂時,還會再幫自己的同步招式的使用次數回復1次。",
           "tags": 12,
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 11234,
@@ -216,14 +215,13 @@
     {
       "id": "20123400000",
       "variationType": 1,
-      "vAfterSm": true,
       "name": "超級巨鉗螳螂",
       "form": "",
       "actor": "pm0212_51_megahassam",
       "gender": 2,
-      "isShiny": false,
-      "type": 17,
-      "weakness": 2,
+      "is_shiny": false,
+      "type": "-1",
+      "weakness": "-1",
       "stat": {
         "hp": [
           92,
@@ -341,7 +339,7 @@
           "target": "對手１對拍組",
           "description": "【開放條件】\n領域變成鋼鐵領域時\n【封印條件】\n鋼鐵領域被解除時\n\n攻擊必定會命中。讓對手陷入畏縮狀態。當巨鉗螳螂已經變成超級巨鉗螳螂時,還會再幫自己的同步招式的使用次數回復1次。",
           "tags": 12,
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 11234,
@@ -373,15 +371,7 @@
         "description": "變成超級巨鉗螳螂直到對戰結束。",
         "tags": "none",
         "group": "Sync"
-      },
-      "scale": [
-        100,
-        100,
-        120,
-        100,
-        120,
-        100
-      ]
+      }
     }
   ],
   "luckCookies": [
@@ -389,9 +379,8 @@
       "cookieName": "美月（英雄）專用潛能餅乾１",
       "skills": [
         {
-          "name": "攻擊時命中率下降3",
+          "name": [],
           "description": "使出招式攻擊成功時,有40%的機率會降低對手的命中率1階段。",
-          "detail": [],
           "rate": 100
         }
       ]
@@ -400,21 +389,18 @@
       "cookieName": "美月（英雄）專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "天氣場地領域變化時計量槽加速2",
+          "name": [],
           "description": "只有在天氣、場地或領域變化時,招式計量槽會累積得較快。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "天氣場地領域變化時拍組招式↑G2",
+          "name": [],
           "description": "只有在天氣、場地或領域變化時,會提高我方全體拍組的拍組招式的威力。",
-          "detail": [],
           "rate": 33
         }
       ]

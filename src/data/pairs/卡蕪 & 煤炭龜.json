@@ -54,12 +54,11 @@
     {
       "id": "20252000001",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "煤炭龜",
       "form": "",
       "actor": "pm0324_00_cotoise",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 2,
       "weakness": 9,
       "stat": {

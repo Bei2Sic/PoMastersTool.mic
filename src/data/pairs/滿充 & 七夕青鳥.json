@@ -54,12 +54,11 @@
     {
       "id": "20128000002",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "七夕青鳥",
       "form": "",
       "actor": "pm0334_00_tyltalis",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 15,
       "weakness": 6,
       "stat": {

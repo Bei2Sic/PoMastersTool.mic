@@ -67,12 +67,11 @@
     {
       "id": "20122800000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "壘磊石",
       "form": "",
       "actor": "pm0884_00_beastishigaki",
       "gender": 3,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 13,
       "weakness": 9,
       "stat": {
@@ -192,7 +191,7 @@
           "target": "對手全體拍組",
           "description": "【開放條件】\n自己的防禦提高至最高階段時\n【封印條件】\n自己的防禦未提高至最高階段時\n\n降低對手的速度2階段。將領域變成岩石領域。(岩石領域會提高岩石屬性的攻擊的威力。)分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
           "tags": "none",
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 11228,
@@ -232,9 +231,8 @@
       "cookieName": "小陽（阿羅拉）專用潛能餅乾１",
       "skills": [
         {
-          "name": "首次拍組招式後下次傷害防禦",
+          "name": [],
           "description": "首次使出拍組招式時,會讓自己變成下次傷害防禦狀態。",
-          "detail": [],
           "rate": 100
         }
       ]
@@ -243,21 +241,18 @@
       "cookieName": "小陽（阿羅拉）專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "被攻擊時HP回復G9",
+          "name": [],
           "description": "受到招式攻擊時,會回復我方全體拍組的HP。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時物理/特殊增強G1",
+          "name": [],
           "description": "首次上場時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時拍組招式增強G3",
+          "name": [],
           "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
-          "detail": [],
           "rate": 33
         }
       ]

@@ -42,12 +42,11 @@
     {
       "id": "20140000002",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "鑽角犀獸",
       "form": "",
       "actor": "pm0112_00_sidon",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 9,
       "weakness": 5,
       "stat": {
@@ -137,7 +136,7 @@
           "target": "對手全體拍組",
           "description": "【開放條件】\n自己的攻擊處於提高狀態時\n【封印條件】\n自己的攻擊未處於提高狀態時\n\n自己的特攻提高得越多,威力就越大。首次使出此招式攻擊成功時,會將天氣變成沙暴。降低對手的速度1階段。",
           "tags": "none",
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 196,
@@ -207,21 +206,18 @@
       "cookieName": "坂木專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "天氣場地領域變化時計量槽加速2",
+          "name": [],
           "description": "只有在天氣、場地或領域變化時,招式計量槽會累積得較快。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "天氣場地領域變化時拍組招式↑G2",
+          "name": [],
           "description": "只有在天氣、場地或領域變化時,會提高我方全體拍組的拍組招式的威力。",
-          "detail": [],
           "rate": 33
         }
       ]

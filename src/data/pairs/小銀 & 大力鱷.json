@@ -48,12 +48,11 @@
     {
       "id": "20133000002",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "大力鱷",
       "form": "",
       "actor": "pm0160_00_ordile",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 3,
       "weakness": 4,
       "stat": {

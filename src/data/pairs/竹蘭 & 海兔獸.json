@@ -54,12 +54,11 @@
     {
       "id": "20091000001",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "海兔獸",
       "form": "西海",
       "actor": "pm0423_11_tritodon",
       "gender": 2,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 9,
       "weakness": 5,
       "stat": {

@@ -54,12 +54,11 @@
     {
       "id": "20025000001",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "雪妖女",
       "form": "",
       "actor": "pm0478_00_yukimenoko",
       "gender": 2,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 6,
       "weakness": 17,
       "stat": {

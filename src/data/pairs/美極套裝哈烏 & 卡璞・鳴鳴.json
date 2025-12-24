@@ -67,12 +67,11 @@
     {
       "id": "20098100000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "卡璞・鳴鳴",
       "form": "",
       "actor": "pm0830_00_tikitori",
       "gender": 3,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 4,
       "weakness": 9,
       "stat": {
@@ -192,7 +191,7 @@
           "target": "對手全體拍組",
           "description": "【開放條件】\n天氣、場地或領域其中之一生效時\n【封印條件】\n天氣、場地和領域全部解除時\n\n當領域為妖精領域時,威力會變成2倍。降低對手的速度2階段。提高我方全體拍組的速度2階段。",
           "tags": "none",
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 10981,
@@ -232,21 +231,18 @@
       "cookieName": "美極套裝哈烏專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "拍組招式效果絕佳時威力↑5",
+          "name": [],
           "description": "當效果絕佳時,會提高該拍組招式的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時拍組招式增強5",
+          "name": [],
           "description": "首次上場時,會提高自己的下次拍組招式威力增強5階段。",
-          "detail": [],
           "rate": 33
         }
       ]

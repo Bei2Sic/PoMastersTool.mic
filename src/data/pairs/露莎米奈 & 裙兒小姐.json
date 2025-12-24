@@ -54,12 +54,11 @@
     {
       "id": "20120000001",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "裙兒小姐",
       "form": "",
       "actor": "pm0549_00_dredear",
       "gender": 2,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 5,
       "weakness": 12,
       "stat": {

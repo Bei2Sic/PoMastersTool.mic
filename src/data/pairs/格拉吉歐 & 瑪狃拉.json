@@ -54,12 +54,11 @@
     {
       "id": "20119000002",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "瑪狃拉",
       "form": "",
       "actor": "pm0461_00_manyula",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 6,
       "weakness": 7,
       "stat": {

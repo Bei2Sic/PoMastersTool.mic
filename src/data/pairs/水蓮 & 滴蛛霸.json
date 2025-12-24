@@ -54,12 +54,11 @@
     {
       "id": "20160000000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "滴蛛霸",
       "form": "",
       "actor": "pm0851_00_mizugumo2",
       "gender": 2,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 3,
       "weakness": 13,
       "stat": {
@@ -219,9 +218,8 @@
       "cookieName": "水蓮專用潛能餅乾１",
       "skills": [
         {
-          "name": "攻擊時HP回復4",
+          "name": [],
           "description": "使出招式攻擊成功時,有50%的機率會回復自己的HP。",
-          "detail": [],
           "rate": 100
         }
       ]
@@ -230,21 +228,18 @@
       "cookieName": "水蓮專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "被攻擊時HP回復G9",
+          "name": [],
           "description": "受到招式攻擊時,會回復我方全體拍組的HP。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時物理/特殊增強G1",
+          "name": [],
           "description": "首次上場時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時拍組招式增強G3",
+          "name": [],
           "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
-          "detail": [],
           "rate": 33
         }
       ]

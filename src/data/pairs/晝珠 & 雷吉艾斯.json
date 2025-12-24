@@ -54,12 +54,11 @@
     {
       "id": "20206000000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "雷吉艾斯",
       "form": "",
       "actor": "pm0378_00_regice",
       "gender": 3,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 6,
       "weakness": 2,
       "stat": {

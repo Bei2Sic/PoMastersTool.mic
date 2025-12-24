@@ -54,12 +54,11 @@
     {
       "id": "20257000001",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "龐岩怪",
       "form": "",
       "actor": "pm0526_00_gigaiath",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 13,
       "weakness": 3,
       "stat": {

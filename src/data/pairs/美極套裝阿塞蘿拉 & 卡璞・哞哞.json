@@ -67,12 +67,11 @@
     {
       "id": "20007100000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "卡璞・哞哞",
       "form": "",
       "actor": "pm0832_00_tikiushi",
       "gender": 3,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 5,
       "weakness": 10,
       "stat": {
@@ -192,7 +191,7 @@
           "target": "我方全體拍組",
           "description": "【開放條件】\n天氣、場地或領域其中之一生效時\n【封印條件】\n天氣、場地和領域全部解除時\n\n提高我方全體拍組的攻擊2階段。提高我方全體拍組的下次物理招式威力增強1階段。當天氣為日照強烈時,會幫自己增加2條招式計量槽。",
           "tags": "none",
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 10071,
@@ -232,21 +231,18 @@
       "cookieName": "美極套裝阿塞蘿拉專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "被攻擊時HP回復G9",
+          "name": [],
           "description": "受到招式攻擊時,會回復我方全體拍組的HP。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時物理/特殊增強G1",
+          "name": [],
           "description": "首次上場時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時拍組招式增強G3",
+          "name": [],
           "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
-          "detail": [],
           "rate": 33
         }
       ]

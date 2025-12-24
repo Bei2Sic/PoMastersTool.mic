@@ -54,12 +54,11 @@
     {
       "id": "20040000001",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "帝牙海獅",
       "form": "",
       "actor": "pm0365_00_todoseruga",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 6,
       "weakness": 4,
       "stat": {

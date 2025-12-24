@@ -48,12 +48,11 @@
     {
       "id": "20062000000",
       "variationType": 0,
-      "vAfterSm": true,
       "name": "黑魯加",
       "form": "",
       "actor": "pm0229_01_hellgar",
       "gender": 2,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 16,
       "weakness": 7,
       "stat": {
@@ -205,14 +204,13 @@
     {
       "id": "20062000000",
       "variationType": 1,
-      "vAfterSm": true,
       "name": "超級黑魯加",
       "form": "",
       "actor": "pm0229_51_megahellgar",
       "gender": 2,
-      "isShiny": false,
-      "type": 16,
-      "weakness": 7,
+      "is_shiny": false,
+      "type": "-1",
+      "weakness": "-1",
       "stat": {
         "hp": [
           85,
@@ -357,15 +355,7 @@
         "description": "變成超級黑魯加直到對戰結束。",
         "tags": "none",
         "group": "Sync"
-      },
-      "scale": [
-        100,
-        100,
-        110,
-        110,
-        100,
-        120
-      ]
+      }
     }
   ],
   "luckCookies": [
@@ -373,21 +363,18 @@
       "cookieName": "梨花專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "效果絕佳時威力提升5",
+          "name": [],
           "description": "當效果絕佳時,會提高該招式的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時賦予物理/特殊增強2",
+          "name": [],
           "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
-          "detail": [],
           "rate": 33
         }
       ]

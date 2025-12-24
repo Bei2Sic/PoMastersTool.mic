@@ -54,12 +54,11 @@
     {
       "id": "20159000000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "姆克鷹",
       "form": "",
       "actor": "pm0398_00_mukuhawk",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 10,
       "weakness": 4,
       "stat": {
@@ -219,21 +218,18 @@
       "cookieName": "石蘭專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "拍組招式效果絕佳時威力↑5",
+          "name": [],
           "description": "當效果絕佳時,會提高該拍組招式的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時拍組招式增強5",
+          "name": [],
           "description": "首次上場時,會提高自己的下次拍組招式威力增強5階段。",
-          "detail": [],
           "rate": 33
         }
       ]
@@ -863,6 +859,84 @@
       "y": -3,
       "color": "#BF80FF",
       "type": 10
+    },
+    {
+      "id": 1015900048,
+      "name": "攻擊 + 20",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -2,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1015900049,
+      "name": "請覺悟吧!：招式後要害率提升2",
+      "description": "招式成功時,會提高自己的擊中要害率2階段。",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -3,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1015900050,
+      "name": "請覺悟吧!：首次招式後招式次數回復1",
+      "description": "首次招式成功時,會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": -3,
+      "y": 2,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1015900051,
+      "name": "HP + 40",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 2,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1015900052,
+      "name": "羽毛舞：寶可夢使出變化招式時招式計量槽增加2",
+      "description": "在寶可夢使出變化招式時,會幫自己增加2條招式計量槽。",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 3,
+      "y": 0,
+      "color": "#FF0066",
+      "type": 10
+    },
+    {
+      "id": 1015900053,
+      "name": "HP減少時威力提升3",
+      "description": "當自己的HP非全滿狀態時,會提高招式的威力。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 3,
+      "y": -1,
+      "color": "#FFC266",
+      "type": 0
     }
   ]
 }

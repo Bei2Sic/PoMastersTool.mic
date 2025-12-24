@@ -54,12 +54,11 @@
     {
       "id": "20289000001",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "鬃岩狼人",
       "form": "白晝的樣子",
       "actor": "pm0829_11_okami2noon",
       "gender": 2,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 13,
       "weakness": 17,
       "stat": {

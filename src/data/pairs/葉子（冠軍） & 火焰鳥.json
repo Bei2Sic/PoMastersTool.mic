@@ -54,12 +54,11 @@
     {
       "id": "20017900000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "火焰鳥",
       "form": "",
       "actor": "pm0146_00_fire",
       "gender": 3,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 2,
       "weakness": 3,
       "stat": {
@@ -184,7 +183,7 @@
           "target": "對手１對拍組",
           "description": "【開放條件】\n對手的場地上有屬性抵抗降低的寶可夢時\n【封印條件】\n對手的場地上變為沒有屬性抵抗降低的寶可夢時\n\n解除自己的冰凍狀態。當對手的能力處於降低狀態時,還會再讓該能力降低的幅度變成2倍。首次使出此招式攻擊成功時,會將天氣變成日照強烈的狀態。有10%的機率會讓對手陷入灼傷狀態。",
           "tags": "OkWhileFrozen",
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 10179,
@@ -224,21 +223,18 @@
       "cookieName": "葉子（冠軍）專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "拍組招式效果絕佳時威力↑5",
+          "name": [],
           "description": "當效果絕佳時,會提高該拍組招式的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時拍組招式增強5",
+          "name": [],
           "description": "首次上場時,會提高自己的下次拍組招式威力增強5階段。",
-          "detail": [],
           "rate": 33
         }
       ]

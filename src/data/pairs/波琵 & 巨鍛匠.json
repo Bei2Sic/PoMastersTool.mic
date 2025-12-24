@@ -67,12 +67,11 @@
     {
       "id": "20303000000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "巨鍛匠",
       "form": "",
       "actor": "pm0959_00_00_dekanuchan",
       "gender": 2,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 17,
       "weakness": 2,
       "stat": {
@@ -192,7 +191,7 @@
           "target": "對手１對拍組",
           "description": "【開放條件】\n自己使出1次招式時\n【封印條件】\n使出此招式時\n\n沒有追加效果。",
           "tags": "none",
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 13030,
@@ -232,9 +231,8 @@
       "cookieName": "波琵專用潛能餅乾１",
       "skills": [
         {
-          "name": "攻擊麻痺中的對手時防禦下降9",
+          "name": [],
           "description": "當對手陷入麻痺狀態且使出招式攻擊成功時,會降低對手的防禦1階段。",
-          "detail": [],
           "rate": 100
         }
       ]
@@ -243,21 +241,18 @@
       "cookieName": "波琵專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "效果絕佳時威力提升5",
+          "name": [],
           "description": "當效果絕佳時,會提高該招式的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時賦予物理/特殊增強2",
+          "name": [],
           "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
-          "detail": [],
           "rate": 33
         }
       ]

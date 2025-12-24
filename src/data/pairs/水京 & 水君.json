@@ -61,12 +61,11 @@
     {
       "id": "20216000000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "水君",
       "form": "",
       "actor": "pm0245_00_suicune_rare",
       "gender": 3,
-      "isShiny": true,
+      "is_shiny": true,
       "type": 3,
       "weakness": 4,
       "stat": {
@@ -186,7 +185,7 @@
           "target": "對手全體拍組",
           "description": "【開放條件】\n自己使出2次招式時\n【封印條件】\n無\n\n有20%的機率會讓對手陷入畏縮狀態。即使對象為複數,招式的威力與追加效果的成功率也不會降低。",
           "tags": "none",
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 12160,
@@ -226,21 +225,18 @@
       "cookieName": "水京專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "效果絕佳時威力提升5",
+          "name": [],
           "description": "當效果絕佳時,會提高該招式的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時賦予物理/特殊增強2",
+          "name": [],
           "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
-          "detail": [],
           "rate": 33
         }
       ]

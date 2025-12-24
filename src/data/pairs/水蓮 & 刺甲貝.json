@@ -67,12 +67,11 @@
     {
       "id": "20160000002",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "刺甲貝",
       "form": "",
       "actor": "pm0091_00_parshen",
       "gender": 2,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 3,
       "weakness": 5,
       "stat": {

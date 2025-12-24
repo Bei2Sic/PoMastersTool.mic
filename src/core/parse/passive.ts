@@ -101,6 +101,8 @@ export class PassiveSkillParser {
             desc
         );
 
+        console.log(name);
+        console.log(isDamage, isStatBoost);
         return isDamage || isStatBoost;
     }
 
@@ -492,11 +494,22 @@ export class PassiveSkillParser {
                 };
         }
         // 場地 (領域/場地)
-        if (name.includes("場地") || name.includes("領域")) {
-            const match = name.match(/(.+?(場地|領域))/);
+        if (name.includes("場地")){
+            const match = name.match(/(.+?(場地))/);
             if (match)
                 return {
                     logic: LogicType.Terrain,
+                    key: match[1],
+                    detail: "自身",
+                    isDynamic: false,
+                };
+        }
+
+        if (name.includes("領域")) {
+            const match = name.match(/(.+?(領域))/);
+            if (match)
+                return {
+                    logic: LogicType.Zone,
                     key: match[1],
                     detail: "自身",
                     isDynamic: false,

@@ -54,12 +54,11 @@
     {
       "id": "20021900001",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "閃電鳥",
       "form": "",
       "actor": "pm0145_00_thunder",
       "gender": 3,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 4,
       "weakness": 6,
       "stat": {
@@ -184,7 +183,7 @@
           "target": "我方全體拍組",
           "description": "【開放條件】\n對手的場地上有屬性抵抗降低的寶可夢時\n【封印條件】\n對手的場地上變為沒有屬性抵抗降低的寶可夢時\n\n回復我方全體拍組的HP,約為最大HP的30%。還會再回復自己的HP,約為自己最大HP的30%。解除我方全體拍組的異常狀態。讓我方全體拍組變成附帶回復狀態。",
           "tags": 8388864,
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 10216,
@@ -224,21 +223,18 @@
       "cookieName": "青綠（冠軍）專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "被攻擊時HP回復G9",
+          "name": [],
           "description": "受到招式攻擊時,會回復我方全體拍組的HP。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時物理/特殊增強G1",
+          "name": [],
           "description": "首次上場時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時拍組招式增強G3",
+          "name": [],
           "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
-          "detail": [],
           "rate": 33
         }
       ]

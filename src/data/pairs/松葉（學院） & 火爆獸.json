@@ -37,6 +37,12 @@
       "description": "我方全體拍組最大HP提升8\n我方全體拍組的攻擊和特攻提升5",
       "tag": "特別服裝",
       "category": 4
+    },
+    {
+      "name": "帕希歐學院／技術",
+      "description": "我方全體拍組最大HP提升8\n我方全體拍組的攻擊和特攻提升5",
+      "tag": "帕希歐學院",
+      "category": 999
     }
   ],
   "specialAwaking": {
@@ -48,12 +54,11 @@
     {
       "id": "20148410000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "火爆獸",
       "form": "洗翠的樣子",
       "actor": "pm0157_00_41_bakphoon",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 14,
       "weakness": 3,
       "stat": {
@@ -191,7 +196,7 @@
           "target": "對手１對拍組",
           "description": "【開放條件】\n我方隊伍使出1次拍組招式時\n【封印條件】\n使出此招式時\n\n攻擊必定會命中。當對手陷入異常狀態時,威力會變成2倍。降低對手的特防和速度3階段。讓對手陷入灼傷狀態。",
           "tags": "SureHit",
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 11487,
@@ -231,21 +236,18 @@
       "cookieName": "松葉（學院）專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "拍組招式效果絕佳時威力↑5",
+          "name": [],
           "description": "當效果絕佳時,會提高該拍組招式的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時拍組招式增強5",
+          "name": [],
           "description": "首次上場時,會提高自己的下次拍組招式威力增強5階段。",
-          "detail": [],
           "rate": 33
         }
       ]

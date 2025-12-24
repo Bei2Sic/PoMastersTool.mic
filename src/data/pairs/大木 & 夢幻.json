@@ -48,12 +48,11 @@
     {
       "id": "20137000000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "夢幻",
       "form": "使用拍組招式前",
       "actor": "pm0151_00_mew",
       "gender": 3,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 11,
       "weakness": 12,
       "stat": {
@@ -205,14 +204,13 @@
     {
       "id": "20137000000",
       "variationType": 3,
-      "vAfterSm": false,
       "name": "夢幻",
       "form": "使用拍組招式後",
       "actor": "pm0151_00_mew",
       "gender": 3,
-      "isShiny": false,
-      "type": 11,
-      "weakness": 12,
+      "is_shiny": false,
+      "type": "-1",
+      "weakness": "-1",
       "stat": {
         "hp": [
           100,
@@ -357,15 +355,7 @@
         "description": "沒有追加效果。",
         "tags": "none",
         "group": "Sync"
-      },
-      "scale": [
-        100,
-        100,
-        100,
-        100,
-        100,
-        100
-      ]
+      }
     }
   ],
   "luckCookies": [
@@ -373,9 +363,8 @@
       "cookieName": "大木專用潛能餅乾１",
       "skills": [
         {
-          "name": "攻擊時招式計量槽增加5",
+          "name": [],
           "description": "使出招式攻擊成功時,有60%的機率會幫自己增加1條招式計量槽。",
-          "detail": [],
           "rate": 100
         }
       ]
@@ -384,21 +373,18 @@
       "cookieName": "大木專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "拍組招式效果絕佳時威力↑5",
+          "name": [],
           "description": "當效果絕佳時,會提高該拍組招式的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時拍組招式增強5",
+          "name": [],
           "description": "首次上場時,會提高自己的下次拍組招式威力增強5階段。",
-          "detail": [],
           "rate": 33
         }
       ]

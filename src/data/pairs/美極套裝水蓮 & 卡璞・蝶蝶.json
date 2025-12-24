@@ -67,12 +67,11 @@
     {
       "id": "20160100000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "卡璞・蝶蝶",
       "form": "",
       "actor": "pm0831_00_tikichou",
       "gender": 3,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 11,
       "weakness": 17,
       "stat": {
@@ -192,7 +191,7 @@
           "target": "對手全體拍組",
           "description": "【開放條件】\n天氣、場地或領域其中之一生效時\n【封印條件】\n天氣、場地和領域全部解除時\n\n攻擊必定會命中。除了特定情況之外,只要攻擊命中就必定會擊中要害。即使對象為複數,招式的威力也不會降低。當場地為精神場地時,會減少使用2條招式計量槽。",
           "tags": "SureHit",
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 11601,
@@ -232,21 +231,18 @@
       "cookieName": "美極套裝水蓮專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "效果絕佳時威力提升5",
+          "name": [],
           "description": "當效果絕佳時,會提高該招式的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時賦予物理/特殊增強2",
+          "name": [],
           "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
-          "detail": [],
           "rate": 33
         }
       ]

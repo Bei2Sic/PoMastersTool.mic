@@ -48,12 +48,11 @@
     {
       "id": "20110010000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "可達鴨",
       "form": "",
       "actor": "pm0054_00_koduck",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 3,
       "weakness": 5,
       "stat": {

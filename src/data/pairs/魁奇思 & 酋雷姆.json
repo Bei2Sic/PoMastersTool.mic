@@ -48,12 +48,11 @@
     {
       "id": "20195000001",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "酋雷姆",
       "form": "",
       "actor": "pm0646_11_kyurem",
       "gender": 3,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 6,
       "weakness": 17,
       "stat": {
@@ -208,21 +207,18 @@
       "cookieName": "魁奇思專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "拍組招式效果絕佳時威力↑5",
+          "name": [],
           "description": "當效果絕佳時,會提高該拍組招式的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時拍組招式增強5",
+          "name": [],
           "description": "首次上場時,會提高自己的下次拍組招式威力增強5階段。",
-          "detail": [],
           "rate": 33
         }
       ]
@@ -231,9 +227,8 @@
       "cookieName": "魁奇思專用潛能餅乾１",
       "skills": [
         {
-          "name": "寶可夢使出變化招式時招式計量槽增加1",
+          "name": [],
           "description": "在寶可夢使出變化招式時,會幫自己增加1條招式計量槽。",
-          "detail": [],
           "rate": 100
         }
       ]

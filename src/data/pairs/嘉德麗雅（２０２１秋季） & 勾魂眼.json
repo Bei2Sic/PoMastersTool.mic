@@ -54,12 +54,11 @@
     {
       "id": "20095400000",
       "variationType": 0,
-      "vAfterSm": true,
       "name": "勾魂眼",
       "form": "",
       "actor": "pm0302_00_yamirami",
       "gender": 2,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 16,
       "weakness": 18,
       "stat": {
@@ -216,14 +215,13 @@
     {
       "id": "20095400000",
       "variationType": 1,
-      "vAfterSm": true,
       "name": "超級勾魂眼",
       "form": "",
       "actor": "pm0302_51_megayamirami",
       "gender": 2,
-      "isShiny": false,
-      "type": 16,
-      "weakness": 18,
+      "is_shiny": false,
+      "type": "-1",
+      "weakness": "-1",
       "stat": {
         "hp": [
           82,
@@ -373,15 +371,7 @@
         "description": "變成超級勾魂眼直到對戰結束。",
         "tags": "none",
         "group": "Sync"
-      },
-      "scale": [
-        100,
-        100,
-        120,
-        100,
-        120,
-        100
-      ]
+      }
     }
   ],
   "luckCookies": [
@@ -389,9 +379,8 @@
       "cookieName": "嘉德麗雅（２０２１秋季）專用潛能餅乾１",
       "skills": [
         {
-          "name": "訓練家出招後擊中要害率提升G9",
+          "name": [],
           "description": "在訓練家使出招式時,會提高我方全體拍組的擊中要害率1階段。",
-          "detail": [],
           "rate": 100
         }
       ]
@@ -400,21 +389,18 @@
       "cookieName": "嘉德麗雅（２０２１秋季）專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "被攻擊時HP回復G9",
+          "name": [],
           "description": "受到招式攻擊時,會回復我方全體拍組的HP。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時物理/特殊增強G1",
+          "name": [],
           "description": "首次上場時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時拍組招式增強G3",
+          "name": [],
           "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
-          "detail": [],
           "rate": 33
         }
       ]

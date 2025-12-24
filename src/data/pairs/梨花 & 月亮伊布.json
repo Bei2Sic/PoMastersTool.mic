@@ -48,12 +48,11 @@
     {
       "id": "20062000001",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "月亮伊布",
       "form": "",
       "actor": "pm0197_00_blacky",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 16,
       "weakness": 12,
       "stat": {

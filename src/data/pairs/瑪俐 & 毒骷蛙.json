@@ -54,12 +54,11 @@
     {
       "id": "20245000001",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "毒骷蛙",
       "form": "",
       "actor": "pm0454_01_dokurog",
       "gender": 2,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 8,
       "weakness": 11,
       "stat": {

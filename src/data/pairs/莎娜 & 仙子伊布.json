@@ -48,12 +48,11 @@
     {
       "id": "20139000002",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "仙子伊布",
       "form": "",
       "actor": "pm0767_00_ninnfi",
       "gender": 2,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 18,
       "weakness": 17,
       "stat": {

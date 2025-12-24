@@ -48,12 +48,11 @@
     {
       "id": "20262000001",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "喵頭目",
       "form": "",
       "actor": "pm0863_00_31_nyaiking",
       "gender": 2,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 17,
       "weakness": 7,
       "stat": {

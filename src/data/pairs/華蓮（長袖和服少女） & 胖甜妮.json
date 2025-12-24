@@ -42,12 +42,11 @@
     {
       "id": "20658000000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "胖甜妮",
       "form": "",
       "actor": "pm0743_00_sweets2",
       "gender": 2,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 18,
       "weakness": 8,
       "stat": {

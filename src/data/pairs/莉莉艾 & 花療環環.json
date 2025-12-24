@@ -54,12 +54,11 @@
     {
       "id": "20118000001",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "花療環環",
       "form": "",
       "actor": "pm0863_00_lei",
       "gender": 2,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 18,
       "weakness": 17,
       "stat": {

@@ -54,12 +54,11 @@
     {
       "id": "20204000000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "土地雲",
       "form": "化身形態",
       "actor": "pm0645_11_landlos",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 9,
       "weakness": 6,
       "stat": {

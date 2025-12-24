@@ -48,12 +48,11 @@
     {
       "id": "20129000001",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "暴飛龍",
       "form": "",
       "actor": "pm0373_00_bohmander",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 15,
       "weakness": 13,
       "stat": {

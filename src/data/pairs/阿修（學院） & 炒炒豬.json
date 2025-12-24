@@ -37,6 +37,12 @@
       "description": "我方全體拍組最大HP提升15",
       "tag": "鬥志昂揚",
       "category": 999
+    },
+    {
+      "name": "帕希歐學院／輔助",
+      "description": "我方全體拍組最大HP提升15",
+      "tag": "帕希歐學院",
+      "category": 999
     }
   ],
   "specialAwaking": {
@@ -48,12 +54,11 @@
     {
       "id": "20147400000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "炒炒豬",
       "form": "",
       "actor": "pm0499_00_chaoboo",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 2,
       "weakness": 3,
       "stat": {

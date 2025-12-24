@@ -54,12 +54,11 @@
     {
       "id": "20049000002",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "勾魂眼",
       "form": "",
       "actor": "pm0302_00_yamirami",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 14,
       "weakness": 18,
       "stat": {

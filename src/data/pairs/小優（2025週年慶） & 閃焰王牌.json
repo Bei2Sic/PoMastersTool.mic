@@ -54,12 +54,11 @@
     {
       "id": "20243410000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "閃焰王牌",
       "form": "太晶屬性：岩石",
       "actor": "pm0815_00_00_aceburn",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 13,
       "weakness": 3,
       "stat": {
@@ -215,7 +214,7 @@
           "target": "對手１對拍組",
           "description": "【開放條件】\n自己使出1次招式時\n【封印條件】\n使出此招式時\n\n讓對手陷入物理招式爆擊狀態和特殊招式爆擊狀態。自己發動拍組招式所需的行動數會減少3次。分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強2階段。",
           "tags": "QuickMove",
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 12436,
@@ -252,14 +251,13 @@
     {
       "id": "20243410000",
       "variationType": 7,
-      "vAfterSm": false,
       "name": "閃焰王牌",
       "form": "太晶屬性：岩石",
       "actor": "pm0815_71_13_aceburn",
       "gender": 1,
-      "isShiny": false,
-      "type": 13,
-      "weakness": 3,
+      "is_shiny": false,
+      "type": "-1",
+      "weakness": "-1",
       "stat": {
         "hp": [
           101,
@@ -426,7 +424,7 @@
           "target": "對手１對拍組",
           "description": "【開放條件】\n自己使出1次招式時\n【封印條件】\n使出此招式時\n\n讓對手陷入物理招式爆擊狀態和特殊招式爆擊狀態。自己發動拍組招式所需的行動數會減少3次。分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強2階段。",
           "tags": "QuickMove",
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 12436,
@@ -459,14 +457,6 @@
         "tags": "none",
         "group": "Sync"
       },
-      "scale": [
-        100,
-        100,
-        100,
-        100,
-        100,
-        100
-      ],
       "moveTera": {
         "id": 4044,
         "user": "寶可夢",
@@ -489,9 +479,8 @@
       "cookieName": "小優（2025週年慶）專用潛能餅乾１",
       "skills": [
         {
-          "name": "全種類下降無效",
+          "name": [],
           "description": "所有的能力都不會降低。",
-          "detail": [],
           "rate": 100
         }
       ]
@@ -500,21 +489,18 @@
       "cookieName": "小優（2025週年慶）專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "被攻擊時HP回復G9",
+          "name": [],
           "description": "受到招式攻擊時,會回復我方全體拍組的HP。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時物理/特殊增強G1",
+          "name": [],
           "description": "首次上場時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時拍組招式增強G3",
+          "name": [],
           "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
-          "detail": [],
           "rate": 33
         }
       ]

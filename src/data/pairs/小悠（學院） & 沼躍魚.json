@@ -37,6 +37,12 @@
       "description": "我方全體拍組最大HP提升8\n我方全體拍組的攻擊和特攻提升5",
       "tag": "宇宙中心",
       "category": 999
+    },
+    {
+      "name": "帕希歐學院／技術",
+      "description": "我方全體拍組最大HP提升8\n我方全體拍組的攻擊和特攻提升5",
+      "tag": "帕希歐學院",
+      "category": 999
     }
   ],
   "specialAwaking": {
@@ -48,12 +54,11 @@
     {
       "id": "20019400000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "沼躍魚",
       "form": "",
       "actor": "pm0259_00_numacraw",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 3,
       "weakness": 5,
       "stat": {

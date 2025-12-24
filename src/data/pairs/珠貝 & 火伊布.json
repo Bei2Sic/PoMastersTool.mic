@@ -54,12 +54,11 @@
     {
       "id": "20285000001",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "火伊布",
       "form": "",
       "actor": "pm0136_00_booster",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 2,
       "weakness": 3,
       "stat": {

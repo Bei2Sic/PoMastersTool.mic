@@ -37,6 +37,12 @@
       "description": "我方全體拍組最大HP提升15",
       "tag": "漣漪鎮",
       "category": 999
+    },
+    {
+      "name": "帕希歐學院／輔助",
+      "description": "我方全體拍組最大HP提升15",
+      "tag": "帕希歐學院",
+      "category": 999
     }
   ],
   "specialAwaking": {
@@ -48,12 +54,11 @@
     {
       "id": "20092410000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "拉普拉斯",
       "form": "",
       "actor": "pm0131_00_laplace",
       "gender": 2,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 6,
       "weakness": 13,
       "stat": {
@@ -182,7 +187,7 @@
           "target": "對手全體拍組",
           "description": "【開放條件】\n我方場地變成任一鬥陣時\n【封印條件】\n我方場地的所有鬥陣都被解除時\n\n攻擊必定會命中。有50%的機率會讓對手陷入冰凍狀態。即使對象為複數,招式的威力與追加效果的成功率也不會降低。讓我方全體拍組變成下次效果絕佳威力提升狀態。提高我方全體拍組的下次特殊招式威力增強2階段。",
           "tags": 12,
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 10925,
@@ -222,21 +227,18 @@
       "cookieName": "艾莉絲（學院）專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "被攻擊時HP回復G9",
+          "name": [],
           "description": "受到招式攻擊時,會回復我方全體拍組的HP。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時物理/特殊增強G1",
+          "name": [],
           "description": "首次上場時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時拍組招式增強G3",
+          "name": [],
           "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
-          "detail": [],
           "rate": 33
         }
       ]

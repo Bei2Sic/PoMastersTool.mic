@@ -538,6 +538,9 @@ export class DamageEngine {
 
             case LogicType.Terrain:
                 return cond.key.includes(env.terrain);
+            
+            case LogicType.Zone:
+                return cond.key.includes(env.zone);
 
             case LogicType.Weather:
                 return cond.key.includes(env.weather);

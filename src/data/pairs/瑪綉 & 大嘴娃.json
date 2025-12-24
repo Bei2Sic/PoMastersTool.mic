@@ -54,12 +54,11 @@
     {
       "id": "20157000001",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "大嘴娃",
       "form": "",
       "actor": "pm0303_00_kucheat",
       "gender": 2,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 18,
       "weakness": 9,
       "stat": {

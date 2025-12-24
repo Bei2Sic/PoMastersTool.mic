@@ -54,12 +54,11 @@
     {
       "id": "20021000002",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "胡地",
       "form": "",
       "actor": "pm0065_00_foodin",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 11,
       "weakness": 12,
       "stat": {

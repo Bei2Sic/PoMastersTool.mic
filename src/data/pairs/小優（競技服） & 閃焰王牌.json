@@ -71,12 +71,11 @@
     {
       "id": "20243810000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "閃焰王牌",
       "form": "拍組招式：火",
       "actor": "pm0815_00_00_aceburn",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 2,
       "weakness": 9,
       "stat": {
@@ -233,14 +232,13 @@
     {
       "id": "20243810000",
       "variationType": 2,
-      "vAfterSm": false,
       "name": "閃焰王牌",
       "form": "拍組招式：飛行",
       "actor": "pm0815_00_00_aceburn",
       "gender": 1,
-      "isShiny": false,
-      "type": 10,
-      "weakness": 9,
+      "is_shiny": false,
+      "type": "10",
+      "weakness": "-1",
       "stat": {
         "hp": [
           96,
@@ -390,27 +388,18 @@
         "description": "當對手的屬性抵抗降低時,威力會提高。",
         "tags": "none",
         "group": "Sync"
-      },
-      "scale": [
-        100,
-        100,
-        100,
-        100,
-        100,
-        100
-      ]
+      }
     },
     {
       "id": "20243810000",
       "variationType": 2,
-      "vAfterSm": false,
       "name": "閃焰王牌",
       "form": "拍組招式：格鬥",
       "actor": "pm0815_00_00_aceburn",
       "gender": 1,
-      "isShiny": false,
-      "type": 7,
-      "weakness": 9,
+      "is_shiny": false,
+      "type": "7",
+      "weakness": "-1",
       "stat": {
         "hp": [
           96,
@@ -560,27 +549,18 @@
         "description": "當對手的屬性抵抗降低時,威力會提高。",
         "tags": "none",
         "group": "Sync"
-      },
-      "scale": [
-        100,
-        100,
-        100,
-        100,
-        100,
-        100
-      ]
+      }
     },
     {
       "id": "20243810000",
       "variationType": 4,
-      "vAfterSm": false,
       "name": "閃焰王牌",
       "form": "拍組招式：火",
       "actor": "pm0815_81_00_gaceburn",
       "gender": 1,
-      "isShiny": false,
-      "type": 2,
-      "weakness": 9,
+      "is_shiny": false,
+      "type": "-1",
+      "weakness": "-1",
       "stat": {
         "hp": [
           96,
@@ -656,14 +636,6 @@
       ],
       "moves": null,
       "syncMove": null,
-      "scale": [
-        100,
-        100,
-        100,
-        100,
-        100,
-        100
-      ],
       "movesDynamax": [
         {
           "id": 7050,
@@ -678,7 +650,7 @@
           "target": "對手１對拍組",
           "description": "無視對手可減輕傷害的被動技能進行攻擊。無視對手可避免被攻擊擊中要害的被動技能進行攻擊。",
           "tags": "none",
-          "group": 5
+          "group": "Regular"
         },
         {
           "id": 7007,
@@ -693,7 +665,7 @@
           "target": "對手１對拍組",
           "description": "提高我方全體拍組的速度2階段。",
           "tags": "none",
-          "group": 5
+          "group": "Regular"
         },
         {
           "id": 7005,
@@ -708,7 +680,7 @@
           "target": "對手１對拍組",
           "description": "提高我方全體拍組的攻擊2階段。",
           "tags": "none",
-          "group": 5
+          "group": "Regular"
         }
       ]
     }
@@ -718,21 +690,18 @@
       "cookieName": "小優（競技服）專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "拍組招式效果絕佳時威力↑5",
+          "name": [],
           "description": "當效果絕佳時,會提高該拍組招式的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時拍組招式增強5",
+          "name": [],
           "description": "首次上場時,會提高自己的下次拍組招式威力增強5階段。",
-          "detail": [],
           "rate": 33
         }
       ]

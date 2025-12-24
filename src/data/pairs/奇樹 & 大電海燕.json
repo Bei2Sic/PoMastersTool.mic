@@ -54,12 +54,11 @@
     {
       "id": "20296000002",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "大電海燕",
       "form": "",
       "actor": "pm0941_00_00_taikaiden",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 4,
       "weakness": 13,
       "stat": {

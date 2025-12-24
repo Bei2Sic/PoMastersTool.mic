@@ -85,7 +85,7 @@ export const useSyncElemStore = defineStore("syncUse", {
         },
 
         // 用於計算的匯總數據方法
-        currentActivePassive: (state) => {},
+        currentActivePassive: (state) => { },
 
         // ------------------------------ 组队模式：计算属性 ------------------------------
         // 队伍中所有拍组的最终属性（用于伤害计算）
@@ -397,6 +397,9 @@ const createSync = (jsonData: SyncRawData): Sync => {
                 case "#BF80FF":
                     keyName = "syncmove";
                     break;
+                case "#FF80BF":
+                    keyName = "learnmove";
+                    break;
             }
             if (tile.isActive) {
                 keyName += "-selected";
@@ -432,6 +435,9 @@ const createSync = (jsonData: SyncRawData): Sync => {
                 case "#BF80FF":
                     keyName = "icons/syncmove";
                     break;
+                case "#FF80BF":
+                    keyName = "icons/learnmove";
+                    break;
             }
             if (tile.isActive) {
                 keyName += "-selected";
@@ -458,7 +464,7 @@ const createSync = (jsonData: SyncRawData): Sync => {
 
             const colonMatch = name.match(/^(.*?[:：])(.*)$/);
             if (colonMatch) {
-                const prefix = colonMatch[1].replace("：","");
+                const prefix = colonMatch[1].replace("：", "");
                 const suffix = colonMatch[2];
 
                 const prefixChunks = prefix.match(/.{1,6}/g) || [];

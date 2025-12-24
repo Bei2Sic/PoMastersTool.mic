@@ -54,12 +54,11 @@
     {
       "id": "20014900000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "龍捲雲",
       "form": "化身形態",
       "actor": "pm0641_11_tornelos",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 10,
       "weakness": 13,
       "stat": {
@@ -184,7 +183,7 @@
           "target": "對手全體拍組",
           "description": "【開放條件】\n自己使出1次招式時\n【封印條件】\n使出此招式時\n\n攻擊必定會命中。自己的下次物理招式威力增強提高得越多,威力就越大。降低對手的速度2階段。首次使出此招式攻擊成功時,會降低對手的飛行屬性抵抗1階段。",
           "tags": "SureHit",
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 10149,
@@ -224,9 +223,8 @@
       "cookieName": "黑連（冠軍）專用潛能餅乾１",
       "skills": [
         {
-          "name": "首次上場時賦予物理/特殊增強1",
+          "name": [],
           "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強1階段。",
-          "detail": [],
           "rate": 100
         }
       ]
@@ -235,21 +233,18 @@
       "cookieName": "黑連（冠軍）專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "拍組招式效果絕佳時威力↑5",
+          "name": [],
           "description": "當效果絕佳時,會提高該拍組招式的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時拍組招式增強5",
+          "name": [],
           "description": "首次上場時,會提高自己的下次拍組招式威力增強5階段。",
-          "detail": [],
           "rate": 33
         }
       ]

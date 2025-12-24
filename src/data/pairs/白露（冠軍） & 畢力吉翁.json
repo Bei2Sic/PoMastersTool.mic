@@ -54,12 +54,11 @@
     {
       "id": "20102900000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "畢力吉翁",
       "form": "",
       "actor": "pm0640_00_virizion",
       "gender": 3,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 7,
       "weakness": 10,
       "stat": {
@@ -184,7 +183,7 @@
           "target": "對手１對拍組",
           "description": "【開放條件】\n我方場地變成合眾鬥陣(防禦)時\n【封印條件】\n我方場地的合眾鬥陣(防禦)被解除時\n\n攻擊必定會命中。就算對手的能力處於提高狀態,也不影響此攻擊的威力。降低對手的攻擊和特攻3階段。降低對手的格鬥屬性抵抗2階段。",
           "tags": "SureHit",
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 11029,
@@ -224,9 +223,8 @@
       "cookieName": "白露（冠軍）專用潛能餅乾１",
       "skills": [
         {
-          "name": "合眾鬥陣(防禦)時拍組招式威力↑4",
+          "name": [],
           "description": "當我方場地為合眾鬥陣(防禦)時,會提高拍組招式的威力。",
-          "detail": [],
           "rate": 100
         }
       ]
@@ -235,21 +233,18 @@
       "cookieName": "白露（冠軍）專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "效果絕佳時威力提升5",
+          "name": [],
           "description": "當效果絕佳時,會提高該招式的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時賦予物理/特殊增強2",
+          "name": [],
           "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
-          "detail": [],
           "rate": 33
         }
       ]

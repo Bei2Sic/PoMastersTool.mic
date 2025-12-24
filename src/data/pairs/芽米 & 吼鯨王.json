@@ -54,12 +54,11 @@
     {
       "id": "20023000001",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "吼鯨王",
       "form": "",
       "actor": "pm0321_00_whaloh",
       "gender": 2,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 3,
       "weakness": 4,
       "stat": {

@@ -54,12 +54,11 @@
     {
       "id": "20025400000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "達摩狒狒",
       "form": "伽勒爾的樣子／普通模式",
       "actor": "pm0555_11_31_dhihidaruma",
       "gender": 2,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 6,
       "weakness": 13,
       "stat": {
@@ -179,7 +178,7 @@
           "target": "對手１對拍組",
           "description": "【開放條件】\n自己的寶可夢使出1次招式時\n【封印條件】\n使出此招式時\n\n使出此招式前,使用「冰柱墜擊」的次數越多,威力就提高得越多。(最多對應4次)(每使出1次威力提升+50%)(威力最多可提升200%)在使出招式後,威力會恢復原狀。讓對手陷入畏縮狀態。",
           "tags": "QuickMove",
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 10254,
@@ -216,14 +215,13 @@
     {
       "id": "20025400000",
       "variationType": 2,
-      "vAfterSm": false,
       "name": "達摩狒狒",
       "form": "伽勒爾的樣子／達摩模式",
       "actor": "pm0555_12_31_dhihidaruma",
       "gender": 2,
-      "isShiny": false,
-      "type": 6,
-      "weakness": 13,
+      "is_shiny": false,
+      "type": "-1",
+      "weakness": "-1",
       "stat": {
         "hp": [
           114,
@@ -341,7 +339,7 @@
           "target": "對手１對拍組",
           "description": "【開放條件】\n自己的寶可夢使出1次招式時\n【封印條件】\n使出此招式時\n\n使出此招式前,使用「冰柱墜擊」的次數越多,威力就提高得越多。(最多對應4次)(每使出1次威力提升+50%)(威力最多可提升200%)在使出招式後,威力會恢復原狀。讓對手陷入畏縮狀態。",
           "tags": "QuickMove",
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 10254,
@@ -373,15 +371,7 @@
         "description": "沒有追加效果。",
         "tags": "none",
         "group": "Sync"
-      },
-      "scale": [
-        100,
-        100,
-        100,
-        100,
-        100,
-        100
-      ]
+      }
     }
   ],
   "luckCookies": [
@@ -389,21 +379,18 @@
       "cookieName": "小菘（２０２４春季）專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "效果絕佳時威力提升5",
+          "name": [],
           "description": "當效果絕佳時,會提高該招式的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時賦予物理/特殊增強2",
+          "name": [],
           "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
-          "detail": [],
           "rate": 33
         }
       ]

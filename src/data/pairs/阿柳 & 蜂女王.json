@@ -48,12 +48,11 @@
     {
       "id": "20152000000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "蜂女王",
       "form": "",
       "actor": "pm0416_00_beequen",
       "gender": 2,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 12,
       "weakness": 6,
       "stat": {
@@ -213,21 +212,18 @@
       "cookieName": "阿柳專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "被攻擊時HP回復G9",
+          "name": [],
           "description": "受到招式攻擊時,會回復我方全體拍組的HP。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時物理/特殊增強G1",
+          "name": [],
           "description": "首次上場時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時拍組招式增強G3",
+          "name": [],
           "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
-          "detail": [],
           "rate": 33
         }
       ]

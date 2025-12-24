@@ -37,6 +37,12 @@
       "description": "我方全體拍組的攻擊和特攻提升9",
       "tag": "特別服裝",
       "category": 4
+    },
+    {
+      "name": "帕希歐學院／攻擊",
+      "description": "我方全體拍組的攻擊和特攻提升9",
+      "tag": "帕希歐學院",
+      "category": 999
     }
   ],
   "specialAwaking": {
@@ -48,12 +54,11 @@
     {
       "id": "20252400000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "噴火駝",
       "form": "",
       "actor": "pm0323_00_bakuuda",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 9,
       "weakness": 3,
       "stat": {
@@ -204,7 +209,7 @@
           "target": "對手１對拍組",
           "description": "【開放條件】\n自己的攻擊處於提高狀態時\n【封印條件】\n自己的攻擊未處於提高狀態時\n\n攻擊必定會命中。除了特定情況之外,只要攻擊命中就必定會擊中要害。使出此招式攻擊且自己的「大晴天」的剩餘次數為1以上時,會減少該使用次數1次並發揮下列所有效果。會將天氣變成日照強烈的狀態。提高自己的下次拍組招式威力增強2階段。",
           "tags": "SureHit",
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 12524,
@@ -241,14 +246,13 @@
     {
       "id": "20252400000",
       "variationType": 4,
-      "vAfterSm": false,
       "name": "噴火駝",
       "form": "",
       "actor": "pm0323_83_00_bakuuda",
       "gender": 1,
-      "isShiny": false,
-      "type": 9,
-      "weakness": 3,
+      "is_shiny": false,
+      "type": "-1",
+      "weakness": "-1",
       "stat": {
         "hp": [
           92,
@@ -355,14 +359,6 @@
       ],
       "moves": null,
       "syncMove": null,
-      "scale": [
-        100,
-        100,
-        100,
-        100,
-        100,
-        100
-      ],
       "movesDynamax": [
         {
           "id": 7011,
@@ -377,7 +373,7 @@
           "target": "對手１對拍組",
           "description": "提高我方全體拍組的特防2階段。",
           "tags": "none",
-          "group": 5
+          "group": "Regular"
         },
         {
           "id": 7039,
@@ -392,7 +388,7 @@
           "target": "我方１對拍組",
           "description": "讓我方變成下次傷害防禦狀態。",
           "tags": "none",
-          "group": 5
+          "group": "Regular"
         },
         {
           "id": 7011,
@@ -407,7 +403,7 @@
           "target": "對手１對拍組",
           "description": "提高我方全體拍組的特防2階段。",
           "tags": "none",
-          "group": 5
+          "group": "Regular"
         }
       ]
     }
@@ -417,21 +413,18 @@
       "cookieName": "卡蕪（學院）專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "效果絕佳時威力提升5",
+          "name": [],
           "description": "當效果絕佳時,會提高該招式的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時賦予物理/特殊增強2",
+          "name": [],
           "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
-          "detail": [],
           "rate": 33
         }
       ]

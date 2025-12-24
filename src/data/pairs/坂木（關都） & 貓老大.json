@@ -42,12 +42,11 @@
     {
       "id": "20140800000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "貓老大",
       "form": "",
       "actor": "pm0053_00_persian",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 1,
       "weakness": 7,
       "stat": {

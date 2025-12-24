@@ -229,6 +229,7 @@ export function useDamageCalculator(
                     p.passiveName
                 );
                 const result = parser.result;
+                console.log(JSON.stringify(result, null, 2));
                 if (result !== null) {
                     return [result];
                 }

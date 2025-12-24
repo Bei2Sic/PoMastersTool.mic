@@ -42,12 +42,11 @@
     {
       "id": "20652680000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "鬼斯通",
       "form": "",
       "actor": "pm0093_00_ghost",
       "gender": 2,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 14,
       "weakness": 16,
       "stat": {

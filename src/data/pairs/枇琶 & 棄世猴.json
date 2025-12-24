@@ -67,12 +67,11 @@
     {
       "id": "20330000000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "棄世猴",
       "form": "",
       "actor": "pm0979_00_00_konoyozaru",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 7,
       "weakness": 10,
       "stat": {
@@ -192,7 +191,7 @@
           "target": "對手１對拍組",
           "description": "【開放條件】\n受到1次招式攻擊時\n【封印條件】\n無\n\n攻擊必定會命中。每次受到招式攻擊時,威力都會提高。(每受到1次攻擊威力提升+100%)(威力最多可提升600%)回復自己的HP,約為自己最大HP的40%。",
           "tags": 264,
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 13300,
@@ -232,9 +231,8 @@
       "cookieName": "枇琶專用潛能餅乾１",
       "skills": [
         {
-          "name": "上場時防禦特防提升1",
+          "name": [],
           "description": "上場時,會提高自己的防禦和特防1階段。",
-          "detail": [],
           "rate": 100
         }
       ]
@@ -243,21 +241,18 @@
       "cookieName": "枇琶專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "被攻擊時HP回復G9",
+          "name": [],
           "description": "受到招式攻擊時,會回復我方全體拍組的HP。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時物理/特殊增強G1",
+          "name": [],
           "description": "首次上場時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時拍組招式增強G3",
+          "name": [],
           "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
-          "detail": [],
           "rate": 33
         }
       ]

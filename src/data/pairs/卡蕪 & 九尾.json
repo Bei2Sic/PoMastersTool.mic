@@ -67,12 +67,11 @@
     {
       "id": "20252000002",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "九尾",
       "form": "",
       "actor": "pm0038_00_kyukon",
       "gender": 2,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 2,
       "weakness": 3,
       "stat": {

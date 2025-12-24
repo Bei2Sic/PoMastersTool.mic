@@ -48,12 +48,11 @@
     {
       "id": "20356100000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "桃歹郎",
       "form": "",
       "actor": "pm1025_00_00_momowarou",
       "gender": 3,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 8,
       "weakness": 11,
       "stat": {
@@ -205,7 +204,7 @@
           "target": "對手全體拍組",
           "description": "【開放條件】\n自己使出1次招式時\n【封印條件】\n無\n\n攻擊必定會命中。讓對手陷入劇毒狀態。讓對手陷入混亂狀態。即使對象為複數,招式的威力也不會降低。",
           "tags": "SureHit",
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 13562,
@@ -245,9 +244,8 @@
       "cookieName": "美極套裝丹瑜專用潛能餅乾１",
       "skills": [
         {
-          "name": "攻擊中毒中的對手時能力下降9",
+          "name": [],
           "description": "當對手陷入中毒或劇毒狀態且使出招式攻擊成功時,會降低對手的攻擊、防禦、特攻、特防、速度、命中率和閃避率中的一種能力1階段。",
-          "detail": [],
           "rate": 100
         }
       ]
@@ -256,21 +254,18 @@
       "cookieName": "美極套裝丹瑜專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "效果絕佳時威力提升5",
+          "name": [],
           "description": "當效果絕佳時,會提高該招式的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時賦予物理/特殊增強2",
+          "name": [],
           "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
-          "detail": [],
           "rate": 33
         }
       ]

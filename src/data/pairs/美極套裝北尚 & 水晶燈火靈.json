@@ -67,12 +67,11 @@
     {
       "id": "20108100000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "水晶燈火靈",
       "form": "",
       "actor": "pm0609_00_chandela",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 14,
       "weakness": 9,
       "stat": {
@@ -192,7 +191,7 @@
           "target": "對手１對拍組",
           "description": "【開放條件】\n對手的場地上有陷入異常狀態,或畏縮、混亂、束縛的狀態變化的寶可夢時\n【封印條件】\n對手的場地上變為沒有陷入異常狀態,或畏縮、混亂、束縛的狀態變化的寶可夢時\n\n當對手陷入異常狀態,或畏縮、混亂、束縛的狀態變化時,威力會變成2倍。當對手陷入麻痺狀態時,會降低對手的防禦2階段。當對手陷入灼傷狀態時,會降低對手的特防2階段。當對手陷入畏縮狀態時,會降低對手的速度2階段。當對手陷入中毒或劇毒狀態時,會回復我方全體拍組的HP。當對手陷入束縛狀態時,會讓自己變成下次計量槽消耗0狀態。當對手陷入混亂狀態時,會提高自己的下次特殊招式威力增強1階段。",
           "tags": "Heals",
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 11081,
@@ -229,14 +228,13 @@
     {
       "id": "20108100000",
       "variationType": 4,
-      "vAfterSm": false,
       "name": "水晶燈火靈",
       "form": "",
       "actor": "pm0609_81_00_chandela",
       "gender": 1,
-      "isShiny": false,
-      "type": 14,
-      "weakness": 9,
+      "is_shiny": false,
+      "type": "-1",
+      "weakness": "-1",
       "stat": {
         "hp": [
           98,
@@ -312,14 +310,6 @@
       ],
       "moves": null,
       "syncMove": null,
-      "scale": [
-        100,
-        100,
-        100,
-        100,
-        100,
-        100
-      ],
       "movesDynamax": [
         {
           "id": 7039,
@@ -334,7 +324,7 @@
           "target": "我方１對拍組",
           "description": "讓我方變成下次傷害防禦狀態。",
           "tags": "none",
-          "group": 5
+          "group": "Regular"
         },
         {
           "id": 7039,
@@ -349,7 +339,7 @@
           "target": "我方１對拍組",
           "description": "讓我方變成下次傷害防禦狀態。",
           "tags": "none",
-          "group": 5
+          "group": "Regular"
         },
         {
           "id": 7018,
@@ -364,7 +354,7 @@
           "target": "對手１對拍組",
           "description": "降低對手全體拍組的防禦2階段。",
           "tags": "none",
-          "group": 5
+          "group": "Regular"
         }
       ]
     }
@@ -374,9 +364,8 @@
       "cookieName": "美極套裝北尚專用潛能餅乾１",
       "skills": [
         {
-          "name": "寶可夢使出變化招式時招式計量槽增加1",
+          "name": [],
           "description": "在寶可夢使出變化招式時,會幫自己增加1條招式計量槽。",
-          "detail": [],
           "rate": 100
         }
       ]
@@ -385,21 +374,17 @@
       "cookieName": "美極套裝北尚專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "招式後招式計量槽增加9",
+          "name": [],
           "description": "招式成功時,會幫自己增加1條招式計量槽。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時&首次拍組招式後計數加速1",
-          "description": "首次上場時,發動拍組招式所需的行動數會減少1次。首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。",
-          "detail": [
+          "name": [
             {
               "name": "首次上場時計數加速1",
               "description": "首次上場時,發動拍組招式所需的行動數會減少1次。"
@@ -409,6 +394,7 @@
               "description": "首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。"
             }
           ],
+          "description": "首次上場時,發動拍組招式所需的行動數會減少1次。首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。",
           "rate": 33
         }
       ]

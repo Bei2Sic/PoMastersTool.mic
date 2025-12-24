@@ -67,12 +67,11 @@
     {
       "id": "20026000001",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "胖可丁",
       "form": "",
       "actor": "pm0040_00_pukurin",
       "gender": 2,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 1,
       "weakness": 17,
       "stat": {

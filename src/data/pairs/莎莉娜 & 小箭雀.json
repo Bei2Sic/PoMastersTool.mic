@@ -48,12 +48,11 @@
     {
       "id": "20130000003",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "小箭雀",
       "form": "",
       "actor": "pm0753_00_robin1",
       "gender": 2,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 10,
       "weakness": 4,
       "stat": {

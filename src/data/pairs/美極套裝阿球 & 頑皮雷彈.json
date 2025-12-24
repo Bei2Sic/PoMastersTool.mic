@@ -1,0 +1,1114 @@
+{
+  "trainer": {
+    "id": "10282100000",
+    "name": "美極套裝阿球",
+    "actor": "阿球",
+    "actorId": "ch0282_10_ballguy",
+    "rarity": 5,
+    "role": 5,
+    "exRole": 4,
+    "ex": true,
+    "exclusivity": "MasterEX",
+    "maxBonusLevel": 10
+  },
+  "scoutMethod": 1,
+  "scheduleId": "chara_7120_0101_FOREVER",
+  "themes": [
+    {
+      "name": "草屬性／場地",
+      "description": "我方全體拍組最大HP提升24\n我方全體拍組的速度提升24",
+      "tag": "草",
+      "category": 1
+    },
+    {
+      "name": "伽勒爾／場地",
+      "description": "我方全體拍組最大HP提升7\n我方全體拍組的速度提升7",
+      "tag": "伽勒爾",
+      "category": 2
+    },
+    {
+      "name": "美極套裝／場地",
+      "description": "我方全體拍組最大HP提升8\n我方全體拍組的速度提升8",
+      "tag": "美極套裝",
+      "category": 4
+    }
+  ],
+  "specialAwaking": {
+    "name": "手工精靈球的溫暖感",
+    "description": "首次上場時,發動拍組招式所需的行動數會減少1次。首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。使出拍組招式或拍組極巨化招式後,會提高我方全體拍組的下次特殊招式威力增強2階段。",
+    "detail": [
+      {
+        "name": "首次上場時計數加速1",
+        "description": "首次上場時,發動拍組招式所需的行動數會減少1次。"
+      },
+      {
+        "name": "首次拍組招式後計數加速1",
+        "description": "首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。"
+      },
+      {
+        "name": "拍組招式及拍組極巨化招式後賦予特殊增強(2)G9",
+        "description": "使出拍組招式或拍組極巨化招式後,會提高我方全體拍組的下次特殊招式威力增強2階段。"
+      }
+    ]
+  },
+  "pokemon": [
+    {
+      "id": "20282100000",
+      "variationType": 0,
+      "name": "頑皮雷彈",
+      "form": "洗翠的樣子",
+      "actor": "pm0101_00_41_marumine",
+      "gender": 3,
+      "is_shiny": false,
+      "type": 5,
+      "weakness": 6,
+      "stat": {
+        "hp": [
+          101,
+          178,
+          250,
+          536,
+          600,
+          664,
+          856
+        ],
+        "atk": [
+          10,
+          39,
+          66,
+          176,
+          200,
+          224,
+          296
+        ],
+        "def": [
+          12,
+          35,
+          56,
+          144,
+          160,
+          176,
+          224
+        ],
+        "spa": [
+          14,
+          77,
+          137,
+          368,
+          420,
+          472,
+          628
+        ],
+        "spd": [
+          14,
+          37,
+          58,
+          146,
+          162,
+          178,
+          226
+        ],
+        "spe": [
+          23,
+          89,
+          152,
+          394,
+          446,
+          498,
+          654
+        ]
+      },
+      "passives": [
+        {
+          "name": "伽勒爾的快攻",
+          "description": "首次上場時,發動拍組招式所需的行動數會減少1次。(多隊模式時,會讓我方隊伍在首次上場時發動拍組招式所需的行動數減少1次。)當我方隊伍中擁有伽勒爾標籤的拍組越多,此效果還會減少得越多。(每增加1對拍組,發動拍組招式所需的行動數-1次,最多可-3次。)當隊伍中存在多對擁有同名被動技能的拍組,效果不會重複發揮。",
+          "detail": []
+        },
+        {
+          "name": "拍組極巨化招式後計數加速3",
+          "description": "使出拍組極巨化招式後, 會讓發動拍組招式所需的行動數減少3次。",
+          "detail": []
+        },
+        {
+          "name": "招式後速度提升G2",
+          "description": "招式成功時,會提高我方全體拍組的速度2階段。",
+          "detail": []
+        },
+        {
+          "name": "好~啊球~!",
+          "description": "陷入瀕死狀態前會使出大爆炸。陷入瀕死狀態前,會讓發動拍組招式所需的行動數減少9次。(多隊模式時,會讓自己以外的任一玩家發動拍組招式所需的行動數減少9次。)",
+          "detail": [
+            {
+              "name": "瀕死時計數加速9",
+              "description": "陷入瀕死狀態前,會讓發動拍組招式所需的行動數減少9次。(多隊模式時,會讓自己以外的任一玩家發動拍組招式所需的行動數減少9次。)"
+            },
+            {
+              "name": "瀕死時爆炸",
+              "description": "陷入瀕死狀態前會使出大爆炸。"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "id": 412,
+          "user": "寶可夢",
+          "name": "能量球",
+          "type": 5,
+          "gauge": 2,
+          "uses": "−",
+          "category": 2,
+          "power": 49,
+          "accuracy": 100,
+          "target": "對手１對拍組",
+          "description": "有10%的機率會降低對手的特防1階段。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 835,
+          "user": "寶可夢",
+          "name": "葉綠爆震",
+          "type": 5,
+          "gauge": 4,
+          "uses": "−",
+          "category": 2,
+          "power": 199,
+          "accuracy": 95,
+          "target": "對手１對拍組",
+          "description": "受到自己最大HP的50%的傷害。",
+          "tags": "Recoil",
+          "group": "Regular"
+        },
+        {
+          "id": 6168,
+          "user": "寶可夢",
+          "name": "同步葉綠爆震",
+          "type": 5,
+          "gauge": 2,
+          "uses": 2,
+          "category": 2,
+          "power": 600,
+          "accuracy": 0,
+          "target": "對手全體拍組",
+          "description": "【開放條件】\n自己的速度處於提高狀態時\n【封印條件】\n無\n\n攻擊必定會命中。除了特定情況之外,只要攻擊命中就必定會擊中要害。降低對手的特防2階段。首次使出此招式攻擊成功時,會將場地變成EX青草場地。",
+          "tags": "SureHit",
+          "group": "Regular"
+        },
+        {
+          "id": 12821,
+          "user": "訓練師",
+          "name": "煙火秀啊球~",
+          "type": 0,
+          "gauge": 0,
+          "uses": 1,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方１對拍組",
+          "description": "我方發動拍組招式所需的行動數會減少1次。提高我方的特攻4階段。提高我方的擊中要害率3階段。",
+          "tags": "none",
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 124300,
+        "user": "寶可夢",
+        "name": "用煙火慶祝喜慶日子之草之光線",
+        "type": 5,
+        "gauge": 0,
+        "uses": "−",
+        "category": 2,
+        "power": 250,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "沒有追加效果。",
+        "tags": "none",
+        "group": "Sync"
+      }
+    },
+    {
+      "id": "20282100000",
+      "variationType": 4,
+      "name": "頑皮雷彈",
+      "form": "洗翠的樣子",
+      "actor": "pm0101_83_41_marumine",
+      "gender": 3,
+      "is_shiny": false,
+      "type": "-1",
+      "weakness": "-1",
+      "stat": {
+        "hp": [
+          101,
+          178,
+          250,
+          536,
+          600,
+          664,
+          856
+        ],
+        "atk": [
+          10,
+          39,
+          66,
+          176,
+          200,
+          224,
+          296
+        ],
+        "def": [
+          12,
+          35,
+          56,
+          144,
+          160,
+          176,
+          224
+        ],
+        "spa": [
+          14,
+          77,
+          137,
+          368,
+          420,
+          472,
+          628
+        ],
+        "spd": [
+          14,
+          37,
+          58,
+          146,
+          162,
+          178,
+          226
+        ],
+        "spe": [
+          23,
+          89,
+          152,
+          394,
+          446,
+          498,
+          654
+        ]
+      },
+      "passives": [
+        {
+          "name": "伽勒爾的快攻",
+          "description": "首次上場時,發動拍組招式所需的行動數會減少1次。(多隊模式時,會讓我方隊伍在首次上場時發動拍組招式所需的行動數減少1次。)當我方隊伍中擁有伽勒爾標籤的拍組越多,此效果還會減少得越多。(每增加1對拍組,發動拍組招式所需的行動數-1次,最多可-3次。)當隊伍中存在多對擁有同名被動技能的拍組,效果不會重複發揮。",
+          "detail": []
+        },
+        {
+          "name": "拍組極巨化招式後計數加速3",
+          "description": "使出拍組極巨化招式後, 會讓發動拍組招式所需的行動數減少3次。",
+          "detail": []
+        },
+        {
+          "name": "招式後速度提升G2",
+          "description": "招式成功時,會提高我方全體拍組的速度2階段。",
+          "detail": []
+        },
+        {
+          "name": "好~啊球~!",
+          "description": "陷入瀕死狀態前會使出大爆炸。陷入瀕死狀態前,會讓發動拍組招式所需的行動數減少9次。(多隊模式時,會讓自己以外的任一玩家發動拍組招式所需的行動數減少9次。)",
+          "detail": [
+            {
+              "name": "瀕死時計數加速9",
+              "description": "陷入瀕死狀態前,會讓發動拍組招式所需的行動數減少9次。(多隊模式時,會讓自己以外的任一玩家發動拍組招式所需的行動數減少9次。)"
+            },
+            {
+              "name": "瀕死時爆炸",
+              "description": "陷入瀕死狀態前會使出大爆炸。"
+            }
+          ]
+        }
+      ],
+      "moves": null,
+      "syncMove": null,
+      "movesDynamax": [
+        {
+          "id": 7026,
+          "user": "寶可夢",
+          "name": "極巨草原",
+          "type": 5,
+          "gauge": 0,
+          "uses": "−",
+          "category": 2,
+          "power": 400,
+          "accuracy": 0,
+          "target": "對手１對拍組",
+          "description": "將場地變成青草場地。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 7026,
+          "user": "寶可夢",
+          "name": "極巨草原",
+          "type": 5,
+          "gauge": 0,
+          "uses": "−",
+          "category": 2,
+          "power": 400,
+          "accuracy": 0,
+          "target": "對手１對拍組",
+          "description": "將場地變成青草場地。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 7026,
+          "user": "寶可夢",
+          "name": "極巨草原",
+          "type": 5,
+          "gauge": 0,
+          "uses": "−",
+          "category": 2,
+          "power": 400,
+          "accuracy": 0,
+          "target": "對手１對拍組",
+          "description": "將場地變成青草場地。",
+          "tags": "none",
+          "group": "Regular"
+        }
+      ]
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "美極套裝阿球專用潛能餅乾１",
+      "skills": [
+        {
+          "name": [],
+          "description": "使出拍組極巨化招式後,會讓自己變成下次計量槽消耗0狀態。",
+          "rate": 100
+        }
+      ]
+    },
+    {
+      "cookieName": "美極套裝阿球專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": [],
+          "description": "只有在天氣、場地或領域變化時,招式計量槽會累積得較快。",
+          "rate": 33
+        },
+        {
+          "name": [],
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "rate": 33
+        },
+        {
+          "name": [],
+          "description": "只有在天氣、場地或領域變化時,會提高我方全體拍組的拍組招式的威力。",
+          "rate": 33
+        }
+      ]
+    }
+  ],
+  "grid": [
+    {
+      "id": 1028210000,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1028210001,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1028210002,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1028210003,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1028210004,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1028210005,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1028210006,
+      "name": "畏縮無效",
+      "description": "不會陷入畏縮狀態。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 2,
+      "x": 0,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1028210007,
+      "name": "能量球：招式後下次不消耗計量槽9",
+      "description": "招式成功時,會讓自己變成下次計量槽消耗0狀態。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 4,
+      "x": 0,
+      "y": -4,
+      "color": "#FF0066",
+      "type": 5
+    },
+    {
+      "id": 1028210008,
+      "name": "青草場地時拍組極巨化招式威力↑5",
+      "description": "當場地為青草場地時,會提高拍組極巨化招式的威力。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 5,
+      "x": 0,
+      "y": -5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1028210009,
+      "name": "麻痺無效",
+      "description": "不會陷入麻痺狀態。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 2,
+      "x": 0,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1028210010,
+      "name": "HP回復量0",
+      "description": "HP回復量變成0。",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 4,
+      "x": -1,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1028210011,
+      "name": "葉綠爆震：反衝傷害無效9",
+      "description": "當使出的招式有反衝效果時,不會受到反衝對自己所造成的傷害。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 5,
+      "x": 1,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 5
+    },
+    {
+      "id": 1028210012,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1028210013,
+      "name": "葉綠爆震：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 3,
+      "y": -1,
+      "color": "#47D147",
+      "type": 5
+    },
+    {
+      "id": 1028210014,
+      "name": "葉綠爆震：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": 0,
+      "color": "#47D147",
+      "type": 5
+    },
+    {
+      "id": 1028210015,
+      "name": "葉綠爆震：命中率 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 1,
+      "y": 1,
+      "color": "#47D147",
+      "type": 5
+    },
+    {
+      "id": 1028210016,
+      "name": "葉綠爆震：招式後萬眾矚目",
+      "description": "招式成功時,會讓對手的目標暫時集中於自己。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 1,
+      "y": 2,
+      "color": "#FF0066",
+      "type": 5
+    },
+    {
+      "id": 1028210017,
+      "name": "煙火秀啊球~：招式後招式次數回復3",
+      "description": "招式成功時,有40%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": 1,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1028210018,
+      "name": "葉綠爆震：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 3,
+      "y": 0,
+      "color": "#FF0066",
+      "type": 5
+    },
+    {
+      "id": 1028210019,
+      "name": "對手中拍組極巨化招式後特防下降G2",
+      "description": "當以對手為對象的拍組極巨化招式成功時,會降低對手全體拍組的特防2階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1028210020,
+      "name": "瀕死時拍組招式增強G10",
+      "description": "陷入瀕死狀態前,會提高我方全體拍組的下次拍組招式威力增強10階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 3,
+      "y": 1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1028210021,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1028210022,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1028210023,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1028210024,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -3,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1028210025,
+      "name": "能量球：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": -2,
+      "color": "#47D147",
+      "type": 5
+    },
+    {
+      "id": 1028210026,
+      "name": "能量球：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -1,
+      "y": -3,
+      "color": "#47D147",
+      "type": 5
+    },
+    {
+      "id": 1028210027,
+      "name": "能量球：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -3,
+      "y": -2,
+      "color": "#47D147",
+      "type": 5
+    },
+    {
+      "id": 1028210028,
+      "name": "能量球：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -2,
+      "y": -3,
+      "color": "#FF0066",
+      "type": 5
+    },
+    {
+      "id": 1028210029,
+      "name": "能量球：下降機率提升9",
+      "description": "當招式的追加效果可降低對手能力值時,會提高該追加效果的成功率。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 2,
+      "x": -1,
+      "y": -4,
+      "color": "#FF0066",
+      "type": 5
+    },
+    {
+      "id": 1028210030,
+      "name": "能量球：攻擊時特攻特防↓9",
+      "description": "使出招式攻擊成功時,會降低對手的特攻和特防1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -3,
+      "y": -3,
+      "color": "#FF0066",
+      "type": 5
+    },
+    {
+      "id": 1028210031,
+      "name": "能量球：攻擊時賦予畏縮3",
+      "description": "使出招式攻擊成功時,有40%的機率會讓對手陷入畏縮狀態。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": -4,
+      "color": "#FF0066",
+      "type": 5
+    },
+    {
+      "id": 1028210032,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1028210033,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1028210034,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1028210035,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": -4,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1028210036,
+      "name": "同步葉綠爆震：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": -4,
+      "color": "#47D147",
+      "type": 5
+    },
+    {
+      "id": 1028210037,
+      "name": "同步葉綠爆震：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 1,
+      "y": -4,
+      "color": "#47D147",
+      "type": 5
+    },
+    {
+      "id": 1028210038,
+      "name": "同步葉綠爆震：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 3,
+      "y": -5,
+      "color": "#47D147",
+      "type": 5
+    },
+    {
+      "id": 1028210039,
+      "name": "同步葉綠爆震：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": -5,
+      "color": "#FF0066",
+      "type": 5
+    },
+    {
+      "id": 1028210040,
+      "name": "上場時速度提升G2",
+      "description": "上場時,會提高我方全體拍組的速度2階段。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 2,
+      "x": 1,
+      "y": -5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1028210041,
+      "name": "煙火秀啊球~：我方中招後特攻提升2",
+      "description": "以我方拍組為對象的招式(不含場地效果)成功時,會提高受到該招式效果影響的我方拍組的特攻2階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 3,
+      "y": -6,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1028210042,
+      "name": "依速度升幅拍組招式↑",
+      "description": "自己的速度提高得越多,拍組招式的威力就提高得越多。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": -6,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1028210043,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1028210044,
+      "name": "葉綠爆震：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -3,
+      "y": 2,
+      "color": "#47D147",
+      "type": 5
+    },
+    {
+      "id": 1028210045,
+      "name": "葉綠爆震：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": 2,
+      "color": "#47D147",
+      "type": 5
+    },
+    {
+      "id": 1028210046,
+      "name": "能量球：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -1,
+      "y": 2,
+      "color": "#47D147",
+      "type": 5
+    },
+    {
+      "id": 1028210047,
+      "name": "同步葉綠爆震：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -3,
+      "y": 3,
+      "color": "#47D147",
+      "type": 5
+    },
+    {
+      "id": 1028210048,
+      "name": "青草場地時招式計量槽加速2",
+      "description": "當場地為青草場地時,招式計量槽會累積得較快。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 2,
+      "x": -2,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1028210049,
+      "name": "能量球：HP減少時威力提升9",
+      "description": "當自己的HP非全滿狀態時,會提高招式的威力。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 2,
+      "x": -1,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 5
+    },
+    {
+      "id": 1028210050,
+      "name": "極巨草原：威力 + 100",
+      "description": "",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 3,
+      "x": -3,
+      "y": 4,
+      "color": "#47D147",
+      "type": 5
+    },
+    {
+      "id": 1028210051,
+      "name": "青草場地時威力提升5",
+      "description": "當場地為青草場地時,會提高招式的威力。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1028210052,
+      "name": "用煙火慶祝喜慶日子之草之光線：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": -3,
+      "color": "#BF80FF",
+      "type": 5
+    },
+    {
+      "id": 1028210053,
+      "name": "用煙火慶祝喜慶日子之草之光線：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": 3,
+      "color": "#BF80FF",
+      "type": 5
+    }
+  ]
+}

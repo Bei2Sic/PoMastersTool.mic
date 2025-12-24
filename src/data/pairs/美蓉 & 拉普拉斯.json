@@ -54,12 +54,11 @@
     {
       "id": "20255000000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "拉普拉斯",
       "form": "",
       "actor": "pm0131_00_laplace",
       "gender": 2,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 6,
       "weakness": 13,
       "stat": {
@@ -216,14 +215,13 @@
     {
       "id": "20255000000",
       "variationType": 4,
-      "vAfterSm": false,
       "name": "拉普拉斯",
       "form": "",
       "actor": "pm0131_81_00_glaplace",
       "gender": 2,
-      "isShiny": false,
-      "type": 6,
-      "weakness": 13,
+      "is_shiny": false,
+      "type": "-1",
+      "weakness": "-1",
       "stat": {
         "hp": [
           100,
@@ -299,14 +297,6 @@
       ],
       "moves": null,
       "syncMove": null,
-      "scale": [
-        100,
-        100,
-        100,
-        100,
-        100,
-        100
-      ],
       "movesDynamax": [
         {
           "id": 7044,
@@ -321,7 +311,7 @@
           "target": "對手１對拍組",
           "description": "讓我方場地變成減輕物理傷害狀態。讓我方場地變成減輕特殊傷害狀態。",
           "tags": "none",
-          "group": 5
+          "group": "Regular"
         },
         {
           "id": 7039,
@@ -336,7 +326,7 @@
           "target": "我方１對拍組",
           "description": "讓我方變成下次傷害防禦狀態。",
           "tags": "none",
-          "group": 5
+          "group": "Regular"
         },
         {
           "id": 7039,
@@ -351,7 +341,7 @@
           "target": "我方１對拍組",
           "description": "讓我方變成下次傷害防禦狀態。",
           "tags": "none",
-          "group": 5
+          "group": "Regular"
         }
       ]
     }
@@ -361,21 +351,18 @@
       "cookieName": "美蓉專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "被攻擊時HP回復G9",
+          "name": [],
           "description": "受到招式攻擊時,會回復我方全體拍組的HP。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時物理/特殊增強G1",
+          "name": [],
           "description": "首次上場時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時拍組招式增強G3",
+          "name": [],
           "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
-          "detail": [],
           "rate": 33
         }
       ]

@@ -54,12 +54,11 @@
     {
       "id": "20041000002",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "雷吉奇卡斯",
       "form": "",
       "actor": "pm0486_00_00_regigigas",
       "gender": 3,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 1,
       "weakness": 7,
       "stat": {

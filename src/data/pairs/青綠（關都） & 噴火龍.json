@@ -54,12 +54,11 @@
     {
       "id": "20021800001",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "噴火龍",
       "form": "",
       "actor": "pm0006_00_lizardon",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 2,
       "weakness": 3,
       "stat": {
@@ -179,7 +178,7 @@
           "target": "對手全體拍組",
           "description": "【開放條件】\n天氣變成日照強烈的狀態時\n【封印條件】\n日照強烈被解除時\n\n降低對手的防禦和特防1階段。即使對象為複數,招式的威力也不會降低。",
           "tags": "none",
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 10215,
@@ -216,14 +215,13 @@
     {
       "id": "20021800001",
       "variationType": 4,
-      "vAfterSm": false,
       "name": "噴火龍",
       "form": "",
       "actor": "pm0006_83_00_lizardon",
       "gender": 1,
-      "isShiny": false,
-      "type": 2,
-      "weakness": 3,
+      "is_shiny": false,
+      "type": "-1",
+      "weakness": "-1",
       "stat": {
         "hp": [
           99,
@@ -299,14 +297,6 @@
       ],
       "moves": null,
       "syncMove": null,
-      "scale": [
-        100,
-        100,
-        100,
-        100,
-        100,
-        100
-      ],
       "movesDynamax": [
         {
           "id": 7022,
@@ -321,7 +311,7 @@
           "target": "對手１對拍組",
           "description": "會將天氣變成日照強烈的狀態。",
           "tags": "none",
-          "group": 5
+          "group": "Regular"
         },
         {
           "id": 7021,
@@ -336,7 +326,7 @@
           "target": "對手１對拍組",
           "description": "會將天氣變成日照強烈的狀態。",
           "tags": "none",
-          "group": 5
+          "group": "Regular"
         },
         {
           "id": 7022,
@@ -351,7 +341,7 @@
           "target": "對手１對拍組",
           "description": "會將天氣變成日照強烈的狀態。",
           "tags": "none",
-          "group": 5
+          "group": "Regular"
         }
       ]
     }
@@ -361,21 +351,18 @@
       "cookieName": "青綠（關都）專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "天氣場地領域變化時計量槽加速2",
+          "name": [],
           "description": "只有在天氣、場地或領域變化時,招式計量槽會累積得較快。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "天氣場地領域變化時拍組招式↑G2",
+          "name": [],
           "description": "只有在天氣、場地或領域變化時,會提高我方全體拍組的拍組招式的威力。",
-          "detail": [],
           "rate": 33
         }
       ]
@@ -384,9 +371,8 @@
       "cookieName": "青綠（關都）專用潛能餅乾１",
       "skills": [
         {
-          "name": "拍組極巨化招式後物理/特殊增強3",
+          "name": [],
           "description": "使出拍組極巨化招式後,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強3階段。",
-          "detail": [],
           "rate": 100
         }
       ]

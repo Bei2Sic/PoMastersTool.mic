@@ -54,12 +54,11 @@
     {
       "id": "20317000001",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "鹽石寶",
       "form": "",
       "actor": "pm0932_00_00_kojio",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 13,
       "weakness": 17,
       "stat": {

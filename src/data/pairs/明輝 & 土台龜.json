@@ -54,12 +54,11 @@
     {
       "id": "20162000002",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "土台龜",
       "form": "",
       "actor": "pm0389_00_dodaitose",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 9,
       "weakness": 6,
       "stat": {
@@ -197,7 +196,7 @@
           "target": "對手１對拍組",
           "description": "【開放條件】\n領域變成大地領域時\n【封印條件】\n大地領域被解除時\n\n攻擊必定會命中。降低對手的防禦4階段。讓自己變成下次效果絕佳威力提升狀態。",
           "tags": "SureHit",
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 11628,
@@ -237,21 +236,18 @@
       "cookieName": "明輝專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "天氣場地領域變化時計量槽加速2",
+          "name": [],
           "description": "只有在天氣、場地或領域變化時,招式計量槽會累積得較快。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "天氣場地領域變化時拍組招式↑G2",
+          "name": [],
           "description": "只有在天氣、場地或領域變化時,會提高我方全體拍組的拍組招式的威力。",
-          "detail": [],
           "rate": 33
         }
       ]

@@ -54,12 +54,11 @@
     {
       "id": "20007000001",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "詛咒娃娃",
       "form": "",
       "actor": "pm0354_00_juppeta",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 14,
       "weakness": 16,
       "stat": {

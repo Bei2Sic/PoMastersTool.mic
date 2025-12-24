@@ -54,12 +54,11 @@
     {
       "id": "20247000000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "噴火龍",
       "form": "",
       "actor": "pm0006_00_lizardon",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 2,
       "weakness": 4,
       "stat": {
@@ -221,14 +220,13 @@
     {
       "id": "20247000000",
       "variationType": 4,
-      "vAfterSm": false,
       "name": "噴火龍",
       "form": "",
       "actor": "pm0006_81_00_glizardon",
       "gender": 1,
-      "isShiny": false,
-      "type": 2,
-      "weakness": 4,
+      "is_shiny": false,
+      "type": "-1",
+      "weakness": "-1",
       "stat": {
         "hp": [
           101,
@@ -309,14 +307,6 @@
       ],
       "moves": null,
       "syncMove": null,
-      "scale": [
-        100,
-        100,
-        100,
-        100,
-        100,
-        100
-      ],
       "movesDynamax": [
         {
           "id": 7008,
@@ -331,7 +321,7 @@
           "target": "對手１對拍組",
           "description": "提高我方全體拍組的速度2階段。",
           "tags": "none",
-          "group": 5
+          "group": "Regular"
         },
         {
           "id": 7011,
@@ -346,7 +336,7 @@
           "target": "對手１對拍組",
           "description": "提高我方全體拍組的特防2階段。",
           "tags": "none",
-          "group": 5
+          "group": "Regular"
         },
         {
           "id": 7047,
@@ -361,7 +351,7 @@
           "target": "對手１對拍組",
           "description": "讓對手場地變成火傷害場地。 (火傷害場地:此狀態會讓拍組在每次行動時受到火屬性的傷害。)",
           "tags": "none",
-          "group": 5
+          "group": "Regular"
         }
       ]
     }
@@ -371,9 +361,8 @@
       "cookieName": "丹帝專用潛能餅乾１",
       "skills": [
         {
-          "name": "拍組極巨化招式效果絕佳時威力提升3",
+          "name": [],
           "description": "當拍組極巨化招式的效果絕佳時,會提高該拍組極巨化招式的威力。",
-          "detail": [],
           "rate": 100
         }
       ]
@@ -382,9 +371,7 @@
       "cookieName": "丹帝專用的塔潛能餅乾２",
       "skills": [
         {
-          "name": "丹帝的全力以赴",
-          "description": "使出拍組極巨化招式後, 會讓發動拍組招式所需的行動數減少3次。使出拍組極巨化招式後,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強3階段。",
-          "detail": [
+          "name": [
             {
               "name": "拍組極巨化招式後計數加速3",
               "description": "使出拍組極巨化招式後, 會讓發動拍組招式所需的行動數減少3次。"
@@ -394,6 +381,7 @@
               "description": "使出拍組極巨化招式後,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強3階段。"
             }
           ],
+          "description": "使出拍組極巨化招式後, 會讓發動拍組招式所需的行動數減少3次。使出拍組極巨化招式後,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強3階段。",
           "rate": 100
         }
       ]
@@ -402,21 +390,18 @@
       "cookieName": "丹帝專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "效果絕佳時威力提升5",
+          "name": [],
           "description": "當效果絕佳時,會提高該招式的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時賦予物理/特殊增強2",
+          "name": [],
           "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
-          "detail": [],
           "rate": 33
         }
       ]
@@ -425,9 +410,8 @@
       "cookieName": "丹帝專用潛能餅乾２",
       "skills": [
         {
-          "name": "效果絕佳時威力提升5",
+          "name": [],
           "description": "當效果絕佳時,會提高該招式的威力。",
-          "detail": [],
           "rate": 100
         }
       ]

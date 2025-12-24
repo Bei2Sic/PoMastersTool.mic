@@ -54,12 +54,11 @@
     {
       "id": "20000100000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "皮卡丘",
       "form": "",
       "actor": "pm0025_00_pikachu",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 4,
       "weakness": 9,
       "stat": {
@@ -184,7 +183,7 @@
           "target": "對手全體拍組",
           "description": "【開放條件】\n場地變成電氣場地時\n【封印條件】\n電氣場地被解除時\n\n無視對手可減輕傷害的被動技能進行攻擊。無視對手可避免被攻擊擊中要害的被動技能進行攻擊。無視對手的挺住狀態進行攻擊。即使對象為複數,招式的威力也不會降低。當對手陷入麻痺狀態時,會降低對手的防禦和特防1階段。",
           "tags": "none",
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 10001,
@@ -221,14 +220,13 @@
     {
       "id": "20000100000",
       "variationType": 4,
-      "vAfterSm": false,
       "name": "皮卡丘",
       "form": "",
       "actor": "pm0025_81_00_gpikachu",
       "gender": 1,
-      "isShiny": false,
-      "type": 4,
-      "weakness": 9,
+      "is_shiny": false,
+      "type": "-1",
+      "weakness": "-1",
       "stat": {
         "hp": [
           115,
@@ -309,14 +307,6 @@
       ],
       "moves": null,
       "syncMove": null,
-      "scale": [
-        100,
-        100,
-        100,
-        100,
-        100,
-        100
-      ],
       "movesDynamax": [
         {
           "id": 7046,
@@ -331,7 +321,7 @@
           "target": "對手１對拍組",
           "description": "讓對手全體拍組陷入麻痺狀態。",
           "tags": "none",
-          "group": 5
+          "group": "Regular"
         },
         {
           "id": 7039,
@@ -346,7 +336,7 @@
           "target": "我方１對拍組",
           "description": "讓我方變成下次傷害防禦狀態。",
           "tags": "none",
-          "group": 5
+          "group": "Regular"
         },
         {
           "id": 7042,
@@ -361,7 +351,7 @@
           "target": "對手１對拍組",
           "description": "讓對手全體拍組陷入麻痺狀態。",
           "tags": "none",
-          "group": 5
+          "group": "Regular"
         }
       ]
     }
@@ -371,21 +361,18 @@
       "cookieName": "美極套裝赤紅（異裝）專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "拍組招式效果絕佳時威力↑5",
+          "name": [],
           "description": "當效果絕佳時,會提高該拍組招式的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時拍組招式增強5",
+          "name": [],
           "description": "首次上場時,會提高自己的下次拍組招式威力增強5階段。",
-          "detail": [],
           "rate": 33
         }
       ]

@@ -67,12 +67,11 @@
     {
       "id": "20199000000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "斗笠菇",
       "form": "",
       "actor": "pm0286_00_kinogassa",
       "gender": 2,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 5,
       "weakness": 10,
       "stat": {
@@ -192,7 +191,7 @@
           "target": "對手全體拍組",
           "description": "【開放條件】\n自己使出1次招式時\n【封印條件】\n使出此招式時\n\n招式必定會命中。降低對手全體拍組的速度3階段。讓對手全體拍組陷入睡眠狀態。自己發動拍組招式所需的行動數會減少1次。提高我方全體拍組的速度3階段。",
           "tags": 8388616,
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 11990,
@@ -229,14 +228,13 @@
     {
       "id": "20199000000",
       "variationType": 4,
-      "vAfterSm": false,
       "name": "斗笠菇",
       "form": "",
       "actor": "pm0286_81_00_kinogassa",
       "gender": 2,
-      "isShiny": false,
-      "type": 5,
-      "weakness": 10,
+      "is_shiny": false,
+      "type": "-1",
+      "weakness": "-1",
       "stat": {
         "hp": [
           98,
@@ -312,14 +310,6 @@
       ],
       "moves": null,
       "syncMove": null,
-      "scale": [
-        100,
-        100,
-        100,
-        100,
-        100,
-        100
-      ],
       "movesDynamax": [
         {
           "id": 7025,
@@ -334,7 +324,7 @@
           "target": "對手１對拍組",
           "description": "將場地變成青草場地。",
           "tags": "none",
-          "group": 5
+          "group": "Regular"
         },
         {
           "id": 7039,
@@ -349,7 +339,7 @@
           "target": "我方１對拍組",
           "description": "讓我方變成下次傷害防禦狀態。",
           "tags": "none",
-          "group": 5
+          "group": "Regular"
         },
         {
           "id": 7039,
@@ -364,7 +354,7 @@
           "target": "我方１對拍組",
           "description": "讓我方變成下次傷害防禦狀態。",
           "tags": "none",
-          "group": 5
+          "group": "Regular"
         }
       ]
     }
@@ -374,9 +364,8 @@
       "cookieName": "黃瓜香專用潛能餅乾１",
       "skills": [
         {
-          "name": "命中時攻擊下降2",
+          "name": [],
           "description": "使出招式攻擊命中時,有30%的機率會降低對手的攻擊1階段。若使出有連續效果的招式,則在每次攻擊命中時,都有30%的機率會降低對手的攻擊1階段。",
-          "detail": [],
           "rate": 100
         }
       ]
@@ -385,21 +374,17 @@
       "cookieName": "黃瓜香專用的塔潛能餅乾１",
       "skills": [
         {
-          "name": "招式後招式計量槽增加9",
+          "name": [],
           "description": "招式成功時,會幫自己增加1條招式計量槽。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "擊中要害時威力提升3",
+          "name": [],
           "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
           "rate": 33
         },
         {
-          "name": "首次上場時&首次拍組招式後計數加速1",
-          "description": "首次上場時,發動拍組招式所需的行動數會減少1次。首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。",
-          "detail": [
+          "name": [
             {
               "name": "首次上場時計數加速1",
               "description": "首次上場時,發動拍組招式所需的行動數會減少1次。"
@@ -409,6 +394,7 @@
               "description": "首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。"
             }
           ],
+          "description": "首次上場時,發動拍組招式所需的行動數會減少1次。首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。",
           "rate": 33
         }
       ]

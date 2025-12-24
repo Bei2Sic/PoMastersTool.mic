@@ -54,12 +54,11 @@
     {
       "id": "20264000000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "皮卡丘",
       "form": "",
       "actor": "pm0025_02_pikachu",
       "gender": 1,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 4,
       "weakness": 9,
       "stat": {
@@ -184,7 +183,7 @@
           "target": "對手１對拍組",
           "description": "【開放條件】\n自己使出3次招式時\n【封印條件】\n無\n\n攻擊必定會命中。使用最多6條自己的招式計量槽。使用的量越多,威力就越大。",
           "tags": 12,
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 12649,

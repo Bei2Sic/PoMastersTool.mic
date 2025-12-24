@@ -54,12 +54,11 @@
     {
       "id": "20118510000",
       "variationType": 0,
-      "vAfterSm": false,
       "name": "索爾迦雷歐",
       "form": "",
       "actor": "pm0873_00_sun",
       "gender": 3,
-      "isShiny": false,
+      "is_shiny": false,
       "type": 17,
       "weakness": 9,
       "stat": {
@@ -179,7 +178,7 @@
           "target": "對手全體拍組",
           "description": "【開放條件】\n自己的寶可夢使出1次招式時\n【封印條件】\n使出此招式時\n\n無視對手可減輕傷害的被動技能進行攻擊。無視對手可避免被攻擊擊中要害的被動技能進行攻擊。無視對手的挺住狀態進行攻擊。即使對象為複數,招式的威力也不會降低。首次使出此招式攻擊成功時,會將領域變成鋼鐵領域。(鋼鐵領域會提高鋼屬性的攻擊的威力。)",
           "tags": "QuickMove",
-          "group": 6
+          "group": "Regular"
         },
         {
           "id": 11187,
@@ -219,9 +218,8 @@
       "cookieName": "莉莉艾（2024週年慶）專用潛能餅乾１",
       "skills": [
         {
-          "name": "首次上場時場地招式計量槽加速",
+          "name": [],
           "description": "首次上場時,會讓我方場地變成招式計量槽加速狀態。",
-          "detail": [],
           "rate": 100
         }
       ]
