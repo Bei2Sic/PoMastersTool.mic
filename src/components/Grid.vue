@@ -1,366 +1,260 @@
-<!-- components/SyncGrid.vue -->
 <template>
     <div class="sync-grid-container">
-        <!-- 顶层容器：透明背景，bonus-container 和 SVG 同层 -->
-        <div class="top-container">
-            <!-- 滴晶+星级区域（透明背景，和SVG同层） -->
-            <div class="bonus-container">
-                <div class="info-bar">
-                    <div class="info-item">
-                        <span class="info-label">滴晶</span>
-                        <span class="info-value">{{ costOrbs }}</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">剩餘力量</span>
-                        <span class="info-value">{{ lastEnergy }} +{{ Math.min(2 * localBonusLevel, 10) }}</span>
-                    </div>
+
+        <div class="bonus-header">
+            <div class="info-bar">
+                <div class="info-item">
+                    <span class="info-label">滴晶</span>
+                    <span class="info-value">{{ costOrbs }}</span>
                 </div>
-                <div class="rating-section">
-                    <Bonus :model-value="localBonusLevel" @update:model-value="handleBonusUpdate" :star-size="20"
-                        :gap="5" :max-rating="maxBonusLevel" />
+                <div class="info-item">
+                    <span class="info-label">剩餘力量</span>
+                    <span class="info-value">{{ lastEnergy }} +{{ Math.min(2 * localBonusLevel, 10) }}</span>
                 </div>
             </div>
-
-            <!-- SVG石盘容器 -->
-            <div class="svg-wrapper" ref="svgWrapperRef">
-                <!-- SVG画布 -->
-                <svg :width="svgWidth" :height="svgHeight">
-                    <image :href="trainerAvatarUrl" :x="centerX - pokemonSize / 2 + 6" :y="centerY - pokemonSize / 2"
-                        :width="pokemonSize" :height="pokemonSize" rx="50%" ry="50%"
-                        style="border: 2px solid white; box-shadow: 0 0 8px rgba(0,0,0,0.3);" />
-                    <circle :cx="centerX" :cy="centerY" :r="pokemonSize / 2" fill="transparent"
-                        :style="{ cursor: onTrainerClick ? 'pointer' : 'default', pointerEvents: onTrainerClick ? 'auto' : 'none' }"
-                        @click.stop="handleTrainerClick" />
-
-                    <!-- 六边形石盘 -->
-                    <template v-for="tile in gridData" :key="tile.id">
-                        <polygon :points="hexPoints"
-                            :transform="`translate(${calcHexSvgX(tile.x)}, ${calcHexSvgY(tile.x, tile.y)})`" :style="{
-                                cursor: isTileReachable(tile) ? 'pointer' : 'not-allowed',
-                            }" @click.stop="handleTileClick(tile.id)" @mouseenter="handleTileHover(tile)"
-                            @mouseleave="handleTileHover(null)" />
-
-                        <image :href="getTileBorderUrl(tile)" :x="calcHexSvgX(tile.x) - tileUrlWidth / 2"
-                            :y="calcHexSvgY(tile.x, tile.y) - tileUrlHeight / 2" :width="tileUrlWidth"
-                            :height="tileUrlHeight" pointer-events="none" />
-                        <image :href="getTileFillUrl(tile)" :x="calcHexSvgX(tile.x) - tileUrlWidth / 2"
-                            :y="calcHexSvgY(tile.x, tile.y) - tileUrlHeight / 2" :width="tileUrlWidth"
-                            :height="tileUrlHeight" pointer-events="none" />
-                    </template>
-                </svg>
-
-                <!-- Tile信息悬浮窗（使用你的位置计算逻辑，相对SVG容器定位） -->
-                <div v-if="hoveredTile" class="tile-window" :style="{
-                    borderColor: hoveredTile.color,
-                }">
-                    <div class="tile-name" :style="{ backgroundColor: hoveredTile.color }">
-                        {{ fixTileName(hoveredTile) }}
-                    </div>
-                    <div class="tile-content">
-                        <p class="tile-descr">{{ hoveredTile.description }}</p>
-                        <p class="tile-other">
-                            滴晶：{{ hoveredTile.orb }}&nbsp;&nbsp;力量：{{ hoveredTile.energy }}
-                        </p>
-                    </div>
-                </div>
+            <div class="rating-section">
+                <Bonus :model-value="localBonusLevel" @update:model-value="handleBonusUpdate" :star-size="20" :gap="5"
+                    :max-rating="maxBonusLevel" />
             </div>
         </div>
+
+        <div class="svg-scroll-area" @click.self="handleBackgroundClick">
+
+            <svg :viewBox="viewBox" preserveAspectRatio="xMidYMid meet" class="main-svg">
+                <image :href="trainerAvatarUrl" :x="-CONST_TRAINER_SIZE / 2 + 10" :y="-CONST_TRAINER_SIZE / 2"
+                    :width="CONST_TRAINER_SIZE" :height="CONST_TRAINER_SIZE" rx="50%" ry="50%" class="center-avatar" />
+                <circle cx="0" cy="0" :r="CONST_TRAINER_SIZE / 2" fill="transparent"
+                    :style="{ cursor: onTrainerClick ? 'pointer' : 'default', pointerEvents: onTrainerClick ? 'auto' : 'none' }"
+                    @click.stop="handleTrainerClick" />
+
+                <template v-for="tile in gridData" :key="tile.id">
+                    <g :transform="`translate(${calcHexSvgX(tile.x)}, ${calcHexSvgY(tile.x, tile.y)})`"
+                        class="tile-group" @click.stop="handleTileClick(tile.id, $event)"
+                        :class="{ 'tile-locked': !isTileReachable(tile) }" @mouseenter="handleTileHover(tile, $event)"
+                        @mouseleave="handleTileHover(null)">
+
+                        <polygon :points="hexPoints"
+                            :style="{ cursor: isTileReachable(tile) ? 'pointer' : 'not-allowed' }" fill="transparent" />
+
+                        <image :href="getTileBorderUrl(tile)" :x="-CONST_TILE_SIZE / 2" :y="-CONST_TILE_SIZE / 2"
+                            :width="CONST_TILE_SIZE" :height="CONST_TILE_SIZE" pointer-events="none" />
+                        <image :href="getTileFillUrl(tile)" :x="-CONST_TILE_SIZE / 2" :y="-CONST_TILE_SIZE / 2"
+                            :width="CONST_TILE_SIZE" :height="CONST_TILE_SIZE" pointer-events="none" />
+
+                        <text text-anchor="middle" dominant-baseline="middle" pointer-events="none" class="grid-text">
+                            <template v-for="(line, index) in normalizeTileName(tile)" :key="index">
+                                <tspan x="0"
+                                    :dy="index === 0 ? (-0.6 * (normalizeTileName(tile).length - 1)) + 'em' : '1.2em'">
+                                    {{ line }}
+                                </tspan>
+                            </template>
+                        </text>
+                    </g>
+                </template>
+            </svg>
+        </div>
+
+        <transition name="fade">
+            <div v-if="hoveredTile" class="tile-window"
+                :class="{ 'mobile-popup': isMobile, 'desktop-popup': !isMobile }"
+                :style="!isMobile ? dynamicPopupStyle : {}" @click.stop>
+                <div class="tile-window-header" :style="{ backgroundColor: hoveredTile.color }">
+                    {{ hoveredTile.name }}
+                </div>
+                <div class="tile-content">
+                    <p class="tile-descr">{{ hoveredTile.description }}</p>
+                    <p class="tile-other">
+                        滴晶：{{ hoveredTile.orb }}&nbsp;&nbsp;力量：{{ hoveredTile.energy }}
+                    </p>
+                </div>
+            </div>
+        </transition>
+
     </div>
 </template>
 
 <script setup>
 import Bonus from '@/components/Bonus.vue';
-import { computed, nextTick, onMounted, onUnmounted, ref, watch } from 'vue';
+import { computed, onMounted, onUnmounted, ref, watch } from 'vue';
 
-// ====================== Props ======================
+const CONST_HEX_RADIUS = 50;
+const CONST_TRAINER_SIZE = 70;
+const CONST_TILE_SIZE = 100;
+const X_SPACING_RATIO = 0.8;
+const Y_SPACING_RATIO = 1.05;
+
 const props = defineProps({
-    // 基础数据（石盘渲染必需）
-    gridData: { type: Array, required: true }, // 石盘数据
-    trainer: { type: Object, required: true }, // 训练家信息（含actorId、maxBonusLevel）
-
-    // 动态状态（单向绑定，子组件通过事件更新）
+    gridData: { type: Array, required: true },
+    trainer: { type: Object, required: true },
     currentRarity: { type: Number, required: true },
-    bonusLevel: { type: Number, required: true }, // 星级props（不可直接修改）
-
-    // 计算属性值（直接接收结果，避免子组件计算）
-    costOrbs: { type: Number, required: true }, // 滴晶消耗
-    lastEnergy: { type: Number, required: true }, // 剩余力量
-
-    // 方法
-    isTileReachable: { type: Function, required: true }, // 石盘是否可达
-    getTileBorderUrl: { type: Function, required: true }, // 石盘边框图
-    getTileFillUrl: { type: Function, required: true }, // 石盘填充图
-    getTrainerAvatarUrl: { type: Function, required: true }, // 训练家头像URL
-    fixTileName: { type: Function, required: true }, // 石盘名称格式化
-    toggleTile: { type: Function, required: true }, // 石盘点击核心方法（父组件传递）
-    checkSelectedTiles: { type: Function, required: true }, // 已选实盘检查方法
-    onTrainerClick: { type: Function, required: false }, // 筛选拍组点击事件（可选）
-
+    bonusLevel: { type: Number, required: true },
+    costOrbs: { type: Number, required: true },
+    lastEnergy: { type: Number, required: true },
+    fixTileName: { type: Function, required: true },
+    isTileReachable: { type: Function, required: true },
+    getTileBorderUrl: { type: Function, required: true },
+    getTileFillUrl: { type: Function, required: true },
+    getTrainerAvatarUrl: { type: Function, required: true },
+    checkSelectedTiles: { type: Function, required: true },
+    toggleTile: { type: Function, required: true },
+    onTrainerClick: { type: Function, required: false },
 });
 
-// ====================== Emits ======================
-const emit = defineEmits([
-    'update:bonusLevel', // 星级更新事件（通知父组件修改props）
-]);
+const emit = defineEmits(['update:bonusLevel']);
+const localBonusLevel = ref(props.bonusLevel);
 
-// ====================== 内部状态 ======================
-const isSingleView = ref(window.innerWidth <= 900);
-const hoveredTile = ref(null); // 当前hover的石盘
-const svgWrapperRef = ref(null); // SVG容器ref（用于悬浮窗定位）
-const localBonusLevel = ref(props.bonusLevel); // 本地状态中转星级
+// 状态
+const hoveredTile = ref(null);
+const popupPosition = ref({ 'inset-block-start': 0, 'inset-inline-start': 0, placeAbove: false });
+const isMobile = ref(false);
 
-// SVG配置（沿用你的原始尺寸逻辑）
-const svgWidth = ref(0);
-const svgHeight = ref(0);
-const svgHeightOffset = ref(0);
-const bonusContainerHeight = ref(0);
-const centerX = ref(0); // SVG中心点X
-const centerY = ref(0); // SVG中心点Y
-const centerOffsetX = ref(0);
-const pokemonSize = ref(55); // 中心头像尺寸
-const hexRadius = ref(40); // 石盘大小
-const hexPoints = ref(''); // 六边形顶点
-const tileUrlWidth = ref(80); // 石盘资源宽度
-const tileUrlHeight = ref(80); // 石盘资源高度
-const tileWinWidth = ref(260); // 悬浮窗宽度
-const tileWinHeight = ref(120); // 悬浮窗高度
-const xSpacingRatio = ref(0.8); // 横向间距系数
-const ySpacingRatio = ref(1.05); // 纵向间距系数
+// 坐标与 viewBox 计算 
+const calcHexSvgX = (x) => x * (CONST_HEX_RADIUS * 2 * X_SPACING_RATIO);
+const calcHexSvgY = (x, y) => {
+    const ySpacing = CONST_HEX_RADIUS * Math.sqrt(3) * Y_SPACING_RATIO;
+    const absX = Math.abs(x);
+    const cof = x > 0 ? (-1) * absX : absX;
+    return (-y) * ySpacing + cof * (ySpacing / 2);
+};
 
-// 训练家头像URL（依赖currentRarity判断是否EX）
+const viewBox = computed(() => {
+    if (!props.gridData || props.gridData.length === 0) return '-500 -500 1000 1000';
+
+    let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+    props.gridData.forEach(tile => {
+        const cx = calcHexSvgX(tile.x);
+        const cy = calcHexSvgY(tile.x, tile.y);
+        minX = Math.min(minX, cx - CONST_HEX_RADIUS);
+        maxX = Math.max(maxX, cx + CONST_HEX_RADIUS);
+        minY = Math.min(minY, cy - CONST_HEX_RADIUS);
+        maxY = Math.max(maxY, cy + CONST_HEX_RADIUS);
+    });
+
+    // 留白
+    const padding = 10;
+
+    const x = minX - padding;
+    const y = minY - padding;
+    const w = (maxX - minX) + padding * 2;
+    const h = (maxY - minY) + padding * 2;
+
+    return `${x} ${y} ${w} ${h}`;
+});
+
 const trainerAvatarUrl = computed(() => {
     return props.getTrainerAvatarUrl(props.trainer.actorId, props.currentRarity === 6);
 });
-// 最大星级（从trainer获取）
+
 const maxBonusLevel = computed(() => props.trainer.maxBonusLevel || 5);
 
-const handleBonusUpdate = (newLevel) => {
-    localBonusLevel.value = newLevel;
-    emit('update:bonusLevel', newLevel);
+const updateWindowWidth = () => {
+    isMobile.value = window.innerWidth <= 768;
 };
 
-watch(
-    () => localBonusLevel.value, // 监听星级变化
-    (newBonusLevel, oldBonusLevel) => {
-        if (newBonusLevel !== oldBonusLevel) {
-            props.checkSelectedTiles();
-            // console.log('星级更新：', newBonusLevel, '→ 触发检查选中石盘');
-        }
-    },
-    {
-        immediate: false
+// 点击空白区域关闭弹窗
+const handleBackgroundClick = () => {
+    hoveredTile.value = null;
+};
+
+// 点击格子：既要触发选中，也要触发弹窗显示
+const handleTileClick = (id, event) => {
+    // 选中/取消选中
+    props.toggleTile(id);
+
+    // 设置当前悬停Tile（移动端也需要这个来显示弹窗）
+    const tile = props.gridData.find(t => t.id === id);
+    if (tile) {
+        updatePopupPosition(event); // 计算位置（桌面端用）
+        hoveredTile.value = tile;   // 触发弹窗显示
     }
-);
-watch(
-    () => [props.bonusLevel],
-    ([newBonusLevel]) => {
-        localBonusLevel.value = newBonusLevel;
-    },
-    { immediate: true }
-);
+};
 
-/**
- * 初始化SVG配置：画布尺寸、六边形顶点
- */
-const initSvgConfig = () => {
-    const svgWrapper = svgWrapperRef.value;
-    if (!svgWrapper) return;
+// 鼠标悬停 (仅桌面端)
+const handleTileHover = (tile, event) => {
+    if (isMobile.value) return;
+    hoveredTile.value = tile;
+    if (tile && event) {
+        updatePopupPosition(event);
+    }
+};
 
-    // SVG画布尺寸 = 容器尺寸
-    svgWidth.value = svgWrapper.offsetWidth;
-    const containerHeight = svgWrapper.offsetHeight;
-    const bonusContainer = document.querySelector('.bonus-container');
-    bonusContainerHeight.value = bonusContainer ? bonusContainer.offsetHeight : 0;
-    svgHeight.value = containerHeight - bonusContainerHeight.value + svgHeightOffset.value;
-    // svgHeight.value = svgWrapper.offsetHeight;
+const updatePopupPosition = (event) => {
+    const target = event.currentTarget;
+    if (!target) return;
+    const rect = target.getBoundingClientRect();
+    const screenHeight = window.innerHeight;
 
-    // 计算正六边形6个顶点（精准无偏差）
+    popupPosition.value = {
+        top: rect.top,
+        bottom: rect.bottom,
+        left: rect.left + rect.width / 2,
+        placeAbove: rect.top > (screenHeight / 2)
+    };
+};
+
+// 桌面端动态样式
+const dynamicPopupStyle = computed(() => {
+    if (isMobile.value || !popupPosition.value.left) return {};
+
+    const { top, bottom, left, placeAbove } = popupPosition.value;
+    const popupWidth = 260;
+    const halfWidth = popupWidth / 2;
+    const screenWidth = window.innerWidth;
+    const EDGE_PADDING = 10;
+
+    let finalLeft = left;
+    if (finalLeft - halfWidth < EDGE_PADDING) {
+        finalLeft = halfWidth + EDGE_PADDING;
+    } else if (finalLeft + halfWidth > screenWidth - EDGE_PADDING) {
+        finalLeft = screenWidth - halfWidth - EDGE_PADDING;
+    }
+
+    const style = {
+        position: 'fixed',
+        zIndex: 9999,
+        'inset-inline-start': `${finalLeft}px`,
+        borderColor: hoveredTile.value?.color,
+        transform: `translate(-50%, ${placeAbove ? 'calc(-100% - 15px)' : '15px'})`,
+    };
+
+    if (placeAbove) style.top = `${top}px`;
+    else style.top = `${bottom}px`;
+
+    return style;
+});
+
+
+const hexPoints = computed(() => {
     const points = [];
     for (let i = 0; i < 6; i++) {
         const angle = (i * 60) * Math.PI / 180;
-        const x = hexRadius.value * Math.cos(angle);
-        const y = hexRadius.value * Math.sin(angle);
+        const x = CONST_HEX_RADIUS * Math.cos(angle);
+        const y = CONST_HEX_RADIUS * Math.sin(angle);
         points.push(`${x},${y}`);
     }
-    hexPoints.value = points.join(' ');
-
-    // 计算SVG中心点（和你的原始布局一致）
-    calcSvgCenter();
-};
-
-/**
- * 计算SVG中心点
- */
-const calcSvgCenter = () => {
-    centerX.value = svgWidth.value / 2 + centerOffsetX.value;
-    centerY.value = svgHeight.value / 2;
-};
-
-/**
- * 计算石盘在SVG中的X坐标
- */
-const calcHexSvgX = (x) => {
-    const xSpacing = (hexRadius.value * 2) * xSpacingRatio.value;
-    return centerX.value + x * xSpacing;
-};
-
-/**
- * 计算石盘在SVG中的Y坐标
- */
-const calcHexSvgY = (x, y) => {
-    const ySpacing = (hexRadius.value * Math.sqrt(3)) * ySpacingRatio.value;
-    const absX = Math.abs(x);
-    const cof = x > 0 ? (-1) * absX : absX; // 右列向左错位，左列向右错位
-    return centerY.value + (-y) * ySpacing + cof * (ySpacing / 2);
-};
-
-// /**
-//  * 计算石盘信息显示窗口X坐标
-//  */
-// const calcTileWinX = (x) => {
-//     if (isSingleView.value) {
-//         return (svgWidth.value - tileWinWidth.value) / 2 + centerOffsetX.value;
-//     }
-
-//     const tileX = calcHexSvgX(x);
-
-//     // 优先尝试显示在六边形正中间位置
-//     let calcX = tileX - tileWinWidth.value / 2;
-//     if (calcX + tileWinWidth.value + 10 > svgWidth.value) {
-//         calcX = calcX - tileWinWidth.value / 2;
-//     }
-//     if (calcX < 0) {
-//         calcX = (svgWidth.value - tileWinWidth.value) / 2;
-//     }
-//     return calcX;
-// };
-
-// /**
-//  * 计算石盘信息显示窗口Y坐标
-//  */
-// const calcTileWinY = (x, y) => {
-//     if (isSingleView.value) {
-//         const screenHeight = window.innerHeight;
-//         const windowHeight = tileWinHeight.value;
-//         const scrollY = window.scrollY;
-
-//         const bottomY = scrollY + screenHeight - windowHeight * 1.5 - 10;
-//         if (y < 0) {
-//             return scrollY + 50;
-//         } else if (y > 0) {
-//             return bottomY;
-//         }
-//     }
-
-//     const tileY = calcHexSvgY(x, y);
-
-//     // 优先尝试显示在六边形正下方位置
-//     let calcY = tileY + hexRadius.value;
-//     if (calcY + tileWinHeight.value > svgHeight.value) {
-//         calcY = calcY - tileWinHeight.value * 2;
-//     }
-
-//     return calcY;
-// };
-
-/**
- * 屏幕适配：根据窗口大小调整石盘、SVG尺寸
- */
-const adjustSizeByScreen = () => {
-    const screenWidth = window.innerWidth;
-    const screenHeight = window.innerHeight;
-
-    // console.log(screenWidth, screenHeight)
-    const isSmallScreen = screenWidth <= 390 || screenHeight < 700;
-    const isMediumScreen = screenWidth < 700 || (screenHeight >= 700 && screenHeight <= 900);
-
-    // 尺寸适配逻辑
-    if (isSmallScreen) {
-        hexRadius.value = 25;
-        pokemonSize.value = 35;
-        tileUrlWidth.value = 50;
-        tileUrlHeight.value = 50;
-        ySpacingRatio.value = 1.00;
-        centerOffsetX.value = 15;
-        tileWinWidth.value = 240;
-        tileWinHeight.value = 110;
-    } else if (isMediumScreen) {
-        hexRadius.value = 30;
-        pokemonSize.value = 40;
-        tileUrlWidth.value = 60;
-        tileUrlHeight.value = 60;
-        ySpacingRatio.value = 1.00;
-        centerOffsetX.value = 20;
-    } else {
-        hexRadius.value = 40;
-        pokemonSize.value = 55;
-        tileUrlWidth.value = 80;
-        tileUrlHeight.value = 80;
-        ySpacingRatio.value = 1.05;
-        centerOffsetX.value = 0;
-    }
-
-    if (screenHeight >= 900 && !isSingleView.value) {
-        svgHeightOffset.value = 200;
-    } else if (screenHeight < 900 && screenHeight > 650) {
-        svgHeightOffset.value = 100;
-    } else if (screenHeight <= 650) {
-        svgHeightOffset.value = 300;
-    }
-
-    // 重新初始化SVG配置
-    initSvgConfig();
-};
-
-// ====================== 事件处理 ======================
-/**
- * 石盘点击：直接调用父组件传递的toggleTile方法
- */
-const handleTileClick = (tileId) => {
-    props.toggleTile(tileId);
-};
-
-/**
- * 石盘hover：使用你的位置计算逻辑显示悬浮窗
- */
-const handleTileHover = (tile) => {
-    hoveredTile.value = tile;
-    // 无需额外计算，悬浮窗样式直接绑定calcTileWinX/calcTileWinY
-};
-
-/**
- * 中心头像点击：可选功能（父组件传递方法则生效）
- */
-const handleTrainerClick = () => {
-    if (props.onTrainerClick) {
-        props.onTrainerClick();
-    }
-};
-
-// ====================== 生命周期与监听 ======================
-/**
- * 窗口大小变化：重新适配
- */
-const handleResize = () => {
-    adjustSizeByScreen();
-};
-
-/**
- * 组件挂载：初始化尺寸
- */
-onMounted(() => {
-    nextTick(() => {
-        initSvgConfig();
-        adjustSizeByScreen();
-        window.addEventListener('resize', handleResize);
-    });
+    return points.join(' ');
 });
 
-/**
- * 组件卸载：移除监听
- */
+const normalizeTileName = (tile) => {
+    const result = props.fixTileName(tile);
+    if (typeof result === 'string') return [result];
+    if (Array.isArray(result)) return result;
+    return [tile.name || ''];
+};
+
+const handleBonusUpdate = (v) => { localBonusLevel.value = v; emit('update:bonusLevel', v); };
+const handleTrainerClick = () => { if (props.onTrainerClick) props.onTrainerClick(); };
+
+watch(() => props.bonusLevel, (v) => localBonusLevel.value = v, { immediate: true });
+watch(localBonusLevel, (n, o) => { if (n !== o) props.checkSelectedTiles(); });
+
+onMounted(() => {
+    updateWindowWidth();
+    window.addEventListener('resize', updateWindowWidth);
+});
+
 onUnmounted(() => {
-    window.removeEventListener('resize', handleResize);
+    window.removeEventListener('resize', updateWindowWidth);
 });
 </script>
 
@@ -370,28 +264,25 @@ onUnmounted(() => {
     block-size: 100%;
     display: flex;
     flex-direction: column;
-    contain: paint;
+    background: transparent;
 }
 
-.top-container {
+/* 顶部信息栏 */
+.bonus-header {
+    flex-shrink: 0;
     inline-size: 100%;
-    block-size: 100%;
-    position: relative;
-    background: transparent;
-}
-
-.bonus-container {
-    position: absolute;
-    inset-block-start: 10px;
-    inset-inline-start: 50%;
-    transform: translateX(-50%);
-    z-index: 99;
-    background: transparent;
-    /* 透明背景，和SVG同层 */
-    inline-size: 280px;
+    max-inline-size: 320px;
+    margin: 10px auto;
     display: flex;
     flex-direction: column;
     gap: 8px;
+    z-index: 10;
+    position: relative;
+}
+
+.info-bar,
+.rating-section {
+    pointer-events: auto;
 }
 
 .info-bar {
@@ -404,25 +295,20 @@ onUnmounted(() => {
 
 .info-item {
     flex: 1;
-    padding: 7px 0;
+    padding: 6px 0;
     text-align: center;
     color: #fff;
     font-size: 14px;
     font-weight: 500;
 }
 
-.info-label {
-    margin-inline-end: 4px;
-    opacity: 0.9;
-}
-
 .info-value {
     font-weight: bold;
-    opacity: 1;
+    margin-inline-start: 4px;
 }
 
 .rating-section {
-    padding: 8px 12px;
+    padding: 6px 12px;
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 8px;
     display: flex;
@@ -430,75 +316,118 @@ onUnmounted(() => {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.svg-wrapper {
+/* 滚动区域 */
+.svg-scroll-area {
+    flex: 1;
     inline-size: 100%;
-    block-size: 100%;
     overflow: auto;
-    -webkit-tap-highlight-color: transparent;
-    outline: none;
     position: relative;
-    background: transparent;
+    -webkit-overflow-scrolling: touch;
 
     scrollbar-width: thin;
     scrollbar-color: #568dd1 #f0f4f8;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.svg-wrapper::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+.svg-scroll-area::-webkit-scrollbar {
+    inline-size: 8px;
+    block-size: 8px;
 }
 
-.svg-wrapper::-webkit-scrollbar-track {
+.svg-scroll-area::-webkit-scrollbar-track {
     background-color: #f0f4f8;
-    border-radius: 4px;
 }
 
-.svg-wrapper::-webkit-scrollbar-thumb {
+.svg-scroll-area::-webkit-scrollbar-thumb {
     background-color: #568dd1;
     border-radius: 4px;
-    border: 2px solid #f0f4f8;
 }
 
-.svg-wrapper::-webkit-scrollbar-thumb:hover {
+.svg-scroll-area::-webkit-scrollbar-thumb:hover {
     background-color: #4a7bb3;
 }
 
-
-svg {
-    min-inline-size: 100%;
-    min-block-size: 700px;
+/* SVG 本体 */
+.main-svg {
     display: block;
-    margin: 0 auto;
-    background: transparent;
+    /* 桌面端：自适应 */
+    inline-size: 100%;
+    block-size: 100%;
+    max-block-size: 100%;
 }
 
+.center-avatar {
+    border: 2px solid white;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+
+.tile-group {
+    transition: filter 0.3s ease;
+}
+
+.tile-locked {
+
+    filter: grayscale(0.8) brightness(0.5) contrast(0.8);
+    cursor: not-allowed !important;
+}
+
+.tile-locked .grid-text {
+    fill: #aaa;
+    /* 文字变灰 */
+    stroke: #333;
+    /* 描边变淡 */
+}
+
+.grid-text {
+    font-size: clamp(12px, 2vw, 13px);
+    font-weight: 800;
+    fill: white;
+    /* stroke: black;
+    stroke-width: 2.5px;
+    stroke-linejoin: round; */
+    paint-order: stroke;
+    user-select: none;
+    text-shadow:
+        1px 1px 0 #555,
+        -1px 1px 0 #555,
+        1px -1px 0 #555,
+        -1px -1px 0 #555;
+}
+
+/* ================== 移动端关键样式 ================== */
+@media (max-width: 768px) {
+
+    /* 强制放大画布，使其可滚动，解决文字过小问题 */
+    .main-svg {
+        inline-size: 100%;
+        block-size: 100%;
+        /* min-inline-size: 150%; */
+        min-block-size: 80vh;
+    }
+
+    .svg-scroll-area {
+        display: block;
+    }
+}
+
+/* ================== 弹窗样式 ================== */
 .tile-window {
-    position: fixed;
-    inset-block-start: 10%;
-    inset-inline-start: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1000;
-    pointer-events: none;
-    inline-size: v-bind('tileWinWidth + "px"');
+    inline-size: 260px;
     background: rgba(235, 230, 215, 0.98);
     border: 2px solid #fff;
     border-radius: 10px;
-    padding: 0;
-    font-size: 12px;
-    line-height: 1.5;
-    color: #333;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-    opacity: 0.95;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    pointer-events: auto;
 }
 
-.tile-window:hover {
-    opacity: 1;
-}
-
-.tile-name {
+.tile-window-header {
     font-weight: bold;
     font-size: 14px;
-    padding: 5px;
+    padding: 6px;
     text-align: center;
     color: #fff;
     border-start-start-radius: 8px;
@@ -511,63 +440,64 @@ svg {
 }
 
 .tile-content {
-    padding: 8px;
+    padding: 10px;
 }
 
 .tile-descr {
-    margin: 0 0 6px 0;
-    font-weight: 400;
-    line-height: 1.6;
-    color: #444;
+    margin: 0 0 8px 0;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #333;
 }
 
 .tile-other {
     margin: 0;
-    font-weight: 500;
+    font-size: 12px;
+    color: #666;
     text-align: center;
-    color: #222;
-    font-size: 11px;
+    font-weight: bold;
 }
 
-@media (max-width: 1000px) {
-    .bonus-container {
-        inline-size: 90%;
-        max-inline-size: 300px;
+/* 移动端顶部显示逻辑 */
+.mobile-popup {
+    position: fixed !important;
+    inset-inline-start: 50% !important;
+
+    inset-block-start: 0% !important;
+    inset-block-end: auto !important;
+
+    transform: translateX(-50%) !important;
+    inline-size: 90vw;
+    max-inline-size: 260px;
+    z-index: 10000 !important;
+
+    /* 向下滑入动画 */
+    animation: slideDown 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+@keyframes slideDown {
+    from {
+        transform: translate(-50%, -100%);
+        opacity: 0;
     }
 
-    .info-item {
-        font-size: 13px;
-        padding: 6px 0;
-    }
-
-    svg {
-        min-block-size: 600px;
+    to {
+        transform: translate(-50%, 0);
+        opacity: 1;
     }
 }
 
-@media (max-width: 480px) {
-    .bonus-container {
-        gap: 6px;
-        margin: 8px auto;
-        inset-block-start: 5px;
-    }
+.desktop-popup {
+    transition: top 0.15s ease-out, left 0.15s ease-out;
+}
 
-    .info-bar {
-        gap: 1px;
-        background-color: transparent;
-    }
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.2s ease;
+}
 
-    .info-item {
-        background-color: #0b7a75;
-        border-radius: 4px;
-    }
-
-    .rating-section {
-        padding: 6px 8px;
-    }
-
-    svg {
-        min-block-size: 500px;
-    }
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
 }
 </style>

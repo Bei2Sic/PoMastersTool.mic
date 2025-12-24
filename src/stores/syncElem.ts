@@ -314,7 +314,7 @@ const createSync = (jsonData: SyncRawData): Sync => {
                     case 4:
                         return "極巨化形態";
                     default:
-                        return item.form!=''? item.form:"基礎形態";
+                        return item.form != "" ? item.form : "基礎形態";
                 }
             });
             return variationList;
@@ -441,17 +441,42 @@ const createSync = (jsonData: SyncRawData): Sync => {
             return url;
         },
 
-        fixTileName: (tile: Tile) => {
+        fixTileName: (tile) => {
             let name = tile.name;
-            switch (tile.color) {
-                case "#BF80FF":
-                    name = name.replace(/^.*?：/, "拍组招式：");
-                    break;
-            }
-            // name = name.replace(/[:：]\s*/, '：<br>');
-            name.replace(/[:：]/, "$&\n");
 
-            return name;
+            //todo: 個人技替換....
+            if (tile.color === "#BF80FF") {
+                name = name.replace(/^.*?：/, "拍组招式：");
+            } else if (tile.color === "#779EFF") {
+                return [name];
+            } else if (tile.color === "#FF0066") {
+                // 
+            }
+
+            name = name.replace("招式計量槽", "計量槽");
+            name = name.replace("拍組招式", "拍招");
+
+            const colonMatch = name.match(/^(.*?[:：])(.*)$/);
+            if (colonMatch) {
+                const prefix = colonMatch[1].replace("：","");
+                const suffix = colonMatch[2];
+
+                const prefixChunks = prefix.match(/.{1,6}/g) || [];
+                let suffixChunks = [];
+                if (suffix) {
+                    // 如果是威力或数值，不切分
+                    const isPowerNode = /威力|Power|^\s*\+\d/.test(suffix);
+                    if (isPowerNode) {
+                        suffixChunks = [suffix];
+                    } else {
+                        // 否则也按 5 字切分
+                        suffixChunks = suffix.match(/.{1,6}/g) || [];
+                    }
+                }
+                return [...prefixChunks, ...suffixChunks];
+            } else {
+                return name.match(/.{1,6}/g) || [name];
+            }
         },
 
         // 切换宝可梦形态

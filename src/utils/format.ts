@@ -55,6 +55,15 @@ export const getStyle = (
     };
 };
 
+// 石盘上显示名字格式化
+export const getTileFormatName = (name: string) => {
+    // 如果名字太长，截取前4个字
+    if (name.length > 5) {
+        return name.substring(0, 4) + "..";
+    }
+    return name;
+};
+
 // 獲取技能屬性 icon 樣式
 export const getTypeIconStyle = (type: number) => {
     const suffix = getTypeInfo(type).key;
@@ -106,27 +115,27 @@ export const getThemeIconStyle = (theme: Theme) => {
     switch (theme.category) {
         // 属性
         case 1:
-            suffix = `Move${getTypeInfoWithCnName(theme.tag).key}`
+            suffix = `Move${getTypeInfoWithCnName(theme.tag).key}`;
             break;
         // 地区
         case 2:
-            suffix = 'ThemeRegion';
+            suffix = "ThemeRegion";
             break;
         // 分类
         case 3:
-            suffix = 'ThemeTrainerGroup';
+            suffix = "ThemeTrainerGroup";
             break;
         // 服装
         case 4:
-            suffix = 'ThemeFashion';
+            suffix = "ThemeFashion";
             break;
         // 其他
         default:
-            suffix = 'ThemeOther';
+            suffix = "ThemeOther";
             break;
     }
     return getStyle(suffix);
-}
+};
 
 // 获取对应的训练家图片资源
 export const getTrainerUrl = (actorId: string, exEnabled: boolean): string => {

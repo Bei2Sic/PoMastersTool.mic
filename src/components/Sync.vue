@@ -503,6 +503,11 @@ onUnmounted(() => {
     text-overflow: ellipsis;
     color: rgba(255, 255, 255, 0.9);
     font-weight: bold;
+    text-shadow:
+        1px 1px 0 #555,
+        -1px 1px 0 #555,
+        1px -1px 0 #555,
+        -1px -1px 0 #555;
 }
 
 /* 潜能弹窗 */

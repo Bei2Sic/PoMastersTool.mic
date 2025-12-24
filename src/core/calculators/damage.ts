@@ -11,9 +11,9 @@ import {
     SINGLE_STAT_MOVE_MULTIPLIERS,
     SINGLE_STAT_SYNC_MULTIPLIERS,
     SPEED_RANK_MULTIPLIERS,
+    TARGET_SCOPE_MULTIPLIERS,
     TOTAL_STAT_MOVE_MULTIPLIERS,
     TOTAL_STAT_SYNC_MULTIPLIERS,
-    TARGET_SCOPE_MULTIPLIERS,
 } from "@/constances/rate";
 import {
     getStatKeyByStatCnName,
@@ -574,7 +574,7 @@ export class DamageEngine {
             case LogicType.Rebuff:
                 const rebuffs = env.target.typeRebuffs;
                 Object.keys(rebuffs).some((rebuff) => {
-                    const rebuffRank = hindrance[rebuff as PokemonType];
+                    const rebuffRank = rebuffs[rebuff as PokemonType];
                     if (cond.key == "任意") {
                         if (rebuffRank !== 0) {
                             return true;

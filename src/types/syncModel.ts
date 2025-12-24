@@ -231,7 +231,7 @@ export interface SyncMethods {
     updatePotentialCookieWithLevel: (cookie: LuckCookie, level: number) => void; // 带等级的饼干更新
     getTileBorderUrl: (tile: Tile) => string;
     getTileFillUrl: (tile: Tile) => string;
-    fixTileName: (tile: Tile) => string;
+    fixTileName: (tile: Tile) => string[];
     // getTrainerUrl: (trainer: Trainer) => string;
     isTileReachable: (tile: Tile) => boolean; // 石盘是否可达
     checkSelectedTiles: () => void;
