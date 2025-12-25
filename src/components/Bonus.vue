@@ -1,5 +1,6 @@
 <template>
-    <div class="custom-rating" :style="{ gap: `${gap}px` }" @mousemove="handleMouseMove">
+    <div class="custom-rating" :style="{ gap: `${gap}px` }" @mousemove="handleInteract"
+        @touchmove.passive="handleInteract" @click="handleInteract">
         <div v-for="index in maxRating" :key="index" class="custom-star" :style="{
             inlineSize: `${starSize}px`,
             blockSize: `${starSize}px`,
@@ -13,18 +14,9 @@
 import { ref, watch } from 'vue';
 
 const props = defineProps({
-    modelValue: { // 实时绑定, 滑动即更新
-        type: Number,
-        default: 1 // 最低1星
-    },
-    starSize: {
-        type: Number,
-        default: 20
-    },
-    gap: {
-        type: Number,
-        default: 5
-    },
+    modelValue: { type: Number, default: 1 },
+    starSize: { type: Number, default: 20 },
+    gap: { type: Number, default: 5 },
     maxRating: {
         type: Number,
         default: 5,
@@ -36,7 +28,6 @@ const emit = defineEmits(['update:modelValue']);
 
 const currentBonus = ref(Math.max(1, Math.round(props.modelValue)));
 
-// 初始化+监听父组件传入的modelValue变化
 watch(() => props.modelValue, (val) => {
     const validRating = Math.min(props.maxRating, Math.max(1, Math.round(val)));
     currentBonus.value = validRating;
@@ -49,20 +40,33 @@ const getStarBg = (index) => {
         : (isFullStar ? 'var(--iconAwakeningLevelOn)' : 'var(--iconAwakeningLevelOff)');
 };
 
-const handleMouseMove = (e) => {
+// ✨✨✨ 核心修改：统一处理鼠标和触摸事件 ✨✨✨
+const handleInteract = (e) => {
+    // 1. 获取容器 DOM
     const container = e.currentTarget;
     const rect = container.getBoundingClientRect();
-    // 计算鼠标相对位置（0~1）
-    const relativeX = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
-    // 转换为整数评分（1~maxRating）
+
+    // 2. 兼容获取 X 轴坐标
+    let clientX;
+
+    if (e.type.startsWith('touch')) {
+        // 移动端：从 touches 数组中获取第一根手指的位置
+        // 如果是 touchend 事件，可能需要从 changedTouches 获取，但这里主要处理 touchmove
+        clientX = e.touches[0].clientX;
+    } else {
+        // PC端：直接获取
+        clientX = e.clientX;
+    }
+
+    // 3. 计算逻辑（保持不变）
+    const relativeX = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
     let rating = Math.ceil(relativeX * props.maxRating);
-    // 强制最低1星、最高maxRating
     rating = Math.min(props.maxRating, Math.max(1, rating));
 
-    // 评分变化时，同步更新并通知父组件（滑动即确认）
+    // 4. 更新
     if (rating !== currentBonus.value) {
         currentBonus.value = rating;
-        emit('update:modelValue', rating); // 实时同步给v-model
+        emit('update:modelValue', rating);
     }
 };
 </script>
@@ -76,7 +80,10 @@ const handleMouseMove = (e) => {
     z-index: 999;
     padding: 2px 0;
     flex-wrap: nowrap;
-    /* 强制一条直线 */
+    /* 增加触摸区域，防止手指太粗遮挡或者点不到 */
+    touch-action: none;
+
+    -webkit-tap-highlight-color: transparent;
 }
 
 .custom-star {
@@ -84,6 +91,8 @@ const handleMouseMove = (e) => {
     background-repeat: no-repeat;
     background-size: contain;
     transition: background-image 0.1s ease, transform 0.1s ease;
+    /* 移除移动端点击时的高亮背景色 */
+    -webkit-tap-highlight-color: transparent;
 }
 
 .custom-star:hover {

@@ -147,7 +147,7 @@ export class MoveSkillParser {
                 key: "任一能力未提高",
                 detail: desc.includes("對手") ? "對手" : "自身",
             };
-        if (desc.includes("属性抵抗降低"))
+        if (desc.includes("屬性抵抗降低"))
             return {
                 logic: LogicType.Rebuff,
                 key: "任意",

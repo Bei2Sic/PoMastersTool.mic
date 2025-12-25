@@ -383,7 +383,9 @@ export function useDamageCalculator(
                     activeMove.description
                 );
                 const moveSkill = parser.result;
-                console.log(moveSkill);
+                if (moveSkill?.condition) {
+                    console.log(moveSkill);
+                }
 
                 // 获取当前技能属性中文名 (用于主题技能匹配)
                 const moveTypeCnName = getTypeCnNameByTypeIndex(
@@ -571,7 +573,6 @@ export function useDamageCalculator(
                 })
                 .filter(Boolean);
 
-            
             const teraResult = calculateMoveDamage(
                 p.moveTera,
                 MoveScope.Move,

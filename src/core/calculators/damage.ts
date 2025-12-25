@@ -116,9 +116,10 @@ export class DamageEngine {
                         context,
                         move.type,
                         move.tags,
-                        passive.conditions,
+                        passive.conditions
                     )
                 ) {
+                    console.log(`${passive.name}: false`);
                     continue;
                 }
             }
@@ -237,7 +238,7 @@ export class DamageEngine {
                     moveSkill.condition,
                     context,
                     move.type,
-                    move.tags,
+                    move.tags
                 )
             ) {
                 value = 100;
@@ -293,8 +294,6 @@ export class DamageEngine {
                 }
         }
 
-        console.log(`場地後:${boost}`);
-
         // 鬥陣(小招和拍招才可以享受，極巨化不行)
         if ([MoveScope.Move, MoveScope.Sync].includes(scope)) {
             const battleCircles = context.battleCircles;
@@ -316,14 +315,10 @@ export class DamageEngine {
             });
         }
 
-        console.log(`鬥陣後:${boost}`);
-
         // 抗性
         const rebuffRank = context.target.typeRebuffs[typeCnName];
         const rebuffBoost = REBUFF_MULTIPLIERS[Math.abs(rebuffRank)];
         boost *= rebuffBoost;
-
-        console.log(`減抗後:${boost}`);
 
         // 效果絕佳 & 效果絕佳强化
         if (context.settings.effectiveType === typeCnName) {
@@ -333,28 +328,20 @@ export class DamageEngine {
             }
         }
 
-        console.log(`效果絕佳後:${boost}`);
-
         // 擊中要害
         if (context.settings.isCritical) {
             boost *= 1.5;
         }
-
-        console.log(`擊中要害後:${boost}`);
 
         // 目標
         const scopeBoost =
             TARGET_SCOPE_MULTIPLIERS[context.settings.targetScope];
         boost *= scopeBoost;
 
-        console.log(`計算衰減後:${boost}`);
-
         // 气魄
         if (context.user.syncBuff != 0) {
             boost *= 1 + context.user.syncBuff * 0.5;
         }
-        console.log(`气魄数:${context.user.syncBuff}`);
-        console.log(`氣魄後:${boost}`);
 
         // 爆擊狀態
         if (scope === MoveScope.Sync) {
@@ -371,8 +358,6 @@ export class DamageEngine {
                 boost *= 1.5;
             }
         }
-
-        console.log(`爆擊狀態後:${boost}`);
 
         // 不用处理直接返回
         return boost;
@@ -538,7 +523,7 @@ export class DamageEngine {
 
             case LogicType.Terrain:
                 return cond.key.includes(env.terrain);
-            
+
             case LogicType.Zone:
                 return cond.key.includes(env.zone);
 
@@ -576,19 +561,13 @@ export class DamageEngine {
 
             case LogicType.Rebuff:
                 const rebuffs = env.target.typeRebuffs;
-                Object.keys(rebuffs).some((rebuff) => {
-                    const rebuffRank = rebuffs[rebuff as PokemonType];
-                    if (cond.key == "任意") {
-                        if (rebuffRank !== 0) {
-                            return true;
-                        }
-                    } else {
-                        if (cond.key.includes(rebuff)) {
-                            return rebuffRank !== 0;
-                        }
-                    }
-                });
-                return false;
+
+                if (cond.key == "任意") {
+                    return Object.values(rebuffs).some((rank) => rank < 0);
+                } else {
+                    const targetRank = rebuffs[cond.key as PokemonType] || 0;
+                    return targetRank < 0;
+                }
 
             // // 固定值但二元類型
             case LogicType.AnyFieldEffect:
@@ -606,6 +585,13 @@ export class DamageEngine {
 
             case LogicType.TerrainActive:
                 return env.terrain !== "無" || env.zone !== "無";
+
+            case LogicType.BattleCircleActive:
+                return Object.values(env.battleCircles).some((regionState) =>
+                    Object.values(regionState.actives).some(
+                        (isActive) => isActive === true
+                    )
+                );
 
             case LogicType.StatChange:
                 const stats = cond.detail.includes("對手")
@@ -701,9 +687,8 @@ export class DamageEngine {
             case LogicType.Compound:
                 if (!conds || conds.length === 0) return true;
                 return conds.every((subCond) => {
-                    this.checkCondition(subCond, env, moveType, moveTag)
+                    this.checkCondition(subCond, env, moveType, moveTag);
                 });
-
         }
         return false;
     }

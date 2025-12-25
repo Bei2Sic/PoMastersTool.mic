@@ -18,7 +18,7 @@
             </div>
         </div>
 
-        <div class="svg-scroll-area" @click.self="handleBackgroundClick">
+        <div class="svg-scroll-area" @click="handleBackgroundClick">
 
             <svg :viewBox="viewBox" preserveAspectRatio="xMidYMid meet" class="main-svg">
                 <image :href="trainerAvatarUrl" :x="-CONST_TRAINER_SIZE / 2 + 10" :y="-CONST_TRAINER_SIZE / 2"
@@ -40,6 +40,9 @@
                             :width="CONST_TILE_SIZE" :height="CONST_TILE_SIZE" pointer-events="none" />
                         <image :href="getTileFillUrl(tile)" :x="-CONST_TILE_SIZE / 2" :y="-CONST_TILE_SIZE / 2"
                             :width="CONST_TILE_SIZE" :height="CONST_TILE_SIZE" pointer-events="none" />
+
+                        <polygon v-if="!isTileReachable(tile)" :points="hexPoints" fill="rgba(0, 0, 0, 0.6)"
+                            pointer-events="none" />
 
                         <text text-anchor="middle" dominant-baseline="middle" pointer-events="none" class="grid-text">
                             <template v-for="(line, index) in normalizeTileName(tile)" :key="index">
@@ -80,8 +83,8 @@ import { computed, onMounted, onUnmounted, ref, watch } from 'vue';
 const CONST_HEX_RADIUS = 50;
 const CONST_TRAINER_SIZE = 70;
 const CONST_TILE_SIZE = 100;
-const X_SPACING_RATIO = 0.8;
-const Y_SPACING_RATIO = 1.05;
+const X_SPACING_RATIO = 0.75;
+const Y_SPACING_RATIO = 1.00;
 
 const props = defineProps({
     gridData: { type: Array, required: true },
@@ -330,6 +333,12 @@ onUnmounted(() => {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    /* ✨ 修复卡顿：禁止双击缩放，移除 300ms 点击延迟 */
+    touch-action: manipulation;
+
+    /* ✨ 修复阴影：去除点击时的高亮背景色 */
+    -webkit-tap-highlight-color: transparent;
 }
 
 .svg-scroll-area::-webkit-scrollbar {
@@ -357,6 +366,8 @@ onUnmounted(() => {
     inline-size: 100%;
     block-size: 100%;
     max-block-size: 100%;
+
+    -webkit-tap-highlight-color: transparent;
 }
 
 .center-avatar {
@@ -367,12 +378,16 @@ onUnmounted(() => {
 
 .tile-group {
     transition: filter 0.3s ease;
+
+    cursor: pointer;
+    /* 去除高亮 */
+    -webkit-tap-highlight-color: transparent;
 }
 
 .tile-locked {
 
-    filter: grayscale(0.8) brightness(0.5) contrast(0.8);
-    cursor: not-allowed !important;
+    /* filter: grayscale(0.8) brightness(0.5) contrast(0.8);
+    cursor: not-allowed !important; */
 }
 
 .tile-locked .grid-text {

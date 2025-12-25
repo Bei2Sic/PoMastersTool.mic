@@ -152,7 +152,6 @@ import Grid from '@/components/Grid.vue';
 import Info from '@/components/Info.vue';
 import { useSyncElemStore } from "@/stores/syncElem";
 // import { PotentialSkills } from '@/type/const';
-import { useDamageCalculator } from '@/composables/useDamageCalculator';
 import { getTrainerUrl } from '@/utils/format';
 import { storeToRefs } from 'pinia';
 import { computed, onMounted, onUnmounted, ref, watch } from 'vue';
@@ -181,7 +180,7 @@ const curTab = ref('grid');
 const showDamageCalc = ref(false);
 
 const { singleSync } = storeToRefs(syncElemStore);
-const { themeSnapshot, passiveSnapshot, statSnapshot, finalDamageResult } = useDamageCalculator(singleSync);
+// const { themeSnapshot, passiveSnapshot, statSnapshot, finalDamageResult } = useDamageCalculator(singleSync);
 
 // 潜能相关
 // const currentType = ref(1);
@@ -224,37 +223,37 @@ watch(curTab, (newTab) => {
     }
 });
 
-watch(themeSnapshot, (newValue) => {
-    if (newValue) {
-        console.log("✅ 計算器成功算出組隊技能:", newValue);
-    } else {
-        console.log("⏳ 計算結果為空 (可能數據尚未加載)");
-    }
-}, { immediate: true });
+// watch(themeSnapshot, (newValue) => {
+//     if (newValue) {
+//         console.log("✅ 計算器成功算出組隊技能:", newValue);
+//     } else {
+//         console.log("⏳ 計算結果為空 (可能數據尚未加載)");
+//     }
+// }, { immediate: true });
 
-watch(passiveSnapshot, (newValue) => {
-    if (newValue && newValue.length > 0) {
-        console.log("✅ 計算器成功算出被動技能:", newValue);
-    } else {
-        console.log("⏳ 計算結果為空 (可能數據尚未加載)");
-    }
-}, { immediate: true });
+// watch(passiveSnapshot, (newValue) => {
+//     if (newValue && newValue.length > 0) {
+//         console.log("✅ 計算器成功算出被動技能:", newValue);
+//     } else {
+//         console.log("⏳ 計算結果為空 (可能數據尚未加載)");
+//     }
+// }, { immediate: true });
 
-watch(statSnapshot, (newValue) => {
-    if (newValue && newValue.length > 0) {
-        console.log("✅ 計算器成功算出白值數據:", newValue);
-    } else {
-        console.log("⏳ 計算結果為空 (可能數據尚未加載)");
-    }
-}, { immediate: true });
+// watch(statSnapshot, (newValue) => {
+//     if (newValue && newValue.length > 0) {
+//         console.log("✅ 計算器成功算出白值數據:", newValue);
+//     } else {
+//         console.log("⏳ 計算結果為空 (可能數據尚未加載)");
+//     }
+// }, { immediate: true });
 
-watch(finalDamageResult, (newValue) => {
-    if (newValue && newValue.length > 0) {
-        console.log("✅ 計算器成功算出普通技能傷害加成:", newValue);
-    } else {
-        console.log("⏳ 計算結果為空 (可能數據尚未加載)");
-    }
-}, { immediate: true });
+// watch(finalDamageResult, (newValue) => {
+//     if (newValue && newValue.length > 0) {
+//         console.log("✅ 計算器成功算出普通技能傷害加成:", newValue);
+//     } else {
+//         console.log("⏳ 計算結果為空 (可能數據尚未加載)");
+//     }
+// }, { immediate: true });
 
 onMounted(() => {
 });
@@ -408,10 +407,19 @@ onUnmounted(() => {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-block-end: 1px solid #ddd;
-    font-size: 16px;
+
+    font-size: 18px;
     font-weight: bold;
-    color: black;
+    font-size: 15px;
+    font-weight: 900;
+    color: #fff;
+    /* ✨ 关键：文字描边效果 */
+    text-shadow:
+        -1px -1px 0 #004d40,
+        1px -1px 0 #004d40,
+        -1px 1px 0 #004d40,
+        1px 1px 0 #004d40;
+    letter-spacing: 1.5px;
 }
 
 .info-content {
