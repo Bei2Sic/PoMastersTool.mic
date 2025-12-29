@@ -334,9 +334,11 @@ export class DamageEngine {
         }
 
         // 目標
-        const scopeBoost =
-            TARGET_SCOPE_MULTIPLIERS[context.settings.targetScope];
-        boost *= scopeBoost;
+        if (scope !== MoveScope.Sync) {
+            const scopeBoost =
+                TARGET_SCOPE_MULTIPLIERS[context.settings.targetScope];
+            boost *= scopeBoost;
+        }
 
         // 气魄
         if (context.user.syncBuff != 0) {
@@ -359,6 +361,21 @@ export class DamageEngine {
             }
         }
 
+        // 不用处理直接返回
+        return boost;
+    }
+
+    static resolveGearMultipliers(
+        scope: MoveScope,
+        context: CalcEnvironment
+    ): number {
+        let boost = 1;
+        // 裝備加成（乘算）
+        if (scope === MoveScope.Move) {
+            boost *= (1+context.config.gearMove/100);
+        } else if (scope === MoveScope.Sync) {
+            boost *= (1+context.config.gearSync/100);
+        }
         // 不用处理直接返回
         return boost;
     }
@@ -515,7 +532,8 @@ export class DamageEngine {
     ): boolean {
         switch (cond.logic) {
             // 直接返回
-            case LogicType.Direct || LogicType.GaugeCost:
+            case LogicType.Direct:
+            case LogicType.GaugeCost:
                 return true;
 
             case LogicType.DamageField:
@@ -682,6 +700,9 @@ export class DamageEngine {
 
             case LogicType.Berry:
                 return env.settings.berry === 0;
+
+            case LogicType.IsMega:
+                return env.special.isMega;
 
             // 复合类型
             case LogicType.Compound:

@@ -77,8 +77,9 @@ export class MoveSkillParser {
 
         // 动态类
         if (desc.includes("越多,威力就越大")) {
+            console.log(desc);
             const match = desc.match(
-                /(自己的|對手的)(.+?)(提高|降低)得越多，威力就越大/
+                /(自己的|對手的)(.+?)(提高|降低)得越多[，,]\s*威力就越大/
             );
             if (match) {
                 const targetStr = match[1];
@@ -86,7 +87,7 @@ export class MoveSkillParser {
                 const dirStr = match[3];
 
                 const isTotal = statStr === "能力";
-
+                console.log(targetStr, statStr, dirStr);
                 return {
                     logic: isTotal
                         ? LogicType.TotalStatScaling

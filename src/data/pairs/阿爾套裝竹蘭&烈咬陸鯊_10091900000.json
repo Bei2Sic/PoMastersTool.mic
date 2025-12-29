@@ -1,0 +1,1121 @@
+{
+  "trainer": {
+    "id": "10091900000",
+    "name": "阿爾套裝竹蘭",
+    "actor": "竹蘭",
+    "actorId": "ch0091_90_shirona",
+    "rarity": 5,
+    "role": 6,
+    "exRole": 0,
+    "ex": true,
+    "exclusivity": "Master",
+    "maxBonusLevel": 5
+  },
+  "scoutMethod": 1,
+  "scheduleId": "chara_6080_0828_FOREVER",
+  "themes": [
+    {
+      "name": "地面屬性／複合",
+      "description": "我方全體拍組最大HP提升24\n僅在我方使出地面屬性攻擊時，攻擊和特攻提升24",
+      "tag": "地面",
+      "category": 1
+    },
+    {
+      "name": "神奧／複合",
+      "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
+      "tag": "神奧",
+      "category": 2
+    },
+    {
+      "name": "冠軍／複合",
+      "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
+      "tag": "冠軍",
+      "category": 3
+    },
+    {
+      "name": "阿爾套裝／複合",
+      "description": "我方全體拍組最大HP提升8\n我方全體拍組的攻擊和特攻提升5",
+      "tag": "阿爾套裝",
+      "category": 4
+    },
+    {
+      "name": "研究者／複合",
+      "description": "我方全體拍組最大HP提升8\n我方全體拍組的攻擊和特攻提升5",
+      "tag": "研究者",
+      "category": 999
+    }
+  ],
+  "specialAwaking": {
+    "name": "",
+    "description": "",
+    "detail": []
+  },
+  "pokemon": [
+    {
+      "id": "20091900000",
+      "variationType": 0,
+      "vAfterSm": true,
+      "name": "烈咬陸鯊",
+      "form": "",
+      "actor": "pm0445_01_gaburias",
+      "gender": 2,
+      "isShiny": false,
+      "type": 9,
+      "weakness": 6,
+      "stat": {
+        "hp": [
+          120,
+          199,
+          274,
+          571,
+          635,
+          699,
+          891
+        ],
+        "atk": [
+          23,
+          75,
+          123,
+          310,
+          350,
+          390,
+          510
+        ],
+        "def": [
+          12,
+          36,
+          57,
+          145,
+          165,
+          185,
+          245
+        ],
+        "spa": [
+          11,
+          47,
+          80,
+          212,
+          240,
+          268,
+          352
+        ],
+        "spd": [
+          12,
+          36,
+          57,
+          145,
+          165,
+          185,
+          245
+        ],
+        "spe": [
+          17,
+          60,
+          99,
+          264,
+          300,
+          336,
+          444
+        ]
+      },
+      "passives": [
+        {
+          "name": "大地神話",
+          "description": "提高我方全體拍組的招式的威力10%。減輕我方全體拍組受到招式攻擊時的傷害20%。當我方隊伍中擁有地面標籤的拍組越多,此效果還會提升得越多。(每增加1對拍組,威力提升+10%,傷害減輕+3%。)(威力最多可提升30%,傷害最多可減輕26%。)",
+          "detail": []
+        },
+        {
+          "name": "大地制裁",
+          "description": "首次上場時,會提高我方全體拍組的地面屬性抵抗1階段。首次上場時,會降低對手全體拍組的地面屬性抵抗1階段。",
+          "detail": []
+        },
+        {
+          "name": "神話考古學家",
+          "description": "當自己使天氣變成沙暴時,會將領域變成大地領域。(大地領域會提高地面屬性的攻擊的威力。)天氣變成沙暴的瞬間在場上時,會延長沙暴的持續時間。領域變成大地領域的瞬間在場上時,會延長大地領域的持續時間。",
+          "detail": []
+        },
+        {
+          "name": "與寶可夢互相信任的力量",
+          "description": "招式必定會命中。除了特定情況之外,只要寶可夢招式或拍組招式的攻擊命中就必定會擊中要害。不會受到沙暴所造成的傷害。",
+          "detail": []
+        },
+        {
+          "name": "不能輸的自尊",
+          "description": "在寶可夢首次使出變化招式時,會讓發動拍組招式所需的行動數減少1次。在寶可夢首次使出變化招式時,會提高自己的攻擊6階段。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 328,
+          "user": "寶可夢",
+          "name": "流沙地獄",
+          "type": 9,
+          "gauge": 2,
+          "uses": "−",
+          "category": 1,
+          "power": 38,
+          "accuracy": 85,
+          "target": "對手１對拍組",
+          "description": "讓對手陷入束縛狀態。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 201,
+          "user": "寶可夢",
+          "name": "沙暴",
+          "type": 13,
+          "gauge": 2,
+          "uses": 2,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "全場地",
+          "description": "會將天氣變成沙暴。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 6076,
+          "user": "寶可夢",
+          "name": "地震・破天",
+          "type": 9,
+          "gauge": 2,
+          "uses": "−",
+          "category": 1,
+          "power": 250,
+          "accuracy": 100,
+          "target": "對手全體拍組",
+          "description": "【開放條件】\n天氣變成沙暴時\n【封印條件】\n無\n\n降低對手的防禦1階段。攻擊命中陷入束縛狀態的對手時,會提高自己的下次拍組招式威力增強1階段。",
+          "tags": "none",
+          "group": 6
+        },
+        {
+          "id": 10917,
+          "user": "訓練師",
+          "name": "來場頂尖對戰吧!",
+          "type": 0,
+          "gauge": 0,
+          "uses": 1,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "自己",
+          "description": "讓自己變成附帶回復狀態。讓自己變成下次效果絕佳威力提升狀態。提高自己的下次拍組招式威力增強5階段。",
+          "tags": "none",
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 64400,
+        "user": "寶可夢",
+        "name": "撼天動地的神招之地震",
+        "type": 9,
+        "gauge": 0,
+        "uses": "−",
+        "category": 1,
+        "power": 300,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "變成超級烈咬陸鯊直到對戰結束。提高自己的下次物理招式威力增強2階段。",
+        "tags": 67108864,
+        "group": "Sync"
+      }
+    },
+    {
+      "id": "20091900000",
+      "variationType": 1,
+      "vAfterSm": true,
+      "name": "超級烈咬陸鯊",
+      "form": "",
+      "actor": "pm0445_51_megagaburias",
+      "gender": 2,
+      "isShiny": false,
+      "type": 9,
+      "weakness": 6,
+      "stat": {
+        "hp": [
+          120,
+          199,
+          274,
+          571,
+          635,
+          699,
+          891
+        ],
+        "atk": [
+          25,
+          82,
+          135,
+          341,
+          385,
+          429,
+          561
+        ],
+        "def": [
+          13,
+          39,
+          62,
+          159,
+          181,
+          203,
+          269
+        ],
+        "spa": [
+          12,
+          51,
+          88,
+          233,
+          264,
+          294,
+          387
+        ],
+        "spd": [
+          13,
+          39,
+          62,
+          159,
+          181,
+          203,
+          269
+        ],
+        "spe": [
+          18,
+          66,
+          108,
+          290,
+          330,
+          369,
+          488
+        ]
+      },
+      "passives": [
+        {
+          "name": "大地神話",
+          "description": "提高我方全體拍組的招式的威力10%。減輕我方全體拍組受到招式攻擊時的傷害20%。當我方隊伍中擁有地面標籤的拍組越多,此效果還會提升得越多。(每增加1對拍組,威力提升+10%,傷害減輕+3%。)(威力最多可提升30%,傷害最多可減輕26%。)",
+          "detail": []
+        },
+        {
+          "name": "大地制裁",
+          "description": "首次上場時,會提高我方全體拍組的地面屬性抵抗1階段。首次上場時,會降低對手全體拍組的地面屬性抵抗1階段。",
+          "detail": []
+        },
+        {
+          "name": "神話考古學家",
+          "description": "當自己使天氣變成沙暴時,會將領域變成大地領域。(大地領域會提高地面屬性的攻擊的威力。)天氣變成沙暴的瞬間在場上時,會延長沙暴的持續時間。領域變成大地領域的瞬間在場上時,會延長大地領域的持續時間。",
+          "detail": []
+        },
+        {
+          "name": "與寶可夢互相信任的力量",
+          "description": "招式必定會命中。除了特定情況之外,只要寶可夢招式或拍組招式的攻擊命中就必定會擊中要害。不會受到沙暴所造成的傷害。",
+          "detail": []
+        },
+        {
+          "name": "不能輸的自尊",
+          "description": "在寶可夢首次使出變化招式時,會讓發動拍組招式所需的行動數減少1次。在寶可夢首次使出變化招式時,會提高自己的攻擊6階段。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 328,
+          "user": "寶可夢",
+          "name": "流沙地獄",
+          "type": 9,
+          "gauge": 2,
+          "uses": "−",
+          "category": 1,
+          "power": 38,
+          "accuracy": 85,
+          "target": "對手１對拍組",
+          "description": "讓對手陷入束縛狀態。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 201,
+          "user": "寶可夢",
+          "name": "沙暴",
+          "type": 13,
+          "gauge": 2,
+          "uses": 2,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "全場地",
+          "description": "會將天氣變成沙暴。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 6076,
+          "user": "寶可夢",
+          "name": "地震・破天",
+          "type": 9,
+          "gauge": 2,
+          "uses": "−",
+          "category": 1,
+          "power": 250,
+          "accuracy": 100,
+          "target": "對手全體拍組",
+          "description": "【開放條件】\n天氣變成沙暴時\n【封印條件】\n無\n\n降低對手的防禦1階段。攻擊命中陷入束縛狀態的對手時,會提高自己的下次拍組招式威力增強1階段。",
+          "tags": "none",
+          "group": 6
+        },
+        {
+          "id": 10917,
+          "user": "訓練師",
+          "name": "來場頂尖對戰吧!",
+          "type": 0,
+          "gauge": 0,
+          "uses": 1,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "自己",
+          "description": "讓自己變成附帶回復狀態。讓自己變成下次效果絕佳威力提升狀態。提高自己的下次拍組招式威力增強5階段。",
+          "tags": "none",
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 64400,
+        "user": "寶可夢",
+        "name": "撼天動地的神招之地震",
+        "type": 9,
+        "gauge": 0,
+        "uses": "−",
+        "category": 1,
+        "power": 300,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "變成超級烈咬陸鯊直到對戰結束。提高自己的下次物理招式威力增強2階段。",
+        "tags": 67108864,
+        "group": "Sync"
+      },
+      "scale": [
+        100,
+        110,
+        110,
+        110,
+        110,
+        110
+      ]
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "阿爾套裝竹蘭專用潛能餅乾１",
+      "skills": [
+        {
+          "name": "沙暴時拍組招式提升4",
+          "description": "當天氣為沙暴時,會提高拍組招式的威力。",
+          "detail": [],
+          "rate": 100
+        }
+      ]
+    },
+    {
+      "cookieName": "阿爾套裝竹蘭專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "招式後招式計量槽增加9",
+          "description": "招式成功時,會幫自己增加1條招式計量槽。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "擊中要害時威力提升3",
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時拍組招式增強G3",
+          "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
+          "detail": [],
+          "rate": 33
+        }
+      ]
+    }
+  ],
+  "grid": [
+    {
+      "id": 1009100100,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009100101,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009100102,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009100103,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009100104,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009100105,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009100106,
+      "name": "攻擊 + 20",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 2,
+      "x": 0,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009100107,
+      "name": "撼天動地的神招之地震：威力 + 50",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 3,
+      "x": 0,
+      "y": 3,
+      "color": "#BF80FF",
+      "type": 9
+    },
+    {
+      "id": 1009100108,
+      "name": "拍組招式後賦予物理增強(2)9",
+      "description": "使出拍組招式後,會提高自己的下次物理招式威力增強2階段。",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 4,
+      "x": 0,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009100109,
+      "name": "拍組招式後變成沙暴",
+      "description": "使出拍組招式後,會將天氣變成沙暴。",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 5,
+      "x": 0,
+      "y": 5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009100110,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009100111,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009100112,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009100113,
+      "name": "地震・破天：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": 1,
+      "color": "#47D147",
+      "type": 9
+    },
+    {
+      "id": 1009100114,
+      "name": "麻痺無效",
+      "description": "不會陷入麻痺狀態。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": 3,
+      "y": 0,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009100115,
+      "name": "解除妨害狀態",
+      "description": "當自己首次陷入畏縮、混亂或束縛狀態時,會解除該狀態。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009100116,
+      "name": "地震・破天：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 3,
+      "y": 1,
+      "color": "#47D147",
+      "type": 9
+    },
+    {
+      "id": 1009100117,
+      "name": "地震・破天：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 3,
+      "y": 2,
+      "color": "#FF0066",
+      "type": 9
+    },
+    {
+      "id": 1009100118,
+      "name": "攻擊時防禦下降9",
+      "description": "使出招式攻擊成功時,會降低對手的防禦1階段。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 3,
+      "x": 1,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009100119,
+      "name": "沙暴：招式後計數加速9",
+      "description": "招式成功時,會讓自己發動拍組招式所需的行動數減少1次。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 13
+    },
+    {
+      "id": 1009100120,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009100121,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009100122,
+      "name": "流沙地獄：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": -1,
+      "color": "#47D147",
+      "type": 9
+    },
+    {
+      "id": 1009100123,
+      "name": "流沙地獄：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -1,
+      "y": -2,
+      "color": "#47D147",
+      "type": 9
+    },
+    {
+      "id": 1009100124,
+      "name": "流沙地獄：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -1,
+      "y": -3,
+      "color": "#47D147",
+      "type": 9
+    },
+    {
+      "id": 1009100125,
+      "name": "沙暴時HP回復1",
+      "description": "當天氣為沙暴時,寶可夢每次行動後都會回復自己的HP。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -3,
+      "y": 0,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009100126,
+      "name": "沙暴時全種類下降無效",
+      "description": "當天氣為沙暴時,所有的能力都不會降低。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -3,
+      "y": -1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009100127,
+      "name": "攻擊 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": -2,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009100128,
+      "name": "流沙地獄：攻擊時賦予變化G9",
+      "description": "當招式的追加效果讓對手陷入狀態變化時,會讓對手全體拍組陷入相同的狀態變化。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 3,
+      "x": -3,
+      "y": -2,
+      "color": "#FF0066",
+      "type": 9
+    },
+    {
+      "id": 1009100129,
+      "name": "沙暴時寶可夢招式及拍組招式↑5",
+      "description": "當天氣為沙暴時,會提高自己的招式和拍組招式的威力。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009100130,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009100131,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009100132,
+      "name": "地震・破天：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": -3,
+      "color": "#47D147",
+      "type": 9
+    },
+    {
+      "id": 1009100133,
+      "name": "地震・破天：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 1,
+      "y": -3,
+      "color": "#47D147",
+      "type": 9
+    },
+    {
+      "id": 1009100134,
+      "name": "地震・破天：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 1,
+      "y": -4,
+      "color": "#47D147",
+      "type": 9
+    },
+    {
+      "id": 1009100135,
+      "name": "來場頂尖對戰吧!：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 3,
+      "y": -3,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1009100136,
+      "name": "沙暴時招式計量槽加速2",
+      "description": "當天氣為沙暴時,招式計量槽會累積得較快。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 3,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009100137,
+      "name": "來場頂尖對戰吧!：訓練家出招後賦予物理增強(1)9",
+      "description": "在訓練家使出招式時,會提高自己的下次物理招式威力增強1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 2,
+      "x": 2,
+      "y": -4,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1009100138,
+      "name": "沙暴無效G",
+      "description": "我方全體拍組不會受到沙暴所造成的傷害。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 3,
+      "y": -5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009100139,
+      "name": "依攻擊升幅拍組招式↑",
+      "description": "自己的攻擊提高得越多,拍組招式的威力就提高得越多。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": -5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009100140,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009100141,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009100142,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -3,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009100143,
+      "name": "流沙地獄：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -3,
+      "y": 3,
+      "color": "#47D147",
+      "type": 9
+    },
+    {
+      "id": 1009100144,
+      "name": "流沙地獄：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": 3,
+      "color": "#47D147",
+      "type": 9
+    },
+    {
+      "id": 1009100145,
+      "name": "流沙地獄：攻擊時命中率下降4",
+      "description": "使出招式攻擊成功時,有50%的機率會降低對手的命中率1階段。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -3,
+      "y": 4,
+      "color": "#FF0066",
+      "type": 9
+    },
+    {
+      "id": 1009100146,
+      "name": "攻擊束縛中的對手時速度下降9",
+      "description": "當對手陷入束縛狀態且使出招式攻擊成功時,會降低對手的速度1階段。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -2,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009100147,
+      "name": "流沙地獄：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -3,
+      "y": 5,
+      "color": "#FF0066",
+      "type": 9
+    },
+    {
+      "id": 1009100148,
+      "name": "攻擊時賦予束縛4",
+      "description": "使出招式攻擊成功時,有50%的機率會讓對手陷入束縛狀態。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 3,
+      "x": -1,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009100149,
+      "name": "沙暴：招式後賦予物理增強(1)9",
+      "description": "招式成功時,會提高自己的下次物理招式威力增強1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": 5,
+      "color": "#FF0066",
+      "type": 13
+    },
+    {
+      "id": 1009100150,
+      "name": "撼天動地的神招之地震：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 3,
+      "y": -2,
+      "color": "#BF80FF",
+      "type": 9
+    },
+    {
+      "id": 1009100151,
+      "name": "撼天動地的神招之地震：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": -3,
+      "y": 1,
+      "color": "#BF80FF",
+      "type": 9
+    }
+  ]
+}

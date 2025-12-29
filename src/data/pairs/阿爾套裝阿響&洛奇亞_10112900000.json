@@ -1,0 +1,976 @@
+{
+  "trainer": {
+    "id": "10112900000",
+    "name": "阿爾套裝阿響",
+    "actor": "阿響",
+    "actorId": "ch0112_90_hibiki",
+    "rarity": 5,
+    "role": 6,
+    "exRole": 5,
+    "ex": true,
+    "exclusivity": "Master",
+    "maxBonusLevel": 5
+  },
+  "scoutMethod": 1,
+  "scheduleId": "chara_7060_0717_FOREVER",
+  "themes": [
+    {
+      "name": "飛行屬性／複合",
+      "description": "我方全體拍組最大HP提升24\n僅在我方使出飛行屬性攻擊時，攻擊和特攻提升24",
+      "tag": "飛行",
+      "category": 1
+    },
+    {
+      "name": "城都／複合",
+      "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
+      "tag": "城都",
+      "category": 2
+    },
+    {
+      "name": "主角／複合",
+      "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
+      "tag": "主角",
+      "category": 3
+    },
+    {
+      "name": "阿爾套裝／複合",
+      "description": "我方全體拍組最大HP提升8\n我方全體拍組的攻擊和特攻提升5",
+      "tag": "阿爾套裝",
+      "category": 4
+    },
+    {
+      "name": "寶可全能競技賽／複合",
+      "description": "我方全體拍組最大HP提升8\n我方全體拍組的攻擊和特攻提升5",
+      "tag": "寶可全能競技賽",
+      "category": 999
+    }
+  ],
+  "specialAwaking": {
+    "name": "",
+    "description": "",
+    "detail": []
+  },
+  "pokemon": [
+    {
+      "id": "20112900000",
+      "variationType": 0,
+      "vAfterSm": false,
+      "name": "洛奇亞",
+      "form": "",
+      "actor": "pm0249_00_lugia",
+      "gender": 3,
+      "isShiny": false,
+      "type": 10,
+      "weakness": 13,
+      "stat": {
+        "hp": [
+          106,
+          184,
+          259,
+          556,
+          620,
+          684,
+          876
+        ],
+        "atk": [
+          13,
+          57,
+          99,
+          264,
+          300,
+          336,
+          444
+        ],
+        "def": [
+          12,
+          36,
+          57,
+          145,
+          165,
+          185,
+          245
+        ],
+        "spa": [
+          14,
+          67,
+          118,
+          316,
+          360,
+          404,
+          536
+        ],
+        "spd": [
+          16,
+          43,
+          67,
+          166,
+          186,
+          206,
+          266
+        ],
+        "spe": [
+          14,
+          57,
+          96,
+          261,
+          297,
+          333,
+          441
+        ]
+      },
+      "passives": [
+        {
+          "name": "藍天神話",
+          "description": "提高我方全體拍組的招式的威力10%。減輕我方全體拍組受到招式攻擊時的傷害20%。當我方隊伍中擁有飛行標籤的拍組越多,此效果還會提升得越多。(每增加1對拍組,威力提升+10%,傷害減輕+3%。)(威力最多可提升30%,傷害最多可減輕26%。)",
+          "detail": []
+        },
+        {
+          "name": "藍天制裁",
+          "description": "首次上場時,會提高我方全體拍組的飛行屬性抵抗1階段。首次上場時,會降低對手全體拍組的飛行屬性抵抗1階段。",
+          "detail": []
+        },
+        {
+          "name": "閃耀銀色光芒的靈魂",
+          "description": "首次使出招式攻擊成功時,會將領域變成EX藍天領域。(EX藍天領域會提高飛行屬性的攻擊的威力。)在寶可夢使出招式時,會提高自己的下次拍組招式威力增強2階段。使出招式攻擊成功時,會降低對手的特防3階段。",
+          "detail": [
+            {
+              "name": "首次攻擊時變成EX藍天領域",
+              "description": "首次使出招式攻擊成功時,會將領域變成EX藍天領域。(EX藍天領域會提高飛行屬性的攻擊的威力。)"
+            },
+            {
+              "name": "寶可夢出招後賦予拍組招式增強(2)9",
+              "description": "在寶可夢使出招式時,會提高自己的下次拍組招式威力增強2階段。"
+            },
+            {
+              "name": "攻擊時特防3↓9",
+              "description": "使出招式攻擊成功時,會降低對手的特防3階段。"
+            }
+          ]
+        },
+        {
+          "name": "漩渦捲湧的暴風雨",
+          "description": "使出變化招式讓對手陷入異常狀態時,會讓對手全體拍組陷入相同的異常狀態。在寶可夢首次使出變化招式時,會提高自己的特攻6階段。在寶可夢首次使出變化招式時,會提高自己的擊中要害率3階段。",
+          "detail": [
+            {
+              "name": "變化招式賦予異常狀態G9",
+              "description": "使出變化招式讓對手陷入異常狀態時,會讓對手全體拍組陷入相同的異常狀態。"
+            },
+            {
+              "name": "寶可夢首次使出變化招式時特攻↑6",
+              "description": "在寶可夢首次使出變化招式時,會提高自己的特攻6階段。"
+            },
+            {
+              "name": "寶可夢首次使出變化招式時擊中要害率↑3",
+              "description": "在寶可夢首次使出變化招式時,會提高自己的擊中要害率3階段。"
+            }
+          ]
+        },
+        {
+          "name": "翱翔深海的銀色翅膀",
+          "description": "當對手陷入異常狀態且我方使出招式攻擊成功時,會降低對手的攻擊、防禦、特攻、特防、速度、命中率和閃避率中的一種能力1階段。當對手陷入異常狀態且使出招式攻擊成功時,會讓自己變成下次計量槽消耗0狀態。",
+          "detail": [
+            {
+              "name": "我方攻擊異常中的對手時能力↓9",
+              "description": "當對手陷入異常狀態且我方使出招式攻擊成功時,會降低對手的攻擊、防禦、特攻、特防、速度、命中率和閃避率中的一種能力1階段。"
+            },
+            {
+              "name": "攻擊異常中的對手時下次不消耗計量槽9",
+              "description": "當對手陷入異常狀態且使出招式攻擊成功時,會讓自己變成下次計量槽消耗0狀態。"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "id": 177,
+          "user": "寶可夢",
+          "name": "氣旋攻擊",
+          "type": 10,
+          "gauge": 4,
+          "uses": "−",
+          "category": 2,
+          "power": 135,
+          "accuracy": 95,
+          "target": "對手１對拍組",
+          "description": "容易擊中要害。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 86,
+          "user": "寶可夢",
+          "name": "電磁波",
+          "type": 4,
+          "gauge": 2,
+          "uses": "−",
+          "category": 0,
+          "power": 0,
+          "accuracy": 90,
+          "target": "對手１對拍組",
+          "description": "讓對手陷入麻痺狀態。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 6133,
+          "user": "寶可夢",
+          "name": "氣旋攻擊・聖海",
+          "type": 10,
+          "gauge": 4,
+          "uses": 1,
+          "category": 2,
+          "power": 500,
+          "accuracy": 0,
+          "target": "對手１對拍組",
+          "description": "【開放條件】\n自己的下次拍組招式威力增強處於提高狀態時\n【封印條件】\n自己的下次拍組招式威力增強未處於提高狀態時\n\n攻擊必定會命中。除了特定情況之外,只要攻擊命中就必定會擊中要害。當對手陷入異常狀態時,威力會變成1.5倍。讓對手陷入畏縮狀態。",
+          "tags": "SureHit",
+          "group": 6
+        },
+        {
+          "id": 11122,
+          "user": "訓練師",
+          "name": "展現靈魂的光輝!",
+          "type": 0,
+          "gauge": 0,
+          "uses": 1,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "自己",
+          "description": "讓自己變成挺住狀態。自己的下次拍組招式威力增強提高得越多,自己發動拍組招式所需的行動數就減少得越多。最多可減少4次。",
+          "tags": "none",
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 114900,
+        "user": "寶可夢",
+        "name": "銀河落九天的神招之氣旋攻擊",
+        "type": 10,
+        "gauge": 0,
+        "uses": "−",
+        "category": 2,
+        "power": 300,
+        "accuracy": 0,
+        "target": "對手全體拍組",
+        "description": "沒有追加效果。",
+        "tags": 67108864,
+        "group": "Sync"
+      }
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "阿爾套裝阿響專用潛能餅乾１",
+      "skills": [
+        {
+          "name": "藍天領域時攻擊招式威力↓2",
+          "description": "當領域為藍天領域時,會減輕受到招式攻擊時的傷害。",
+          "detail": [],
+          "rate": 100
+        }
+      ]
+    },
+    {
+      "cookieName": "阿爾套裝阿響專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "招式後招式計量槽增加9",
+          "description": "招式成功時,會幫自己增加1條招式計量槽。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "擊中要害時威力提升3",
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時拍組招式增強G3",
+          "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
+          "detail": [],
+          "rate": 33
+        }
+      ]
+    }
+  ],
+  "grid": [
+    {
+      "id": 1800102798,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800102799,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800102800,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800102801,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800102802,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800102803,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800102804,
+      "name": "特攻 + 20",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 2,
+      "x": 0,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800102805,
+      "name": "銀河落九天的神招之氣旋攻擊：威力 + 50",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 3,
+      "x": 0,
+      "y": 3,
+      "color": "#BF80FF",
+      "type": 10
+    },
+    {
+      "id": 1800102806,
+      "name": "首次拍組招式後同步招式回復1",
+      "description": "首次使出拍組招式時,會幫自己的同步招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 4,
+      "x": 0,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800102807,
+      "name": "藍天領域時間延長3",
+      "description": "領域變成藍天領域的瞬間在場上時,會延長藍天領域的持續時間。",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 5,
+      "x": 0,
+      "y": 5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800102808,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800102809,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800102810,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800102811,
+      "name": "氣旋攻擊：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": 1,
+      "color": "#47D147",
+      "type": 10
+    },
+    {
+      "id": 1800102812,
+      "name": "氣旋攻擊：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 3,
+      "y": 0,
+      "color": "#47D147",
+      "type": 10
+    },
+    {
+      "id": 1800102813,
+      "name": "氣旋攻擊：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 2,
+      "y": 2,
+      "color": "#47D147",
+      "type": 10
+    },
+    {
+      "id": 1800102814,
+      "name": "氣旋攻擊：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 3,
+      "y": 1,
+      "color": "#FF0066",
+      "type": 10
+    },
+    {
+      "id": 1800102815,
+      "name": "解除異常狀態",
+      "description": "當自己首次陷入異常狀態時,會解除自己的異常狀態。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 3,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800102816,
+      "name": "必中化",
+      "description": "招式必定會命中。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 3,
+      "x": 1,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800102817,
+      "name": "首次上場時拍組招式增強4",
+      "description": "首次上場時,會提高自己的下次拍組招式威力增強4階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800102818,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800102819,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800102820,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800102821,
+      "name": "氣旋攻擊・聖海：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -1,
+      "y": -2,
+      "color": "#47D147",
+      "type": 10
+    },
+    {
+      "id": 1800102822,
+      "name": "氣旋攻擊・聖海：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -1,
+      "y": -3,
+      "color": "#47D147",
+      "type": 10
+    },
+    {
+      "id": 1800102823,
+      "name": "氣旋攻擊・聖海：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -3,
+      "y": 0,
+      "color": "#47D147",
+      "type": 10
+    },
+    {
+      "id": 1800102824,
+      "name": "攻擊麻痺中的對手時速度下降9",
+      "description": "當對手陷入麻痺狀態且使出招式攻擊成功時,會降低對手的速度1階段。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -3,
+      "y": -1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800102825,
+      "name": "電磁波：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -2,
+      "y": -2,
+      "color": "#FF0066",
+      "type": 4
+    },
+    {
+      "id": 1800102826,
+      "name": "寶可夢首次使出變化招式時特殊增強G1",
+      "description": "在寶可夢首次使出變化招式時,會提高我方全體拍組的下次特殊招式威力增強1階段。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 3,
+      "x": -3,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800102827,
+      "name": "寶可夢首次使出變化招式時下次傷害防禦",
+      "description": "在寶可夢首次使出變化招式時,會讓自己變成下次傷害防禦狀態。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800102828,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800102829,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800102830,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800102831,
+      "name": "氣旋攻擊：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 1,
+      "y": -3,
+      "color": "#47D147",
+      "type": 10
+    },
+    {
+      "id": 1800102832,
+      "name": "氣旋攻擊：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 1,
+      "y": -4,
+      "color": "#47D147",
+      "type": 10
+    },
+    {
+      "id": 1800102833,
+      "name": "氣旋攻擊：命中率 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 3,
+      "y": -3,
+      "color": "#47D147",
+      "type": 10
+    },
+    {
+      "id": 1800102834,
+      "name": "電磁波：招式後下次效果絕佳威力提升9",
+      "description": "招式成功時,讓自己變成下次效果絕佳威力提升狀態。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 3,
+      "y": -4,
+      "color": "#FF0066",
+      "type": 4
+    },
+    {
+      "id": 1800102835,
+      "name": "電磁波：命中率 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 2,
+      "x": 2,
+      "y": -4,
+      "color": "#47D147",
+      "type": 4
+    },
+    {
+      "id": 1800102836,
+      "name": "對手麻痺時威力提升3",
+      "description": "當對手陷入麻痺狀態時,會提高自己的招式的威力。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 3,
+      "y": -5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800102837,
+      "name": "氣旋攻擊：攻擊時賦予畏縮4",
+      "description": "使出招式攻擊成功時,有50%的機率會讓對手陷入畏縮狀態。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": -5,
+      "color": "#FF0066",
+      "type": 10
+    },
+    {
+      "id": 1800102838,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800102839,
+      "name": "畏縮無效",
+      "description": "不會陷入畏縮狀態。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": -1,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800102840,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -3,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800102841,
+      "name": "氣旋攻擊・聖海：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -3,
+      "y": 3,
+      "color": "#47D147",
+      "type": 10
+    },
+    {
+      "id": 1800102842,
+      "name": "氣旋攻擊・聖海：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": 3,
+      "color": "#47D147",
+      "type": 10
+    },
+    {
+      "id": 1800102843,
+      "name": "展現靈魂的光輝!：招式後附帶回復9",
+      "description": "招式成功時,會讓自己變成附帶回復狀態。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -3,
+      "y": 4,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1800102844,
+      "name": "藍天領域時HP回復1",
+      "description": "當領域為藍天領域時,寶可夢每次行動後都會回復自己的HP。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -2,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800102845,
+      "name": "藍天領域時招式計量槽加速2",
+      "description": "當領域為藍天領域時,招式計量槽會累積得較快。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 2,
+      "x": -3,
+      "y": 5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800102846,
+      "name": "首次拍組招式後計數加速1",
+      "description": "首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -1,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800102847,
+      "name": "對手麻痺時拍組招式↑9",
+      "description": "當對手陷入麻痺狀態時,會提高自己的拍組招式的威力。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": 5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800102848,
+      "name": "銀河落九天的神招之氣旋攻擊：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 3,
+      "y": -2,
+      "color": "#BF80FF",
+      "type": 10
+    },
+    {
+      "id": 1800102849,
+      "name": "銀河落九天的神招之氣旋攻擊：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": -3,
+      "y": 1,
+      "color": "#BF80FF",
+      "type": 10
+    }
+  ]
+}

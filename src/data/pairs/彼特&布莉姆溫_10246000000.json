@@ -1,0 +1,1106 @@
+{
+  "trainer": {
+    "id": "10246000000",
+    "name": "彼特",
+    "actor": "彼特",
+    "actorId": "ch0246_00_beet",
+    "rarity": 5,
+    "role": 3,
+    "exRole": 5,
+    "ex": true,
+    "exclusivity": "Pokefair",
+    "maxBonusLevel": 10
+  },
+  "scoutMethod": 1,
+  "scheduleId": "chara_4050_0616_FOREVER",
+  "themes": [
+    {
+      "name": "妖精屬性／技術",
+      "description": "我方全體拍組最大HP提升24\n僅在我方使出妖精屬性攻擊時，攻擊和特攻提升24",
+      "tag": "妖精",
+      "category": 1
+    },
+    {
+      "name": "伽勒爾／技術",
+      "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
+      "tag": "伽勒爾",
+      "category": 2
+    },
+    {
+      "name": "勁敵／技術",
+      "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
+      "tag": "勁敵",
+      "category": 3
+    },
+    {
+      "name": "伽勒爾的冒險／技術",
+      "description": "我方全體拍組最大HP提升8\n我方全體拍組的攻擊和特攻提升5",
+      "tag": "伽勒爾的冒險",
+      "category": 999
+    }
+  ],
+  "specialAwaking": {
+    "name": "粉紅精英的執著",
+    "description": "當攻擊對象陷入混亂狀態時,會提高我方全體拍組的招式的威力。當使出「超極巨天譴雷誅」後,會將領域變成妖精領域。(妖精領域會提高妖精屬性的攻擊的威力。)使出招式攻擊命中時,會提高自己的下次特殊招式威力增強1階段。若使出有連續效果的招式,則在每次攻擊命中時,都會提高自己的下次特殊招式威力增強1階段。",
+    "detail": [
+      {
+        "name": "對手混亂時威力↑G2",
+        "description": "當攻擊對象陷入混亂狀態時,會提高我方全體拍組的招式的威力。"
+      },
+      {
+        "name": "超極巨天譴雷誅後變成妖精領域",
+        "description": "當使出「超極巨天譴雷誅」後,會將領域變成妖精領域。(妖精領域會提高妖精屬性的攻擊的威力。)"
+      },
+      {
+        "name": "命中時賦予特殊增強(1)9",
+        "description": "使出招式攻擊命中時,會提高自己的下次特殊招式威力增強1階段。若使出有連續效果的招式,則在每次攻擊命中時,都會提高自己的下次特殊招式威力增強1階段。"
+      }
+    ]
+  },
+  "pokemon": [
+    {
+      "id": "20246000000",
+      "variationType": 0,
+      "vAfterSm": false,
+      "name": "布莉姆溫",
+      "form": "",
+      "actor": "pm0858_00_00_brimuon",
+      "gender": 2,
+      "isShiny": false,
+      "type": 18,
+      "weakness": 8,
+      "stat": {
+        "hp": [
+          80,
+          155,
+          227,
+          513,
+          573,
+          633,
+          813
+        ],
+        "atk": [
+          10,
+          39,
+          66,
+          176,
+          200,
+          224,
+          296
+        ],
+        "def": [
+          13,
+          37,
+          58,
+          146,
+          166,
+          186,
+          246
+        ],
+        "spa": [
+          17,
+          60,
+          99,
+          264,
+          300,
+          336,
+          444
+        ],
+        "spd": [
+          13,
+          37,
+          58,
+          146,
+          166,
+          186,
+          246
+        ],
+        "spe": [
+          8,
+          45,
+          81,
+          224,
+          252,
+          280,
+          364
+        ]
+      },
+      "passives": [
+        {
+          "name": "對手混亂時寶可夢招式及拍組招式↑9",
+          "description": "當對手陷入混亂狀態時,會提高自己的招式的威力。當對手陷入混亂狀態時,會提高自己的拍組招式的威力。",
+          "detail": []
+        },
+        {
+          "name": "對手中寶可夢/拍組/拍組極巨化招式後特攻特防↓9",
+          "description": "當以對手為對象的寶可夢招式、拍組招式或拍組極巨化招式成功時,會降低對手的特攻和特防1階段。",
+          "detail": []
+        },
+        {
+          "name": "寶可夢/拍組/拍組極巨化招式效果絕佳時威力↑5",
+          "description": "當效果絕佳時,會提高該招式的威力。當效果絕佳時,會提高該拍組招式的威力。當拍組極巨化招式的效果絕佳時,會提高該拍組極巨化招式的威力。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 605,
+          "user": "寶可夢",
+          "name": "魔法閃耀",
+          "type": 18,
+          "gauge": 2,
+          "uses": "−",
+          "category": 2,
+          "power": 50,
+          "accuracy": 100,
+          "target": "對手全體拍組",
+          "description": "沒有追加效果。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 595,
+          "user": "寶可夢",
+          "name": "魔法火焰",
+          "type": 2,
+          "gauge": 2,
+          "uses": "−",
+          "category": 2,
+          "power": 30,
+          "accuracy": 100,
+          "target": "對手１對拍組",
+          "description": "降低對手的特攻1階段。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 60,
+          "user": "寶可夢",
+          "name": "幻象光線",
+          "type": 11,
+          "gauge": 2,
+          "uses": "−",
+          "category": 2,
+          "power": 48,
+          "accuracy": 100,
+          "target": "對手１對拍組",
+          "description": "有10%的機率會讓對手陷入混亂狀態。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 12460,
+          "user": "訓練師",
+          "name": "我了解了",
+          "type": 0,
+          "gauge": 0,
+          "uses": 2,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方場地",
+          "description": "讓我方場地變成異常狀態反彈狀態。提高自己的特攻和擊中要害率2階段。降低自己的防禦1階段。",
+          "tags": 8388608,
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 90100,
+        "user": "寶可夢",
+        "name": "精英中的精英之妖精光線",
+        "type": 18,
+        "gauge": 0,
+        "uses": "−",
+        "category": 2,
+        "power": 200,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "當對手陷入混亂狀態時,威力會提高。",
+        "tags": "none",
+        "group": "Sync"
+      }
+    },
+    {
+      "id": "20246000000",
+      "variationType": 4,
+      "vAfterSm": false,
+      "name": "布莉姆溫",
+      "form": "",
+      "actor": "pm0858_81_00_gbrimuon",
+      "gender": 2,
+      "isShiny": false,
+      "type": 18,
+      "weakness": 8,
+      "stat": {
+        "hp": [
+          80,
+          155,
+          227,
+          513,
+          573,
+          633,
+          813
+        ],
+        "atk": [
+          10,
+          39,
+          66,
+          176,
+          200,
+          224,
+          296
+        ],
+        "def": [
+          13,
+          37,
+          58,
+          146,
+          166,
+          186,
+          246
+        ],
+        "spa": [
+          17,
+          60,
+          99,
+          264,
+          300,
+          336,
+          444
+        ],
+        "spd": [
+          13,
+          37,
+          58,
+          146,
+          166,
+          186,
+          246
+        ],
+        "spe": [
+          8,
+          45,
+          81,
+          224,
+          252,
+          280,
+          364
+        ]
+      },
+      "passives": [
+        {
+          "name": "對手混亂時寶可夢招式及拍組招式↑9",
+          "description": "當對手陷入混亂狀態時,會提高自己的招式的威力。當對手陷入混亂狀態時,會提高自己的拍組招式的威力。",
+          "detail": []
+        },
+        {
+          "name": "對手中寶可夢/拍組/拍組極巨化招式後特攻特防↓9",
+          "description": "當以對手為對象的寶可夢招式、拍組招式或拍組極巨化招式成功時,會降低對手的特攻和特防1階段。",
+          "detail": []
+        },
+        {
+          "name": "寶可夢/拍組/拍組極巨化招式效果絕佳時威力↑5",
+          "description": "當效果絕佳時,會提高該招式的威力。當效果絕佳時,會提高該拍組招式的威力。當拍組極巨化招式的效果絕佳時,會提高該拍組極巨化招式的威力。",
+          "detail": []
+        }
+      ],
+      "moves": null,
+      "syncMove": null,
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "movesDynamax": [
+        {
+          "id": 7040,
+          "user": "寶可夢",
+          "name": "超極巨天譴雷誅",
+          "type": 18,
+          "gauge": 0,
+          "uses": "−",
+          "category": 2,
+          "power": 400,
+          "accuracy": 0,
+          "target": "對手１對拍組",
+          "description": "讓對手全體拍組陷入混亂狀態。",
+          "tags": "none",
+          "group": 5
+        },
+        {
+          "id": 7022,
+          "user": "寶可夢",
+          "name": "極巨火爆",
+          "type": 2,
+          "gauge": 0,
+          "uses": "−",
+          "category": 2,
+          "power": 400,
+          "accuracy": 0,
+          "target": "對手１對拍組",
+          "description": "會將天氣變成日照強烈的狀態。",
+          "tags": "none",
+          "group": 5
+        },
+        {
+          "id": 7030,
+          "user": "寶可夢",
+          "name": "極巨超能",
+          "type": 11,
+          "gauge": 0,
+          "uses": "−",
+          "category": 2,
+          "power": 400,
+          "accuracy": 0,
+          "target": "對手１對拍組",
+          "description": "將場地變成精神場地。",
+          "tags": "none",
+          "group": 5
+        }
+      ]
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "彼特專用潛能餅乾１",
+      "skills": [
+        {
+          "name": "對手混亂時寶可夢招式及拍組招式↑3",
+          "description": "當對手陷入混亂狀態時,會提高自己的招式的威力。當對手陷入混亂狀態時,會提高自己的拍組招式的威力。",
+          "detail": [],
+          "rate": 100
+        }
+      ]
+    },
+    {
+      "cookieName": "彼特專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "擊中要害時威力提升3",
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "拍組招式效果絕佳時威力↑5",
+          "description": "當效果絕佳時,會提高該拍組招式的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時拍組招式增強5",
+          "description": "首次上場時,會提高自己的下次拍組招式威力增強5階段。",
+          "detail": [],
+          "rate": 33
+        }
+      ]
+    }
+  ],
+  "grid": [
+    {
+      "id": 1024600000,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024600001,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024600002,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024600003,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024600004,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024600005,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024600006,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024600007,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024600008,
+      "name": "魔法閃耀：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 1,
+      "y": 2,
+      "color": "#47D147",
+      "type": 18
+    },
+    {
+      "id": 1024600009,
+      "name": "魔法閃耀：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 3,
+      "y": 1,
+      "color": "#47D147",
+      "type": 18
+    },
+    {
+      "id": 1024600010,
+      "name": "魔法閃耀：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 1,
+      "x": 2,
+      "y": 2,
+      "color": "#FF0066",
+      "type": 18
+    },
+    {
+      "id": 1024600011,
+      "name": "魔法閃耀：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 1,
+      "y": 3,
+      "color": "#47D147",
+      "type": 18
+    },
+    {
+      "id": 1024600012,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024600013,
+      "name": "攻擊時賦予混亂4",
+      "description": "使出招式攻擊成功時,有50%的機率會讓對手陷入混亂狀態。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 2,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1024600014,
+      "name": "對手混亂時威力提升9",
+      "description": "當對手陷入混亂狀態時,會提高自己的招式的威力。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 1,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1024600015,
+      "name": "特攻 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": 3,
+      "y": 3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024600016,
+      "name": "超極巨天譴雷誅：威力 + 100",
+      "description": "",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 3,
+      "x": 2,
+      "y": 4,
+      "color": "#47D147",
+      "type": 18
+    },
+    {
+      "id": 1024600017,
+      "name": "幻象光線：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": 1,
+      "color": "#47D147",
+      "type": 11
+    },
+    {
+      "id": 1024600018,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -3,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024600019,
+      "name": "幻象光線：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 1,
+      "x": -2,
+      "y": 0,
+      "color": "#FF0066",
+      "type": 11
+    },
+    {
+      "id": 1024600020,
+      "name": "幻象光線：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -3,
+      "y": 0,
+      "color": "#47D147",
+      "type": 11
+    },
+    {
+      "id": 1024600021,
+      "name": "幻象光線：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -1,
+      "y": -1,
+      "color": "#47D147",
+      "type": 11
+    },
+    {
+      "id": 1024600022,
+      "name": "精神場地時招式計量槽加速2",
+      "description": "當場地為精神場地時,招式計量槽會累積得較快。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -2,
+      "y": -1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1024600023,
+      "name": "精神場地時HP回復1",
+      "description": "當場地為精神場地時,寶可夢每次行動後都會回復自己的HP。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -3,
+      "y": -1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1024600024,
+      "name": "對手中寶可夢/拍組/拍組極巨化招式後特防↓4",
+      "description": "當以對手為對象的寶可夢招式、拍組招式或拍組極巨化招式成功時,有50%的機率會降低對手的特防1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -1,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1024600025,
+      "name": "極巨超能：威力 + 100",
+      "description": "",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 3,
+      "x": -2,
+      "y": -2,
+      "color": "#47D147",
+      "type": 11
+    },
+    {
+      "id": 1024600026,
+      "name": "混亂無效",
+      "description": "不會陷入混亂狀態。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": 2,
+      "y": -1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1024600027,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024600028,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024600029,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024600030,
+      "name": "我了解了：招式後招式次數回復3",
+      "description": "招式成功時,有40%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 3,
+      "y": -3,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1024600031,
+      "name": "效果絕佳時威力提升2",
+      "description": "當效果絕佳時,會提高該招式的威力。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 2,
+      "x": 2,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1024600032,
+      "name": "我了解了：招式後特攻提升1",
+      "description": "招式成功時,會提高自己的特攻1階段。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 3,
+      "x": 1,
+      "y": -3,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1024600033,
+      "name": "我了解了：招式後解除異常狀態G",
+      "description": "招式成功時,會解除我方全體拍組的異常狀態。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 3,
+      "y": -4,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1024600034,
+      "name": "對手混亂時拍組招式↑5",
+      "description": "當對手陷入混亂狀態時,會提高自己的拍組招式的威力。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1024600035,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024600036,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024600037,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": 3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024600038,
+      "name": "魔法火焰：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -3,
+      "y": 4,
+      "color": "#47D147",
+      "type": 2
+    },
+    {
+      "id": 1024600039,
+      "name": "魔法火焰：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 1,
+      "x": -2,
+      "y": 4,
+      "color": "#FF0066",
+      "type": 2
+    },
+    {
+      "id": 1024600040,
+      "name": "魔法火焰：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -3,
+      "y": 5,
+      "color": "#47D147",
+      "type": 2
+    },
+    {
+      "id": 1024600041,
+      "name": "魔法火焰：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -1,
+      "y": 4,
+      "color": "#47D147",
+      "type": 2
+    },
+    {
+      "id": 1024600042,
+      "name": "晴天時招式計量槽加速2",
+      "description": "當天氣為日照強烈時,招式計量槽會累積得較快。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -2,
+      "y": 5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1024600043,
+      "name": "晴天時HP回復1",
+      "description": "當天氣為日照強烈時,寶可夢每次行動後都會回復自己的HP。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -3,
+      "y": 6,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1024600044,
+      "name": "對手中寶可夢/拍組/拍組極巨化招式後能力↓9",
+      "description": "當以對手為對象的寶可夢招式、拍組招式或拍組極巨化招式成功時,會降低對手的攻擊、防禦、特攻、特防、速度、命中率、閃避率中的一種能力1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -1,
+      "y": 5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1024600045,
+      "name": "極巨火爆：威力 + 100",
+      "description": "",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 3,
+      "x": -2,
+      "y": 6,
+      "color": "#47D147",
+      "type": 2
+    },
+    {
+      "id": 1024600046,
+      "name": "精英中的精英之妖精光線：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": 3,
+      "color": "#BF80FF",
+      "type": 18
+    },
+    {
+      "id": 1024600047,
+      "name": "精英中的精英之妖精光線：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": -3,
+      "color": "#BF80FF",
+      "type": 18
+    },
+    {
+      "id": 1024600048,
+      "name": "寶可夢/拍組/拍組極巨化招式效果絕佳時威力↑1",
+      "description": "當效果絕佳時,會提高該招式的威力。當效果絕佳時,會提高該拍組招式的威力。當拍組極巨化招式的效果絕佳時,會提高該拍組極巨化招式的威力。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 0,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1024600049,
+      "name": "拍組極巨化招式後計數加速2",
+      "description": "使出拍組極巨化招式後, 會讓發動拍組招式所需的行動數減少2次。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 4,
+      "x": 0,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1024600050,
+      "name": "超極巨天譴雷誅：威力 + 100",
+      "description": "",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 5,
+      "x": 0,
+      "y": 5,
+      "color": "#47D147",
+      "type": 18
+    },
+    {
+      "id": 1024600051,
+      "name": "防禦下降無效",
+      "description": "防禦不會降低。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 2,
+      "x": 0,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1024600052,
+      "name": "拍組招式後HP中回復2",
+      "description": "使出拍組招式後,會回復自己的HP,約為自己最大HP的40%。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 4,
+      "x": -1,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1024600053,
+      "name": "拍組極巨化招式後下次傷害防禦",
+      "description": "使出拍組極巨化招式後,會讓自己變成下次傷害防禦狀態。(在下次傷害防禦狀態時,會讓受到的攻擊的傷害變成0, 讓拍組招式等部分攻擊的傷害減半。發揮效果後,便會解除此狀態。)",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 5,
+      "x": 1,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    }
+  ]
+}

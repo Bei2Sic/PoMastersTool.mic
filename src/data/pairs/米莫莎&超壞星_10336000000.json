@@ -1,0 +1,1159 @@
+{
+  "trainer": {
+    "id": "10336000000",
+    "name": "米莫莎",
+    "actor": "米莫莎",
+    "actorId": "ch0336_00_mimoza",
+    "rarity": 5,
+    "role": 2,
+    "exRole": 5,
+    "ex": true,
+    "exclusivity": "MasterEX",
+    "maxBonusLevel": 10
+  },
+  "scoutMethod": 1,
+  "scheduleId": "chara_7100_1108_FOREVER",
+  "themes": [
+    {
+      "name": "毒屬性／輔助",
+      "description": "我方全體拍組最大HP提升60",
+      "tag": "毒",
+      "category": 1
+    },
+    {
+      "name": "帕底亞／輔助",
+      "description": "我方全體拍組最大HP提升13",
+      "tag": "帕底亞",
+      "category": 2
+    },
+    {
+      "name": "甜點愛好者／輔助",
+      "description": "我方全體拍組最大HP提升15",
+      "tag": "甜點愛好者",
+      "category": 999
+    },
+    {
+      "name": "大姐姐／輔助",
+      "description": "我方全體拍組最大HP提升15",
+      "tag": "大姐姐",
+      "category": 999
+    }
+  ],
+  "specialAwaking": {
+    "name": "醫務室天使",
+    "description": "當領域為劇毒領域時,會提高我方全體拍組的招式的威力。首次使出招式攻擊成功時,會將領域變成劇毒領域。(劇毒領域會提高毒屬性的攻擊的威力。)領域變成劇毒領域的瞬間在場上時,會延長劇毒領域的持續時間。",
+    "detail": [
+      {
+        "name": "首次攻擊時變成劇毒領域",
+        "description": "首次使出招式攻擊成功時,會將領域變成劇毒領域。(劇毒領域會提高毒屬性的攻擊的威力。)"
+      },
+      {
+        "name": "劇毒領域時間延長3",
+        "description": "領域變成劇毒領域的瞬間在場上時,會延長劇毒領域的持續時間。"
+      },
+      {
+        "name": "劇毒領域時威力↑G2",
+        "description": "當領域為劇毒領域時,會提高我方全體拍組的招式的威力。"
+      }
+    ]
+  },
+  "pokemon": [
+    {
+      "id": "20336000000",
+      "variationType": 0,
+      "vAfterSm": false,
+      "name": "超壞星",
+      "form": "",
+      "actor": "pm0748_00_00_dohidoide",
+      "gender": 2,
+      "isShiny": false,
+      "type": 8,
+      "weakness": 11,
+      "stat": {
+        "hp": [
+          110,
+          188,
+          263,
+          560,
+          624,
+          688,
+          880
+        ],
+        "atk": [
+          13,
+          57,
+          99,
+          264,
+          300,
+          336,
+          444
+        ],
+        "def": [
+          20,
+          61,
+          100,
+          254,
+          286,
+          318,
+          414
+        ],
+        "spa": [
+          8,
+          29,
+          47,
+          124,
+          140,
+          156,
+          204
+        ],
+        "spd": [
+          20,
+          60,
+          99,
+          242,
+          274,
+          306,
+          402
+        ],
+        "spe": [
+          6,
+          42,
+          75,
+          207,
+          235,
+          263,
+          347
+        ]
+      },
+      "passives": [
+        {
+          "name": "帕底亞的快攻",
+          "description": "首次上場時,發動拍組招式所需的行動數會減少1次。(多隊模式時,會讓我方隊伍在首次上場時發動拍組招式所需的行動數減少1次。)當我方隊伍中擁有帕底亞標籤的拍組越多,此效果還會減少得越多。(每增加1對拍組,發動拍組招式所需的行動數-1次,最多可-3次。)當隊伍中存在多對擁有同名被動技能的拍組,效果不會重複發揮。",
+          "detail": []
+        },
+        {
+          "name": "首次上場時拍組毒太晶化",
+          "description": "首次上場時,會讓自己拍組太晶化,太晶屬性為毒屬性。",
+          "detail": []
+        },
+        {
+          "name": "隊伍使出拍組招式後HP回復3",
+          "description": "我方隊伍使出拍組招式後,會回復自己的HP,約為最大HP的30%。",
+          "detail": []
+        },
+        {
+          "name": "擊中要害無效",
+          "description": "對手的攻擊不會擊中要害。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 40,
+          "user": "寶可夢",
+          "name": "毒針",
+          "type": 8,
+          "gauge": 1,
+          "uses": "−",
+          "category": 1,
+          "power": 12,
+          "accuracy": 100,
+          "target": "對手１對拍組",
+          "description": "有30%的機率會讓對手陷入中毒狀態。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 623,
+          "user": "寶可夢",
+          "name": "碉堡",
+          "type": 8,
+          "gauge": 2,
+          "uses": 2,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "自己",
+          "description": "變成防禦狀態。再次使用此招式時,將會解除防禦狀態。在防禦狀態時,無法做出其他行動。在防禦狀態時,若受到招式攻擊,將會使該招式無效,並且解除防禦狀態。在防禦狀態時,若受到物理招式攻擊,將會讓對手陷入中毒狀態。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 469,
+          "user": "寶可夢",
+          "name": "廣域防守",
+          "type": 13,
+          "gauge": 1,
+          "uses": 1,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "自己",
+          "description": "變成防禦狀態。再次使用此招式時,將會解除防禦狀態。在防禦狀態時,無法做出其他行動。在防禦狀態時,若對手使出以我方全體為對象的招式,將會使該招式無效,並且解除防禦狀態。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 13360,
+          "user": "訓練師",
+          "name": "好好休息別勉強~",
+          "type": 0,
+          "gauge": 0,
+          "uses": 1,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方全體拍組",
+          "description": "提高我方全體拍組的防禦和特防4階段。提高我方全體拍組的擊中要害率2階段。",
+          "tags": "none",
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 200802,
+        "user": "寶可夢",
+        "name": "醫務室天使給你好看之太晶爆發",
+        "type": 8,
+        "gauge": 0,
+        "uses": "−",
+        "category": 1,
+        "power": 250,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "沒有追加效果。",
+        "tags": "none",
+        "group": "Sync"
+      }
+    },
+    {
+      "id": "20336000000",
+      "variationType": 7,
+      "vAfterSm": false,
+      "name": "超壞星",
+      "form": "太晶屬性：毒",
+      "actor": "pm0748_71_08_dohidoide",
+      "gender": 2,
+      "isShiny": false,
+      "type": 8,
+      "weakness": 11,
+      "stat": {
+        "hp": [
+          110,
+          188,
+          263,
+          560,
+          624,
+          688,
+          880
+        ],
+        "atk": [
+          13,
+          57,
+          99,
+          264,
+          300,
+          336,
+          444
+        ],
+        "def": [
+          20,
+          61,
+          100,
+          254,
+          286,
+          318,
+          414
+        ],
+        "spa": [
+          8,
+          29,
+          47,
+          124,
+          140,
+          156,
+          204
+        ],
+        "spd": [
+          20,
+          60,
+          99,
+          242,
+          274,
+          306,
+          402
+        ],
+        "spe": [
+          6,
+          42,
+          75,
+          207,
+          235,
+          263,
+          347
+        ]
+      },
+      "passives": [
+        {
+          "name": "帕底亞的快攻",
+          "description": "首次上場時,發動拍組招式所需的行動數會減少1次。(多隊模式時,會讓我方隊伍在首次上場時發動拍組招式所需的行動數減少1次。)當我方隊伍中擁有帕底亞標籤的拍組越多,此效果還會減少得越多。(每增加1對拍組,發動拍組招式所需的行動數-1次,最多可-3次。)當隊伍中存在多對擁有同名被動技能的拍組,效果不會重複發揮。",
+          "detail": []
+        },
+        {
+          "name": "毒刺的表演時刻",
+          "description": "藉由防禦狀態使對手的招式無效時,會幫自己的「太晶爆發・紫黃」的使用次數回復1次。",
+          "detail": []
+        },
+        {
+          "name": "隊伍使出拍組招式後HP回復3",
+          "description": "我方隊伍使出拍組招式後,會回復自己的HP,約為最大HP的30%。",
+          "detail": []
+        },
+        {
+          "name": "擊中要害無效",
+          "description": "對手的攻擊不會擊中要害。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 40,
+          "user": "寶可夢",
+          "name": "毒針",
+          "type": 8,
+          "gauge": 1,
+          "uses": "−",
+          "category": 1,
+          "power": 12,
+          "accuracy": 100,
+          "target": "對手１對拍組",
+          "description": "有30%的機率會讓對手陷入中毒狀態。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 623,
+          "user": "寶可夢",
+          "name": "碉堡",
+          "type": 8,
+          "gauge": 2,
+          "uses": 2,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "自己",
+          "description": "變成防禦狀態。再次使用此招式時,將會解除防禦狀態。在防禦狀態時,無法做出其他行動。在防禦狀態時,若受到招式攻擊,將會使該招式無效,並且解除防禦狀態。在防禦狀態時,若受到物理招式攻擊,將會讓對手陷入中毒狀態。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 469,
+          "user": "寶可夢",
+          "name": "廣域防守",
+          "type": 13,
+          "gauge": 1,
+          "uses": 1,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "自己",
+          "description": "變成防禦狀態。再次使用此招式時,將會解除防禦狀態。在防禦狀態時,無法做出其他行動。在防禦狀態時,若對手使出以我方全體為對象的招式,將會使該招式無效,並且解除防禦狀態。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 13360,
+          "user": "訓練師",
+          "name": "好好休息別勉強~",
+          "type": 0,
+          "gauge": 0,
+          "uses": 1,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方全體拍組",
+          "description": "提高我方全體拍組的防禦和特防4階段。提高我方全體拍組的擊中要害率2階段。",
+          "tags": "none",
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 200802,
+        "user": "寶可夢",
+        "name": "醫務室天使給你好看之太晶爆發",
+        "type": 8,
+        "gauge": 0,
+        "uses": "−",
+        "category": 1,
+        "power": 250,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "沒有追加效果。",
+        "tags": "none",
+        "group": "Sync"
+      },
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "moveTera": {
+        "id": 4047,
+        "user": "寶可夢",
+        "name": "太晶爆發・紫黃",
+        "type": 8,
+        "gauge": 2,
+        "uses": 1,
+        "category": 1,
+        "power": 150,
+        "accuracy": 100,
+        "target": "對手１對拍組",
+        "description": "除了特定情況之外,只要攻擊命中就必定會擊中要害。自己發動拍組招式所需的行動數會減少1次。分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強3階段。",
+        "tags": "none",
+        "group": "Regular"
+      }
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "米莫莎專用潛能餅乾１",
+      "skills": [
+        {
+          "name": "寶可夢首次使出變化招式時場地招式計量槽加速",
+          "description": "在寶可夢首次使出變化招式時,會讓我方場地變成招式計量槽加速狀態。",
+          "detail": [],
+          "rate": 100
+        }
+      ]
+    },
+    {
+      "cookieName": "米莫莎專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "被攻擊時HP回復G9",
+          "description": "受到招式攻擊時,會回復我方全體拍組的HP。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時物理/特殊增強G1",
+          "description": "首次上場時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時拍組招式增強G3",
+          "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
+          "detail": [],
+          "rate": 33
+        }
+      ]
+    }
+  ],
+  "grid": [
+    {
+      "id": 1033600000,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033600001,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033600002,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033600003,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033600004,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033600005,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033600006,
+      "name": "解除妨害狀態",
+      "description": "當自己首次陷入畏縮、混亂或束縛狀態時,會解除該狀態。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 0,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1033600007,
+      "name": "防禦成功時防禦4↓G9",
+      "description": "藉由防禦狀態使對手的招式無效時,會降低對手全體拍組的防禦4階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 4,
+      "x": 0,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1033600008,
+      "name": "隊伍使出拍組招式後廣域防守次數回復9",
+      "description": "我方隊伍使出拍組招式後,會幫自己的「廣域防守」的使用次數回復1次。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 5,
+      "x": -2,
+      "y": 5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1033600009,
+      "name": "毒屬性防守",
+      "description": "可減輕受到毒屬性招式攻擊時的傷害。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 0,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1033600010,
+      "name": "防禦成功時特防4↓G9",
+      "description": "藉由防禦狀態使對手的招式無效時,會降低對手全體拍組的特防4階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 4,
+      "x": 0,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1033600011,
+      "name": "碉堡：寶可夢首次使出變化招式時碉堡次數回復1",
+      "description": "在寶可夢首次使出變化招式時,會幫自己的「碉堡」的使用次數回復1次。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 5,
+      "x": -2,
+      "y": -3,
+      "color": "#FF0066",
+      "type": 8
+    },
+    {
+      "id": 1033600012,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033600013,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033600014,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033600015,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033600016,
+      "name": "毒針：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": 2,
+      "color": "#47D147",
+      "type": 8
+    },
+    {
+      "id": 1033600017,
+      "name": "毒針：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 1,
+      "y": 3,
+      "color": "#47D147",
+      "type": 8
+    },
+    {
+      "id": 1033600018,
+      "name": "毒針：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 3,
+      "y": 2,
+      "color": "#47D147",
+      "type": 8
+    },
+    {
+      "id": 1033600019,
+      "name": "好好休息別勉強~：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1033600020,
+      "name": "防禦成功時賦予物理增強(1)G9",
+      "description": "藉由防禦狀態使對手的招式無效時,會提高我方全體拍組的下次物理招式威力增強1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 1,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1033600021,
+      "name": "好好休息別勉強~：招式後場地招式計量槽加速9",
+      "description": "招式成功時,會讓我方場地變成招式計量槽加速狀態。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 3,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1033600022,
+      "name": "上場時攻擊提升G2",
+      "description": "上場時,會提高我方全體拍組的攻擊2階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1033600023,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033600024,
+      "name": "太晶爆發・紫黃：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -3,
+      "y": 0,
+      "color": "#47D147",
+      "type": 8
+    },
+    {
+      "id": 1033600025,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033600026,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033600027,
+      "name": "太晶爆發・紫黃：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -3,
+      "y": -1,
+      "color": "#47D147",
+      "type": 8
+    },
+    {
+      "id": 1033600028,
+      "name": "太晶爆發・紫黃：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -1,
+      "y": -2,
+      "color": "#47D147",
+      "type": 8
+    },
+    {
+      "id": 1033600029,
+      "name": "碉堡：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -2,
+      "y": -2,
+      "color": "#FF0066",
+      "type": 8
+    },
+    {
+      "id": 1033600030,
+      "name": "防禦成功時HP回復9",
+      "description": "藉由防禦狀態使對手的招式無效時,會回復自己的HP,約為自己最大HP的20%。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -3,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1033600031,
+      "name": "首次危機時HP回復4",
+      "description": "首次陷入危機時,會回復自己的HP,約為自己最大HP的40%。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -1,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1033600032,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033600033,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033600034,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033600035,
+      "name": "特防下降無效",
+      "description": "特防不會降低。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": 3,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1033600036,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -4,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033600037,
+      "name": "毒針：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 1,
+      "y": -4,
+      "color": "#47D147",
+      "type": 8
+    },
+    {
+      "id": 1033600038,
+      "name": "毒針：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 3,
+      "y": -5,
+      "color": "#47D147",
+      "type": 8
+    },
+    {
+      "id": 1033600039,
+      "name": "毒針：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": -5,
+      "color": "#FF0066",
+      "type": 8
+    },
+    {
+      "id": 1033600040,
+      "name": "防禦成功時賦予特殊增強(1)G9",
+      "description": "藉由防禦狀態使對手的招式無效時,會提高我方全體拍組的下次特殊招式威力增強1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 1,
+      "y": -5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1033600041,
+      "name": "毒針：異常機率提升1",
+      "description": "當招式的追加效果可使對手陷入異常狀態時,會提高該追加效果的成功率。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 3,
+      "y": -6,
+      "color": "#FF0066",
+      "type": 8
+    },
+    {
+      "id": 1033600042,
+      "name": "上場時特攻提升G2",
+      "description": "上場時,會提高我方全體拍組的特攻2階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": -6,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1033600043,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033600044,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033600045,
+      "name": "防禦下降無效",
+      "description": "防禦不會降低。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": -3,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1033600046,
+      "name": "太晶爆發・紫黃：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": 3,
+      "color": "#47D147",
+      "type": 8
+    },
+    {
+      "id": 1033600047,
+      "name": "廣域防守：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -1,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 13
+    },
+    {
+      "id": 1033600048,
+      "name": "太晶爆發・紫黃：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -3,
+      "y": 4,
+      "color": "#47D147",
+      "type": 8
+    },
+    {
+      "id": 1033600049,
+      "name": "太晶爆發・紫黃：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -2,
+      "y": 4,
+      "color": "#FF0066",
+      "type": 8
+    },
+    {
+      "id": 1033600050,
+      "name": "防禦成功時計數加速9",
+      "description": "藉由防禦狀態使對手的招式無效時,會讓發動拍組招式所需的行動數減少1次。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -1,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1033600051,
+      "name": "廣域防守：招式後招式次數回復4",
+      "description": "招式成功時,有50%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -3,
+      "y": 5,
+      "color": "#FF0066",
+      "type": 13
+    },
+    {
+      "id": 1033600052,
+      "name": "醫務室天使給你好看之太晶爆發：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": 3,
+      "color": "#BF80FF",
+      "type": 8
+    },
+    {
+      "id": 1033600053,
+      "name": "醫務室天使給你好看之太晶爆發：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": -3,
+      "color": "#BF80FF",
+      "type": 8
+    }
+  ]
+}

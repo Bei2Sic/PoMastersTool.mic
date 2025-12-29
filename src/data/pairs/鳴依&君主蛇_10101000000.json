@@ -1,0 +1,889 @@
+{
+  "trainer": {
+    "id": "10101000000",
+    "name": "鳴依",
+    "actor": "鳴依",
+    "actorId": "ch0101_00_mei",
+    "rarity": 5,
+    "role": 2,
+    "exRole": -1,
+    "ex": true,
+    "exclusivity": "Regular",
+    "maxBonusLevel": 5
+  },
+  "scoutMethod": 2,
+  "scheduleId": "FOREVER",
+  "themes": [
+    {
+      "name": "草屬性／輔助",
+      "description": "我方全體拍組最大HP提升60",
+      "tag": "草",
+      "category": 1
+    },
+    {
+      "name": "合眾／輔助",
+      "description": "我方全體拍組最大HP提升13",
+      "tag": "合眾",
+      "category": 2
+    },
+    {
+      "name": "主角／輔助",
+      "description": "我方全體拍組最大HP提升13",
+      "tag": "主角",
+      "category": 3
+    },
+    {
+      "name": "雙馬尾／輔助",
+      "description": "我方全體拍組最大HP提升15",
+      "tag": "雙馬尾",
+      "category": 4
+    },
+    {
+      "name": "合眾的冒險／輔助",
+      "description": "我方全體拍組最大HP提升15",
+      "tag": "合眾的冒險",
+      "category": 999
+    }
+  ],
+  "specialAwaking": {
+    "name": "",
+    "description": "",
+    "detail": []
+  },
+  "pokemon": [
+    {
+      "id": "20101000002",
+      "variationType": 0,
+      "vAfterSm": false,
+      "name": "君主蛇",
+      "form": "",
+      "actor": "pm0497_00_jalorda",
+      "gender": 2,
+      "isShiny": false,
+      "type": 5,
+      "weakness": 10,
+      "stat": {
+        "hp": [
+          120,
+          225,
+          292,
+          595,
+          659,
+          723,
+          903
+        ],
+        "atk": [
+          10,
+          26,
+          35,
+          79,
+          87,
+          95,
+          119
+        ],
+        "def": [
+          19,
+          52,
+          73,
+          172,
+          192,
+          212,
+          260
+        ],
+        "spa": [
+          14,
+          42,
+          60,
+          104,
+          112,
+          120,
+          144
+        ],
+        "spd": [
+          21,
+          65,
+          92,
+          224,
+          252,
+          280,
+          352
+        ],
+        "spe": [
+          17,
+          49,
+          70,
+          158,
+          178,
+          198,
+          246
+        ]
+      },
+      "passives": [
+        {
+          "name": "特防下降無效",
+          "description": "特防不會降低。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 412,
+          "user": "寶可夢",
+          "name": "能量球",
+          "type": 5,
+          "gauge": 2,
+          "uses": "−",
+          "category": 2,
+          "power": 49,
+          "accuracy": 100,
+          "target": "對手１對拍組",
+          "description": "有10%的機率會降低對手的特防1階段。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 19031,
+          "user": "寶可夢",
+          "name": "特攻強化G",
+          "type": 0,
+          "gauge": 0,
+          "uses": 2,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方全體拍組",
+          "description": "提高我方全體拍組的特攻2階段。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 11010,
+          "user": "訓練師",
+          "name": "依鳴驚人",
+          "type": 0,
+          "gauge": 0,
+          "uses": 2,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方全體拍組",
+          "description": "場上的我方拍組每1對會幫自己增加3條招式計量槽。(多隊模式時,會幫我方全體玩家增加3條招式計量槽。)",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 202,
+          "user": "寶可夢",
+          "name": "終極吸取",
+          "type": 5,
+          "gauge": 3,
+          "uses": "−",
+          "category": 2,
+          "power": 91,
+          "accuracy": 100,
+          "target": "對手１對拍組",
+          "description": "給予對手的傷害越多,自己的HP就回復得越多。",
+          "tags": "Absorbs",
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 70000,
+        "user": "寶可夢",
+        "name": "無限可能之飛葉風暴",
+        "type": 5,
+        "gauge": 0,
+        "uses": "−",
+        "category": 2,
+        "power": 250,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "沒有追加效果。",
+        "tags": "none",
+        "group": "Sync"
+      }
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "鳴依專用潛能餅乾１",
+      "skills": [
+        {
+          "name": "招式後特防提升G1",
+          "description": "招式成功時,會提高我方全體拍組的特防1階段。",
+          "detail": [],
+          "rate": 100
+        }
+      ]
+    },
+    {
+      "cookieName": "鳴依專用的塔潛能餅乾２",
+      "skills": [
+        {
+          "name": "鳴依的全心全意",
+          "description": "在寶可夢使出招式時,會讓自己變成下次計量槽消耗0狀態。在訓練家使出招式時,會提高我方全體拍組的下次特殊招式威力增強1階段。",
+          "detail": [
+            {
+              "name": "寶可夢出招後下次不消耗計量槽9",
+              "description": "在寶可夢使出招式時,會讓自己變成下次計量槽消耗0狀態。"
+            },
+            {
+              "name": "訓練家出招後賦予特殊增強(1)G9",
+              "description": "在訓練家使出招式時,會提高我方全體拍組的下次特殊招式威力增強1階段。"
+            }
+          ],
+          "rate": 100
+        }
+      ]
+    },
+    {
+      "cookieName": "鳴依專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "被攻擊時HP回復G9",
+          "description": "受到招式攻擊時,會回復我方全體拍組的HP。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時物理/特殊增強G1",
+          "description": "首次上場時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時拍組招式增強G3",
+          "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
+          "detail": [],
+          "rate": 33
+        }
+      ]
+    }
+  ],
+  "grid": [
+    {
+      "id": 1010100000,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1010100001,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1010100002,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1010100003,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1010100004,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1010100005,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1010100006,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1010100007,
+      "name": "終極吸取：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": 1,
+      "color": "#47D147",
+      "type": 5
+    },
+    {
+      "id": 1010100008,
+      "name": "能量球：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 2,
+      "color": "#47D147",
+      "type": 5
+    },
+    {
+      "id": 1010100009,
+      "name": "終極吸取：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 3,
+      "y": 1,
+      "color": "#47D147",
+      "type": 5
+    },
+    {
+      "id": 1010100010,
+      "name": "特攻 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 1,
+      "x": 2,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1010100011,
+      "name": "能量球：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 1,
+      "y": 3,
+      "color": "#47D147",
+      "type": 5
+    },
+    {
+      "id": 1010100012,
+      "name": "終極吸取：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 3,
+      "y": 2,
+      "color": "#47D147",
+      "type": 5
+    },
+    {
+      "id": 1010100013,
+      "name": "特防 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 6,
+      "orb": 72,
+      "level": 2,
+      "x": 2,
+      "y": 3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1010100014,
+      "name": "能量球：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 3,
+      "x": 1,
+      "y": 4,
+      "color": "#47D147",
+      "type": 5
+    },
+    {
+      "id": 1010100015,
+      "name": "終極吸取：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 6,
+      "orb": 72,
+      "level": 2,
+      "x": 3,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 5
+    },
+    {
+      "id": 1010100016,
+      "name": "能量球：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 6,
+      "orb": 72,
+      "level": 3,
+      "x": 2,
+      "y": 4,
+      "color": "#FF0066",
+      "type": 5
+    },
+    {
+      "id": 1010100017,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1010100018,
+      "name": "能量球：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -3,
+      "y": 0,
+      "color": "#47D147",
+      "type": 5
+    },
+    {
+      "id": 1010100019,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1010100020,
+      "name": "威力隨招式計量槽提升5",
+      "description": "選擇招式時,招式計量槽的剩餘量越多,招式的威力就提高得越多。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 1,
+      "x": -2,
+      "y": -1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1010100021,
+      "name": "特防 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": -3,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1010100022,
+      "name": "速度 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": -1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1010100023,
+      "name": "特攻 + 20",
+      "description": "",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 2,
+      "x": -2,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1010100024,
+      "name": "終極吸取：HP回復招式回復量增加2",
+      "description": "當自己使出會回復HP的招式時,會提高HP回復量。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -3,
+      "y": -2,
+      "color": "#FF0066",
+      "type": 5
+    },
+    {
+      "id": 1010100025,
+      "name": "晴天時拍組招式威力提升5",
+      "description": "當天氣為日照強烈時,會提高拍組招式的威力。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": -1,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1010100026,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1010100027,
+      "name": "能量球：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": -3,
+      "color": "#47D147",
+      "type": 5
+    },
+    {
+      "id": 1010100028,
+      "name": "終極吸取：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 1,
+      "y": -3,
+      "color": "#47D147",
+      "type": 5
+    },
+    {
+      "id": 1010100029,
+      "name": "依鳴驚人：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 1,
+      "x": 3,
+      "y": -4,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1010100030,
+      "name": "速度 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": -4,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1010100031,
+      "name": "特攻強化G：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 1,
+      "y": -4,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1010100032,
+      "name": "依鳴驚人：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 1,
+      "x": 3,
+      "y": -5,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1010100033,
+      "name": "HP + 20",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 2,
+      "x": 2,
+      "y": -5,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1010100034,
+      "name": "特攻強化G：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 3,
+      "x": 1,
+      "y": -5,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1010100035,
+      "name": "依鳴驚人：危機時招式後萬眾矚目",
+      "description": "在陷入危機且招式成功時,會讓對手的目標暫時集中於自己。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 2,
+      "x": 3,
+      "y": -6,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1010100036,
+      "name": "危機時減輕物理傷害3",
+      "description": "在陷入危機時,會減輕受到物理招式攻擊時的傷害。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": -6,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1010100037,
+      "name": "能量球：下降機率提升1",
+      "description": "當招式的追加效果可降低對手能力值時,會提高該追加效果的成功率。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 1,
+      "x": -2,
+      "y": 2,
+      "color": "#FF0066",
+      "type": 5
+    },
+    {
+      "id": 1010100038,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1010100039,
+      "name": "終極吸取：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -3,
+      "y": 3,
+      "color": "#47D147",
+      "type": 5
+    },
+    {
+      "id": 1010100040,
+      "name": "晴天時拍組招式威力提升5",
+      "description": "當天氣為日照強烈時,會提高拍組招式的威力。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": -2,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1010100041,
+      "name": "防禦 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": -1,
+      "y": 3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1010100042,
+      "name": "防禦 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": -3,
+      "y": 4,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1010100043,
+      "name": "HP + 20",
+      "description": "",
+      "detail": [],
+      "energy": 6,
+      "orb": 72,
+      "level": 2,
+      "x": -2,
+      "y": 4,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1010100044,
+      "name": "晴天時招式計量槽加速2",
+      "description": "當天氣為日照強烈時,招式計量槽會累積得較快。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -1,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1010100045,
+      "name": "晴天時異常無效",
+      "description": "當天氣為日照強烈時,不會陷入異常狀態。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 3,
+      "x": -3,
+      "y": 5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1010100046,
+      "name": "無限可能之飛葉風暴：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": 3,
+      "color": "#BF80FF",
+      "type": 5
+    },
+    {
+      "id": 1010100047,
+      "name": "無限可能之飛葉風暴：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": -3,
+      "color": "#BF80FF",
+      "type": 5
+    }
+  ]
+}

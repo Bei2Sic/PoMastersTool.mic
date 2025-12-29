@@ -1,0 +1,1073 @@
+{
+  "trainer": {
+    "id": "10352400000",
+    "name": "紫竽（２０２５秋季）",
+    "actor": "紫竽",
+    "actorId": "ch0352_40_taro",
+    "rarity": 5,
+    "role": 2,
+    "exRole": 5,
+    "ex": true,
+    "exclusivity": "Seasonal",
+    "maxBonusLevel": 5
+  },
+  "scoutMethod": 1,
+  "scheduleId": "chara_7090_1014_FOREVER",
+  "themes": [
+    {
+      "name": "惡屬性／輔助",
+      "description": "我方全體拍組最大HP提升60",
+      "tag": "惡",
+      "category": 1
+    },
+    {
+      "name": "帕底亞／輔助",
+      "description": "我方全體拍組最大HP提升13",
+      "tag": "帕底亞",
+      "category": 2
+    },
+    {
+      "name": "四天王／輔助",
+      "description": "我方全體拍組最大HP提升13",
+      "tag": "四天王",
+      "category": 3
+    },
+    {
+      "name": "季節服裝／輔助",
+      "description": "我方全體拍組最大HP提升15",
+      "tag": "季節服裝",
+      "category": 4
+    },
+    {
+      "name": "大小姐／輔助",
+      "description": "我方全體拍組最大HP提升15",
+      "tag": "大小姐",
+      "category": 999
+    }
+  ],
+  "specialAwaking": {
+    "name": "",
+    "description": "",
+    "detail": []
+  },
+  "pokemon": [
+    {
+      "id": "20352400000",
+      "variationType": 0,
+      "vAfterSm": false,
+      "name": "風妖精",
+      "form": "",
+      "actor": "pm0547_00_elfuun",
+      "gender": 2,
+      "isShiny": false,
+      "type": 16,
+      "weakness": 12,
+      "stat": {
+        "hp": [
+          100,
+          178,
+          253,
+          550,
+          614,
+          678,
+          870
+        ],
+        "atk": [
+          16,
+          44,
+          71,
+          170,
+          190,
+          210,
+          270
+        ],
+        "def": [
+          18,
+          58,
+          97,
+          251,
+          283,
+          315,
+          411
+        ],
+        "spa": [
+          22,
+          55,
+          85,
+          206,
+          230,
+          254,
+          326
+        ],
+        "spd": [
+          16,
+          55,
+          91,
+          234,
+          266,
+          298,
+          394
+        ],
+        "spe": [
+          10,
+          54,
+          96,
+          261,
+          297,
+          333,
+          441
+        ]
+      },
+      "passives": [
+        {
+          "name": "首次上場時拍組惡太晶化",
+          "description": "首次上場時,會讓自己拍組太晶化,太晶屬性為惡屬性。",
+          "detail": []
+        },
+        {
+          "name": "我要惡作劇囉~!",
+          "description": "使出招式攻擊成功時,分別有30%的機率會發揮下列效果。讓對手陷入畏縮狀態。讓對手陷入混亂狀態。讓對手陷入束縛狀態。",
+          "detail": []
+        },
+        {
+          "name": "自身引發惡顏領域時賦予特殊增強(1)G9",
+          "description": "當自己使惡顏領域生效時,會提高我方全體拍組的下次特殊招式威力增強1階段。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 92,
+          "user": "寶可夢",
+          "name": "劇毒",
+          "type": 8,
+          "gauge": 2,
+          "uses": "−",
+          "category": 0,
+          "power": 0,
+          "accuracy": 90,
+          "target": "對手１對拍組",
+          "description": "讓對手陷入劇毒狀態。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 19000,
+          "user": "寶可夢",
+          "name": "傷藥",
+          "type": 0,
+          "gauge": 0,
+          "uses": 2,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方１對拍組",
+          "description": "回復我方的HP,約為最大HP的40%。",
+          "tags": "Heals",
+          "group": "Regular"
+        },
+        {
+          "id": 6155,
+          "user": "寶可夢",
+          "name": "又壞又可愛之假哭",
+          "type": 16,
+          "gauge": 2,
+          "uses": 2,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "對手全體拍組",
+          "description": "【開放條件】\n自己使出1次招式時\n【封印條件】\n無\n\n招式必定會命中。降低對手全體拍組的特防3階段。將領域變成惡顏領域。(惡顏領域會提高惡屬性的攻擊的威力。)提高我方全體拍組的下次特殊招式威力增強1階段。",
+          "tags": 8388616,
+          "group": 6
+        },
+        {
+          "id": 13524,
+          "user": "訓練師",
+          "name": "變得可~愛~吧!",
+          "type": 0,
+          "gauge": 0,
+          "uses": 1,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方全體拍組",
+          "description": "提高我方全體拍組的特攻4階段。提高我方全體拍組的擊中要害率3階段。提高我方全體拍組的下次特殊招式威力增強1階段。",
+          "tags": "none",
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 201601,
+        "user": "寶可夢",
+        "name": "只有今天稍微當個壞孩子之太晶爆發",
+        "type": 16,
+        "gauge": 0,
+        "uses": "−",
+        "category": 2,
+        "power": 250,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "沒有追加效果。",
+        "tags": "none",
+        "group": "Sync"
+      }
+    },
+    {
+      "id": "20352400000",
+      "variationType": 7,
+      "vAfterSm": false,
+      "name": "風妖精",
+      "form": "太晶屬性：惡",
+      "actor": "pm0547_71_16_elfuun",
+      "gender": 2,
+      "isShiny": false,
+      "type": 16,
+      "weakness": 12,
+      "stat": {
+        "hp": [
+          100,
+          178,
+          253,
+          550,
+          614,
+          678,
+          870
+        ],
+        "atk": [
+          16,
+          44,
+          71,
+          170,
+          190,
+          210,
+          270
+        ],
+        "def": [
+          18,
+          58,
+          97,
+          251,
+          283,
+          315,
+          411
+        ],
+        "spa": [
+          22,
+          55,
+          85,
+          206,
+          230,
+          254,
+          326
+        ],
+        "spd": [
+          16,
+          55,
+          91,
+          234,
+          266,
+          298,
+          394
+        ],
+        "spe": [
+          10,
+          54,
+          96,
+          261,
+          297,
+          333,
+          441
+        ]
+      },
+      "passives": [
+        {
+          "name": "我要又壞又可愛地出招囉!",
+          "description": "拍組太晶化時,會讓發動拍組招式所需的行動數減少1次。拍組太晶化時,會將領域變成惡顏領域。(惡顏領域會提高惡屬性的攻擊的威力。)",
+          "detail": [
+            {
+              "name": "拍組太晶化時計數加速1",
+              "description": "拍組太晶化時,會讓發動拍組招式所需的行動數減少1次。"
+            },
+            {
+              "name": "拍組太晶化時變成惡顏領域",
+              "description": "拍組太晶化時,會將領域變成惡顏領域。(惡顏領域會提高惡屬性的攻擊的威力。)"
+            }
+          ]
+        },
+        {
+          "name": "我要惡作劇囉~!",
+          "description": "使出招式攻擊成功時,分別有30%的機率會發揮下列效果。讓對手陷入畏縮狀態。讓對手陷入混亂狀態。讓對手陷入束縛狀態。",
+          "detail": []
+        },
+        {
+          "name": "自身引發惡顏領域時賦予特殊增強(1)G9",
+          "description": "當自己使惡顏領域生效時,會提高我方全體拍組的下次特殊招式威力增強1階段。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 92,
+          "user": "寶可夢",
+          "name": "劇毒",
+          "type": 8,
+          "gauge": 2,
+          "uses": "−",
+          "category": 0,
+          "power": 0,
+          "accuracy": 90,
+          "target": "對手１對拍組",
+          "description": "讓對手陷入劇毒狀態。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 19000,
+          "user": "寶可夢",
+          "name": "傷藥",
+          "type": 0,
+          "gauge": 0,
+          "uses": 2,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方１對拍組",
+          "description": "回復我方的HP,約為最大HP的40%。",
+          "tags": "Heals",
+          "group": "Regular"
+        },
+        {
+          "id": 6155,
+          "user": "寶可夢",
+          "name": "又壞又可愛之假哭",
+          "type": 16,
+          "gauge": 2,
+          "uses": 2,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "對手全體拍組",
+          "description": "【開放條件】\n自己使出1次招式時\n【封印條件】\n無\n\n招式必定會命中。降低對手全體拍組的特防3階段。將領域變成惡顏領域。(惡顏領域會提高惡屬性的攻擊的威力。)提高我方全體拍組的下次特殊招式威力增強1階段。",
+          "tags": 8388616,
+          "group": 6
+        },
+        {
+          "id": 13524,
+          "user": "訓練師",
+          "name": "變得可~愛~吧!",
+          "type": 0,
+          "gauge": 0,
+          "uses": 1,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方全體拍組",
+          "description": "提高我方全體拍組的特攻4階段。提高我方全體拍組的擊中要害率3階段。提高我方全體拍組的下次特殊招式威力增強1階段。",
+          "tags": "none",
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 201601,
+        "user": "寶可夢",
+        "name": "只有今天稍微當個壞孩子之太晶爆發",
+        "type": 16,
+        "gauge": 0,
+        "uses": "−",
+        "category": 2,
+        "power": 250,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "沒有追加效果。",
+        "tags": "none",
+        "group": "Sync"
+      },
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "moveTera": {
+        "id": 4046,
+        "user": "寶可夢",
+        "name": "太晶爆發・尖晶",
+        "type": 16,
+        "gauge": 1,
+        "uses": "−",
+        "category": 2,
+        "power": 150,
+        "accuracy": 100,
+        "target": "對手全體拍組",
+        "description": "提高自己的防禦和特防1階段。",
+        "tags": "none",
+        "group": "Regular"
+      }
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "紫竽（２０２５秋季）專用潛能餅乾１",
+      "skills": [
+        {
+          "name": "惡顏領域時攻擊招式威力↓2",
+          "description": "當領域為惡顏領域時,會減輕受到招式攻擊時的傷害。",
+          "detail": [],
+          "rate": 100
+        }
+      ]
+    },
+    {
+      "cookieName": "紫竽（２０２５秋季）專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "被攻擊時HP回復G9",
+          "description": "受到招式攻擊時,會回復我方全體拍組的HP。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時物理/特殊增強G1",
+          "description": "首次上場時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時拍組招式增強G3",
+          "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
+          "detail": [],
+          "rate": 33
+        }
+      ]
+    }
+  ],
+  "grid": [
+    {
+      "id": 1035240000,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1035240001,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1035240002,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1035240003,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1035240004,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1035240005,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1035240006,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1035240007,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1035240008,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1035240009,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1035240010,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1035240011,
+      "name": "劇毒：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 1,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 8
+    },
+    {
+      "id": 1035240012,
+      "name": "劇毒：命中率 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": 3,
+      "y": 2,
+      "color": "#47D147",
+      "type": 8
+    },
+    {
+      "id": 1035240013,
+      "name": "變得可~愛~吧!：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1035240014,
+      "name": "對手中毒時威力提升G2",
+      "description": "當攻擊對象陷入中毒或劇毒狀態時,會提高我方全體拍組的招式的威力。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 1,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1035240015,
+      "name": "劇毒：變化招式賦予異常狀態G9",
+      "description": "使出變化招式讓對手陷入異常狀態時,會讓對手全體拍組陷入相同的異常狀態。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 2,
+      "x": 3,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 8
+    },
+    {
+      "id": 1035240016,
+      "name": "攻擊中毒中的對手時攻擊特攻下降9",
+      "description": "當對手陷入中毒或劇毒狀態且使出招式攻擊成功時,會降低對手的攻擊和特攻1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1035240017,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1035240018,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -3,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1035240019,
+      "name": "太晶爆發・尖晶：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -1,
+      "y": -1,
+      "color": "#47D147",
+      "type": 16
+    },
+    {
+      "id": 1035240020,
+      "name": "太晶爆發・尖晶：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": -1,
+      "color": "#47D147",
+      "type": 16
+    },
+    {
+      "id": 1035240021,
+      "name": "太晶爆發・尖晶：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -3,
+      "y": -1,
+      "color": "#47D147",
+      "type": 16
+    },
+    {
+      "id": 1035240022,
+      "name": "惡顏領域時招式計量槽加速2",
+      "description": "當領域為惡顏領域時,招式計量槽會累積得較快。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 2,
+      "x": -1,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1035240023,
+      "name": "解除妨害狀態",
+      "description": "當自己首次陷入畏縮、混亂或束縛狀態時,會解除該狀態。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -2,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1035240024,
+      "name": "首次拍組招式後計數加速1",
+      "description": "首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -3,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1035240025,
+      "name": "擊中要害無效",
+      "description": "對手的攻擊不會擊中要害。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -1,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1035240026,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1035240027,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1035240028,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1035240029,
+      "name": "太晶爆發・尖晶：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 3,
+      "y": -4,
+      "color": "#47D147",
+      "type": 16
+    },
+    {
+      "id": 1035240030,
+      "name": "太晶爆發・尖晶：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": -4,
+      "color": "#47D147",
+      "type": 16
+    },
+    {
+      "id": 1035240031,
+      "name": "太晶爆發・尖晶：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 1,
+      "y": -4,
+      "color": "#FF0066",
+      "type": 16
+    },
+    {
+      "id": 1035240032,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": -5,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1035240033,
+      "name": "拍組招式後附帶回復",
+      "description": "使出拍組招式後,會讓自己變成附帶回復狀態。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": -5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1035240034,
+      "name": "惡顏領域時間延長3",
+      "description": "領域變成惡顏領域的瞬間在場上時,會延長惡顏領域的持續時間。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 1,
+      "y": -5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1035240035,
+      "name": "解除異常狀態",
+      "description": "當自己首次陷入異常狀態時,會解除自己的異常狀態。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 3,
+      "y": -6,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1035240036,
+      "name": "上場時特攻提升G2",
+      "description": "上場時,會提高我方全體拍組的特攻2階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": -6,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1035240037,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1035240038,
+      "name": "畏縮無效",
+      "description": "不會陷入畏縮狀態。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": -1,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1035240039,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -3,
+      "y": 3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1035240040,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1035240041,
+      "name": "傷藥：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -1,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1035240042,
+      "name": "傷藥：HP回復招式回復量增加1",
+      "description": "當自己使出會回復HP的招式時,會提高HP回復量。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 2,
+      "x": -3,
+      "y": 4,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1035240043,
+      "name": "回復招式後賦予至多一次物理/特殊增強(1)G9",
+      "description": "當使出有回復效果的招式時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。此效果在對戰中僅會發揮1次。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 2,
+      "x": -2,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1035240044,
+      "name": "傷藥：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 3,
+      "x": -1,
+      "y": 4,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1035240045,
+      "name": "傷藥：HP回復招式回復量增加1",
+      "description": "當自己使出會回復HP的招式時,會提高HP回復量。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -3,
+      "y": 5,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1035240046,
+      "name": "只有今天稍微當個壞孩子之太晶爆發：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": 3,
+      "color": "#BF80FF",
+      "type": 16
+    },
+    {
+      "id": 1035240047,
+      "name": "只有今天稍微當個壞孩子之太晶爆發：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": -3,
+      "color": "#BF80FF",
+      "type": 16
+    }
+  ]
+}

@@ -1,0 +1,1134 @@
+{
+  "trainer": {
+    "id": "10111000003",
+    "name": "阿渡",
+    "actor": "阿渡",
+    "actorId": "ch0111_00_wataru",
+    "rarity": 5,
+    "role": 0,
+    "exRole": 5,
+    "ex": true,
+    "exclusivity": "Variety",
+    "maxBonusLevel": 5
+  },
+  "scoutMethod": 1,
+  "scheduleId": "chara_7110_1209_FOREVER",
+  "themes": [
+    {
+      "name": "飛行屬性／攻擊",
+      "description": "僅在我方使出飛行屬性攻擊時，攻擊和特攻提升30",
+      "tag": "飛行",
+      "category": 1
+    },
+    {
+      "name": "關都／攻擊",
+      "description": "我方全體拍組的攻擊和特攻提升8",
+      "tag": "關都",
+      "category": 2
+    },
+    {
+      "name": "冠軍／攻擊",
+      "description": "我方全體拍組的攻擊和特攻提升8",
+      "tag": "冠軍",
+      "category": 3
+    },
+    {
+      "name": "披風／攻擊",
+      "description": "我方全體拍組的攻擊和特攻提升9",
+      "tag": "披風",
+      "category": 4
+    }
+  ],
+  "specialAwaking": {
+    "name": "",
+    "description": "",
+    "detail": []
+  },
+  "pokemon": [
+    {
+      "id": "20111000003",
+      "variationType": 0,
+      "vAfterSm": true,
+      "name": "噴火龍",
+      "form": "",
+      "actor": "pm0006_00_lizardon",
+      "gender": 1,
+      "isShiny": false,
+      "type": 10,
+      "weakness": 13,
+      "stat": {
+        "hp": [
+          103,
+          179,
+          251,
+          537,
+          597,
+          657,
+          837
+        ],
+        "atk": [
+          16,
+          63,
+          108,
+          284,
+          320,
+          356,
+          464
+        ],
+        "def": [
+          7,
+          27,
+          45,
+          122,
+          138,
+          154,
+          202
+        ],
+        "spa": [
+          11,
+          47,
+          80,
+          212,
+          240,
+          268,
+          352
+        ],
+        "spd": [
+          10,
+          31,
+          49,
+          126,
+          142,
+          158,
+          206
+        ],
+        "spe": [
+          12,
+          56,
+          98,
+          263,
+          299,
+          335,
+          443
+        ]
+      },
+      "passives": [
+        {
+          "name": "披著披風的王者的氣魄",
+          "description": "上場時,將會發揮下列所有效果。提高自己的攻擊6階段。提高自己的擊中要害率3階段。提高自己的下次物理招式威力增強3階段。",
+          "detail": [
+            {
+              "name": "上場時攻擊提升6",
+              "description": "上場時,會提高自己的攻擊6階段。"
+            },
+            {
+              "name": "上場時擊中要害率提升3",
+              "description": "上場時,會提高自己的擊中要害率3階段。"
+            },
+            {
+              "name": "上場時物理招式增強3",
+              "description": "上場時,會提高自己的下次物理招式威力增強3階段。"
+            }
+          ]
+        },
+        {
+          "name": "龍之飛翔",
+          "description": "一般屬性的招式會變成飛行屬性。招式必定會命中。對手的攻擊不會擊中要害。",
+          "detail": [
+            {
+              "name": "飛行屬性替換",
+              "description": "一般屬性的招式會變成飛行屬性。"
+            },
+            {
+              "name": "必中化",
+              "description": "招式必定會命中。"
+            },
+            {
+              "name": "擊中要害無效",
+              "description": "對手的攻擊不會擊中要害。"
+            }
+          ]
+        },
+        {
+          "name": "首次危機時HP回復4",
+          "description": "首次陷入危機時,會回復自己的HP,約為自己最大HP的40%。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 416,
+          "user": "寶可夢",
+          "name": "終極衝擊",
+          "type": 1,
+          "gauge": 4,
+          "uses": "−",
+          "category": 1,
+          "power": 223,
+          "accuracy": 90,
+          "target": "對手１對拍組",
+          "description": "沒有追加效果。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 182,
+          "user": "寶可夢",
+          "name": "守住",
+          "type": 1,
+          "gauge": 2,
+          "uses": 1,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "自己",
+          "description": "讓自己變成下次傷害防禦狀態。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 6171,
+          "user": "寶可夢",
+          "name": "王龍之劈開",
+          "type": 1,
+          "gauge": 2,
+          "uses": "−",
+          "category": 1,
+          "power": 250,
+          "accuracy": 100,
+          "target": "對手全體拍組",
+          "description": "【開放條件】\n自己使出1次招式時\n【封印條件】\n使出此招式時\n\n容易擊中要害。降低對手的防禦2階段。即使對象為複數,招式的威力也不會降低。當噴火龍已經變成超級噴火龍Y時,還會再提高自己的下次物理招式威力增強2階段。",
+          "tags": "none",
+          "group": 6
+        },
+        {
+          "id": 11116,
+          "user": "訓練師",
+          "name": "看來你有相當的實力",
+          "type": 0,
+          "gauge": 0,
+          "uses": 1,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "自己",
+          "description": "自己發動拍組招式所需的行動數會減少2次。提高自己的下次物理招式威力增強3階段。提高自己的下次拍組招式威力增強5階段。受到自己所剩HP的20%的傷害。",
+          "tags": "Recoil",
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 65200,
+        "user": "寶可夢",
+        "name": "飛在漫長險峻的路之飛行衝擊",
+        "type": 10,
+        "gauge": 0,
+        "uses": "−",
+        "category": 1,
+        "power": 160,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "變成超級噴火龍Y直到對戰結束。",
+        "tags": "none",
+        "group": "Sync"
+      }
+    },
+    {
+      "id": "20111000003",
+      "variationType": 1,
+      "vAfterSm": true,
+      "name": "超級噴火龍Y",
+      "form": "",
+      "actor": "pm0006_52_megalizardonY",
+      "gender": 1,
+      "isShiny": false,
+      "type": 10,
+      "weakness": 13,
+      "stat": {
+        "hp": [
+          103,
+          179,
+          251,
+          537,
+          597,
+          657,
+          837
+        ],
+        "atk": [
+          19,
+          75,
+          129,
+          340,
+          384,
+          427,
+          556
+        ],
+        "def": [
+          7,
+          27,
+          45,
+          122,
+          138,
+          154,
+          202
+        ],
+        "spa": [
+          11,
+          47,
+          80,
+          212,
+          240,
+          268,
+          352
+        ],
+        "spd": [
+          10,
+          31,
+          49,
+          126,
+          142,
+          158,
+          206
+        ],
+        "spe": [
+          14,
+          67,
+          117,
+          315,
+          358,
+          402,
+          531
+        ]
+      },
+      "passives": [
+        {
+          "name": "披著披風的王者的氣魄",
+          "description": "上場時,將會發揮下列所有效果。提高自己的攻擊6階段。提高自己的擊中要害率3階段。提高自己的下次物理招式威力增強3階段。",
+          "detail": [
+            {
+              "name": "上場時攻擊提升6",
+              "description": "上場時,會提高自己的攻擊6階段。"
+            },
+            {
+              "name": "上場時擊中要害率提升3",
+              "description": "上場時,會提高自己的擊中要害率3階段。"
+            },
+            {
+              "name": "上場時物理招式增強3",
+              "description": "上場時,會提高自己的下次物理招式威力增強3階段。"
+            }
+          ]
+        },
+        {
+          "name": "龍之飛翔",
+          "description": "一般屬性的招式會變成飛行屬性。招式必定會命中。對手的攻擊不會擊中要害。",
+          "detail": [
+            {
+              "name": "飛行屬性替換",
+              "description": "一般屬性的招式會變成飛行屬性。"
+            },
+            {
+              "name": "必中化",
+              "description": "招式必定會命中。"
+            },
+            {
+              "name": "擊中要害無效",
+              "description": "對手的攻擊不會擊中要害。"
+            }
+          ]
+        },
+        {
+          "name": "首次危機時HP回復4",
+          "description": "首次陷入危機時,會回復自己的HP,約為自己最大HP的40%。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 416,
+          "user": "寶可夢",
+          "name": "終極衝擊",
+          "type": 1,
+          "gauge": 4,
+          "uses": "−",
+          "category": 1,
+          "power": 223,
+          "accuracy": 90,
+          "target": "對手１對拍組",
+          "description": "沒有追加效果。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 182,
+          "user": "寶可夢",
+          "name": "守住",
+          "type": 1,
+          "gauge": 2,
+          "uses": 1,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "自己",
+          "description": "讓自己變成下次傷害防禦狀態。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 6171,
+          "user": "寶可夢",
+          "name": "王龍之劈開",
+          "type": 1,
+          "gauge": 2,
+          "uses": "−",
+          "category": 1,
+          "power": 250,
+          "accuracy": 100,
+          "target": "對手全體拍組",
+          "description": "【開放條件】\n自己使出1次招式時\n【封印條件】\n使出此招式時\n\n容易擊中要害。降低對手的防禦2階段。即使對象為複數,招式的威力也不會降低。當噴火龍已經變成超級噴火龍Y時,還會再提高自己的下次物理招式威力增強2階段。",
+          "tags": "none",
+          "group": 6
+        },
+        {
+          "id": 11116,
+          "user": "訓練師",
+          "name": "看來你有相當的實力",
+          "type": 0,
+          "gauge": 0,
+          "uses": 1,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "自己",
+          "description": "自己發動拍組招式所需的行動數會減少2次。提高自己的下次物理招式威力增強3階段。提高自己的下次拍組招式威力增強5階段。受到自己所剩HP的20%的傷害。",
+          "tags": "Recoil",
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 65200,
+        "user": "寶可夢",
+        "name": "飛在漫長險峻的路之飛行衝擊",
+        "type": 10,
+        "gauge": 0,
+        "uses": "−",
+        "category": 1,
+        "power": 160,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "變成超級噴火龍Y直到對戰結束。",
+        "tags": "none",
+        "group": "Sync"
+      },
+      "scale": [
+        100,
+        120,
+        100,
+        100,
+        100,
+        120
+      ]
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "阿渡（２）專用潛能餅乾１",
+      "skills": [
+        {
+          "name": "招式後招式計量槽增加9",
+          "description": "招式成功時,會幫自己增加1條招式計量槽。",
+          "detail": [],
+          "rate": 100
+        }
+      ]
+    },
+    {
+      "cookieName": "阿渡專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "效果絕佳時威力提升5",
+          "description": "當效果絕佳時,會提高該招式的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "擊中要害時威力提升3",
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時賦予物理/特殊增強2",
+          "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
+          "detail": [],
+          "rate": 33
+        }
+      ]
+    }
+  ],
+  "grid": [
+    {
+      "id": 1011100300,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1011100301,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1011100302,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1011100303,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1011100304,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1011100305,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1011100306,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1011100307,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1011100308,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1011100309,
+      "name": "終極衝擊：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 1,
+      "y": 2,
+      "color": "#47D147",
+      "type": 1
+    },
+    {
+      "id": 1011100310,
+      "name": "終極衝擊：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": 2,
+      "color": "#47D147",
+      "type": 1
+    },
+    {
+      "id": 1011100311,
+      "name": "終極衝擊：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 3,
+      "y": 2,
+      "color": "#47D147",
+      "type": 1
+    },
+    {
+      "id": 1011100312,
+      "name": "終極衝擊：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 1,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 1
+    },
+    {
+      "id": 1011100313,
+      "name": "解除異常狀態",
+      "description": "當自己首次陷入異常狀態時,會解除自己的異常狀態。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1011100314,
+      "name": "攻擊 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": 3,
+      "y": 3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1011100315,
+      "name": "上場時物理招式增強3",
+      "description": "上場時,會提高自己的下次物理招式威力增強3階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 1,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1011100316,
+      "name": "攻擊時防禦下降9",
+      "description": "使出招式攻擊成功時,會降低對手的防禦1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1011100317,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1011100318,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1011100319,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -3,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1011100320,
+      "name": "王龍之劈開：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -1,
+      "y": -2,
+      "color": "#47D147",
+      "type": 1
+    },
+    {
+      "id": 1011100321,
+      "name": "王龍之劈開：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": -2,
+      "color": "#47D147",
+      "type": 1
+    },
+    {
+      "id": 1011100322,
+      "name": "王龍之劈開：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -3,
+      "y": -2,
+      "color": "#47D147",
+      "type": 1
+    },
+    {
+      "id": 1011100323,
+      "name": "王龍之劈開：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -1,
+      "y": -3,
+      "color": "#FF0066",
+      "type": 1
+    },
+    {
+      "id": 1011100324,
+      "name": "解除妨害狀態",
+      "description": "當自己首次陷入畏縮、混亂或束縛狀態時,會解除該狀態。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -2,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1011100325,
+      "name": "守住：招式後速度提升2",
+      "description": "招式成功時,會提高自己的速度2階段。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -3,
+      "y": -3,
+      "color": "#FF0066",
+      "type": 1
+    },
+    {
+      "id": 1011100326,
+      "name": "登場時計數加速1",
+      "description": "上場時,會讓發動拍組招式所需的行動數減少1次。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -1,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1011100327,
+      "name": "上場時拍組招式增強5",
+      "description": "上場時,會提高自己的下次拍組招式威力增強5階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1011100328,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1011100329,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1011100330,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1011100331,
+      "name": "王龍之劈開：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 1,
+      "y": -2,
+      "color": "#47D147",
+      "type": 1
+    },
+    {
+      "id": 1011100332,
+      "name": "王龍之劈開：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 3,
+      "y": -3,
+      "color": "#47D147",
+      "type": 1
+    },
+    {
+      "id": 1011100333,
+      "name": "藍天領域時招式計量槽加速2",
+      "description": "當領域為藍天領域時,招式計量槽會累積得較快。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 2,
+      "x": 2,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1011100334,
+      "name": "看來你有相當的實力：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 1,
+      "y": -3,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1011100335,
+      "name": "訓練家出招後下次不消耗計量槽9",
+      "description": "在訓練家使出招式時,會讓自己變成下次計量槽消耗0狀態。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 3,
+      "x": 3,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1011100336,
+      "name": "首次訓練家招式後變成藍天領域",
+      "description": "在訓練家首次使出招式時,會將領域變成藍天領域。(藍天領域會提高飛行屬性的攻擊的威力。)",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1011100337,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1011100338,
+      "name": "攻擊下降無效",
+      "description": "攻擊不會降低。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": -3,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1011100339,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1011100340,
+      "name": "終極衝擊：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -1,
+      "y": 2,
+      "color": "#47D147",
+      "type": 1
+    },
+    {
+      "id": 1011100341,
+      "name": "終極衝擊：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -3,
+      "y": 3,
+      "color": "#47D147",
+      "type": 1
+    },
+    {
+      "id": 1011100342,
+      "name": "拍組招式後附帶回復",
+      "description": "使出拍組招式後,會讓自己變成附帶回復狀態。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -2,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1011100343,
+      "name": "HP + 20",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": -1,
+      "y": 3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1011100344,
+      "name": "依攻擊升幅拍組招式↑",
+      "description": "自己的攻擊提高得越多,拍組招式的威力就提高得越多。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -3,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1011100345,
+      "name": "拍組招式瞄準要害1",
+      "description": "用拍組招式攻擊時,容易擊中要害。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1011100346,
+      "name": "飛在漫長險峻的路之飛行衝擊：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": 3,
+      "color": "#BF80FF",
+      "type": 10
+    },
+    {
+      "id": 1011100347,
+      "name": "飛在漫長險峻的路之飛行衝擊：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": -3,
+      "color": "#BF80FF",
+      "type": 10
+    },
+    {
+      "id": 1011100348,
+      "name": "飛在漫長險峻的路之飛行衝擊：威力 + 30",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -4,
+      "y": 2,
+      "color": "#BF80FF",
+      "type": 10
+    },
+    {
+      "id": 1011100349,
+      "name": "飛在漫長險峻的路之飛行衝擊：威力 + 30",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -4,
+      "y": 1,
+      "color": "#BF80FF",
+      "type": 10
+    },
+    {
+      "id": 1011100350,
+      "name": "飛在漫長險峻的路之飛行衝擊：威力 + 30",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -4,
+      "y": 0,
+      "color": "#BF80FF",
+      "type": 10
+    }
+  ]
+}

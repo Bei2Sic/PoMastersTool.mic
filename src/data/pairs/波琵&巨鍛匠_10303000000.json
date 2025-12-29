@@ -1,0 +1,970 @@
+{
+  "trainer": {
+    "id": "10303000000",
+    "name": "波琵",
+    "actor": "波琵",
+    "actorId": "ch0303_00_poppy",
+    "rarity": 5,
+    "role": 0,
+    "exRole": 4,
+    "ex": true,
+    "exclusivity": "Pokefair",
+    "maxBonusLevel": 10
+  },
+  "scoutMethod": 1,
+  "scheduleId": "chara_6040_0516_FOREVER",
+  "themes": [
+    {
+      "name": "鋼屬性／攻擊",
+      "description": "僅在我方使出鋼屬性攻擊時，攻擊和特攻提升30",
+      "tag": "鋼",
+      "category": 1
+    },
+    {
+      "name": "帕底亞／攻擊",
+      "description": "我方全體拍組的攻擊和特攻提升8",
+      "tag": "帕底亞",
+      "category": 2
+    },
+    {
+      "name": "四天王／攻擊",
+      "description": "我方全體拍組的攻擊和特攻提升8",
+      "tag": "四天王",
+      "category": 3
+    },
+    {
+      "name": "大小姐／攻擊",
+      "description": "我方全體拍組的攻擊和特攻提升9",
+      "tag": "大小姐",
+      "category": 999
+    },
+    {
+      "name": "我行我素／攻擊",
+      "description": "我方全體拍組的攻擊和特攻提升9",
+      "tag": "我行我素",
+      "category": 999
+    }
+  ],
+  "specialAwaking": {
+    "name": "打起精神來,沒什麼大不了",
+    "description": "在訓練家首次使出招式時,會讓發動拍組招式所需的行動數減少2次。招式必定會命中。對手的攻擊不會擊中要害。",
+    "detail": [
+      {
+        "name": "首次訓練家招式後計數加速2",
+        "description": "在訓練家首次使出招式時,會讓發動拍組招式所需的行動數減少2次。"
+      },
+      {
+        "name": "必中化",
+        "description": "招式必定會命中。"
+      },
+      {
+        "name": "擊中要害無效",
+        "description": "對手的攻擊不會擊中要害。"
+      }
+    ]
+  },
+  "pokemon": [
+    {
+      "id": "20303000000",
+      "variationType": 0,
+      "vAfterSm": false,
+      "name": "巨鍛匠",
+      "form": "",
+      "actor": "pm0959_00_00_dekanuchan",
+      "gender": 2,
+      "isShiny": false,
+      "type": 17,
+      "weakness": 2,
+      "stat": {
+        "hp": [
+          98,
+          169,
+          235,
+          499,
+          555,
+          611,
+          779
+        ],
+        "atk": [
+          19,
+          81,
+          141,
+          372,
+          420,
+          468,
+          612
+        ],
+        "def": [
+          10,
+          27,
+          42,
+          108,
+          120,
+          132,
+          168
+        ],
+        "spa": [
+          11,
+          47,
+          80,
+          212,
+          240,
+          268,
+          352
+        ],
+        "spd": [
+          12,
+          31,
+          49,
+          115,
+          131,
+          147,
+          195
+        ],
+        "spe": [
+          13,
+          55,
+          94,
+          248,
+          280,
+          312,
+          408
+        ]
+      },
+      "passives": [
+        {
+          "name": "對手中寶可夢變化招式時防禦下降2階段9",
+          "description": "當使出以對手為對象的寶可夢的變化招式時,會降低對手的防禦2階段。",
+          "detail": []
+        },
+        {
+          "name": "寶可夢招式及拍組招式擊中要害化",
+          "description": "除了特定情況之外,只要寶可夢招式或拍組招式的攻擊命中就必定會擊中要害。",
+          "detail": []
+        },
+        {
+          "name": "全種類下降無效",
+          "description": "所有的能力都不會降低。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 583,
+          "user": "寶可夢",
+          "name": "嬉鬧",
+          "type": 18,
+          "gauge": 3,
+          "uses": "−",
+          "category": 1,
+          "power": 111,
+          "accuracy": 90,
+          "target": "對手１對拍組",
+          "description": "有10%的機率會降低對手的攻擊1階段。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 86,
+          "user": "寶可夢",
+          "name": "電磁波",
+          "type": 4,
+          "gauge": 2,
+          "uses": "−",
+          "category": 0,
+          "power": 0,
+          "accuracy": 90,
+          "target": "對手１對拍組",
+          "description": "讓對手陷入麻痺狀態。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 6058,
+          "user": "寶可夢",
+          "name": "硬梆梆巨力錘",
+          "type": 17,
+          "gauge": 4,
+          "uses": "−",
+          "category": 1,
+          "power": 450,
+          "accuracy": 100,
+          "target": "對手１對拍組",
+          "description": "【開放條件】\n自己使出1次招式時\n【封印條件】\n使出此招式時\n\n沒有追加效果。",
+          "tags": "none",
+          "group": 6
+        },
+        {
+          "id": 13030,
+          "user": "訓練師",
+          "name": "我是很厲害的喔!",
+          "type": 0,
+          "gauge": 0,
+          "uses": 1,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "自己",
+          "description": "提高自己的攻擊6階段。讓自己變成下次計量槽消耗0狀態。提高自己的下次物理招式威力增強1階段。",
+          "tags": "none",
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 104100,
+        "user": "寶可夢",
+        "name": "硬梆梆超強的喔之巨力錘",
+        "type": 17,
+        "gauge": 0,
+        "uses": "−",
+        "category": 1,
+        "power": 250,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "沒有追加效果。",
+        "tags": "none",
+        "group": "Sync"
+      }
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "波琵專用潛能餅乾１",
+      "skills": [
+        {
+          "name": "攻擊麻痺中的對手時防禦下降9",
+          "description": "當對手陷入麻痺狀態且使出招式攻擊成功時,會降低對手的防禦1階段。",
+          "detail": [],
+          "rate": 100
+        }
+      ]
+    },
+    {
+      "cookieName": "波琵專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "效果絕佳時威力提升5",
+          "description": "當效果絕佳時,會提高該招式的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "擊中要害時威力提升3",
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時賦予物理/特殊增強2",
+          "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
+          "detail": [],
+          "rate": 33
+        }
+      ]
+    }
+  ],
+  "grid": [
+    {
+      "id": 1030300000,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1030300001,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1030300002,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1030300003,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1030300004,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1030300005,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1030300006,
+      "name": "解除異常狀態",
+      "description": "當自己首次陷入異常狀態時,會解除自己的異常狀態。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 0,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1030300007,
+      "name": "攻擊時防禦下降9",
+      "description": "使出招式攻擊成功時,會降低對手的防禦1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 4,
+      "x": 0,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1030300008,
+      "name": "首次拍組招式後計數加速1",
+      "description": "首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 5,
+      "x": -1,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1030300009,
+      "name": "解除妨害狀態",
+      "description": "當自己首次陷入畏縮、混亂或束縛狀態時,會解除該狀態。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 0,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1030300010,
+      "name": "對手中寶可夢變化招式時攻擊下降2階段9",
+      "description": "當使出以對手為對象的寶可夢的變化招式時,會降低對手的攻擊2階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 4,
+      "x": 0,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1030300011,
+      "name": "拍組招式後賦予物理增強(2)9",
+      "description": "使出拍組招式後,會提高自己的下次物理招式威力增強2階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 5,
+      "x": 1,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1030300012,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1030300013,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1030300014,
+      "name": "硬梆梆巨力錘：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 3,
+      "y": 1,
+      "color": "#47D147",
+      "type": 17
+    },
+    {
+      "id": 1030300015,
+      "name": "硬梆梆巨力錘：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 1,
+      "y": 2,
+      "color": "#47D147",
+      "type": 17
+    },
+    {
+      "id": 1030300016,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1030300017,
+      "name": "畏縮無效",
+      "description": "不會陷入畏縮狀態。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": 3,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1030300018,
+      "name": "電磁波：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 1,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 4
+    },
+    {
+      "id": 1030300019,
+      "name": "電磁波：命中率 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 2,
+      "x": 2,
+      "y": 3,
+      "color": "#47D147",
+      "type": 4
+    },
+    {
+      "id": 1030300020,
+      "name": "寶可夢出招後速度↑9",
+      "description": "在寶可夢使出招式時,會提高自己的速度1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 2,
+      "x": 3,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1030300021,
+      "name": "無傷上場時挺住",
+      "description": "在HP全滿的狀態上場時,會讓自己變成挺住狀態。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 1,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1030300022,
+      "name": "硬梆梆超強的喔之巨力錘：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 2,
+      "y": 4,
+      "color": "#BF80FF",
+      "type": 17
+    },
+    {
+      "id": 1030300023,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1030300024,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1030300025,
+      "name": "沙暴無效",
+      "description": "不會受到沙暴所造成的傷害。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": -3,
+      "y": -1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1030300026,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1030300027,
+      "name": "硬梆梆巨力錘：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": -2,
+      "color": "#47D147",
+      "type": 17
+    },
+    {
+      "id": 1030300028,
+      "name": "硬梆梆巨力錘：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -3,
+      "y": -2,
+      "color": "#47D147",
+      "type": 17
+    },
+    {
+      "id": 1030300029,
+      "name": "硬梆梆巨力錘：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -1,
+      "y": -3,
+      "color": "#47D147",
+      "type": 17
+    },
+    {
+      "id": 1030300030,
+      "name": "我是很厲害的喔!：招式後場地招式計量槽加速9",
+      "description": "招式成功時,會讓我方場地變成招式計量槽加速狀態。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -2,
+      "y": -3,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1030300031,
+      "name": "我是很厲害的喔!：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -3,
+      "y": -3,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1030300032,
+      "name": "依攻擊升幅拍組招式↑",
+      "description": "自己的攻擊提高得越多,拍組招式的威力就提高得越多。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -1,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1030300033,
+      "name": "硬梆梆超強的喔之巨力錘：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": -2,
+      "y": -4,
+      "color": "#BF80FF",
+      "type": 17
+    },
+    {
+      "id": 1030300034,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1030300035,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1030300036,
+      "name": "嬉鬧：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": -2,
+      "color": "#47D147",
+      "type": 18
+    },
+    {
+      "id": 1030300037,
+      "name": "嬉鬧：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 1,
+      "y": -2,
+      "color": "#47D147",
+      "type": 18
+    },
+    {
+      "id": 1030300038,
+      "name": "嬉鬧：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 3,
+      "y": -3,
+      "color": "#47D147",
+      "type": 18
+    },
+    {
+      "id": 1030300039,
+      "name": "攻擊 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": 2,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1030300040,
+      "name": "上場時命中率提升1",
+      "description": "上場時,會提高自己的命中率1階段。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 1,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1030300041,
+      "name": "硬梆梆巨力錘：寶可夢出招後下次不消耗計量槽9",
+      "description": "在寶可夢使出招式時,會讓自己變成下次計量槽消耗0狀態。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 3,
+      "y": -4,
+      "color": "#FF0066",
+      "type": 17
+    },
+    {
+      "id": 1030300042,
+      "name": "寶可夢使出變化招式時招式計量槽增加2",
+      "description": "在寶可夢使出變化招式時,會幫自己增加2條招式計量槽。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1030300043,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1030300044,
+      "name": "嬉鬧：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -3,
+      "y": 2,
+      "color": "#47D147",
+      "type": 18
+    },
+    {
+      "id": 1030300045,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1030300046,
+      "name": "嬉鬧：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -1,
+      "y": 2,
+      "color": "#47D147",
+      "type": 18
+    },
+    {
+      "id": 1030300047,
+      "name": "嬉鬧：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -3,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 18
+    },
+    {
+      "id": 1030300048,
+      "name": "嬉鬧：效果絕佳時威力提升5",
+      "description": "當效果絕佳時,會提高該招式的威力。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -2,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 18
+    },
+    {
+      "id": 1030300049,
+      "name": "嬉鬧：命中率 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 2,
+      "x": -1,
+      "y": 3,
+      "color": "#47D147",
+      "type": 18
+    },
+    {
+      "id": 1030300050,
+      "name": "拍組招式後下次計量槽消耗0",
+      "description": "使出拍組招式後,會讓自己變成下次計量槽消耗0狀態。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -3,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1030300051,
+      "name": "嬉鬧：對手麻痺時威力提升5",
+      "description": "當對手陷入麻痺狀態時,會提高自己的招式的威力。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": 4,
+      "color": "#FF0066",
+      "type": 18
+    },
+    {
+      "id": 1030300052,
+      "name": "硬梆梆超強的喔之巨力錘：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": 3,
+      "color": "#BF80FF",
+      "type": 17
+    },
+    {
+      "id": 1030300053,
+      "name": "硬梆梆超強的喔之巨力錘：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": -3,
+      "color": "#BF80FF",
+      "type": 17
+    }
+  ]
+}

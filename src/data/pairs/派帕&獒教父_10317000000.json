@@ -1,0 +1,990 @@
+{
+  "trainer": {
+    "id": "10317000000",
+    "name": "派帕",
+    "actor": "派帕",
+    "actorId": "ch0317_00_pepper",
+    "rarity": 5,
+    "role": 2,
+    "exRole": 3,
+    "ex": true,
+    "exclusivity": "Pokefair",
+    "maxBonusLevel": 10
+  },
+  "scoutMethod": 1,
+  "scheduleId": "chara_6070_0810_FOREVER",
+  "themes": [
+    {
+      "name": "惡屬性／輔助",
+      "description": "我方全體拍組最大HP提升60",
+      "tag": "惡",
+      "category": 1
+    },
+    {
+      "name": "帕底亞／輔助",
+      "description": "我方全體拍組最大HP提升13",
+      "tag": "帕底亞",
+      "category": 2
+    },
+    {
+      "name": "勁敵／輔助",
+      "description": "我方全體拍組最大HP提升13",
+      "tag": "勁敵",
+      "category": 3
+    },
+    {
+      "name": "烹飪／輔助",
+      "description": "我方全體拍組最大HP提升15",
+      "tag": "烹飪",
+      "category": 999
+    },
+    {
+      "name": "知識豐富／輔助",
+      "description": "我方全體拍組最大HP提升15",
+      "tag": "知識豐富",
+      "category": 999
+    }
+  ],
+  "specialAwaking": {
+    "name": "活力充沛派",
+    "description": "當對手陷入禁止替換狀態時,會提高我方全體拍組的招式和拍組招式的威力。使出招式攻擊成功時,會降低對手的防禦1階段。",
+    "detail": [
+      {
+        "name": "對手禁止替換時拍組招式↑G3",
+        "description": "當對手陷入禁止替換狀態時,會提高我方全體拍組的拍組招式的威力。"
+      },
+      {
+        "name": "對手禁止替換時威力↑G2",
+        "description": "當對手陷入禁止替換狀態時,會提高我方全體拍組的招式的威力。"
+      },
+      {
+        "name": "攻擊時防禦下降9",
+        "description": "使出招式攻擊成功時,會降低對手的防禦1階段。"
+      }
+    ]
+  },
+  "pokemon": [
+    {
+      "id": "20317000000",
+      "variationType": 0,
+      "vAfterSm": false,
+      "name": "獒教父",
+      "form": "",
+      "actor": "pm0943_00_00_mafitiff",
+      "gender": 1,
+      "isShiny": false,
+      "type": 16,
+      "weakness": 12,
+      "stat": {
+        "hp": [
+          108,
+          186,
+          261,
+          558,
+          622,
+          686,
+          878
+        ],
+        "atk": [
+          18,
+          39,
+          57,
+          134,
+          150,
+          166,
+          214
+        ],
+        "def": [
+          19,
+          59,
+          95,
+          238,
+          270,
+          302,
+          398
+        ],
+        "spa": [
+          12,
+          33,
+          51,
+          128,
+          144,
+          160,
+          208
+        ],
+        "spd": [
+          16,
+          53,
+          89,
+          232,
+          260,
+          288,
+          372
+        ],
+        "spe": [
+          15,
+          54,
+          90,
+          233,
+          265,
+          297,
+          393
+        ]
+      },
+      "passives": [
+        {
+          "name": "派帕老哥的活力象徵",
+          "description": "受到招式或拍組招式攻擊後,在自己的HP剩下一半以下時,會讓自己有樹果效果的招式的使用次數減少1次並且發揮下列所有效果。回復我方全體拍組的HP,約為最大HP的30%。還會再回復自己的HP,約為自己最大HP的20%。",
+          "detail": []
+        },
+        {
+          "name": "秘傳調味料的功效",
+          "description": "除了特定情況之外,當自己有樹果效果的招式的使用次數為0時,會減輕受到招式攻擊時的傷害。",
+          "detail": []
+        },
+        {
+          "name": "攻擊禁止替換中的對手時5種能力中其中1種↑G9",
+          "description": "當對手陷入禁止替換狀態且使出招式攻擊成功時,會提高我方全體拍組的攻擊、防禦、特攻、特防、速度中的一種能力1階段。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 44,
+          "user": "寶可夢",
+          "name": "咬住",
+          "type": 16,
+          "gauge": 2,
+          "uses": "−",
+          "category": 1,
+          "power": 42,
+          "accuracy": 100,
+          "target": "對手１對拍組",
+          "description": "有30%的機率會讓對手陷入畏縮狀態。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 18500,
+          "user": "寶可夢",
+          "name": "文柚果",
+          "type": 0,
+          "gauge": 0,
+          "uses": 3,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方１對拍組",
+          "description": "回復我方的HP,約為最大HP的20%。",
+          "tags": 33554688,
+          "group": "Regular"
+        },
+        {
+          "id": 6072,
+          "user": "寶可夢",
+          "name": "重振旗鼓之緊咬不放",
+          "type": 16,
+          "gauge": 1,
+          "uses": "−",
+          "category": 1,
+          "power": 150,
+          "accuracy": 0,
+          "target": "對手１對拍組",
+          "description": "【開放條件】\n自己使出1次招式時\n【封印條件】\n無\n\n攻擊必定會命中。讓對手和自己陷入禁止替換狀態。使出此招式攻擊且自己的「文柚果」的剩餘次數為1以上時,會減少該使用次數1次並提高我方全體拍組的下次物理招式威力增強2階段。使出此招式攻擊且自己的「文柚果」的剩餘次數為0時,會回復自己的HP,約為自己最大HP的10%。",
+          "tags": 264,
+          "group": 6
+        },
+        {
+          "id": 13170,
+          "user": "訓練師",
+          "name": "可以開動囉!",
+          "type": 0,
+          "gauge": 0,
+          "uses": 2,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方全體拍組",
+          "description": "提高我方全體拍組的攻擊和擊中要害率2階段。當自己陷入禁止替換狀態時,還會再提高我方全體拍組的攻擊和防禦2階段。",
+          "tags": "none",
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 105700,
+        "user": "寶可夢",
+        "name": "辛香熱情廚師之復仇",
+        "type": 16,
+        "gauge": 0,
+        "uses": "−",
+        "category": 1,
+        "power": 250,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "沒有追加效果。",
+        "tags": "none",
+        "group": "Sync"
+      }
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "派帕專用潛能餅乾１",
+      "skills": [
+        {
+          "name": "首次HP減半時閃避率提升2",
+          "description": "在自己的HP首次剩下一半以下時,會提高自己的閃避率2階段。",
+          "detail": [],
+          "rate": 100
+        }
+      ]
+    },
+    {
+      "cookieName": "派帕專用的塔潛能餅乾２",
+      "skills": [
+        {
+          "name": "派帕的全心全意",
+          "description": "首次上場時,會將領域變成惡顏領域。(惡顏領域會提高惡屬性的攻擊的威力。)領域變成惡顏領域的瞬間在場上時,會延長惡顏領域的持續時間。",
+          "detail": [
+            {
+              "name": "首次上場時變成惡顏領域",
+              "description": "首次上場時,會將領域變成惡顏領域。(惡顏領域會提高惡屬性的攻擊的威力。)"
+            },
+            {
+              "name": "惡顏領域時間延長5",
+              "description": "領域變成惡顏領域的瞬間在場上時,會延長惡顏領域的持續時間。"
+            }
+          ],
+          "rate": 100
+        }
+      ]
+    },
+    {
+      "cookieName": "派帕專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "被攻擊時HP回復G9",
+          "description": "受到招式攻擊時,會回復我方全體拍組的HP。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時物理/特殊增強G1",
+          "description": "首次上場時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時拍組招式增強G3",
+          "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
+          "detail": [],
+          "rate": 33
+        }
+      ]
+    }
+  ],
+  "grid": [
+    {
+      "id": 1031700000,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1031700001,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1031700002,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1031700003,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1031700004,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1031700005,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1031700006,
+      "name": "畏縮無效",
+      "description": "不會陷入畏縮狀態。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 2,
+      "x": 0,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1031700007,
+      "name": "首次上場時防禦提升G2",
+      "description": "上場時,會提高我方全體拍組的防禦2階段。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 4,
+      "x": 0,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1031700008,
+      "name": "無傷時攻擊招式威力↓5",
+      "description": "在HP全滿時,會減輕受到招式攻擊時的傷害。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 5,
+      "x": -2,
+      "y": 5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1031700009,
+      "name": "麻痺無效",
+      "description": "不會陷入麻痺狀態。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 2,
+      "x": 0,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1031700010,
+      "name": "攻擊禁止替換中的對手時命中率↓5",
+      "description": "當對手陷入禁止替換狀態且使出招式攻擊成功時,有60%的機率會降低對手的命中率1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 4,
+      "x": 0,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1031700011,
+      "name": "攻擊禁止替換中的對手時攻擊特攻下降9",
+      "description": "當對手陷入禁止替換狀態且使出招式攻擊成功時,會降低對手的攻擊和特攻1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 5,
+      "x": -2,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1031700012,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1031700013,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1031700014,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1031700015,
+      "name": "防禦下降無效",
+      "description": "防禦不會降低。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": 3,
+      "y": 1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1031700016,
+      "name": "咬住：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": 2,
+      "color": "#47D147",
+      "type": 16
+    },
+    {
+      "id": 1031700017,
+      "name": "咬住：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 1,
+      "y": 3,
+      "color": "#47D147",
+      "type": 16
+    },
+    {
+      "id": 1031700018,
+      "name": "咬住：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 3,
+      "y": 2,
+      "color": "#47D147",
+      "type": 16
+    },
+    {
+      "id": 1031700019,
+      "name": "可以開動囉!：招式後附帶回復G",
+      "description": "招式成功時,會讓我方全體拍組變成附帶回復狀態。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 2,
+      "x": 2,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1031700020,
+      "name": "首次拍組招式後物理增強G2",
+      "description": "首次使出拍組招式時,會提高我方全體拍組的下次物理招式威力增強2階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 1,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1031700021,
+      "name": "解除妨害狀態",
+      "description": "當自己首次陷入畏縮、混亂或束縛狀態時,會解除該狀態。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 3,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1031700022,
+      "name": "咬住：妨害機率提升1",
+      "description": "當招式的追加效果可使對手陷入畏縮、混亂或束縛狀態時,會提高該追加效果的成功率。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 3,
+      "x": 2,
+      "y": 4,
+      "color": "#FF0066",
+      "type": 16
+    },
+    {
+      "id": 1031700023,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1031700024,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -3,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1031700025,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1031700026,
+      "name": "咬住：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": -1,
+      "color": "#47D147",
+      "type": 16
+    },
+    {
+      "id": 1031700027,
+      "name": "咬住：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -3,
+      "y": -1,
+      "color": "#47D147",
+      "type": 16
+    },
+    {
+      "id": 1031700028,
+      "name": "咬住：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -1,
+      "y": -2,
+      "color": "#FF0066",
+      "type": 16
+    },
+    {
+      "id": 1031700029,
+      "name": "可以開動囉!：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -2,
+      "y": -2,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1031700030,
+      "name": "首次拍組招式後下次傷害防禦",
+      "description": "首次使出拍組招式時,會讓自己變成下次傷害防禦狀態。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -3,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1031700031,
+      "name": "拍組招式後解除異常狀態G9",
+      "description": "使出拍組招式後,會解除我方全體拍組的異常狀態。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -1,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1031700032,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1031700033,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1031700034,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1031700035,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": -4,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1031700036,
+      "name": "重振旗鼓之緊咬不放：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": -4,
+      "color": "#47D147",
+      "type": 16
+    },
+    {
+      "id": 1031700037,
+      "name": "重振旗鼓之緊咬不放：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 1,
+      "y": -4,
+      "color": "#47D147",
+      "type": 16
+    },
+    {
+      "id": 1031700038,
+      "name": "重振旗鼓之緊咬不放：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 3,
+      "y": -5,
+      "color": "#47D147",
+      "type": 16
+    },
+    {
+      "id": 1031700039,
+      "name": "咬住：寶可夢出招後速度↑9",
+      "description": "在寶可夢使出招式時,會提高自己的速度1階段。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 2,
+      "x": 2,
+      "y": -5,
+      "color": "#FF0066",
+      "type": 16
+    },
+    {
+      "id": 1031700040,
+      "name": "攻擊禁止替換中的對手時5種能力中其中1種↑G9",
+      "description": "當對手陷入禁止替換狀態且使出招式攻擊成功時,會提高我方全體拍組的攻擊、防禦、特攻、特防、速度中的一種能力1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 1,
+      "y": -5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1031700041,
+      "name": "重振旗鼓之緊咬不放：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 3,
+      "y": -6,
+      "color": "#FF0066",
+      "type": 16
+    },
+    {
+      "id": 1031700042,
+      "name": "全種類下降無效",
+      "description": "所有的能力都不會降低。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": -6,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1031700043,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1031700044,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1031700045,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -3,
+      "y": 3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1031700046,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1031700047,
+      "name": "重振旗鼓之緊咬不放：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -1,
+      "y": 3,
+      "color": "#47D147",
+      "type": 16
+    },
+    {
+      "id": 1031700048,
+      "name": "重振旗鼓之緊咬不放：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -3,
+      "y": 4,
+      "color": "#47D147",
+      "type": 16
+    },
+    {
+      "id": 1031700049,
+      "name": "文柚果：HP回復招式回復量增加1",
+      "description": "當自己使出會回復HP的招式時,會提高HP回復量。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 2,
+      "x": -2,
+      "y": 4,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1031700050,
+      "name": "首次拍組招式後挺住G",
+      "description": "首次使出拍組招式時,會讓我方全體拍組變成挺住狀態。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -1,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1031700051,
+      "name": "擊中要害無效",
+      "description": "對手的攻擊不會擊中要害。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -3,
+      "y": 5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1031700052,
+      "name": "辛香熱情廚師之復仇：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": 3,
+      "color": "#BF80FF",
+      "type": 16
+    },
+    {
+      "id": 1031700053,
+      "name": "辛香熱情廚師之復仇：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": -3,
+      "color": "#BF80FF",
+      "type": 16
+    }
+  ]
+}

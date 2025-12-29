@@ -1,0 +1,1047 @@
+{
+  "trainer": {
+    "id": "10257410000",
+    "name": "奇巴納（２０２５新春）",
+    "actor": "奇巴納",
+    "actorId": "ch0257_41_qibana",
+    "rarity": 5,
+    "role": 2,
+    "exRole": 4,
+    "ex": true,
+    "exclusivity": "Seasonal",
+    "maxBonusLevel": 5
+  },
+  "scoutMethod": 1,
+  "scheduleId": "chara_6120_0103_FOREVER",
+  "themes": [
+    {
+      "name": "地面屬性／輔助",
+      "description": "我方全體拍組最大HP提升60",
+      "tag": "地面",
+      "category": 1
+    },
+    {
+      "name": "伽勒爾／輔助",
+      "description": "我方全體拍組最大HP提升13",
+      "tag": "伽勒爾",
+      "category": 2
+    },
+    {
+      "name": "道館館主／輔助",
+      "description": "我方全體拍組最大HP提升13",
+      "tag": "道館館主",
+      "category": 3
+    },
+    {
+      "name": "季節服裝／輔助",
+      "description": "我方全體拍組最大HP提升15",
+      "tag": "季節服裝",
+      "category": 4
+    },
+    {
+      "name": "圍巾／輔助",
+      "description": "我方全體拍組最大HP提升15",
+      "tag": "圍巾",
+      "category": 4
+    }
+  ],
+  "specialAwaking": {
+    "name": "",
+    "description": "",
+    "detail": []
+  },
+  "pokemon": [
+    {
+      "id": "20257410000",
+      "variationType": 0,
+      "vAfterSm": false,
+      "name": "沙螺蟒",
+      "form": "",
+      "actor": "pm0844_00_00_sadaija",
+      "gender": 1,
+      "isShiny": false,
+      "type": 9,
+      "weakness": 3,
+      "stat": {
+        "hp": [
+          96,
+          174,
+          249,
+          546,
+          610,
+          674,
+          866
+        ],
+        "atk": [
+          19,
+          49,
+          76,
+          186,
+          210,
+          234,
+          306
+        ],
+        "def": [
+          18,
+          58,
+          97,
+          251,
+          283,
+          315,
+          411
+        ],
+        "spa": [
+          13,
+          38,
+          62,
+          150,
+          170,
+          190,
+          250
+        ],
+        "spd": [
+          10,
+          49,
+          85,
+          228,
+          260,
+          292,
+          388
+        ],
+        "spe": [
+          13,
+          50,
+          86,
+          229,
+          257,
+          285,
+          369
+        ]
+      },
+      "passives": [
+        {
+          "name": "掀起猛烈的沙暴吧!",
+          "description": "受到招式攻擊時,會將天氣變成沙暴。受到招式攻擊時,會提高我方全體拍組的閃避率2階段。我方全體拍組不會受到沙暴所造成的傷害。",
+          "detail": [
+            {
+              "name": "被攻擊時變成沙暴9",
+              "description": "受到招式攻擊時,會將天氣變成沙暴。"
+            },
+            {
+              "name": "沙暴無效G",
+              "description": "我方全體拍組不會受到沙暴所造成的傷害。"
+            },
+            {
+              "name": "被攻擊時閃避率2↑G9",
+              "description": "受到招式攻擊時,會提高我方全體拍組的閃避率2階段。"
+            }
+          ]
+        },
+        {
+          "name": "天翻地覆的紀念自拍",
+          "description": "當對手使出以自己為對象的攻擊招式失敗時,會回復自己的HP。當對手使出以自己為對象的攻擊招式失敗時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。當對手使出以自己為對象的攻擊招式失敗時,會幫自己增加1條招式計量槽。",
+          "detail": []
+        },
+        {
+          "name": "攻擊麻痺中的對手時HP回復G9",
+          "description": "當對手陷入麻痺狀態且使出招式攻擊成功時,會回復我方全體拍組的HP。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 189,
+          "user": "寶可夢",
+          "name": "擲泥",
+          "type": 9,
+          "gauge": 1,
+          "uses": "−",
+          "category": 2,
+          "power": 13,
+          "accuracy": 90,
+          "target": "對手１對拍組",
+          "description": "降低對手的命中率1階段。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 157,
+          "user": "寶可夢",
+          "name": "岩崩",
+          "type": 13,
+          "gauge": 3,
+          "uses": "−",
+          "category": 1,
+          "power": 105,
+          "accuracy": 90,
+          "target": "對手全體拍組",
+          "description": "有30%的機率會讓對手陷入畏縮狀態。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 6098,
+          "user": "寶可夢",
+          "name": "沙縛之大蛇瞪眼",
+          "type": 1,
+          "gauge": 2,
+          "uses": "−",
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "對手全體拍組",
+          "description": "【開放條件】\n天氣變成沙暴時\n【封印條件】\n沙暴被解除時\n\n招式必定會命中。降低對手的防禦、特防和速度1階段。讓對手陷入麻痺狀態。",
+          "tags": "SureHit",
+          "group": 6
+        },
+        {
+          "id": 12578,
+          "user": "訓練師",
+          "name": "別小看人了!",
+          "type": 0,
+          "gauge": 0,
+          "uses": 1,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方全體拍組",
+          "description": "自己發動拍組招式所需的行動數會減少1次。提高我方全體拍組的擊中要害率3階段。分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
+          "tags": 8388608,
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 114100,
+        "user": "寶可夢",
+        "name": "拍下絕讚瞬間之地面衝擊",
+        "type": 9,
+        "gauge": 0,
+        "uses": "−",
+        "category": 1,
+        "power": 250,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "沒有追加效果。",
+        "tags": "none",
+        "group": "Sync"
+      }
+    },
+    {
+      "id": "20257410000",
+      "variationType": 4,
+      "vAfterSm": false,
+      "name": "沙螺蟒",
+      "form": "",
+      "actor": "pm0844_83_00_sadaija",
+      "gender": 1,
+      "isShiny": false,
+      "type": 9,
+      "weakness": 3,
+      "stat": {
+        "hp": [
+          96,
+          174,
+          249,
+          546,
+          610,
+          674,
+          866
+        ],
+        "atk": [
+          19,
+          49,
+          76,
+          186,
+          210,
+          234,
+          306
+        ],
+        "def": [
+          18,
+          58,
+          97,
+          251,
+          283,
+          315,
+          411
+        ],
+        "spa": [
+          13,
+          38,
+          62,
+          150,
+          170,
+          190,
+          250
+        ],
+        "spd": [
+          10,
+          49,
+          85,
+          228,
+          260,
+          292,
+          388
+        ],
+        "spe": [
+          13,
+          50,
+          86,
+          229,
+          257,
+          285,
+          369
+        ]
+      },
+      "passives": [
+        {
+          "name": "掀起猛烈的沙暴吧!",
+          "description": "受到招式攻擊時,會將天氣變成沙暴。受到招式攻擊時,會提高我方全體拍組的閃避率2階段。我方全體拍組不會受到沙暴所造成的傷害。",
+          "detail": [
+            {
+              "name": "被攻擊時變成沙暴9",
+              "description": "受到招式攻擊時,會將天氣變成沙暴。"
+            },
+            {
+              "name": "沙暴無效G",
+              "description": "我方全體拍組不會受到沙暴所造成的傷害。"
+            },
+            {
+              "name": "被攻擊時閃避率2↑G9",
+              "description": "受到招式攻擊時,會提高我方全體拍組的閃避率2階段。"
+            }
+          ]
+        },
+        {
+          "name": "天翻地覆的紀念自拍",
+          "description": "當對手使出以自己為對象的攻擊招式失敗時,會回復自己的HP。當對手使出以自己為對象的攻擊招式失敗時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。當對手使出以自己為對象的攻擊招式失敗時,會幫自己增加1條招式計量槽。",
+          "detail": []
+        },
+        {
+          "name": "攻擊麻痺中的對手時HP回復G9",
+          "description": "當對手陷入麻痺狀態且使出招式攻擊成功時,會回復我方全體拍組的HP。",
+          "detail": []
+        }
+      ],
+      "moves": null,
+      "syncMove": null,
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "movesDynamax": [
+        {
+          "id": 7012,
+          "user": "寶可夢",
+          "name": "極巨大地",
+          "type": 9,
+          "gauge": 0,
+          "uses": "−",
+          "category": 2,
+          "power": 400,
+          "accuracy": 0,
+          "target": "對手１對拍組",
+          "description": "提高我方全體拍組的特防2階段。",
+          "tags": "none",
+          "group": 5
+        },
+        {
+          "id": 7013,
+          "user": "寶可夢",
+          "name": "極巨岩石",
+          "type": 13,
+          "gauge": 0,
+          "uses": "−",
+          "category": 1,
+          "power": 400,
+          "accuracy": 0,
+          "target": "對手１對拍組",
+          "description": "會將天氣變成沙暴。",
+          "tags": "none",
+          "group": 5
+        },
+        {
+          "id": 7039,
+          "user": "寶可夢",
+          "name": "極巨防壁",
+          "type": 1,
+          "gauge": 0,
+          "uses": "−",
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方１對拍組",
+          "description": "讓我方變成下次傷害防禦狀態。",
+          "tags": "none",
+          "group": 5
+        }
+      ]
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "奇巴納（２０２５新春）專用潛能餅乾１",
+      "skills": [
+        {
+          "name": "首次拍組招式後HP中回復G1",
+          "description": "首次使出拍組招式時,會回復我方全體拍組的HP,約為最大HP的20%。",
+          "detail": [],
+          "rate": 100
+        }
+      ]
+    },
+    {
+      "cookieName": "奇巴納（２０２５新春）專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "被攻擊時HP回復G9",
+          "description": "受到招式攻擊時,會回復我方全體拍組的HP。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時物理/特殊增強G1",
+          "description": "首次上場時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時拍組招式增強G3",
+          "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
+          "detail": [],
+          "rate": 33
+        }
+      ]
+    }
+  ],
+  "grid": [
+    {
+      "id": 1025741000,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1025741001,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1025741002,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1025741003,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1025741004,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1025741005,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1025741006,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1025741007,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1025741008,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1025741009,
+      "name": "擲泥：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 3,
+      "y": 1,
+      "color": "#47D147",
+      "type": 9
+    },
+    {
+      "id": 1025741010,
+      "name": "擲泥：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": 2,
+      "color": "#47D147",
+      "type": 9
+    },
+    {
+      "id": 1025741011,
+      "name": "擲泥：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 1,
+      "y": 3,
+      "color": "#47D147",
+      "type": 9
+    },
+    {
+      "id": 1025741012,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1025741013,
+      "name": "擲泥：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 9
+    },
+    {
+      "id": 1025741014,
+      "name": "攻擊麻痺中的對手時攻擊特攻↑G9",
+      "description": "當對手陷入麻痺狀態且使出招式攻擊成功時,會提高我方全體拍組的攻擊和特攻1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 1,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1025741015,
+      "name": "擲泥：命中率 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 2,
+      "x": 3,
+      "y": 3,
+      "color": "#47D147",
+      "type": 9
+    },
+    {
+      "id": 1025741016,
+      "name": "擲泥：招式後招式計量槽增加9",
+      "description": "招式成功時,會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": 4,
+      "color": "#FF0066",
+      "type": 9
+    },
+    {
+      "id": 1025741017,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1025741018,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -3,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1025741019,
+      "name": "岩崩：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -1,
+      "y": -1,
+      "color": "#47D147",
+      "type": 13
+    },
+    {
+      "id": 1025741020,
+      "name": "岩崩：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": -1,
+      "color": "#47D147",
+      "type": 13
+    },
+    {
+      "id": 1025741021,
+      "name": "岩崩：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -3,
+      "y": -1,
+      "color": "#47D147",
+      "type": 13
+    },
+    {
+      "id": 1025741022,
+      "name": "岩崩：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -1,
+      "y": -2,
+      "color": "#FF0066",
+      "type": 13
+    },
+    {
+      "id": 1025741023,
+      "name": "解除妨害狀態",
+      "description": "當自己首次陷入畏縮、混亂或束縛狀態時,會解除該狀態。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -2,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1025741024,
+      "name": "首次危機時HP回復4",
+      "description": "首次陷入危機時,會回復自己的HP,約為自己最大HP的40%。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -3,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1025741025,
+      "name": "岩崩：妨害機率提升1",
+      "description": "當招式的追加效果可使對手陷入畏縮、混亂或束縛狀態時,會提高該追加效果的成功率。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -1,
+      "y": -3,
+      "color": "#FF0066",
+      "type": 13
+    },
+    {
+      "id": 1025741026,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1025741027,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1025741028,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1025741029,
+      "name": "岩崩：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 3,
+      "y": -4,
+      "color": "#47D147",
+      "type": 13
+    },
+    {
+      "id": 1025741030,
+      "name": "岩崩：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": -4,
+      "color": "#47D147",
+      "type": 13
+    },
+    {
+      "id": 1025741031,
+      "name": "岩崩：命中率 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 2,
+      "x": 1,
+      "y": -4,
+      "color": "#47D147",
+      "type": 13
+    },
+    {
+      "id": 1025741032,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": -5,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1025741033,
+      "name": "解除異常狀態",
+      "description": "當自己首次陷入異常狀態時,會解除自己的異常狀態。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": -5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1025741034,
+      "name": "拍組極巨化招式後物理/特殊增強G1",
+      "description": "使出拍組極巨化招式後,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 1,
+      "y": -5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1025741035,
+      "name": "別小看人了!：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 3,
+      "y": -6,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1025741036,
+      "name": "拍組極巨化招式後計數加速2",
+      "description": "使出拍組極巨化招式後, 會讓發動拍組招式所需的行動數減少2次。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": -6,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1025741037,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1025741038,
+      "name": "擲泥：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -1,
+      "y": 2,
+      "color": "#47D147",
+      "type": 9
+    },
+    {
+      "id": 1025741039,
+      "name": "擲泥：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -3,
+      "y": 3,
+      "color": "#47D147",
+      "type": 9
+    },
+    {
+      "id": 1025741040,
+      "name": "麻痺無效",
+      "description": "不會陷入麻痺狀態。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": -2,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1025741041,
+      "name": "沙暴時招式計量槽加速2",
+      "description": "當天氣為沙暴時,招式計量槽會累積得較快。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 2,
+      "x": -1,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1025741042,
+      "name": "沙暴時HP回復1",
+      "description": "當天氣為沙暴時,寶可夢每次行動後都會回復自己的HP。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -3,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1025741043,
+      "name": "麻痺中的對手失敗率提升5",
+      "description": "增加對手因陷入麻痺狀態而導致招式失敗的機率。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -2,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1025741044,
+      "name": "對手失敗時防禦特防提升G9",
+      "description": "當對手使出以自己為對象的攻擊招式失敗時,會提高我方全體拍組的防禦或特防1階段,或是兩種皆會提高1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -1,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1025741045,
+      "name": "對手失敗時能力2↑G9",
+      "description": "當對手使出以自己為對象的攻擊招式失敗時,會提高我方全體拍組的攻擊、防禦、特攻、特防、速度、命中率、閃避率中的一種能力2階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -3,
+      "y": 5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1025741046,
+      "name": "拍下絕讚瞬間之地面衝擊：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": 3,
+      "color": "#BF80FF",
+      "type": 9
+    },
+    {
+      "id": 1025741047,
+      "name": "拍下絕讚瞬間之地面衝擊：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": -3,
+      "color": "#BF80FF",
+      "type": 9
+    }
+  ]
+}

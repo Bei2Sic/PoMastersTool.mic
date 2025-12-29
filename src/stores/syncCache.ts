@@ -18,48 +18,27 @@ export const useSyncCacheStore = defineStore("syncCache", {
         gridsImage: {},
         // 拍组头像资源路径映射
         actorsImage: {},
+
+        savedFilters: {
+            types: [] as string[],
+            weaknesses: [] as string[],
+            roles: [] as string[],
+            exRoles: [] as string[],
+            rarity: [] as number[],
+            regions: [] as string[],
+        },
     }),
     getters: {
         getMeta: (state): SyncMeta[] => {
-            return Object.values(state.cache).map(item => item.meta);
+            return Object.values(state.cache).map((item) => item.meta);
         },
+
+        // 获取筛选状态
+        getFilters: (state) => state.savedFilters,
 
         getRawDataWithTrainerId: (state) => (id: string) => {
             const cacheItem = state.cache[id];
             return cacheItem ? cacheItem.rawData : undefined;
-        },
-
-        // // 拍组选择器列表（所有拍组的元信息，用于渲染选择器）
-        // syncOptions: (state): SyncMeta[] => {
-        //     return Object.values(state.cache).map((item) => item.meta);
-        // },
-
-        // // 按星级筛选
-        // syncsByRarity: (state) => (rarity: RarityIndex) => {
-        //     return Object.values(state.cache)
-        //         .filter((item) => item.meta.rarity === rarity)
-        //         .map((item) => item.meta);
-        // },
-
-        // // 按是否EX筛选
-        // syncsByExRole: (state) => (exRole: ExRoleIndex) => {
-        //     return Object.values(state.cache)
-        //         .filter((item) => item.meta.exRole === exRole)
-        //         .map((item) => item.meta);
-        // },
-
-        // // 按是否EX筛选
-        // syncsByEx: (state) => (isEx: boolean) => {
-        //     return Object.values(state.cache)
-        //         .filter((item) => item.meta.ex === isEx)
-        //         .map((item) => item.meta);
-        // },
-
-        // 按属性筛选
-        syncsByType: (state) => (type: string) => {
-            return Object.values(state.cache)
-                .filter((item) => item.meta.type.includes(type))
-                .map((item) => item.meta);
         },
 
         // 当前选中拍组的完整原始数据（用于创建拍组对象）
@@ -68,12 +47,6 @@ export const useSyncCacheStore = defineStore("syncCache", {
                 ? state.cache[state.selectedTrainerId]?.rawData || null
                 : null;
         },
-
-        // selectedMeta: (state): SyncMeta | null => {
-        //     return state.selectedTrainerId
-        //         ? state.cache[state.selectedTrainerId]?.meta || null
-        //         : null;
-        // },
     },
     actions: {
         /**
@@ -99,11 +72,6 @@ export const useSyncCacheStore = defineStore("syncCache", {
             }
         },
 
-        // async initAssetsMap() {
-        //     this.gridsImage = await loadSyncGridsImageMap();
-        //     this.actorsImage = await loadActorImageMap();
-        // },
-
         /**
          * 切换选中的拍组
          * @param trainerId 拍组ID
@@ -123,6 +91,10 @@ export const useSyncCacheStore = defineStore("syncCache", {
          */
         async refreshSyncCache() {
             await this.initSyncCache();
+        },
+
+        updateFilters(newFilters: any) {
+            this.savedFilters = JSON.parse(JSON.stringify(newFilters));
         },
     },
 });

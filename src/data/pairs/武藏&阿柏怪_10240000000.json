@@ -1,0 +1,282 @@
+{
+  "trainer": {
+    "id": "10240000000",
+    "name": "武藏",
+    "actor": "武藏",
+    "actorId": "ch0240_00_musashi",
+    "rarity": 3,
+    "role": 1,
+    "exRole": -1,
+    "ex": false,
+    "exclusivity": "Regular",
+    "maxBonusLevel": 5
+  },
+  "scoutMethod": 2,
+  "scheduleId": "update_2060_M23_1",
+  "themes": [
+    {
+      "name": "毒屬性／攻擊",
+      "description": "僅在我方使出毒屬性攻擊時，攻擊和特攻提升30",
+      "tag": "毒",
+      "category": 1
+    },
+    {
+      "name": "關都／攻擊",
+      "description": "我方全體拍組的攻擊和特攻提升8",
+      "tag": "關都",
+      "category": 2
+    },
+    {
+      "name": "邪惡組織／攻擊",
+      "description": "我方全體拍組的攻擊和特攻提升8",
+      "tag": "邪惡組織",
+      "category": 3
+    },
+    {
+      "name": "火箭隊永恆不朽！／攻擊",
+      "description": "我方全體拍組的攻擊和特攻提升9",
+      "tag": "火箭隊永恆不朽！",
+      "category": 999
+    }
+  ],
+  "specialAwaking": {
+    "name": "",
+    "description": "",
+    "detail": []
+  },
+  "pokemon": [
+    {
+      "id": "20240000000",
+      "variationType": 0,
+      "vAfterSm": false,
+      "name": "阿柏怪",
+      "form": "",
+      "actor": "pm0024_00_arbok",
+      "gender": 1,
+      "isShiny": false,
+      "type": 8,
+      "weakness": 9,
+      "stat": {
+        "hp": [
+          68,
+          136,
+          181,
+          379,
+          419,
+          459,
+          579
+        ],
+        "atk": [
+          12,
+          56,
+          83,
+          215,
+          243,
+          271,
+          343
+        ],
+        "def": [
+          6,
+          28,
+          40,
+          106,
+          118,
+          130,
+          166
+        ],
+        "spa": [
+          11,
+          55,
+          82,
+          214,
+          242,
+          270,
+          342
+        ],
+        "spd": [
+          7,
+          31,
+          46,
+          112,
+          124,
+          136,
+          172
+        ],
+        "spe": [
+          13,
+          68,
+          104,
+          258,
+          290,
+          322,
+          418
+        ]
+      },
+      "passives": [
+        {
+          "name": "對手中毒時威力提升5",
+          "description": "當對手陷入中毒或劇毒狀態時,會提高自己的招式的威力。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 51,
+          "user": "寶可夢",
+          "name": "溶解液",
+          "type": 8,
+          "gauge": 1,
+          "uses": "−",
+          "category": 2,
+          "power": 19,
+          "accuracy": 100,
+          "target": "對手全體拍組",
+          "description": "有10%的機率會降低對手的特防1階段。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 19080,
+          "user": "寶可夢",
+          "name": "要害攻擊",
+          "type": 0,
+          "gauge": 0,
+          "uses": 2,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "自己",
+          "description": "提高自己的擊中要害率1階段。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 398,
+          "user": "寶可夢",
+          "name": "毒擊",
+          "type": 8,
+          "gauge": 3,
+          "uses": "−",
+          "category": 1,
+          "power": 92,
+          "accuracy": 100,
+          "target": "對手１對拍組",
+          "description": "有30%的機率會讓對手陷入中毒狀態。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 12400,
+          "user": "訓練師",
+          "name": "有一天主角會是我!",
+          "type": 0,
+          "gauge": 0,
+          "uses": 2,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "自己",
+          "description": "解除自己的異常狀態。提高自己的攻擊和特攻2階段。降低自己的防禦和特防1階段。",
+          "tags": "none",
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 80500,
+        "user": "寶可夢",
+        "name": "貫徹愛與真實的邪惡之溶解液",
+        "type": 8,
+        "gauge": 0,
+        "uses": "−",
+        "category": 2,
+        "power": 250,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "沒有追加效果。",
+        "tags": "none",
+        "group": "Sync"
+      }
+    }
+  ],
+  "luckCookies": {},
+  "grid": [
+    {
+      "id": 1024000000,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024000001,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024000002,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024000003,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024000004,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1024000005,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    }
+  ]
+}

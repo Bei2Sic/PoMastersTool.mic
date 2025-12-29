@@ -1,0 +1,1133 @@
+{
+  "trainer": {
+    "id": "10090500000",
+    "name": "大吾（2021週年慶）",
+    "actor": "大吾",
+    "actorId": "ch0090_50_daigo",
+    "rarity": 5,
+    "role": 0,
+    "exRole": 5,
+    "ex": true,
+    "exclusivity": "Master",
+    "maxBonusLevel": 5
+  },
+  "scoutMethod": 1,
+  "scheduleId": "chara_3080_0901_FOREVER",
+  "themes": [
+    {
+      "name": "飛行屬性／攻擊",
+      "description": "僅在我方使出飛行屬性攻擊時，攻擊和特攻提升30",
+      "tag": "飛行",
+      "category": 1
+    },
+    {
+      "name": "豐緣／攻擊",
+      "description": "我方全體拍組的攻擊和特攻提升8",
+      "tag": "豐緣",
+      "category": 2
+    },
+    {
+      "name": "季節服裝／攻擊",
+      "description": "我方全體拍組的攻擊和特攻提升9",
+      "tag": "季節服裝",
+      "category": 4
+    },
+    {
+      "name": "對戰設施的強者／攻擊",
+      "description": "我方全體拍組的攻擊和特攻提升8",
+      "tag": "對戰設施的強者",
+      "category": 3
+    },
+    {
+      "name": "石頭愛好者／攻擊",
+      "description": "我方全體拍組的攻擊和特攻提升9",
+      "tag": "石頭愛好者",
+      "category": 999
+    }
+  ],
+  "specialAwaking": {
+    "name": "",
+    "description": "",
+    "detail": []
+  },
+  "pokemon": [
+    {
+      "id": "20090500000",
+      "variationType": 0,
+      "vAfterSm": true,
+      "name": "烈空坐",
+      "form": "",
+      "actor": "pm0384_00_rayquaza_rare",
+      "gender": 3,
+      "isShiny": true,
+      "type": 10,
+      "weakness": 6,
+      "stat": {
+        "hp": [
+          93,
+          164,
+          230,
+          494,
+          550,
+          606,
+          774
+        ],
+        "atk": [
+          22,
+          55,
+          85,
+          206,
+          230,
+          254,
+          326
+        ],
+        "def": [
+          16,
+          32,
+          47,
+          102,
+          114,
+          126,
+          162
+        ],
+        "spa": [
+          22,
+          55,
+          85,
+          206,
+          230,
+          254,
+          326
+        ],
+        "spd": [
+          16,
+          32,
+          47,
+          102,
+          114,
+          126,
+          162
+        ],
+        "spe": [
+          18,
+          57,
+          93,
+          236,
+          268,
+          300,
+          396
+        ]
+      },
+      "passives": [
+        {
+          "name": "豐緣的先驅",
+          "description": "提高我方全體拍組的招式的威力10%。減輕我方全體拍組受到招式攻擊時的傷害20%。當我方隊伍中擁有豐緣標籤的拍組越多,此效果還會提升得越多。(每增加1對拍組,威力提升+10%,傷害減輕+3%。)(威力最多可提升30%,傷害最多可減輕26%。)",
+          "detail": []
+        },
+        {
+          "name": "能力下降反轉",
+          "description": "當自己的能力降低時,不但不會降低反而等量提高該能力。",
+          "detail": []
+        },
+        {
+          "name": "依能力升幅威力提升",
+          "description": "自己的能力提高得越多,招式的威力就提高得越多。",
+          "detail": []
+        },
+        {
+          "name": "招式後招式計量槽增加4",
+          "description": "招式成功時,有50%的機率會幫自己增加1條招式計量槽。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 619,
+          "user": "寶可夢",
+          "name": "畫龍點睛",
+          "type": 10,
+          "gauge": 4,
+          "uses": "−",
+          "category": 1,
+          "power": 192,
+          "accuracy": 100,
+          "target": "對手１對拍組",
+          "description": "降低自己的防禦和特防1階段。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 19010,
+          "user": "寶可夢",
+          "name": "力量強化",
+          "type": 0,
+          "gauge": 0,
+          "uses": 2,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "自己",
+          "description": "提高自己的攻擊2階段。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 434,
+          "user": "寶可夢",
+          "name": "流星群",
+          "type": 15,
+          "gauge": 3,
+          "uses": "−",
+          "category": 2,
+          "power": 136,
+          "accuracy": 90,
+          "target": "對手１對拍組",
+          "description": "降低自己的特攻2階段。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 10905,
+          "user": "訓練師",
+          "name": "比天還高!",
+          "type": 0,
+          "gauge": 0,
+          "uses": 2,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "自己",
+          "description": "提高自己的擊中要害率3階段。讓自己變成下次效果絕佳威力提升狀態。當烈空坐已經變成超級烈空坐時,還會再提高自己的速度2階段。",
+          "tags": "none",
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 62100,
+        "user": "寶可夢",
+        "name": "抓住榮耀的王者之畫龍點睛",
+        "type": 10,
+        "gauge": 0,
+        "uses": "−",
+        "category": 1,
+        "power": 160,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "變成超級烈空坐直到對戰結束。",
+        "tags": "none",
+        "group": "Sync"
+      }
+    },
+    {
+      "id": "20090500000",
+      "variationType": 1,
+      "vAfterSm": true,
+      "name": "超級烈空坐",
+      "form": "",
+      "actor": "pm0384_51_megarayquaza_rare",
+      "gender": 3,
+      "isShiny": true,
+      "type": 10,
+      "weakness": 6,
+      "stat": {
+        "hp": [
+          93,
+          164,
+          230,
+          494,
+          550,
+          606,
+          774
+        ],
+        "atk": [
+          22,
+          55,
+          85,
+          206,
+          230,
+          254,
+          326
+        ],
+        "def": [
+          16,
+          32,
+          47,
+          102,
+          114,
+          126,
+          162
+        ],
+        "spa": [
+          22,
+          55,
+          85,
+          206,
+          230,
+          254,
+          326
+        ],
+        "spd": [
+          16,
+          32,
+          47,
+          102,
+          114,
+          126,
+          162
+        ],
+        "spe": [
+          25,
+          79,
+          130,
+          330,
+          375,
+          420,
+          554
+        ]
+      },
+      "passives": [
+        {
+          "name": "豐緣的先驅",
+          "description": "提高我方全體拍組的招式的威力10%。減輕我方全體拍組受到招式攻擊時的傷害20%。當我方隊伍中擁有豐緣標籤的拍組越多,此效果還會提升得越多。(每增加1對拍組,威力提升+10%,傷害減輕+3%。)(威力最多可提升30%,傷害最多可減輕26%。)",
+          "detail": []
+        },
+        {
+          "name": "能力下降反轉",
+          "description": "當自己的能力降低時,不但不會降低反而等量提高該能力。",
+          "detail": []
+        },
+        {
+          "name": "依能力升幅威力提升",
+          "description": "自己的能力提高得越多,招式的威力就提高得越多。",
+          "detail": []
+        },
+        {
+          "name": "招式後招式計量槽增加4",
+          "description": "招式成功時,有50%的機率會幫自己增加1條招式計量槽。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 619,
+          "user": "寶可夢",
+          "name": "畫龍點睛",
+          "type": 10,
+          "gauge": 4,
+          "uses": "−",
+          "category": 1,
+          "power": 192,
+          "accuracy": 100,
+          "target": "對手１對拍組",
+          "description": "降低自己的防禦和特防1階段。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 19010,
+          "user": "寶可夢",
+          "name": "力量強化",
+          "type": 0,
+          "gauge": 0,
+          "uses": 2,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "自己",
+          "description": "提高自己的攻擊2階段。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 434,
+          "user": "寶可夢",
+          "name": "流星群",
+          "type": 15,
+          "gauge": 3,
+          "uses": "−",
+          "category": 2,
+          "power": 136,
+          "accuracy": 90,
+          "target": "對手１對拍組",
+          "description": "降低自己的特攻2階段。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 10905,
+          "user": "訓練師",
+          "name": "比天還高!",
+          "type": 0,
+          "gauge": 0,
+          "uses": 2,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "自己",
+          "description": "提高自己的擊中要害率3階段。讓自己變成下次效果絕佳威力提升狀態。當烈空坐已經變成超級烈空坐時,還會再提高自己的速度2階段。",
+          "tags": "none",
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 62100,
+        "user": "寶可夢",
+        "name": "抓住榮耀的王者之畫龍點睛",
+        "type": 10,
+        "gauge": 0,
+        "uses": "−",
+        "category": 1,
+        "power": 160,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "變成超級烈空坐直到對戰結束。",
+        "tags": "none",
+        "group": "Sync"
+      },
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        140
+      ]
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "大吾（２０２１週年慶）專用潛能餅乾１",
+      "skills": [
+        {
+          "name": "天氣正常時拍組招式威力提升4",
+          "description": "在天氣沒有變化時,會提高拍組招式的威力。",
+          "detail": [],
+          "rate": 100
+        }
+      ]
+    },
+    {
+      "cookieName": "大吾（2021週年慶）專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "效果絕佳時威力提升5",
+          "description": "當效果絕佳時,會提高該招式的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "擊中要害時威力提升3",
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時賦予物理/特殊增強2",
+          "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
+          "detail": [],
+          "rate": 33
+        }
+      ]
+    }
+  ],
+  "grid": [
+    {
+      "id": 1009050000,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009050001,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009050002,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009050003,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009050004,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009050005,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009050006,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009050007,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009050008,
+      "name": "畫龍點睛：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 1,
+      "x": 3,
+      "y": 1,
+      "color": "#47D147",
+      "type": 10
+    },
+    {
+      "id": 1009050009,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009050010,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009050011,
+      "name": "畫龍點睛：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 1,
+      "x": 3,
+      "y": 2,
+      "color": "#47D147",
+      "type": 10
+    },
+    {
+      "id": 1009050012,
+      "name": "畫龍點睛：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": 1,
+      "y": 3,
+      "color": "#47D147",
+      "type": 10
+    },
+    {
+      "id": 1009050013,
+      "name": "畫龍點睛：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 10
+    },
+    {
+      "id": 1009050014,
+      "name": "抓住榮耀的王者之畫龍點睛：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 2,
+      "x": 3,
+      "y": 3,
+      "color": "#BF80FF",
+      "type": 10
+    },
+    {
+      "id": 1009050015,
+      "name": "上場時攻擊提升1",
+      "description": "上場時,會提高自己的攻擊1階段。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 3,
+      "x": 1,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009050016,
+      "name": "畫龍點睛：招式後速度提升1",
+      "description": "招式成功時,會提高自己的速度1階段。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 3,
+      "x": 2,
+      "y": 4,
+      "color": "#FF0066",
+      "type": 10
+    },
+    {
+      "id": 1009050017,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009050018,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009050019,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -3,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009050020,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009050021,
+      "name": "力量強化：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 1,
+      "x": -2,
+      "y": -2,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1009050022,
+      "name": "速度 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 1,
+      "x": -3,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009050023,
+      "name": "流星群：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": -1,
+      "y": -3,
+      "color": "#47D147",
+      "type": 15
+    },
+    {
+      "id": 1009050024,
+      "name": "流星群：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": -2,
+      "y": -3,
+      "color": "#47D147",
+      "type": 15
+    },
+    {
+      "id": 1009050025,
+      "name": "抓住榮耀的王者之畫龍點睛：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 2,
+      "x": -3,
+      "y": -3,
+      "color": "#BF80FF",
+      "type": 10
+    },
+    {
+      "id": 1009050026,
+      "name": "天氣正常時威力提升1",
+      "description": "在天氣沒有變化時,會提高招式的威力。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -1,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009050027,
+      "name": "天氣正常時妨害狀態無效",
+      "description": "在天氣沒有變化時,不會陷入畏縮狀態、混亂狀態或束縛狀態。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009050028,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009050029,
+      "name": "流星群：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 1,
+      "x": 3,
+      "y": -2,
+      "color": "#47D147",
+      "type": 15
+    },
+    {
+      "id": 1009050030,
+      "name": "流星群：命中率 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": 2,
+      "y": -2,
+      "color": "#47D147",
+      "type": 15
+    },
+    {
+      "id": 1009050031,
+      "name": "天氣正常時拍組招式威力提升5",
+      "description": "在天氣沒有變化時,會提高拍組招式的威力。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 1,
+      "x": 1,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009050032,
+      "name": "流星群：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": 3,
+      "y": -3,
+      "color": "#47D147",
+      "type": 15
+    },
+    {
+      "id": 1009050033,
+      "name": "流星群：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": -3,
+      "color": "#FF0066",
+      "type": 15
+    },
+    {
+      "id": 1009050034,
+      "name": "流星群：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": 1,
+      "y": -3,
+      "color": "#47D147",
+      "type": 15
+    },
+    {
+      "id": 1009050035,
+      "name": "拍組招式後下次計量槽消耗0",
+      "description": "使出拍組招式後,會讓自己變成下次計量槽消耗0狀態。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 3,
+      "x": 3,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009050036,
+      "name": "流星群：擊中要害時威力提升2",
+      "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 3,
+      "x": 2,
+      "y": -4,
+      "color": "#FF0066",
+      "type": 15
+    },
+    {
+      "id": 1009050037,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009050038,
+      "name": "HP + 20",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 1,
+      "x": -3,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009050039,
+      "name": "比天還高!：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 1,
+      "x": -2,
+      "y": 2,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1009050040,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1009050041,
+      "name": "畫龍點睛：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": -3,
+      "y": 3,
+      "color": "#47D147",
+      "type": 10
+    },
+    {
+      "id": 1009050042,
+      "name": "畫龍點睛：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": -2,
+      "y": 3,
+      "color": "#47D147",
+      "type": 10
+    },
+    {
+      "id": 1009050043,
+      "name": "首次上場時計數加速1",
+      "description": "首次上場時,發動拍組招式所需的行動數會減少1次。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 2,
+      "x": -1,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009050044,
+      "name": "寶可夢出招後解除天氣9",
+      "description": "在寶可夢使出招式時,會解除天氣。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -3,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009050045,
+      "name": "天氣正常時拍組招式威力提升9",
+      "description": "在天氣沒有變化時,會提高拍組招式的威力。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 3,
+      "x": -2,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1009050046,
+      "name": "抓住榮耀的王者之畫龍點睛：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": 3,
+      "color": "#BF80FF",
+      "type": 10
+    },
+    {
+      "id": 1009050047,
+      "name": "抓住榮耀的王者之畫龍點睛：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": -3,
+      "color": "#BF80FF",
+      "type": 10
+    },
+    {
+      "id": 1800100604,
+      "name": "首次上場時&首次拍組招式後計數加速2",
+      "description": "首次上場時,發動拍組招式所需的行動數會減少2次。首次使出拍組招式時,會讓發動拍組招式所需的行動數減少2次。",
+      "detail": [
+        {
+          "name": "首次上場時計數加速2",
+          "description": "首次上場時,發動拍組招式所需的行動數會減少2次。"
+        },
+        {
+          "name": "首次拍組招式後計數加速2",
+          "description": "首次使出拍組招式時,會讓發動拍組招式所需的行動數減少2次。"
+        }
+      ],
+      "energy": 0,
+      "orb": 5,
+      "level": 5,
+      "x": 0,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800100605,
+      "name": "抓住榮耀的王者之畫龍點睛：威力 + 200",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 4,
+      "x": 0,
+      "y": -2,
+      "color": "#BF80FF",
+      "type": 10
+    },
+    {
+      "id": 1800102741,
+      "name": "抓住榮耀的王者之畫龍點睛：威力 + 30",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -4,
+      "y": 2,
+      "color": "#BF80FF",
+      "type": 10
+    },
+    {
+      "id": 1800102742,
+      "name": "抓住榮耀的王者之畫龍點睛：威力 + 30",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -4,
+      "y": 1,
+      "color": "#BF80FF",
+      "type": 10
+    },
+    {
+      "id": 1800102743,
+      "name": "抓住榮耀的王者之畫龍點睛：威力 + 30",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -4,
+      "y": 0,
+      "color": "#BF80FF",
+      "type": 10
+    }
+  ]
+}

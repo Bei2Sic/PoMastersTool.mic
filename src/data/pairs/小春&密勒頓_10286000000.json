@@ -1,0 +1,932 @@
+{
+  "trainer": {
+    "id": "10286000000",
+    "name": "小春",
+    "actor": "小春",
+    "actorId": "ch0286_00_svboy",
+    "rarity": 5,
+    "role": 1,
+    "exRole": 3,
+    "ex": true,
+    "exclusivity": "Master",
+    "maxBonusLevel": 5
+  },
+  "scoutMethod": 1,
+  "scheduleId": "chara_7010_0219_FOREVER",
+  "themes": [
+    {
+      "name": "電屬性／攻擊",
+      "description": "僅在我方使出電屬性攻擊時，攻擊和特攻提升30",
+      "tag": "電",
+      "category": 1
+    },
+    {
+      "name": "帕底亞／攻擊",
+      "description": "我方全體拍組的攻擊和特攻提升8",
+      "tag": "帕底亞",
+      "category": 2
+    },
+    {
+      "name": "主角／攻擊",
+      "description": "我方全體拍組的攻擊和特攻提升8",
+      "tag": "主角",
+      "category": 3
+    },
+    {
+      "name": "烹飪／攻擊",
+      "description": "我方全體拍組的攻擊和特攻提升9",
+      "tag": "烹飪",
+      "category": 999
+    },
+    {
+      "name": "知識豐富／攻擊",
+      "description": "我方全體拍組的攻擊和特攻提升9",
+      "tag": "知識豐富",
+      "category": 999
+    }
+  ],
+  "specialAwaking": {
+    "name": "",
+    "description": "",
+    "detail": []
+  },
+  "pokemon": [
+    {
+      "id": "20286000000",
+      "variationType": 0,
+      "vAfterSm": false,
+      "name": "密勒頓",
+      "form": "完整模式",
+      "actor": "pm1008_11_00_miraidon",
+      "gender": 3,
+      "isShiny": false,
+      "type": 4,
+      "weakness": 18,
+      "stat": {
+        "hp": [
+          110,
+          187,
+          259,
+          545,
+          605,
+          665,
+          845
+        ],
+        "atk": [
+          10,
+          49,
+          85,
+          228,
+          260,
+          292,
+          388
+        ],
+        "def": [
+          11,
+          29,
+          44,
+          110,
+          122,
+          134,
+          170
+        ],
+        "spa": [
+          17,
+          60,
+          99,
+          264,
+          300,
+          336,
+          444
+        ],
+        "spd": [
+          13,
+          33,
+          51,
+          128,
+          144,
+          160,
+          208
+        ],
+        "spe": [
+          16,
+          62,
+          104,
+          280,
+          316,
+          352,
+          460
+        ]
+      },
+      "passives": [
+        {
+          "name": "帕底亞的信念",
+          "description": "提高我方全體拍組的特殊招式威力20%。減輕我方全體拍組受到特殊招式攻擊時的傷害25%。當我方隊伍中擁有帕底亞標籤的拍組越多,此效果還會提升得越多。(每增加1對拍組,威力提升+15%,傷害減輕+3%。)(威力最多可提升50%,傷害最多可減輕31%。)",
+          "detail": []
+        },
+        {
+          "name": "貪吃鬼引擎",
+          "description": "當場地為電氣場地時,特攻會變成1.3倍。首次上場時,會將場地變成電氣場地。場地變成電氣場地的瞬間在場上時,會延長電氣場地的持續時間。",
+          "detail": [
+            {
+              "name": "電氣場地時特攻↑3",
+              "description": "當場地為電氣場地時,特攻會變成1.3倍。"
+            },
+            {
+              "name": "首次上場時變成電氣場地",
+              "description": "首次上場時,會將場地變成電氣場地。"
+            },
+            {
+              "name": "電氣場地時間延長5",
+              "description": "場地變成電氣場地的瞬間在場上時,會延長電氣場地的持續時間。"
+            }
+          ]
+        },
+        {
+          "name": "止不住的好奇心",
+          "description": "首次使出「電氣場地」時,會讓發動拍組招式所需的行動數減少3次。首次使出「電氣場地」時,會幫自己的同步招式的使用次數回復1次。",
+          "detail": [
+            {
+              "name": "首次使出電氣場地時計數加速3",
+              "description": "首次使出「電氣場地」時,會讓發動拍組招式所需的行動數減少3次。"
+            },
+            {
+              "name": "首次使出電氣場地時同步招式次數回復1",
+              "description": "首次使出「電氣場地」時,會幫自己的同步招式的使用次數回復1次。"
+            }
+          ]
+        },
+        {
+          "name": "寶可夢招式計量槽消耗量減少2",
+          "description": "使出寶可夢招式時,會減少使用2條招式計量槽。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 879,
+          "user": "寶可夢",
+          "name": "閃電猛衝",
+          "type": 4,
+          "gauge": 4,
+          "uses": "−",
+          "category": 2,
+          "power": 152,
+          "accuracy": 100,
+          "target": "對手１對拍組",
+          "description": "當效果絕佳時,威力會變成1.3倍。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 604,
+          "user": "寶可夢",
+          "name": "電氣場地",
+          "type": 4,
+          "gauge": 2,
+          "uses": 2,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "全場地",
+          "description": "將場地變成電氣場地。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 6105,
+          "user": "寶可夢",
+          "name": "V・閃電猛衝",
+          "type": 4,
+          "gauge": 4,
+          "uses": 1,
+          "category": 2,
+          "power": 350,
+          "accuracy": 0,
+          "target": "對手全體拍組",
+          "description": "【開放條件】\n場地變成電氣場地時\n【封印條件】\n電氣場地被解除時\n\n攻擊必定會命中。除了特定情況之外,只要攻擊命中就必定會擊中要害。當效果絕佳時,威力會變成1.3倍。即使對象為複數,招式的威力也不會降低。提高自己的下次拍組招式威力增強10階段。",
+          "tags": "SureHit",
+          "group": 6
+        },
+        {
+          "id": 12860,
+          "user": "訓練師",
+          "name": "出發尋寶!",
+          "type": 0,
+          "gauge": 0,
+          "uses": 1,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "自己",
+          "description": "提高自己的特攻6階段。提高自己的擊中要害率3階段。當場地為電氣場地時,還會再提高自己的速度6階段。",
+          "tags": "none",
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 111400,
+        "user": "寶可夢",
+        "name": "葡萄碩果芬芳的未來之閃電猛衝",
+        "type": 4,
+        "gauge": 0,
+        "uses": "−",
+        "category": 2,
+        "power": 250,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "沒有追加效果。",
+        "tags": "none",
+        "group": "Sync"
+      }
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "小春專用潛能餅乾１",
+      "skills": [
+        {
+          "name": "首次拍組招式後下次傷害防禦",
+          "description": "首次使出拍組招式時,會讓自己變成下次傷害防禦狀態。",
+          "detail": [],
+          "rate": 100
+        }
+      ]
+    },
+    {
+      "cookieName": "小春專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "效果絕佳時威力提升5",
+          "description": "當效果絕佳時,會提高該招式的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "擊中要害時威力提升3",
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時賦予物理/特殊增強2",
+          "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
+          "detail": [],
+          "rate": 33
+        }
+      ]
+    }
+  ],
+  "grid": [
+    {
+      "id": 1028600000,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1028600001,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1028600002,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1028600003,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1028600004,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1028600005,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1028600006,
+      "name": "首次寶可夢變化招式次數為0時計數加速3",
+      "description": "當寶可夢的變化招式的使用次數首次變成0時,會讓發動拍組招式所需的行動數減少3次。",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 5,
+      "x": 0,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1028600007,
+      "name": "電氣場地：使出招式後賦予特殊增強(1)G9",
+      "description": "招式成功時,會提高我方全體拍組的下次特殊招式威力增強1階段。",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 4,
+      "x": 0,
+      "y": -2,
+      "color": "#FF0066",
+      "type": 4
+    },
+    {
+      "id": 1028600008,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1028600009,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1028600010,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1028600011,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1028600012,
+      "name": "閃電猛衝：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": 2,
+      "color": "#47D147",
+      "type": 4
+    },
+    {
+      "id": 1028600013,
+      "name": "閃電猛衝：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 3,
+      "y": 2,
+      "color": "#47D147",
+      "type": 4
+    },
+    {
+      "id": 1028600014,
+      "name": "閃電猛衝：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 1,
+      "y": 3,
+      "color": "#47D147",
+      "type": 4
+    },
+    {
+      "id": 1028600015,
+      "name": "電氣場地時妨害狀態無效",
+      "description": "當場地為電氣場地時,不會陷入畏縮、混亂或束縛狀態。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 2,
+      "x": 2,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1028600016,
+      "name": "特攻 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": 3,
+      "y": 3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1028600017,
+      "name": "閃電猛衝：電氣場地時攻擊時賦予特殊增強(1)4",
+      "description": "當場地為電氣場地且使出招式攻擊成功時,有50%的機率會提高自己的下次特殊招式威力增強1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 1,
+      "y": 4,
+      "color": "#FF0066",
+      "type": 4
+    },
+    {
+      "id": 1028600018,
+      "name": "閃電猛衝：攻擊時特防下降2階段9",
+      "description": "使出招式攻擊成功時,會降低對手的特防2階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": 4,
+      "color": "#FF0066",
+      "type": 4
+    },
+    {
+      "id": 1028600019,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1028600020,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1028600021,
+      "name": "速度下降無效",
+      "description": "速度不會降低。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": -3,
+      "y": -1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1028600022,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1028600023,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1028600024,
+      "name": "閃電猛衝：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -3,
+      "y": -2,
+      "color": "#47D147",
+      "type": 4
+    },
+    {
+      "id": 1028600025,
+      "name": "閃電猛衝：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -1,
+      "y": -3,
+      "color": "#47D147",
+      "type": 4
+    },
+    {
+      "id": 1028600026,
+      "name": "閃電猛衝：招式後招式計量槽增加2",
+      "description": "招式成功時,有30%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -2,
+      "y": -3,
+      "color": "#FF0066",
+      "type": 4
+    },
+    {
+      "id": 1028600027,
+      "name": "特攻 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": -3,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1028600028,
+      "name": "閃電猛衝：依速度升幅威力提升",
+      "description": "自己的速度提高得越多,招式的威力就提高得越多。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -1,
+      "y": -4,
+      "color": "#FF0066",
+      "type": 4
+    },
+    {
+      "id": 1028600029,
+      "name": "首次拍組招式後寶可夢變化招式次數回復1",
+      "description": "首次使出拍組招式時,會幫自己的寶可夢的變化招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1028600030,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1028600031,
+      "name": "特攻下降無效",
+      "description": "特攻不會降低。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": 3,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1028600032,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1028600033,
+      "name": "V・閃電猛衝：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 1,
+      "y": -2,
+      "color": "#47D147",
+      "type": 4
+    },
+    {
+      "id": 1028600034,
+      "name": "V・閃電猛衝：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 3,
+      "y": -3,
+      "color": "#47D147",
+      "type": 4
+    },
+    {
+      "id": 1028600035,
+      "name": "V・閃電猛衝：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 2,
+      "y": -3,
+      "color": "#47D147",
+      "type": 4
+    },
+    {
+      "id": 1028600036,
+      "name": "電氣場地時HP回復1",
+      "description": "當場地為電氣場地時,寶可夢每次行動後都會回復自己的HP。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 1,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1028600037,
+      "name": "電氣場地時威力提升3",
+      "description": "當場地為電氣場地時,會提高招式的威力。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 3,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1028600038,
+      "name": "依特攻升幅拍組招式↑",
+      "description": "自己的特攻提高得越多,拍組招式的威力就提高得越多。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1028600039,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1028600040,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -3,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1028600041,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1028600042,
+      "name": "V・閃電猛衝：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -1,
+      "y": 2,
+      "color": "#47D147",
+      "type": 4
+    },
+    {
+      "id": 1028600043,
+      "name": "V・閃電猛衝：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -3,
+      "y": 3,
+      "color": "#47D147",
+      "type": 4
+    },
+    {
+      "id": 1028600044,
+      "name": "出發尋寶!：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -2,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1028600045,
+      "name": "電氣場地時招式計量槽加速2",
+      "description": "當場地為電氣場地時,招式計量槽會累積得較快。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 2,
+      "x": -1,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1028600046,
+      "name": "拍組招式瞄準要害1",
+      "description": "用拍組招式攻擊時,容易擊中要害。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -3,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1028600047,
+      "name": "電氣場地時拍組招式威力提升5",
+      "description": "當場地為電氣場地時,會提高拍組招式的威力。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1028600048,
+      "name": "葡萄碩果芬芳的未來之閃電猛衝：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": 3,
+      "color": "#BF80FF",
+      "type": 4
+    },
+    {
+      "id": 1028600049,
+      "name": "葡萄碩果芬芳的未來之閃電猛衝：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": -3,
+      "color": "#BF80FF",
+      "type": 4
+    }
+  ]
+}

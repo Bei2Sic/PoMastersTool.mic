@@ -1,0 +1,970 @@
+{
+  "trainer": {
+    "id": "10298000000",
+    "name": "吉尼亞",
+    "actor": "吉尼亞",
+    "actorId": "ch0298_00_zinnia",
+    "rarity": 5,
+    "role": 3,
+    "exRole": 2,
+    "ex": true,
+    "exclusivity": "Pokefair",
+    "maxBonusLevel": 10
+  },
+  "scoutMethod": 1,
+  "scheduleId": "chara_6030_0331_FOREVER",
+  "themes": [
+    {
+      "name": "超能力屬性／技術",
+      "description": "我方全體拍組最大HP提升24\n僅在我方使出超能力屬性攻擊時，攻擊和特攻提升24",
+      "tag": "超能力",
+      "category": 1
+    },
+    {
+      "name": "帕底亞／技術",
+      "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
+      "tag": "帕底亞",
+      "category": 2
+    },
+    {
+      "name": "知識豐富／技術",
+      "description": "我方全體拍組最大HP提升8\n我方全體拍組的攻擊和特攻提升5",
+      "tag": "知識豐富",
+      "category": 999
+    },
+    {
+      "name": "機械愛好者／技術",
+      "description": "我方全體拍組最大HP提升8\n我方全體拍組的攻擊和特攻提升5",
+      "tag": "機械愛好者",
+      "category": 999
+    },
+    {
+      "name": "我行我素／技術",
+      "description": "我方全體拍組最大HP提升8\n我方全體拍組的攻擊和特攻提升5",
+      "tag": "我行我素",
+      "category": 999
+    }
+  ],
+  "specialAwaking": {
+    "name": "曾任研究者之人的技巧",
+    "description": "首次上場時,發動拍組招式所需的行動數會減少1次。首次上場時,會提高自己的攻擊、防禦、特攻、特防、速度、命中率、閃避率1階段。首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。",
+    "detail": [
+      {
+        "name": "首次上場時計數加速1",
+        "description": "首次上場時,發動拍組招式所需的行動數會減少1次。"
+      },
+      {
+        "name": "首次上場時7種能力↑1",
+        "description": "首次上場時,會提高自己的攻擊、防禦、特攻、特防、速度、命中率、閃避率1階段。"
+      },
+      {
+        "name": "首次拍組招式後計數加速1",
+        "description": "首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。"
+      }
+    ]
+  },
+  "pokemon": [
+    {
+      "id": "20298000000",
+      "variationType": 0,
+      "vAfterSm": false,
+      "name": "奇麒麟",
+      "form": "",
+      "actor": "pm0981_00_00_rikikirin",
+      "gender": 2,
+      "isShiny": false,
+      "type": 11,
+      "weakness": 12,
+      "stat": {
+        "hp": [
+          115,
+          196,
+          274,
+          582,
+          646,
+          710,
+          902
+        ],
+        "atk": [
+          15,
+          55,
+          94,
+          248,
+          280,
+          312,
+          408
+        ],
+        "def": [
+          8,
+          31,
+          52,
+          140,
+          156,
+          172,
+          220
+        ],
+        "spa": [
+          22,
+          84,
+          141,
+          372,
+          420,
+          468,
+          612
+        ],
+        "spd": [
+          8,
+          31,
+          52,
+          140,
+          156,
+          172,
+          220
+        ],
+        "spe": [
+          13,
+          55,
+          94,
+          248,
+          280,
+          312,
+          408
+        ]
+      },
+      "passives": [
+        {
+          "name": "吉尼亞老師的課程",
+          "description": "使出招式攻擊成功時,會讓自己有樹果效果的招式的使用次數減少1次,並且提高自己的特攻和特防2階段。",
+          "detail": []
+        },
+        {
+          "name": "拍組招式後樹果次數回復3",
+          "description": "使出拍組招式後,會幫自己有樹果效果的招式的使用次數回復3次。",
+          "detail": []
+        },
+        {
+          "name": "命中時能力提升2階段9",
+          "description": "使出招式攻擊命中時,會提高自己的攻擊、防禦、特攻、特防、速度、命中率、閃避率中的一種能力2階段。若使出有連續效果的招式,則在每次攻擊命中時,都會提高自己的攻擊、防禦、特攻、特防、速度、命中率、閃避率中的一種能力2階段。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 888,
+          "user": "寶可夢",
+          "name": "雙光束",
+          "type": 11,
+          "gauge": 2,
+          "uses": "−",
+          "category": 2,
+          "power": 25,
+          "accuracy": 100,
+          "target": "對手１對拍組",
+          "description": "連續攻擊2次。",
+          "tags": "Continues",
+          "group": "Regular"
+        },
+        {
+          "id": 18501,
+          "user": "寶可夢",
+          "name": "木子果",
+          "type": 0,
+          "gauge": 0,
+          "uses": 3,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方１對拍組",
+          "description": "解除我方的異常狀態。",
+          "tags": 33554432,
+          "group": "Regular"
+        },
+        {
+          "id": 6054,
+          "user": "寶可夢",
+          "name": "原型輔助力量",
+          "type": 11,
+          "gauge": 2,
+          "uses": "−",
+          "category": 2,
+          "power": 150,
+          "accuracy": 0,
+          "target": "對手１對拍組",
+          "description": "【開放條件】\n自己提高的能力總計為10階段以上時\n【封印條件】\n自己提高的能力總計為9階段以下時\n\n攻擊必定會命中。除了特定情況之外,只要攻擊命中就必定會擊中要害。自己的能力提高得越多,威力就越大。消耗自己提高的所有能力。",
+          "tags": "SureHit",
+          "group": 6
+        },
+        {
+          "id": 12980,
+          "user": "訓練師",
+          "name": "我將注入能量~",
+          "type": 0,
+          "gauge": 0,
+          "uses": 2,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "自己",
+          "description": "當自己的能力處於提高狀態時,還會再讓該能力提高的幅度變成2倍。讓自己變成附帶回復狀態。讓自己變成下次效果絕佳威力提升狀態。",
+          "tags": "none",
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 103000,
+        "user": "寶可夢",
+        "name": "我行我素的生物老師之雙光束",
+        "type": 11,
+        "gauge": 0,
+        "uses": "−",
+        "category": 2,
+        "power": 200,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "自己的能力提高得越多,威力就越大。",
+        "tags": "none",
+        "group": "Sync"
+      }
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "吉尼亞專用潛能餅乾１",
+      "skills": [
+        {
+          "name": "上場時命中率提升2",
+          "description": "上場時,會提高自己的命中率2階段。",
+          "detail": [],
+          "rate": 100
+        }
+      ]
+    },
+    {
+      "cookieName": "吉尼亞專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "擊中要害時威力提升3",
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "拍組招式效果絕佳時威力↑5",
+          "description": "當效果絕佳時,會提高該拍組招式的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時拍組招式增強5",
+          "description": "首次上場時,會提高自己的下次拍組招式威力增強5階段。",
+          "detail": [],
+          "rate": 33
+        }
+      ]
+    }
+  ],
+  "grid": [
+    {
+      "id": 1029800000,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1029800001,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1029800002,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1029800003,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1029800004,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1029800005,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1029800006,
+      "name": "幽靈屬性防守",
+      "description": "可減輕受到幽靈屬性招式攻擊時的傷害。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 0,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1029800007,
+      "name": "我將注入能量~：招式後賦予特殊增強(1)9",
+      "description": "招式成功時,會提高自己的下次特殊招式威力增強1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 4,
+      "x": 0,
+      "y": 4,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1029800008,
+      "name": "命中時特防下降9",
+      "description": "使出招式攻擊命中時,會降低對手的特防1階段。若使出有連續效果的招式,則在每次攻擊命中時,都會降低對手的特防1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 5,
+      "x": 0,
+      "y": 5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1029800009,
+      "name": "草屬性防守",
+      "description": "可減輕受到草屬性招式攻擊時的傷害。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 0,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1029800010,
+      "name": "拍組招式瞄準要害1",
+      "description": "用拍組招式攻擊時,容易擊中要害。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 4,
+      "x": -1,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1029800011,
+      "name": "拍組招式後7種能力提升1",
+      "description": "使出拍組招式後,會提高自己的攻擊、防禦、特攻、特防、速度、命中率、閃避率1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 5,
+      "x": 1,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1029800012,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1029800013,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1029800014,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1029800015,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1029800016,
+      "name": "雙光束：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": 2,
+      "color": "#47D147",
+      "type": 11
+    },
+    {
+      "id": 1029800017,
+      "name": "雙光束：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 1,
+      "y": 3,
+      "color": "#47D147",
+      "type": 11
+    },
+    {
+      "id": 1029800018,
+      "name": "雙光束：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 3,
+      "y": 2,
+      "color": "#47D147",
+      "type": 11
+    },
+    {
+      "id": 1029800019,
+      "name": "雙光束：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 11
+    },
+    {
+      "id": 1029800020,
+      "name": "擊中要害無效",
+      "description": "對手的攻擊不會擊中要害。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 1,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1029800021,
+      "name": "雙光束：效果絕佳時威力提升9",
+      "description": "當效果絕佳時,會提高該招式的威力。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 3,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 11
+    },
+    {
+      "id": 1029800022,
+      "name": "命中時能力下降9",
+      "description": "使出招式攻擊命中時,會降低對手的攻擊、防禦、特攻、特防、速度、命中率、閃避率中的一種能力1階段。若使出有連續效果的招式,則在每次攻擊命中時,都會降低對手的攻擊、防禦、特攻、特防、速度、命中率、閃避率中的一種能力1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1029800023,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1029800024,
+      "name": "雙光束：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -3,
+      "y": 1,
+      "color": "#47D147",
+      "type": 11
+    },
+    {
+      "id": 1029800025,
+      "name": "雙光束：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": 0,
+      "color": "#47D147",
+      "type": 11
+    },
+    {
+      "id": 1029800026,
+      "name": "首次危機時閃避率提升1",
+      "description": "首次陷入危機時,會提高自己的閃避率1階段。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -3,
+      "y": 0,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1029800027,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1029800028,
+      "name": "效果絕佳時威力提升3",
+      "description": "當效果絕佳時,會提高該招式的威力。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -2,
+      "y": -1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1029800029,
+      "name": "特攻 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": -3,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1029800030,
+      "name": "雙光束：命中時賦予畏縮1",
+      "description": "使出招式攻擊命中時,有20%的機率會讓對手陷入畏縮狀態。若使出有連續效果的招式,則在每次攻擊命中時,有20%的機率會讓對手陷入畏縮狀態。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 3,
+      "x": -1,
+      "y": -2,
+      "color": "#FF0066",
+      "type": 11
+    },
+    {
+      "id": 1029800031,
+      "name": "首次拍組招式後下次傷害防禦",
+      "description": "首次使出拍組招式時,會讓自己變成下次傷害防禦狀態。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1029800032,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1029800033,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1029800034,
+      "name": "原型輔助力量：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": -2,
+      "color": "#47D147",
+      "type": 11
+    },
+    {
+      "id": 1029800035,
+      "name": "原型輔助力量：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 1,
+      "y": -2,
+      "color": "#47D147",
+      "type": 11
+    },
+    {
+      "id": 1029800036,
+      "name": "原型輔助力量：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 3,
+      "y": -3,
+      "color": "#47D147",
+      "type": 11
+    },
+    {
+      "id": 1029800037,
+      "name": "我將注入能量~：招式後命中率提升1",
+      "description": "招式成功時,會提高自己的命中率1階段。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": -3,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1029800038,
+      "name": "首次拍組招式後計數加速1",
+      "description": "首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 1,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1029800039,
+      "name": "解除妨害狀態",
+      "description": "當自己首次陷入畏縮、混亂或束縛狀態時,會解除該狀態。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 3,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1029800040,
+      "name": "首次拍組招式後訓練家招式次數回復1",
+      "description": "首次使出拍組招式時,會幫自己的訓練家招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1029800041,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1029800042,
+      "name": "畏縮無效",
+      "description": "不會陷入畏縮狀態。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": -2,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1029800043,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": 3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1029800044,
+      "name": "原型輔助力量：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -3,
+      "y": 4,
+      "color": "#47D147",
+      "type": 11
+    },
+    {
+      "id": 1029800045,
+      "name": "原型輔助力量：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": 4,
+      "color": "#47D147",
+      "type": 11
+    },
+    {
+      "id": 1029800046,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -3,
+      "y": 5,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1029800047,
+      "name": "原型輔助力量：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -1,
+      "y": 4,
+      "color": "#FF0066",
+      "type": 11
+    },
+    {
+      "id": 1029800048,
+      "name": "特攻 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": -2,
+      "y": 5,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1029800049,
+      "name": "解除異常狀態",
+      "description": "當自己首次陷入異常狀態時,會解除自己的異常狀態。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -3,
+      "y": 6,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1029800050,
+      "name": "依能力升幅拍組招式↑",
+      "description": "自己的能力提高得越多,拍組招式的威力就提高得越多。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -1,
+      "y": 5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1029800051,
+      "name": "命中時擊中要害率提升9",
+      "description": "使出招式攻擊命中時,會提高自己的擊中要害率1階段。若使出有連續效果的招式,則在每次攻擊命中時,都會提高自己的擊中要害率1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": 6,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1029800052,
+      "name": "我行我素的生物老師之雙光束：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": 3,
+      "color": "#BF80FF",
+      "type": 11
+    },
+    {
+      "id": 1029800053,
+      "name": "我行我素的生物老師之雙光束：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": -3,
+      "color": "#BF80FF",
+      "type": 11
+    }
+  ]
+}

@@ -1,0 +1,996 @@
+{
+  "trainer": {
+    "id": "10338000000",
+    "name": "沙儷",
+    "actor": "沙儷",
+    "actorId": "ch0338_00_sazare",
+    "rarity": 5,
+    "role": 5,
+    "exRole": 4,
+    "ex": true,
+    "exclusivity": "MasterEX",
+    "maxBonusLevel": 10
+  },
+  "scoutMethod": 1,
+  "scheduleId": "chara_7090_1004_FOREVER",
+  "themes": [
+    {
+      "name": "岩石屬性／場地",
+      "description": "我方全體拍組最大HP提升24\n我方全體拍組的速度提升24",
+      "tag": "岩石",
+      "category": 1
+    },
+    {
+      "name": "帕底亞／場地",
+      "description": "我方全體拍組最大HP提升7\n我方全體拍組的速度提升7",
+      "tag": "帕底亞",
+      "category": 2
+    },
+    {
+      "name": "表演家／場地",
+      "description": "我方全體拍組最大HP提升8\n我方全體拍組的速度提升8",
+      "tag": "表演家",
+      "category": 999
+    },
+    {
+      "name": "大姐姐／場地",
+      "description": "我方全體拍組最大HP提升8\n我方全體拍組的速度提升8",
+      "tag": "大姐姐",
+      "category": 999
+    }
+  ],
+  "specialAwaking": {
+    "name": "喜歡玩相機的旅人",
+    "description": "首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。當對手場地為岩石傷害場地時,會提高我方全體拍組的拍組招式的威力。領域變成岩石領域的瞬間在場上時,會延長岩石領域的持續時間。",
+    "detail": [
+      {
+        "name": "首次拍組招式後計數加速1",
+        "description": "首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。"
+      },
+      {
+        "name": "對手岩石傷害場地時拍組招式↑G3",
+        "description": "當對手場地為岩石傷害場地時,會提高我方全體拍組的拍組招式的威力。"
+      },
+      {
+        "name": "岩石領域時間延長3",
+        "description": "領域變成岩石領域的瞬間在場上時,會延長岩石領域的持續時間。"
+      }
+    ]
+  },
+  "pokemon": [
+    {
+      "id": "20338000000",
+      "variationType": 0,
+      "vAfterSm": false,
+      "name": "卡蒂狗",
+      "form": "洗翠的樣子",
+      "actor": "pm0058_00_41_gardie",
+      "gender": 2,
+      "isShiny": false,
+      "type": 13,
+      "weakness": 3,
+      "stat": {
+        "hp": [
+          112,
+          187,
+          259,
+          545,
+          605,
+          665,
+          845
+        ],
+        "atk": [
+          14,
+          67,
+          118,
+          316,
+          360,
+          404,
+          536
+        ],
+        "def": [
+          8,
+          34,
+          58,
+          157,
+          177,
+          197,
+          257
+        ],
+        "spa": [
+          11,
+          47,
+          80,
+          212,
+          240,
+          268,
+          352
+        ],
+        "spd": [
+          9,
+          35,
+          59,
+          158,
+          178,
+          198,
+          258
+        ],
+        "spe": [
+          12,
+          52,
+          91,
+          245,
+          277,
+          309,
+          405
+        ]
+      },
+      "passives": [
+        {
+          "name": "帕底亞的快攻",
+          "description": "首次上場時,發動拍組招式所需的行動數會減少1次。(多隊模式時,會讓我方隊伍在首次上場時發動拍組招式所需的行動數減少1次。)當我方隊伍中擁有帕底亞標籤的拍組越多,此效果還會減少得越多。(每增加1對拍組,發動拍組招式所需的行動數-1次,最多可-3次。)當隊伍中存在多對擁有同名被動技能的拍組,效果不會重複發揮。",
+          "detail": []
+        },
+        {
+          "name": "按下快門的好機會!",
+          "description": "當自己首次將對手場地變成岩石傷害場地時,會提高自己的攻擊6階段。當自己首次將對手場地變成岩石傷害場地時,會提高自己的擊中要害率3階段。",
+          "detail": [
+            {
+              "name": "自身首次引發岩石傷害場地時攻擊↑6",
+              "description": "當自己首次將對手場地變成岩石傷害場地時,會提高自己的攻擊6階段。"
+            },
+            {
+              "name": "自身首次引發岩石傷害場地時擊中要害率↑3",
+              "description": "當自己首次將對手場地變成岩石傷害場地時,會提高自己的擊中要害率3階段。"
+            }
+          ]
+        },
+        {
+          "name": "就這樣繼續保持……!",
+          "description": "當對手場地為岩石傷害場地且使出招式攻擊成功時,會降低對手的攻擊、防禦、特攻、特防、速度、命中率、閃避率中的一種能力2階段。當對手場地為岩石傷害場地且使出招式攻擊成功時,會讓自己變成下次計量槽消耗0狀態。",
+          "detail": [
+            {
+              "name": "對手岩石傷害場地時攻擊時能力2↓9",
+              "description": "當對手場地為岩石傷害場地且使出招式攻擊成功時,會降低對手的攻擊、防禦、特攻、特防、速度、命中率、閃避率中的一種能力2階段。"
+            },
+            {
+              "name": "對手岩石傷害場地時攻擊時下次不消耗計量槽9",
+              "description": "當對手場地為岩石傷害場地且使出招式攻擊成功時,會讓自己變成下次計量槽消耗0狀態。"
+            }
+          ]
+        },
+        {
+          "name": "必中化&反衝傷害無效",
+          "description": "招式必定會命中。當使出的招式有反衝效果時,不會受到反衝對自己所造成的傷害。",
+          "detail": [
+            {
+              "name": "必中化",
+              "description": "招式必定會命中。"
+            },
+            {
+              "name": "反衝傷害無效9",
+              "description": "當使出的招式有反衝效果時,不會受到反衝對自己所造成的傷害。"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "id": 457,
+          "user": "寶可夢",
+          "name": "雙刃頭錘",
+          "type": 13,
+          "gauge": 3,
+          "uses": "−",
+          "category": 1,
+          "power": 188,
+          "accuracy": 80,
+          "target": "對手１對拍組",
+          "description": "給予對手傷害後自己也會受到1/3的傷害。",
+          "tags": "Recoil",
+          "group": "Regular"
+        },
+        {
+          "id": 446,
+          "user": "寶可夢",
+          "name": "隱形岩",
+          "type": 13,
+          "gauge": 2,
+          "uses": 2,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "對手場地",
+          "description": "讓對手場地變成岩石傷害場地。 (岩石傷害場地:此狀態會讓拍組在每次行動時受到岩石屬性的傷害。)",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 6152,
+          "user": "寶可夢",
+          "name": "沙礫之岩崩",
+          "type": 13,
+          "gauge": 2,
+          "uses": 2,
+          "category": 1,
+          "power": 350,
+          "accuracy": 100,
+          "target": "對手全體拍組",
+          "description": "【開放條件】\n對手場地變成岩石傷害場地時\n【封印條件】\n對手場地的岩石傷害場地被解除時\n\n降低對手的防禦2階段。讓對手陷入畏縮狀態。即使對象為複數,招式的威力也不會降低。首次使出此招式攻擊成功時,會將領域變成EX岩石領域。(EX岩石領域會提高岩石屬性的攻擊的威力。)",
+          "tags": "none",
+          "group": 6
+        },
+        {
+          "id": 13380,
+          "user": "訓練師",
+          "name": "給我一個夠讚的表情!",
+          "type": 0,
+          "gauge": 0,
+          "uses": 1,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方１對拍組",
+          "description": "我方發動拍組招式所需的行動數會減少1次。讓我方變成下次效果絕佳威力提升狀態。讓我方變成挺住狀態。",
+          "tags": "none",
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 116800,
+        "user": "寶可夢",
+        "name": "喜歡玩相機的旅人之岩崩",
+        "type": 13,
+        "gauge": 0,
+        "uses": "−",
+        "category": 1,
+        "power": 250,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "沒有追加效果。",
+        "tags": "none",
+        "group": "Sync"
+      }
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "沙儷專用潛能餅乾１",
+      "skills": [
+        {
+          "name": "岩石領域時拍組招式威力提升4",
+          "description": "當領域為岩石領域時,會提高拍組招式的威力。",
+          "detail": [],
+          "rate": 100
+        }
+      ]
+    },
+    {
+      "cookieName": "沙儷專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "天氣場地領域變化時計量槽加速2",
+          "description": "只有在天氣、場地或領域變化時,招式計量槽會累積得較快。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "擊中要害時威力提升3",
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "天氣場地領域變化時拍組招式↑G2",
+          "description": "只有在天氣、場地或領域變化時,會提高我方全體拍組的拍組招式的威力。",
+          "detail": [],
+          "rate": 33
+        }
+      ]
+    }
+  ],
+  "grid": [
+    {
+      "id": 1033800000,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033800001,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033800002,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033800003,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033800004,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033800005,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033800006,
+      "name": "解除妨害狀態",
+      "description": "當自己首次陷入畏縮、混亂或束縛狀態時,會解除該狀態。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 0,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1033800007,
+      "name": "對手岩石傷害場地時威力↑G2",
+      "description": "當對手場地為岩石傷害場地時,會提高我方全體拍組的招式的威力。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 4,
+      "x": 0,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1033800008,
+      "name": "首次拍組招式後同步招式回復1",
+      "description": "首次使出拍組招式時,會幫自己的同步招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 5,
+      "x": 0,
+      "y": -5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1033800009,
+      "name": "解除異常狀態",
+      "description": "當自己首次陷入異常狀態時,會解除自己的異常狀態。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 0,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1033800010,
+      "name": "雙刃頭錘：攻擊時賦予畏縮4",
+      "description": "使出招式攻擊成功時,有50%的機率會讓對手陷入畏縮狀態。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 4,
+      "x": -1,
+      "y": 4,
+      "color": "#FF0066",
+      "type": 13
+    },
+    {
+      "id": 1033800011,
+      "name": "隱形岩：招式後賦予物理增強(2)G9",
+      "description": "招式成功時,會提高我方全體拍組的下次物理招式威力增強2階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 5,
+      "x": 1,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 13
+    },
+    {
+      "id": 1033800012,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033800013,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033800014,
+      "name": "雙刃頭錘：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": 0,
+      "color": "#47D147",
+      "type": 13
+    },
+    {
+      "id": 1033800015,
+      "name": "雙刃頭錘：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 1,
+      "y": 1,
+      "color": "#47D147",
+      "type": 13
+    },
+    {
+      "id": 1033800016,
+      "name": "雙刃頭錘：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 1,
+      "y": 2,
+      "color": "#47D147",
+      "type": 13
+    },
+    {
+      "id": 1033800017,
+      "name": "雙刃頭錘：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": 1,
+      "color": "#FF0066",
+      "type": 13
+    },
+    {
+      "id": 1033800018,
+      "name": "攻擊時速度下降9",
+      "description": "使出招式攻擊成功時,會降低對手的速度1階段。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 3,
+      "y": 0,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1033800019,
+      "name": "首次上場時攻擊特攻↓G2",
+      "description": "首次上場時,會降低對手全體拍組的攻擊和特攻2階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1033800020,
+      "name": "對手岩石傷害場地時威力提升3",
+      "description": "當對手場地為岩石傷害場地時,會提高招式的威力。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 3,
+      "y": 1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1033800021,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033800022,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033800023,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033800024,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -3,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033800025,
+      "name": "沙礫之岩崩：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": -2,
+      "color": "#47D147",
+      "type": 13
+    },
+    {
+      "id": 1033800026,
+      "name": "沙礫之岩崩：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -1,
+      "y": -3,
+      "color": "#47D147",
+      "type": 13
+    },
+    {
+      "id": 1033800027,
+      "name": "沙礫之岩崩：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -3,
+      "y": -2,
+      "color": "#FF0066",
+      "type": 13
+    },
+    {
+      "id": 1033800028,
+      "name": "攻擊 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": -2,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033800029,
+      "name": "岩石領域時招式計量槽加速2",
+      "description": "當領域為岩石領域時,招式計量槽會累積得較快。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -1,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1033800030,
+      "name": "拍組招式瞄準要害1",
+      "description": "用拍組招式攻擊時,容易擊中要害。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -3,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1033800031,
+      "name": "依攻擊升幅拍組招式↑",
+      "description": "自己的攻擊提高得越多,拍組招式的威力就提高得越多。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1033800032,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033800033,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033800034,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033800035,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": -4,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033800036,
+      "name": "沙礫之岩崩：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": -4,
+      "color": "#47D147",
+      "type": 13
+    },
+    {
+      "id": 1033800037,
+      "name": "沙礫之岩崩：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 1,
+      "y": -4,
+      "color": "#47D147",
+      "type": 13
+    },
+    {
+      "id": 1033800038,
+      "name": "沙礫之岩崩：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 3,
+      "y": -5,
+      "color": "#47D147",
+      "type": 13
+    },
+    {
+      "id": 1033800039,
+      "name": "首次上場時場地招式計量槽加速",
+      "description": "首次上場時,會讓我方場地變成招式計量槽加速狀態。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": -5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1033800040,
+      "name": "給我一個夠讚的表情!：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 1,
+      "y": -5,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1033800041,
+      "name": "給我一個夠讚的表情!：我方中招後賦予拍組招式增強(4)9",
+      "description": "以我方拍組為對象的招式(不含場地效果)成功時,會提高受到該招式效果影響的我方拍組的下次拍組招式威力增強4階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 3,
+      "y": -6,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1033800042,
+      "name": "寶可夢首次使出變化招式時計數加速1",
+      "description": "在寶可夢首次使出變化招式時,會讓發動拍組招式所需的行動數減少1次。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": -6,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1033800043,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033800044,
+      "name": "灼傷無效",
+      "description": "不會陷入灼傷狀態。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": -3,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1033800045,
+      "name": "雙刃頭錘：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": 2,
+      "color": "#47D147",
+      "type": 13
+    },
+    {
+      "id": 1033800046,
+      "name": "雙刃頭錘：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -1,
+      "y": 2,
+      "color": "#47D147",
+      "type": 13
+    },
+    {
+      "id": 1033800047,
+      "name": "速度 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": -3,
+      "y": 3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033800048,
+      "name": "隱形岩：招式後附帶回復9",
+      "description": "招式成功時,會讓自己變成附帶回復狀態。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -2,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 13
+    },
+    {
+      "id": 1033800049,
+      "name": "隱形岩：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -1,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 13
+    },
+    {
+      "id": 1033800050,
+      "name": "對手岩石傷害場地時間延長3",
+      "description": "對手場地變成岩石傷害場地的瞬間在場上時,會延長岩石傷害場地的持續時間。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -3,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1033800051,
+      "name": "異常狀態妨害無效",
+      "description": "不會陷入異常狀態,或畏縮、混亂、束縛的狀態變化。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1033800052,
+      "name": "喜歡玩相機的旅人之岩崩：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": -3,
+      "color": "#BF80FF",
+      "type": 13
+    },
+    {
+      "id": 1033800053,
+      "name": "喜歡玩相機的旅人之岩崩：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": 3,
+      "color": "#BF80FF",
+      "type": 13
+    }
+  ]
+}

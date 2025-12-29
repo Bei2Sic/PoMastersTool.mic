@@ -1,0 +1,890 @@
+{
+  "trainer": {
+    "id": "10113420000",
+    "name": "阿蜜（學院）",
+    "actor": "阿蜜",
+    "actorId": "ch0113_42_mikan",
+    "rarity": 5,
+    "role": 2,
+    "exRole": 5,
+    "ex": true,
+    "exclusivity": "Special",
+    "maxBonusLevel": 5
+  },
+  "scoutMethod": 1,
+  "scheduleId": "chara_7100_1114_FOREVER",
+  "themes": [
+    {
+      "name": "蟲屬性／輔助",
+      "description": "我方全體拍組最大HP提升60",
+      "tag": "蟲",
+      "category": 1
+    },
+    {
+      "name": "城都／輔助",
+      "description": "我方全體拍組最大HP提升13",
+      "tag": "城都",
+      "category": 2
+    },
+    {
+      "name": "道館館主／輔助",
+      "description": "我方全體拍組最大HP提升13",
+      "tag": "道館館主",
+      "category": 3
+    },
+    {
+      "name": "特別服裝／輔助",
+      "description": "我方全體拍組最大HP提升15",
+      "tag": "特別服裝",
+      "category": 4
+    },
+    {
+      "name": "帕希歐學院／輔助",
+      "description": "我方全體拍組最大HP提升15",
+      "tag": "帕希歐學院",
+      "category": 999
+    }
+  ],
+  "specialAwaking": {
+    "name": "",
+    "description": "",
+    "detail": []
+  },
+  "pokemon": [
+    {
+      "id": "20113420000",
+      "variationType": 0,
+      "vAfterSm": false,
+      "name": "佛烈托斯",
+      "form": "",
+      "actor": "pm0205_00_foretos",
+      "gender": 2,
+      "isShiny": false,
+      "type": 12,
+      "weakness": 2,
+      "stat": {
+        "hp": [
+          102,
+          181,
+          256,
+          553,
+          617,
+          681,
+          873
+        ],
+        "atk": [
+          12,
+          29,
+          44,
+          110,
+          122,
+          134,
+          170
+        ],
+        "def": [
+          26,
+          69,
+          108,
+          262,
+          294,
+          326,
+          422
+        ],
+        "spa": [
+          10,
+          30,
+          48,
+          125,
+          141,
+          157,
+          205
+        ],
+        "spd": [
+          19,
+          59,
+          95,
+          238,
+          270,
+          302,
+          398
+        ],
+        "spe": [
+          8,
+          45,
+          81,
+          224,
+          252,
+          280,
+          364
+        ]
+      },
+      "passives": [
+        {
+          "name": "鐵壁護衛的體貼",
+          "description": "當自己首次將我方場地變成城都鬥陣(特殊)時,將會發揮下列所有效果。提高我方全體拍組的特攻4階段。提高我方全體拍組的擊中要害率3階段。讓我方全體拍組變成挺住狀態。",
+          "detail": [
+            {
+              "name": "自身首次引發城都鬥陣(特殊)時特攻↑G4",
+              "description": "當自己首次將我方場地變成城都鬥陣(特殊)時,會提高我方全體拍組的特攻4階段。"
+            },
+            {
+              "name": "自身首次引發城都鬥陣(特殊)時擊中要害率↑G3",
+              "description": "當自己首次將我方場地變成城都鬥陣(特殊)時,會提高我方全體拍組的擊中要害率3階段。"
+            },
+            {
+              "name": "自身首次引發城都鬥陣(特殊)時挺住G",
+              "description": "當自己首次將我方場地變成城都鬥陣(特殊)時,會讓我方全體拍組變成挺住狀態。"
+            }
+          ]
+        },
+        {
+          "name": "直到最後都不放棄的鋼鐵之心",
+          "description": "使出招式攻擊成功時,會讓對手陷入特殊招式爆擊狀態。上述效果針對各個對手僅會發揮1次。使出招式攻擊成功時,會降低對手的特防2階段。",
+          "detail": [
+            {
+              "name": "",
+              "description": ""
+            },
+            {
+              "name": "攻擊時特防下降2階段9",
+              "description": "使出招式攻擊成功時,會降低對手的特防2階段。"
+            }
+          ]
+        },
+        {
+          "name": "城都鬥陣(特殊)時招式後下次不消耗計量槽9",
+          "description": "當我方場地為城都鬥陣(特殊)且招式成功時,會讓自己變成下次計量槽消耗0狀態。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 405,
+          "user": "寶可夢",
+          "name": "蟲鳴",
+          "type": 12,
+          "gauge": 3,
+          "uses": "−",
+          "category": 2,
+          "power": 99,
+          "accuracy": 100,
+          "target": "對手１對拍組",
+          "description": "有10%的機率會降低對手的特防1階段。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 8204,
+          "user": "寶可夢",
+          "name": "城都的分析",
+          "type": 0,
+          "gauge": 2,
+          "uses": 2,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方場地",
+          "description": "提高我方全體拍組的下次特殊招式威力增強1階段。讓我方場地變成城都鬥陣(特殊)。城都鬥陣(特殊)將會發揮下列所有效果。提高我方全體拍組的特殊招式和特殊拍組招式威力10%。減輕我方全體拍組受到特殊招式和特殊拍組招式攻擊時的傷害5%。當我方場地中擁有城都標籤的拍組越多,此效果還會提升得越多。(每增加1對拍組,威力提升+10%,傷害減輕+3%。)(威力最多可提升40%,傷害最多可減輕14%。)",
+          "tags": 8388608,
+          "group": "Regular"
+        },
+        {
+          "id": 6160,
+          "user": "寶可夢",
+          "name": "無私奉獻之鐵壁",
+          "type": 17,
+          "gauge": 2,
+          "uses": "−",
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方全體拍組",
+          "description": "【開放條件】\n我方場地變成城都鬥陣(特殊)時\n【封印條件】\n無\n\n提高我方全體拍組的防禦和特防2階段。提高我方全體拍組的下次特殊招式威力增強1階段。",
+          "tags": "none",
+          "group": 6
+        },
+        {
+          "id": 11137,
+          "user": "訓練師",
+          "name": "這就幫你治療喔",
+          "type": 0,
+          "gauge": 0,
+          "uses": 1,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方１對拍組",
+          "description": "讓我方變成附帶回復狀態。讓我方變成下次必中要害狀態。提高我方的下次特殊招式威力增強3階段。",
+          "tags": "none",
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 123400,
+        "user": "寶可夢",
+        "name": "用鋼鐵外殼防守到底之蟲之光線",
+        "type": 12,
+        "gauge": 0,
+        "uses": "−",
+        "category": 2,
+        "power": 250,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "沒有追加效果。",
+        "tags": "none",
+        "group": "Sync"
+      }
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "阿蜜（學院）專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "被攻擊時HP回復G9",
+          "description": "受到招式攻擊時,會回復我方全體拍組的HP。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時物理/特殊增強G1",
+          "description": "首次上場時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時拍組招式增強G3",
+          "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
+          "detail": [],
+          "rate": 33
+        }
+      ]
+    }
+  ],
+  "grid": [
+    {
+      "id": 1011342000,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1011342001,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1011342002,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1011342003,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1011342004,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1011342005,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1011342006,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1011342007,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1011342008,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1011342009,
+      "name": "特防下降無效",
+      "description": "特防不會降低。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": 3,
+      "y": 1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1011342010,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1011342011,
+      "name": "蟲鳴：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 1,
+      "y": 3,
+      "color": "#47D147",
+      "type": 12
+    },
+    {
+      "id": 1011342012,
+      "name": "蟲鳴：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 3,
+      "y": 2,
+      "color": "#47D147",
+      "type": 12
+    },
+    {
+      "id": 1011342013,
+      "name": "蟲鳴：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 12
+    },
+    {
+      "id": 1011342014,
+      "name": "攻擊時賦予束縛9",
+      "description": "使出招式攻擊成功時,會讓對手陷入束縛狀態。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 1,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1011342015,
+      "name": "蟲鳴：下降機率提升4",
+      "description": "當招式的追加效果可降低對手能力值時,會提高該追加效果的成功率。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 2,
+      "x": 3,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 12
+    },
+    {
+      "id": 1011342016,
+      "name": "首次拍組招式後訓練家招式次數回復1",
+      "description": "首次使出拍組招式時,會幫自己的訓練家招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1011342017,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1011342018,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -3,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1011342019,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1011342020,
+      "name": "蟲鳴：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": -1,
+      "color": "#47D147",
+      "type": 12
+    },
+    {
+      "id": 1011342021,
+      "name": "蟲鳴：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -3,
+      "y": -1,
+      "color": "#47D147",
+      "type": 12
+    },
+    {
+      "id": 1011342022,
+      "name": "蟲鳴：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -1,
+      "y": -2,
+      "color": "#47D147",
+      "type": 12
+    },
+    {
+      "id": 1011342023,
+      "name": "特防 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": -2,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1011342024,
+      "name": "僅限一次再次挺住",
+      "description": "除了特定情況之外,首次以挺住的效果使HP剩下1時,會讓自己再次變成挺住狀態。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -3,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1011342025,
+      "name": "寶可夢出招後HP回復G9",
+      "description": "在寶可夢使出招式時,會回復我方全體拍組的HP。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -1,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1011342026,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1011342027,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1011342028,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1011342029,
+      "name": "防禦下降無效",
+      "description": "防禦不會降低。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": 3,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1011342030,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -4,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1011342031,
+      "name": "鬥陣時攻擊招式威力↓2",
+      "description": "當我方場地為任一鬥陣時,會減輕受到招式攻擊時的傷害。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 1,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1011342032,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": -5,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1011342033,
+      "name": "無私奉獻之鐵壁：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": -5,
+      "color": "#FF0066",
+      "type": 17
+    },
+    {
+      "id": 1011342034,
+      "name": "城都的分析：首次訓練家招式後計數加速1",
+      "description": "在訓練家首次使出招式時,會讓發動拍組招式所需的行動數減少1次。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 1,
+      "y": -5,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1011342035,
+      "name": "鬥陣時招式計量槽加速2",
+      "description": "當我方場地為任一鬥陣時,招式計量槽會累積得較快。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 3,
+      "y": -6,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1011342036,
+      "name": "城都鬥陣(特殊)時間延長3",
+      "description": "我方場地變成城都鬥陣(特殊)的瞬間在場上時,會延長城都鬥陣(特殊)的持續時間。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": -6,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1011342037,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1011342038,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1011342039,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -3,
+      "y": 3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1011342040,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1011342041,
+      "name": "這就幫你治療喔：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -1,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1011342042,
+      "name": "這就幫你治療喔：我方中招後賦予特殊增強(1)9",
+      "description": "以我方拍組為對象的招式(不含場地效果)成功時,會提高受到該招式效果影響的我方拍組的下次特殊招式威力增強1階段。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -3,
+      "y": 4,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1011342043,
+      "name": "首次危機時HP回復2",
+      "description": "首次陷入危機時,會回復自己的HP,約為自己最大HP的20%。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -2,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1011342044,
+      "name": "城都鬥陣(特殊)時拍組招式↑G2",
+      "description": "當我方場地為城都鬥陣(特殊)時,會提高我方全體拍組的拍組招式的威力。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -1,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1011342045,
+      "name": "首次攻擊時變成玉蟲領域",
+      "description": "首次使出招式攻擊成功時,會將領域變成玉蟲領域。(玉蟲領域會提高蟲屬性的攻擊的威力。)",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -3,
+      "y": 5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1011342046,
+      "name": "用鋼鐵外殼防守到底之蟲之光線：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": 3,
+      "color": "#BF80FF",
+      "type": 12
+    },
+    {
+      "id": 1011342047,
+      "name": "用鋼鐵外殼防守到底之蟲之光線：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": -3,
+      "color": "#BF80FF",
+      "type": 12
+    }
+  ]
+}

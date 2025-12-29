@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useDamageCalculator } from "@/composables/useDamageCalculator";
 import {
+    DAMAGE_FIELDS,
     POKEMON_TYPES,
     TERRAIN_TYPES,
     WEATHER_TYPES,
@@ -36,6 +37,7 @@ const { finalDamageResult, themeSnapshot } = useDamageCalculator(targetSyncRef, 
 const weatherOptions = ["無", ...WEATHER_TYPES] as const;
 const terrainOptions = ["無", ...TERRAIN_TYPES] as const;
 const zoneOptions = ["無", ...ZONE_TYPES] as const;
+const damageFieldOptions = ["無", ...DAMAGE_FIELDS] as const;
 const typeOptions = POKEMON_TYPES;
 
 const orderedStats = Object.entries(StatMap)
@@ -63,14 +65,15 @@ const getRebuffIcon = (typeName: string) => {
     const key = entry ? entry.key.toLowerCase() : 'normal';
     return new URL(`../assets/images/type_${key}.png`, import.meta.url).href;
 };
-const getEnvIcon = (category: 'weather' | 'terrain' | 'zone', name: string) => {
+const getEnvIcon = (category: 'weather' | 'terrain' | 'zone' | 'damageField', name: string) => {
     if (name === '無') return new URL(`../assets/images/b_move_chain.png`, import.meta.url).href;
     if (category === 'weather') {
         const entry = Object.values(WeatherMap).find(t => name.includes(t.cnName));
         const key = entry ? entry.key.toLowerCase() : 'sunny';
         return new URL(`../assets/images/icon_weather_${key}.png`, import.meta.url).href;
     } else {
-        const typeKey = getTypeKeyByCnNameOrSpecialName(name);
+        const cleanName = name.replace("傷害場地", '');
+        const typeKey = getTypeKeyByCnNameOrSpecialName(cleanName);
         return new URL(`../assets/images/move_${typeKey}.png`, import.meta.url).href;
     }
 };
@@ -368,6 +371,15 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
                                     </button>
                                 </div>
                             </div>
+                            <div class="env-toolbar">
+                                <div class="label-col">傷害場地</div>
+                                <div class="env-scroll-container">
+                                    <button v-for="z in damageFieldOptions" :key="z" class="env-btn"
+                                        :class="{ active: store.target.damageField === z }" @click="store.target.damageField = z" :title="z">
+                                        <img :src="getEnvIcon('damageField', z)" />
+                                    </button>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="boost-section-wrapper">
@@ -431,68 +443,76 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
                             </div>
                         </div>
 
-                    </div>
-
-                    <div class="section-group">
-                        <div class="section-title">其他配置</div>
-                        <div class="panel-card other-bar">
-                            <div class="other-item">
-                                <label>物理+</label>
-                                <input type="number" v-model.number="store.config.physical" class="other-input"
-                                    placeholder="0">
-                            </div>
-                            <div class="other-item">
-                                <label>特殊+</label>
-                                <input type="number" v-model.number="store.config.special" class="other-input"
-                                    placeholder="0">
-                            </div>
-                            <div class="other-item">
-                                <label>拍招+</label>
-                                <input type="number" v-model.number="store.config.sync" class="other-input"
-                                    placeholder="0">
-                            </div>
-                            <div class="other-item">
-                                <label>組隊+</label>
-                                <div class="row-inputs">
-                                    <select v-model="store.user.themeType" class="type-select-small">
-                                        <option v-for="t in typeOptions" :key="t" :value="t">{{ t }}</option>
-                                    </select>
-                                    <input type="number" v-model.number="store.user.themeTypeAdd" class="other-input"
-                                        placeholder="0">
+                        <div class="circle-scroll-wrapper">
+                            <div class="circle-track">
+                                <div v-for="(data, region) in store.battleCircles" :key="region" class="circle-item">
+                                    <div class="circle-header" :class="getRegionClass(region as string)">
+                                        {{ region }}
+                                    </div>
+                                    <div class="circle-toggles">
+                                        <button class="toggle-circle-btn" :class="{ active: data.actives['物理'] }"
+                                            @click="data.actives['物理'] = !data.actives['物理']" title="物理鬥陣">
+                                            <img :src="getCirclesIcon('atk')" alt="物理" />
+                                        </button>
+                                        <button class="toggle-circle-btn" :class="{ active: data.actives['特殊'] }"
+                                            @click="data.actives['特殊'] = !data.actives['特殊']" title="特殊鬥陣">
+                                            <img :src="getCirclesIcon('spa')" alt="特殊" />
+                                        </button>
+                                        <button class="toggle-circle-btn" :class="{ active: data.actives['防禦'] }"
+                                            @click="data.actives['防禦'] = !data.actives['防禦']" title="防禦鬥陣">
+                                            <img :src="getCirclesIcon('hp')" alt="防禦" />
+                                        </button>
+                                    </div>
+                                    <div class="circle-level-display">
+                                        Lv.
+                                        <select v-model.number="data.level" class="level-select">
+                                            <option v-for="lvl in getRegionLevelOptions(region as string)" :key="lvl"
+                                                :value="lvl">
+                                                {{ lvl }}
+                                            </option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="circle-scroll-wrapper">
-                        <div class="circle-track">
-                            <div v-for="(data, region) in store.battleCircles" :key="region" class="circle-item">
-                                <div class="circle-header" :class="getRegionClass(region as string)">
-                                    {{ region }}
-                                </div>
-                                <div class="circle-toggles">
-                                    <button class="toggle-circle-btn" :class="{ active: data.actives['物理'] }"
-                                        @click="data.actives['物理'] = !data.actives['物理']" title="物理傷害減輕">
-                                        <img :src="getCirclesIcon('atk')" alt="物理" />
-                                    </button>
-                                    <button class="toggle-circle-btn" :class="{ active: data.actives['特殊'] }"
-                                        @click="data.actives['特殊'] = !data.actives['特殊']" title="特殊傷害減輕">
-                                        <img :src="getCirclesIcon('spa')" alt="特殊" />
-                                    </button>
-                                    <button class="toggle-circle-btn" :class="{ active: data.actives['防禦'] }"
-                                        @click="data.actives['防禦'] = !data.actives['防禦']" title="防禦/特防提升">
-                                        <img :src="getCirclesIcon('hp')" alt="防禦" />
-                                    </button>
-                                </div>
-                                <div class="circle-level-display">
-                                    Lv.
-                                    <select v-model.number="data.level" class="level-select">
-                                        <option v-for="lvl in getRegionLevelOptions(region as string)" :key="lvl"
-                                            :value="lvl">
-                                            {{ lvl }}
-                                        </option>
-                                    </select>
-                                </div>
+                    </div>
+                </div>
+
+                <div class="section-group">
+                    <div class="section-title">其他配置</div>
+                    <div class="panel-card other-bar">
+                        <div class="other-item">
+                            <label>物理+（%）</label>
+                            <input type="number" v-model.number="store.config.physical" class="other-input"
+                                placeholder="0">
+                        </div>
+                        <div class="other-item">
+                            <label>特殊+（%）</label>
+                            <input type="number" v-model.number="store.config.special" class="other-input"
+                                placeholder="0">
+                        </div>
+                        <div class="other-item">
+                            <label>拍招+（%）</label>
+                            <input type="number" v-model.number="store.config.sync" class="other-input" placeholder="0">
+                        </div>
+                        <div class="other-item">
+                            <label>裝備招式*（%）</label>
+                            <input type="number" v-model.number="store.config.gearMove" class="other-input"
+                                placeholder="0">
+                        </div>
+                        <div class="other-item">
+                            <label>裝備拍招*（%）</label>
+                            <input type="number" v-model.number="store.config.gearSync" class="other-input" placeholder="0">
+                        </div>
+                        <div class="other-item">
+                            <label>組隊+（白值）</label>
+                            <div class="row-inputs">
+                                <select v-model="store.user.themeType" class="type-select-small">
+                                    <option v-for="t in typeOptions" :key="t" :value="t">{{ t }}</option>
+                                </select>
+                                <input type="number" v-model.number="store.user.themeTypeAdd" class="other-input"
+                                    placeholder="0">
                             </div>
                         </div>
                     </div>
@@ -524,6 +544,7 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
                                                         v-html="getBoostTooltip(res).replace(/\n/g, '<br/>')"></div>
                                                     <div class="tooltip-footer">
                                                         <div>环境倍率: x{{ res.envBoost }}</div>
+                                                        <div>裝備倍率: x{{ res.gearBoost }}</div>
                                                         <div>招式倍率: x{{ (res.moveBoost / 100).toFixed(2) }}</div>
                                                     </div>
                                                 </div>
@@ -552,9 +573,9 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
                                         <div class="header-content-left relative group">
                                             <div class="move-name-row">
                                                 <span class="move-name">{{ formResult.teraMove?.move.name
-                                                }}</span>
+                                                    }}</span>
                                                 <span class="power-badge">威力 {{ formResult.teraMove?.movePower
-                                                }}</span>
+                                                    }}</span>
                                             </div>
 
                                             <div class="custom-tooltip tooltip-up">
@@ -564,6 +585,7 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
                                                 </div>
                                                 <div class="tooltip-footer">
                                                     <div>环境倍率: x{{ formResult.teraMove?.envBoost }}</div>
+                                                    <div>裝備倍率: x{{ formResult.teraMove?.gearBoost }}</div>
                                                     <div>招式倍率: x{{ (formResult.teraMove?.moveBoost / 100).toFixed(2) }}
                                                     </div>
                                                 </div>
@@ -633,9 +655,9 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
                                         <div class="header-content-left relative group">
                                             <div class="move-name-row">
                                                 <span class="move-name text-lg">{{ formResult.syncMove.move.name
-                                                }}</span>
+                                                    }}</span>
                                                 <span class="power-badge">威力 {{ formResult.syncMove.movePower
-                                                }}</span>
+                                                    }}</span>
                                             </div>
 
                                             <div class="custom-tooltip tooltip-up">
@@ -645,6 +667,7 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
                                                 </div>
                                                 <div class="tooltip-footer">
                                                     <div>环境倍率: x{{ formResult.syncMove.envBoost }}</div>
+                                                    <div>裝備倍率: x{{ formResult.syncMove.gearBoost }}</div>
                                                     <div>招式倍率: x{{ (formResult.syncMove.moveBoost / 100).toFixed(2) }}
                                                     </div>
                                                 </div>
@@ -683,10 +706,10 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
 <style scoped>
 .modal-overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    inset-inline-end: 0;
+    inset-block-end: 0;
     background: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
@@ -696,9 +719,9 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
 
 .modal-window {
     background: white;
-    width: 90vw;
-    height: 95vh;
-    max-width: 1000px;
+    inline-size: 90vw;
+    block-size: 95vh;
+    max-inline-size: 1000px;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
@@ -738,25 +761,25 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
 .window-footer {
     padding: 10px 20px;
     background: white;
-    border-top: 1px solid #ddd;
-    text-align: right;
+    border-block-start: 1px solid #ddd;
+    text-align: end;
 }
 
 .section-group {
-    margin-bottom: 20px;
+    margin-block-end: 20px;
 }
 
 .section-title {
     font-size: 1rem;
     font-weight: bold;
     color: #333;
-    margin-bottom: 10px;
-    padding-left: 8px;
-    border-left: 4px solid #009688;
+    margin-block-end: 10px;
+    padding-inline-start: 8px;
+    border-inline-start: 4px solid #009688;
 }
 
 .panel-card {
-    background-image: url('../assets/images/bg3.png');
+    background-image: url('../assets/images/bg1.png');
     padding: 15px;
     border-radius: 6px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
@@ -770,33 +793,33 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
     border: 1px solid #eee;
     border-radius: 8px;
     background: white;
-    width: 100%;
+    inline-size: 100%;
 }
 
 .stat-col {
     flex: 1;
-    min-width: 45px;
+    min-inline-size: 45px;
     display: flex;
     flex-direction: column;
-    border-right: 1px solid #eee;
+    border-inline-end: 1px solid #eee;
 }
 
 .stat-col:last-child {
-    border-right: none;
+    border-inline-end: none;
 }
 
 .stat-cell {
-    height: 36px;
+    block-size: 36px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom: 1px solid #f5f5f5;
+    border-block-end: 1px solid #f5f5f5;
     padding: 2px;
 }
 
 .header-cell {
-    height: 40px;
-    border-bottom: 1px solid #eee;
+    block-size: 40px;
+    border-block-end: 1px solid #eee;
 }
 
 .bg-green-100 {
@@ -832,15 +855,15 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
 }
 
 .stat-icon {
-    width: 24px;
-    height: 24px;
+    inline-size: 24px;
+    block-size: 24px;
     object-fit: contain;
 }
 
 .val-input,
 .rank-select {
-    width: 100%;
-    height: 100%;
+    inline-size: 100%;
+    block-size: 100%;
     border: none;
     text-align: center;
     background: transparent;
@@ -882,7 +905,7 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
 
 /* ✨ Double Height Cell & Merged Inputs */
 .double-cell {
-    height: 64px;
+    block-size: 64px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -890,14 +913,14 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
 }
 
 .half-input {
-    height: 32px;
-    width: 100%;
+    block-size: 32px;
+    inline-size: 100%;
     border: none;
     font-size: 0.85rem;
 }
 
 .top-input {
-    border-bottom: 1px dashed #eee;
+    border-block-end: 1px dashed #eee;
     color: #444;
 }
 
@@ -907,14 +930,14 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    height: 100%;
+    block-size: 100%;
     align-items: center;
-    width: 100%;
+    inline-size: 100%;
 }
 
 .label-divider {
-    width: 80%;
-    height: 1px;
+    inline-size: 80%;
+    block-size: 1px;
     background: #eee;
 }
 
@@ -932,7 +955,7 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
     gap: 10px;
     padding: 15px 10px;
     background: #f8fcfd;
-    border-top: 1px solid #eee;
+    border-block-start: 1px solid #eee;
     flex-wrap: wrap;
 }
 
@@ -941,7 +964,7 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
     flex-direction: column;
     gap: 8px;
     align-items: center;
-    min-width: 80px;
+    min-inline-size: 80px;
 }
 
 .status-label {
@@ -964,8 +987,8 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
 }
 
 .icon-btn {
-    width: 34px;
-    height: 34px;
+    inline-size: 34px;
+    block-size: 34px;
     border: 1px solid #ddd;
     background: white;
     cursor: pointer;
@@ -991,13 +1014,13 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
 }
 
 .icon-btn img {
-    width: 100%;
-    height: 100%;
+    inline-size: 100%;
+    block-size: 100%;
     object-fit: contain;
 }
 
 .sync-input {
-    width: 50px;
+    inline-size: 50px;
     padding: 6px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -1010,8 +1033,8 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
 .boost-section-wrapper {
     padding: 10px;
     background: #f8fcfd;
-    border-top: 1px dashed #eee;
-    margin-top: 10px;
+    border-block-start: 1px dashed #eee;
+    margin-block-start: 10px;
 }
 
 .boost-section {
@@ -1024,16 +1047,16 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
     flex-direction: column;
     align-items: center;
     gap: 4px;
-    width: 60px;
+    inline-size: 60px;
 }
 
 .boost-icon img {
-    width: 28px;
-    height: 28px;
+    inline-size: 28px;
+    block-size: 28px;
 }
 
 .boost-select {
-    width: 100%;
+    inline-size: 100%;
     text-align: center;
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -1045,8 +1068,8 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
 .battle-settings-bar {
     padding: 10px;
     background: #f8fcfd;
-    border-top: 1px solid #eee;
-    margin-top: 10px;
+    border-block-start: 1px solid #eee;
+    margin-block-start: 10px;
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -1061,7 +1084,7 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
 
 .full-width-row {
     justify-content: center;
-    width: 100%;
+    inline-size: 100%;
 }
 
 .space-between {
@@ -1080,7 +1103,7 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
     border-radius: 4px;
     border: 1px solid #ccc;
     font-weight: bold;
-    width: 100px;
+    inline-size: 100px;
 }
 
 .text-toggle-btn {
@@ -1114,11 +1137,11 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
     color: #009688;
     cursor: pointer;
     font-weight: bold;
-    border-right: 1px solid #009688;
+    border-inline-end: 1px solid #009688;
 }
 
 .segment-control button:last-child {
-    border-right: none;
+    border-inline-end: none;
 }
 
 .segment-control button.active {
@@ -1140,11 +1163,11 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
     color: #006064;
     cursor: pointer;
     font-size: 0.8rem;
-    border-right: 1px solid #80deea;
+    border-inline-end: 1px solid #80deea;
 }
 
 .gauge-control button:last-child {
-    border-right: none;
+    border-inline-end: none;
 }
 
 .gauge-control button.active {
@@ -1156,15 +1179,15 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
 .rebuff-section {
     padding: 10px;
     background: #f8fcfd;
-    border-top: 1px solid #eee;
-    margin-top: 5px;
+    border-block-start: 1px solid #eee;
+    margin-block-start: 5px;
 }
 
 .section-label {
     font-size: 0.85rem;
     color: black;
     font-weight: bold;
-    margin-bottom: 7px;
+    margin-block-end: 7px;
     text-align: center;
 }
 
@@ -1174,25 +1197,25 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
     border: 1px solid #eee;
     border-radius: 6px;
     background: white;
-    width: 100%;
+    inline-size: 100%;
 }
 
 .rebuff-col {
     flex: 1;
-    min-width: 35px;
+    min-inline-size: 35px;
     display: flex;
     flex-direction: column;
-    border-right: 1px solid #f5f5f5;
+    border-inline-end: 1px solid #f5f5f5;
     align-items: center;
 }
 
 .rebuff-col:last-child {
-    border-right: none;
+    border-inline-end: none;
 }
 
 .rebuff-icon {
-    width: 20px;
-    height: 20px;
+    inline-size: 20px;
+    block-size: 20px;
 }
 
 .rebuff-select {
@@ -1211,21 +1234,21 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
     display: flex;
     align-items: center;
     gap: 10px;
-    border-bottom: 1px dashed #eee;
-    padding-bottom: 8px;
+    border-block-end: 1px dashed #eee;
+    padding-block-end: 8px;
 }
 
 .env-toolbar:last-child {
-    border-bottom: none;
+    border-block-end: none;
 }
 
 .label-col {
     font-size: 0.9rem;
     font-weight: bold;
     color: #555;
-    width: 40px;
-    border-left: 3px solid #009688;
-    padding-left: 6px;
+    inline-size: 40px;
+    border-inline-start: 3px solid #009688;
+    padding-inline-start: 6px;
 }
 
 .env-scroll-container {
@@ -1233,12 +1256,12 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
     overflow-x: auto;
     gap: 6px;
     flex: 1;
-    padding-bottom: 2px;
+    padding-block-end: 2px;
 }
 
 .env-btn {
-    width: 36px;
-    height: 36px;
+    inline-size: 36px;
+    block-size: 36px;
     border: 1px solid #ddd;
     border-radius: 6px;
     background: white;
@@ -1263,14 +1286,14 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
 }
 
 .env-btn img {
-    width: 100%;
-    height: 100%;
+    inline-size: 100%;
+    block-size: 100%;
     object-fit: contain;
 }
 
 .ex-btn {
-    width: 36px;
-    height: 36px;
+    inline-size: 36px;
+    block-size: 36px;
     border: 1px solid #009688;
     border-radius: 4px;
     background: white;
@@ -1293,7 +1316,8 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
 .circle-scroll-wrapper {
     background: white;
     padding: 10px;
-    border-radius: 6px;
+    /* border-radius: 6px; */
+    margin-block-start: 10px;
     overflow: hidden;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
@@ -1302,7 +1326,7 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
     display: flex;
     gap: 8px;
     overflow-x: auto;
-    padding-bottom: 5px;
+    padding-block-end: 5px;
 }
 
 .circle-item {
@@ -1327,12 +1351,12 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
     justify-content: space-evenly;
     padding: 6px 4px;
     background: #f9f9f9;
-    border-bottom: 1px solid #eee;
+    border-block-end: 1px solid #eee;
 }
 
 .toggle-circle-btn {
-    width: 28px;
-    height: 28px;
+    inline-size: 28px;
+    block-size: 28px;
     border-radius: 50%;
     border: 1px solid #ccc;
     background: white;
@@ -1360,8 +1384,8 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
 }
 
 .toggle-circle-btn img {
-    width: 100%;
-    height: 100%;
+    inline-size: 100%;
+    block-size: 100%;
     object-fit: contain;
 }
 
@@ -1445,8 +1469,8 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
 }
 
 ::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+    inline-size: 6px;
+    block-size: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -1469,7 +1493,7 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
     border: 1px solid #ddd;
     border-radius: 8px;
     background: white;
-    margin-bottom: 10px;
+    margin-block-end: 10px;
 }
 
 .form-title {
@@ -1487,7 +1511,7 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
 }
 
 .move-card {
-    border-bottom: 1px solid #eee;
+    border-block-end: 1px solid #eee;
     position: relative;
     z-index: 1;
 }
@@ -1498,7 +1522,7 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
 
 /* Fix Tooltip overlap */
 .move-card:last-child {
-    border-bottom: none;
+    border-block-end: none;
     border-radius: 0 0 8px 8px;
 }
 
@@ -1517,10 +1541,10 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
 .move-header::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    inset-inline-end: 0;
+    inset-block-end: 0;
     background: rgba(0, 0, 0, 0.25);
     z-index: -1;
 }
@@ -1536,7 +1560,7 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
 
 /* Right Content */
 .header-content-right {
-    margin-left: auto;
+    margin-inline-start: auto;
     position: relative;
     z-index: 20;
 }
@@ -1557,7 +1581,7 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
     color: white;
     border: 1px solid rgba(255, 255, 255, 0.4);
     display: inline-block;
-    margin-left: 6px;
+    margin-inline-start: 6px;
 }
 
 .stat-simple-badge {
@@ -1595,7 +1619,7 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
 .separator {
     color: rgba(0, 0, 0, 0.7);
     /* 逗號稍微淡一點 */
-    margin-right: 4px;
+    margin-inline-end: 4px;
 }
 
 /* 最小值：改用亮青色/淺藍色，在深色背景更明顯 */
@@ -1614,7 +1638,7 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
 }
 
 .sync-card {
-    border-top: 3px solid #FFD700;
+    border-block-start: 3px solid #FFD700;
 }
 
 .sync-power {
@@ -1637,28 +1661,28 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
     visibility: hidden;
     opacity: 0;
     position: absolute;
-    left: 0;
+    inset-inline-start: 0;
     background: rgba(33, 33, 33, 0.95);
     color: white;
     padding: 10px;
     border-radius: 6px;
-    width: 240px;
+    inline-size: 240px;
     z-index: 999;
     transition: opacity 0.2s;
     pointer-events: none;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     margin: 8px 0;
-    text-align: left;
+    text-align: start;
 }
 
 .tooltip-up {
-    bottom: 100%;
-    margin-bottom: 8px;
+    inset-block-end: 100%;
+    margin-block-end: 8px;
 }
 
 .tooltip-down {
-    top: 100%;
-    margin-top: 8px;
+    inset-block-start: 100%;
+    margin-block-start: 8px;
 }
 
 .group:hover .custom-tooltip {
@@ -1669,9 +1693,9 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
 .tooltip-title {
     font-size: 0.85rem;
     font-weight: bold;
-    border-bottom: 1px solid #555;
-    padding-bottom: 4px;
-    margin-bottom: 4px;
+    border-block-end: 1px solid #555;
+    padding-block-end: 4px;
+    margin-block-end: 4px;
     color: #FFD700;
 }
 
@@ -1683,9 +1707,9 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
 }
 
 .tooltip-footer {
-    margin-top: 8px;
-    padding-top: 4px;
-    border-top: 1px dashed #555;
+    margin-block-start: 8px;
+    padding-block-start: 4px;
+    border-block-start: 1px dashed #555;
     font-size: 0.75rem;
     color: #aaa;
 }
@@ -1703,7 +1727,7 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
     border: 1px solid #ccc;
     font-weight: bold;
     font-size: 0.85rem;
-    width: 60px;
+    inline-size: 60px;
     text-align: center;
     background-color: white;
 }
@@ -1730,7 +1754,7 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
 }
 
 .other-input {
-    width: 60px;
+    inline-size: 60px;
     padding: 4px;
     text-align: center;
     border: 1px solid #ccc;

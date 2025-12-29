@@ -1,0 +1,970 @@
+{
+  "trainer": {
+    "id": "10330000000",
+    "name": "枇琶",
+    "actor": "枇琶",
+    "actorId": "ch0330_00_biwa",
+    "rarity": 5,
+    "role": 2,
+    "exRole": 3,
+    "ex": true,
+    "exclusivity": "Pokefair",
+    "maxBonusLevel": 10
+  },
+  "scoutMethod": 1,
+  "scheduleId": "chara_6100_1109_FOREVER",
+  "themes": [
+    {
+      "name": "格鬥屬性／輔助",
+      "description": "我方全體拍組最大HP提升60",
+      "tag": "格鬥",
+      "category": 1
+    },
+    {
+      "name": "帕底亞／輔助",
+      "description": "我方全體拍組最大HP提升13",
+      "tag": "帕底亞",
+      "category": 2
+    },
+    {
+      "name": "鍛鍊精壯的身體／輔助",
+      "description": "我方全體拍組最大HP提升15",
+      "tag": "鍛鍊精壯的身體",
+      "category": 999
+    },
+    {
+      "name": "鬥志昂揚／輔助",
+      "description": "我方全體拍組最大HP提升15",
+      "tag": "鬥志昂揚",
+      "category": 999
+    },
+    {
+      "name": "天星隊／輔助",
+      "description": "我方全體拍組最大HP提升13",
+      "tag": "天星隊",
+      "category": 3
+    }
+  ],
+  "specialAwaking": {
+    "name": "唔啊啊啊啊~~~!!!",
+    "description": "首次上場時,發動拍組招式所需的行動數會減少2次。當我方場地為帕底亞鬥陣(防禦)時,會提高我方全體拍組的招式的威力。首次陷入危機時,會回復自己的HP,約為自己最大HP的60%。",
+    "detail": [
+      {
+        "name": "首次危機時HP回復6",
+        "description": "首次陷入危機時,會回復自己的HP,約為自己最大HP的60%。"
+      },
+      {
+        "name": "首次上場時計數加速2",
+        "description": "首次上場時,發動拍組招式所需的行動數會減少2次。"
+      },
+      {
+        "name": "帕底亞鬥陣(防禦)時威力↑G2",
+        "description": "當我方場地為帕底亞鬥陣(防禦)時,會提高我方全體拍組的招式的威力。"
+      }
+    ]
+  },
+  "pokemon": [
+    {
+      "id": "20330000000",
+      "variationType": 0,
+      "vAfterSm": false,
+      "name": "棄世猴",
+      "form": "",
+      "actor": "pm0979_00_00_konoyozaru",
+      "gender": 1,
+      "isShiny": false,
+      "type": 7,
+      "weakness": 10,
+      "stat": {
+        "hp": [
+          105,
+          184,
+          259,
+          556,
+          620,
+          684,
+          876
+        ],
+        "atk": [
+          17,
+          60,
+          99,
+          264,
+          300,
+          336,
+          444
+        ],
+        "def": [
+          14,
+          54,
+          90,
+          233,
+          265,
+          297,
+          393
+        ],
+        "spa": [
+          12,
+          35,
+          56,
+          144,
+          160,
+          176,
+          224
+        ],
+        "spd": [
+          15,
+          54,
+          90,
+          233,
+          265,
+          297,
+          393
+        ],
+        "spe": [
+          14,
+          55,
+          94,
+          248,
+          280,
+          312,
+          408
+        ]
+      },
+      "passives": [
+        {
+          "name": "站到最後屹立不搖的才是勝者!!",
+          "description": "受到招式攻擊時,會提高我方全體拍組的防禦和特防1階段。受到招式攻擊時,會提高我方全體拍組的下次物理招式威力增強1階段。",
+          "detail": []
+        },
+        {
+          "name": "鬥陣時攻擊時下次不消耗計量槽9",
+          "description": "當我方場地為任一鬥陣且使出招式攻擊成功時,會讓自己變成下次計量槽消耗0狀態。",
+          "detail": []
+        },
+        {
+          "name": "睡眠畏縮無效G",
+          "description": "我方全體拍組不會陷入睡眠和畏縮狀態。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 409,
+          "user": "寶可夢",
+          "name": "吸取拳",
+          "type": 7,
+          "gauge": 3,
+          "uses": "−",
+          "category": 1,
+          "power": 91,
+          "accuracy": 100,
+          "target": "對手１對拍組",
+          "description": "給予對手的傷害越多,自己的HP就回復得越多。",
+          "tags": "Absorbs",
+          "group": "Regular"
+        },
+        {
+          "id": 8226,
+          "user": "寶可夢",
+          "name": "帕底亞的團結",
+          "type": 0,
+          "gauge": 2,
+          "uses": 2,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方場地",
+          "description": "分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。讓我方場地變成帕底亞鬥陣(防禦)。帕底亞鬥陣(防禦)將會發揮下列所有效果。提高我方全體拍組的招式和拍組招式威力5%。減輕我方全體拍組受到招式和拍組招式攻擊時的傷害10%。當我方場地中擁有帕底亞標籤的拍組越多,此效果還會提升得越多。(每增加1對拍組,威力提升+5%,傷害減輕+5%。)(威力最多可提升20%,傷害最多可減輕25%。)",
+          "tags": 8388608,
+          "group": "Regular"
+        },
+        {
+          "id": 6090,
+          "user": "寶可夢",
+          "name": "友愛之憤怒之拳",
+          "type": 14,
+          "gauge": 3,
+          "uses": 2,
+          "category": 1,
+          "power": 50,
+          "accuracy": 0,
+          "target": "對手１對拍組",
+          "description": "【開放條件】\n受到1次招式攻擊時\n【封印條件】\n無\n\n攻擊必定會命中。每次受到招式攻擊時,威力都會提高。(每受到1次攻擊威力提升+100%)(威力最多可提升600%)回復自己的HP,約為自己最大HP的40%。",
+          "tags": 264,
+          "group": 6
+        },
+        {
+          "id": 13300,
+          "user": "訓練師",
+          "name": "我不會逃避的!",
+          "type": 0,
+          "gauge": 0,
+          "uses": 1,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方全體拍組",
+          "description": "提高我方全體拍組的擊中要害率3階段。讓我方全體拍組變成附帶回復狀態。提高我方全體拍組的下次物理招式威力增強2階段。",
+          "tags": "none",
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 107600,
+        "user": "寶可夢",
+        "name": "地獄偶像的絕招之十字劈",
+        "type": 7,
+        "gauge": 0,
+        "uses": "−",
+        "category": 1,
+        "power": 250,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "沒有追加效果。",
+        "tags": "none",
+        "group": "Sync"
+      }
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "枇琶專用潛能餅乾１",
+      "skills": [
+        {
+          "name": "上場時防禦特防提升1",
+          "description": "上場時,會提高自己的防禦和特防1階段。",
+          "detail": [],
+          "rate": 100
+        }
+      ]
+    },
+    {
+      "cookieName": "枇琶專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "被攻擊時HP回復G9",
+          "description": "受到招式攻擊時,會回復我方全體拍組的HP。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時物理/特殊增強G1",
+          "description": "首次上場時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時拍組招式增強G3",
+          "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
+          "detail": [],
+          "rate": 33
+        }
+      ]
+    }
+  ],
+  "grid": [
+    {
+      "id": 1033000000,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033000001,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033000002,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033000003,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033000004,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033000005,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033000006,
+      "name": "束縛無效",
+      "description": "不會陷入束縛狀態。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 2,
+      "x": 0,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1033000007,
+      "name": "首次拍組招式後下次傷害防禦",
+      "description": "首次使出拍組招式時,會讓自己變成下次傷害防禦狀態。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 4,
+      "x": 0,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1033000008,
+      "name": "首次拍組招式後招式次數回復1",
+      "description": "首次使出拍組招式時,會幫自己的招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 5,
+      "x": -2,
+      "y": 5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1033000009,
+      "name": "中毒無效",
+      "description": "不會陷入中毒狀態和劇毒狀態。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 2,
+      "x": 0,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1033000010,
+      "name": "訓練家出招後賦予物理增強(1)G9",
+      "description": "在訓練家使出招式時,會提高我方全體拍組的下次物理招式威力增強1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 4,
+      "x": 0,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1033000011,
+      "name": "帕底亞鬥陣(防禦)時拍組招式↑G3",
+      "description": "當我方場地為帕底亞鬥陣(防禦)時,會提高我方全體拍組的拍組招式的威力。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 5,
+      "x": -2,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1033000012,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033000013,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033000014,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033000015,
+      "name": "特防下降無效",
+      "description": "特防不會降低。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": 3,
+      "y": 1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1033000016,
+      "name": "吸取拳：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": 2,
+      "color": "#47D147",
+      "type": 7
+    },
+    {
+      "id": 1033000017,
+      "name": "吸取拳：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 1,
+      "y": 3,
+      "color": "#47D147",
+      "type": 7
+    },
+    {
+      "id": 1033000018,
+      "name": "吸取拳：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 3,
+      "y": 2,
+      "color": "#47D147",
+      "type": 7
+    },
+    {
+      "id": 1033000019,
+      "name": "訓練家出招後下次不消耗計量槽9",
+      "description": "在訓練家使出招式時,會讓自己變成下次計量槽消耗0狀態。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 2,
+      "x": 2,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1033000020,
+      "name": "攻擊時攻擊提升G9",
+      "description": "使出招式攻擊成功時,會提高我方全體拍組的攻擊1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 1,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1033000021,
+      "name": "鬥陣時攻擊招式威力↓2",
+      "description": "當我方場地為任一鬥陣時,會減輕受到招式攻擊時的傷害。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 3,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1033000022,
+      "name": "攻擊時防禦下降9",
+      "description": "使出招式攻擊成功時,會降低對手的防禦1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1033000023,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033000024,
+      "name": "吸取拳：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -3,
+      "y": 0,
+      "color": "#47D147",
+      "type": 7
+    },
+    {
+      "id": 1033000025,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033000026,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033000027,
+      "name": "吸取拳：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -3,
+      "y": -1,
+      "color": "#FF0066",
+      "type": 7
+    },
+    {
+      "id": 1033000028,
+      "name": "吸取拳：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -1,
+      "y": -2,
+      "color": "#47D147",
+      "type": 7
+    },
+    {
+      "id": 1033000029,
+      "name": "我不會逃避的!：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -2,
+      "y": -2,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1033000030,
+      "name": "帕底亞鬥陣(防禦)時間延長3",
+      "description": "我方場地變成帕底亞鬥陣(防禦)的瞬間在場上時,會延長帕底亞鬥陣(防禦)的持續時間。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -3,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1033000031,
+      "name": "首次拍組招式後物理增強G2",
+      "description": "首次使出拍組招式時,會提高我方全體拍組的下次物理招式威力增強2階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -1,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1033000032,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033000033,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033000034,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033000035,
+      "name": "防禦下降無效",
+      "description": "防禦不會降低。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": 3,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1033000036,
+      "name": "友愛之憤怒之拳：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": -4,
+      "color": "#47D147",
+      "type": 14
+    },
+    {
+      "id": 1033000037,
+      "name": "友愛之憤怒之拳：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 1,
+      "y": -4,
+      "color": "#47D147",
+      "type": 14
+    },
+    {
+      "id": 1033000038,
+      "name": "友愛之憤怒之拳：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 3,
+      "y": -5,
+      "color": "#47D147",
+      "type": 14
+    },
+    {
+      "id": 1033000039,
+      "name": "格鬥屬性防守",
+      "description": "可減輕受到格鬥屬性招式攻擊時的傷害。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 2,
+      "y": -5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1033000040,
+      "name": "我不會逃避的!：招式後攻擊提升G2",
+      "description": "招式成功時,會提高我方全體拍組的攻擊2階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 1,
+      "y": -5,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1033000041,
+      "name": "帕底亞的團結：招式後場地招式計量槽加速9",
+      "description": "招式成功時,會讓我方場地變成招式計量槽加速狀態。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 3,
+      "y": -6,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1033000042,
+      "name": "帕底亞鬥陣(防禦)時擊中要害無效G",
+      "description": "當我方場地為帕底亞鬥陣(防禦)時,對手的攻擊不會擊中我方全體拍組的要害。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": -6,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1033000043,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033000044,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033000045,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -3,
+      "y": 3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033000046,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033000047,
+      "name": "友愛之憤怒之拳：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -1,
+      "y": 3,
+      "color": "#47D147",
+      "type": 14
+    },
+    {
+      "id": 1033000048,
+      "name": "友愛之憤怒之拳：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -3,
+      "y": 4,
+      "color": "#47D147",
+      "type": 14
+    },
+    {
+      "id": 1033000049,
+      "name": "攻擊 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": -2,
+      "y": 4,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1033000050,
+      "name": "被攻擊時HP回復G9",
+      "description": "受到招式攻擊時,會回復我方全體拍組的HP。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -1,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1033000051,
+      "name": "被攻擊時對手攻擊&特攻下降9",
+      "description": "受到招式攻擊時,會降低剛才來攻擊自己的對手的攻擊和特攻1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -3,
+      "y": 5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1033000052,
+      "name": "地獄偶像的絕招之十字劈：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": 3,
+      "color": "#BF80FF",
+      "type": 7
+    },
+    {
+      "id": 1033000053,
+      "name": "地獄偶像的絕招之十字劈：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": -3,
+      "color": "#BF80FF",
+      "type": 7
+    }
+  ]
+}

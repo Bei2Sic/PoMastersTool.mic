@@ -1,0 +1,1077 @@
+{
+  "trainer": {
+    "id": "10130900000",
+    "name": "莎莉娜（冠軍）",
+    "actor": "莎莉娜",
+    "actorId": "ch0130_90_serena",
+    "rarity": 5,
+    "role": 3,
+    "exRole": 2,
+    "ex": true,
+    "exclusivity": "Master",
+    "maxBonusLevel": 5
+  },
+  "scoutMethod": 1,
+  "scheduleId": "chara_4110_1130_FOREVER",
+  "themes": [
+    {
+      "name": "水屬性／技術",
+      "description": "我方全體拍組最大HP提升24\n僅在我方使出水屬性攻擊時，攻擊和特攻提升24",
+      "tag": "水",
+      "category": 1
+    },
+    {
+      "name": "卡洛斯／技術",
+      "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
+      "tag": "卡洛斯",
+      "category": 2
+    },
+    {
+      "name": "主角／技術",
+      "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
+      "tag": "主角",
+      "category": 3
+    },
+    {
+      "name": "冠軍／技術",
+      "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
+      "tag": "冠軍",
+      "category": 3
+    }
+  ],
+  "specialAwaking": {
+    "name": "",
+    "description": "",
+    "detail": []
+  },
+  "pokemon": [
+    {
+      "id": "20130900000",
+      "variationType": 0,
+      "vAfterSm": false,
+      "name": "甲賀忍蛙",
+      "form": "拍組招式：水",
+      "actor": "pm0725_00_frog3",
+      "gender": 1,
+      "isShiny": false,
+      "type": 3,
+      "weakness": 4,
+      "stat": {
+        "hp": [
+          95,
+          170,
+          242,
+          528,
+          588,
+          648,
+          828
+        ],
+        "atk": [
+          24,
+          84,
+          141,
+          372,
+          420,
+          468,
+          612
+        ],
+        "def": [
+          12,
+          36,
+          57,
+          145,
+          165,
+          185,
+          245
+        ],
+        "spa": [
+          24,
+          84,
+          141,
+          372,
+          420,
+          468,
+          612
+        ],
+        "spd": [
+          12,
+          36,
+          57,
+          145,
+          165,
+          185,
+          245
+        ],
+        "spe": [
+          19,
+          72,
+          123,
+          321,
+          365,
+          409,
+          541
+        ]
+      },
+      "passives": [
+        {
+          "name": "卡洛斯的信念",
+          "description": "提高我方全體拍組的特殊招式威力20%。減輕我方全體拍組受到特殊招式攻擊時的傷害25%。當我方隊伍中擁有卡洛斯標籤的拍組越多,此效果還會提升得越多。(每增加1對拍組,威力提升+15%,傷害減輕+3%。)(威力最多可提升50%,傷害最多可減輕31%。)",
+          "detail": []
+        },
+        {
+          "name": "時尚惡變幻",
+          "description": "在使出惡屬性的招式前,會讓自己的拍組招式和部分被動技能變化成其他內容。",
+          "detail": []
+        },
+        {
+          "name": "連續招式次數最大化",
+          "description": "當自己使出有連續效果的招式且招式成功時,連續攻擊的次數會達到最大。",
+          "detail": []
+        },
+        {
+          "name": "命中時能力下降9",
+          "description": "使出招式攻擊命中時,會降低對手的攻擊、防禦、特攻、特防、速度、命中率、閃避率中的一種能力1階段。若使出有連續效果的招式,則在每次攻擊命中時,都會降低對手的攻擊、防禦、特攻、特防、速度、命中率、閃避率中的一種能力1階段。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 594,
+          "user": "寶可夢",
+          "name": "飛水手裡劍",
+          "type": 3,
+          "gauge": 2,
+          "uses": "−",
+          "category": 2,
+          "power": 25,
+          "accuracy": 100,
+          "target": "對手１對拍組",
+          "description": "連續攻擊對手2~5次。",
+          "tags": "Continues",
+          "group": "Regular"
+        },
+        {
+          "id": 655,
+          "user": "寶可夢",
+          "name": "狂舞揮打",
+          "type": 16,
+          "gauge": 2,
+          "uses": "−",
+          "category": 1,
+          "power": 50,
+          "accuracy": 100,
+          "target": "對手全體拍組",
+          "description": "沒有追加效果。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 6005,
+          "user": "寶可夢",
+          "name": "電光一閃・自在",
+          "type": 1,
+          "gauge": 0,
+          "uses": 2,
+          "category": 1,
+          "power": 150,
+          "accuracy": 0,
+          "target": "對手１對拍組",
+          "description": "【開放條件】\n封印狀態下我方使出招式攻擊命中10次時\n【封印條件】\n使出此招式時\n\n攻擊必定會命中。降低對手的防禦和特防2階段。當自己的拍組招式為水屬性時,會降低對手的水屬性抵抗1階段。當自己的拍組招式為惡屬性時,會降低對手的惡屬性抵抗1階段。自己發動拍組招式所需的行動數會減少1次。提高我方全體拍組的速度3階段。",
+          "tags": 12,
+          "group": 6
+        },
+        {
+          "id": 11309,
+          "user": "訓練師",
+          "name": "聯繫明日的榮耀",
+          "type": 0,
+          "gauge": 0,
+          "uses": 1,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "自己",
+          "description": "提高自己的攻擊2階段。提高自己的特攻4階段。提高自己的擊中要害率3階段。",
+          "tags": "none",
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 91300,
+        "user": "寶可夢",
+        "name": "俐落玩弄於股掌之飛水手裡劍",
+        "type": 3,
+        "gauge": 0,
+        "uses": "−",
+        "category": 2,
+        "power": 200,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "對手的能力降低得越多,威力就越大。",
+        "tags": "none",
+        "group": "Sync"
+      }
+    },
+    {
+      "id": "20130900000",
+      "variationType": 2,
+      "vAfterSm": false,
+      "name": "甲賀忍蛙",
+      "form": "拍組招式：惡",
+      "actor": "pm0725_00_frog3",
+      "gender": 1,
+      "isShiny": false,
+      "type": 16,
+      "weakness": 4,
+      "stat": {
+        "hp": [
+          95,
+          170,
+          242,
+          528,
+          588,
+          648,
+          828
+        ],
+        "atk": [
+          24,
+          84,
+          141,
+          372,
+          420,
+          468,
+          612
+        ],
+        "def": [
+          12,
+          36,
+          57,
+          145,
+          165,
+          185,
+          245
+        ],
+        "spa": [
+          24,
+          84,
+          141,
+          372,
+          420,
+          468,
+          612
+        ],
+        "spd": [
+          12,
+          36,
+          57,
+          145,
+          165,
+          185,
+          245
+        ],
+        "spe": [
+          19,
+          72,
+          123,
+          321,
+          365,
+          409,
+          541
+        ]
+      },
+      "passives": [
+        {
+          "name": "卡洛斯的信念",
+          "description": "提高我方全體拍組的特殊招式威力20%。減輕我方全體拍組受到特殊招式攻擊時的傷害25%。當我方隊伍中擁有卡洛斯標籤的拍組越多,此效果還會提升得越多。(每增加1對拍組,威力提升+15%,傷害減輕+3%。)(威力最多可提升50%,傷害最多可減輕31%。)",
+          "detail": []
+        },
+        {
+          "name": "華麗水變幻",
+          "description": "在使出水屬性的招式前,會讓自己的拍組招式和部分被動技能變化成其他內容。",
+          "detail": []
+        },
+        {
+          "name": "攻擊時賦予畏縮2",
+          "description": "使出招式攻擊成功時,有30%的機率會讓對手陷入畏縮狀態。",
+          "detail": []
+        },
+        {
+          "name": "攻擊時命中率下降9",
+          "description": "使出招式攻擊成功時,會降低對手的命中率1階段。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 594,
+          "user": "寶可夢",
+          "name": "飛水手裡劍",
+          "type": 3,
+          "gauge": 2,
+          "uses": "−",
+          "category": 2,
+          "power": 25,
+          "accuracy": 100,
+          "target": "對手１對拍組",
+          "description": "連續攻擊對手2~5次。",
+          "tags": "Continues",
+          "group": "Regular"
+        },
+        {
+          "id": 655,
+          "user": "寶可夢",
+          "name": "狂舞揮打",
+          "type": 16,
+          "gauge": 2,
+          "uses": "−",
+          "category": 1,
+          "power": 50,
+          "accuracy": 100,
+          "target": "對手全體拍組",
+          "description": "沒有追加效果。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 6005,
+          "user": "寶可夢",
+          "name": "電光一閃・自在",
+          "type": 1,
+          "gauge": 0,
+          "uses": 2,
+          "category": 1,
+          "power": 150,
+          "accuracy": 0,
+          "target": "對手１對拍組",
+          "description": "【開放條件】\n封印狀態下我方使出招式攻擊命中10次時\n【封印條件】\n使出此招式時\n\n攻擊必定會命中。降低對手的防禦和特防2階段。當自己的拍組招式為水屬性時,會降低對手的水屬性抵抗1階段。當自己的拍組招式為惡屬性時,會降低對手的惡屬性抵抗1階段。自己發動拍組招式所需的行動數會減少1次。提高我方全體拍組的速度3階段。",
+          "tags": 12,
+          "group": 6
+        },
+        {
+          "id": 11309,
+          "user": "訓練師",
+          "name": "聯繫明日的榮耀",
+          "type": 0,
+          "gauge": 0,
+          "uses": 1,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "自己",
+          "description": "提高自己的攻擊2階段。提高自己的特攻4階段。提高自己的擊中要害率3階段。",
+          "tags": "none",
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 93900,
+        "user": "寶可夢",
+        "name": "以真心誠意劈斬之暗襲要害",
+        "type": 16,
+        "gauge": 0,
+        "uses": "−",
+        "category": 1,
+        "power": 200,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "對手的能力降低得越多,威力就越大。",
+        "tags": "none",
+        "group": "Sync"
+      },
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "莎莉娜（冠軍）專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "擊中要害時威力提升3",
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "拍組招式效果絕佳時威力↑5",
+          "description": "當效果絕佳時,會提高該拍組招式的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時拍組招式增強5",
+          "description": "首次上場時,會提高自己的下次拍組招式威力增強5階段。",
+          "detail": [],
+          "rate": 33
+        }
+      ]
+    }
+  ],
+  "grid": [
+    {
+      "id": 1013090000,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013090001,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013090002,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013090003,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013090004,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013090005,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013090006,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013090007,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013090008,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013090009,
+      "name": "畏縮無效",
+      "description": "不會陷入畏縮狀態。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": 3,
+      "y": 1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1013090010,
+      "name": "飛水手裡劍：威力 + 1",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": 2,
+      "color": "#47D147",
+      "type": 3
+    },
+    {
+      "id": 1013090011,
+      "name": "飛水手裡劍：威力 + 1",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 1,
+      "y": 3,
+      "color": "#47D147",
+      "type": 3
+    },
+    {
+      "id": 1013090012,
+      "name": "飛水手裡劍：威力 + 1",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 3,
+      "y": 2,
+      "color": "#47D147",
+      "type": 3
+    },
+    {
+      "id": 1013090013,
+      "name": "飛水手裡劍：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 3
+    },
+    {
+      "id": 1013090014,
+      "name": "拍組招式瞄準要害1",
+      "description": "用拍組招式攻擊時,容易擊中要害。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 1,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1013090015,
+      "name": "俐落玩弄於股掌之飛水手裡劍：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 2,
+      "x": 3,
+      "y": 3,
+      "color": "#BF80FF",
+      "type": 3
+    },
+    {
+      "id": 1013090016,
+      "name": "依特攻升幅威力提升",
+      "description": "自己的特攻提高得越多,招式的威力就提高得越多。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1013090017,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013090018,
+      "name": "狂舞揮打：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -3,
+      "y": 1,
+      "color": "#47D147",
+      "type": 16
+    },
+    {
+      "id": 1013090019,
+      "name": "狂舞揮打：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": 0,
+      "color": "#47D147",
+      "type": 16
+    },
+    {
+      "id": 1013090020,
+      "name": "狂舞揮打：對手妨害狀態時威力↑5",
+      "description": "當對手陷入畏縮、混亂或束縛狀態時,會提高自己的招式的威力。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 2,
+      "x": -3,
+      "y": 0,
+      "color": "#FF0066",
+      "type": 16
+    },
+    {
+      "id": 1013090021,
+      "name": "狂舞揮打：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -1,
+      "y": -1,
+      "color": "#47D147",
+      "type": 16
+    },
+    {
+      "id": 1013090022,
+      "name": "狂舞揮打：對手中招後賦予混亂4",
+      "description": "當以對手為對象的招式成功時,有50%的機率會讓對手陷入混亂狀態。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -2,
+      "y": -1,
+      "color": "#FF0066",
+      "type": 16
+    },
+    {
+      "id": 1013090023,
+      "name": "以真心誠意劈斬之暗襲要害：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 2,
+      "x": -3,
+      "y": -1,
+      "color": "#BF80FF",
+      "type": 16
+    },
+    {
+      "id": 1013090024,
+      "name": "狂舞揮打：效果絕佳時威力提升9",
+      "description": "當效果絕佳時,會提高該招式的威力。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -1,
+      "y": -2,
+      "color": "#FF0066",
+      "type": 16
+    },
+    {
+      "id": 1013090025,
+      "name": "狂舞揮打：招式後招式計量槽增加9",
+      "description": "招式成功時,會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 3,
+      "x": -2,
+      "y": -2,
+      "color": "#FF0066",
+      "type": 16
+    },
+    {
+      "id": 1013090026,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013090027,
+      "name": "電光一閃・自在：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 3,
+      "y": -2,
+      "color": "#47D147",
+      "type": 1
+    },
+    {
+      "id": 1013090028,
+      "name": "電光一閃・自在：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": -2,
+      "color": "#47D147",
+      "type": 1
+    },
+    {
+      "id": 1013090029,
+      "name": "狂舞揮打：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 1,
+      "y": -2,
+      "color": "#47D147",
+      "type": 16
+    },
+    {
+      "id": 1013090030,
+      "name": "惡顏領域時招式計量槽加速2",
+      "description": "當領域為惡顏領域時,招式計量槽會累積得較快。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 3,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1013090031,
+      "name": "惡顏領域時HP回復1",
+      "description": "當領域為惡顏領域時,寶可夢每次行動後都會回復自己的HP。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 2,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1013090032,
+      "name": "狂舞揮打：攻擊時防禦下降9",
+      "description": "使出招式攻擊成功時,會降低對手的防禦1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 1,
+      "y": -3,
+      "color": "#FF0066",
+      "type": 16
+    },
+    {
+      "id": 1013090033,
+      "name": "聯繫明日的榮耀：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 3,
+      "y": -4,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1013090034,
+      "name": "聯繫明日的榮耀：招式後賦予物理/特殊增強(1)9",
+      "description": "招式成功時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": -4,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1013090035,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013090036,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013090037,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": 3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013090038,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -3,
+      "y": 4,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013090039,
+      "name": "電光一閃・自在：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": 4,
+      "color": "#47D147",
+      "type": 1
+    },
+    {
+      "id": 1013090040,
+      "name": "電光一閃・自在：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -3,
+      "y": 5,
+      "color": "#47D147",
+      "type": 1
+    },
+    {
+      "id": 1013090041,
+      "name": "飛水手裡劍：威力 + 1",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -1,
+      "y": 4,
+      "color": "#47D147",
+      "type": 3
+    },
+    {
+      "id": 1013090042,
+      "name": "下雨時HP回復1",
+      "description": "當天氣為下雨時,寶可夢每次行動後都會回復自己的HP。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -2,
+      "y": 5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1013090043,
+      "name": "下雨時異常無效",
+      "description": "當天氣為下雨時,不會陷入異常狀態。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -3,
+      "y": 6,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1013090044,
+      "name": "依對手能力降幅拍組招式威力提升",
+      "description": "對手的能力降低得越多,自己的拍組招式的威力就提高得越多。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -1,
+      "y": 5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1013090045,
+      "name": "飛水手裡劍：下雨時命中時特防下降2",
+      "description": "當天氣為下雨且使出招式攻擊命中時,有30%的機率會降低對手的特防1階段。若天氣為下雨且使出有連續效果的招式,則在每次攻擊命中時,都有30%的機率會降低對手的特防1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": 6,
+      "color": "#FF0066",
+      "type": 3
+    },
+    {
+      "id": 1013090046,
+      "name": "俐落玩弄於股掌之飛水手裡劍：威力 + 50",
+      "description": "",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 3,
+      "x": 0,
+      "y": 3,
+      "color": "#BF80FF",
+      "type": 3
+    },
+    {
+      "id": 1013090047,
+      "name": "以真心誠意劈斬之暗襲要害：威力 + 50",
+      "description": "",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 3,
+      "x": 0,
+      "y": -3,
+      "color": "#BF80FF",
+      "type": 16
+    },
+    {
+      "id": 1013090048,
+      "name": "下雨&惡顏領域時間延長5",
+      "description": "天氣變成下雨的瞬間在場上時,會延長下雨的持續時間。領域變成惡顏領域的瞬間在場上時,會延長惡顏領域的持續時間。",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 5,
+      "x": 0,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1013090049,
+      "name": "電光一閃・自在：招式後變成下雨&變成惡顏領域",
+      "description": "招式成功時,會將天氣變成下雨。招式成功時,會將領域變成惡顏領域。(惡顏領域會提高惡屬性的攻擊的威力。)",
+      "detail": [
+        {
+          "name": "招式後變成下雨",
+          "description": "招式成功時,會將天氣變成下雨。"
+        },
+        {
+          "name": "招式後變成惡顏領域",
+          "description": "招式成功時,會將領域變成惡顏領域。(惡顏領域會提高惡屬性的攻擊的威力。)"
+        }
+      ],
+      "energy": 0,
+      "orb": 5,
+      "level": 4,
+      "x": 0,
+      "y": -2,
+      "color": "#FF0066",
+      "type": 1
+    }
+  ]
+}

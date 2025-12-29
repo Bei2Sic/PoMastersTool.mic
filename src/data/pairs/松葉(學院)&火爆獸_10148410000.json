@@ -1,0 +1,886 @@
+{
+  "trainer": {
+    "id": "10148410000",
+    "name": "松葉（學院）",
+    "actor": "松葉",
+    "actorId": "ch0148_41_matsuba",
+    "rarity": 5,
+    "role": 3,
+    "exRole": 5,
+    "ex": true,
+    "exclusivity": "Special",
+    "maxBonusLevel": 5
+  },
+  "scoutMethod": 1,
+  "scheduleId": "chara_7030_0415_FOREVER",
+  "themes": [
+    {
+      "name": "幽靈屬性／技術",
+      "description": "我方全體拍組最大HP提升24\n僅在我方使出幽靈屬性攻擊時，攻擊和特攻提升24",
+      "tag": "幽靈",
+      "category": 1
+    },
+    {
+      "name": "城都／技術",
+      "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
+      "tag": "城都",
+      "category": 2
+    },
+    {
+      "name": "道館館主／技術",
+      "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
+      "tag": "道館館主",
+      "category": 3
+    },
+    {
+      "name": "特別服裝／技術",
+      "description": "我方全體拍組最大HP提升8\n我方全體拍組的攻擊和特攻提升5",
+      "tag": "特別服裝",
+      "category": 4
+    },
+    {
+      "name": "帕希歐學院／技術",
+      "description": "我方全體拍組最大HP提升8\n我方全體拍組的攻擊和特攻提升5",
+      "tag": "帕希歐學院",
+      "category": 999
+    }
+  ],
+  "specialAwaking": {
+    "name": "",
+    "description": "",
+    "detail": []
+  },
+  "pokemon": [
+    {
+      "id": "20148410000",
+      "variationType": 0,
+      "vAfterSm": false,
+      "name": "火爆獸",
+      "form": "洗翠的樣子",
+      "actor": "pm0157_00_41_bakphoon",
+      "gender": 1,
+      "isShiny": false,
+      "type": 14,
+      "weakness": 3,
+      "stat": {
+        "hp": [
+          106,
+          181,
+          253,
+          539,
+          599,
+          659,
+          839
+        ],
+        "atk": [
+          11,
+          37,
+          61,
+          160,
+          180,
+          200,
+          260
+        ],
+        "def": [
+          14,
+          37,
+          58,
+          146,
+          162,
+          178,
+          226
+        ],
+        "spa": [
+          17,
+          60,
+          99,
+          264,
+          300,
+          336,
+          444
+        ],
+        "spd": [
+          18,
+          43,
+          67,
+          155,
+          175,
+          195,
+          255
+        ],
+        "spe": [
+          16,
+          58,
+          97,
+          251,
+          283,
+          315,
+          411
+        ]
+      },
+      "passives": [
+        {
+          "name": "在黑暗中搖曳的靈魂",
+          "description": "當招式的追加效果可使對手陷入異常狀態時,會提高該追加效果的成功率。當招式的追加效果讓對手陷入異常狀態時,會讓對手全體拍組陷入相同的異常狀態。",
+          "detail": [
+            {
+              "name": "異常機率提升3",
+              "description": "當招式的追加效果可使對手陷入異常狀態時,會提高該追加效果的成功率。"
+            },
+            {
+              "name": "攻擊時賦予異常狀態G9",
+              "description": "當招式的追加效果讓對手陷入異常狀態時,會讓對手全體拍組陷入相同的異常狀態。"
+            }
+          ]
+        },
+        {
+          "name": "修驗者教師的恐怖故事",
+          "description": "當對手陷入灼傷狀態且使出招式攻擊成功時,會降低對手的攻擊、防禦、特攻、特防、速度、命中率和閃避率中的一種能力2階段。當對手陷入灼傷狀態且使出招式攻擊成功時,會讓自己變成下次計量槽消耗0狀態。",
+          "detail": [
+            {
+              "name": "攻擊灼傷中的對手時下次不消耗計量槽9",
+              "description": "當對手陷入灼傷狀態且使出招式攻擊成功時,會讓自己變成下次計量槽消耗0狀態。"
+            },
+            {
+              "name": "攻擊灼傷中的對手時能力2↓9",
+              "description": "當對手陷入灼傷狀態且使出招式攻擊成功時,會降低對手的攻擊、防禦、特攻、特防、速度、命中率和閃避率中的一種能力2階段。"
+            }
+          ]
+        },
+        {
+          "name": "我方攻擊灼傷中的對手時賦予特殊增強(1)9",
+          "description": "當對手陷入灼傷狀態且我方使出招式攻擊成功時,會提高該我方拍組的下次特殊招式威力增強1階段。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 844,
+          "user": "寶可夢",
+          "name": "群魔亂舞",
+          "type": 14,
+          "gauge": 4,
+          "uses": "−",
+          "category": 2,
+          "power": 90,
+          "accuracy": 100,
+          "target": "對手１對拍組",
+          "description": "當對手陷入異常狀態時,威力會變成2倍。有30%的機率會讓對手陷入灼傷狀態。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 8204,
+          "user": "寶可夢",
+          "name": "城都的分析",
+          "type": 0,
+          "gauge": 2,
+          "uses": 2,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方場地",
+          "description": "提高我方全體拍組的下次特殊招式威力增強1階段。讓我方場地變成城都鬥陣(特殊)。城都鬥陣(特殊)將會發揮下列所有效果。提高我方全體拍組的特殊招式和特殊拍組招式威力10%。減輕我方全體拍組受到特殊招式和特殊拍組招式攻擊時的傷害5%。當我方場地中擁有城都標籤的拍組越多,此效果還會提升得越多。(每增加1對拍組,威力提升+10%,傷害減輕+3%。)(威力最多可提升40%,傷害最多可減輕14%。)",
+          "tags": 8388608,
+          "group": "Regular"
+        },
+        {
+          "id": 6118,
+          "user": "寶可夢",
+          "name": "群魔亂舞・逢魔",
+          "type": 14,
+          "gauge": 4,
+          "uses": "−",
+          "category": 2,
+          "power": 200,
+          "accuracy": 0,
+          "target": "對手１對拍組",
+          "description": "【開放條件】\n我方隊伍使出1次拍組招式時\n【封印條件】\n使出此招式時\n\n攻擊必定會命中。當對手陷入異常狀態時,威力會變成2倍。降低對手的特防和速度3階段。讓對手陷入灼傷狀態。",
+          "tags": "SureHit",
+          "group": 6
+        },
+        {
+          "id": 11487,
+          "user": "訓練師",
+          "name": "這是充滿靈魂的課程!",
+          "type": 0,
+          "gauge": 0,
+          "uses": 1,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "自己",
+          "description": "自己發動拍組招式所需的行動數會減少1次。提高自己的特攻4階段。提高自己的擊中要害率3階段。",
+          "tags": "none",
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 117500,
+        "user": "寶可夢",
+        "name": "講述城都傳說之幽靈光線",
+        "type": 14,
+        "gauge": 0,
+        "uses": "−",
+        "category": 2,
+        "power": 200,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "當對手陷入灼傷狀態時,威力會提高。",
+        "tags": "none",
+        "group": "Sync"
+      }
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "松葉（學院）專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "擊中要害時威力提升3",
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "拍組招式效果絕佳時威力↑5",
+          "description": "當效果絕佳時,會提高該拍組招式的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時拍組招式增強5",
+          "description": "首次上場時,會提高自己的下次拍組招式威力增強5階段。",
+          "detail": [],
+          "rate": 33
+        }
+      ]
+    }
+  ],
+  "grid": [
+    {
+      "id": 1800100916,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800100917,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800100918,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800100919,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800100920,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800100921,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800100922,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800100923,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800100924,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800100925,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800100926,
+      "name": "群魔亂舞：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": 2,
+      "color": "#47D147",
+      "type": 14
+    },
+    {
+      "id": 1800100927,
+      "name": "群魔亂舞：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 1,
+      "y": 3,
+      "color": "#47D147",
+      "type": 14
+    },
+    {
+      "id": 1800100928,
+      "name": "群魔亂舞：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 3,
+      "y": 2,
+      "color": "#47D147",
+      "type": 14
+    },
+    {
+      "id": 1800100929,
+      "name": "群魔亂舞：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 14
+    },
+    {
+      "id": 1800100930,
+      "name": "首次上場時場地變成城都鬥陣(特殊)",
+      "description": "首次上場時,會讓我方場地變成城都鬥陣(特殊)。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 1,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800100931,
+      "name": "鬥陣時HP回復1",
+      "description": "當我方場地為任一鬥陣時,寶可夢每次行動後都會回復自己的HP。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 3,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800100932,
+      "name": "城都的分析：首次訓練家招式後計數加速1",
+      "description": "在訓練家首次使出招式時,會讓發動拍組招式所需的行動數減少1次。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": 4,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1800100933,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800100934,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -3,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800100935,
+      "name": "群魔亂舞・逢魔：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": 0,
+      "color": "#47D147",
+      "type": 14
+    },
+    {
+      "id": 1800100936,
+      "name": "群魔亂舞・逢魔：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -3,
+      "y": 0,
+      "color": "#47D147",
+      "type": 14
+    },
+    {
+      "id": 1800100937,
+      "name": "群魔亂舞・逢魔：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -1,
+      "y": -1,
+      "color": "#47D147",
+      "type": 14
+    },
+    {
+      "id": 1800100938,
+      "name": "群魔亂舞・逢魔：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -2,
+      "y": -1,
+      "color": "#FF0066",
+      "type": 14
+    },
+    {
+      "id": 1800100939,
+      "name": "解除妨害狀態",
+      "description": "當自己首次陷入畏縮、混亂或束縛狀態時,會解除該狀態。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -3,
+      "y": -1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800100940,
+      "name": "城都鬥陣(特殊)時間延長3",
+      "description": "我方場地變成城都鬥陣(特殊)的瞬間在場上時,會延長城都鬥陣(特殊)的持續時間。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -1,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800100941,
+      "name": "攻擊灼傷中的對手時攻擊特攻↓9",
+      "description": "當對手陷入灼傷狀態且使出招式攻擊成功時,會降低對手的攻擊和特攻1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800100942,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800100943,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800100944,
+      "name": "群魔亂舞・逢魔：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": -2,
+      "color": "#47D147",
+      "type": 14
+    },
+    {
+      "id": 1800100945,
+      "name": "群魔亂舞・逢魔：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 1,
+      "y": -2,
+      "color": "#47D147",
+      "type": 14
+    },
+    {
+      "id": 1800100946,
+      "name": "解除異常狀態",
+      "description": "當自己首次陷入異常狀態時,會解除自己的異常狀態。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 3,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800100947,
+      "name": "特攻 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": 2,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800100948,
+      "name": "特攻提升時拍組招式威力提升9",
+      "description": "當自己的特攻提高時,會提高拍組招式的威力。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 1,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800100949,
+      "name": "首次危機時賦予特殊增強1",
+      "description": "首次陷入危機時,會提高自己的下次特殊招式威力增強1階段。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 3,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800100950,
+      "name": "拍組招式後賦予特殊增強(1)9",
+      "description": "使出拍組招式後,會提高自己的下次特殊招式威力增強1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800100951,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800100952,
+      "name": "灼傷無效",
+      "description": "不會陷入灼傷狀態。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": -2,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800100953,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": 3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800100954,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -3,
+      "y": 4,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800100955,
+      "name": "群魔亂舞：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": 4,
+      "color": "#47D147",
+      "type": 14
+    },
+    {
+      "id": 1800100956,
+      "name": "群魔亂舞：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -3,
+      "y": 5,
+      "color": "#47D147",
+      "type": 14
+    },
+    {
+      "id": 1800100957,
+      "name": "HP + 20",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": -1,
+      "y": 4,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800100958,
+      "name": "這是充滿靈魂的課程!：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -2,
+      "y": 5,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1800100959,
+      "name": "這是充滿靈魂的課程!：招式後下次效果絕佳威力提升9",
+      "description": "招式成功時,讓自己變成下次效果絕佳威力提升狀態。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -3,
+      "y": 6,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1800100960,
+      "name": "攻擊時賦予畏縮3",
+      "description": "使出招式攻擊成功時,有40%的機率會讓對手陷入畏縮狀態。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -1,
+      "y": 5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800100961,
+      "name": "首次上場時計數加速1",
+      "description": "首次上場時,發動拍組招式所需的行動數會減少1次。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": 6,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800100962,
+      "name": "講述城都傳說之幽靈光線：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": 3,
+      "color": "#BF80FF",
+      "type": 14
+    },
+    {
+      "id": 1800100963,
+      "name": "講述城都傳說之幽靈光線：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": -3,
+      "color": "#BF80FF",
+      "type": 14
+    }
+  ]
+}

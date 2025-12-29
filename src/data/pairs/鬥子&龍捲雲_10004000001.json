@@ -1,0 +1,890 @@
+{
+  "trainer": {
+    "id": "10004000001",
+    "name": "鬥子",
+    "actor": "鬥子",
+    "actorId": "ch0004_00_toko",
+    "rarity": 5,
+    "role": 5,
+    "exRole": 2,
+    "ex": true,
+    "exclusivity": "Variety",
+    "maxBonusLevel": 5
+  },
+  "scoutMethod": 1,
+  "scheduleId": "chara_7080_0905_FOREVER",
+  "themes": [
+    {
+      "name": "飛行屬性／場地",
+      "description": "我方全體拍組最大HP提升24\n我方全體拍組的速度提升24",
+      "tag": "飛行",
+      "category": 1
+    },
+    {
+      "name": "合眾／場地",
+      "description": "我方全體拍組最大HP提升7\n我方全體拍組的速度提升7",
+      "tag": "合眾",
+      "category": 2
+    },
+    {
+      "name": "主角／場地",
+      "description": "我方全體拍組最大HP提升7\n我方全體拍組的速度提升7",
+      "tag": "主角",
+      "category": 3
+    },
+    {
+      "name": "合眾的冒險／場地",
+      "description": "我方全體拍組最大HP提升8\n我方全體拍組的速度提升8",
+      "tag": "合眾的冒險",
+      "category": 999
+    },
+    {
+      "name": "鬥志昂揚／場地",
+      "description": "我方全體拍組最大HP提升8\n我方全體拍組的速度提升8",
+      "tag": "鬥志昂揚",
+      "category": 999
+    }
+  ],
+  "specialAwaking": {
+    "name": "",
+    "description": "",
+    "detail": []
+  },
+  "pokemon": [
+    {
+      "id": "20004000003",
+      "variationType": 0,
+      "vAfterSm": false,
+      "name": "龍捲雲",
+      "form": "化身形態",
+      "actor": "pm0641_11_tornelos",
+      "gender": 1,
+      "isShiny": false,
+      "type": 10,
+      "weakness": 6,
+      "stat": {
+        "hp": [
+          96,
+          172,
+          244,
+          530,
+          590,
+          650,
+          830
+        ],
+        "atk": [
+          10,
+          60,
+          108,
+          295,
+          335,
+          375,
+          495
+        ],
+        "def": [
+          10,
+          33,
+          54,
+          142,
+          158,
+          174,
+          222
+        ],
+        "spa": [
+          17,
+          69,
+          117,
+          315,
+          355,
+          395,
+          515
+        ],
+        "spd": [
+          12,
+          36,
+          57,
+          145,
+          165,
+          185,
+          245
+        ],
+        "spe": [
+          15,
+          61,
+          103,
+          279,
+          315,
+          351,
+          459
+        ]
+      },
+      "passives": [
+        {
+          "name": "對戰愛好者掀起的旋風",
+          "description": "首次上場時,發動拍組招式所需的行動數會減少1次。首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。首次使出招式攻擊成功時,會將領域變成EX藍天領域。(EX藍天領域會提高飛行屬性的攻擊的威力。)",
+          "detail": [
+            {
+              "name": "首次上場時計數加速1",
+              "description": "首次上場時,發動拍組招式所需的行動數會減少1次。"
+            },
+            {
+              "name": "首次拍組招式後計數加速1",
+              "description": "首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。"
+            },
+            {
+              "name": "首次攻擊時變成EX藍天領域",
+              "description": "首次使出招式攻擊成功時,會將領域變成EX藍天領域。(EX藍天領域會提高飛行屬性的攻擊的威力。)"
+            }
+          ]
+        },
+        {
+          "name": "更迭季節的化身",
+          "description": "使出招式攻擊成功時,會提高我方全體拍組的特防1階段。使出招式攻擊成功時,會降低對手的特防1階段。",
+          "detail": [
+            {
+              "name": "攻擊時特防提升G9",
+              "description": "使出招式攻擊成功時,會提高我方全體拍組的特防1階段。"
+            },
+            {
+              "name": "攻擊時特防下降9",
+              "description": "使出招式攻擊成功時,會降低對手的特防1階段。"
+            }
+          ]
+        },
+        {
+          "name": "命中時招式計量槽增加9",
+          "description": "使出招式攻擊命中時,會幫自己增加1條招式計量槽。若使出有連續效果的招式,則在每次攻擊命中時,都會幫自己增加1條招式計量槽。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 846,
+          "user": "寶可夢",
+          "name": "枯葉風暴",
+          "type": 10,
+          "gauge": 4,
+          "uses": "−",
+          "category": 2,
+          "power": 179,
+          "accuracy": 80,
+          "target": "對手全體拍組",
+          "description": "當天氣為下雨時,攻擊必定會命中。有30%的機率會降低對手的速度1階段。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 19160,
+          "user": "寶可夢",
+          "name": "絕佳強化",
+          "type": 0,
+          "gauge": 0,
+          "uses": 2,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方１對拍組",
+          "description": "讓我方變成下次效果絕佳威力提升狀態。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 6148,
+          "user": "寶可夢",
+          "name": "枯葉風暴・嚴冬",
+          "type": 10,
+          "gauge": 2,
+          "uses": 2,
+          "category": 2,
+          "power": 250,
+          "accuracy": 100,
+          "target": "對手全體拍組",
+          "description": "【開放條件】\n自己的特攻處於提高狀態時\n【封印條件】\n自己的特攻未處於提高狀態時\n\n當天氣為下雨時,攻擊必定會命中。降低對手的速度3階段。讓對手陷入混亂狀態。即使對象為複數,招式的威力也不會降低。讓我方場地變成要害防禦狀態。",
+          "tags": "none",
+          "group": 6
+        },
+        {
+          "id": 10048,
+          "user": "訓練師",
+          "name": "把你吹飛!",
+          "type": 0,
+          "gauge": 0,
+          "uses": 1,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方１對拍組",
+          "description": "提高我方的特攻4階段。提高我方的擊中要害率3階段。讓我方變成下次計量槽消耗0狀態。提高我方的下次特殊招式威力增強2階段。",
+          "tags": "none",
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 121900,
+        "user": "寶可夢",
+        "name": "不亞於雷鳴的暴風之飛行光線",
+        "type": 10,
+        "gauge": 0,
+        "uses": "−",
+        "category": 2,
+        "power": 250,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "沒有追加效果。",
+        "tags": "none",
+        "group": "Sync"
+      }
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "鬥子專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "天氣場地領域變化時計量槽加速2",
+          "description": "只有在天氣、場地或領域變化時,招式計量槽會累積得較快。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "擊中要害時威力提升3",
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "天氣場地領域變化時拍組招式↑G2",
+          "description": "只有在天氣、場地或領域變化時,會提高我方全體拍組的拍組招式的威力。",
+          "detail": [],
+          "rate": 33
+        }
+      ]
+    }
+  ],
+  "grid": [
+    {
+      "id": 1000400100,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000400101,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000400102,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000400103,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000400104,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000400105,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000400106,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000400107,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000400108,
+      "name": "枯葉風暴：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": 0,
+      "color": "#47D147",
+      "type": 10
+    },
+    {
+      "id": 1000400109,
+      "name": "枯葉風暴：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 1,
+      "y": 1,
+      "color": "#47D147",
+      "type": 10
+    },
+    {
+      "id": 1000400110,
+      "name": "特攻 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": 1,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000400111,
+      "name": "枯葉風暴：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": 1,
+      "color": "#FF0066",
+      "type": 10
+    },
+    {
+      "id": 1000400112,
+      "name": "枯葉風暴：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 3,
+      "y": 0,
+      "color": "#47D147",
+      "type": 10
+    },
+    {
+      "id": 1000400113,
+      "name": "攻擊時速度提升G9",
+      "description": "使出招式攻擊成功時,會提高我方全體拍組的速度1階段。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 3,
+      "x": 2,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000400114,
+      "name": "依特攻升幅威力提升",
+      "description": "自己的特攻提高得越多,招式的威力就提高得越多。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 3,
+      "y": 1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000400115,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000400116,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000400117,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000400118,
+      "name": "特攻下降無效",
+      "description": "特攻不會降低。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": -3,
+      "y": -1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000400119,
+      "name": "枯葉風暴・嚴冬：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": -2,
+      "color": "#47D147",
+      "type": 10
+    },
+    {
+      "id": 1000400120,
+      "name": "枯葉風暴・嚴冬：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -1,
+      "y": -3,
+      "color": "#47D147",
+      "type": 10
+    },
+    {
+      "id": 1000400121,
+      "name": "枯葉風暴・嚴冬：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -3,
+      "y": -2,
+      "color": "#47D147",
+      "type": 10
+    },
+    {
+      "id": 1000400122,
+      "name": "藍天領域時攻擊招式威力↓2",
+      "description": "當領域為藍天領域時,會減輕受到招式攻擊時的傷害。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -2,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000400123,
+      "name": "藍天領域時招式計量槽加速2",
+      "description": "當領域為藍天領域時,招式計量槽會累積得較快。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -1,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000400124,
+      "name": "藍天領域時間延長3",
+      "description": "領域變成藍天領域的瞬間在場上時,會延長藍天領域的持續時間。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -3,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000400125,
+      "name": "必中化",
+      "description": "招式必定會命中。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000400126,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000400127,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000400128,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000400129,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": -4,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000400130,
+      "name": "枯葉風暴・嚴冬：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": -4,
+      "color": "#47D147",
+      "type": 10
+    },
+    {
+      "id": 1000400131,
+      "name": "枯葉風暴・嚴冬：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 1,
+      "x": 1,
+      "y": -4,
+      "color": "#FF0066",
+      "type": 10
+    },
+    {
+      "id": 1000400132,
+      "name": "枯葉風暴・嚴冬：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 3,
+      "y": -5,
+      "color": "#47D147",
+      "type": 10
+    },
+    {
+      "id": 1000400133,
+      "name": "絕佳強化：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": -5,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1000400134,
+      "name": "解除妨害狀態",
+      "description": "當自己首次陷入畏縮、混亂或束縛狀態時,會解除該狀態。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 1,
+      "y": -5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000400135,
+      "name": "首次拍組招式後賦予特殊增強G2",
+      "description": "首次使出拍組招式時,會提高我方全體拍組的下次特殊招式威力增強2階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 3,
+      "y": -6,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000400136,
+      "name": "依對手速度降幅拍組招式↑",
+      "description": "對手的速度降低得越多,自己的拍組招式的威力就提高得越多。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": -6,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000400137,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000400138,
+      "name": "枯葉風暴：命中率 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": -3,
+      "y": 2,
+      "color": "#47D147",
+      "type": 10
+    },
+    {
+      "id": 1000400139,
+      "name": "枯葉風暴：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": 2,
+      "color": "#47D147",
+      "type": 10
+    },
+    {
+      "id": 1000400140,
+      "name": "枯葉風暴：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -1,
+      "y": 2,
+      "color": "#47D147",
+      "type": 10
+    },
+    {
+      "id": 1000400141,
+      "name": "枯葉風暴：命中率 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 2,
+      "x": -3,
+      "y": 3,
+      "color": "#47D147",
+      "type": 10
+    },
+    {
+      "id": 1000400142,
+      "name": "枯葉風暴：下降機率提升1",
+      "description": "當招式的追加效果可降低對手能力值時,會提高該追加效果的成功率。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -2,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 10
+    },
+    {
+      "id": 1000400143,
+      "name": "把你吹飛!：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -1,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1000400144,
+      "name": "上場時特攻提升2",
+      "description": "上場時,會提高自己的特攻2階段。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 3,
+      "x": -3,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000400145,
+      "name": "異常無效",
+      "description": "不會陷入異常狀態。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000400146,
+      "name": "不亞於雷鳴的暴風之飛行光線：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": -3,
+      "color": "#BF80FF",
+      "type": 10
+    },
+    {
+      "id": 1000400147,
+      "name": "不亞於雷鳴的暴風之飛行光線：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": 3,
+      "color": "#BF80FF",
+      "type": 10
+    }
+  ]
+}

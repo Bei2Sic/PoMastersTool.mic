@@ -1,0 +1,1020 @@
+{
+  "trainer": {
+    "id": "10000100000",
+    "name": "美極套裝赤紅（異裝）",
+    "actor": "赤紅",
+    "actorId": "ch0000_10_red",
+    "rarity": 5,
+    "role": 3,
+    "exRole": 5,
+    "ex": true,
+    "exclusivity": "Master",
+    "maxBonusLevel": 5
+  },
+  "scoutMethod": 1,
+  "scheduleId": "chara_4080_0901_FOREVER",
+  "themes": [
+    {
+      "name": "電屬性／技術",
+      "description": "我方全體拍組最大HP提升24\n僅在我方使出電屬性攻擊時，攻擊和特攻提升24",
+      "tag": "電",
+      "category": 1
+    },
+    {
+      "name": "關都／技術",
+      "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
+      "tag": "關都",
+      "category": 2
+    },
+    {
+      "name": "主角／技術",
+      "description": "我方全體拍組最大HP提升7\n我方全體拍組的攻擊和特攻提升4",
+      "tag": "主角",
+      "category": 3
+    },
+    {
+      "name": "美極套裝／技術",
+      "description": "我方全體拍組最大HP提升8\n我方全體拍組的攻擊和特攻提升5",
+      "tag": "美極套裝",
+      "category": 4
+    },
+    {
+      "name": "真新鎮／技術",
+      "description": "我方全體拍組最大HP提升8\n我方全體拍組的攻擊和特攻提升5",
+      "tag": "真新鎮",
+      "category": 999
+    }
+  ],
+  "specialAwaking": {
+    "name": "",
+    "description": "",
+    "detail": []
+  },
+  "pokemon": [
+    {
+      "id": "20000100000",
+      "variationType": 0,
+      "vAfterSm": false,
+      "name": "皮卡丘",
+      "form": "",
+      "actor": "pm0025_00_pikachu",
+      "gender": 1,
+      "isShiny": false,
+      "type": 4,
+      "weakness": 9,
+      "stat": {
+        "hp": [
+          115,
+          194,
+          269,
+          566,
+          630,
+          694,
+          886
+        ],
+        "atk": [
+          17,
+          60,
+          99,
+          264,
+          300,
+          336,
+          444
+        ],
+        "def": [
+          13,
+          38,
+          62,
+          150,
+          170,
+          190,
+          250
+        ],
+        "spa": [
+          17,
+          60,
+          99,
+          264,
+          300,
+          336,
+          444
+        ],
+        "spd": [
+          13,
+          38,
+          62,
+          150,
+          170,
+          190,
+          250
+        ],
+        "spe": [
+          24,
+          76,
+          124,
+          322,
+          362,
+          402,
+          522
+        ]
+      },
+      "passives": [
+        {
+          "name": "關都的先驅",
+          "description": "提高我方全體拍組的招式的威力10%。減輕我方全體拍組受到招式攻擊時的傷害20%。當我方隊伍中擁有關都標籤的拍組越多,此效果還會提升得越多。(每增加1對拍組,威力提升+10%,傷害減輕+3%。)(威力最多可提升30%,傷害最多可減輕26%。)",
+          "detail": []
+        },
+        {
+          "name": "赤紅的鬥焰",
+          "description": "場地變成電氣場地的瞬間在場上時,會延長電氣場地的持續時間。當場地為電氣場地時,招式計量槽會累積得較快。當場地為電氣場地時,寶可夢每次行動後都會回復自己的HP。",
+          "detail": []
+        },
+        {
+          "name": "寶可夢/拍組/拍組極巨化招式擊中要害化",
+          "description": "除了特定情況之外,只要寶可夢招式、拍組招式或拍組極巨化招式的攻擊命中就必定會擊中要害。",
+          "detail": []
+        },
+        {
+          "name": "拍組極巨化招式後計數加速3",
+          "description": "使出拍組極巨化招式後, 會讓發動拍組招式所需的行動數減少3次。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 84,
+          "user": "寶可夢",
+          "name": "電擊",
+          "type": 4,
+          "gauge": 1,
+          "uses": "−",
+          "category": 2,
+          "power": 17,
+          "accuracy": 100,
+          "target": "對手１對拍組",
+          "description": "有10%的機率會讓對手陷入麻痺狀態。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 604,
+          "user": "寶可夢",
+          "name": "電氣場地",
+          "type": 4,
+          "gauge": 2,
+          "uses": 2,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "全場地",
+          "description": "將場地變成電氣場地。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 6000,
+          "user": "寶可夢",
+          "name": "起源伏特攻擊",
+          "type": 4,
+          "gauge": 2,
+          "uses": "−",
+          "category": 1,
+          "power": 150,
+          "accuracy": 100,
+          "target": "對手全體拍組",
+          "description": "【開放條件】\n場地變成電氣場地時\n【封印條件】\n電氣場地被解除時\n\n無視對手可減輕傷害的被動技能進行攻擊。無視對手可避免被攻擊擊中要害的被動技能進行攻擊。無視對手的挺住狀態進行攻擊。即使對象為複數,招式的威力也不會降低。當對手陷入麻痺狀態時,會降低對手的防禦和特防1階段。",
+          "tags": "none",
+          "group": 6
+        },
+        {
+          "id": 10001,
+          "user": "訓練師",
+          "name": "邁向勝利",
+          "type": 0,
+          "gauge": 0,
+          "uses": 1,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方全體拍組",
+          "description": "提高自己的攻擊6階段。讓我方全體拍組變成附帶回復狀態。",
+          "tags": 8388608,
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 90500,
+        "user": "寶可夢",
+        "name": "一擊致勝最速之伏特攻擊",
+        "type": 4,
+        "gauge": 0,
+        "uses": "−",
+        "category": 1,
+        "power": 200,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "當場地為電氣場地時,威力會提高。",
+        "tags": "none",
+        "group": "Sync"
+      }
+    },
+    {
+      "id": "20000100000",
+      "variationType": 4,
+      "vAfterSm": false,
+      "name": "皮卡丘",
+      "form": "",
+      "actor": "pm0025_81_00_gpikachu",
+      "gender": 1,
+      "isShiny": false,
+      "type": 4,
+      "weakness": 9,
+      "stat": {
+        "hp": [
+          115,
+          194,
+          269,
+          566,
+          630,
+          694,
+          886
+        ],
+        "atk": [
+          17,
+          60,
+          99,
+          264,
+          300,
+          336,
+          444
+        ],
+        "def": [
+          13,
+          38,
+          62,
+          150,
+          170,
+          190,
+          250
+        ],
+        "spa": [
+          17,
+          60,
+          99,
+          264,
+          300,
+          336,
+          444
+        ],
+        "spd": [
+          13,
+          38,
+          62,
+          150,
+          170,
+          190,
+          250
+        ],
+        "spe": [
+          24,
+          76,
+          124,
+          322,
+          362,
+          402,
+          522
+        ]
+      },
+      "passives": [
+        {
+          "name": "關都的先驅",
+          "description": "提高我方全體拍組的招式的威力10%。減輕我方全體拍組受到招式攻擊時的傷害20%。當我方隊伍中擁有關都標籤的拍組越多,此效果還會提升得越多。(每增加1對拍組,威力提升+10%,傷害減輕+3%。)(威力最多可提升30%,傷害最多可減輕26%。)",
+          "detail": []
+        },
+        {
+          "name": "赤紅的鬥焰",
+          "description": "場地變成電氣場地的瞬間在場上時,會延長電氣場地的持續時間。當場地為電氣場地時,招式計量槽會累積得較快。當場地為電氣場地時,寶可夢每次行動後都會回復自己的HP。",
+          "detail": []
+        },
+        {
+          "name": "寶可夢/拍組/拍組極巨化招式擊中要害化",
+          "description": "除了特定情況之外,只要寶可夢招式、拍組招式或拍組極巨化招式的攻擊命中就必定會擊中要害。",
+          "detail": []
+        },
+        {
+          "name": "拍組極巨化招式後計數加速3",
+          "description": "使出拍組極巨化招式後, 會讓發動拍組招式所需的行動數減少3次。",
+          "detail": []
+        }
+      ],
+      "moves": null,
+      "syncMove": null,
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "movesDynamax": [
+        {
+          "id": 7046,
+          "user": "寶可夢",
+          "name": "超極巨萬雷轟頂",
+          "type": 4,
+          "gauge": 0,
+          "uses": "−",
+          "category": 2,
+          "power": 400,
+          "accuracy": 0,
+          "target": "對手１對拍組",
+          "description": "讓對手全體拍組陷入麻痺狀態。",
+          "tags": "none",
+          "group": 5
+        },
+        {
+          "id": 7039,
+          "user": "寶可夢",
+          "name": "極巨防壁",
+          "type": 1,
+          "gauge": 0,
+          "uses": "−",
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方１對拍組",
+          "description": "讓我方變成下次傷害防禦狀態。",
+          "tags": "none",
+          "group": 5
+        },
+        {
+          "id": 7042,
+          "user": "寶可夢",
+          "name": "超極巨萬雷轟頂",
+          "type": 4,
+          "gauge": 0,
+          "uses": "−",
+          "category": 1,
+          "power": 400,
+          "accuracy": 0,
+          "target": "對手１對拍組",
+          "description": "讓對手全體拍組陷入麻痺狀態。",
+          "tags": "none",
+          "group": 5
+        }
+      ]
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "美極套裝赤紅（異裝）專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "擊中要害時威力提升3",
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "拍組招式效果絕佳時威力↑5",
+          "description": "當效果絕佳時,會提高該拍組招式的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時拍組招式增強5",
+          "description": "首次上場時,會提高自己的下次拍組招式威力增強5階段。",
+          "detail": [],
+          "rate": 33
+        }
+      ]
+    }
+  ],
+  "grid": [
+    {
+      "id": 1000010000,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000010001,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000010002,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000010003,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000010004,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000010005,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000010006,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000010007,
+      "name": "麻痺無效",
+      "description": "不會陷入麻痺狀態。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": 2,
+      "y": 1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000010008,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000010009,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000010010,
+      "name": "起源伏特攻擊：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": 2,
+      "color": "#47D147",
+      "type": 4
+    },
+    {
+      "id": 1000010011,
+      "name": "起源伏特攻擊：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 1,
+      "y": 3,
+      "color": "#47D147",
+      "type": 4
+    },
+    {
+      "id": 1000010012,
+      "name": "起源伏特攻擊：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 3,
+      "y": 2,
+      "color": "#47D147",
+      "type": 4
+    },
+    {
+      "id": 1000010013,
+      "name": "電氣場地：招式後命中率提升G1",
+      "description": "招式成功時,會提高我方全體拍組的命中率1階段。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 2,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 4
+    },
+    {
+      "id": 1000010014,
+      "name": "必中化",
+      "description": "招式必定會命中。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 1,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000010015,
+      "name": "對手麻痺時威力提升1",
+      "description": "當對手陷入麻痺狀態時,會提高自己的招式的威力。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 3,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000010016,
+      "name": "拍組極巨化招式後變成電氣場地",
+      "description": "使出拍組極巨化招式後,會將場地變成電氣場地。",
+      "detail": [],
+      "energy": 12,
+      "orb": 144,
+      "level": 3,
+      "x": 2,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000010017,
+      "name": "攻擊下降無效",
+      "description": "攻擊不會降低。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": -2,
+      "y": 1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000010018,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -3,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000010019,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000010020,
+      "name": "起源伏特攻擊：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -3,
+      "y": 0,
+      "color": "#47D147",
+      "type": 4
+    },
+    {
+      "id": 1000010021,
+      "name": "起源伏特攻擊：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -1,
+      "y": -1,
+      "color": "#47D147",
+      "type": 4
+    },
+    {
+      "id": 1000010022,
+      "name": "電氣場地時妨害狀態無效",
+      "description": "當場地為電氣場地時,不會陷入畏縮、混亂或束縛狀態。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -2,
+      "y": -1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000010023,
+      "name": "電氣場地時異常無效",
+      "description": "當場地為電氣場地時,不會陷入異常狀態。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -3,
+      "y": -1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000010024,
+      "name": "攻擊提升時拍組極巨化招式威力提升3",
+      "description": "當自己的攻擊提高時,會提高拍組極巨化招式的威力。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 3,
+      "x": -1,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000010025,
+      "name": "電氣場地時HP回復1",
+      "description": "當場地為電氣場地時,寶可夢每次行動後都會回復自己的HP。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 3,
+      "x": -2,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000010026,
+      "name": "電擊：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": -1,
+      "color": "#47D147",
+      "type": 4
+    },
+    {
+      "id": 1000010027,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000010028,
+      "name": "電擊：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": -2,
+      "color": "#47D147",
+      "type": 4
+    },
+    {
+      "id": 1000010029,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000010030,
+      "name": "電擊：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 3,
+      "y": -3,
+      "color": "#47D147",
+      "type": 4
+    },
+    {
+      "id": 1000010031,
+      "name": "電擊：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": -3,
+      "color": "#FF0066",
+      "type": 4
+    },
+    {
+      "id": 1000010032,
+      "name": "依攻擊升幅拍組招式↑",
+      "description": "自己的攻擊提高得越多,拍組招式的威力就提高得越多。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 1,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000010033,
+      "name": "電擊：異常機率提升4",
+      "description": "當招式的追加效果可使對手陷入異常狀態時,會提高該追加效果的成功率。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 3,
+      "y": -4,
+      "color": "#FF0066",
+      "type": 4
+    },
+    {
+      "id": 1000010034,
+      "name": "電擊：攻擊時賦予畏縮4",
+      "description": "使出招式攻擊成功時,有50%的機率會讓對手陷入畏縮狀態。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": -4,
+      "color": "#FF0066",
+      "type": 4
+    },
+    {
+      "id": 1000010035,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000010036,
+      "name": "電擊：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": 3,
+      "color": "#47D147",
+      "type": 4
+    },
+    {
+      "id": 1000010037,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": 3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000010038,
+      "name": "電擊：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -3,
+      "y": 4,
+      "color": "#47D147",
+      "type": 4
+    },
+    {
+      "id": 1000010039,
+      "name": "邁向勝利：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 1,
+      "x": -2,
+      "y": 4,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1000010040,
+      "name": "電擊：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -3,
+      "y": 5,
+      "color": "#47D147",
+      "type": 4
+    },
+    {
+      "id": 1000010041,
+      "name": "特攻 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": -1,
+      "y": 4,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000010042,
+      "name": "邁向勝利：招式後特攻提升2",
+      "description": "招式成功時,會提高自己的特攻2階段。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -2,
+      "y": 5,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1000010043,
+      "name": "對手麻痺時拍組招式↑3",
+      "description": "當對手陷入麻痺狀態時,會提高自己的拍組招式的威力。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -3,
+      "y": 6,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000010044,
+      "name": "依對手速度降幅拍組招式↑",
+      "description": "對手的速度降低得越多,自己的拍組招式的威力就提高得越多。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -1,
+      "y": 5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000010045,
+      "name": "攻擊麻痺中的對手時速度下降9",
+      "description": "當對手陷入麻痺狀態且使出招式攻擊成功時,會降低對手的速度1階段。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 3,
+      "x": -2,
+      "y": 6,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000010046,
+      "name": "一擊致勝最速之伏特攻擊：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": 3,
+      "color": "#BF80FF",
+      "type": 4
+    },
+    {
+      "id": 1000010047,
+      "name": "一擊致勝最速之伏特攻擊：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": -3,
+      "color": "#BF80FF",
+      "type": 4
+    }
+  ]
+}

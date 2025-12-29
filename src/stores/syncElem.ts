@@ -110,7 +110,7 @@ export const useSyncElemStore = defineStore("syncUse", {
         },
 
         // 選擇拍組方法
-        selectsingleSync(trainer_id: string) {
+        selectSingleSync(trainer_id: string) {
             const syncCacheStore = useSyncCacheStore();
             const rawData = syncCacheStore.getRawDataWithTrainerId(trainer_id);
             if (!rawData) return;

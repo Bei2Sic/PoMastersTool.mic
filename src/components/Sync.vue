@@ -203,8 +203,8 @@ const handleSelectTrainer = (trainerId) => {
             console.warn('选择失败：拍组 ID 无效');
             return;
         }
-        // 调用 Pinia 的 action 选中拍        syncElemStore.selectsingleSync(trainerId);
-        syncElemStore.selectsingleSync(trainerId);
+        // 调用 Pinia 的 action 选中拍        syncElemStore.selectSingleSync(trainerId);
+        syncElemStore.selectSingleSync(trainerId);
         console.log(`成功选中拍组：${trainerId}`);
     } catch (error) {
         console.error('选中拍组失败：', error);
@@ -291,33 +291,44 @@ onUnmounted(() => {
 /* 弹窗遮罩（半透明背景，覆盖整个页面） */
 .modal-overlay {
     position: fixed;
-    inset-block-start: 0;
-    inset-inline-start: 0;
-    inline-size: 100vw;
-    block-size: 100vh;
+    inset: 0;
+    z-index: 20000 !important;
     background-color: rgba(0, 0, 0, 0.5);
+
     display: flex;
     justify-content: center;
-    align-items: center;
-    z-index: 20000 !important;
+    align-items: flex-start;
+    padding-block-start: 10vh;
 }
 
 /* 弹窗内容容器 */
 .modal-content {
-    inline-size: 80%;
+    inline-size: 90%;
     max-inline-size: 500px;
-    background-color: #fff;
+
+    block-size: 80vh;
+
+    display: flex;
+    flex-direction: column;
+
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    background-image: url('../assets/images/bg1.png');
+    background-size: cover;
 }
 
 /* 弹窗标题 */
 .modal-title {
     margin: 0 0 16px 0;
-    color: #333;
     font-size: 18px;
     text-align: center;
+    color: #fff;
+    text-shadow:
+        1px 1px 0 #555,
+        -1px 1px 0 #555,
+        1px -1px 0 #555,
+        -1px -1px 0 #555;
 }
 
 .right-panel {
@@ -862,7 +873,7 @@ onUnmounted(() => {
         block-size: 100vh !important;
         z-index: 10000;
         background-color: white;
-        background-image: url('../assets/images/bg3.png');
+        background-image: url('../assets/images/bg2.png');
         transform: translateX(100%);
         transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);

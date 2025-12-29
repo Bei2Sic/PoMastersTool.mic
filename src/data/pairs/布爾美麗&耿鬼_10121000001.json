@@ -1,0 +1,882 @@
+{
+  "trainer": {
+    "id": "10121000001",
+    "name": "布爾美麗",
+    "actor": "布爾美麗",
+    "actorId": "ch0121_00_plumeria",
+    "rarity": 5,
+    "role": 4,
+    "exRole": 3,
+    "ex": true,
+    "exclusivity": "Variety",
+    "maxBonusLevel": 5
+  },
+  "scoutMethod": 1,
+  "scheduleId": "chara_6040_0511_FOREVER",
+  "themes": [
+    {
+      "name": "毒屬性／速戰",
+      "description": "僅在我方使出毒屬性攻擊時，攻擊和特攻提升24\n我方全體拍組的速度提升24",
+      "tag": "毒",
+      "category": 1
+    },
+    {
+      "name": "阿羅拉／速戰",
+      "description": "我方全體拍組的攻擊和特攻提升4\n我方全體拍組的速度提升7",
+      "tag": "阿羅拉",
+      "category": 2
+    },
+    {
+      "name": "邪惡組織／速戰",
+      "description": "我方全體拍組的攻擊和特攻提升4\n我方全體拍組的速度提升7",
+      "tag": "邪惡組織",
+      "category": 3
+    },
+    {
+      "name": "大姐姐／速戰",
+      "description": "我方全體拍組的攻擊和特攻提升5\n我方全體拍組的速度提升8",
+      "tag": "大姐姐",
+      "category": 999
+    }
+  ],
+  "specialAwaking": {
+    "name": "",
+    "description": "",
+    "detail": []
+  },
+  "pokemon": [
+    {
+      "id": "20121000001",
+      "variationType": 0,
+      "vAfterSm": false,
+      "name": "耿鬼",
+      "form": "",
+      "actor": "pm0094_00_gangar",
+      "gender": 1,
+      "isShiny": false,
+      "type": 8,
+      "weakness": 9,
+      "stat": {
+        "hp": [
+          90,
+          162,
+          231,
+          506,
+          566,
+          626,
+          806
+        ],
+        "atk": [
+          15,
+          61,
+          103,
+          279,
+          315,
+          351,
+          459
+        ],
+        "def": [
+          10,
+          31,
+          52,
+          129,
+          145,
+          161,
+          209
+        ],
+        "spa": [
+          27,
+          83,
+          137,
+          346,
+          390,
+          434,
+          566
+        ],
+        "spd": [
+          12,
+          35,
+          56,
+          144,
+          160,
+          176,
+          224
+        ],
+        "spe": [
+          17,
+          69,
+          117,
+          315,
+          355,
+          395,
+          515
+        ]
+      },
+      "passives": [
+        {
+          "name": "上場時特攻提升4",
+          "description": "上場時,會提高自己的特攻4階段。",
+          "detail": []
+        },
+        {
+          "name": "攻擊中毒中的對手時下次不消耗計量槽9",
+          "description": "當對手陷入中毒或劇毒狀態且使出招式攻擊成功時,會讓自己變成下次計量槽消耗0狀態。",
+          "detail": []
+        },
+        {
+          "name": "必中化",
+          "description": "招式必定會命中。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 188,
+          "user": "寶可夢",
+          "name": "污泥炸彈",
+          "type": 8,
+          "gauge": 3,
+          "uses": "−",
+          "category": 2,
+          "power": 92,
+          "accuracy": 100,
+          "target": "對手１對拍組",
+          "description": "有30%的機率會讓對手陷入中毒狀態。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 92,
+          "user": "寶可夢",
+          "name": "劇毒",
+          "type": 8,
+          "gauge": 2,
+          "uses": "−",
+          "category": 0,
+          "power": 0,
+          "accuracy": 90,
+          "target": "對手１對拍組",
+          "description": "讓對手陷入劇毒狀態。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 6061,
+          "user": "寶可夢",
+          "name": "誘惑之奇異之光",
+          "type": 14,
+          "gauge": 2,
+          "uses": 2,
+          "category": 0,
+          "power": 0,
+          "accuracy": 100,
+          "target": "對手全體拍組",
+          "description": "【開放條件】\n對手的場地上有陷入中毒或劇毒狀態的寶可夢時\n【封印條件】\n對手的場地上變為沒有陷入中毒或劇毒狀態的寶可夢時\n\n讓對手陷入混亂狀態。降低對手的命中率1階段。讓我方場地變成招式計量槽加速狀態。自己發動拍組招式所需的行動數會減少1次。",
+          "tags": "none",
+          "group": 6
+        },
+        {
+          "id": 11218,
+          "user": "訓練師",
+          "name": "讓我瞧瞧你的骨氣",
+          "type": 0,
+          "gauge": 0,
+          "uses": 1,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方全體拍組",
+          "description": "提高自己的速度6階段。提高我方全體拍組的閃避率2階段。",
+          "tags": 8388608,
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 50802,
+        "user": "寶可夢",
+        "name": "做出覺悟之強酸劇毒滅絕雨",
+        "type": 8,
+        "gauge": 0,
+        "uses": "−",
+        "category": 2,
+        "power": 200,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "自己的速度提高得越多,威力就越大。",
+        "tags": "none",
+        "group": "Sync"
+      }
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "布爾美麗專用潛能餅乾１",
+      "skills": [
+        {
+          "name": "上場時閃避率提升2",
+          "description": "上場時,會提高自己的閃避率2階段。",
+          "detail": [],
+          "rate": 100
+        }
+      ]
+    },
+    {
+      "cookieName": "布爾美麗專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "招式後招式計量槽增加9",
+          "description": "招式成功時,會幫自己增加1條招式計量槽。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "擊中要害時威力提升3",
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時&首次拍組招式後計數加速1",
+          "description": "首次上場時,發動拍組招式所需的行動數會減少1次。首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。",
+          "detail": [
+            {
+              "name": "首次上場時計數加速1",
+              "description": "首次上場時,發動拍組招式所需的行動數會減少1次。"
+            },
+            {
+              "name": "首次拍組招式後計數加速1",
+              "description": "首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。"
+            }
+          ],
+          "rate": 33
+        }
+      ]
+    }
+  ],
+  "grid": [
+    {
+      "id": 1012100100,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012100101,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012100102,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012100103,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012100104,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012100105,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012100106,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012100107,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012100108,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012100109,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012100110,
+      "name": "劇毒：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 3,
+      "y": 0,
+      "color": "#FF0066",
+      "type": 8
+    },
+    {
+      "id": 1012100111,
+      "name": "解除異常狀態",
+      "description": "當自己首次陷入異常狀態時,會解除自己的異常狀態。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": 1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1012100112,
+      "name": "特攻 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": 1,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012100113,
+      "name": "攻擊中毒中的對手時賦予特殊增強(1)4",
+      "description": "當對手陷入中毒或劇毒狀態且使出招式攻擊成功時,有50%的機率會提高自己的下次特殊招式威力增強1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 3,
+      "y": 1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1012100114,
+      "name": "對手中毒時拍組招式↑5",
+      "description": "當對手陷入中毒或劇毒狀態時,會提高自己的拍組招式的威力。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1012100115,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012100116,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -3,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012100117,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012100118,
+      "name": "特攻下降無效",
+      "description": "特攻不會降低。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": -1,
+      "y": -1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1012100119,
+      "name": "污泥炸彈：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -3,
+      "y": 0,
+      "color": "#FF0066",
+      "type": 8
+    },
+    {
+      "id": 1012100120,
+      "name": "首次上場時附帶回復",
+      "description": "首次上場時,會讓自己變成附帶回復狀態。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -2,
+      "y": -1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1012100121,
+      "name": "劇毒：招式後特攻提升1",
+      "description": "招式成功時,會提高自己的特攻1階段。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 2,
+      "x": -1,
+      "y": -2,
+      "color": "#FF0066",
+      "type": 8
+    },
+    {
+      "id": 1012100122,
+      "name": "攻擊混亂中的對手時能力下降9",
+      "description": "當對手陷入混亂狀態且使出招式攻擊成功時,會降低對手的攻擊、防禦、特攻、特防、速度、命中率、閃避率中的一種能力1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -3,
+      "y": -1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1012100123,
+      "name": "對手妨害狀態時威力↑3",
+      "description": "當對手陷入畏縮、混亂或束縛狀態時,會提高自己的招式的威力。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1012100124,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012100125,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012100126,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": -4,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012100127,
+      "name": "污泥炸彈：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 1,
+      "y": -3,
+      "color": "#47D147",
+      "type": 8
+    },
+    {
+      "id": 1012100128,
+      "name": "污泥炸彈：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": -4,
+      "color": "#47D147",
+      "type": 8
+    },
+    {
+      "id": 1012100129,
+      "name": "污泥炸彈：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 3,
+      "y": -5,
+      "color": "#47D147",
+      "type": 8
+    },
+    {
+      "id": 1012100130,
+      "name": "畏縮無效",
+      "description": "不會陷入畏縮狀態。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 2,
+      "x": 1,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1012100131,
+      "name": "讓我瞧瞧你的骨氣：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": -5,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1012100132,
+      "name": "速度下降無效",
+      "description": "速度不會降低。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 2,
+      "x": 3,
+      "y": -6,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1012100133,
+      "name": "讓我瞧瞧你的骨氣：招式後要害率提升2",
+      "description": "招式成功時,會提高自己的擊中要害率2階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 1,
+      "y": -5,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1012100134,
+      "name": "依速度升幅拍組招式↑",
+      "description": "自己的速度提高得越多,拍組招式的威力就提高得越多。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": -6,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1012100135,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012100136,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012100137,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -3,
+      "y": 4,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012100138,
+      "name": "閃避率下降無效",
+      "description": "閃避率不會降低。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": -1,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1012100139,
+      "name": "污泥炸彈：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": 4,
+      "color": "#47D147",
+      "type": 8
+    },
+    {
+      "id": 1012100140,
+      "name": "污泥炸彈：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -3,
+      "y": 5,
+      "color": "#47D147",
+      "type": 8
+    },
+    {
+      "id": 1012100141,
+      "name": "污泥炸彈：寶可夢出招後閃避率↑4",
+      "description": "在寶可夢使出招式時,有50%的機率會提高自己的閃避率1階段。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -1,
+      "y": 4,
+      "color": "#FF0066",
+      "type": 8
+    },
+    {
+      "id": 1012100142,
+      "name": "混亂中的對手攻擊自身的機率↑5",
+      "description": "增加對手因陷入混亂狀態而攻擊自身的機率。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -2,
+      "y": 5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1012100143,
+      "name": "攻擊混亂中的對手時HP回復1",
+      "description": "當對手陷入混亂狀態且使出招式攻擊成功時,會回復自己的HP。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 2,
+      "x": -3,
+      "y": 6,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1012100144,
+      "name": "對手中毒時威力提升5",
+      "description": "當對手陷入中毒或劇毒狀態時,會提高自己的招式的威力。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -1,
+      "y": 5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1012100145,
+      "name": "讓我瞧瞧你的骨氣：招式後計數加速9",
+      "description": "招式成功時,會讓自己發動拍組招式所需的行動數減少1次。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": 6,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1012100146,
+      "name": "做出覺悟之強酸劇毒滅絕雨：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": 3,
+      "color": "#BF80FF",
+      "type": 8
+    },
+    {
+      "id": 1012100147,
+      "name": "做出覺悟之強酸劇毒滅絕雨：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": -3,
+      "color": "#BF80FF",
+      "type": 8
+    }
+  ]
+}

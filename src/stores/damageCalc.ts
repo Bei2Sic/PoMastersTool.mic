@@ -156,6 +156,8 @@ export const useDamageCalcStore = defineStore("damageCalc", {
             physical: 0 as number,
             special: 0 as number,
             sync: 0 as number,
+            gearMove: 0 as number,
+            gearSync: 0 as number,
         },
     }),
 

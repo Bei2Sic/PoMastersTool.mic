@@ -1,0 +1,979 @@
+{
+  "trainer": {
+    "id": "10304000000",
+    "name": "青木",
+    "actor": "青木",
+    "actorId": "ch0304_00_aoki",
+    "rarity": 5,
+    "role": 4,
+    "exRole": 3,
+    "ex": true,
+    "exclusivity": "Pokefair",
+    "maxBonusLevel": 10
+  },
+  "scoutMethod": 1,
+  "scheduleId": "chara_6050_0614_FOREVER",
+  "themes": [
+    {
+      "name": "一般屬性／速戰",
+      "description": "僅在我方使出一般屬性攻擊時，攻擊和特攻提升24\n我方全體拍組的速度提升24",
+      "tag": "一般",
+      "category": 1
+    },
+    {
+      "name": "帕底亞／速戰",
+      "description": "我方全體拍組的攻擊和特攻提升4\n我方全體拍組的速度提升7",
+      "tag": "帕底亞",
+      "category": 2
+    },
+    {
+      "name": "道館館主／速戰",
+      "description": "我方全體拍組的攻擊和特攻提升4\n我方全體拍組的速度提升7",
+      "tag": "道館館主",
+      "category": 3
+    },
+    {
+      "name": "四天王／速戰",
+      "description": "我方全體拍組的攻擊和特攻提升4\n我方全體拍組的速度提升7",
+      "tag": "四天王",
+      "category": 3
+    },
+    {
+      "name": "我行我素／速戰",
+      "description": "我方全體拍組的攻擊和特攻提升5\n我方全體拍組的速度提升8",
+      "tag": "我行我素",
+      "category": 999
+    }
+  ],
+  "specialAwaking": {
+    "name": "超凡脫俗上班族",
+    "description": "首次上場時,會將領域變成淨空領域。首次使出拍組招式時,會將領域變成淨空領域。(淨空領域會提高一般屬性的攻擊的威力。)領域變成淨空領域的瞬間在場上時,會延長淨空領域的持續時間。",
+    "detail": [
+      {
+        "name": "首次上場時變成淨空領域",
+        "description": "首次上場時,會將領域變成淨空領域。(淨空領域會提高一般屬性的攻擊的威力。)"
+      },
+      {
+        "name": "首次拍組招式後變成淨空領域",
+        "description": "首次使出拍組招式時,會將領域變成淨空領域。(淨空領域會提高一般屬性的攻擊的威力。)"
+      },
+      {
+        "name": "淨空領域時間延長3",
+        "description": "領域變成淨空領域的瞬間在場上時,會延長淨空領域的持續時間。"
+      }
+    ]
+  },
+  "pokemon": [
+    {
+      "id": "20304000000",
+      "variationType": 0,
+      "vAfterSm": false,
+      "name": "土龍節節",
+      "form": "二節形態",
+      "actor": "pm0982_11_00_nokokocchi",
+      "gender": 1,
+      "isShiny": false,
+      "type": 1,
+      "weakness": 7,
+      "stat": {
+        "hp": [
+          127,
+          212,
+          293,
+          612,
+          680,
+          748,
+          952
+        ],
+        "atk": [
+          13,
+          57,
+          99,
+          264,
+          300,
+          336,
+          444
+        ],
+        "def": [
+          13,
+          36,
+          57,
+          134,
+          150,
+          166,
+          214
+        ],
+        "spa": [
+          10,
+          50,
+          89,
+          243,
+          275,
+          307,
+          403
+        ],
+        "spd": [
+          13,
+          36,
+          57,
+          134,
+          150,
+          166,
+          214
+        ],
+        "spe": [
+          17,
+          60,
+          99,
+          264,
+          300,
+          336,
+          444
+        ]
+      },
+      "passives": [
+        {
+          "name": "社會人的技巧",
+          "description": "上場時,會提高自己的攻擊4階段。攻擊時將會發揮下列所有效果。無視對手可減輕傷害的被動技能。無視對手可避免被攻擊擊中要害的被動技能。無視對手的挺住狀態。",
+          "detail": []
+        },
+        {
+          "name": "對手抵抗↓時威力提升G2",
+          "description": "當攻擊對象的屬性抵抗降低時,會提高我方全體拍組的招式的威力。",
+          "detail": []
+        },
+        {
+          "name": "首次攻擊時弱點屬性抵抗↓",
+          "description": "首次使出招式攻擊成功時,會降低對手的弱點屬性的屬性抵抗1階段。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 887,
+          "user": "寶可夢",
+          "name": "強力鑽",
+          "type": 1,
+          "gauge": 4,
+          "uses": "−",
+          "category": 1,
+          "power": 200,
+          "accuracy": 100,
+          "target": "對手１對拍組",
+          "description": "沒有追加效果。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 19083,
+          "user": "寶可夢",
+          "name": "要害攻擊G+",
+          "type": 0,
+          "gauge": 0,
+          "uses": 2,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方全體拍組",
+          "description": "提高我方全體拍組的擊中要害率2階段。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 6064,
+          "user": "寶可夢",
+          "name": "高速強力鑽",
+          "type": 1,
+          "gauge": 0,
+          "uses": 2,
+          "category": 1,
+          "power": 250,
+          "accuracy": 0,
+          "target": "對手１對拍組",
+          "description": "【開放條件】\n自己使出1次招式時\n【封印條件】\n使出此招式時\n\n攻擊必定會命中。降低對手的防禦2階段。降低對手的一般屬性抵抗1階段。讓自己變成下次計量槽消耗0狀態。",
+          "tags": 12,
+          "group": 6
+        },
+        {
+          "id": 13040,
+          "user": "訓練師",
+          "name": "普通就很好",
+          "type": 0,
+          "gauge": 0,
+          "uses": 2,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方場地",
+          "description": "讓我方場地變成招式計量槽加速狀態。自己發動拍組招式所需的行動數會減少1次。提高我方全體拍組的速度2階段。",
+          "tags": 8388608,
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 105100,
+        "user": "寶可夢",
+        "name": "超凡脫俗上班族之強力鑽",
+        "type": 1,
+        "gauge": 0,
+        "uses": "−",
+        "category": 1,
+        "power": 250,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "當對手的屬性抵抗降低時,威力會提高。",
+        "tags": "none",
+        "group": "Sync"
+      }
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "青木專用潛能餅乾１",
+      "skills": [
+        {
+          "name": "異常無效",
+          "description": "不會陷入異常狀態。",
+          "detail": [],
+          "rate": 100
+        }
+      ]
+    },
+    {
+      "cookieName": "青木專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "招式後招式計量槽增加9",
+          "description": "招式成功時,會幫自己增加1條招式計量槽。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "擊中要害時威力提升3",
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時&首次拍組招式後計數加速1",
+          "description": "首次上場時,發動拍組招式所需的行動數會減少1次。首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。",
+          "detail": [
+            {
+              "name": "首次上場時計數加速1",
+              "description": "首次上場時,發動拍組招式所需的行動數會減少1次。"
+            },
+            {
+              "name": "首次拍組招式後計數加速1",
+              "description": "首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。"
+            }
+          ],
+          "rate": 33
+        }
+      ]
+    }
+  ],
+  "grid": [
+    {
+      "id": 1030400000,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1030400001,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1030400002,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1030400003,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1030400004,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1030400005,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1030400006,
+      "name": "畏縮無效",
+      "description": "不會陷入畏縮狀態。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 2,
+      "x": 0,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1030400007,
+      "name": "上場時防禦下降G2",
+      "description": "上場時,會降低對手全體拍組的防禦2階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 4,
+      "x": 0,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1030400008,
+      "name": "拍組招式後HP中回復2",
+      "description": "使出拍組招式後,會回復自己的HP,約為自己最大HP的40%。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 5,
+      "x": 1,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1030400009,
+      "name": "束縛無效",
+      "description": "不會陷入束縛狀態。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 2,
+      "x": 0,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1030400010,
+      "name": "上場時速度提升G2",
+      "description": "上場時,會提高我方全體拍組的速度2階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 4,
+      "x": 0,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1030400011,
+      "name": "要害攻擊G+：招式後賦予物理增強(1)G9",
+      "description": "招式成功時,會提高我方全體拍組的下次物理招式威力增強1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 5,
+      "x": -1,
+      "y": -3,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1030400012,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1030400013,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1030400014,
+      "name": "強力鑽：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": 0,
+      "color": "#47D147",
+      "type": 1
+    },
+    {
+      "id": 1030400015,
+      "name": "強力鑽：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 1,
+      "y": 1,
+      "color": "#47D147",
+      "type": 1
+    },
+    {
+      "id": 1030400016,
+      "name": "強力鑽：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 3,
+      "y": 0,
+      "color": "#47D147",
+      "type": 1
+    },
+    {
+      "id": 1030400017,
+      "name": "強力鑽：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": 1,
+      "color": "#FF0066",
+      "type": 1
+    },
+    {
+      "id": 1030400018,
+      "name": "攻擊時賦予麻痺4",
+      "description": "使出招式攻擊成功時,有50%的機率會讓對手陷入麻痺狀態。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 1,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1030400019,
+      "name": "強力鑽：招式後招式計量槽增加9",
+      "description": "招式成功時,會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 3,
+      "x": 3,
+      "y": 1,
+      "color": "#FF0066",
+      "type": 1
+    },
+    {
+      "id": 1030400020,
+      "name": "依速度升幅威力提升",
+      "description": "自己的速度提高得越多,招式的威力就提高得越多。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1030400021,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1030400022,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -3,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1030400023,
+      "name": "高速強力鑽：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": 0,
+      "color": "#47D147",
+      "type": 1
+    },
+    {
+      "id": 1030400024,
+      "name": "高速強力鑽：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -1,
+      "y": -1,
+      "color": "#47D147",
+      "type": 1
+    },
+    {
+      "id": 1030400025,
+      "name": "高速強力鑽：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -3,
+      "y": 0,
+      "color": "#47D147",
+      "type": 1
+    },
+    {
+      "id": 1030400026,
+      "name": "要害攻擊G+：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -2,
+      "y": -1,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1030400027,
+      "name": "攻擊時賦予束縛4",
+      "description": "使出招式攻擊成功時,有50%的機率會讓對手陷入束縛狀態。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -1,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1030400028,
+      "name": "首次上場時計數加速1",
+      "description": "首次上場時,發動拍組招式所需的行動數會減少1次。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -3,
+      "y": -1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1030400029,
+      "name": "無傷上場時挺住",
+      "description": "在HP全滿的狀態上場時,會讓自己變成挺住狀態。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 3,
+      "x": -2,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1030400030,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1030400031,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1030400032,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": -4,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1030400033,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1030400034,
+      "name": "高速強力鑽：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": -4,
+      "color": "#47D147",
+      "type": 1
+    },
+    {
+      "id": 1030400035,
+      "name": "高速強力鑽：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 3,
+      "y": -5,
+      "color": "#47D147",
+      "type": 1
+    },
+    {
+      "id": 1030400036,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 2,
+      "x": 1,
+      "y": -4,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1030400037,
+      "name": "普通就很好：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": -5,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1030400038,
+      "name": "HP + 40",
+      "description": "",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 3,
+      "y": -6,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1030400039,
+      "name": "依速度升幅拍組招式↑",
+      "description": "自己的速度提高得越多,拍組招式的威力就提高得越多。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 1,
+      "y": -5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1030400040,
+      "name": "訓練家出招後賦予物理增強(1)9",
+      "description": "在訓練家使出招式時,會提高自己的下次物理招式威力增強1階段。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 3,
+      "x": 2,
+      "y": -6,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1030400041,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1030400042,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1030400043,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -3,
+      "y": 4,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1030400044,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": 3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1030400045,
+      "name": "強力鑽：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": 4,
+      "color": "#47D147",
+      "type": 1
+    },
+    {
+      "id": 1030400046,
+      "name": "強力鑽：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -3,
+      "y": 5,
+      "color": "#47D147",
+      "type": 1
+    },
+    {
+      "id": 1030400047,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 2,
+      "x": -1,
+      "y": 4,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1030400048,
+      "name": "攻擊時攻擊提升9",
+      "description": "使出招式攻擊成功時,會提高自己的攻擊1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 2,
+      "x": -2,
+      "y": 5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1030400049,
+      "name": "幽靈屬性防守",
+      "description": "可減輕受到幽靈屬性招式攻擊時的傷害。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -3,
+      "y": 6,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1030400050,
+      "name": "對手中拍組招式後攻擊特攻下降2",
+      "description": "當以對手為對象的拍組招式成功時,會降低對手的攻擊和特攻2階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -1,
+      "y": 5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1030400051,
+      "name": "攻擊抵抗↓的對手時下次不消耗計量槽4",
+      "description": "當對手的屬性抵抗降低且使出招式攻擊成功時,有50%的機率會讓自己變成下次計量槽消耗0狀態。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": 6,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1030400052,
+      "name": "超凡脫俗上班族之強力鑽：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": 3,
+      "color": "#BF80FF",
+      "type": 1
+    },
+    {
+      "id": 1030400053,
+      "name": "超凡脫俗上班族之強力鑽：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": -3,
+      "color": "#BF80FF",
+      "type": 1
+    }
+  ]
+}

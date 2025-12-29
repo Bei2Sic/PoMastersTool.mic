@@ -1,0 +1,970 @@
+{
+  "trainer": {
+    "id": "10122800000",
+    "name": "小陽（阿羅拉）",
+    "actor": "小陽",
+    "actorId": "ch0122_80_yo",
+    "rarity": 5,
+    "role": 2,
+    "exRole": 4,
+    "ex": true,
+    "exclusivity": "Pokefair",
+    "maxBonusLevel": 10
+  },
+  "scoutMethod": 1,
+  "scheduleId": "chara_6070_0731_FOREVER",
+  "themes": [
+    {
+      "name": "岩石屬性／輔助",
+      "description": "我方全體拍組最大HP提升60",
+      "tag": "岩石",
+      "category": 1
+    },
+    {
+      "name": "阿羅拉／輔助",
+      "description": "我方全體拍組最大HP提升13",
+      "tag": "阿羅拉",
+      "category": 2
+    },
+    {
+      "name": "主角／輔助",
+      "description": "我方全體拍組最大HP提升13",
+      "tag": "主角",
+      "category": 3
+    },
+    {
+      "name": "鬥志昂揚／輔助",
+      "description": "我方全體拍組最大HP提升15",
+      "tag": "鬥志昂揚",
+      "category": 999
+    },
+    {
+      "name": "阿羅拉的冒險／輔助",
+      "description": "我方全體拍組最大HP提升15",
+      "tag": "阿羅拉的冒險",
+      "category": 999
+    }
+  ],
+  "specialAwaking": {
+    "name": "究極層層堆疊",
+    "description": "首次上場時,發動拍組招式所需的行動數會減少1次。當領域為岩石領域時,我方全體拍組所有的能力都不會降低。首次使出拍組招式時,會將領域變成岩石領域。(岩石領域會提高岩石屬性的攻擊的威力。)",
+    "detail": [
+      {
+        "name": "首次上場時計數加速1",
+        "description": "首次上場時,發動拍組招式所需的行動數會減少1次。"
+      },
+      {
+        "name": "岩石領域時全種類↓無效G",
+        "description": "當領域為岩石領域時,我方全體拍組所有的能力都不會降低。"
+      },
+      {
+        "name": "首次拍組招式後變成岩石領域",
+        "description": "首次使出拍組招式時,會將領域變成岩石領域。(岩石領域會提高岩石屬性的攻擊的威力。)"
+      }
+    ]
+  },
+  "pokemon": [
+    {
+      "id": "20122800000",
+      "variationType": 0,
+      "vAfterSm": false,
+      "name": "壘磊石",
+      "form": "",
+      "actor": "pm0884_00_beastishigaki",
+      "gender": 3,
+      "isShiny": false,
+      "type": 13,
+      "weakness": 9,
+      "stat": {
+        "hp": [
+          101,
+          177,
+          249,
+          535,
+          595,
+          655,
+          835
+        ],
+        "atk": [
+          12,
+          35,
+          56,
+          144,
+          160,
+          176,
+          224
+        ],
+        "def": [
+          22,
+          65,
+          104,
+          258,
+          290,
+          322,
+          418
+        ],
+        "spa": [
+          9,
+          29,
+          47,
+          124,
+          140,
+          156,
+          204
+        ],
+        "spd": [
+          16,
+          56,
+          95,
+          238,
+          270,
+          302,
+          398
+        ],
+        "spe": [
+          8,
+          39,
+          69,
+          190,
+          214,
+          238,
+          310
+        ]
+      },
+      "passives": [
+        {
+          "name": "首次訓練家招式後防禦特防提升6",
+          "description": "在訓練家首次使出招式時,會提高自己的防禦和特防6階段。",
+          "detail": []
+        },
+        {
+          "name": "自身引發全體或我方場地時攻擊特攻提升G9",
+          "description": "當自己使全場地或我方場地的場地效果生效時,會提高我方全體拍組的攻擊和特攻1階段。",
+          "detail": []
+        },
+        {
+          "name": "全種類下降無效",
+          "description": "所有的能力都不會降低。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 479,
+          "user": "寶可夢",
+          "name": "擊落",
+          "type": 13,
+          "gauge": 1,
+          "uses": "−",
+          "category": 1,
+          "power": 20,
+          "accuracy": 100,
+          "target": "對手１對拍組",
+          "description": "沒有追加效果。",
+          "tags": 4259840,
+          "group": "Regular"
+        },
+        {
+          "id": 8220,
+          "user": "寶可夢",
+          "name": "阿羅拉的團結",
+          "type": 0,
+          "gauge": 2,
+          "uses": 2,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方場地",
+          "description": "分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。讓我方場地變成阿羅拉鬥陣(防禦)。阿羅拉鬥陣(防禦)將會發揮下列所有效果。提高我方全體拍組的招式和拍組招式威力5%。減輕我方全體拍組受到招式和拍組招式攻擊時的傷害10%。當我方場地中擁有阿羅拉標籤的拍組越多,此效果還會提升得越多。(每增加1對拍組,威力提升+5%,傷害減輕+5%。)(威力最多可提升20%,傷害最多可減輕25%。)",
+          "tags": 8388608,
+          "group": "Regular"
+        },
+        {
+          "id": 6073,
+          "user": "寶可夢",
+          "name": "大岩石封鎖",
+          "type": 13,
+          "gauge": 2,
+          "uses": 2,
+          "category": 1,
+          "power": 120,
+          "accuracy": 100,
+          "target": "對手全體拍組",
+          "description": "【開放條件】\n自己的防禦提高至最高階段時\n【封印條件】\n自己的防禦未提高至最高階段時\n\n降低對手的速度2階段。將領域變成岩石領域。(岩石領域會提高岩石屬性的攻擊的威力。)分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
+          "tags": "none",
+          "group": 6
+        },
+        {
+          "id": 11228,
+          "user": "訓練師",
+          "name": "究極撐住!",
+          "type": 0,
+          "gauge": 0,
+          "uses": 2,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方全體拍組",
+          "description": "回復我方全體拍組的HP,約為最大HP的20%。還會再回復自己的HP,約為自己最大HP的20%。讓我方全體拍組變成附帶回復狀態。",
+          "tags": 8388864,
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 51302,
+        "user": "寶可夢",
+        "name": "心意層層堆疊之毀天滅地巨岩墜",
+        "type": 13,
+        "gauge": 0,
+        "uses": "−",
+        "category": 1,
+        "power": 250,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "沒有追加效果。",
+        "tags": "none",
+        "group": "Sync"
+      }
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "小陽（阿羅拉）專用潛能餅乾１",
+      "skills": [
+        {
+          "name": "首次拍組招式後下次傷害防禦",
+          "description": "首次使出拍組招式時,會讓自己變成下次傷害防禦狀態。",
+          "detail": [],
+          "rate": 100
+        }
+      ]
+    },
+    {
+      "cookieName": "小陽（阿羅拉）專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "被攻擊時HP回復G9",
+          "description": "受到招式攻擊時,會回復我方全體拍組的HP。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時物理/特殊增強G1",
+          "description": "首次上場時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時拍組招式增強G3",
+          "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
+          "detail": [],
+          "rate": 33
+        }
+      ]
+    }
+  ],
+  "grid": [
+    {
+      "id": 1012280000,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012280001,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012280002,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012280003,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012280004,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012280005,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012280006,
+      "name": "鬥陣時招式計量槽加速2",
+      "description": "當我方場地為任一鬥陣時,招式計量槽會累積得較快。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 0,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1012280007,
+      "name": "首次危機時HP回復4",
+      "description": "首次陷入危機時,會回復自己的HP,約為自己最大HP的40%。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 4,
+      "x": 0,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1012280008,
+      "name": "阿羅拉鬥陣(防禦)時間延長5",
+      "description": "我方場地變成阿羅拉鬥陣(防禦)的瞬間在場上時,會延長阿羅拉鬥陣(防禦)的持續時間。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 5,
+      "x": -2,
+      "y": 5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1012280009,
+      "name": "岩石領域時HP回復1",
+      "description": "當領域為岩石領域時,寶可夢每次行動後都會回復自己的HP。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 0,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1012280010,
+      "name": "岩石領域時間延長3",
+      "description": "領域變成岩石領域的瞬間在場上時,會延長岩石領域的持續時間。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 4,
+      "x": 0,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1012280011,
+      "name": "擊中要害無效",
+      "description": "對手的攻擊不會擊中要害。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 5,
+      "x": -2,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1012280012,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012280013,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012280014,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012280015,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012280016,
+      "name": "擊落：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": 2,
+      "color": "#47D147",
+      "type": 13
+    },
+    {
+      "id": 1012280017,
+      "name": "擊落：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 1,
+      "y": 3,
+      "color": "#47D147",
+      "type": 13
+    },
+    {
+      "id": 1012280018,
+      "name": "擊落：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 3,
+      "y": 2,
+      "color": "#47D147",
+      "type": 13
+    },
+    {
+      "id": 1012280019,
+      "name": "擊落：招式後招式計量槽增加2",
+      "description": "招式成功時,有30%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 13
+    },
+    {
+      "id": 1012280020,
+      "name": "岩石領域時減輕物理傷害G2",
+      "description": "當領域為岩石領域時,會減輕我方受到物理招式攻擊時的傷害。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 1,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1012280021,
+      "name": "防禦 + 20",
+      "description": "",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 3,
+      "y": 3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012280022,
+      "name": "擊落：招式後招式計量槽增加9",
+      "description": "招式成功時,會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": 4,
+      "color": "#FF0066",
+      "type": 13
+    },
+    {
+      "id": 1012280023,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012280024,
+      "name": "沙暴無效",
+      "description": "不會受到沙暴所造成的傷害。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": -3,
+      "y": 0,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1012280025,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012280026,
+      "name": "擊落：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": -1,
+      "color": "#47D147",
+      "type": 13
+    },
+    {
+      "id": 1012280027,
+      "name": "擊落：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -3,
+      "y": -1,
+      "color": "#47D147",
+      "type": 13
+    },
+    {
+      "id": 1012280028,
+      "name": "HP + 20",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": -1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012280029,
+      "name": "解除妨害狀態",
+      "description": "當自己首次陷入畏縮、混亂或束縛狀態時,會解除該狀態。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -2,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1012280030,
+      "name": "阿羅拉的團結：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -3,
+      "y": -2,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1012280031,
+      "name": "究極撐住!：招式後招式次數回復3",
+      "description": "招式成功時,有40%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -1,
+      "y": -3,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1012280032,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012280033,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012280034,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012280035,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": -4,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012280036,
+      "name": "大岩石封鎖：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": -4,
+      "color": "#47D147",
+      "type": 13
+    },
+    {
+      "id": 1012280037,
+      "name": "解除異常狀態",
+      "description": "當自己首次陷入異常狀態時,會解除自己的異常狀態。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 1,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1012280038,
+      "name": "大岩石封鎖：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 3,
+      "y": -5,
+      "color": "#47D147",
+      "type": 13
+    },
+    {
+      "id": 1012280039,
+      "name": "上場時命中率提升G1",
+      "description": "上場時,會提高我方全體拍組的命中率1階段。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 2,
+      "y": -5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1012280040,
+      "name": "岩石領域時減輕特殊傷害G2",
+      "description": "當領域為岩石領域時,會減輕我方受到特殊招式攻擊時的傷害。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 1,
+      "y": -5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1012280041,
+      "name": "特防 + 20",
+      "description": "",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 3,
+      "y": -6,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012280042,
+      "name": "上場時擊中要害率提升G1",
+      "description": "上場時,會提高我方全體拍組的擊中要害率1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": -6,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1012280043,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012280044,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012280045,
+      "name": "大岩石封鎖：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -3,
+      "y": 3,
+      "color": "#47D147",
+      "type": 13
+    },
+    {
+      "id": 1012280046,
+      "name": "大岩石封鎖：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": 3,
+      "color": "#47D147",
+      "type": 13
+    },
+    {
+      "id": 1012280047,
+      "name": "速度 + 20",
+      "description": "",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -1,
+      "y": 3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012280048,
+      "name": "大岩石封鎖：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -3,
+      "y": 4,
+      "color": "#47D147",
+      "type": 13
+    },
+    {
+      "id": 1012280049,
+      "name": "HP + 20",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": -2,
+      "y": 4,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1012280050,
+      "name": "攻擊時攻擊提升G9",
+      "description": "使出招式攻擊成功時,會提高我方全體拍組的攻擊1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -1,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1012280051,
+      "name": "攻擊時特攻提升G9",
+      "description": "使出招式攻擊成功時,會提高我方全體拍組的特攻1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -3,
+      "y": 5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1012280052,
+      "name": "心意層層堆疊之毀天滅地巨岩墜：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": 3,
+      "color": "#BF80FF",
+      "type": 13
+    },
+    {
+      "id": 1012280053,
+      "name": "心意層層堆疊之毀天滅地巨岩墜：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": -3,
+      "color": "#BF80FF",
+      "type": 13
+    }
+  ]
+}

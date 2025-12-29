@@ -189,5 +189,7 @@ export interface CalcEnvironment {
         physical: number;
         special: number;
         sync: number;
+        gearMove: number;
+        gearSync: number;
     }
 }

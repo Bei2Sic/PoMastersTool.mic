@@ -1,0 +1,1086 @@
+{
+  "trainer": {
+    "id": "10000800000",
+    "name": "赤紅",
+    "actor": "赤紅",
+    "actorId": "ch0000_80_red",
+    "rarity": 5,
+    "role": 2,
+    "exRole": 4,
+    "ex": true,
+    "exclusivity": "Pokefair",
+    "maxBonusLevel": 10
+  },
+  "scoutMethod": 1,
+  "scheduleId": "chara_3085_0916_FOREVER",
+  "themes": [
+    {
+      "name": "一般屬性／輔助",
+      "description": "我方全體拍組最大HP提升60",
+      "tag": "一般",
+      "category": 1
+    },
+    {
+      "name": "關都／輔助",
+      "description": "我方全體拍組最大HP提升13",
+      "tag": "關都",
+      "category": 2
+    },
+    {
+      "name": "主角／輔助",
+      "description": "我方全體拍組最大HP提升13",
+      "tag": "主角",
+      "category": 3
+    },
+    {
+      "name": "真新鎮／輔助",
+      "description": "我方全體拍組最大HP提升15",
+      "tag": "真新鎮",
+      "category": 999
+    },
+    {
+      "name": "鬥志昂揚／輔助",
+      "description": "我方全體拍組最大HP提升15",
+      "tag": "鬥志昂揚",
+      "category": 999
+    }
+  ],
+  "specialAwaking": {
+    "name": "醒覺的笛聲",
+    "description": "使出拍組極巨化招式後, 會讓發動拍組招式所需的行動數減少2次。使出拍組極巨化招式後,會提高我方全體拍組的下次物理招式威力增強2階段。減輕我方受到物理招式攻擊時的傷害。",
+    "detail": [
+      {
+        "name": "拍組極巨化招式後計數加速2",
+        "description": "使出拍組極巨化招式後, 會讓發動拍組招式所需的行動數減少2次。"
+      },
+      {
+        "name": "拍組極巨化招式後物理增強G2",
+        "description": "使出拍組極巨化招式後,會提高我方全體拍組的下次物理招式威力增強2階段。"
+      },
+      {
+        "name": "物理傷害↓G2",
+        "description": "減輕我方受到物理招式攻擊時的傷害。"
+      }
+    ]
+  },
+  "pokemon": [
+    {
+      "id": "20000800000",
+      "variationType": 0,
+      "vAfterSm": false,
+      "name": "卡比獸",
+      "form": "",
+      "actor": "pm0143_00_kabigon",
+      "gender": 1,
+      "isShiny": false,
+      "type": 1,
+      "weakness": 7,
+      "stat": {
+        "hp": [
+          120,
+          198,
+          273,
+          570,
+          634,
+          698,
+          890
+        ],
+        "atk": [
+          10,
+          39,
+          66,
+          176,
+          200,
+          224,
+          296
+        ],
+        "def": [
+          13,
+          47,
+          80,
+          212,
+          240,
+          268,
+          352
+        ],
+        "spa": [
+          10,
+          37,
+          61,
+          160,
+          180,
+          200,
+          260
+        ],
+        "spd": [
+          16,
+          53,
+          89,
+          232,
+          260,
+          288,
+          372
+        ],
+        "spe": [
+          9,
+          40,
+          70,
+          191,
+          215,
+          239,
+          311
+        ]
+      },
+      "passives": [
+        {
+          "name": "拍組極巨化招式後附帶回復",
+          "description": "使出拍組極巨化招式後,會讓自己變成附帶回復狀態。",
+          "detail": []
+        },
+        {
+          "name": "HP減半時防禦提升G1",
+          "description": "在自己的HP剩下一半以下時,會提高我方全體拍組的防禦1階段。",
+          "detail": []
+        },
+        {
+          "name": "訓練家出招後特防提升G4",
+          "description": "在訓練家使出招式時,有50%的機率會提高我方全體拍組的特防1階段。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 34,
+          "user": "寶可夢",
+          "name": "泰山壓頂",
+          "type": 1,
+          "gauge": 2,
+          "uses": "−",
+          "category": 1,
+          "power": 53,
+          "accuracy": 100,
+          "target": "對手１對拍組",
+          "description": "有30%的機率會讓對手陷入麻痺狀態。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 19001,
+          "user": "寶可夢",
+          "name": "迷你傷藥G",
+          "type": 0,
+          "gauge": 0,
+          "uses": 2,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方全體拍組",
+          "description": "回復我方全體拍組的HP,約為最大HP的20%。",
+          "tags": "Heals",
+          "group": "Regular"
+        },
+        {
+          "id": 249,
+          "user": "寶可夢",
+          "name": "碎岩",
+          "type": 7,
+          "gauge": 2,
+          "uses": "−",
+          "category": 1,
+          "power": 46,
+          "accuracy": 100,
+          "target": "對手１對拍組",
+          "description": "有50%的機率會降低對手的防禦1階段。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 10008,
+          "user": "訓練師",
+          "name": "邁向勝利的戰略",
+          "type": 0,
+          "gauge": 0,
+          "uses": 2,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方１對拍組",
+          "description": "我方發動拍組招式所需的行動數會減少1次。提高我方的擊中要害率2階段。讓我方變成下次效果絕佳威力提升狀態。",
+          "tags": "none",
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 87000,
+        "user": "寶可夢",
+        "name": "阻擋前進的最強高牆之一般衝擊",
+        "type": 1,
+        "gauge": 0,
+        "uses": "−",
+        "category": 1,
+        "power": 300,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "沒有追加效果。",
+        "tags": "none",
+        "group": "Sync"
+      }
+    },
+    {
+      "id": "20000800000",
+      "variationType": 4,
+      "vAfterSm": false,
+      "name": "卡比獸",
+      "form": "",
+      "actor": "pm0143_81_00_gkabigon",
+      "gender": 1,
+      "isShiny": false,
+      "type": 1,
+      "weakness": 7,
+      "stat": {
+        "hp": [
+          120,
+          198,
+          273,
+          570,
+          634,
+          698,
+          890
+        ],
+        "atk": [
+          10,
+          39,
+          66,
+          176,
+          200,
+          224,
+          296
+        ],
+        "def": [
+          13,
+          47,
+          80,
+          212,
+          240,
+          268,
+          352
+        ],
+        "spa": [
+          10,
+          37,
+          61,
+          160,
+          180,
+          200,
+          260
+        ],
+        "spd": [
+          16,
+          53,
+          89,
+          232,
+          260,
+          288,
+          372
+        ],
+        "spe": [
+          9,
+          40,
+          70,
+          191,
+          215,
+          239,
+          311
+        ]
+      },
+      "passives": [
+        {
+          "name": "拍組極巨化招式後附帶回復",
+          "description": "使出拍組極巨化招式後,會讓自己變成附帶回復狀態。",
+          "detail": []
+        },
+        {
+          "name": "HP減半時防禦提升G1",
+          "description": "在自己的HP剩下一半以下時,會提高我方全體拍組的防禦1階段。",
+          "detail": []
+        },
+        {
+          "name": "訓練家出招後特防提升G4",
+          "description": "在訓練家使出招式時,有50%的機率會提高我方全體拍組的特防1階段。",
+          "detail": []
+        }
+      ],
+      "moves": null,
+      "syncMove": null,
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "movesDynamax": [
+        {
+          "id": 7000,
+          "user": "寶可夢",
+          "name": "超極巨資源再生",
+          "type": 1,
+          "gauge": 0,
+          "uses": "−",
+          "category": 1,
+          "power": 400,
+          "accuracy": 0,
+          "target": "對手１對拍組",
+          "description": "幫自己的招式的使用次數回復1次。",
+          "tags": "none",
+          "group": 5
+        },
+        {
+          "id": 7005,
+          "user": "寶可夢",
+          "name": "極巨拳鬥",
+          "type": 7,
+          "gauge": 0,
+          "uses": "−",
+          "category": 1,
+          "power": 400,
+          "accuracy": 0,
+          "target": "對手１對拍組",
+          "description": "提高我方全體拍組的攻擊2階段。",
+          "tags": "none",
+          "group": 5
+        }
+      ]
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "赤紅專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "被攻擊時HP回復G9",
+          "description": "受到招式攻擊時,會回復我方全體拍組的HP。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時物理/特殊增強G1",
+          "description": "首次上場時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時拍組招式增強G3",
+          "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
+          "detail": [],
+          "rate": 33
+        }
+      ]
+    }
+  ],
+  "grid": [
+    {
+      "id": 1000080000,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000080001,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000080002,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000080003,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000080004,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000080005,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000080006,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000080007,
+      "name": "泰山壓頂：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": 1,
+      "color": "#47D147",
+      "type": 1
+    },
+    {
+      "id": 1000080008,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000080009,
+      "name": "HP + 20",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 1,
+      "x": 3,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000080010,
+      "name": "泰山壓頂：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": 2,
+      "color": "#47D147",
+      "type": 1
+    },
+    {
+      "id": 1000080011,
+      "name": "泰山壓頂：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 1,
+      "y": 3,
+      "color": "#47D147",
+      "type": 1
+    },
+    {
+      "id": 1000080012,
+      "name": "泰山壓頂：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 3,
+      "y": 2,
+      "color": "#47D147",
+      "type": 1
+    },
+    {
+      "id": 1000080013,
+      "name": "泰山壓頂：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 1
+    },
+    {
+      "id": 1000080014,
+      "name": "寶可夢出招後攻擊↑G3",
+      "description": "在寶可夢使出招式時,有40%的機率會提高我方全體拍組的攻擊1階段。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 3,
+      "x": 1,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000080015,
+      "name": "特防 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": 3,
+      "y": 3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000080016,
+      "name": "首次拍組招式後挺住G",
+      "description": "首次使出拍組招式時,會讓我方全體拍組變成挺住狀態。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000080017,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000080018,
+      "name": "碎岩：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -3,
+      "y": 0,
+      "color": "#47D147",
+      "type": 7
+    },
+    {
+      "id": 1000080019,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000080020,
+      "name": "碎岩：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": -1,
+      "color": "#47D147",
+      "type": 7
+    },
+    {
+      "id": 1000080021,
+      "name": "碎岩：下降機率提升1",
+      "description": "當招式的追加效果可降低對手能力值時,會提高該追加效果的成功率。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -3,
+      "y": -1,
+      "color": "#FF0066",
+      "type": 7
+    },
+    {
+      "id": 1000080022,
+      "name": "碎岩：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -1,
+      "y": -2,
+      "color": "#47D147",
+      "type": 7
+    },
+    {
+      "id": 1000080023,
+      "name": "碎岩：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -2,
+      "y": -2,
+      "color": "#FF0066",
+      "type": 7
+    },
+    {
+      "id": 1000080024,
+      "name": "極巨拳鬥：威力 + 100",
+      "description": "",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 3,
+      "x": -3,
+      "y": -2,
+      "color": "#47D147",
+      "type": 7
+    },
+    {
+      "id": 1000080025,
+      "name": "首次拍組招式後計數加速1",
+      "description": "首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 3,
+      "x": -1,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000080026,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000080027,
+      "name": "碎岩：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": -3,
+      "color": "#47D147",
+      "type": 7
+    },
+    {
+      "id": 1000080028,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000080029,
+      "name": "碎岩：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 3,
+      "y": -4,
+      "color": "#47D147",
+      "type": 7
+    },
+    {
+      "id": 1000080030,
+      "name": "碎岩：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": -4,
+      "color": "#47D147",
+      "type": 7
+    },
+    {
+      "id": 1000080031,
+      "name": "中毒無效",
+      "description": "不會陷入中毒狀態和劇毒狀態。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 2,
+      "x": 1,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000080032,
+      "name": "速度 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 1,
+      "x": 3,
+      "y": -5,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000080033,
+      "name": "解除妨害狀態",
+      "description": "當自己首次陷入畏縮、混亂或束縛狀態時,會解除該狀態。",
+      "detail": [],
+      "energy": 6,
+      "orb": 72,
+      "level": 2,
+      "x": 2,
+      "y": -5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000080034,
+      "name": "迷你傷藥G：HP回復招式回復量增加1",
+      "description": "當自己使出會回復HP的招式時,會提高HP回復量。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 1,
+      "y": -5,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1000080035,
+      "name": "防禦 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": 3,
+      "y": -6,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000080036,
+      "name": "迷你傷藥G：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 3,
+      "x": 2,
+      "y": -6,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1000080037,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000080038,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000080039,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -3,
+      "y": 3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1000080040,
+      "name": "邁向勝利的戰略：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 1,
+      "x": -2,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1000080041,
+      "name": "泰山壓頂：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -1,
+      "y": 3,
+      "color": "#47D147",
+      "type": 1
+    },
+    {
+      "id": 1000080042,
+      "name": "泰山壓頂：異常機率提升1",
+      "description": "當招式的追加效果可使對手陷入異常狀態時,會提高該追加效果的成功率。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -3,
+      "y": 4,
+      "color": "#FF0066",
+      "type": 1
+    },
+    {
+      "id": 1000080043,
+      "name": "拍組極巨化招式後解除異常狀態G9",
+      "description": "使出拍組極巨化招式後,會解除我方全體拍組的異常狀態。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -2,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000080044,
+      "name": "拍組極巨化招式後防禦提升2",
+      "description": "使出拍組極巨化招式後,會提高自己的防禦2階段。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 3,
+      "x": -1,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000080045,
+      "name": "超極巨資源再生：威力 + 100",
+      "description": "",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 3,
+      "x": -3,
+      "y": 5,
+      "color": "#47D147",
+      "type": 1
+    },
+    {
+      "id": 1000080046,
+      "name": "阻擋前進的最強高牆之一般衝擊：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": 3,
+      "color": "#BF80FF",
+      "type": 1
+    },
+    {
+      "id": 1000080047,
+      "name": "阻擋前進的最強高牆之一般衝擊：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": -3,
+      "color": "#BF80FF",
+      "type": 1
+    },
+    {
+      "id": 1000080048,
+      "name": "火屬性防守",
+      "description": "可減輕受到火屬性招式攻擊時的傷害。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 0,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000080049,
+      "name": "拍組極巨化招式後特防提升G2",
+      "description": "使出拍組極巨化招式後,會提高我方全體拍組的特防2階段。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 4,
+      "x": 0,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000080050,
+      "name": "邁向勝利的戰略：我方中招後賦予物理增強(1)9",
+      "description": "以我方拍組為對象的招式(不含場地效果)成功時,會提高受到該招式效果影響的我方拍組的下次物理招式威力增強1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 5,
+      "x": -2,
+      "y": 5,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1000080051,
+      "name": "冰屬性防守",
+      "description": "可減輕受到冰屬性招式攻擊時的傷害。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 0,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000080052,
+      "name": "異常無效",
+      "description": "不會陷入異常狀態。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 4,
+      "x": 0,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1000080053,
+      "name": "首次HP減半時下次傷害防禦",
+      "description": "在自己的HP首次剩下一半以下時,會讓自己變成下次傷害防禦狀態。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 5,
+      "x": -2,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    }
+  ]
+}

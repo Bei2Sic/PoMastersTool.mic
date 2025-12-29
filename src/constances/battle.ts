@@ -82,7 +82,6 @@ export const BATTLE_REGIONS = [
 
 // 5. 傷害場地
 export const DAMAGE_FIELDS = [
-    "無",
     "一般傷害場地",
     "火傷害場地",
     "水傷害場地",
@@ -93,7 +92,7 @@ export const DAMAGE_FIELDS = [
     "毒傷害場地",
     "地傷害場地",
     "飛行傷害場地",
-    "超能傷害場地",
+    "超能力傷害場地",
     "蟲傷害場地",
     "岩石傷害場地",
     "幽靈傷害場地",
@@ -103,7 +102,17 @@ export const DAMAGE_FIELDS = [
     "妖精傷害場地",
 ] as const;
 
-// 6. 數值相關
+// 6. 類型相關
+export const ROLE_TYPES = [
+    "攻擊型",
+    "輔助型",
+    "技術型",
+    "速戰型",
+    "場地型",
+    "複合型",
+] as const;
+
+// 7. 數值相關
 export const STAT_KEYS = [
     "hp",
     "atk",

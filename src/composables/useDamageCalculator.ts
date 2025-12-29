@@ -25,10 +25,9 @@ function collectActivePassives(
 ): { name: string; desc: string; passiveName: string }[] {
     const passives: { name: string; desc: string; passiveName: string }[] = [];
 
-    // 1. 本體被動 (Innate) - 隨 formIndex 變化
+    // 1. 本體被動 - 隨 formIndex 變化
     const currentPokemon = sync.rawData.pokemon[formIndex];
     if (currentPokemon && currentPokemon.passives) {
-        // 假設 passive 結構是數組
         currentPokemon.passives.forEach((p) => {
             if (PASSIVE_OVERRIDES[p.name]) {
                 passives.push({
@@ -201,6 +200,8 @@ export function useDamageCalculator(
                 physical: damageStore.config.physical,
                 special: damageStore.config.special,
                 sync: damageStore.config.sync,
+                gearMove: damageStore.config.gearMove,
+                gearSync: damageStore.config.gearSync,
             },
         };
     });
@@ -383,6 +384,7 @@ export function useDamageCalculator(
                     activeMove.description
                 );
                 const moveSkill = parser.result;
+                console.log(moveSkill);
                 if (moveSkill?.condition) {
                     console.log(moveSkill);
                 }
@@ -459,6 +461,12 @@ export function useDamageCalculator(
                     localEnv
                 );
 
+                // 裝備乘算倍率
+                const gearBoost = DamageEngine.resolveGearMultipliers(
+                    scope,
+                    localEnv
+                );
+
                 // 计算攻击者面板 (User Stat)
                 let userStat = 0;
                 // 判定攻击类型 (1: 物理, 2: 特殊)
@@ -524,7 +532,8 @@ export function useDamageCalculator(
                         return Math.floor(
                             movePower *
                                 (((userStat * 0.5) / targetStat) *
-                                    envBoost *
+                                    envBoost * 
+                                    gearBoost *
                                     roll)
                         );
                     }
@@ -537,6 +546,7 @@ export function useDamageCalculator(
                     gaugeBoost,
                     movePower,
                     envBoost,
+                    gearBoost,
                     userStat,
                     targetStat,
                     moveDamage,

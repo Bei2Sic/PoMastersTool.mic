@@ -1,0 +1,1148 @@
+{
+  "trainer": {
+    "id": "10106110000",
+    "name": "美極套裝小菊兒（異裝）",
+    "actor": "小菊兒",
+    "actorId": "ch0106_11_kamitsure",
+    "rarity": 5,
+    "role": 5,
+    "exRole": 1,
+    "ex": true,
+    "exclusivity": "Pokefair",
+    "maxBonusLevel": 10
+  },
+  "scoutMethod": 1,
+  "scheduleId": "chara_7040_0427_FOREVER",
+  "themes": [
+    {
+      "name": "電屬性／場地",
+      "description": "我方全體拍組最大HP提升24\n我方全體拍組的速度提升24",
+      "tag": "電",
+      "category": 1
+    },
+    {
+      "name": "合眾／場地",
+      "description": "我方全體拍組最大HP提升7\n我方全體拍組的速度提升7",
+      "tag": "合眾",
+      "category": 2
+    },
+    {
+      "name": "道館館主／場地",
+      "description": "我方全體拍組最大HP提升7\n我方全體拍組的速度提升7",
+      "tag": "道館館主",
+      "category": 3
+    },
+    {
+      "name": "美極套裝／場地",
+      "description": "我方全體拍組最大HP提升8\n我方全體拍組的速度提升8",
+      "tag": "美極套裝",
+      "category": 4
+    },
+    {
+      "name": "表演家／場地",
+      "description": "我方全體拍組最大HP提升8\n我方全體拍組的速度提升8",
+      "tag": "表演家",
+      "category": 999
+    }
+  ],
+  "specialAwaking": {
+    "name": "必須回應粉絲的期待才行",
+    "description": "使出拍組極巨化招式後, 會讓發動拍組招式所需的行動數減少2次。當天氣為下雨時,對手的攻擊不會擊中我方全體拍組的要害。在HP全滿的狀態上場時,會讓自己變成挺住狀態。",
+    "detail": [
+      {
+        "name": "拍組極巨化招式後計數加速2",
+        "description": "使出拍組極巨化招式後, 會讓發動拍組招式所需的行動數減少2次。"
+      },
+      {
+        "name": "下雨時擊中要害無效G",
+        "description": "當天氣為下雨時,對手的攻擊不會擊中我方全體拍組的要害。"
+      },
+      {
+        "name": "無傷上場時挺住",
+        "description": "在HP全滿的狀態上場時,會讓自己變成挺住狀態。"
+      }
+    ]
+  },
+  "pokemon": [
+    {
+      "id": "20106110000",
+      "variationType": 0,
+      "vAfterSm": false,
+      "name": "雷電雲",
+      "form": "靈獸形態",
+      "actor": "pm0642_12_00_voltolos",
+      "gender": 1,
+      "isShiny": false,
+      "type": 4,
+      "weakness": 6,
+      "stat": {
+        "hp": [
+          98,
+          173,
+          245,
+          531,
+          591,
+          651,
+          831
+        ],
+        "atk": [
+          17,
+          57,
+          96,
+          250,
+          282,
+          314,
+          410
+        ],
+        "def": [
+          14,
+          35,
+          53,
+          130,
+          146,
+          162,
+          210
+        ],
+        "spa": [
+          28,
+          93,
+          156,
+          398,
+          450,
+          502,
+          658
+        ],
+        "spd": [
+          14,
+          37,
+          58,
+          146,
+          162,
+          178,
+          226
+        ],
+        "spe": [
+          18,
+          61,
+          100,
+          265,
+          301,
+          337,
+          445
+        ]
+      },
+      "passives": [
+        {
+          "name": "極巨化・伸展台",
+          "description": "當天氣為下雨時,會提高拍組極巨化招式的威力。拍組極巨化招式的攻擊對象會變成全體。受到此被動技能效果影響的拍組極巨化招式的攻擊,即使對象為複數,威力也不會降低。",
+          "detail": [
+            {
+              "name": "下雨時拍組極巨化招式威力↑9",
+              "description": "當天氣為下雨時,會提高拍組極巨化招式的威力。"
+            },
+            {
+              "name": "拍組極巨化招式全體化",
+              "description": "拍組極巨化招式的攻擊對象會變成全體。受到此被動技能效果影響的拍組極巨化招式的攻擊,即使對象為複數,威力也不會降低。"
+            }
+          ]
+        },
+        {
+          "name": "雨中的眩目舞台",
+          "description": "天氣變成下雨的瞬間在場上時,會延長下雨的持續時間。場地變成電氣場地的瞬間在場上時,會延長電氣場地的持續時間。",
+          "detail": [
+            {
+              "name": "下雨時間延長3",
+              "description": "天氣變成下雨的瞬間在場上時,會延長下雨的持續時間。"
+            },
+            {
+              "name": "電氣場地時間延長3",
+              "description": "場地變成電氣場地的瞬間在場上時,會延長電氣場地的持續時間。"
+            }
+          ]
+        },
+        {
+          "name": "我方引發天氣/場地/領域時賦予特殊增強(1)G9",
+          "description": "當我方使天氣、場地或領域生效時,會提高我方全體拍組的下次特殊招式威力增強1階段。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 847,
+          "user": "寶可夢",
+          "name": "鳴雷風暴",
+          "type": 4,
+          "gauge": 4,
+          "uses": "−",
+          "category": 2,
+          "power": 177,
+          "accuracy": 80,
+          "target": "對手全體拍組",
+          "description": "當天氣為下雨時,攻擊必定會命中。有20%的機率會讓對手陷入麻痺狀態。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 604,
+          "user": "寶可夢",
+          "name": "電氣場地",
+          "type": 4,
+          "gauge": 2,
+          "uses": 2,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "全場地",
+          "description": "將場地變成電氣場地。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 6124,
+          "user": "寶可夢",
+          "name": "鳴雷風暴・召雷",
+          "type": 4,
+          "gauge": 2,
+          "uses": 3,
+          "category": 2,
+          "power": 180,
+          "accuracy": 100,
+          "target": "對手全體拍組",
+          "description": "【開放條件】\n自己的特攻處於提高狀態時\n【封印條件】\n自己的特攻未處於提高狀態時\n\n當天氣為下雨時,攻擊必定會命中。降低對手的特防2階段。首次使出此招式攻擊成功時,會降低對手的電屬性抵抗1階段。讓對手陷入麻痺狀態。即使對象為複數,招式的威力也不會降低。使出此招式攻擊且自己的「電氣場地」的剩餘次數為1以上時,會減少該使用次數1次並發揮下列所有效果。會將天氣變成下雨。將場地變成電氣場地。",
+          "tags": "none",
+          "group": 6
+        },
+        {
+          "id": 11062,
+          "user": "訓練師",
+          "name": "心情讚爆!",
+          "type": 0,
+          "gauge": 0,
+          "uses": 1,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方１對拍組",
+          "description": "我方發動拍組招式所需的行動數會減少1次。提高我方的特攻4階段。提高我方的擊中要害率3階段。",
+          "tags": "none",
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 118500,
+        "user": "寶可夢",
+        "name": "改變沉靜印象之電之光線",
+        "type": 4,
+        "gauge": 0,
+        "uses": "−",
+        "category": 2,
+        "power": 250,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "沒有追加效果。",
+        "tags": "none",
+        "group": "Sync"
+      }
+    },
+    {
+      "id": "20106110000",
+      "variationType": 4,
+      "vAfterSm": false,
+      "name": "雷電雲",
+      "form": "靈獸形態",
+      "actor": "pm0642_84_00_voltolos",
+      "gender": 1,
+      "isShiny": false,
+      "type": 4,
+      "weakness": 6,
+      "stat": {
+        "hp": [
+          98,
+          173,
+          245,
+          531,
+          591,
+          651,
+          831
+        ],
+        "atk": [
+          17,
+          57,
+          96,
+          250,
+          282,
+          314,
+          410
+        ],
+        "def": [
+          14,
+          35,
+          53,
+          130,
+          146,
+          162,
+          210
+        ],
+        "spa": [
+          28,
+          93,
+          156,
+          398,
+          450,
+          502,
+          658
+        ],
+        "spd": [
+          14,
+          37,
+          58,
+          146,
+          162,
+          178,
+          226
+        ],
+        "spe": [
+          18,
+          61,
+          100,
+          265,
+          301,
+          337,
+          445
+        ]
+      },
+      "passives": [
+        {
+          "name": "極巨化・伸展台",
+          "description": "當天氣為下雨時,會提高拍組極巨化招式的威力。拍組極巨化招式的攻擊對象會變成全體。受到此被動技能效果影響的拍組極巨化招式的攻擊,即使對象為複數,威力也不會降低。",
+          "detail": [
+            {
+              "name": "下雨時拍組極巨化招式威力↑9",
+              "description": "當天氣為下雨時,會提高拍組極巨化招式的威力。"
+            },
+            {
+              "name": "拍組極巨化招式全體化",
+              "description": "拍組極巨化招式的攻擊對象會變成全體。受到此被動技能效果影響的拍組極巨化招式的攻擊,即使對象為複數,威力也不會降低。"
+            }
+          ]
+        },
+        {
+          "name": "雨中的眩目舞台",
+          "description": "天氣變成下雨的瞬間在場上時,會延長下雨的持續時間。場地變成電氣場地的瞬間在場上時,會延長電氣場地的持續時間。",
+          "detail": [
+            {
+              "name": "下雨時間延長3",
+              "description": "天氣變成下雨的瞬間在場上時,會延長下雨的持續時間。"
+            },
+            {
+              "name": "電氣場地時間延長3",
+              "description": "場地變成電氣場地的瞬間在場上時,會延長電氣場地的持續時間。"
+            }
+          ]
+        },
+        {
+          "name": "我方引發天氣/場地/領域時賦予特殊增強(1)G9",
+          "description": "當我方使天氣、場地或領域生效時,會提高我方全體拍組的下次特殊招式威力增強1階段。",
+          "detail": []
+        }
+      ],
+      "moves": null,
+      "syncMove": null,
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "movesDynamax": [
+        {
+          "id": 7028,
+          "user": "寶可夢",
+          "name": "極巨閃電",
+          "type": 4,
+          "gauge": 0,
+          "uses": "−",
+          "category": 2,
+          "power": 400,
+          "accuracy": 0,
+          "target": "對手１對拍組",
+          "description": "將場地變成電氣場地。",
+          "tags": "none",
+          "group": 5
+        },
+        {
+          "id": 7039,
+          "user": "寶可夢",
+          "name": "極巨防壁",
+          "type": 1,
+          "gauge": 0,
+          "uses": "−",
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方１對拍組",
+          "description": "讓我方變成下次傷害防禦狀態。",
+          "tags": "none",
+          "group": 5
+        },
+        {
+          "id": 7028,
+          "user": "寶可夢",
+          "name": "極巨閃電",
+          "type": 4,
+          "gauge": 0,
+          "uses": "−",
+          "category": 2,
+          "power": 400,
+          "accuracy": 0,
+          "target": "對手１對拍組",
+          "description": "將場地變成電氣場地。",
+          "tags": "none",
+          "group": 5
+        }
+      ]
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "美極套裝小菊兒（異裝）專用潛能餅乾１",
+      "skills": [
+        {
+          "name": "電氣場地時攻擊招式威力↓2",
+          "description": "當場地為電氣場地時,會減輕受到招式攻擊時的傷害。",
+          "detail": [],
+          "rate": 100
+        }
+      ]
+    },
+    {
+      "cookieName": "美極套裝小菊兒（異裝）專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "天氣場地領域變化時計量槽加速2",
+          "description": "只有在天氣、場地或領域變化時,招式計量槽會累積得較快。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "擊中要害時威力提升3",
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "天氣場地領域變化時拍組招式↑G2",
+          "description": "只有在天氣、場地或領域變化時,會提高我方全體拍組的拍組招式的威力。",
+          "detail": [],
+          "rate": 33
+        }
+      ]
+    }
+  ],
+  "grid": [
+    {
+      "id": 1800101482,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800101483,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800101484,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800101485,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800101486,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800101487,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800101488,
+      "name": "地面屬性防守",
+      "description": "可減輕受到地面屬性招式攻擊時的傷害。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 0,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800101489,
+      "name": "我方引發天氣/場地/領域時閃避率提升G9",
+      "description": "當我方使天氣、場地或領域生效時,會提高我方全體拍組的閃避率1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 4,
+      "x": 0,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800101490,
+      "name": "首次拍組招式後寶可夢變化招式次數回復1",
+      "description": "首次使出拍組招式時,會幫自己的寶可夢的變化招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 5,
+      "x": 0,
+      "y": -5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800101491,
+      "name": "電屬性防守",
+      "description": "可減輕受到電屬性招式攻擊時的傷害。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 0,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800101492,
+      "name": "拍組極巨化招式後拍組招式增強5",
+      "description": "使出拍組極巨化招式後,會提高自己的下次拍組招式威力增強5階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 4,
+      "x": -1,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800101493,
+      "name": "下雨時命中時招式計量槽↑9",
+      "description": "當天氣為下雨且使出招式攻擊命中時,會幫自己增加1條招式計量槽。若天氣為下雨且使出有連續效果的招式,則在每次攻擊命中時,都會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 5,
+      "x": 1,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800101494,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800101495,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800101496,
+      "name": "鳴雷風暴：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": 0,
+      "color": "#47D147",
+      "type": 4
+    },
+    {
+      "id": 1800101497,
+      "name": "鳴雷風暴：命中率 + 20",
+      "description": "",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 1,
+      "x": 1,
+      "y": 1,
+      "color": "#47D147",
+      "type": 4
+    },
+    {
+      "id": 1800101498,
+      "name": "心情讚爆!：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 1,
+      "y": 2,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1800101499,
+      "name": "鳴雷風暴：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": 1,
+      "color": "#FF0066",
+      "type": 4
+    },
+    {
+      "id": 1800101500,
+      "name": "鳴雷風暴：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 3,
+      "y": 0,
+      "color": "#47D147",
+      "type": 4
+    },
+    {
+      "id": 1800101501,
+      "name": "極巨閃電：威力 + 100",
+      "description": "",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 3,
+      "x": 2,
+      "y": 2,
+      "color": "#47D147",
+      "type": 4
+    },
+    {
+      "id": 1800101502,
+      "name": "首次拍組招式後挺住",
+      "description": "首次使出拍組招式時,會讓自己變成挺住狀態。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 3,
+      "y": 1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800101503,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800101504,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800101505,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800101506,
+      "name": "特攻下降無效",
+      "description": "特攻不會降低。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": -3,
+      "y": -1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800101507,
+      "name": "鳴雷風暴：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": -2,
+      "color": "#47D147",
+      "type": 4
+    },
+    {
+      "id": 1800101508,
+      "name": "鳴雷風暴：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -1,
+      "y": -3,
+      "color": "#47D147",
+      "type": 4
+    },
+    {
+      "id": 1800101509,
+      "name": "鳴雷風暴：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -3,
+      "y": -2,
+      "color": "#47D147",
+      "type": 4
+    },
+    {
+      "id": 1800101510,
+      "name": "電氣場地：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -2,
+      "y": -3,
+      "color": "#FF0066",
+      "type": 4
+    },
+    {
+      "id": 1800101511,
+      "name": "鳴雷風暴：攻擊時賦予麻痺4",
+      "description": "使出招式攻擊成功時,有50%的機率會讓對手陷入麻痺狀態。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -1,
+      "y": -4,
+      "color": "#FF0066",
+      "type": 4
+    },
+    {
+      "id": 1800101512,
+      "name": "攻擊麻痺中的對手時賦予特殊增強(1)4",
+      "description": "當對手陷入麻痺狀態且使出招式攻擊成功時,有50%的機率會提高自己的下次特殊招式威力增強1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -3,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800101513,
+      "name": "依對手特防降幅威力↑",
+      "description": "對手的特防降低得越多,自己的招式的威力就提高得越多。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800101514,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800101515,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800101516,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800101517,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": -4,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800101518,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -4,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800101519,
+      "name": "鳴雷風暴・召雷：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 1,
+      "y": -4,
+      "color": "#47D147",
+      "type": 4
+    },
+    {
+      "id": 1800101520,
+      "name": "鳴雷風暴・召雷：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 3,
+      "y": -5,
+      "color": "#47D147",
+      "type": 4
+    },
+    {
+      "id": 1800101521,
+      "name": "鳴雷風暴・召雷：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": -5,
+      "color": "#FF0066",
+      "type": 4
+    },
+    {
+      "id": 1800101522,
+      "name": "電氣場地時HP回復1",
+      "description": "當場地為電氣場地時,寶可夢每次行動後都會回復自己的HP。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 1,
+      "y": -5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800101523,
+      "name": "電氣場地時威力提升3",
+      "description": "當場地為電氣場地時,會提高招式的威力。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 3,
+      "y": -6,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800101524,
+      "name": "首次拍組招式後變成下雨",
+      "description": "首次使出拍組招式時,會將天氣變成下雨。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": -6,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800101525,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800101526,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -3,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800101527,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800101528,
+      "name": "鳴雷風暴・召雷：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -1,
+      "y": 2,
+      "color": "#47D147",
+      "type": 4
+    },
+    {
+      "id": 1800101529,
+      "name": "鳴雷風暴・召雷：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -3,
+      "y": 3,
+      "color": "#47D147",
+      "type": 4
+    },
+    {
+      "id": 1800101530,
+      "name": "特攻 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": -2,
+      "y": 3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800101531,
+      "name": "下雨時招式計量槽加速2",
+      "description": "當天氣為下雨時,招式計量槽會累積得較快。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 2,
+      "x": -1,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800101532,
+      "name": "心情讚爆!：我方中招後特攻提升2",
+      "description": "以我方拍組為對象的招式(不含場地效果)成功時,會提高受到該招式效果影響的我方拍組的特攻2階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -3,
+      "y": 4,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1800101533,
+      "name": "下雨時拍組招式提升9",
+      "description": "當天氣為下雨時,會提高拍組招式的威力。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800101534,
+      "name": "改變沉靜印象之電之光線：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": -3,
+      "color": "#BF80FF",
+      "type": 4
+    },
+    {
+      "id": 1800101535,
+      "name": "改變沉靜印象之電之光線：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": 3,
+      "color": "#BF80FF",
+      "type": 4
+    }
+  ]
+}

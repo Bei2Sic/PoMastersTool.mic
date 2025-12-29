@@ -1,0 +1,1112 @@
+{
+  "trainer": {
+    "id": "10252000000",
+    "name": "卡蕪",
+    "actor": "卡蕪",
+    "actorId": "ch0252_00_kabu",
+    "rarity": 5,
+    "role": 2,
+    "exRole": 0,
+    "ex": true,
+    "exclusivity": "Pokefair",
+    "maxBonusLevel": 10
+  },
+  "scoutMethod": 1,
+  "scheduleId": "chara_6050_0616_FOREVER",
+  "themes": [
+    {
+      "name": "火屬性／輔助",
+      "description": "我方全體拍組最大HP提升60",
+      "tag": "火",
+      "category": 1
+    },
+    {
+      "name": "伽勒爾／輔助",
+      "description": "我方全體拍組最大HP提升13",
+      "tag": "伽勒爾",
+      "category": 2
+    },
+    {
+      "name": "道館館主／輔助",
+      "description": "我方全體拍組最大HP提升13",
+      "tag": "道館館主",
+      "category": 3
+    },
+    {
+      "name": "鬥志昂揚／輔助",
+      "description": "我方全體拍組最大HP提升15",
+      "tag": "鬥志昂揚",
+      "category": 999
+    },
+    {
+      "name": "老手／輔助",
+      "description": "我方全體拍組最大HP提升15",
+      "tag": "老手",
+      "category": 999
+    }
+  ],
+  "specialAwaking": {
+    "name": "烈焰不熄的男子漢",
+    "description": "當攻擊對象陷入束縛狀態時,會提高我方全體拍組的拍組招式的威力。使出拍組極巨化招式後,會將天氣變成日照強烈的狀態。天氣變成日照強烈的瞬間在場上時,會延長日照強烈的狀態的持續時間。",
+    "detail": [
+      {
+        "name": "對手束縛時拍組招式↑G3",
+        "description": "當攻擊對象陷入束縛狀態時,會提高我方全體拍組的拍組招式的威力。"
+      },
+      {
+        "name": "拍組極巨化招式後變成晴天",
+        "description": "使出拍組極巨化招式後,會將天氣變成日照強烈的狀態。"
+      },
+      {
+        "name": "晴天時間延長3",
+        "description": "天氣變成日照強烈的瞬間在場上時,會延長日照強烈的狀態的持續時間。"
+      }
+    ]
+  },
+  "pokemon": [
+    {
+      "id": "20252000000",
+      "variationType": 0,
+      "vAfterSm": false,
+      "name": "焚焰蚣",
+      "form": "",
+      "actor": "pm0851_00_00_maruyakude",
+      "gender": 1,
+      "isShiny": false,
+      "type": 2,
+      "weakness": 13,
+      "stat": {
+        "hp": [
+          101,
+          177,
+          249,
+          535,
+          595,
+          655,
+          835
+        ],
+        "atk": [
+          13,
+          57,
+          99,
+          264,
+          300,
+          336,
+          444
+        ],
+        "def": [
+          17,
+          57,
+          93,
+          236,
+          268,
+          300,
+          396
+        ],
+        "spa": [
+          13,
+          57,
+          99,
+          264,
+          300,
+          336,
+          444
+        ],
+        "spd": [
+          17,
+          57,
+          93,
+          236,
+          268,
+          300,
+          396
+        ],
+        "spe": [
+          11,
+          48,
+          84,
+          227,
+          255,
+          283,
+          367
+        ]
+      },
+      "passives": [
+        {
+          "name": "拍組極巨化招式後攻擊特攻提升G4",
+          "description": "使出拍組極巨化招式後,會提高我方全體拍組的攻擊和特攻4階段。",
+          "detail": []
+        },
+        {
+          "name": "寶可夢首次使出變化招式時擊中要害率提升G3",
+          "description": "在寶可夢首次使出變化招式時,會提高我方全體拍組的擊中要害率3階段。",
+          "detail": []
+        },
+        {
+          "name": "被攻擊時賦予對手灼傷9",
+          "description": "受到招式攻擊時,會讓剛才來攻擊自己的對手陷入灼傷狀態。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 52,
+          "user": "寶可夢",
+          "name": "火花",
+          "type": 2,
+          "gauge": 1,
+          "uses": "−",
+          "category": 2,
+          "power": 17,
+          "accuracy": 100,
+          "target": "對手１對拍組",
+          "description": "有10%的機率會讓對手陷入灼傷狀態。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 182,
+          "user": "寶可夢",
+          "name": "守住",
+          "type": 1,
+          "gauge": 2,
+          "uses": 1,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "自己",
+          "description": "讓自己變成下次傷害防禦狀態。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 6065,
+          "user": "寶可夢",
+          "name": "烈火之火焰輪",
+          "type": 2,
+          "gauge": 2,
+          "uses": "−",
+          "category": 1,
+          "power": 100,
+          "accuracy": 100,
+          "target": "對手１對拍組",
+          "description": "【開放條件】\n對手的場地上有陷入束縛狀態的寶可夢時\n【封印條件】\n對手的場地上變為沒有陷入束縛狀態的寶可夢時\n\n解除自己的冰凍狀態。有10%的機率會讓對手陷入灼傷狀態。當對手陷入灼傷狀態時,會回復我方全體拍組的HP。當對手陷入束縛狀態時,會回復我方全體拍組的HP。",
+          "tags": 288,
+          "group": 6
+        },
+        {
+          "id": 12520,
+          "user": "訓練師",
+          "name": "點燃腦細胞!",
+          "type": 0,
+          "gauge": 0,
+          "uses": 2,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方全體拍組",
+          "description": "提高我方全體拍組的防禦和特防2階段。提高自己的火屬性抵抗1階段。",
+          "tags": 8388608,
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 107700,
+        "user": "寶可夢",
+        "name": "烈焰不熄的男子漢之火之衝擊",
+        "type": 2,
+        "gauge": 0,
+        "uses": "−",
+        "category": 1,
+        "power": 250,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "沒有追加效果。",
+        "tags": "none",
+        "group": "Sync"
+      }
+    },
+    {
+      "id": "20252000000",
+      "variationType": 4,
+      "vAfterSm": false,
+      "name": "焚焰蚣",
+      "form": "",
+      "actor": "pm0851_81_00_gmaruyakude",
+      "gender": 1,
+      "isShiny": false,
+      "type": 2,
+      "weakness": 13,
+      "stat": {
+        "hp": [
+          101,
+          177,
+          249,
+          535,
+          595,
+          655,
+          835
+        ],
+        "atk": [
+          13,
+          57,
+          99,
+          264,
+          300,
+          336,
+          444
+        ],
+        "def": [
+          17,
+          57,
+          93,
+          236,
+          268,
+          300,
+          396
+        ],
+        "spa": [
+          13,
+          57,
+          99,
+          264,
+          300,
+          336,
+          444
+        ],
+        "spd": [
+          17,
+          57,
+          93,
+          236,
+          268,
+          300,
+          396
+        ],
+        "spe": [
+          11,
+          48,
+          84,
+          227,
+          255,
+          283,
+          367
+        ]
+      },
+      "passives": [
+        {
+          "name": "拍組極巨化招式後攻擊特攻提升G4",
+          "description": "使出拍組極巨化招式後,會提高我方全體拍組的攻擊和特攻4階段。",
+          "detail": []
+        },
+        {
+          "name": "寶可夢首次使出變化招式時擊中要害率提升G3",
+          "description": "在寶可夢首次使出變化招式時,會提高我方全體拍組的擊中要害率3階段。",
+          "detail": []
+        },
+        {
+          "name": "被攻擊時賦予對手灼傷9",
+          "description": "受到招式攻擊時,會讓剛才來攻擊自己的對手陷入灼傷狀態。",
+          "detail": []
+        }
+      ],
+      "moves": null,
+      "syncMove": null,
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "movesDynamax": [
+        {
+          "id": 7053,
+          "user": "寶可夢",
+          "name": "超極巨百火焚野",
+          "type": 2,
+          "gauge": 0,
+          "uses": "−",
+          "category": 2,
+          "power": 400,
+          "accuracy": 0,
+          "target": "對手１對拍組",
+          "description": "讓對手全體拍組陷入束縛狀態。",
+          "tags": "none",
+          "group": 5
+        },
+        {
+          "id": 7039,
+          "user": "寶可夢",
+          "name": "極巨防壁",
+          "type": 1,
+          "gauge": 0,
+          "uses": "−",
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方１對拍組",
+          "description": "讓我方變成下次傷害防禦狀態。",
+          "tags": "none",
+          "group": 5
+        },
+        {
+          "id": 7052,
+          "user": "寶可夢",
+          "name": "超極巨百火焚野",
+          "type": 2,
+          "gauge": 0,
+          "uses": "−",
+          "category": 1,
+          "power": 400,
+          "accuracy": 0,
+          "target": "對手１對拍組",
+          "description": "讓對手全體拍組陷入束縛狀態。",
+          "tags": "none",
+          "group": 5
+        }
+      ]
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "卡蕪專用潛能餅乾１",
+      "skills": [
+        {
+          "name": "火屬性防守G",
+          "description": "可減輕我方受到火屬性招式攻擊時的傷害。",
+          "detail": [],
+          "rate": 100
+        }
+      ]
+    },
+    {
+      "cookieName": "卡蕪專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "被攻擊時HP回復G9",
+          "description": "受到招式攻擊時,會回復我方全體拍組的HP。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時物理/特殊增強G1",
+          "description": "首次上場時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時拍組招式增強G3",
+          "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
+          "detail": [],
+          "rate": 33
+        }
+      ]
+    }
+  ],
+  "grid": [
+    {
+      "id": 1025200000,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1025200001,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1025200002,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1025200003,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1025200004,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1025200005,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1025200006,
+      "name": "中毒無效",
+      "description": "不會陷入中毒狀態和劇毒狀態。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 2,
+      "x": 0,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1025200007,
+      "name": "攻擊時攻擊下降9",
+      "description": "使出招式攻擊成功時,會降低對手的攻擊1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 4,
+      "x": 0,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1025200008,
+      "name": "首次危機時HP回復4",
+      "description": "首次陷入危機時,會回復自己的HP,約為自己最大HP的40%。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 5,
+      "x": -2,
+      "y": 5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1025200009,
+      "name": "冰凍無效",
+      "description": "不會陷入冰凍狀態。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 2,
+      "x": 0,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1025200010,
+      "name": "拍組招式及拍組極巨化招式後賦予物理增強(1)G9",
+      "description": "使出拍組招式或拍組極巨化招式後,會提高我方全體拍組的下次物理招式威力增強1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 4,
+      "x": 0,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1025200011,
+      "name": "拍組極巨化招式後計數加速2",
+      "description": "使出拍組極巨化招式後, 會讓發動拍組招式所需的行動數減少2次。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 5,
+      "x": -2,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1025200012,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1025200013,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1025200014,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1025200015,
+      "name": "灼傷無效",
+      "description": "不會陷入灼傷狀態。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": 3,
+      "y": 1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1025200016,
+      "name": "火花：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": 2,
+      "color": "#47D147",
+      "type": 2
+    },
+    {
+      "id": 1025200017,
+      "name": "火花：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 1,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 2
+    },
+    {
+      "id": 1025200018,
+      "name": "火花：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 3,
+      "y": 2,
+      "color": "#47D147",
+      "type": 2
+    },
+    {
+      "id": 1025200019,
+      "name": "對手灼傷傷害提升2",
+      "description": "增加對手受到的灼傷傷害。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 2,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1025200020,
+      "name": "全種類下降無效",
+      "description": "所有的能力都不會降低。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 1,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1025200021,
+      "name": "特防 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": 3,
+      "y": 3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1025200022,
+      "name": "寶可夢出招後攻擊↑G9",
+      "description": "在寶可夢使出招式時,會提高我方全體拍組的攻擊1階段。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 3,
+      "x": 2,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1025200023,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1025200024,
+      "name": "烈火之火焰輪：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -3,
+      "y": 0,
+      "color": "#47D147",
+      "type": 2
+    },
+    {
+      "id": 1025200025,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1025200026,
+      "name": "烈火之火焰輪：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": -1,
+      "color": "#47D147",
+      "type": 2
+    },
+    {
+      "id": 1025200027,
+      "name": "晴天時攻擊招式威力↓2",
+      "description": "當天氣為日照強烈時,會減輕受到招式攻擊時的傷害。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -3,
+      "y": -1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1025200028,
+      "name": "烈火之火焰輪：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -1,
+      "y": -2,
+      "color": "#47D147",
+      "type": 2
+    },
+    {
+      "id": 1025200029,
+      "name": "點燃腦細胞!：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -2,
+      "y": -2,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1025200030,
+      "name": "點燃腦細胞!：招式後附帶回復G",
+      "description": "招式成功時,會讓我方全體拍組變成附帶回復狀態。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 3,
+      "x": -3,
+      "y": -2,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1025200031,
+      "name": "首次上場時物理增強G1",
+      "description": "首次上場時,會提高我方全體拍組的下次物理招式威力增強1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -1,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1025200032,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1025200033,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1025200034,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1025200035,
+      "name": "束縛無效",
+      "description": "不會陷入束縛狀態。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": 3,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1025200036,
+      "name": "烈火之火焰輪：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": -4,
+      "color": "#47D147",
+      "type": 2
+    },
+    {
+      "id": 1025200037,
+      "name": "烈火之火焰輪：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 1,
+      "y": -4,
+      "color": "#FF0066",
+      "type": 2
+    },
+    {
+      "id": 1025200038,
+      "name": "烈火之火焰輪：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 3,
+      "y": -5,
+      "color": "#47D147",
+      "type": 2
+    },
+    {
+      "id": 1025200039,
+      "name": "對手束縛傷害增加2",
+      "description": "增加對手受到的束縛傷害。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 2,
+      "y": -5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1025200040,
+      "name": "首次拍組招式後下次效果絕佳威力↑G",
+      "description": "首次使出拍組招式時,會讓我方全體拍組變成下次效果絕佳威力提升狀態。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 1,
+      "y": -5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1025200041,
+      "name": "拍組極巨化招式效果絕佳時威力提升3",
+      "description": "當拍組極巨化招式的效果絕佳時,會提高該拍組極巨化招式的威力。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 3,
+      "y": -6,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1025200042,
+      "name": "依攻擊升幅拍組招式↑",
+      "description": "自己的攻擊提高得越多,拍組招式的威力就提高得越多。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": -6,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1025200043,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1025200044,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1025200045,
+      "name": "火花：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -3,
+      "y": 3,
+      "color": "#47D147",
+      "type": 2
+    },
+    {
+      "id": 1025200046,
+      "name": "火花：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": 3,
+      "color": "#47D147",
+      "type": 2
+    },
+    {
+      "id": 1025200047,
+      "name": "火花：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -1,
+      "y": 3,
+      "color": "#47D147",
+      "type": 2
+    },
+    {
+      "id": 1025200048,
+      "name": "晴天時HP回復1",
+      "description": "當天氣為日照強烈時,寶可夢每次行動後都會回復自己的HP。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -3,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1025200049,
+      "name": "守住：招式後招式計量槽增加9",
+      "description": "招式成功時,會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -2,
+      "y": 4,
+      "color": "#FF0066",
+      "type": 1
+    },
+    {
+      "id": 1025200050,
+      "name": "首次拍組招式後下次傷害防禦",
+      "description": "首次使出拍組招式時,會讓自己變成下次傷害防禦狀態。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 3,
+      "x": -1,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1025200051,
+      "name": "擊中要害無效",
+      "description": "對手的攻擊不會擊中要害。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -3,
+      "y": 5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1025200052,
+      "name": "烈焰不熄的男子漢之火之衝擊：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": 3,
+      "color": "#BF80FF",
+      "type": 2
+    },
+    {
+      "id": 1025200053,
+      "name": "烈焰不熄的男子漢之火之衝擊：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": -3,
+      "color": "#BF80FF",
+      "type": 2
+    }
+  ]
+}

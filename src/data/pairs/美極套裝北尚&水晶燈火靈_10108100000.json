@@ -1,0 +1,1121 @@
+{
+  "trainer": {
+    "id": "10108100000",
+    "name": "美極套裝北尚",
+    "actor": "北尚",
+    "actorId": "ch0108_10_nobori",
+    "rarity": 5,
+    "role": 4,
+    "exRole": 3,
+    "ex": true,
+    "exclusivity": "Pokefair",
+    "maxBonusLevel": 10
+  },
+  "scoutMethod": 1,
+  "scheduleId": "chara_6100_1031_FOREVER",
+  "themes": [
+    {
+      "name": "幽靈屬性／速戰",
+      "description": "僅在我方使出幽靈屬性攻擊時，攻擊和特攻提升24\n我方全體拍組的速度提升24",
+      "tag": "幽靈",
+      "category": 1
+    },
+    {
+      "name": "合眾／速戰",
+      "description": "我方全體拍組的攻擊和特攻提升4\n我方全體拍組的速度提升7",
+      "tag": "合眾",
+      "category": 2
+    },
+    {
+      "name": "對戰設施的強者／速戰",
+      "description": "我方全體拍組的攻擊和特攻提升4\n我方全體拍組的速度提升7",
+      "tag": "對戰設施的強者",
+      "category": 3
+    },
+    {
+      "name": "美極套裝／速戰",
+      "description": "我方全體拍組的攻擊和特攻提升5\n我方全體拍組的速度提升8",
+      "tag": "美極套裝",
+      "category": 4
+    },
+    {
+      "name": "組隊對戰／速戰",
+      "description": "我方全體拍組的攻擊和特攻提升5\n我方全體拍組的速度提升8",
+      "tag": "組隊對戰",
+      "category": 999
+    }
+  ],
+  "specialAwaking": {
+    "name": "朝勝利出發前進",
+    "description": "當對手陷入異常狀態時,會提高自己的拍組招式的威力。使出拍組極巨化招式後,會將領域變成妖怪領域。(妖怪領域會提高幽靈屬性的攻擊的威力。)領域變成妖怪領域的瞬間在場上時,會延長妖怪領域的持續時間。",
+    "detail": [
+      {
+        "name": "對手異常時拍組招式威力提升5",
+        "description": "當對手陷入異常狀態時,會提高自己的拍組招式的威力。"
+      },
+      {
+        "name": "拍組極巨化招式後變成妖怪領域",
+        "description": "使出拍組極巨化招式後,會將領域變成妖怪領域。(妖怪領域會提高幽靈屬性的攻擊的威力。)"
+      },
+      {
+        "name": "妖怪領域時間延長3",
+        "description": "領域變成妖怪領域的瞬間在場上時,會延長妖怪領域的持續時間。"
+      }
+    ]
+  },
+  "pokemon": [
+    {
+      "id": "20108100000",
+      "variationType": 0,
+      "vAfterSm": false,
+      "name": "水晶燈火靈",
+      "form": "",
+      "actor": "pm0609_00_chandela",
+      "gender": 1,
+      "isShiny": false,
+      "type": 14,
+      "weakness": 9,
+      "stat": {
+        "hp": [
+          98,
+          175,
+          247,
+          533,
+          597,
+          661,
+          853
+        ],
+        "atk": [
+          12,
+          57,
+          99,
+          264,
+          300,
+          336,
+          444
+        ],
+        "def": [
+          15,
+          38,
+          59,
+          136,
+          152,
+          168,
+          216
+        ],
+        "spa": [
+          17,
+          60,
+          99,
+          264,
+          300,
+          336,
+          444
+        ],
+        "spd": [
+          15,
+          37,
+          58,
+          135,
+          151,
+          167,
+          215
+        ],
+        "spe": [
+          13,
+          61,
+          106,
+          282,
+          322,
+          362,
+          482
+        ]
+      },
+      "passives": [
+        {
+          "name": "北上電車的發車廣播",
+          "description": "當對手陷入異常狀態且以對手為對象的拍組極巨化招式成功時,會讓自己發動拍組招式所需的行動數減少2次。當對手陷入畏縮、混亂或束縛狀態且以對手為對象的拍組極巨化招式成功時,會提高自己的下次特殊招式威力增強2階段。",
+          "detail": []
+        },
+        {
+          "name": "使出招式後賦予特殊增強(1)G9",
+          "description": "招式成功時,會提高我方全體拍組的下次特殊招式威力增強1階段。",
+          "detail": []
+        },
+        {
+          "name": "招式後特攻2擊中要害率1↑9",
+          "description": "招式成功時,將會發揮下列所有效果。提高自己的特攻2階段。提高自己的擊中要害率1階段。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 261,
+          "user": "寶可夢",
+          "name": "鬼火",
+          "type": 2,
+          "gauge": 2,
+          "uses": "−",
+          "category": 0,
+          "power": 0,
+          "accuracy": 90,
+          "target": "對手１對拍組",
+          "description": "讓對手陷入灼傷狀態。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 109,
+          "user": "寶可夢",
+          "name": "奇異之光",
+          "type": 14,
+          "gauge": 2,
+          "uses": "−",
+          "category": 0,
+          "power": 0,
+          "accuracy": 100,
+          "target": "對手１對拍組",
+          "description": "讓對手陷入混亂狀態。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 6086,
+          "user": "寶可夢",
+          "name": "昇焰之禍不單行",
+          "type": 14,
+          "gauge": 2,
+          "uses": "−",
+          "category": 2,
+          "power": 80,
+          "accuracy": 100,
+          "target": "對手１對拍組",
+          "description": "【開放條件】\n對手的場地上有陷入異常狀態,或畏縮、混亂、束縛的狀態變化的寶可夢時\n【封印條件】\n對手的場地上變為沒有陷入異常狀態,或畏縮、混亂、束縛的狀態變化的寶可夢時\n\n當對手陷入異常狀態,或畏縮、混亂、束縛的狀態變化時,威力會變成2倍。當對手陷入麻痺狀態時,會降低對手的防禦2階段。當對手陷入灼傷狀態時,會降低對手的特防2階段。當對手陷入畏縮狀態時,會降低對手的速度2階段。當對手陷入中毒或劇毒狀態時,會回復我方全體拍組的HP。當對手陷入束縛狀態時,會讓自己變成下次計量槽消耗0狀態。當對手陷入混亂狀態時,會提高自己的下次特殊招式威力增強1階段。",
+          "tags": "Heals",
+          "group": 6
+        },
+        {
+          "id": 11081,
+          "user": "訓練師",
+          "name": "要發車了!",
+          "type": 0,
+          "gauge": 0,
+          "uses": 1,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方全體拍組",
+          "description": "自己發動拍組招式所需的行動數會減少2次。提高我方全體拍組的速度4階段。提高我方全體拍組的閃避率2階段。",
+          "tags": 8388608,
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 112400,
+        "user": "寶可夢",
+        "name": "抵達史上最棒的對戰之幽靈光線",
+        "type": 14,
+        "gauge": 0,
+        "uses": "−",
+        "category": 2,
+        "power": 200,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "當對手陷入異常狀態時,威力會提高。",
+        "tags": "none",
+        "group": "Sync"
+      }
+    },
+    {
+      "id": "20108100000",
+      "variationType": 4,
+      "vAfterSm": false,
+      "name": "水晶燈火靈",
+      "form": "",
+      "actor": "pm0609_81_00_chandela",
+      "gender": 1,
+      "isShiny": false,
+      "type": 14,
+      "weakness": 9,
+      "stat": {
+        "hp": [
+          98,
+          175,
+          247,
+          533,
+          597,
+          661,
+          853
+        ],
+        "atk": [
+          12,
+          57,
+          99,
+          264,
+          300,
+          336,
+          444
+        ],
+        "def": [
+          15,
+          38,
+          59,
+          136,
+          152,
+          168,
+          216
+        ],
+        "spa": [
+          17,
+          60,
+          99,
+          264,
+          300,
+          336,
+          444
+        ],
+        "spd": [
+          15,
+          37,
+          58,
+          135,
+          151,
+          167,
+          215
+        ],
+        "spe": [
+          13,
+          61,
+          106,
+          282,
+          322,
+          362,
+          482
+        ]
+      },
+      "passives": [
+        {
+          "name": "北上電車的發車廣播",
+          "description": "當對手陷入異常狀態且以對手為對象的拍組極巨化招式成功時,會讓自己發動拍組招式所需的行動數減少2次。當對手陷入畏縮、混亂或束縛狀態且以對手為對象的拍組極巨化招式成功時,會提高自己的下次特殊招式威力增強2階段。",
+          "detail": []
+        },
+        {
+          "name": "使出招式後賦予特殊增強(1)G9",
+          "description": "招式成功時,會提高我方全體拍組的下次特殊招式威力增強1階段。",
+          "detail": []
+        },
+        {
+          "name": "招式後特攻2擊中要害率1↑9",
+          "description": "招式成功時,將會發揮下列所有效果。提高自己的特攻2階段。提高自己的擊中要害率1階段。",
+          "detail": []
+        }
+      ],
+      "moves": null,
+      "syncMove": null,
+      "scale": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "movesDynamax": [
+        {
+          "id": 7039,
+          "user": "寶可夢",
+          "name": "極巨防壁",
+          "type": 1,
+          "gauge": 0,
+          "uses": "−",
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方１對拍組",
+          "description": "讓我方變成下次傷害防禦狀態。",
+          "tags": "none",
+          "group": 5
+        },
+        {
+          "id": 7039,
+          "user": "寶可夢",
+          "name": "極巨防壁",
+          "type": 1,
+          "gauge": 0,
+          "uses": "−",
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方１對拍組",
+          "description": "讓我方變成下次傷害防禦狀態。",
+          "tags": "none",
+          "group": 5
+        },
+        {
+          "id": 7018,
+          "user": "寶可夢",
+          "name": "極巨幽魂",
+          "type": 14,
+          "gauge": 0,
+          "uses": "−",
+          "category": 2,
+          "power": 400,
+          "accuracy": 0,
+          "target": "對手１對拍組",
+          "description": "降低對手全體拍組的防禦2階段。",
+          "tags": "none",
+          "group": 5
+        }
+      ]
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "美極套裝北尚專用潛能餅乾１",
+      "skills": [
+        {
+          "name": "寶可夢使出變化招式時招式計量槽增加1",
+          "description": "在寶可夢使出變化招式時,會幫自己增加1條招式計量槽。",
+          "detail": [],
+          "rate": 100
+        }
+      ]
+    },
+    {
+      "cookieName": "美極套裝北尚專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "招式後招式計量槽增加9",
+          "description": "招式成功時,會幫自己增加1條招式計量槽。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "擊中要害時威力提升3",
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時&首次拍組招式後計數加速1",
+          "description": "首次上場時,發動拍組招式所需的行動數會減少1次。首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。",
+          "detail": [
+            {
+              "name": "首次上場時計數加速1",
+              "description": "首次上場時,發動拍組招式所需的行動數會減少1次。"
+            },
+            {
+              "name": "首次拍組招式後計數加速1",
+              "description": "首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。"
+            }
+          ],
+          "rate": 33
+        }
+      ]
+    }
+  ],
+  "grid": [
+    {
+      "id": 1010810000,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1010810001,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1010810002,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1010810003,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1010810004,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1010810005,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1010810006,
+      "name": "火屬性防守",
+      "description": "可減輕受到火屬性招式攻擊時的傷害。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 0,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1010810007,
+      "name": "對手中拍組極巨化招式後賦予妨害狀態G9",
+      "description": "當以對手為對象的拍組極巨化招式成功時,會讓對手全體拍組陷入畏縮、混亂和束縛狀態。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 4,
+      "x": 0,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1010810008,
+      "name": "拍組招式擊中要害化",
+      "description": "除了特定情況之外,拍組招式必定會擊中要害。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 5,
+      "x": 1,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1010810009,
+      "name": "解除異常狀態",
+      "description": "當自己首次陷入異常狀態時,會解除自己的異常狀態。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 0,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1010810010,
+      "name": "對手異常時威力提升G2",
+      "description": "當攻擊對象陷入異常狀態時,會提高我方全體拍組的招式的威力。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 4,
+      "x": 0,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1010810011,
+      "name": "拍組招式及拍組極巨化招式後賦予特殊增強(2)9",
+      "description": "使出拍組招式或拍組極巨化招式後,會提高自己的下次特殊招式威力增強2階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 5,
+      "x": -1,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1010810012,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1010810013,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1010810014,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1010810015,
+      "name": "昇焰之禍不單行：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 1,
+      "y": 1,
+      "color": "#47D147",
+      "type": 14
+    },
+    {
+      "id": 1010810016,
+      "name": "昇焰之禍不單行：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 3,
+      "y": 0,
+      "color": "#47D147",
+      "type": 14
+    },
+    {
+      "id": 1010810017,
+      "name": "攻擊混亂中的對手時HP回復1",
+      "description": "當對手陷入混亂狀態且使出招式攻擊成功時,會回復自己的HP。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 2,
+      "x": 2,
+      "y": 1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1010810018,
+      "name": "混亂中的對手攻擊自身的機率↑5",
+      "description": "增加對手因陷入混亂狀態而攻擊自身的機率。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 1,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1010810019,
+      "name": "對手妨害狀態時威力↑5",
+      "description": "當對手陷入畏縮、混亂或束縛狀態時,會提高自己的招式的威力。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 3,
+      "y": 1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1010810020,
+      "name": "攻擊妨害狀態對手時能力下降2階段9",
+      "description": "當對手陷入畏縮、混亂或束縛狀態且使出招式攻擊成功時,會降低對手的攻擊、防禦、特攻、特防、速度、命中率、閃避率中的一種能力2階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1010810021,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1010810022,
+      "name": "一般屬性防守",
+      "description": "可減輕受到一般屬性招式攻擊時的傷害。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 1,
+      "x": -3,
+      "y": 1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1010810023,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1010810024,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1010810025,
+      "name": "要發車了!：招式後賦予特殊增強(1)9",
+      "description": "招式成功時,會提高自己的下次特殊招式威力增強1階段。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 2,
+      "x": -3,
+      "y": 0,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1010810026,
+      "name": "HP + 20",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": -2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1010810027,
+      "name": "拍組極巨化招式後下次效果絕佳威力↑",
+      "description": "使出拍組極巨化招式後,會讓自己變成下次效果絕佳威力提升狀態。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": -1,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1010810028,
+      "name": "上場時特防下降G2",
+      "description": "上場時,會降低對手全體拍組的特防2階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -3,
+      "y": -1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1010810029,
+      "name": "變化招式賦予妨害狀態G9",
+      "description": "使出變化招式讓對手陷入畏縮、混亂或束縛狀態時,會讓對手全體拍組陷入相同的狀態變化。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1010810030,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1010810031,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1010810032,
+      "name": "特攻下降無效",
+      "description": "特攻不會降低。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": 3,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1010810033,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1010810034,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -4,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1010810035,
+      "name": "奇異之光：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 1,
+      "x": 3,
+      "y": -5,
+      "color": "#FF0066",
+      "type": 14
+    },
+    {
+      "id": 1010810036,
+      "name": "對手混亂時拍組招式↑3",
+      "description": "當對手陷入混亂狀態時,會提高自己的拍組招式的威力。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 1,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1010810037,
+      "name": "要發車了!：招式後招式次數回復1",
+      "description": "招式成功時,有20%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": -5,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1010810038,
+      "name": "解除妨害狀態",
+      "description": "當自己首次陷入畏縮、混亂或束縛狀態時,會解除該狀態。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 3,
+      "y": -6,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1010810039,
+      "name": "依特攻升幅拍組招式↑",
+      "description": "自己的特攻提高得越多,拍組招式的威力就提高得越多。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 1,
+      "y": -5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1010810040,
+      "name": "攻擊時賦予畏縮4",
+      "description": "使出招式攻擊成功時,有50%的機率會讓對手陷入畏縮狀態。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": -6,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1010810041,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1010810042,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1010810043,
+      "name": "格鬥屬性防守",
+      "description": "可減輕受到格鬥屬性招式攻擊時的傷害。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 1,
+      "x": -3,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1010810044,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": 3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1010810045,
+      "name": "昇焰之禍不單行：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": 4,
+      "color": "#47D147",
+      "type": 14
+    },
+    {
+      "id": 1010810046,
+      "name": "昇焰之禍不單行：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -3,
+      "y": 5,
+      "color": "#47D147",
+      "type": 14
+    },
+    {
+      "id": 1010810047,
+      "name": "昇焰之禍不單行：威力 + 4",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -1,
+      "y": 4,
+      "color": "#47D147",
+      "type": 14
+    },
+    {
+      "id": 1010810048,
+      "name": "鬼火：命中率 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 2,
+      "x": -2,
+      "y": 5,
+      "color": "#47D147",
+      "type": 2
+    },
+    {
+      "id": 1010810049,
+      "name": "鬼火：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -3,
+      "y": 6,
+      "color": "#FF0066",
+      "type": 2
+    },
+    {
+      "id": 1010810050,
+      "name": "極巨幽魂：威力 + 100",
+      "description": "",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 3,
+      "x": -1,
+      "y": 5,
+      "color": "#47D147",
+      "type": 14
+    },
+    {
+      "id": 1010810051,
+      "name": "變化招式賦予異常狀態G9",
+      "description": "使出變化招式讓對手陷入異常狀態時,會讓對手全體拍組陷入相同的異常狀態。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": 6,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1010810052,
+      "name": "抵達史上最棒的對戰之幽靈光線：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": 3,
+      "color": "#BF80FF",
+      "type": 14
+    },
+    {
+      "id": 1010810053,
+      "name": "抵達史上最棒的對戰之幽靈光線：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": -3,
+      "color": "#BF80FF",
+      "type": 14
+    }
+  ]
+}

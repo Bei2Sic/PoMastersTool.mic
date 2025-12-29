@@ -1,0 +1,1124 @@
+{
+  "trainer": {
+    "id": "10133900000",
+    "name": "小銀（冠軍）",
+    "actor": "小銀",
+    "actorId": "ch0133_90_shilver",
+    "rarity": 5,
+    "role": 0,
+    "exRole": 4,
+    "ex": true,
+    "exclusivity": "Master",
+    "maxBonusLevel": 5
+  },
+  "scoutMethod": 1,
+  "scheduleId": "chara_6020_0301_FOREVER",
+  "themes": [
+    {
+      "name": "岩石屬性／攻擊",
+      "description": "僅在我方使出岩石屬性攻擊時，攻擊和特攻提升30",
+      "tag": "岩石",
+      "category": 1
+    },
+    {
+      "name": "城都／攻擊",
+      "description": "我方全體拍組的攻擊和特攻提升8",
+      "tag": "城都",
+      "category": 2
+    },
+    {
+      "name": "勁敵／攻擊",
+      "description": "我方全體拍組的攻擊和特攻提升8",
+      "tag": "勁敵",
+      "category": 3
+    },
+    {
+      "name": "冠軍／攻擊",
+      "description": "我方全體拍組的攻擊和特攻提升8",
+      "tag": "冠軍",
+      "category": 3
+    },
+    {
+      "name": "組隊對戰／攻擊",
+      "description": "我方全體拍組的攻擊和特攻提升9",
+      "tag": "組隊對戰",
+      "category": 999
+    }
+  ],
+  "specialAwaking": {
+    "name": "",
+    "description": "",
+    "detail": []
+  },
+  "pokemon": [
+    {
+      "id": "20133900000",
+      "variationType": 0,
+      "vAfterSm": true,
+      "name": "班基拉斯",
+      "form": "",
+      "actor": "pm0248_00_bangiras_rare",
+      "gender": 1,
+      "isShiny": true,
+      "type": 13,
+      "weakness": 7,
+      "stat": {
+        "hp": [
+          111,
+          189,
+          264,
+          561,
+          625,
+          689,
+          881
+        ],
+        "atk": [
+          12,
+          64,
+          112,
+          310,
+          350,
+          390,
+          510
+        ],
+        "def": [
+          6,
+          26,
+          44,
+          121,
+          137,
+          153,
+          201
+        ],
+        "spa": [
+          10,
+          56,
+          98,
+          274,
+          310,
+          346,
+          454
+        ],
+        "spd": [
+          6,
+          24,
+          42,
+          108,
+          120,
+          132,
+          168
+        ],
+        "spe": [
+          12,
+          49,
+          85,
+          228,
+          256,
+          284,
+          368
+        ]
+      },
+      "passives": [
+        {
+          "name": "城都的鬥志",
+          "description": "提高我方全體拍組的物理招式威力20%。減輕我方全體拍組受到物理招式攻擊時的傷害25%。當我方隊伍中擁有城都標籤的拍組越多,此效果還會提升得越多。(每增加1對拍組,威力提升+15%,傷害減輕+3%。)(威力最多可提升50%,傷害最多可減輕31%。)",
+          "detail": []
+        },
+        {
+          "name": "破壞的本能",
+          "description": "上場時,會將天氣變成沙暴。天氣變成沙暴的瞬間在場上時,會延長沙暴的持續時間。當天氣為沙暴時,會提高自己的招式和拍組招式的威力。",
+          "detail": []
+        },
+        {
+          "name": "紅髮的叛逆心",
+          "description": "當天氣為沙暴時,會提高我方全體拍組的招式的威力。我方全體拍組不會受到沙暴所造成的傷害。",
+          "detail": []
+        },
+        {
+          "name": "寶可夢招式計量槽消耗量減少1",
+          "description": "使出寶可夢招式時,會減少使用1條招式計量槽。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 444,
+          "user": "寶可夢",
+          "name": "尖石攻擊",
+          "type": 13,
+          "gauge": 3,
+          "uses": "−",
+          "category": 1,
+          "power": 100,
+          "accuracy": 80,
+          "target": "對手１對拍組",
+          "description": "容易擊中要害。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 8203,
+          "user": "寶可夢",
+          "name": "城都的熱情",
+          "type": 0,
+          "gauge": 2,
+          "uses": 2,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方場地",
+          "description": "提高我方全體拍組的下次物理招式威力增強1階段。讓我方場地變成城都鬥陣(物理)。城都鬥陣(物理)將會發揮下列所有效果。提高我方全體拍組的物理招式和物理拍組招式威力10%。減輕我方全體拍組受到物理招式和物理拍組招式攻擊時的傷害5%。當我方場地中擁有城都標籤的拍組越多,此效果還會提升得越多。(每增加1對拍組,威力提升+10%,傷害減輕+3%。)(威力最多可提升40%,傷害最多可減輕14%。)",
+          "tags": 8388608,
+          "group": "Regular"
+        },
+        {
+          "id": 6050,
+          "user": "寶可夢",
+          "name": "大岩崩",
+          "type": 13,
+          "gauge": 1,
+          "uses": "−",
+          "category": 1,
+          "power": 200,
+          "accuracy": 100,
+          "target": "對手全體拍組",
+          "description": "【開放條件】\n我方隊伍使出1次拍組招式時\n【封印條件】\n使出此招式時\n\n讓對手陷入畏縮狀態。無視對手可減輕傷害的被動技能進行攻擊。無視對手可避免被攻擊擊中要害的被動技能進行攻擊。無視對手的挺住狀態進行攻擊。即使對象為複數,招式的威力也不會降低。",
+          "tags": "none",
+          "group": 6
+        },
+        {
+          "id": 11338,
+          "user": "訓練師",
+          "name": "凝望榮耀的眼神",
+          "type": 0,
+          "gauge": 0,
+          "uses": 1,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "自己",
+          "description": "提高自己的攻擊6階段。提高自己的擊中要害率3階段。當天氣為沙暴時,還會再發揮下列所有效果。自己發動拍組招式所需的行動數會減少1次。提高自己的命中率1階段。",
+          "tags": "none",
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 64100,
+        "user": "寶可夢",
+        "name": "背負意念挑戰之岩崩",
+        "type": 13,
+        "gauge": 0,
+        "uses": "−",
+        "category": 1,
+        "power": 160,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "變成超級班基拉斯直到對戰結束。",
+        "tags": "none",
+        "group": "Sync"
+      }
+    },
+    {
+      "id": "20133900000",
+      "variationType": 1,
+      "vAfterSm": true,
+      "name": "超級班基拉斯",
+      "form": "",
+      "actor": "pm0248_51_megabangiras_rare",
+      "gender": 1,
+      "isShiny": true,
+      "type": 13,
+      "weakness": 7,
+      "stat": {
+        "hp": [
+          111,
+          189,
+          264,
+          561,
+          625,
+          689,
+          881
+        ],
+        "atk": [
+          14,
+          76,
+          134,
+          372,
+          420,
+          468,
+          612
+        ],
+        "def": [
+          7,
+          31,
+          52,
+          145,
+          164,
+          183,
+          241
+        ],
+        "spa": [
+          10,
+          56,
+          98,
+          274,
+          310,
+          346,
+          454
+        ],
+        "spd": [
+          6,
+          24,
+          42,
+          108,
+          120,
+          132,
+          168
+        ],
+        "spe": [
+          12,
+          49,
+          85,
+          228,
+          256,
+          284,
+          368
+        ]
+      },
+      "passives": [
+        {
+          "name": "城都的鬥志",
+          "description": "提高我方全體拍組的物理招式威力20%。減輕我方全體拍組受到物理招式攻擊時的傷害25%。當我方隊伍中擁有城都標籤的拍組越多,此效果還會提升得越多。(每增加1對拍組,威力提升+15%,傷害減輕+3%。)(威力最多可提升50%,傷害最多可減輕31%。)",
+          "detail": []
+        },
+        {
+          "name": "破壞的本能",
+          "description": "上場時,會將天氣變成沙暴。天氣變成沙暴的瞬間在場上時,會延長沙暴的持續時間。當天氣為沙暴時,會提高自己的招式和拍組招式的威力。",
+          "detail": []
+        },
+        {
+          "name": "紅髮的叛逆心",
+          "description": "當天氣為沙暴時,會提高我方全體拍組的招式的威力。我方全體拍組不會受到沙暴所造成的傷害。",
+          "detail": []
+        },
+        {
+          "name": "寶可夢招式計量槽消耗量減少1",
+          "description": "使出寶可夢招式時,會減少使用1條招式計量槽。",
+          "detail": []
+        }
+      ],
+      "moves": [
+        {
+          "id": 444,
+          "user": "寶可夢",
+          "name": "尖石攻擊",
+          "type": 13,
+          "gauge": 3,
+          "uses": "−",
+          "category": 1,
+          "power": 100,
+          "accuracy": 80,
+          "target": "對手１對拍組",
+          "description": "容易擊中要害。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 8203,
+          "user": "寶可夢",
+          "name": "城都的熱情",
+          "type": 0,
+          "gauge": 2,
+          "uses": 2,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方場地",
+          "description": "提高我方全體拍組的下次物理招式威力增強1階段。讓我方場地變成城都鬥陣(物理)。城都鬥陣(物理)將會發揮下列所有效果。提高我方全體拍組的物理招式和物理拍組招式威力10%。減輕我方全體拍組受到物理招式和物理拍組招式攻擊時的傷害5%。當我方場地中擁有城都標籤的拍組越多,此效果還會提升得越多。(每增加1對拍組,威力提升+10%,傷害減輕+3%。)(威力最多可提升40%,傷害最多可減輕14%。)",
+          "tags": 8388608,
+          "group": "Regular"
+        },
+        {
+          "id": 6050,
+          "user": "寶可夢",
+          "name": "大岩崩",
+          "type": 13,
+          "gauge": 1,
+          "uses": "−",
+          "category": 1,
+          "power": 200,
+          "accuracy": 100,
+          "target": "對手全體拍組",
+          "description": "【開放條件】\n我方隊伍使出1次拍組招式時\n【封印條件】\n使出此招式時\n\n讓對手陷入畏縮狀態。無視對手可減輕傷害的被動技能進行攻擊。無視對手可避免被攻擊擊中要害的被動技能進行攻擊。無視對手的挺住狀態進行攻擊。即使對象為複數,招式的威力也不會降低。",
+          "tags": "none",
+          "group": 6
+        },
+        {
+          "id": 11338,
+          "user": "訓練師",
+          "name": "凝望榮耀的眼神",
+          "type": 0,
+          "gauge": 0,
+          "uses": 1,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "自己",
+          "description": "提高自己的攻擊6階段。提高自己的擊中要害率3階段。當天氣為沙暴時,還會再發揮下列所有效果。自己發動拍組招式所需的行動數會減少1次。提高自己的命中率1階段。",
+          "tags": "none",
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 64100,
+        "user": "寶可夢",
+        "name": "背負意念挑戰之岩崩",
+        "type": 13,
+        "gauge": 0,
+        "uses": "−",
+        "category": 1,
+        "power": 160,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "變成超級班基拉斯直到對戰結束。",
+        "tags": "none",
+        "group": "Sync"
+      },
+      "scale": [
+        100,
+        120,
+        120,
+        100,
+        100,
+        100
+      ]
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "小銀（冠軍）專用潛能餅乾１",
+      "skills": [
+        {
+          "name": "沙暴時寶可夢招式及拍組招式瞄準要害1",
+          "description": "當天氣為沙暴且使出招式或拍組招式攻擊時,容易擊中要害。",
+          "detail": [],
+          "rate": 100
+        }
+      ]
+    },
+    {
+      "cookieName": "小銀（冠軍）專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "效果絕佳時威力提升5",
+          "description": "當效果絕佳時,會提高該招式的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "擊中要害時威力提升3",
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時賦予物理/特殊增強2",
+          "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
+          "detail": [],
+          "rate": 33
+        }
+      ]
+    }
+  ],
+  "grid": [
+    {
+      "id": 1013300100,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013300101,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013300102,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013300103,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013300104,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013300105,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013300106,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013300107,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013300108,
+      "name": "尖石攻擊：命中率 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": 3,
+      "y": 1,
+      "color": "#47D147",
+      "type": 13
+    },
+    {
+      "id": 1013300109,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013300110,
+      "name": "尖石攻擊：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": 2,
+      "color": "#47D147",
+      "type": 13
+    },
+    {
+      "id": 1013300111,
+      "name": "尖石攻擊：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 3,
+      "y": 2,
+      "color": "#47D147",
+      "type": 13
+    },
+    {
+      "id": 1013300112,
+      "name": "尖石攻擊：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 1,
+      "y": 3,
+      "color": "#47D147",
+      "type": 13
+    },
+    {
+      "id": 1013300113,
+      "name": "尖石攻擊：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 13
+    },
+    {
+      "id": 1013300114,
+      "name": "攻擊 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": 3,
+      "y": 3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013300115,
+      "name": "必中化",
+      "description": "招式必定會命中。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 1,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1013300116,
+      "name": "沙暴時減輕特殊傷害G3",
+      "description": "當天氣為沙暴時,會減輕我方受到特殊招式攻擊時的傷害。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 3,
+      "x": 2,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1013300117,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013300118,
+      "name": "攻擊 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013300119,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -3,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013300120,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013300121,
+      "name": "尖石攻擊：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": -2,
+      "color": "#47D147",
+      "type": 13
+    },
+    {
+      "id": 1013300122,
+      "name": "尖石攻擊：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -3,
+      "y": -2,
+      "color": "#47D147",
+      "type": 13
+    },
+    {
+      "id": 1013300123,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 2,
+      "x": -1,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013300124,
+      "name": "鬥陣時招式計量槽加速2",
+      "description": "當我方場地為任一鬥陣時,招式計量槽會累積得較快。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -2,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1013300125,
+      "name": "鬥陣時HP回復1",
+      "description": "當我方場地為任一鬥陣時,寶可夢每次行動後都會回復自己的HP。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -3,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1013300126,
+      "name": "城都鬥陣(物理)時拍組招式威力↑9",
+      "description": "當我方場地為城都鬥陣(物理)時,會提高拍組招式的威力。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -1,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1013300127,
+      "name": "城都鬥陣(物理)時間延長3",
+      "description": "我方場地變成城都鬥陣(物理)的瞬間在場上時,會延長城都鬥陣(物理)的持續時間。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1013300128,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013300129,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013300130,
+      "name": "大岩崩：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": -2,
+      "color": "#47D147",
+      "type": 13
+    },
+    {
+      "id": 1013300131,
+      "name": "大岩崩：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 1,
+      "y": -2,
+      "color": "#47D147",
+      "type": 13
+    },
+    {
+      "id": 1013300132,
+      "name": "沙暴時攻擊招式威力↓2",
+      "description": "當天氣為沙暴時,會減輕受到招式攻擊時的傷害。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 3,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1013300133,
+      "name": "沙暴時HP回復1",
+      "description": "當天氣為沙暴時,寶可夢每次行動後都會回復自己的HP。",
+      "detail": [],
+      "energy": 8,
+      "orb": 96,
+      "level": 2,
+      "x": 2,
+      "y": -3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1013300134,
+      "name": "大岩崩：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 1,
+      "y": -3,
+      "color": "#47D147",
+      "type": 13
+    },
+    {
+      "id": 1013300135,
+      "name": "沙暴時攻擊時賦予物理增強(1)9",
+      "description": "當天氣為沙暴且使出招式攻擊成功時,會提高自己的下次物理招式威力增強1階段。",
+      "detail": [],
+      "energy": 9,
+      "orb": 108,
+      "level": 3,
+      "x": 3,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1013300136,
+      "name": "沙暴時拍組招式提升9",
+      "description": "當天氣為沙暴時,會提高拍組招式的威力。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": -4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1013300137,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013300138,
+      "name": "攻擊下降無效",
+      "description": "攻擊不會降低。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": -3,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1013300139,
+      "name": "大岩崩：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": 2,
+      "color": "#47D147",
+      "type": 13
+    },
+    {
+      "id": 1013300140,
+      "name": "大岩崩：威力 + 3",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -1,
+      "y": 2,
+      "color": "#47D147",
+      "type": 13
+    },
+    {
+      "id": 1013300141,
+      "name": "攻擊 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": -3,
+      "y": 3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1013300142,
+      "name": "凝望榮耀的眼神：招式後招式次數回復2",
+      "description": "招式成功時,有30%的機率會幫該招式的使用次數回復1次。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -2,
+      "y": 3,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1013300143,
+      "name": "解除妨害狀態",
+      "description": "當自己首次陷入畏縮、混亂或束縛狀態時,會解除該狀態。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -1,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1013300144,
+      "name": "上場時物理招式增強2",
+      "description": "上場時,會提高自己的下次物理招式威力增強2階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -3,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1013300145,
+      "name": "凝望榮耀的眼神：招式後計數加速9",
+      "description": "招式成功時,會讓自己發動拍組招式所需的行動數減少1次。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": 4,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1013300146,
+      "name": "背負意念挑戰之岩崩：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": 3,
+      "color": "#BF80FF",
+      "type": 13
+    },
+    {
+      "id": 1013300147,
+      "name": "背負意念挑戰之岩崩：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": -3,
+      "color": "#BF80FF",
+      "type": 13
+    },
+    {
+      "id": 1800102783,
+      "name": "背負意念挑戰之岩崩：威力 + 30",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -4,
+      "y": 2,
+      "color": "#BF80FF",
+      "type": 13
+    },
+    {
+      "id": 1800102784,
+      "name": "背負意念挑戰之岩崩：威力 + 30",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -4,
+      "y": 1,
+      "color": "#BF80FF",
+      "type": 13
+    },
+    {
+      "id": 1800102785,
+      "name": "背負意念挑戰之岩崩：威力 + 30",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -4,
+      "y": 0,
+      "color": "#BF80FF",
+      "type": 13
+    },
+    {
+      "id": 1800103046,
+      "name": "登場時場地變成城都鬥陣(物理)&賦予物理增強G1",
+      "description": "上場時,會讓我方場地變成城都鬥陣(物理)。上場時,會提高我方全體拍組的下次物理招式威力增強1階段。",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 5,
+      "x": 0,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800103047,
+      "name": "上場時防禦下降G2",
+      "description": "上場時,會降低對手全體拍組的防禦2階段。",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 4,
+      "x": 0,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    }
+  ]
+}

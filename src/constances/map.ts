@@ -29,14 +29,26 @@ export const CategoryMap: Record<string, TypeMapItem> = {
 };
 
 export const RoleMap: Record<string, TypeMapItem> = {
-    0: { key: "Physical_Strike", cnName: "攻擊型" },
-    1: { key: "Special_Strike", cnName: "攻擊型" },
+    0: { key: "Physical_Strike", cnName: "物理攻擊型" },
+    1: { key: "Special_Strike", cnName: "特殊攻擊型" },
     2: { key: "Support", cnName: "輔助型" },
     3: { key: "Tech", cnName: "技術型" },
     4: { key: "Sprint", cnName: "速戰型" },
     5: { key: "Field", cnName: "場地型" },
     6: { key: "Multi", cnName: "複合型" },
+    999: { key: "Strike", cnName: "攻擊型" },
 };
+
+// todo: 服裝類別
+// export const ExclusivityMap: Record<string, TypeMapItem> = {
+//     0: { key: "Regular", cnName: "常规服装" },
+//     1: { key: "Special_Strike", cnName: "大師服裝" },
+//     2: { key: "Support", cnName: "ex大師服裝" },
+//     3: { key: "Tech", cnName: "繁星" },
+//     4: { key: "Sprint", cnName: "特別服裝" },
+//     5: { key: "Field", cnName: "季節服裝" },
+//     6: { key: "Multi", cnName: "阿爾套裝" },
+// };
 
 export const AbnormalMap: Record<string, TypeMapItem> = {
     0: { key: "Healthy", cnName: "健康" },

@@ -1,0 +1,908 @@
+{
+  "trainer": {
+    "id": "10091000002",
+    "name": "竹蘭",
+    "actor": "竹蘭",
+    "actorId": "ch0091_00_shirona",
+    "rarity": 5,
+    "role": 4,
+    "exRole": 2,
+    "ex": true,
+    "exclusivity": "Variety",
+    "maxBonusLevel": 5
+  },
+  "scoutMethod": 1,
+  "scheduleId": "chara_7030_0410_FOREVER",
+  "themes": [
+    {
+      "name": "幽靈屬性／速戰",
+      "description": "僅在我方使出幽靈屬性攻擊時，攻擊和特攻提升24\n我方全體拍組的速度提升24",
+      "tag": "幽靈",
+      "category": 1
+    },
+    {
+      "name": "神奧／速戰",
+      "description": "我方全體拍組的攻擊和特攻提升4\n我方全體拍組的速度提升7",
+      "tag": "神奧",
+      "category": 2
+    },
+    {
+      "name": "冠軍／速戰",
+      "description": "我方全體拍組的攻擊和特攻提升4\n我方全體拍組的速度提升7",
+      "tag": "冠軍",
+      "category": 3
+    },
+    {
+      "name": "漣漪鎮／速戰",
+      "description": "我方全體拍組的攻擊和特攻提升5\n我方全體拍組的速度提升8",
+      "tag": "漣漪鎮",
+      "category": 999
+    },
+    {
+      "name": "研究者／速戰",
+      "description": "我方全體拍組的攻擊和特攻提升5\n我方全體拍組的速度提升8",
+      "tag": "研究者",
+      "category": 999
+    }
+  ],
+  "specialAwaking": {
+    "name": "",
+    "description": "",
+    "detail": []
+  },
+  "pokemon": [
+    {
+      "id": "20091000002",
+      "variationType": 0,
+      "vAfterSm": false,
+      "name": "花岩怪",
+      "form": "",
+      "actor": "pm0442_00_mikaruge",
+      "gender": 2,
+      "isShiny": false,
+      "type": 14,
+      "weakness": 18,
+      "stat": {
+        "hp": [
+          96,
+          171,
+          243,
+          529,
+          589,
+          649,
+          829
+        ],
+        "atk": [
+          19,
+          49,
+          76,
+          186,
+          210,
+          234,
+          306
+        ],
+        "def": [
+          18,
+          42,
+          63,
+          151,
+          171,
+          191,
+          251
+        ],
+        "spa": [
+          17,
+          60,
+          99,
+          264,
+          300,
+          336,
+          444
+        ],
+        "spd": [
+          14,
+          36,
+          57,
+          134,
+          150,
+          166,
+          214
+        ],
+        "spe": [
+          14,
+          59,
+          101,
+          266,
+          302,
+          338,
+          446
+        ]
+      },
+      "passives": [
+        {
+          "name": "被封印的邪惡念想",
+          "description": "減輕自己受到效果絕佳之招式或效果絕佳之拍組招式攻擊時的傷害。當使出對象為自己或1隻寶可夢的寶可夢招式成功時,該招式的對象會變成全體。拍組招式的攻擊對象會變成全體。受到此被動技能效果影響的招式或拍組招式的攻擊,即使對象為複數,威力與追加效果的成功率也不會降低。除了特定情況之外,只要寶可夢招式或拍組招式的攻擊命中就必定會擊中要害。",
+          "detail": [
+            {
+              "name": "被攻擊效果絕佳時寶可夢/拍組招式↓5",
+              "description": "減輕自己受到效果絕佳之招式或效果絕佳之拍組招式攻擊時的傷害。"
+            },
+            {
+              "name": "寶可夢招式及拍組招式全體化",
+              "description": "當使出對象為自己或1隻寶可夢的寶可夢招式成功時,該招式的對象會變成全體。拍組招式的攻擊對象會變成全體。受到此被動技能效果影響的招式或拍組招式的攻擊,即使對象為複數,威力與追加效果的成功率也不會降低。"
+            },
+            {
+              "name": "寶可夢招式及拍組招式擊中要害化",
+              "description": "除了特定情況之外,只要寶可夢招式或拍組招式的攻擊命中就必定會擊中要害。"
+            }
+          ]
+        },
+        {
+          "name": "雪上加霜,禍不單行",
+          "description": "當對手陷入異常狀態時,會讓自己的「禍不單行」的威力變成2倍。使出「禍不單行」成功時,會幫自己的同步招式的使用次數回復32次。",
+          "detail": [
+            {
+              "name": "對手異常時禍不單行威力2倍",
+              "description": "當對手陷入異常狀態時,會讓自己的「禍不單行」的威力變成2倍。"
+            },
+            {
+              "name": "禍不單行後同步招式次數回復32次",
+              "description": "使出「禍不單行」成功時,會幫自己的同步招式的使用次數回復32次。"
+            }
+          ]
+        },
+        {
+          "name": "聚集的靈魂",
+          "description": "使出拍組招式後,會幫自己增加6條招式計量槽。使出拍組招式後,會幫自己的同步招式的使用次數回復50次。",
+          "detail": [
+            {
+              "name": "拍組招式後招式計量槽增加6",
+              "description": "使出拍組招式後,會幫自己增加6條招式計量槽。"
+            },
+            {
+              "name": "拍組招式後同步招式次數回復50次9",
+              "description": "使出拍組招式後,會幫自己的同步招式的使用次數回復50次。"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "id": 506,
+          "user": "寶可夢",
+          "name": "禍不單行",
+          "type": 14,
+          "gauge": 2,
+          "uses": "−",
+          "category": 2,
+          "power": 38,
+          "accuracy": 100,
+          "target": "對手１對拍組",
+          "description": "當對手陷入異常狀態時,威力會變成2倍。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 261,
+          "user": "寶可夢",
+          "name": "鬼火",
+          "type": 2,
+          "gauge": 2,
+          "uses": "−",
+          "category": 0,
+          "power": 0,
+          "accuracy": 90,
+          "target": "對手１對拍組",
+          "description": "讓對手陷入灼傷狀態。",
+          "tags": "none",
+          "group": "Regular"
+        },
+        {
+          "id": 6120,
+          "user": "寶可夢",
+          "name": "邪惡靈魂暗影球",
+          "type": 14,
+          "gauge": 2,
+          "uses": 108,
+          "category": 2,
+          "power": 90,
+          "accuracy": 0,
+          "target": "對手１對拍組",
+          "description": "【開放條件】\n自己使出1次招式時\n【封印條件】\n無\n\n攻擊必定會命中。減少此招式的所有次數。減少的次數越多,威力就越大。有20%的機率會降低對手的特防1階段。在1次的攻擊中剩餘次數減少108次時,會讓對手陷入畏縮、混亂和束縛狀態。",
+          "tags": "SureHit",
+          "group": 6
+        },
+        {
+          "id": 10916,
+          "user": "訓練師",
+          "name": "還沒完喔!",
+          "type": 0,
+          "gauge": 0,
+          "uses": 1,
+          "category": 0,
+          "power": 0,
+          "accuracy": 0,
+          "target": "我方全體拍組",
+          "description": "自己發動拍組招式所需的行動數會減少2次。提高自己的特攻4階段。讓我方全體拍組變成下次效果絕佳威力提升狀態。",
+          "tags": 8388608,
+          "group": "Regular"
+        }
+      ],
+      "syncMove": {
+        "id": 117700,
+        "user": "寶可夢",
+        "name": "一百零八個靈魂共響之幽靈光線",
+        "type": 14,
+        "gauge": 0,
+        "uses": "−",
+        "category": 2,
+        "power": 200,
+        "accuracy": 0,
+        "target": "對手１對拍組",
+        "description": "當對手陷入異常狀態時,威力會提高。",
+        "tags": "none",
+        "group": "Sync"
+      }
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "竹蘭專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "招式後招式計量槽增加9",
+          "description": "招式成功時,會幫自己增加1條招式計量槽。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "擊中要害時威力提升3",
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時&首次拍組招式後計數加速1",
+          "description": "首次上場時,發動拍組招式所需的行動數會減少1次。首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。",
+          "detail": [
+            {
+              "name": "首次上場時計數加速1",
+              "description": "首次上場時,發動拍組招式所需的行動數會減少1次。"
+            },
+            {
+              "name": "首次拍組招式後計數加速1",
+              "description": "首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。"
+            }
+          ],
+          "rate": 33
+        }
+      ]
+    }
+  ],
+  "grid": [
+    {
+      "id": 1800100964,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800100965,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": -1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800100966,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800100967,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800100968,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 1,
+      "y": 0,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800100969,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 0,
+      "orb": 5,
+      "level": 1,
+      "x": 0,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800100970,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800100971,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": -1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800100972,
+      "name": "邪惡靈魂暗影球：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": 0,
+      "color": "#47D147",
+      "type": 14
+    },
+    {
+      "id": 1800100973,
+      "name": "邪惡靈魂暗影球：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 1,
+      "y": 1,
+      "color": "#47D147",
+      "type": 14
+    },
+    {
+      "id": 1800100974,
+      "name": "邪惡靈魂暗影球：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": 3,
+      "y": 0,
+      "color": "#47D147",
+      "type": 14
+    },
+    {
+      "id": 1800100975,
+      "name": "邪惡靈魂暗影球：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 2,
+      "y": 1,
+      "color": "#FF0066",
+      "type": 14
+    },
+    {
+      "id": 1800100976,
+      "name": "攻擊妨害狀態對手時HP回復9",
+      "description": "當對手陷入畏縮、混亂或束縛狀態且使出招式攻擊成功時,會回復自己的HP。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 1,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800100977,
+      "name": "對手妨害狀態時拍組招式提升9",
+      "description": "當對手陷入畏縮、混亂或束縛狀態時,會提高自己的拍組招式的威力。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 3,
+      "y": 1,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800100978,
+      "name": "對手妨害狀態時威力↑G2",
+      "description": "當攻擊對象陷入畏縮、混亂或束縛狀態時,會提高我方全體拍組的招式的威力。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": 2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800100979,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -2,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800100980,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -3,
+      "y": 1,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800100981,
+      "name": "禍不單行：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": 0,
+      "color": "#47D147",
+      "type": 14
+    },
+    {
+      "id": 1800100982,
+      "name": "禍不單行：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -1,
+      "y": -1,
+      "color": "#47D147",
+      "type": 14
+    },
+    {
+      "id": 1800100983,
+      "name": "禍不單行：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 2,
+      "x": -3,
+      "y": 0,
+      "color": "#47D147",
+      "type": 14
+    },
+    {
+      "id": 1800100984,
+      "name": "禍不單行：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -2,
+      "y": -1,
+      "color": "#FF0066",
+      "type": 14
+    },
+    {
+      "id": 1800100985,
+      "name": "解除異常狀態",
+      "description": "當自己首次陷入異常狀態時,會解除自己的異常狀態。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -1,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800100986,
+      "name": "禍不單行：攻擊時同步招式次數回復32次5",
+      "description": "使出招式攻擊成功時,有60%的機率會幫自己的同步招式的使用次數回復32次。",
+      "detail": [],
+      "energy": 12,
+      "orb": 144,
+      "level": 3,
+      "x": -3,
+      "y": -1,
+      "color": "#FF0066",
+      "type": 14
+    },
+    {
+      "id": 1800100987,
+      "name": "上場時特攻提升2",
+      "description": "上場時,會提高自己的特攻2階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": -2,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800100988,
+      "name": "HP + 10",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800100989,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 2,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800100990,
+      "name": "速度 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 3,
+      "y": -4,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800100991,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": 1,
+      "y": -3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800100992,
+      "name": "禍不單行：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 2,
+      "y": -4,
+      "color": "#47D147",
+      "type": 14
+    },
+    {
+      "id": 1800100993,
+      "name": "禍不單行：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": 3,
+      "y": -5,
+      "color": "#47D147",
+      "type": 14
+    },
+    {
+      "id": 1800100994,
+      "name": "鬼火：招式後招式計量槽增加3",
+      "description": "招式成功時,有40%的機率會幫自己增加1條招式計量槽。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 1,
+      "y": -4,
+      "color": "#FF0066",
+      "type": 2
+    },
+    {
+      "id": 1800100995,
+      "name": "鬼火：命中率 + 10",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 2,
+      "x": 2,
+      "y": -5,
+      "color": "#47D147",
+      "type": 2
+    },
+    {
+      "id": 1800100996,
+      "name": "寶可夢使出變化招式時速度提升G9",
+      "description": "在寶可夢使出變化招式時,會提高我方全體拍組的速度1階段。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": 3,
+      "y": -6,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800100997,
+      "name": "鬼火：首次使出招式時特殊增強G1",
+      "description": "首次使出招式時,會提高我方全體拍組的下次特殊招式威力增強1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 1,
+      "y": -5,
+      "color": "#FF0066",
+      "type": 2
+    },
+    {
+      "id": 1800100998,
+      "name": "攻擊灼傷中的對手時特攻特防↓9",
+      "description": "當對手陷入灼傷狀態且使出招式攻擊成功時,會降低對手的特攻和特防1階段。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": 2,
+      "y": -6,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800100999,
+      "name": "特攻 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": 2,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800101000,
+      "name": "畏縮無效",
+      "description": "不會陷入畏縮狀態。",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 1,
+      "x": -2,
+      "y": 3,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800101001,
+      "name": "防禦 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -3,
+      "y": 4,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800101002,
+      "name": "特防 + 5",
+      "description": "",
+      "detail": [],
+      "energy": 2,
+      "orb": 24,
+      "level": 1,
+      "x": -1,
+      "y": 3,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800101003,
+      "name": "邪惡靈魂暗影球：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -2,
+      "y": 4,
+      "color": "#47D147",
+      "type": 14
+    },
+    {
+      "id": 1800101004,
+      "name": "邪惡靈魂暗影球：威力 + 2",
+      "description": "",
+      "detail": [],
+      "energy": 3,
+      "orb": 36,
+      "level": 1,
+      "x": -3,
+      "y": 5,
+      "color": "#47D147",
+      "type": 14
+    },
+    {
+      "id": 1800101005,
+      "name": "解除妨害狀態",
+      "description": "當自己首次陷入畏縮、混亂或束縛狀態時,會解除該狀態。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -1,
+      "y": 4,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800101006,
+      "name": "HP + 20",
+      "description": "",
+      "detail": [],
+      "energy": 4,
+      "orb": 48,
+      "level": 2,
+      "x": -2,
+      "y": 5,
+      "color": "#779EFF",
+      "type": 0
+    },
+    {
+      "id": 1800101007,
+      "name": "還沒完喔!：招式後附帶回復9",
+      "description": "招式成功時,會讓自己變成附帶回復狀態。",
+      "detail": [],
+      "energy": 7,
+      "orb": 84,
+      "level": 2,
+      "x": -3,
+      "y": 6,
+      "color": "#FF0066",
+      "type": 0
+    },
+    {
+      "id": 1800101008,
+      "name": "特攻提升時威力提升3",
+      "description": "當自己的特攻提高時,會提高招式的威力。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -1,
+      "y": 5,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800101009,
+      "name": "首次上場時計數加速1",
+      "description": "首次上場時,發動拍組招式所需的行動數會減少1次。",
+      "detail": [],
+      "energy": 10,
+      "orb": 120,
+      "level": 3,
+      "x": -2,
+      "y": 6,
+      "color": "#FFC266",
+      "type": 0
+    },
+    {
+      "id": 1800101010,
+      "name": "一百零八個靈魂共響之幽靈光線：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": 3,
+      "color": "#BF80FF",
+      "type": 14
+    },
+    {
+      "id": 1800101011,
+      "name": "一百零八個靈魂共響之幽靈光線：威力 + 25",
+      "description": "",
+      "detail": [],
+      "energy": 5,
+      "orb": 60,
+      "level": 3,
+      "x": 0,
+      "y": -3,
+      "color": "#BF80FF",
+      "type": 14
+    }
+  ]
+}
