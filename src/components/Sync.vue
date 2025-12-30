@@ -18,7 +18,8 @@
             <div v-if="showFilterModal" class="modal-overlay" @click="showFilterModal = false">
                 <div class="modal-content" @click.stop>
                     <h3 class="modal-title">选择拍组</h3>
-                    <Filter @select-trainer="handleSelectTrainer" @close-modal="showFilterModal = false" />
+                    <Filter class="filter-component-wrapper" @select-trainer="handleSelectTrainer"
+                        @close-modal="showFilterModal = false" />
                 </div>
             </div>
 
@@ -292,43 +293,54 @@ onUnmounted(() => {
 .modal-overlay {
     position: fixed;
     inset: 0;
+    inline-size: 100vw;
+    block-size: 100dvh;
     z-index: 20000 !important;
     background-color: rgba(0, 0, 0, 0.5);
 
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding-block-start: 10vh;
+    padding-block-start: 5vh;
+
+    backdrop-filter: blur(2px);
 }
 
 /* 弹窗内容容器 */
 .modal-content {
     inline-size: 90%;
     max-inline-size: 500px;
-
-    block-size: 80vh;
-
+    block-size: 88dvh;
     display: flex;
     flex-direction: column;
 
     border-radius: 12px;
-    padding: 20px;
+    /* padding: 10px; */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     background-image: url('../assets/images/bg1.png');
     background-size: cover;
+    background-position: center;
 }
 
 /* 弹窗标题 */
 .modal-title {
-    margin: 0 0 16px 0;
     font-size: 18px;
     text-align: center;
     color: #fff;
+    padding-block-start: 10px;
     text-shadow:
         1px 1px 0 #555,
         -1px 1px 0 #555,
         1px -1px 0 #555,
         -1px -1px 0 #555;
+}
+
+.filter-component-wrapper {
+    flex: 1; /* 自动占据剩余高度 */
+    block-size: 100%; 
+    min-block-size: 0; /* 允许 Flex 子元素滚动 */
+    display: flex;
+    flex-direction: column;
 }
 
 .right-panel {

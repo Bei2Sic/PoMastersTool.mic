@@ -3,6 +3,11 @@
         <div class="search-bar-container">
             <div class="input-wrapper">
                 <input v-model="searchKey" placeholder="搜索拍組名稱..." class="filter-input" />
+                <transition name="fade">
+                    <span v-if="filteredTrainers.length > 0" class="result-count">
+                        {{ filteredTrainers.length }}
+                    </span>
+                </transition>
             </div>
             <button class="filter-toggle-btn" @click="showFilterModal = true">
                 <span class="icon-filter">≡</span> 篩選
@@ -12,16 +17,19 @@
 
         <div class="trainer-list">
             <div v-if="filteredTrainers.length === 0" class="no-result">
-                未找到匹配的牌組，請更換關鍵詞或篩選條件～
+                未找到匹配的拍組～
             </div>
+
             <div v-for="trainer in filteredTrainers" :key="trainer.id" class="trainer-item"
-                :class="'bg_' + getTypeInfoWithCnName(trainer.type).key.toLowerCase()" @click="handleSelect(trainer)">
-                <img :src="getTrainerUrl(trainer.actorId, false)" alt="trainer" class="trainer-avatar" />
-                <div class="trainer-info">
-                    <div class="trainer-name">{{ trainer.name }}</div>
-                    <div class="trainer-meta">
+                @click="handleSelect(trainer)">
+
+                <div class="image-wrapper">
+                    <img :src="getTrainerUrl(trainer.enActor, trainer.dexNumber, trainer.rarity, trainer.count)"
+                        alt="trainer" class="trainer-avatar" loading="lazy" />
+
+                    <div class="trainer-meta-overlay">
                         <img :src="getRoleIcon('normal', trainer.role)" :alt="trainer.role" class="meta-icon" />
-                        <!-- <img :src="getTypeIcon(trainer.type)" :alt="trainer.type" class="meta-icon" /> -->
+
                         <img v-if="trainer.exRole" :src="getRoleIcon('ex', trainer.exRole)" :alt="trainer.exRole"
                             class="meta-icon" />
                     </div>
@@ -46,15 +54,12 @@
                             <span>星數 (Rarity)</span>
                             <span class="arrow-icon" :class="{ rotated: sectionState.rarity }">▼</span>
                         </div>
-
                         <transition name="collapse">
                             <div v-show="sectionState.rarity" class="options-grid rarity">
                                 <div v-for="r in rarityOptions" :key="r" class="option-btn icon-btn"
                                     :class="{ active: tempFilters.rarity.includes(r) }"
                                     @click="toggleFilter('rarity', r)">
-
                                     <img :src="getRarityIcon(r)" :alt="r + '星'" class="filter-icon" />
-
                                 </div>
                             </div>
                         </transition>
@@ -65,7 +70,6 @@
                             <span>屬性 (Type)</span>
                             <span class="arrow-icon" :class="{ rotated: sectionState.types }">▼</span>
                         </div>
-
                         <transition name="collapse">
                             <div v-show="sectionState.types" class="options-grid types">
                                 <div v-for="type in typeOptions" :key="type" class="option-btn icon-btn"
@@ -136,19 +140,15 @@
 </template>
 
 <script setup lang="ts">
-import {
-    POKEMON_TYPES,
-    ROLE_TYPES
-} from "@/constances/battle";
+import { POKEMON_TYPES, ROLE_TYPES } from "@/constances/battle";
 import { RoleMap, TypeMap } from "@/constances/map";
-import { getTypeInfoWithCnName } from '@/core/exporter/map';
 import { useSyncCacheStore } from "@/stores/syncCache";
 import { SyncMeta } from "@/types/syncModel";
 import { getTrainerUrl } from '@/utils/format';
 import { Converter } from 'opencc-js';
 import { computed, reactive, ref } from 'vue';
 
-// --- 基础数据 ---
+// --- 数据准备 ---
 const syncCacheStore = useSyncCacheStore();
 const metaTrainer = computed(() => syncCacheStore.getMeta);
 const searchKey = ref('');
@@ -158,7 +158,7 @@ const emit = defineEmits(['select-trainer', 'close-modal']);
 const converter = Converter({ from: 'cn', to: 'tw' });
 const toTraditional = (text: string) => text ? converter(text) : '';
 
-// --- 高级筛选配置数据 ---
+// --- 选项配置 ---
 const typeOptions = POKEMON_TYPES.filter(t => t !== '無');
 const roleOptions = ROLE_TYPES;
 const rarityOptions = [1, 2, 3, 4, 5, 6];
@@ -167,13 +167,15 @@ const filteredExRoleOptions = computed(() => {
     return roleOptions.filter(r => r !== '複合型');
 });
 
-// --- 获取icon ---
+// --- 图标获取逻辑 ---
 const getUiIcon = (name: string) => new URL(`../assets/images/icon_${name}.png`, import.meta.url).href;
+
 const getTypeIcon = (typeName: string) => {
     const entry = Object.values(TypeMap).find(t => t.cnName === typeName);
     const key = entry ? entry.key.toLowerCase() : 'normal';
     return getUiIcon(`type_${key}`);
 };
+
 const getRoleIcon = (type: 'normal' | 'ex', typeName: string) => {
     let t = type === 'ex' ? 'role_ex' : 'role';
     const entry = Object.values(RoleMap).find(t => t.cnName === typeName);
@@ -183,11 +185,12 @@ const getRoleIcon = (type: 'normal' | 'ex', typeName: string) => {
     }
     return getUiIcon(`${t}_${key}`);
 };
+
 const getRarityIcon = (rarity: number) => {
     return new URL(`../assets/images/icon_rarity_${rarity}.png`, import.meta.url).href;
 };
 
-// --- 筛选状态管理 ---
+// --- 筛选状态 ---
 const showFilterModal = ref(false);
 
 const tempFilters = reactive({
@@ -236,17 +239,16 @@ const resetFilters = () => {
 };
 
 const applyFilters = () => {
-    // 调用 Store 的 action 保存状态
     syncCacheStore.updateFilters(tempFilters);
-
     showFilterModal.value = false;
 };
 
-// --- 核心筛选逻辑 ---
+// --- 核心筛选逻辑 (包含复杂的星级/EX判断) ---
 const filteredTrainers = computed(() => {
     let result = metaTrainer.value;
     const filters = syncCacheStore.savedFilters;
     const key = toTraditional(searchKey.value.trim().toLowerCase());
+
     if (key) {
         result = result.filter(t =>
             t.name.toLowerCase().includes(key) ||
@@ -254,13 +256,16 @@ const filteredTrainers = computed(() => {
         );
     }
 
+    // 星级筛选逻辑：6星代表检查EX，1-5星代表检查基础星级
     if (filters.rarity.length > 0) {
         const requireEx = filters.rarity.includes(6);
         const selectedBaseRarities = filters.rarity.filter(r => r !== 6);
 
         result = result.filter(t => {
+            // 如果选了6，必须有ex；没选6则忽略此条件
             const passEx = requireEx ? (t.ex === true) : true;
 
+            // 如果选了基础星级，必须匹配其中之一；没选基础星级则忽略此条件
             const passRarity = selectedBaseRarities.length > 0
                 ? selectedBaseRarities.includes(t.rarity)
                 : true;
@@ -295,34 +300,54 @@ const handleSelect = (trainer: SyncMeta) => {
 </script>
 
 <style scoped>
+/* 根容器：Flex 纵向布局 */
 .filter-container {
     block-size: 100%;
-    /* 撑满 .modal-content 的高度 */
     display: flex;
     flex-direction: column;
-    overflow: hidden;
-    /* 防止圆角溢出 */
+    padding: 16px;
+    box-sizing: border-box;
+    gap: 12px;
 }
 
-/* ... (搜索栏和列表样式保持不变) ... */
+/* --- 搜索栏 --- */
 .search-bar-container {
+    flex-shrink: 0;
     display: flex;
     gap: 10px;
-    margin-block-end: 16px;
 }
 
 .input-wrapper {
     flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .filter-input {
     inline-size: 100%;
     padding: 10px 12px;
+    padding-inline-end: 45px;
     border: 1px solid #ddd;
     border-radius: 8px;
     font-size: 14px;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.result-count {
+    position: absolute;
+    inset-inline-end: 10px;
+    inset-block-start: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    font-weight: bold;
+    color: #666;
+    background-color: rgba(0, 0, 0, 0.06);
+    padding: 2px 8px;
+    border-radius: 12px;
+    pointer-events: none;
+    user-select: none;
 }
 
 .filter-toggle-btn {
@@ -341,15 +366,6 @@ const handleSelect = (trainer: SyncMeta) => {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.filter-toggle-btn:hover {
-    background-color: #f9f9f9;
-}
-
-.icon-filter {
-    font-size: 18px;
-    font-weight: bold;
-}
-
 .badge {
     background-color: #e74c3c;
     color: white;
@@ -361,94 +377,93 @@ const handleSelect = (trainer: SyncMeta) => {
     inset-inline-end: -5px;
 }
 
+/* --- 列表容器：网格布局 --- */
 .trainer-list {
-    flex: 1;
-    min-block-size: 0;
-    /* 防止内容撑破 flex 容器 */
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    grid-auto-rows: max-content;
+
+    /* gap: 2px; */
+    /* padding: 2px; */
 
     overflow-y: auto;
-    gap: 8px;
-    display: flex;
-    flex-direction: column;
-    margin-block-end: 16px;
-    padding-inline-end: 4px;
-
-    /* iOS 滚动优化 */
-    -webkit-overflow-scrolling: touch;
+    flex: 1;
+    min-block-size: 0;
 }
 
-.trainer-list::-webkit-scrollbar {
-    inline-size: 6px;
-    block-size: 6px;
-}
-
-.trainer-list::-webkit-scrollbar-track,
-.filter-body::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.trainer-list::-webkit-scrollbar-thumb,
-.filter-body::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    border: 1px solid transparent;
-    background-clip: content-box;
-}
-
-.trainer-list::-webkit-scrollbar-thumb:hover,
-.filter-body::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(0, 0, 0, 0.4);
-}
-
-.trainer-list,
-.filter-body {
-    scrollbar-width: thin;
-    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
-}
-
+/* --- 卡片项 (网格格子) --- */
 .trainer-item {
+    position: relative;
+    inline-size: 100%;
+    /* 强制正方形 */
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    /* border: 1px solid rgba(0, 0, 0, 0.1); */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* 确保内容居中撑满 */
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 12px;
-    border-radius: 10px;
-    background-color: #fff;
-    border: 1px solid #eee;
-    cursor: pointer;
-    transition: all 0.2s;
+    justify-content: center;
 }
 
-.trainer-item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+.trainer-item:active {
+    transform: scale(0.95);
 }
 
+/* 图片容器 */
+.image-wrapper {
+    inline-size: 100%;
+    block-size: 100%;
+    position: relative;
+}
+
+/* 资源图片 */
 .trainer-avatar {
-    inline-size: 48px;
-    block-size: 48px;
-    border-radius: 50%;
+    inline-size: 100%;
+    block-size: 100%;
     object-fit: cover;
-    border: 2px solid #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: block;
 }
 
-.trainer-name {
-    font-size: 15px;
-    font-weight: 600;
-    color: #333;
-    margin-block-end: 4px;
-}
-
-.trainer-meta {
+/* 悬浮图标 */
+.trainer-meta-overlay {
+    position: absolute;
+    inset-block-end: 6px;
+    inset-inline-end: 40px;
     display: flex;
-    gap: 6px;
+    flex-direction: row;
+    align-items: flex-start;
+    pointer-events: none;
+    z-index: 5;
 }
 
 .meta-icon {
     inline-size: 15px;
     block-size: 15px;
     object-fit: contain;
-    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.8));
+}
+
+/* .ex-icon {
+    inline-size: 18px;
+    block-size: 18px;
+} */
+
+/* --- 底部关闭按钮 --- */
+.close-btn {
+    flex-shrink: 0;
+    inline-size: 100%;
+    padding: 12px;
+    background-color: #0b7a75;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
 }
 
 .advanced-filter-modal {
@@ -456,35 +471,26 @@ const handleSelect = (trainer: SyncMeta) => {
     inset: 0;
     inline-size: 100vw;
     block-size: 100dvh;
-    background-color: rgba(0, 0, 0, 0.6);
     z-index: 9999;
-
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    padding-block-start: 5vh;
 
     backdrop-filter: blur(3px);
 }
 
 .filter-content {
     inline-size: 90%;
-    /* 宽度占屏幕 90% */
     max-inline-size: 500px;
-
-    /* ✨✨✨ 核心修改 ✨✨✨ */
-    /* 1. 限制高度为视口的 80%，这样上下必然有空隙，不会被遮挡 */
-    max-block-size: 80dvh;
-
-    /* 2. 必须是 flex 布局，才能让中间 body 滚动 */
+    max-block-size: 90dvh;
     display: flex;
     flex-direction: column;
 
     background-color: #f0f4f8;
     border-radius: 16px;
     overflow: hidden;
-    /* 圆角裁切 */
 
-    /* 阴影和背景 */
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
     background-image: url('../assets/images/bg2.png');
     background-size: cover;
@@ -499,7 +505,6 @@ const handleSelect = (trainer: SyncMeta) => {
     align-items: center;
     background-image: url('../assets/images/bg2.png');
     background-size: cover;
-    background-position: center;
 }
 
 .filter-header h3 {
@@ -518,27 +523,12 @@ const handleSelect = (trainer: SyncMeta) => {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.2s, transform 0.2s;
-}
-
-.reset-icon-btn:hover {
-    background-color: rgba(0, 0, 0, 0.08);
-}
-
-.reset-icon-btn:active {
-    transform: rotate(-60deg) scale(0.9);
 }
 
 .reset-icon {
     inline-size: 22px;
     block-size: 22px;
-    object-fit: contain;
     opacity: 0.75;
-    transition: opacity 0.2s;
-}
-
-.reset-icon-btn:hover .reset-icon {
-    opacity: 1;
 }
 
 .filter-body {
@@ -557,7 +547,60 @@ const handleSelect = (trainer: SyncMeta) => {
     -webkit-overflow-scrolling: touch;
 }
 
-/* ✨✨✨ 修改点：标题样式，添加小箭头支持 ✨✨✨ */
+/* --- 通用滚动条美化 (Webkit内核: Chrome, Safari, Edge) --- */
+
+/* 1. 滚动条整体宽度 */
+.trainer-list::-webkit-scrollbar,
+.filter-body::-webkit-scrollbar {
+    inline-size: 6px;
+    /* 纵向滚动条宽度 (更细一点显得精致) */
+    block-size: 6px;
+    /* 横向滚动条高度 */
+}
+
+/* 2. 滚动条轨道 (Track) */
+.trainer-list::-webkit-scrollbar-track,
+.filter-body::-webkit-scrollbar-track {
+    background: transparent;
+    /* 完全透明，显得更现代 */
+    /* 或者极其淡的背景: background: rgba(0, 0, 0, 0.02); */
+}
+
+/* 3. 滚动条滑块 (Thumb) */
+.trainer-list::-webkit-scrollbar-thumb,
+.filter-body::-webkit-scrollbar-thumb {
+    /* 使用半透明的主题色，更有质感 */
+    background-color: rgba(0, 150, 136, 0.5);
+    /* 对应 #009688 的半透明版 */
+
+    border-radius: 10px;
+    /* 完全圆角 */
+
+    /* 增加透明边框，制造一种“悬浮”的视觉效果 */
+    border: 1px solid transparent;
+    background-clip: content-box;
+}
+
+/* 4. 滑块悬停状态 (Hover) */
+.trainer-list::-webkit-scrollbar-thumb:hover,
+.filter-body::-webkit-scrollbar-thumb:hover {
+    /* 鼠标移上去变深，提示可点击 */
+    background-color: rgba(0, 150, 136, 0.8);
+
+    /* 或者变粗一点点 */
+    /* inline-size: 8px; */
+}
+
+/* --- Firefox 专用样式 (Firefox 不支持 -webkit- 前缀) --- */
+.trainer-list,
+.filter-body {
+    /* auto: 默认粗细 | thin: 细滚动条 | none: 隐藏 */
+    scrollbar-width: thin;
+
+    /* 滑块颜色  轨道颜色 */
+    scrollbar-color: rgba(0, 150, 136, 0.5) transparent;
+}
+
 .section-title {
     background: linear-gradient(90deg, #3b7c8e, #5daab8);
     color: white;
@@ -566,22 +609,14 @@ const handleSelect = (trainer: SyncMeta) => {
     font-weight: bold;
     border-radius: 20px;
     margin-block-end: 12px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    align-self: center;
-    min-inline-size: 120px;
-
-    /* 增加交互 */
-    cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    user-select: none;
+    cursor: pointer;
 }
 
-/* 小箭头样式 */
 .arrow-icon {
     font-size: 12px;
-    margin-inline-start: 8px;
     transition: transform 0.3s ease;
 }
 
@@ -589,12 +624,11 @@ const handleSelect = (trainer: SyncMeta) => {
     transform: rotate(180deg);
 }
 
-/* ✨✨✨ 新增：折叠动画 ✨✨✨ */
+/* 折叠动画 */
 .collapse-enter-active,
 .collapse-leave-active {
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
     max-block-size: 500px;
-    /* 足够大即可 */
     opacity: 1;
     overflow: hidden;
 }
@@ -603,20 +637,13 @@ const handleSelect = (trainer: SyncMeta) => {
 .collapse-leave-to {
     max-block-size: 0;
     opacity: 0;
-    /* 确保收起时没有 residual spacing */
-    margin-block-start: 0 !important;
-    margin-block-end: 0 !important;
-    padding-block-start: 0 !important;
-    padding-block-end: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 .filter-footer {
-    /* 防止被压缩 */
     flex-shrink: 0;
-
     padding: 16px;
-    /* ✨ 因为悬浮在中间，不需要 safe-area padding 了，普通的 padding 就够 */
-
     background-image: url('../assets/images/bg2.png');
     background-size: cover;
     border-block-start: 1px solid rgba(0, 0, 0, 0.1);
@@ -645,24 +672,7 @@ const handleSelect = (trainer: SyncMeta) => {
     color: white;
 }
 
-.close-btn {
-    flex-shrink: 0;
-    /* 确保按钮高度不会被挤压 */
-
-    inline-size: 100%;
-    padding: 12px;
-    background-color: #0b7a75;
-    /* 这里您之前写了颜色，我保留了 */
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 14px;
-    cursor: pointer;
-
-    /* margin-block-start: auto; // 有了 flex:1 后，这个其實可有可無，但留着也没事 */
-    margin-block-start: auto;
-}
-
+/* 筛选选项样式 */
 .options-grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -675,10 +685,10 @@ const handleSelect = (trainer: SyncMeta) => {
     align-items: center;
     justify-content: center;
     padding: 6px;
-    aspect-ratio: 1;
-    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 30px;
+    min-block-size: 44px;
+    background-color: rgba(230, 224, 224, 0.7);
     border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 12px;
     cursor: pointer;
     transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
@@ -696,8 +706,7 @@ const handleSelect = (trainer: SyncMeta) => {
 .option-btn.active {
     background-color: #e0f7fa !important;
     border-color: #00bcd4;
-    box-shadow: 0 0 0 2px #00bcd4, 0 4px 8px rgba(0, 188, 212, 0.2);
-    transform: none;
+    box-shadow: 0 0 0 2px #00bcd4;
 }
 
 @media (hover: hover) {

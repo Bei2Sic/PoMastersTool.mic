@@ -375,7 +375,8 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
                                 <div class="label-col">傷害場地</div>
                                 <div class="env-scroll-container">
                                     <button v-for="z in damageFieldOptions" :key="z" class="env-btn"
-                                        :class="{ active: store.target.damageField === z }" @click="store.target.damageField = z" :title="z">
+                                        :class="{ active: store.target.damageField === z }"
+                                        @click="store.target.damageField = z" :title="z">
                                         <img :src="getEnvIcon('damageField', z)" />
                                     </button>
                                 </div>
@@ -503,7 +504,8 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
                         </div>
                         <div class="other-item">
                             <label>裝備拍招*（%）</label>
-                            <input type="number" v-model.number="store.config.gearSync" class="other-input" placeholder="0">
+                            <input type="number" v-model.number="store.config.gearSync" class="other-input"
+                                placeholder="0">
                         </div>
                         <div class="other-item">
                             <label>組隊+（白值）</label>
@@ -573,9 +575,9 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
                                         <div class="header-content-left relative group">
                                             <div class="move-name-row">
                                                 <span class="move-name">{{ formResult.teraMove?.move.name
-                                                    }}</span>
+                                                }}</span>
                                                 <span class="power-badge">威力 {{ formResult.teraMove?.movePower
-                                                    }}</span>
+                                                }}</span>
                                             </div>
 
                                             <div class="custom-tooltip tooltip-up">
@@ -655,9 +657,9 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
                                         <div class="header-content-left relative group">
                                             <div class="move-name-row">
                                                 <span class="move-name text-lg">{{ formResult.syncMove.move.name
-                                                    }}</span>
+                                                }}</span>
                                                 <span class="power-badge">威力 {{ formResult.syncMove.movePower
-                                                    }}</span>
+                                                }}</span>
                                             </div>
 
                                             <div class="custom-tooltip tooltip-up">
@@ -706,21 +708,20 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
 <style scoped>
 .modal-overlay {
     position: fixed;
-    inset-block-start: 0;
-    inset-inline-start: 0;
-    inset-inline-end: 0;
-    inset-block-end: 0;
+    inset: 0;
     background: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    padding-block-start: 5vh;
     z-index: 1000;
 }
 
 .modal-window {
     background: white;
-    inline-size: 90vw;
-    block-size: 95vh;
+    inline-size: 95vw;
+    block-size: 90vh;
+    block-size: 90dvh;
     max-inline-size: 1000px;
     border-radius: 8px;
     display: flex;
@@ -731,11 +732,16 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
 
 .window-header {
     padding: 10px 20px;
-    background: #009688;
-    color: white;
+    color: rgb(194, 236, 181);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-image: url('../assets/images/bg1.png');
+    text-shadow:
+        1px 1px 0 #555,
+        -1px 1px 0 #555,
+        1px -1px 0 #555,
+        -1px -1px 0 #555;
 }
 
 .window-header h2 {
@@ -746,7 +752,7 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
 .close-btn {
     background: none;
     border: none;
-    color: white;
+    color: black;
     font-size: 1.5rem;
     cursor: pointer;
 }
@@ -763,6 +769,7 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
     background: white;
     border-block-start: 1px solid #ddd;
     text-align: end;
+    background-image: url('../assets/images/bg1.png');
 }
 
 .section-group {

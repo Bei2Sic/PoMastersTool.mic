@@ -21,7 +21,7 @@
         <div class="svg-scroll-area" @click="handleBackgroundClick">
 
             <svg :viewBox="viewBox" preserveAspectRatio="xMidYMid meet" class="main-svg">
-                <image :href="trainerAvatarUrl" :x="-CONST_TRAINER_SIZE / 2 + 10" :y="-CONST_TRAINER_SIZE / 2"
+                <image :href="trainerAvatarUrl" :x="-CONST_TRAINER_SIZE / 2" :y="-CONST_TRAINER_SIZE / 2"
                     :width="CONST_TRAINER_SIZE" :height="CONST_TRAINER_SIZE" rx="50%" ry="50%" class="center-avatar" />
                 <circle cx="0" cy="0" :r="CONST_TRAINER_SIZE / 2" fill="transparent"
                     :style="{ cursor: onTrainerClick ? 'pointer' : 'default', pointerEvents: onTrainerClick ? 'auto' : 'none' }"
@@ -81,7 +81,7 @@ import Bonus from '@/components/Bonus.vue';
 import { computed, onMounted, onUnmounted, ref, watch } from 'vue';
 
 const CONST_HEX_RADIUS = 50;
-const CONST_TRAINER_SIZE = 70;
+const CONST_TRAINER_SIZE = 78;
 const CONST_TILE_SIZE = 100;
 const X_SPACING_RATIO = 0.75;
 const Y_SPACING_RATIO = 1.00;
@@ -145,7 +145,7 @@ const viewBox = computed(() => {
 });
 
 const trainerAvatarUrl = computed(() => {
-    return props.getTrainerAvatarUrl(props.trainer.actorId, props.currentRarity === 6);
+    return props.getTrainerAvatarUrl(props.trainer.enActor, props.trainer.dexNumber, props.currentRarity, props.trainer.count);
 });
 
 const maxBonusLevel = computed(() => props.trainer.maxBonusLevel || 5);

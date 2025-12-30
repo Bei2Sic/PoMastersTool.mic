@@ -3,6 +3,7 @@ import {
     getTypeInfo,
     getTypeInfoWithCnName,
 } from "@/core/exporter/map";
+import { RarityIndex } from "@/types/indices";
 import { MoveBase, Theme } from "@/types/syncModel";
 // Move
 // 格式化使用次數
@@ -138,11 +139,12 @@ export const getThemeIconStyle = (theme: Theme) => {
 };
 
 // 获取对应的训练家图片资源
-export const getTrainerUrl = (actorId: string, exEnabled: boolean): string => {
-    if (exEnabled) {
-        actorId += "_01_expose";
-    }
-    const imagePath = `../assets/trainer/${actorId}_128.png`;
+export const getTrainerUrl = (enActor: string, dexNumber: string, rarity: RarityIndex, count: number): string => {
+    let stringRarity = rarity === 6 ? "EX" : rarity;
+    let stringCount = count === 1?"":`_${count}`;
+    const imagePath = `../assets/actors/${enActor}_${dexNumber}${stringCount}_${stringRarity}.png`;
     const url = new URL(imagePath, import.meta.url).href;
+
+    console.log(url);
     return url;
 };

@@ -23,6 +23,9 @@ export interface SyncRawData {
 export interface SyncMeta {
     id: string; // 拍组ID（与原始数据一致）
     name: string; // 拍组名称（训练师+宝可梦）
+    enActor: string; // 训练师英文名称（用于图片资源）
+    dexNumber: string; // 宝可梦编号（用于图片资源）
+    count: number; // 当前训练师宝可梦组合出现次数
     trainerName: string; // 训练师名称
     pokemonName: string; // 宝可梦名称
     rarity: RarityIndex; // 稀有度（筛选用）
@@ -50,12 +53,15 @@ export interface Trainer {
     name: string;
     actor: string;
     actorId: string;
+    enActor: string; // 训练师英文名称
+    dexNumber: string; // 宝可梦正作编号
     rarity: RarityIndex;
     role: RoleIndex;
     exRole: ExRoleIndex;
     ex: boolean;
     exclusivity: string;
     maxBonusLevel: number;
+    count: number; // 训练师以及宝可梦出现次数
 }
 
 /** 宝可梦属性统计 */
