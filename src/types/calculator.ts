@@ -1,4 +1,3 @@
-// types/calculator.ts
 import {
     AbnormalType,
     BattleCircle,
@@ -12,6 +11,7 @@ import {
     PokemonStats,
     PokemonType,
     RebuffRank,
+    StatLowerReduction,
     TerrainType,
     WeatherType,
     ZoneType,
@@ -168,6 +168,7 @@ export interface CalcEnvironment {
         damageField: DamageFieldType;
         typeRebuffs: Record<PokemonType, RebuffRank>;
         crtiBuffs: Record<CritBuffType, boolean>;
+        statLowerReduction: StatLowerReduction;
     };
 
     settings: {

@@ -14,25 +14,59 @@
 
                 <div class="modal-body">
                     <div v-if="currentTab === 'update'" class="tab-content">
-                        <p class="date">{{ CURRENT_VERSION }}</p>
-                        <h4>✨ 最近更新：</h4>
-                        <ul>
-                            <li>优化了拍组筛选界面的网格布局。</li>
-                        </ul>
+                        <div class="latest-version">
+                            <div class="version-header">
+                                <span class="tag-new">LATEST</span>
+                                <span class="v-num">{{ latestLog.version }}</span>
+                                <span class="v-date">{{ latestLog.date }}</span>
+                            </div>
+                            <h4 v-if="latestLog.title">{{ latestLog.title }}</h4>
+                            <ul>
+                                <li v-for="(line, idx) in latestLog.content" :key="idx">{{ line }}</li>
+                            </ul>
+                        </div>
+
+                        <div class="divider"><span>歷史更新</span></div>
+
+                        <div class="history-list">
+                            <div v-for="log in historyLogs" :key="log.version" class="history-item">
+                                <div class="h-header">
+                                    <span class="h-ver">{{ log.version }}</span>
+                                    <span class="h-date">{{ log.date }}</span>
+                                </div>
+                                <ul>
+                                    <li v-for="(line, lIdx) in log.content" :key="lIdx">{{ line }}</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
 
-                    <div v-else class="tab-content credits">
-                        <h4>特别感谢 / Special Thanks</h4>
-                        <div class="credit-list">
-                            <div class="credit-item">
-                                <span>技术支持</span><strong>Stdk, Xtraterrestre</strong>
+                    <div v-else class="credit-list">
+                        <div class="credit-item" v-for="(group, gIndex) in creditList" :key="gIndex">
+                            <span class="role">{{ group.role }}</span>
+
+                            <div class="members-wrapper">
+                                <template v-for="(member, mIndex) in group.members" :key="mIndex">
+
+                                    <div v-if="member.avatar" class="avatar-item" :title="member.name">
+                                        <img :src="getAvatarUrl(member.avatar)" :alt="member.name"
+                                            class="credit-avatar" />
+                                    </div>
+
+                                    <a v-else-if="member.link" :href="member.link" target="_blank" class="credit-link">
+                                        {{ member.name }}
+                                        <span class="link-icon">↗</span>
+                                    </a>
+
+                                    <span v-else class="credit-text">{{ member.name }}</span>
+
+                                    <span v-if="!member.avatar &&
+                                        group.members[mIndex + 1] &&
+                                        !group.members[mIndex + 1].avatar &&
+                                        mIndex < group.members.length - 1" class="separator">, </span>
+                                </template>
                             </div>
-                            <!-- <div class="credit-item">
-                                <span>开发协力</span><strong>GitHub Copilot</strong>
-                            </div> -->
                         </div>
-                        <div class="divider"></div>
-                        <p class="copyright">© 2024 Pokémon Masters Tool</p>
                     </div>
                 </div>
 
@@ -45,9 +79,14 @@
 </template>
 
 <script setup lang="ts">
+import { changelogs } from '@/constances/changlog';
 import { onMounted, ref } from 'vue';
 
-// ✨ 改动：删除了 Props 和 Emits 定义，因为我们用 ref 控制，不需要 v-model
+// --- 數據處理 ---
+// 取出第一個作為最新
+const latestLog = changelogs[0];
+// 取出剩下的作為歷史
+const historyLogs = changelogs.slice(1);
 
 // 控制显示逻辑
 const visible = ref(false);
@@ -77,6 +116,42 @@ const handleClose = () => {
 
 // 暴露给父组件
 defineExpose({ open });
+
+const getAvatarUrl = (name: string) => {
+    return new URL(`../assets/credit/${name}`, import.meta.url).href;
+};
+
+const creditList = [
+    {
+        role: '技术参考',
+        members: [
+            { name: 'Stdk', link: 'https://pomatools.github.io/', avatar: '' },
+        ]
+    },
+    {
+        role: '资源支持',
+        members: [
+            { name: 'u/Xtraterrestre', link: 'https://pomasters.github.io/SyncPairsTracker/', avatar: '' },
+        ]
+    },
+    {
+        role: '数据校对',
+        members: [
+            { name: '天空寺翔', avatar: 'wag.png', link: '' },
+            { name: 'Route No.4', avatar: 'r4.png', link: '' },
+        ]
+    },
+    {
+        role: '特别鸣谢',
+        members: [
+            { name: 'iko', avatar: 'iko.png', link: '' },
+            { name: '钳子', avatar: 'qak.png', link: '' },
+            { name: '蘑菇头', avatar: 'wenzi.png', link: '' },
+            { name: '爪哥', avatar: 'zclaw.png', link: '' }
+        ]
+    },
+];
+
 </script>
 
 <style scoped>
@@ -92,20 +167,20 @@ defineExpose({ open });
 }
 
 .modal-content {
-    width: 90%;
-    max-width: 400px;
+    inline-size: 90%;
+    max-inline-size: 400px;
     background: white;
     border-radius: 12px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    max-height: 80vh;
+    max-block-size: 80vh;
 }
 
 .modal-tabs {
     display: flex;
     background: #f5f5f5;
-    border-bottom: 1px solid #ddd;
+    border-block-end: 1px solid #ddd;
 }
 
 .tab-btn {
@@ -116,18 +191,18 @@ defineExpose({ open });
     font-weight: bold;
     color: #666;
     cursor: pointer;
-    border-bottom: 3px solid transparent;
+    border-block-end: 3px solid transparent;
     transition: all 0.2s;
 }
 
 .tab-btn.active {
     color: #009688;
-    border-bottom-color: #009688;
+    border-block-end-color: #009688;
     background: white;
 }
 
 .close-icon {
-    width: 40px;
+    inline-size: 40px;
     border: none;
     background: transparent;
     font-size: 20px;
@@ -143,25 +218,71 @@ defineExpose({ open });
 
 /* 简单的列表样式 */
 .tab-content ul {
-    padding-left: 20px;
-    line-height: 1.6;
+    padding-inline-start: 20px;
+    line-height: 1.3;
+    font-size: 14px;
     color: #444;
 }
 
 .tab-content li {
-    margin-bottom: 5px;
+    margin-block-end: 5px;
 }
 
-.date {
-    color: #888;
-    font-size: 12px;
-    margin-bottom: 10px;
-}
-
+/* 分隔線 */
 .divider {
-    height: 1px;
-    background: #eee;
-    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+    color: #999;
+    font-size: 12px;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-block-end: 1px dashed #ddd;
+}
+
+.divider span {
+    padding: 0 10px;
+}
+
+/* 歷史版本列表 - 稍微淡一點 */
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.history-item {
+    padding-inline-start: 10px;
+    border-inline-start: 3px solid #eee;
+}
+
+.h-header {
+    display: flex;
+    gap: 10px;
+    margin-block-end: 4px;
+}
+
+.h-ver {
+    font-weight: bold;
+    color: #555;
+}
+
+.h-date {
+    color: #999;
+    font-size: 12px;
+}
+
+.history-item ul {
+    margin: 0;
+    padding-inline-start: 18px;
+    color: #666;
+    font-size: 13px;
+    line-height: 1.5;
 }
 
 .copyright {
@@ -170,11 +291,79 @@ defineExpose({ open });
     text-align: center;
 }
 
+.latest-version {
+    background-color: #e0f2f1;
+    /* 淡綠色背景 */
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #b2dfdb;
+}
+
+.version-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-block-end: 10px;
+}
+
+.tag-new {
+    background: #ff5252;
+    color: white;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.v-num {
+    font-size: 18px;
+    font-weight: bold;
+    color: #00695c;
+}
+
+.v-date {
+    font-size: 12px;
+    color: #666;
+    margin-inline-start: auto;
+}
+
+.latest-version h4 {
+    margin: 5px 0 10px;
+    color: #004d40;
+}
+
+.latest-version ul {
+    margin: 0;
+    padding-inline-start: 20px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.members-wrapper {
+    flex: 1;
+    /* 占据剩余空间 */
+    display: flex;
+    flex-wrap: wrap;
+    /* 允许换行 */
+    justify-content: flex-end;
+    /* 靠右对齐 */
+    align-items: center;
+    gap: 4px;
+    /* 成员之间的间距 */
+    text-align: end;
+    padding-inline-start: 10px;
+    /* 防止和左侧太近 */
+    align-items: center;
+    /* 确保文字和头像垂直居中 */
+    line-height: 1;
+    /* 防止头像把行高撑得太乱 */
+}
+
 .credit-item {
     display: flex;
     justify-content: space-between;
     padding: 8px 0;
-    border-bottom: 1px dashed #eee;
+    border-block-end: 1px dashed #eee;
     font-size: 14px;
 }
 
@@ -186,13 +375,72 @@ defineExpose({ open });
     color: #333;
 }
 
+.credit-link {
+    color: #009688;
+    /* 使用你的主题色 */
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    transition: opacity 0.2s;
+}
+
+.credit-link:hover {
+    opacity: 0.8;
+    /* 悬停时稍微变淡，或者加下划线 text-decoration: underline; */
+}
+
+.avatar-item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-inline-start: 6px;
+    /* 头像之间稍微多点间距 */
+    cursor: help;
+    /* 鼠标放上去显示问号/提示，表示可以查看名字 */
+}
+
+/* 头像图片本身 */
+.credit-avatar {
+    inline-size: 32px;
+    /* 大小根据需要调整 */
+    block-size: 32px;
+    border-radius: 50%;
+    /* 圆形 */
+    object-fit: cover;
+    border: 2px solid #fff;
+    /* 加个白边更好看 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* 淡淡的阴影 */
+    transition: transform 0.2s;
+}
+
+.credit-avatar:hover {
+    transform: scale(1.1);
+    /* 悬停放大一点点 */
+    z-index: 1;
+}
+
+.link-icon {
+    font-size: 12px;
+    /* 小箭头稍微小一点 */
+    margin-inline-start: 2px;
+}
+
+/* 针对左侧 Role 的微调 (可选) */
+.role {
+    color: #666;
+    font-size: 13px;
+}
+
 .modal-footer {
     padding: 16px;
-    border-top: 1px solid #eee;
+    border-block-start: 1px solid #eee;
 }
 
 .confirm-btn {
-    width: 100%;
+    inline-size: 100%;
     padding: 12px;
     background: #009688;
     color: white;

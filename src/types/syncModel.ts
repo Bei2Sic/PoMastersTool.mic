@@ -34,7 +34,9 @@ export interface SyncMeta {
     ex: boolean; // 是否EX（筛选用）
     role: string; // 角色類型
     exRole: string; // EX角色类型（筛选用）
+    exclusivity: string; // 排他性（筛选用）
     fileName?: string; // 对应的JSON文件名（可选，用于调试）
+    themes: string[]; // 主题技能（筛选用）
     actorId: string;
 }
 

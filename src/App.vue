@@ -6,8 +6,8 @@
       <div v-else-if="currentPage === 'sync'" class="tool-wrapper">
         <Sync />
 
-        <button class="back-home-btn" @click="currentPage = 'home'" title="返回目录">
-          🏠
+        <button class="back-home-btn home-pos" @click="currentPage = 'home'" title="返回目录">
+          <img src="@/assets/images/icon_remove.png" class="home-icon" alt="Home" />
         </button>
       </div>
     </transition>
@@ -15,12 +15,12 @@
 </template>
 
 <script setup lang="ts">
+import Home from '@/components/Home.vue';
+import Sync from '@/components/Sync.vue';
 import { ref } from 'vue';
-import Home from '@/components/Home.vue'; // 刚才建的目录
-import Sync from '@/components/Sync.vue'; // 你现在的工具主组件
 
 // 状态：当前显示哪个页面
-const currentPage = ref('home'); // 默认进目录
+const currentPage = ref('home');
 
 const goToPage = (pageName: string) => {
   currentPage.value = pageName;
@@ -34,7 +34,6 @@ const goToPage = (pageName: string) => {
   overflow: hidden;
 }
 
-/* 简单的页面切换动画 */
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.3s ease;
@@ -45,28 +44,40 @@ const goToPage = (pageName: string) => {
   opacity: 0;
 }
 
-/* 悬浮返回按钮 */
 .back-home-btn {
   position: fixed;
-  inset-block-start: 10px;
-  /* 放在左上角 */
-  inset-inline-start: 10px;
   z-index: 2000;
-  /* 确保层级够高 */
+
   inline-size: 40px;
   block-size: 40px;
   border-radius: 50%;
-  background: white;
   border: 1px solid #ddd;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  background-image: url('@/assets/images/bg1.png');
   cursor: pointer;
-  font-size: 20px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 8px;
+
+  transition: transform 0.2s, background-color 0.2s;
 }
 
 .back-home-btn:hover {
   background: #f0f0f0;
+  transform: scale(1.1);
+}
+
+.home-icon {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.home-pos {
+  inset-block-end: 10px;
+  inset-inline-start: 10px;
 }
 </style>

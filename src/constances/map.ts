@@ -39,16 +39,19 @@ export const RoleMap: Record<string, TypeMapItem> = {
     999: { key: "Strike", cnName: "攻擊型" },
 };
 
-// todo: 服裝類別
-// export const ExclusivityMap: Record<string, TypeMapItem> = {
-//     0: { key: "Regular", cnName: "常规服装" },
-//     1: { key: "Special_Strike", cnName: "大師服裝" },
-//     2: { key: "Support", cnName: "ex大師服裝" },
-//     3: { key: "Tech", cnName: "繁星" },
-//     4: { key: "Sprint", cnName: "特別服裝" },
-//     5: { key: "Field", cnName: "季節服裝" },
-//     6: { key: "Multi", cnName: "阿爾套裝" },
-// };
+export const ExclusivityMap: Record<string, TypeMapItem> = {
+    1: { key: "Regular", cnName: "普池" },
+    2: { key: "Pokefair", cnName: "群星限定" },
+    3: { key: "Seasonal", cnName: "季節限定" },
+    4: { key: "Special", cnName: "特別服裝" },
+    5: { key: "Variety", cnName: "繁星限定" },
+    6: { key: "Mix", cnName: "繽紛限定" },
+    7: { key: "PokefairEX", cnName: "EX群星" },
+    996: { key: "MasterEX", cnName: "EX大師" },
+    997: { key: "Academy", cnName: "學院套裝" },
+    998: { key: "Arcsuit", cnName: "阿爾套裝" },
+    999: { key: "Master", cnName: "大師限定" },
+};
 
 export const AbnormalMap: Record<string, TypeMapItem> = {
     0: { key: "Healthy", cnName: "健康" },
@@ -100,3 +103,12 @@ export const StatMap: Record<string, TypeMapItem> = {
     8: { key: "eva", cnName: "閃避率" },
     9: { key: "ct", cnName: "擊中要害率" },
 };
+
+export const ThemeMap: Record<string, TypeMapItem> = {
+    2: { key: "Region", cnName: "地區" },
+    3: { key: "TrainerGroup", cnName: "分類" },
+    4: { key: "Fashion", cnName: "服裝" },
+    5: { key: "Other", cnName: "其他" },
+};
+
+

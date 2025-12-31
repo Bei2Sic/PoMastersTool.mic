@@ -127,6 +127,7 @@ export const useDamageCalcStore = defineStore("damageCalc", {
 
             typeRebuffs: initRebuffs(),
             critBuffs: initCritbuffs(),
+            statLowerReduction: 5 as cond.StatLowerReduction,
         },
 
         weather: "無" as cond.WeatherType,

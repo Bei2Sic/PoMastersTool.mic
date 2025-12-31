@@ -436,7 +436,8 @@ export class DamageEngine {
         let boost = 100;
 
         // todo: 增加白值属性抗性, 现在先用 全种类抵抗5
-        const mitigation = 0.5;
+        const mitigation = context.target.statLowerReduction / 10;
+        console.log(`kangxing: ${mitigation}`);
         let currentRank = context.target.ranks[stat] || 0;
 
         // 如果命中要害, 无视对手的提升

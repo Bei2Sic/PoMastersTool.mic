@@ -8,7 +8,7 @@
 
         <div class="menu-grid">
             <div class="menu-card primary" @click="$emit('navigate', 'sync')">
-                <span class="icon">⚔️</span>
+                <img src="@/assets/st/ch0101_10_mei_st_1003_128.png" class="menu-icon" alt="单人" />
                 <div class="text">
                     <h3>单人模式</h3>
                     <p>石盘点选 & 伤害计算</p>
@@ -16,18 +16,18 @@
             </div>
 
             <div class="menu-card disabled">
-                <span class="icon">🤝</span>
+                <img src="@/assets/st/ch0101_42_mei_st_1004_128.png" class="menu-icon" alt="多人" />
                 <div class="text">
-                    <h3>多人模式</h3>
-                    <p>敬请期待</p>
+                    <h3>组队模式</h3>
+                    <p>待开发...</p>
                 </div>
             </div>
         </div>
 
         <div class="footer-links">
-            <button class="link-btn" @click="openInfo('update')">📜 更新日志</button>
+            <button class="link-btn" @click="openInfo('update')">更新日志</button>
             <span class="divider">|</span>
-            <button class="link-btn" @click="openInfo('credits')">❤️ 致谢名单</button>
+            <button class="link-btn" @click="openInfo('credits')">致谢名单</button>
         </div>
 
         <InfoModal ref="infoModalRef" />
@@ -54,7 +54,6 @@ const openInfo = (tab: string) => {
     align-items: center;
     justify-content: center;
     background-image: url('@/assets/images/bg2.png');
-    background-size: cover;
     padding: 20px;
 }
 
@@ -117,9 +116,23 @@ h1 {
     filter: grayscale(1);
 }
 
-.menu-card .icon {
-    font-size: 32px;
-    margin-inline-end: 15px;
+.menu-icon {
+    inline-size: 48px;
+    block-size: 48px;
+    object-fit: contain;
+    /* 保持图片比例 */
+    margin-inline-end: 10px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
+
+    /* 防止被压缩 */
+    flex-shrink: 0;
+}
+
+/* 针对禁用状态的图标处理 */
+.menu-card.disabled .menu-icon {
+    filter: grayscale(1);
+    /* 自动变黑白 */
+    opacity: 0.6;
 }
 
 .menu-card h3 {

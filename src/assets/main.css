@@ -180,11 +180,11 @@ body {
     --iconSpecial: url("./images/category_special.png");
     --iconStatus: url("./images/category_status.png");
 
-    --iconThemeRegion: url("./images/theme_region.png");
-    --iconThemeFashion: url("./images/theme_fashion.png");
-    --iconThemeType: url("./images/theme_type.png");
-    --iconThemeTrainerGroup: url("./images/theme_trainergroup.png");
-    --iconThemeOther: url("./images/theme_other.png");
+    --iconThemeRegion: url("./images/icon_theme_region.png");
+    --iconThemeFashion: url("./images/icon_theme_fashion.png");
+    --iconThemeType: url("./images/icon_theme_type.png");
+    --iconThemeTrainerGroup: url("./images/icon_theme_trainergroup.png");
+    --iconThemeOther: url("./images/icon_theme_other.png");
 
     --iconSyncLevelOn: url("./images/sync_level_on.png");
     --iconSyncLevelOff: url("./images/sync_level_off.png");

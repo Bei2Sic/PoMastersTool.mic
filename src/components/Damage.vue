@@ -147,562 +147,602 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
 </script>
 
 <template>
-    <div v-if="visible" class="modal-overlay" @click.self="emit('close')">
-        <div class="modal-window">
+    <transition name="modal">
+        <div v-if="visible" class="modal-overlay" @click.self="emit('close')">
+            <div class="modal-window">
 
-            <div class="window-header">
-                <h2>伤害计算</h2>
-                <button class="close-btn" @click="emit('close')">×</button>
-            </div>
-
-            <div class="window-content">
-
-                <div class="section-group">
-                    <div class="section-title">我方状态</div>
-                    <div class="panel-card">
-                        <div class="stat-table-container">
-                            <div v-for="stat in orderedStats" :key="stat.key" class="stat-col">
-                                <div class="stat-cell header-cell" :class="getHeaderColor(stat.key)">
-                                    <img :src="getIcon(stat.key, 'user')" :alt="stat.cnName" class="stat-icon" />
-                                </div>
-
-                                <div class="stat-cell">
-                                    <template v-if="isHP(stat.key)">
-                                        <input type="number" v-model.number="store.user.currentHPPercent"
-                                            class="val-input text-green-600" placeholder="%" title="剩余HP%">
-                                    </template>
-                                    <select v-else v-model.number="store.user.ranks[stat.key]" class="rank-select"
-                                        :class="{ 'rank-pos': store.user.ranks[stat.key] > 0, 'rank-neg': store.user.ranks[stat.key] < 0 }">
-                                        <option v-for="r in getRankOptions(stat.key)" :key="r" :value="r">{{ r > 0 ? '+'
-                                            + r : r }}</option>
-                                    </select>
-                                </div>
-
-                                <div class="stat-cell double-cell">
-                                    <template v-if="isHP(stat.key) || hasBaseStat(stat.key)">
-                                        <input type="number" v-model.number="store.user.gear[stat.key]"
-                                            class="val-input half-input top-input" placeholder="0" title="裝備加成">
-                                        <input type="number" v-model.number="store.user.theme[stat.key]"
-                                            class="val-input half-input bottom-input text-blue-600" placeholder="0"
-                                            title="組隊技能">
-                                    </template>
-
-                                    <div v-else-if="stat.key === 'acc'" class="stacked-label">
-                                        <span class="row-label">裝備</span>
-                                        <div class="label-divider"></div>
-                                        <span class="row-label text-blue-600">隊伍技能</span>
-                                    </div>
-                                    <div v-else class="placeholder">-</div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div class="status-bar">
-                            <div class="status-group">
-                                <span class="common-label">異常</span>
-                                <div class="icon-row">
-                                    <button v-for="(item, idx) in Object.values(AbnormalMap)" :key="idx"
-                                        class="icon-btn" :class="{ active: isAbnormalActive('user', item) }"
-                                        @click="handleAbnormalClick('user', item)" :title="item.cnName">
-                                        <img :src="getStatusIcon(item.key, 'abnormal')" />
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="status-group">
-                                <span class="common-label">妨害</span>
-                                <div class="icon-row">
-                                    <button v-for="(item, idx) in Object.values(HindranceMap)" :key="idx"
-                                        class="icon-btn" :class="{ active: store.user.hindrance[item.cnName] }"
-                                        @click="handleHindranceClick('user', item.cnName)" :title="item.cnName">
-                                        <img :src="getStatusIcon(item.key, 'hindrance')" />
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="status-group">
-                                <span class="common-label">計量槽加速場地</span>
-                                <button class="icon-btn" :class="{ active: store.gaugeAcceleration }"
-                                    @click="store.gaugeAcceleration = !store.gaugeAcceleration" title="计量槽加速">
-                                    <img :src="getUiIcon('acceleration')" />
-                                </button>
-                            </div>
-                            <div class="status-group">
-                                <span class="common-label">氣魄</span>
-                                <input type="number" v-model.number="store.user.syncBuff" class="sync-input" />
-                            </div>
-                        </div>
-                    </div>
+                <div class="window-header">
+                    <h2>伤害计算</h2>
+                    <button class="close-btn" @click="emit('close')">×</button>
                 </div>
 
-                <div class="section-group">
-                    <div class="section-title">目标状态</div>
-                    <div class="panel-card">
-                        <div class="stat-table-container bg-red-50/20">
-                            <div v-for="stat in orderedStats" :key="'t-' + stat.key" class="stat-col">
-                                <div class="stat-cell header-cell" :class="getHeaderColor(stat.key)">
-                                    <img :src="getIcon(stat.key, 'target')" :alt="stat.cnName" class="stat-icon" />
+                <div class="window-content">
+
+                    <div class="section-group">
+                        <div class="section-title">我方状态</div>
+                        <div class="panel-card">
+                            <div class="stat-table-container">
+                                <div v-for="stat in orderedStats" :key="stat.key" class="stat-col">
+                                    <div class="stat-cell header-cell" :class="getHeaderColor(stat.key)">
+                                        <img :src="getIcon(stat.key, 'user')" :alt="stat.cnName" class="stat-icon" />
+                                    </div>
+
+                                    <div class="stat-cell">
+                                        <template v-if="isHP(stat.key)">
+                                            <input type="number" v-model.number="store.user.currentHPPercent"
+                                                class="val-input text-green-600" placeholder="%" title="剩余HP%">
+                                        </template>
+                                        <select v-else v-model.number="store.user.ranks[stat.key]" class="rank-select"
+                                            :class="{ 'rank-pos': store.user.ranks[stat.key] > 0, 'rank-neg': store.user.ranks[stat.key] < 0 }">
+                                            <option v-for="r in getRankOptions(stat.key)" :key="r" :value="r">{{ r > 0 ?
+                                                '+'
+                                                + r : r }}</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="stat-cell double-cell">
+                                        <template v-if="isHP(stat.key) || hasBaseStat(stat.key)">
+                                            <input type="number" v-model.number="store.user.gear[stat.key]"
+                                                class="val-input half-input top-input" placeholder="0" title="裝備加成">
+                                            <input type="number" v-model.number="store.user.theme[stat.key]"
+                                                class="val-input half-input bottom-input text-blue-600" placeholder="0"
+                                                title="組隊技能">
+                                        </template>
+
+                                        <div v-else-if="stat.key === 'acc'" class="stacked-label">
+                                            <span class="row-label">裝備</span>
+                                            <div class="label-divider"></div>
+                                            <span class="row-label text-blue-600">隊伍技能</span>
+                                        </div>
+                                        <div v-else class="placeholder">-</div>
+                                    </div>
+
                                 </div>
-                                <div class="stat-cell">
-                                    <div v-if="stat.key === 'ct'" class="placeholder">-</div>
-                                    <template v-else-if="isHP(stat.key)">
-                                        <input type="number" v-model.number="store.target.currentHPPercent"
-                                            class="val-input text-green-600" placeholder="%">
-                                    </template>
-                                    <select v-else v-model.number="store.target.ranks[stat.key]" class="rank-select"
-                                        :class="{ 'rank-pos': store.target.ranks[stat.key] > 0, 'rank-neg': store.target.ranks[stat.key] < 0 }">
-                                        <option v-for="r in getRankOptions(stat.key)" :key="r" :value="r">{{ r > 0 ? '+'
-                                            + r : r }}
+                            </div>
+
+                            <div class="status-bar">
+                                <div class="status-group">
+                                    <span class="common-label">異常</span>
+                                    <div class="icon-row">
+                                        <button v-for="(item, idx) in Object.values(AbnormalMap)" :key="idx"
+                                            class="icon-btn" :class="{ active: isAbnormalActive('user', item) }"
+                                            @click="handleAbnormalClick('user', item)" :title="item.cnName">
+                                            <img :src="getStatusIcon(item.key, 'abnormal')" />
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="status-group">
+                                    <span class="common-label">妨害</span>
+                                    <div class="icon-row">
+                                        <button v-for="(item, idx) in Object.values(HindranceMap)" :key="idx"
+                                            class="icon-btn" :class="{ active: store.user.hindrance[item.cnName] }"
+                                            @click="handleHindranceClick('user', item.cnName)" :title="item.cnName">
+                                            <img :src="getStatusIcon(item.key, 'hindrance')" />
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="status-group">
+                                    <span class="common-label">計量槽加速場地</span>
+                                    <button class="icon-btn" :class="{ active: store.gaugeAcceleration }"
+                                        @click="store.gaugeAcceleration = !store.gaugeAcceleration" title="计量槽加速">
+                                        <img :src="getUiIcon('acceleration')" />
+                                    </button>
+                                </div>
+                                <div class="status-group">
+                                    <span class="common-label">氣魄</span>
+                                    <input type="number" v-model.number="store.user.syncBuff" class="sync-input" />
+                                </div>
+                                <div class="status-group">
+                                    <span class="common-label">樹果</span>
+                                    <select v-model.number="store.settings.berry" class="sync-input">
+                                        <option v-for="i in 4" :key="i" :value="i - 1">
+                                            {{ i - 1 }}
                                         </option>
                                     </select>
                                 </div>
-                                <div class="stat-cell">
-                                    <div v-if="isHP(stat.key) || stat.key === 'ct'" class="placeholder">-</div>
-                                    <template v-else-if="hasBaseStat(stat.key)">
-                                        <input type="number" v-model.number="store.target.stats[stat.key]"
-                                            class="val-input target-val" placeholder="0">
-                                    </template>
-                                    <div v-else class="placeholder">-</div>
+                                <div class="status-group">
+                                    <span class="common-label">技能使用次數</span>
+                                    <select v-model.number="store.settings.moveuse" class="sync-input">
+                                        <option v-for="i in 109" :key="i" :value="i - 1">
+                                            {{ i - 1 }}
+                                        </option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="status-bar">
-                            <div class="status-group">
-                                <span class="common-label">異常</span>
-                                <div class="icon-row">
-                                    <button v-for="(item, idx) in Object.values(AbnormalMap)" :key="idx"
-                                        class="icon-btn" :class="{ active: isAbnormalActive('target', item) }"
-                                        @click="handleAbnormalClick('target', item)" :title="item.cnName">
-                                        <img :src="getStatusIcon(item.key, 'abnormal')" />
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="status-group">
-                                <span class="common-label">妨害</span>
-                                <div class="icon-row">
-                                    <button v-for="(item, idx) in Object.values(HindranceMap)" :key="idx"
-                                        class="icon-btn" :class="{ active: store.target.hindrance[item.cnName] }"
-                                        @click="handleHindranceClick('target', item.cnName)" :title="item.cnName">
-                                        <img :src="getStatusIcon(item.key, 'hindrance')" />
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="status-group">
-                                <span class="common-label">爆傷</span>
-                                <div class="icon-row">
-                                    <button v-for="(item, idx) in Object.values(CrtibuffsMap)" :key="idx"
-                                        class="icon-btn" :class="{ active: store.target.critBuffs[item.cnName] }"
-                                        @click="store.target.critBuffs[item.cnName] = !store.target.critBuffs[item.cnName]"
-                                        :title="item.cnName">
-                                        <img :src="getCritbuffIcon(item.key)" />
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="status-group">
-                                <span class="common-label">氣魄</span>
-                                <input type="number" v-model.number="store.target.syncBuff" class="sync-input" />
-                            </div>
-                        </div>
-
-                        <div class="rebuff-section">
-                            <div class="section-label">屬性抵抗</div>
-                            <div class="rebuff-scroll-container">
-                                <div v-for="type in orderedTypes" :key="type" class="rebuff-col">
-                                    <div class="stat-cell header-cell">
-                                        <img :src="getRebuffIcon(type)" :alt="type" class="stat-icon rebuff-icon" />
+                    <div class="section-group">
+                        <div class="section-title">目标状态</div>
+                        <div class="panel-card">
+                            <div class="stat-table-container bg-red-50/20">
+                                <div v-for="stat in orderedStats" :key="'t-' + stat.key" class="stat-col">
+                                    <div class="stat-cell header-cell" :class="getHeaderColor(stat.key)">
+                                        <img :src="getIcon(stat.key, 'target')" :alt="stat.cnName" class="stat-icon" />
                                     </div>
                                     <div class="stat-cell">
-                                        <select v-model.number="store.target.typeRebuffs[type]"
-                                            class="rank-select rebuff-select"
-                                            :class="{ 'rank-neg': store.target.typeRebuffs[type] < 0, 'rank-pos': store.target.typeRebuffs[type] > 0 }">
-                                            <option v-for="r in getRebuffOptions()" :key="r" :value="r">
-                                                {{ r > 0 ? '+' + r : r }}
+                                        <div v-if="stat.key === 'ct'" class="placeholder">-</div>
+                                        <template v-else-if="isHP(stat.key)">
+                                            <input type="number" v-model.number="store.target.currentHPPercent"
+                                                class="val-input text-green-600" placeholder="%">
+                                        </template>
+                                        <select v-else v-model.number="store.target.ranks[stat.key]" class="rank-select"
+                                            :class="{ 'rank-pos': store.target.ranks[stat.key] > 0, 'rank-neg': store.target.ranks[stat.key] < 0 }">
+                                            <option v-for="r in getRankOptions(stat.key)" :key="r" :value="r">{{ r > 0 ?
+                                                '+'
+                                                + r : r }}
                                             </option>
                                         </select>
+                                    </div>
+                                    <div class="stat-cell">
+                                        <div v-if="isHP(stat.key) || stat.key === 'ct'" class="placeholder">-</div>
+                                        <template v-else-if="hasBaseStat(stat.key)">
+                                            <input type="number" v-model.number="store.target.stats[stat.key]"
+                                                class="val-input target-val" placeholder="0">
+                                        </template>
+                                        <div v-else class="placeholder">-</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="status-bar">
+                                <div class="status-group">
+                                    <span class="common-label">異常</span>
+                                    <div class="icon-row">
+                                        <button v-for="(item, idx) in Object.values(AbnormalMap)" :key="idx"
+                                            class="icon-btn" :class="{ active: isAbnormalActive('target', item) }"
+                                            @click="handleAbnormalClick('target', item)" :title="item.cnName">
+                                            <img :src="getStatusIcon(item.key, 'abnormal')" />
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="status-group">
+                                    <span class="common-label">妨害</span>
+                                    <div class="icon-row">
+                                        <button v-for="(item, idx) in Object.values(HindranceMap)" :key="idx"
+                                            class="icon-btn" :class="{ active: store.target.hindrance[item.cnName] }"
+                                            @click="handleHindranceClick('target', item.cnName)" :title="item.cnName">
+                                            <img :src="getStatusIcon(item.key, 'hindrance')" />
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="status-group">
+                                    <span class="common-label">爆傷</span>
+                                    <div class="icon-row">
+                                        <button v-for="(item, idx) in Object.values(CrtibuffsMap)" :key="idx"
+                                            class="icon-btn" :class="{ active: store.target.critBuffs[item.cnName] }"
+                                            @click="store.target.critBuffs[item.cnName] = !store.target.critBuffs[item.cnName]"
+                                            :title="item.cnName">
+                                            <img :src="getCritbuffIcon(item.key)" />
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="status-group">
+                                    <span class="common-label">氣魄</span>
+                                    <input type="number" v-model.number="store.target.syncBuff" class="sync-input" />
+                                </div>
+                                <div class="status-group">
+                                    <span class="common-label">下降抗性</span>
+                                    <select v-model.number="store.target.statLowerReduction" class="sync-input">
+                                        <option v-for="i in 10" :key="i" :value="i - 1">
+                                            {{ i - 1 }}
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="rebuff-section">
+                                <div class="section-label">屬性抵抗</div>
+                                <div class="rebuff-scroll-container">
+                                    <div v-for="type in orderedTypes" :key="type" class="rebuff-col">
+                                        <div class="stat-cell header-cell">
+                                            <img :src="getRebuffIcon(type)" :alt="type" class="stat-icon rebuff-icon" />
+                                        </div>
+                                        <div class="stat-cell">
+                                            <select v-model.number="store.target.typeRebuffs[type]"
+                                                class="rank-select rebuff-select"
+                                                :class="{ 'rank-neg': store.target.typeRebuffs[type] < 0, 'rank-pos': store.target.typeRebuffs[type] > 0 }">
+                                                <option v-for="r in getRebuffOptions()" :key="r" :value="r">
+                                                    {{ r > 0 ? '+' + r : r }}
+                                                </option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="section-group">
-                    <div class="section-title">环境配置</div>
+                    <div class="section-group">
+                        <div class="section-title">环境配置</div>
 
-                    <div class="panel-card mb-4">
+                        <div class="panel-card mb-4">
 
-                        <div class="env-row-icons">
-                            <div class="env-toolbar">
-                                <div class="label-col">天氣</div>
-                                <div class="env-scroll-container">
-                                    <button class="ex-btn" :class="{ active: store.isEXWeather }"
-                                        @click="store.isEXWeather = !store.isEXWeather">
-                                        EX
-                                    </button>
-                                    <button v-for="w in weatherOptions" :key="w" class="env-btn"
-                                        :class="{ active: store.weather === w }" @click="store.weather = w" :title="w">
-                                        <img :src="getEnvIcon('weather', w)" />
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="env-toolbar">
-                                <div class="label-col">場地</div>
-                                <div class="env-scroll-container">
-                                    <button class="ex-btn" :class="{ active: store.isEXTerrain }"
-                                        @click="store.isEXTerrain = !store.isEXTerrain">
-                                        EX
-                                    </button>
-                                    <button v-for="t in terrainOptions" :key="t" class="env-btn"
-                                        :class="{ active: store.terrain === t }" @click="store.terrain = t" :title="t">
-                                        <img :src="getEnvIcon('terrain', t)" />
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="env-toolbar">
-                                <div class="label-col">領域</div>
-                                <div class="env-scroll-container">
-                                    <button class="ex-btn" :class="{ active: store.isEXZone }"
-                                        @click="store.isEXZone = !store.isEXZone">
-                                        EX
-                                    </button>
-                                    <button v-for="z in zoneOptions" :key="z" class="env-btn"
-                                        :class="{ active: store.zone === z }" @click="store.zone = z" :title="z">
-                                        <img :src="getEnvIcon('zone', z)" />
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="env-toolbar">
-                                <div class="label-col">傷害場地</div>
-                                <div class="env-scroll-container">
-                                    <button v-for="z in damageFieldOptions" :key="z" class="env-btn"
-                                        :class="{ active: store.target.damageField === z }"
-                                        @click="store.target.damageField = z" :title="z">
-                                        <img :src="getEnvIcon('damageField', z)" />
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="boost-section-wrapper">
-                            <div class="section-label">威力增强</div>
-                            <div class="boost-section">
-                                <div class="boost-group">
-                                    <div class="boost-icon"><img :src="getBoostIcon('physical')" title="物理威力增强" /></div>
-                                    <select v-model.number="store.user.boosts.physical" class="boost-select">
-                                        <option v-for="n in getBoostOptions()" :key="n" :value="n">{{ n }}</option>
-                                    </select>
-                                </div>
-                                <div class="boost-group">
-                                    <div class="boost-icon"><img :src="getBoostIcon('special')" title="特殊威力增强" /></div>
-                                    <select v-model.number="store.user.boosts.special" class="boost-select">
-                                        <option v-for="n in getBoostOptions()" :key="n" :value="n">{{ n }}</option>
-                                    </select>
-                                </div>
-                                <div class="boost-group">
-                                    <div class="boost-icon"><img :src="getBoostIcon('sync')" title="拍组招式威力增强" /></div>
-                                    <select v-model.number="store.user.boosts.sync" class="boost-select">
-                                        <option v-for="n in getBoostOptions()" :key="n" :value="n">{{ n }}</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="battle-settings-bar">
-                            <div class="bs-row full-width-row">
-                                <select v-model="store.settings.effectiveType" class="type-select">
-                                    <option v-for="t in typeOptions" :key="t" :value="t">{{ t }}</option>
-                                </select>
-                                <button class="text-toggle-btn" :class="{ active: store.settings.isCritical }"
-                                    @click="store.settings.isCritical = !store.settings.isCritical">
-                                    要害
-                                </button>
-                                <button class="text-toggle-btn" :class="{ active: store.settings.isSuperEffective }"
-                                    @click="store.settings.isSuperEffective = !store.settings.isSuperEffective">
-                                    效果絕佳↑
-                                </button>
-                            </div>
-                            <div class="bs-row full-width-row space-between">
-                                <div class="control-group">
-                                    <span class="common-label">目標</span>
-                                    <div class="segment-control">
-                                        <button v-for="n in 3" :key="n"
-                                            :class="{ active: store.settings.targetScope === n }"
-                                            @click="store.settings.targetScope = n as any">
-                                            {{ n }}
+                            <div class="env-row-icons">
+                                <div class="env-toolbar">
+                                    <div class="label-col">天氣</div>
+                                    <div class="env-scroll-container">
+                                        <button class="ex-btn" :class="{ active: store.isEXWeather }"
+                                            @click="store.isEXWeather = !store.isEXWeather">
+                                            EX
+                                        </button>
+                                        <button v-for="w in weatherOptions" :key="w" class="env-btn"
+                                            :class="{ active: store.weather === w }" @click="store.weather = w"
+                                            :title="w">
+                                            <img :src="getEnvIcon('weather', w)" />
                                         </button>
                                     </div>
                                 </div>
-                                <div class="control-group">
-                                    <span class="common-label">氣槽</span>
-                                    <div class="gauge-control">
-                                        <button v-for="n in 6" :key="n" :class="{ active: store.settings.gauge >= n }"
-                                            @click="store.settings.gauge = n as any">
-                                            {{ n }}
+                                <div class="env-toolbar">
+                                    <div class="label-col">場地</div>
+                                    <div class="env-scroll-container">
+                                        <button class="ex-btn" :class="{ active: store.isEXTerrain }"
+                                            @click="store.isEXTerrain = !store.isEXTerrain">
+                                            EX
+                                        </button>
+                                        <button v-for="t in terrainOptions" :key="t" class="env-btn"
+                                            :class="{ active: store.terrain === t }" @click="store.terrain = t"
+                                            :title="t">
+                                            <img :src="getEnvIcon('terrain', t)" />
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="env-toolbar">
+                                    <div class="label-col">領域</div>
+                                    <div class="env-scroll-container">
+                                        <button class="ex-btn" :class="{ active: store.isEXZone }"
+                                            @click="store.isEXZone = !store.isEXZone">
+                                            EX
+                                        </button>
+                                        <button v-for="z in zoneOptions" :key="z" class="env-btn"
+                                            :class="{ active: store.zone === z }" @click="store.zone = z" :title="z">
+                                            <img :src="getEnvIcon('zone', z)" />
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="env-toolbar">
+                                    <div class="label-col">傷害場地</div>
+                                    <div class="env-scroll-container">
+                                        <button v-for="z in damageFieldOptions" :key="z" class="env-btn"
+                                            :class="{ active: store.target.damageField === z }"
+                                            @click="store.target.damageField = z" :title="z">
+                                            <img :src="getEnvIcon('damageField', z)" />
                                         </button>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="circle-scroll-wrapper">
-                            <div class="circle-track">
-                                <div v-for="(data, region) in store.battleCircles" :key="region" class="circle-item">
-                                    <div class="circle-header" :class="getRegionClass(region as string)">
-                                        {{ region }}
+                            <div class="boost-section-wrapper">
+                                <div class="section-label">威力增强</div>
+                                <div class="boost-section">
+                                    <div class="boost-group">
+                                        <div class="boost-icon"><img :src="getBoostIcon('physical')" title="物理威力增强" />
+                                        </div>
+                                        <select v-model.number="store.user.boosts.physical" class="boost-select">
+                                            <option v-for="n in getBoostOptions()" :key="n" :value="n">{{ n }}</option>
+                                        </select>
                                     </div>
-                                    <div class="circle-toggles">
-                                        <button class="toggle-circle-btn" :class="{ active: data.actives['物理'] }"
-                                            @click="data.actives['物理'] = !data.actives['物理']" title="物理鬥陣">
-                                            <img :src="getCirclesIcon('atk')" alt="物理" />
-                                        </button>
-                                        <button class="toggle-circle-btn" :class="{ active: data.actives['特殊'] }"
-                                            @click="data.actives['特殊'] = !data.actives['特殊']" title="特殊鬥陣">
-                                            <img :src="getCirclesIcon('spa')" alt="特殊" />
-                                        </button>
-                                        <button class="toggle-circle-btn" :class="{ active: data.actives['防禦'] }"
-                                            @click="data.actives['防禦'] = !data.actives['防禦']" title="防禦鬥陣">
-                                            <img :src="getCirclesIcon('hp')" alt="防禦" />
-                                        </button>
+                                    <div class="boost-group">
+                                        <div class="boost-icon"><img :src="getBoostIcon('special')" title="特殊威力增强" />
+                                        </div>
+                                        <select v-model.number="store.user.boosts.special" class="boost-select">
+                                            <option v-for="n in getBoostOptions()" :key="n" :value="n">{{ n }}</option>
+                                        </select>
                                     </div>
-                                    <div class="circle-level-display">
-                                        Lv.
-                                        <select v-model.number="data.level" class="level-select">
-                                            <option v-for="lvl in getRegionLevelOptions(region as string)" :key="lvl"
-                                                :value="lvl">
-                                                {{ lvl }}
-                                            </option>
+                                    <div class="boost-group">
+                                        <div class="boost-icon"><img :src="getBoostIcon('sync')" title="拍组招式威力增强" />
+                                        </div>
+                                        <select v-model.number="store.user.boosts.sync" class="boost-select">
+                                            <option v-for="n in getBoostOptions()" :key="n" :value="n">{{ n }}</option>
                                         </select>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
+                            <div class="battle-settings-bar">
+                                <div class="bs-row full-width-row">
+                                    <select v-model="store.settings.effectiveType" class="type-select">
+                                        <option v-for="t in typeOptions" :key="t" :value="t">{{ t }}</option>
+                                    </select>
+                                    <button class="text-toggle-btn" :class="{ active: store.settings.isCritical }"
+                                        @click="store.settings.isCritical = !store.settings.isCritical">
+                                        要害
+                                    </button>
+                                    <button class="text-toggle-btn" :class="{ active: store.settings.isSuperEffective }"
+                                        @click="store.settings.isSuperEffective = !store.settings.isSuperEffective">
+                                        效果絕佳↑
+                                    </button>
+                                </div>
+                                <div class="bs-row full-width-row space-between">
+                                    <div class="control-group">
+                                        <span class="common-label">目標</span>
+                                        <div class="segment-control">
+                                            <button v-for="n in 3" :key="n"
+                                                :class="{ active: store.settings.targetScope === n }"
+                                                @click="store.settings.targetScope = n as any">
+                                                {{ n }}
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <span class="common-label">氣槽</span>
+                                        <div class="gauge-control">
+                                            <button v-for="n in 6" :key="n"
+                                                :class="{ active: store.settings.gauge >= n }"
+                                                @click="store.settings.gauge = n as any">
+                                                {{ n }}
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="circle-scroll-wrapper">
+                                <div class="circle-track">
+                                    <div v-for="(data, region) in store.battleCircles" :key="region"
+                                        class="circle-item">
+                                        <div class="circle-header" :class="getRegionClass(region as string)">
+                                            {{ region }}
+                                        </div>
+                                        <div class="circle-toggles">
+                                            <button class="toggle-circle-btn" :class="{ active: data.actives['物理'] }"
+                                                @click="data.actives['物理'] = !data.actives['物理']" title="物理鬥陣">
+                                                <img :src="getCirclesIcon('atk')" alt="物理" />
+                                            </button>
+                                            <button class="toggle-circle-btn" :class="{ active: data.actives['特殊'] }"
+                                                @click="data.actives['特殊'] = !data.actives['特殊']" title="特殊鬥陣">
+                                                <img :src="getCirclesIcon('spa')" alt="特殊" />
+                                            </button>
+                                            <button class="toggle-circle-btn" :class="{ active: data.actives['防禦'] }"
+                                                @click="data.actives['防禦'] = !data.actives['防禦']" title="防禦鬥陣">
+                                                <img :src="getCirclesIcon('hp')" alt="防禦" />
+                                            </button>
+                                        </div>
+                                        <div class="circle-level-display">
+                                            Lv.
+                                            <select v-model.number="data.level" class="level-select">
+                                                <option v-for="lvl in getRegionLevelOptions(region as string)"
+                                                    :key="lvl" :value="lvl">
+                                                    {{ lvl }}
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
-                </div>
 
-                <div class="section-group">
-                    <div class="section-title">其他配置</div>
-                    <div class="panel-card other-bar">
-                        <div class="other-item">
-                            <label>物理+（%）</label>
-                            <input type="number" v-model.number="store.config.physical" class="other-input"
-                                placeholder="0">
-                        </div>
-                        <div class="other-item">
-                            <label>特殊+（%）</label>
-                            <input type="number" v-model.number="store.config.special" class="other-input"
-                                placeholder="0">
-                        </div>
-                        <div class="other-item">
-                            <label>拍招+（%）</label>
-                            <input type="number" v-model.number="store.config.sync" class="other-input" placeholder="0">
-                        </div>
-                        <div class="other-item">
-                            <label>裝備招式*（%）</label>
-                            <input type="number" v-model.number="store.config.gearMove" class="other-input"
-                                placeholder="0">
-                        </div>
-                        <div class="other-item">
-                            <label>裝備拍招*（%）</label>
-                            <input type="number" v-model.number="store.config.gearSync" class="other-input"
-                                placeholder="0">
-                        </div>
-                        <div class="other-item">
-                            <label>組隊+（白值）</label>
-                            <div class="row-inputs">
-                                <select v-model="store.user.themeType" class="type-select-small">
-                                    <option v-for="t in typeOptions" :key="t" :value="t">{{ t }}</option>
-                                </select>
-                                <input type="number" v-model.number="store.user.themeTypeAdd" class="other-input"
+                    <div class="section-group">
+                        <div class="section-title">其他配置</div>
+                        <div class="panel-card other-bar">
+                            <div class="other-item">
+                                <label>物理+（%）</label>
+                                <input type="number" v-model.number="store.config.physical" class="other-input"
                                     placeholder="0">
                             </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="section-group">
-                    <div class="section-title">计算结果</div>
-                    <div v-if="!finalDamageResult || finalDamageResult.length === 0" class="empty-tip">
-                        暂无数据，请检查拍组数据
-                    </div>
-                    <div v-else class="result-container">
-                        <div v-for="(formResult, idx) in finalDamageResult" :key="idx" class="form-block">
-                            <div class="form-title">{{ formResult.formName }}</div>
-                            <div class="move-list">
-
-                                <template v-for="(res, mIdx) in formResult?.moves" :key="'move-'+mIdx">
-                                    <div v-if="res" class="move-card" :class="getTypeBgClass(res.move.type)">
-                                        <div class="move-header">
-                                            <div class="header-content-left relative group">
-                                                <div class="move-name-row">
-                                                    <span class="move-name">{{ res.move.name }}</span>
-                                                    <span class="power-badge">威力 {{ res.movePower }}</span>
-                                                </div>
-
-                                                <div class="custom-tooltip"
-                                                    :class="mIdx < 2 ? 'tooltip-down' : 'tooltip-up'">
-                                                    <div class="tooltip-title">技能威力提升</div>
-                                                    <div class="tooltip-content"
-                                                        v-html="getBoostTooltip(res).replace(/\n/g, '<br/>')"></div>
-                                                    <div class="tooltip-footer">
-                                                        <div>环境倍率: x{{ res.envBoost }}</div>
-                                                        <div>裝備倍率: x{{ res.gearBoost }}</div>
-                                                        <div>招式倍率: x{{ (res.moveBoost / 100).toFixed(2) }}</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="header-content-right">
-                                                <span class="stat-simple-badge">{{ res.userStat }} / {{
-                                                    res.targetStat }}</span>
-                                            </div>
-                                        </div>
-
-                                        <div class="damage-text-area">
-                                            <template v-for="(dmg, i) in res.moveDamage" :key="i">
-                                                <span class="dmg-num">
-                                                    {{ dmg }}
-                                                </span>
-                                                <span v-if="i < res.moveDamage.length - 1" class="separator">, </span>
-                                            </template>
-                                        </div>
-                                    </div>
-                                </template>
-
-                                <div v-if="formResult.teraMove" class="move-card sync-card"
-                                    :class="getTypeBgClass(formResult.teraMove?.move.type)">
-                                    <div class="move-header">
-                                        <div class="header-content-left relative group">
-                                            <div class="move-name-row">
-                                                <span class="move-name">{{ formResult.teraMove?.move.name
-                                                }}</span>
-                                                <span class="power-badge">威力 {{ formResult.teraMove?.movePower
-                                                }}</span>
-                                            </div>
-
-                                            <div class="custom-tooltip tooltip-up">
-                                                <div class="tooltip-title">技能威力提升</div>
-                                                <div class="tooltip-content"
-                                                    v-html="getBoostTooltip(formResult.teraMove).replace(/\n/g, '<br/>')">
-                                                </div>
-                                                <div class="tooltip-footer">
-                                                    <div>环境倍率: x{{ formResult.teraMove?.envBoost }}</div>
-                                                    <div>裝備倍率: x{{ formResult.teraMove?.gearBoost }}</div>
-                                                    <div>招式倍率: x{{ (formResult.teraMove?.moveBoost / 100).toFixed(2) }}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="header-content-right">
-                                            <span class="stat-simple-badge">{{ formResult.teraMove?.userStat }} /
-                                                {{ formResult.teraMove?.targetStat }}</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="damage-text-area">
-                                        <template v-for="(dmg, i) in formResult.teraMove?.moveDamage" :key="i">
-                                            <span class="dmg-num">
-                                                {{ dmg }}
-                                            </span>
-                                            <span v-if="i < formResult.teraMove?.moveDamage.length - 1"
-                                                class="separator">, </span>
-                                        </template>
-                                    </div>
-
+                            <div class="other-item">
+                                <label>特殊+（%）</label>
+                                <input type="number" v-model.number="store.config.special" class="other-input"
+                                    placeholder="0">
+                            </div>
+                            <div class="other-item">
+                                <label>拍招+（%）</label>
+                                <input type="number" v-model.number="store.config.sync" class="other-input"
+                                    placeholder="0">
+                            </div>
+                            <div class="other-item">
+                                <label>裝備招式*（%）</label>
+                                <input type="number" v-model.number="store.config.gearMove" class="other-input"
+                                    placeholder="0">
+                            </div>
+                            <div class="other-item">
+                                <label>裝備拍招*（%）</label>
+                                <input type="number" v-model.number="store.config.gearSync" class="other-input"
+                                    placeholder="0">
+                            </div>
+                            <div class="other-item">
+                                <label>組隊+（白值）</label>
+                                <div class="row-inputs">
+                                    <select v-model="store.user.themeType" class="type-select-small">
+                                        <option v-for="t in typeOptions" :key="t" :value="t">{{ t }}</option>
+                                    </select>
+                                    <input type="number" v-model.number="store.user.themeTypeAdd" class="other-input"
+                                        placeholder="0">
                                 </div>
-
-                                <template v-for="(res, mIdx) in formResult?.maxMoves" :key="'maxMove-'+mIdx">
-                                    <div v-if="res" class="move-card" :class="getTypeBgClass(res.move.type)">
-                                        <div class="move-header">
-                                            <div class="header-content-left relative group">
-                                                <div class="move-name-row">
-                                                    <span class="move-name">{{ res.move.name }}</span>
-                                                    <span class="power-badge">威力 {{ res.movePower }}</span>
-                                                </div>
-
-                                                <div class="custom-tooltip"
-                                                    :class="mIdx < 2 ? 'tooltip-down' : 'tooltip-up'">
-                                                    <div class="tooltip-title">技能威力提升</div>
-                                                    <div class="tooltip-content"
-                                                        v-html="getBoostTooltip(res).replace(/\n/g, '<br/>')"></div>
-                                                    <div class="tooltip-footer">
-                                                        <div>环境倍率: x{{ res.envBoost }}</div>
-                                                        <div>招式倍率: x{{ (res.moveBoost / 100).toFixed(2) }}</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="header-content-right">
-                                                <span class="stat-simple-badge">{{ res.userStat }} / {{
-                                                    res.targetStat }}</span>
-                                            </div>
-                                        </div>
-
-                                        <div class="damage-text-area">
-                                            <template v-for="(dmg, i) in res.moveDamage" :key="i">
-                                                <span class="dmg-num">
-                                                    {{ dmg }}
-                                                </span>
-                                                <span v-if="i < res.moveDamage.length - 1" class="separator">, </span>
-                                            </template>
-                                        </div>
-
-                                    </div>
-                                </template>
-
-                                <div v-if="formResult.syncMove" class="move-card sync-card"
-                                    :class="getTypeBgClass(formResult.syncMove.move.type)">
-                                    <div class="move-header">
-                                        <div class="header-content-left relative group">
-                                            <div class="move-name-row">
-                                                <span class="move-name text-lg">{{ formResult.syncMove.move.name
-                                                }}</span>
-                                                <span class="power-badge">威力 {{ formResult.syncMove.movePower
-                                                }}</span>
-                                            </div>
-
-                                            <div class="custom-tooltip tooltip-up">
-                                                <div class="tooltip-title">技能威力提升</div>
-                                                <div class="tooltip-content"
-                                                    v-html="getBoostTooltip(formResult.syncMove).replace(/\n/g, '<br/>')">
-                                                </div>
-                                                <div class="tooltip-footer">
-                                                    <div>环境倍率: x{{ formResult.syncMove.envBoost }}</div>
-                                                    <div>裝備倍率: x{{ formResult.syncMove.gearBoost }}</div>
-                                                    <div>招式倍率: x{{ (formResult.syncMove.moveBoost / 100).toFixed(2) }}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="header-content-right">
-                                            <span class="stat-simple-badge">{{ formResult.syncMove.userStat }} /
-                                                {{
-                                                    formResult.syncMove.targetStat }}</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="damage-text-area">
-                                        <template v-for="(dmg, i) in formResult.syncMove.moveDamage" :key="i">
-                                            <span class="dmg-num">
-                                                {{ dmg }}
-                                            </span>
-                                            <span v-if="i < formResult.syncMove.moveDamage.length - 1"
-                                                class="separator">, </span>
-                                        </template>
-                                    </div>
-                                </div>
-
                             </div>
                         </div>
                     </div>
-                </div>
 
+                    <div class="section-group">
+                        <div class="section-title">计算结果</div>
+                        <div v-if="!finalDamageResult || finalDamageResult.length === 0" class="empty-tip">
+                            暂无数据，请检查拍组数据
+                        </div>
+                        <div v-else class="result-container">
+                            <div v-for="(formResult, idx) in finalDamageResult" :key="idx" class="form-block">
+                                <div class="form-title">{{ formResult.formName }}</div>
+                                <div class="move-list">
+
+                                    <template v-for="(res, mIdx) in formResult?.moves" :key="'move-'+mIdx">
+                                        <div v-if="res" class="move-card" :class="getTypeBgClass(res.move.type)">
+                                            <div class="move-header">
+                                                <div class="header-content-left relative group">
+                                                    <div class="move-name-row">
+                                                        <span class="move-name">{{ res.move.name }}</span>
+                                                        <span class="power-badge">威力 {{ res.movePower }}</span>
+                                                    </div>
+
+                                                    <div class="custom-tooltip"
+                                                        :class="mIdx < 2 ? 'tooltip-down' : 'tooltip-up'">
+                                                        <div class="tooltip-title">技能威力提升</div>
+                                                        <div class="tooltip-content"
+                                                            v-html="getBoostTooltip(res).replace(/\n/g, '<br/>')"></div>
+                                                        <div class="tooltip-footer">
+                                                            <div>环境倍率: x{{ res.envBoost }}</div>
+                                                            <div>裝備倍率: x{{ res.gearBoost }}</div>
+                                                            <div>招式倍率: x{{ (res.moveBoost / 100).toFixed(2) }}</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="header-content-right">
+                                                    <span class="stat-simple-badge">{{ res.userStat }} / {{
+                                                        res.targetStat }}</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="damage-text-area">
+                                                <template v-for="(dmg, i) in res.moveDamage" :key="i">
+                                                    <span class="dmg-num">
+                                                        {{ dmg }}
+                                                    </span>
+                                                    <span v-if="i < res.moveDamage.length - 1" class="separator">,
+                                                    </span>
+                                                </template>
+                                            </div>
+                                        </div>
+                                    </template>
+
+                                    <div v-if="formResult.teraMove" class="move-card sync-card"
+                                        :class="getTypeBgClass(formResult.teraMove?.move.type)">
+                                        <div class="move-header">
+                                            <div class="header-content-left relative group">
+                                                <div class="move-name-row">
+                                                    <span class="move-name">{{ formResult.teraMove?.move.name
+                                                        }}</span>
+                                                    <span class="power-badge">威力 {{ formResult.teraMove?.movePower
+                                                        }}</span>
+                                                </div>
+
+                                                <div class="custom-tooltip tooltip-up">
+                                                    <div class="tooltip-title">技能威力提升</div>
+                                                    <div class="tooltip-content"
+                                                        v-html="getBoostTooltip(formResult.teraMove).replace(/\n/g, '<br/>')">
+                                                    </div>
+                                                    <div class="tooltip-footer">
+                                                        <div>环境倍率: x{{ formResult.teraMove?.envBoost }}</div>
+                                                        <div>裝備倍率: x{{ formResult.teraMove?.gearBoost }}</div>
+                                                        <div>招式倍率: x{{ (formResult.teraMove?.moveBoost / 100).toFixed(2)
+                                                            }}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="header-content-right">
+                                                <span class="stat-simple-badge">{{ formResult.teraMove?.userStat }} /
+                                                    {{ formResult.teraMove?.targetStat }}</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="damage-text-area">
+                                            <template v-for="(dmg, i) in formResult.teraMove?.moveDamage" :key="i">
+                                                <span class="dmg-num">
+                                                    {{ dmg }}
+                                                </span>
+                                                <span v-if="i < formResult.teraMove?.moveDamage.length - 1"
+                                                    class="separator">, </span>
+                                            </template>
+                                        </div>
+
+                                    </div>
+
+                                    <template v-for="(res, mIdx) in formResult?.maxMoves" :key="'maxMove-'+mIdx">
+                                        <div v-if="res" class="move-card" :class="getTypeBgClass(res.move.type)">
+                                            <div class="move-header">
+                                                <div class="header-content-left relative group">
+                                                    <div class="move-name-row">
+                                                        <span class="move-name">{{ res.move.name }}</span>
+                                                        <span class="power-badge">威力 {{ res.movePower }}</span>
+                                                    </div>
+
+                                                    <div class="custom-tooltip"
+                                                        :class="mIdx < 2 ? 'tooltip-down' : 'tooltip-up'">
+                                                        <div class="tooltip-title">技能威力提升</div>
+                                                        <div class="tooltip-content"
+                                                            v-html="getBoostTooltip(res).replace(/\n/g, '<br/>')"></div>
+                                                        <div class="tooltip-footer">
+                                                            <div>环境倍率: x{{ res.envBoost }}</div>
+                                                            <div>招式倍率: x{{ (res.moveBoost / 100).toFixed(2) }}</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="header-content-right">
+                                                    <span class="stat-simple-badge">{{ res.userStat }} / {{
+                                                        res.targetStat }}</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="damage-text-area">
+                                                <template v-for="(dmg, i) in res.moveDamage" :key="i">
+                                                    <span class="dmg-num">
+                                                        {{ dmg }}
+                                                    </span>
+                                                    <span v-if="i < res.moveDamage.length - 1" class="separator">,
+                                                    </span>
+                                                </template>
+                                            </div>
+
+                                        </div>
+                                    </template>
+
+                                    <div v-if="formResult.syncMove" class="move-card sync-card"
+                                        :class="getTypeBgClass(formResult.syncMove.move.type)">
+                                        <div class="move-header">
+                                            <div class="header-content-left relative group">
+                                                <div class="move-name-row">
+                                                    <span class="move-name text-lg">{{ formResult.syncMove.move.name
+                                                        }}</span>
+                                                    <span class="power-badge">威力 {{ formResult.syncMove.movePower
+                                                        }}</span>
+                                                </div>
+
+                                                <div class="custom-tooltip tooltip-up">
+                                                    <div class="tooltip-title">技能威力提升</div>
+                                                    <div class="tooltip-content"
+                                                        v-html="getBoostTooltip(formResult.syncMove).replace(/\n/g, '<br/>')">
+                                                    </div>
+                                                    <div class="tooltip-footer">
+                                                        <div>环境倍率: x{{ formResult.syncMove.envBoost }}</div>
+                                                        <div>裝備倍率: x{{ formResult.syncMove.gearBoost }}</div>
+                                                        <div>招式倍率: x{{ (formResult.syncMove.moveBoost / 100).toFixed(2)
+                                                            }}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="header-content-right">
+                                                <span class="stat-simple-badge">{{ formResult.syncMove.userStat }} /
+                                                    {{
+                                                        formResult.syncMove.targetStat }}</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="damage-text-area">
+                                            <template v-for="(dmg, i) in formResult.syncMove.moveDamage" :key="i">
+                                                <span class="dmg-num">
+                                                    {{ dmg }}
+                                                </span>
+                                                <span v-if="i < formResult.syncMove.moveDamage.length - 1"
+                                                    class="separator">, </span>
+                                            </template>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="window-footer"><button class="btn btn-primary" @click="emit('close')">關閉</button></div>
             </div>
-            <div class="window-footer"><button class="btn btn-primary" @click="emit('close')">關閉</button></div>
         </div>
-    </div>
+    </transition>
 </template>
 
 <style scoped>
@@ -715,6 +755,27 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
     align-items: flex-start;
     padding-block-start: 5vh;
     z-index: 1000;
+}
+
+.modal-enter-active,
+.modal-leave-active {
+    transition: all 0.3s ease;
+}
+
+.modal-enter-active .modal-window,
+.modal-leave-active .modal-window {
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.modal-enter-from,
+.modal-leave-to {
+    opacity: 0;
+}
+
+.modal-enter-from .modal-window,
+.modal-leave-to .modal-window {
+    opacity: 0;
+    transform: scale(0.9) translateY(10px);
 }
 
 .modal-window {
@@ -1027,7 +1088,7 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
 }
 
 .sync-input {
-    inline-size: 50px;
+    inline-size: 60px;
     padding: 6px;
     border: 1px solid #ccc;
     border-radius: 4px;

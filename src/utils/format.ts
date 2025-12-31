@@ -145,6 +145,5 @@ export const getTrainerUrl = (enActor: string, dexNumber: string, rarity: Rarity
     const imagePath = `../assets/actors/${enActor}_${dexNumber}${stringCount}_${stringRarity}.png`;
     const url = new URL(imagePath, import.meta.url).href;
 
-    console.log(url);
     return url;
 };

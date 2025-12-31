@@ -180,6 +180,7 @@ export function useDamageCalculator(
                 damageField: t.damageField,
                 typeRebuffs: t.typeRebuffs,
                 crtiBuffs: t.critBuffs,
+                statLowerReduction: t.statLowerReduction,
             },
 
             settings: {

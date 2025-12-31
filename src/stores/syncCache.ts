@@ -20,12 +20,13 @@ export const useSyncCacheStore = defineStore("syncCache", {
         actorsImage: {},
 
         savedFilters: {
+            exclusivity: [] as string[],
             types: [] as string[],
             weaknesses: [] as string[],
             roles: [] as string[],
             exRoles: [] as string[],
             rarity: [] as number[],
-            regions: [] as string[],
+            themes: [] as string[],
         },
     }),
     getters: {

@@ -59,6 +59,7 @@ export const loadAllSyncJson = async (): Promise<GlobalSyncCache> => {
 const extractSyncMeta = (rawData: SyncRawData, filePath: string): SyncMeta => {
     const trainer = rawData.trainer;
     const mainPokemon = rawData.pokemon[0];
+    const theme = rawData.themes.map(skill => skill.tag);
 
     // 处理属性：统一转为数组（不管JSON中是单个还是数组）
     const pokemonType = getTypeInfo(rawData.pokemon[0].type).cnName;
@@ -81,7 +82,9 @@ const extractSyncMeta = (rawData: SyncRawData, filePath: string): SyncMeta => {
         count: trainer.count,
         weakness: weakness,
         ex: trainer.ex,
+        themes: theme,
         role: role,
+        exclusivity: trainer.exclusivity,
         exRole: exRole,
         actorId: trainer.actorId,
     };

@@ -35,20 +35,12 @@ export const ABNORMAL_STATUSES = [
 
 export const HINDRANCE_STATUSES = ["混亂", "畏縮", "束縛", "禁止替換"] as const;
 
-export const CRITBUFF_STATUSES = [
-    "物理爆傷",
-    "特殊爆傷",
-    "拍招爆傷",
-] as const;
+export const CRITBUFF_STATUSES = ["物理爆傷", "特殊爆傷", "拍招爆傷"] as const;
 
 // 3. 環境與場地
 export const WEATHER_TYPES = ["晴天", "下雨", "沙暴", "冰雹"] as const;
 
-export const TERRAIN_TYPES = [
-    "電氣場地",
-    "青草場地",
-    "精神場地",
-] as const;
+export const TERRAIN_TYPES = ["電氣場地", "青草場地", "精神場地"] as const;
 
 export const ZONE_TYPES = [
     "一般領域",
@@ -122,7 +114,7 @@ export const STAT_KEYS = [
     "spe",
     "acc",
     "eva",
-    "ct"
+    "ct",
 ] as const;
 
 export const STATS = [
@@ -135,4 +127,63 @@ export const STATS = [
     "閃避率",
     "命中率",
     "擊中要害率",
+] as const;
+
+export const THEME_TRAINER_GROUP = [
+    "主角",
+    "四天王",
+    "道館館主",
+    "勁敵",
+    "冠軍",
+    "邪惡組織",
+    "給予考驗之人",
+    "對戰設施的強者",
+    "天星隊",
+] as const;
+
+export const THEME_FASHION = [
+    "美極套裝",
+    "太陽眼鏡",
+    "眼鏡",
+    "面罩",
+    "披風",
+    "圍巾",
+    "季節服裝",
+    "雙馬尾",
+    "特別服裝",
+    "阿爾套裝",
+] as const;
+
+export const THEME_OTHER = [
+    "我行我素",
+    "機械愛好者",
+    "洗翠的冒險",
+    "漣漪鎮",
+    "火箭隊永恆不朽!",
+    "烹飪",
+    "甜點愛好者",
+    "真新鎮",
+    "知識豐富",
+    "石頭愛好者",
+    "研究者",
+    "神奧切不斷的緣分",
+    "組隊對戰",
+    "美樂美樂島的家族",
+    "老手",
+    "不可思議的力量",
+    "伽勒爾的冒險",
+    "卡洛斯的鄰居",
+    "合眾的冒險",
+    "合眾道館的友情",
+    "命運糾纏的父子",
+    "大姐姐",
+    "大小姐",
+    "天文台的親戚",
+    "宇宙中心",
+    "寶可全能競技賽",
+    "對決場",
+    "往事",
+    "忍者父女",
+    "愛好自然之人",
+    "帕希歐學院",
 ] as const;

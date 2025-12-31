@@ -9,7 +9,7 @@
     "role": 5,
     "exRole": 0,
     "ex": true,
-    "exclusivity": "MasterEX",
+    "exclusivity": "PokefairEX",
     "maxBonusLevel": 10,
     "dexNumber": "0998",
     "count": 1

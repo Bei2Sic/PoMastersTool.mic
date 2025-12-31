@@ -461,6 +461,7 @@ const createSync = (jsonData: SyncRawData): Sync => {
 
             name = name.replace("招式計量槽", "計量槽");
             name = name.replace("拍組招式", "拍招");
+            name = name.replace("效果絕佳威力提升", "效果絕佳提升");
 
             const colonMatch = name.match(/^(.*?[:：])(.*)$/);
             if (colonMatch) {

@@ -2,8 +2,8 @@
     <div class="root-container">
         <!-- 左侧石盘区域 -->
         <div class="left-panel">
-            <button v-show="isSingleView" class="floating-btn" @click="showMobilePanel = !showMobilePanel">
-                菜单
+            <button v-show="isSingleView" class="floating-btn menu-pos" @click="showMobilePanel = !showMobilePanel">
+                <img src="@/assets/images/bg_pokeball.png" class="btn-icon" alt="Menu" />
             </button>
 
             <Grid v-model:bonusLevel="dynamicState.bonusLevel" :grid-data="finalGrid.gridData" :trainer="trainer"
@@ -15,37 +15,15 @@
                 :check-selected-tiles="syncMethods.checkSelectedTiles" :on-trainer-click="toggleTrainerSelect" />
 
             <!-- 彈窗篩選拍組窗口 -->
-            <div v-if="showFilterModal" class="modal-overlay" @click="showFilterModal = false">
-                <div class="modal-content" @click.stop>
-                    <h3 class="modal-title">选择拍组</h3>
-                    <Filter class="filter-component-wrapper" @select-trainer="handleSelectTrainer"
-                        @close-modal="showFilterModal = false" />
+            <transition name="modal">
+                <div v-if="showFilterModal" class="modal-overlay" @click="showFilterModal = false">
+                    <div class="modal-content" @click.stop>
+                        <h3 class="modal-title">选择拍组</h3>
+                        <Filter class="filter-component-wrapper" @select-trainer="handleSelectTrainer"
+                            @close-modal="showFilterModal = false" />
+                    </div>
                 </div>
-            </div>
-
-            <!-- 移动端：信息切换按钮（默认隐藏，移动端显示） -->
-            <!-- <button v-show="isSingleView" class="floating-btn" @click="showInfo = !showInfo">
-                {{ '信息' }}
-            </button> -->
-
-            <!-- <div v-if="showInfo" class="mobile-info-modal" @click="showInfo = false">
-                <div class="mobile-info-content" @click.stop>
-                    <button class="mobile-info-close" @click="showInfo = false">×</button>
-                    <div class="mobile-info-title">{{ syncMethods.getSyncName() }}</div>
-                    <Info :level-value="dynamicState.level" :current-rarity-value="dynamicState.currentRarity"
-                        :potential-value="dynamicState.potential" :ex-role-enabled-value="dynamicState.exRoleEnabled"
-                        :bonus-level="dynamicState.bonusLevel"
-                        :selected-pokemon-index="dynamicState.selectedPokemonIndex" :trainer="syncMethods.getTrainer()"
-                        :themes="syncMethods.getThemes()" :special-awaking="syncMethods.getSpecialAwaking()"
-                        :variation-list="syncMethods.getvariationList()" :final-stats="finalStats"
-                        :final-moves="finalMoves" :pokemon="pokemon"
-                        @update:levelValue="(val) => dynamicState.level = val"
-                        @update:currentRarityValue="(val) => dynamicState.currentRarity = val"
-                        @update:potentialValue="(val) => dynamicState.potential = val"
-                        @update:exRoleEnabledValue="(val) => dynamicState.exRoleEnabled = val"
-                        @update:selectedPokemonIndex="(val) => dynamicState.selectedPokemonIndex = val" />
-                </div>
-            </div> -->
+            </transition>
         </div>
 
         <div class="right-panel" :class="{ 'mobile-show': showMobilePanel }">
@@ -142,6 +120,7 @@
         </div>
 
         <Damage :visible="showDamageCalc" :targetSync="singleSync" :teamSyncs="null" @close="handleCloseCalc" />
+
     </div>
 </template>
 
@@ -287,9 +266,6 @@ onUnmounted(() => {
     border-inline-end: 1px solid #ddd;
 }
 
-
-/* 筛选弹窗区域  */
-/* 弹窗遮罩（半透明背景，覆盖整个页面） */
 .modal-overlay {
     position: fixed;
     inset: 0;
@@ -304,6 +280,28 @@ onUnmounted(() => {
     padding-block-start: 5vh;
 
     backdrop-filter: blur(2px);
+}
+
+.modal-enter-active,
+.modal-leave-active {
+    transition: all 0.3s ease;
+}
+
+.modal-enter-active .modal-content,
+.modal-leave-active .modal-content {
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.modal-enter-from,
+.modal-leave-to {
+    /* 背景透明 */
+    opacity: 0;
+}
+
+.modal-enter-from .modal-content,
+.modal-leave-to .modal-content {
+    opacity: 0;
+    transform: scale(0.9) translateY(10px);
 }
 
 /* 弹窗内容容器 */
@@ -336,9 +334,11 @@ onUnmounted(() => {
 }
 
 .filter-component-wrapper {
-    flex: 1; /* 自动占据剩余高度 */
-    block-size: 100%; 
-    min-block-size: 0; /* 允许 Flex 子元素滚动 */
+    flex: 1;
+    /* 自动占据剩余高度 */
+    block-size: 100%;
+    min-block-size: 0;
+    /* 允许 Flex 子元素滚动 */
     display: flex;
     flex-direction: column;
 }
@@ -851,30 +851,45 @@ onUnmounted(() => {
         border-inline-end: none;
     }
 
-    /* 悬浮按钮样式 (保持你原有的，稍微改一下位置或文字) */
     .floating-btn {
+        /* 固定定位 */
         position: fixed;
-        inset-inline-end: 20px;
-        inset-block-end: 20px;
-        inline-size: 50px;
-        block-size: 50px;
+        z-index: 2000;
+        /* 确保层级够高，和返回按钮一样 */
+
+        /* 尺寸和形状 */
+        inline-size: 40px;
+        block-size: 40px;
         border-radius: 50%;
-        color: black;
-        border: none;
-        font-size: 14px;
-        /* 字体稍微改小一点以放下“菜单” */
-        font-weight: bold;
-        cursor: pointer;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        border: 1px solid #ddd;
+        background-image: url('../assets/images/bg1.png');
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+        /* 内容居中 */
         display: flex;
         align-items: center;
         justify-content: center;
-        z-index: 999;
+        padding: 8px;
+        /* 控制图标大小 */
+        cursor: pointer;
         transition: transform 0.2s;
     }
 
     .floating-btn:active {
         transform: scale(0.9);
+    }
+
+    /* 图标图片通用样式 */
+    .btn-icon {
+        inline-size: 100%;
+        block-size: 100%;
+        object-fit: contain;
+        display: block;
+    }
+
+    .menu-pos {
+        inset-block-end: 10px;
+        inset-inline-end: 10px;
     }
 
     .right-panel {
