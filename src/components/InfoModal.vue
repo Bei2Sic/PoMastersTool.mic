@@ -126,6 +126,7 @@ const creditList = [
         role: '技术参考',
         members: [
             { name: 'Stdk', link: 'https://pomatools.github.io/', avatar: '' },
+            { name: 'Brybry', link: 'https://pokemon.brybry.ch/masters/programme.html', avatar: '' },
         ]
     },
     {

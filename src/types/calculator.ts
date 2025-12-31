@@ -64,15 +64,18 @@ export enum LogicType {
     SyncBuffs = "SyncBuffs", // 气魄状态
     Berry = "Berry", // 樹果
     GaugeSpeedBoostOn = "GaugeSpeedBoostOn",
-    GaugeCost = "GaugeCost", //
     // 動態變化類型
     GaugeScaling = "GaugeScaling",
     SingleStatScaling = "SingleStatScaling", // 依单项能力升幅 (e.g. 依攻击升幅)
     TotalStatScaling = "TotalStatScaling", // 依总能力升降 (e.g. 依对手能力降幅)
     HPScaling = "HPScaling", // 依HP比例 (e.g. 隨HP)
     BoostScaling = "BoostScaling",
-    // 技能威力成倍增長類型
-    // FixedMulti = "FixedMulti", // 固定高倍率 (e.g. 威力10倍)
+
+
+    // 技能威力乘算被动
+    GaugeCost = "GaugeCost", // 計量槽消耗增加
+    SpecialMulti = "SpecialMulti", // 特定乘算
+    
 
     // 白值能力加成
     StatBaseBoost = "StatBaseBoost",
@@ -100,7 +103,8 @@ export enum LogicType {
 export enum ExtraLogic {
     BurnUseless = "BurnUseless",
     NoDecay = "NoDecay", // 無衰減
-    TypeShift = "TypeShift", //屬性替換
+    NormalTypeShift = "NormalTypeShift", //屬性替換
+    TypeShift = "TypeShift",
     UseDef = "UseDef", //使用物防結算
 }
 

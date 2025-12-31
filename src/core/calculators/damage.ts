@@ -43,7 +43,7 @@ import { MoveBase } from "@/types/syncModel";
 
 export class DamageEngine {
     // 獲取屬性替換的被動（一般唯一）
-    static getTypeShiftPassive(
+    static getNormalTypeShiftPassive(
         move: MoveBase,
         passives: PassiveSkillModel[]
     ): number {
@@ -55,7 +55,7 @@ export class DamageEngine {
         const shiftPassive = passives.find(
             (p) =>
                 p.condition.logic === LogicType.NoEffect &&
-                p.condition.extra === ExtraLogic.TypeShift
+                p.condition.extra === ExtraLogic.NormalTypeShift
         );
 
         if (shiftPassive) {
@@ -135,7 +135,7 @@ export class DamageEngine {
 
     static resolvePassiveSum(activePassives: ActiveMultiplier[]): number {
         const totalPercent = activePassives.reduce((sum, item) => {
-            if (item.logic !== LogicType.GaugeCost) {
+            if (item.logic !== LogicType.GaugeCost && item.logic !== LogicType.SpecialMulti) {
                 return sum + item.value;
             }
             return sum;
@@ -144,15 +144,15 @@ export class DamageEngine {
         return totalPercent;
     }
 
-    static resolvePassiveIsGaugeCost(
+    static resolvePassiveIsMulti(
         activePassives: ActiveMultiplier[]
     ): number {
         const totalPercent = activePassives.reduce((sum, item) => {
-            if (item.logic === LogicType.GaugeCost) {
-                return sum + item.value;
+            if (item.logic === LogicType.GaugeCost || item.logic === LogicType.SpecialMulti) {
+                return sum *= (item.value/100);
             }
             return sum;
-        }, 0);
+        }, 1);
 
         return totalPercent;
     }
@@ -535,6 +535,7 @@ export class DamageEngine {
             // 直接返回
             case LogicType.Direct:
             case LogicType.GaugeCost:
+            case LogicType.SpecialMulti:
                 return true;
 
             case LogicType.DamageField:
@@ -759,7 +760,7 @@ export class DamageEngine {
                 let totalRank = 0;
                 STATS.forEach((statName) => {
                     const totalStatKey = getStatKeyByStatCnName(statName);
-                    const totalRankValue = totalStats[totalStatKey];
+                    const totalRankValue = totalStatKey === 'hp'? 0:totalStats[totalStatKey];
                     if (isStatLow) {
                         totalRank +=
                             totalRankValue < 0 ? Math.abs(totalRankValue) : 0;

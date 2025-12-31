@@ -17,8 +17,8 @@ export class PassiveSkillParser {
     // 獲取解析結果
     public get result(): PassiveSkillModel {
         // 屬性替換
-        if (this.isTypeShift(this.name)) {
-            return this.resolveTypeShift(this.name, this.desc);
+        if (this.isNormalTypeShift(this.name)) {
+            return this.resolveNormalTypeShift(this.name, this.desc);
         }
 
         // 处理大师被动&阿尔被动
@@ -77,7 +77,7 @@ export class PassiveSkillParser {
         return /神話$/.test(name);
     }
 
-    private isTypeShift(name: string): boolean {
+    private isNormalTypeShift(name: string): boolean {
         return name.includes("屬性替換");
     }
 
@@ -198,7 +198,7 @@ export class PassiveSkillParser {
         };
     }
 
-    private resolveTypeShift(name: string, desc: string): PassiveSkillModel {
+    private resolveNormalTypeShift(name: string, desc: string): PassiveSkillModel {
         const key = name.replace("屬性替換", "").trim();
         return {
             name: name,
@@ -213,7 +213,7 @@ export class PassiveSkillParser {
                 key: key,
                 detail: "自身",
                 logic: LogicType.NoEffect,
-                extra: ExtraLogic.TypeShift,
+                extra: ExtraLogic.NormalTypeShift,
             },
             boost: {
                 scope: MoveScope.Move,
@@ -463,10 +463,10 @@ export class PassiveSkillParser {
                 detail: "自身",
                 isDynamic: false,
             };
-        if (name.includes("计量槽消耗增加"))
+        if (name.includes("計量槽消耗增加"))
             return {
                 logic: LogicType.GaugeCost,
-                key: "计量槽消耗增加",
+                key: "計量槽消耗增加",
                 detail: "自身",
                 isDynamic: false,
             };
@@ -494,7 +494,7 @@ export class PassiveSkillParser {
                 };
         }
         // 場地 (領域/場地)
-        if (name.includes("場地")){
+        if (name.includes("場地")) {
             const match = name.match(/(.+?(場地))/);
             if (match)
                 return {
@@ -608,6 +608,11 @@ export class PassiveSkillParser {
             if (this.desc.includes("威力")) {
                 return { value: parseInt(timesMatch[1], 10) - 1 };
             }
+        }
+
+        if (this.desc.includes("計量槽消耗增加威力提升")) {
+            const rank = parseInt(nameMatch[1], 10);
+            return { value: 1 + rank / 10 };
         }
 
         // 3. 兜底

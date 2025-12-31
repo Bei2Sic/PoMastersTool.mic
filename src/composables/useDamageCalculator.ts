@@ -11,6 +11,7 @@ import { useDamageCalcStore } from "@/stores/damageCalc";
 import {
     CalcEnvironment,
     ExtraLogic,
+    LogicType,
     MoveScope,
     ThemeContext,
 } from "@/types/calculator";
@@ -385,7 +386,6 @@ export function useDamageCalculator(
                     activeMove.description
                 );
                 const moveSkill = parser.result;
-                console.log(moveSkill);
                 if (moveSkill?.condition) {
                     console.log(moveSkill);
                 }
@@ -409,7 +409,10 @@ export function useDamageCalculator(
                     DamageEngine.resolvePassiveSum(passiveMultis);
                 // 被动加成信息(包括计量槽)
                 const passiveStrings = passiveMultis.map((mult) => {
-                    return `${mult.name}: +${mult.value}%`;
+                    if (mult.logic === LogicType.GaugeCost || mult.logic === LogicType.SpecialMulti) {
+                        return `${mult.name}: *${mult.value / 100}`
+                    }
+                    return `${mult.name}: +${mult.value.toFixed(0)}%`;
                 });
 
                 const powerBoost = DamageEngine.resolveBoosts(
@@ -428,9 +431,19 @@ export function useDamageCalculator(
 
                 const passiveBoost = passiveSum + powerBoost + configBoost;
 
-                // 计量槽倍率 (通常只对普通 Move 有效，Sync/Max 可能会返回 0，视你的实现而定)
-                const gaugeBoost =
-                    DamageEngine.resolvePassiveIsGaugeCost(passiveMultis);
+                // 特殊的乘算倍率
+                let gaugeBoost =
+                    DamageEngine.resolvePassiveIsMulti(passiveMultis);
+
+                // 太晶倍率*1.5
+                const isTera = rawData.pokemon[index]?.moveTera ? true : false;
+                if (isTera && scope === MoveScope.Move) {
+                    const pokemonType = rawData.pokemon[index].type
+                    if (m.type === pokemonType) {
+                        gaugeBoost *= 1.5
+                        passiveStrings.push(`太晶威力增強: *1.5`);
+                    }
+                }
 
                 // 主动技能自身的倍率
                 const moveBoost = DamageEngine.resolveMoveMultiplier(
@@ -489,7 +502,7 @@ export function useDamageCalculator(
                         themeBonus:
                             moveTypeCnName === localEnv.user.themeType
                                 ? localEnv.user.theme[statType] +
-                                  localEnv.user.themeTypeAdd
+                                localEnv.user.themeTypeAdd
                                 : localEnv.user.theme[statType],
                         boost: DamageEngine.resolveStatBoost(
                             currentPassives,
@@ -504,7 +517,7 @@ export function useDamageCalculator(
                     rawData,
                     state,
                     statType,
-                    formIndex,
+                    index,
                     {
                         gearBonus: localEnv.user.gear[statType],
                     }
@@ -529,13 +542,13 @@ export function useDamageCalculator(
 
                 // 8. 最终伤害 Roll 计算
                 const moveDamage = Object.entries(DAMAGE_ROLLS).map(
-                    ([index, roll]) => {
+                    ([rollIndex, roll]) => {
                         return Math.floor(
                             movePower *
-                                (((userStat * 0.5) / targetStat) *
-                                    envBoost * 
-                                    gearBoost *
-                                    roll)
+                            (((userStat * 0.5) / targetStat) *
+                                envBoost *
+                                gearBoost *
+                                roll)
                         );
                     }
                 );
@@ -564,7 +577,7 @@ export function useDamageCalculator(
                     }
                     let activeMove = m; // 默認使用原始招式
                     // 属性替换被动
-                    const newType = DamageEngine.getTypeShiftPassive(
+                    const newType = DamageEngine.getNormalTypeShiftPassive(
                         m,
                         passives[formIndex].passives
                     );

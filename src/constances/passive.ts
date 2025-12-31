@@ -10,12 +10,12 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             boost: {
                 scope: MoveScope.Specific,
                 moveName: "打雷",
-                value: 0.3,
+                value: 1.3,
             },
             condition: {
                 key: "",
                 detail: "自身",
-                logic: LogicType.Direct,
+                logic: LogicType.SpecialMulti,
             },
             statBoost: {
                 isStatBoost: false,
@@ -38,7 +38,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
                 key: "地面",
                 detail: "自身",
                 logic: LogicType.NoEffect,
-                extra: ExtraLogic.TypeShift,
+                extra: ExtraLogic.NormalTypeShift,
             },
             statBoost: {
                 isStatBoost: false,
@@ -210,10 +210,10 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             passiveName: "百聞不如一見",
             boost: {
                 scope: MoveScope.Move,
-                value: 0.5,
+                value: 1.5,
             },
             condition: {
-                key: "计量槽消耗增加",
+                key: "計量槽消耗增加",
                 detail: "自身",
                 logic: LogicType.GaugeCost,
             },
@@ -233,10 +233,10 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             boost: {
                 scope: MoveScope.Specific,
                 moveName: "百花怒放晶光轉轉",
-                value: 1.0,
+                value: 2.0,
             },
             condition: {
-                key: "计量槽消耗增加",
+                key: "計量槽消耗增加",
                 detail: "自身",
                 logic: LogicType.GaugeCost,
             },
@@ -254,10 +254,10 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             boost: {
                 scope: MoveScope.Specific,
                 moveName: "晶光轉轉",
-                value: 1.0,
+                value: 2.0,
             },
             condition: {
-                key: "计量槽消耗增加",
+                key: "計量槽消耗增加",
                 detail: "自身",
                 logic: LogicType.GaugeCost,
             },
@@ -327,7 +327,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
                 key: "龍",
                 detail: "自身",
                 logic: LogicType.NoEffect,
-                extra: ExtraLogic.TypeShift,
+                extra: ExtraLogic.NormalTypeShift,
             },
             statBoost: {
                 isStatBoost: false,
@@ -350,7 +350,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
                 key: "蟲",
                 detail: "自身",
                 logic: LogicType.NoEffect,
-                extra: ExtraLogic.TypeShift,
+                extra: ExtraLogic.NormalTypeShift,
             },
             statBoost: {
                 isStatBoost: false,

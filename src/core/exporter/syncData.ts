@@ -171,7 +171,9 @@ export function getFinalMovePower(
 
     // 計量槽消耗增加 威力提升 LogicType.GaugeCost
     if (options.gaugeBoost) {
-        power = Math.floor((power * (100 + options.gaugeBoost)) / 100);
+        console.log(power)
+        power = Math.floor(power * options.gaugeBoost);
+        console.log(power)
     }
 
     // 石盤（Grid）的白值加成為最後的加算
