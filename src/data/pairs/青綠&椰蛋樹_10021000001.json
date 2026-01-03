@@ -8,11 +8,21 @@
     "rarity": 4,
     "role": 2,
     "exRole": -1,
-    "ex": true,
+    "ex": false,
+    "exEffect": "首次使出拍組招式時，氣魄會提高2階段",
+    "exRoleEffect": "無",
     "exclusivity": "Regular",
+    "scoutMethod": 2,
     "maxBonusLevel": 5,
     "dexNumber": "0103",
-    "count": 1
+    "count": 1,
+    "trainerId": "10021000001",
+    "startDate": "2022/08/25 14:00",
+    "gridDate": "2022/08/25 14:00",
+    "exStartDate": "2023/03/29 13:00",
+    "exRoleStartDate": "-",
+    "awakingDate": "-",
+    "extendGridDate": "-"
   },
   "scoutMethod": 2,
   "scheduleId": "FOREVER",
@@ -218,7 +228,6 @@
       }
     }
   ],
-  "luckCookies": {},
   "grid": [
     {
       "id": 1002191000,
@@ -844,5 +853,6 @@
       "color": "#BF80FF",
       "type": 5
     }
-  ]
+  ],
+  "luckCookies": {}
 }

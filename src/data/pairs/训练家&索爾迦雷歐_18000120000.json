@@ -8,11 +8,20 @@
     "rarity": 5,
     "role": 0,
     "exRole": 3,
-    "ex": true,
+    "ex": false,
+    "exEffect": "拍組招式的對象會變成對手全體拍組",
+    "exRoleEffect": "拍組招式的威力會變成1.5倍",
     "exclusivity": "Regular",
+    "scoutMethod": 2,
     "maxBonusLevel": 5,
     "dexNumber": "0791",
-    "count": 1
+    "count": 1,
+    "startDate": "2020/01/01 14:00:00",
+    "gridDate": "2020/01/01 14:00:00",
+    "exStartDate": "2023/04/28 14:00:00",
+    "exRoleDate": "2025/09/09 14:00:00",
+    "awakingDate": "-",
+    "extendGridDate": "2023/05/12 14:00:00"
   },
   "scoutMethod": 2,
   "scheduleId": "update_1120_1Wa_FOREVER",
@@ -194,42 +203,6 @@
         "tags": "none",
         "group": "Sync"
       }
-    }
-  ],
-  "luckCookies": [
-    {
-      "cookieName": "训练家專用的塔潛能餅乾１",
-      "skills": [
-        {
-          "name": "效果絕佳時威力提升5",
-          "description": "當效果絕佳時,會提高該招式的威力。",
-          "detail": [],
-          "rate": 33
-        },
-        {
-          "name": "擊中要害時威力提升3",
-          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
-          "rate": 33
-        },
-        {
-          "name": "首次上場時賦予物理/特殊增強2",
-          "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
-          "detail": [],
-          "rate": 33
-        }
-      ]
-    },
-    {
-      "cookieName": "主角（２）專用潛能餅乾１",
-      "skills": [
-        {
-          "name": "首次上場時賦予物理/特殊增強2",
-          "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
-          "detail": [],
-          "rate": 100
-        }
-      ]
     }
   ],
   "grid": [
@@ -934,6 +907,42 @@
       "y": -1,
       "color": "#FFC266",
       "type": 0
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "训练家專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "效果絕佳時威力提升5",
+          "description": "當效果絕佳時,會提高該招式的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "擊中要害時威力提升3",
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時賦予物理/特殊增強2",
+          "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
+          "detail": [],
+          "rate": 33
+        }
+      ]
+    },
+    {
+      "cookieName": "主角（２）專用潛能餅乾１",
+      "skills": [
+        {
+          "name": "首次上場時賦予物理/特殊增強2",
+          "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
+          "detail": [],
+          "rate": 100
+        }
+      ]
     }
   ]
 }

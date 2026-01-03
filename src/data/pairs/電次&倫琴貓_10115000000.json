@@ -8,11 +8,20 @@
     "rarity": 5,
     "role": 3,
     "exRole": -1,
-    "ex": true,
+    "ex": false,
+    "exEffect": "拍組招式的威力會變成1.5倍",
+    "exRoleEffect": "無",
     "exclusivity": "Regular",
+    "scoutMethod": 1,
     "maxBonusLevel": 5,
     "dexNumber": "0405",
-    "count": 1
+    "count": 1,
+    "startDate": "2020/09/30 14:00:00",
+    "gridDate": "2020/09/30 14:00:00",
+    "exStartDate": "2020/09/30 14:00:00",
+    "exRoleDate": "-",
+    "awakingDate": "-",
+    "extendGridDate": "2025/09/25 14:00:00"
   },
   "scoutMethod": 1,
   "scheduleId": "update_2090_1W_FOREVER",
@@ -216,31 +225,6 @@
         "tags": "none",
         "group": "Sync"
       }
-    }
-  ],
-  "luckCookies": [
-    {
-      "cookieName": "電次專用的塔潛能餅乾１",
-      "skills": [
-        {
-          "name": "擊中要害時威力提升3",
-          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
-          "rate": 33
-        },
-        {
-          "name": "拍組招式效果絕佳時威力↑5",
-          "description": "當效果絕佳時,會提高該拍組招式的威力。",
-          "detail": [],
-          "rate": 33
-        },
-        {
-          "name": "首次上場時拍組招式增強5",
-          "description": "首次上場時,會提高自己的下次拍組招式威力增強5階段。",
-          "detail": [],
-          "rate": 33
-        }
-      ]
     }
   ],
   "grid": [
@@ -945,6 +929,31 @@
       "y": -1,
       "color": "#FFC266",
       "type": 0
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "電次專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "擊中要害時威力提升3",
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "拍組招式效果絕佳時威力↑5",
+          "description": "當效果絕佳時,會提高該拍組招式的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時拍組招式增強5",
+          "description": "首次上場時,會提高自己的下次拍組招式威力增強5階段。",
+          "detail": [],
+          "rate": 33
+        }
+      ]
     }
   ]
 }

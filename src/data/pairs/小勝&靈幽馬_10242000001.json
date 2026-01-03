@@ -8,11 +8,20 @@
     "rarity": 5,
     "role": 5,
     "exRole": -1,
-    "ex": true,
+    "ex": false,
+    "exEffect": "首次使出拍組招式前，會使下列場地效果生效。 僅此時生效的場地效果時間會延長。\n・妖怪領域",
+    "exRoleEffect": "無",
     "exclusivity": "Regular",
+    "scoutMethod": 2,
     "maxBonusLevel": 5,
     "dexNumber": "0897",
-    "count": 1
+    "count": 1,
+    "startDate": "2023/08/16 14:00:00",
+    "gridDate": "2023/08/16 14:00:00",
+    "exStartDate": "2023/08/16 14:00:00",
+    "exRoleDate": "-",
+    "awakingDate": "-",
+    "extendGridDate": "-"
   },
   "scoutMethod": 2,
   "scheduleId": "chara_5070_0816_FOREVER",
@@ -355,7 +364,6 @@
       ]
     }
   ],
-  "luckCookies": {},
   "grid": [
     {
       "id": 1024200100,
@@ -981,5 +989,6 @@
       "color": "#BF80FF",
       "type": 14
     }
-  ]
+  ],
+  "luckCookies": {}
 }

@@ -8,11 +8,20 @@
     "rarity": 5,
     "role": 4,
     "exRole": 1,
-    "ex": true,
+    "ex": false,
+    "exEffect": "首次使出拍組招式時，發動拍組招式所需的行動數會減少3次。",
+    "exRoleEffect": "拍組招式的對象會變成對手全體拍組",
     "exclusivity": "Pokefair",
+    "scoutMethod": 1,
     "maxBonusLevel": 10,
     "dexNumber": "1006",
-    "count": 1
+    "count": 1,
+    "startDate": "2025/05/15 14:00:00",
+    "gridDate": "2025/05/15 14:00:00",
+    "exStartDate": "2025/05/15 14:00:00",
+    "exRoleDate": "2025/05/15 14:00:00",
+    "awakingDate": "2025/05/15 14:00:00",
+    "extendGridDate": "-"
   },
   "scoutMethod": 1,
   "scheduleId": "chara_7040_0515_FOREVER",
@@ -251,51 +260,6 @@
         "tags": "none",
         "group": "Sync"
       }
-    }
-  ],
-  "luckCookies": [
-    {
-      "cookieName": "美極套裝彼特專用潛能餅乾１",
-      "skills": [
-        {
-          "name": "擊中要害無效",
-          "description": "對手的攻擊不會擊中要害。",
-          "detail": [],
-          "rate": 100
-        }
-      ]
-    },
-    {
-      "cookieName": "美極套裝彼特專用的塔潛能餅乾１",
-      "skills": [
-        {
-          "name": "招式後招式計量槽增加9",
-          "description": "招式成功時,會幫自己增加1條招式計量槽。",
-          "detail": [],
-          "rate": 33
-        },
-        {
-          "name": "擊中要害時威力提升3",
-          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
-          "rate": 33
-        },
-        {
-          "name": "首次上場時&首次拍組招式後計數加速1",
-          "description": "首次上場時,發動拍組招式所需的行動數會減少1次。首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。",
-          "detail": [
-            {
-              "name": "首次上場時計數加速1",
-              "description": "首次上場時,發動拍組招式所需的行動數會減少1次。"
-            },
-            {
-              "name": "首次拍組招式後計數加速1",
-              "description": "首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。"
-            }
-          ],
-          "rate": 33
-        }
-      ]
     }
   ],
   "grid": [
@@ -1000,6 +964,51 @@
       "y": -3,
       "color": "#BF80FF",
       "type": 7
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "美極套裝彼特專用潛能餅乾１",
+      "skills": [
+        {
+          "name": "擊中要害無效",
+          "description": "對手的攻擊不會擊中要害。",
+          "detail": [],
+          "rate": 100
+        }
+      ]
+    },
+    {
+      "cookieName": "美極套裝彼特專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "招式後招式計量槽增加9",
+          "description": "招式成功時,會幫自己增加1條招式計量槽。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "擊中要害時威力提升3",
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時&首次拍組招式後計數加速1",
+          "description": "首次上場時,發動拍組招式所需的行動數會減少1次。首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。",
+          "detail": [
+            {
+              "name": "首次上場時計數加速1",
+              "description": "首次上場時,發動拍組招式所需的行動數會減少1次。"
+            },
+            {
+              "name": "首次拍組招式後計數加速1",
+              "description": "首次使出拍組招式時,會讓發動拍組招式所需的行動數減少1次。"
+            }
+          ],
+          "rate": 33
+        }
+      ]
     }
   ]
 }

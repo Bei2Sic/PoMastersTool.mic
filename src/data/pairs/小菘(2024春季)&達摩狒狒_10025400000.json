@@ -8,11 +8,20 @@
     "rarity": 5,
     "role": 0,
     "exRole": 3,
-    "ex": true,
+    "ex": false,
+    "exEffect": "拍組招式的對象會變成對手全體拍組",
+    "exRoleEffect": "拍組招式的威力會變成1.5倍",
     "exclusivity": "Seasonal",
+    "scoutMethod": 1,
     "maxBonusLevel": 5,
     "dexNumber": "0555",
-    "count": 1
+    "count": 1,
+    "startDate": "2024/02/11 14:00:00",
+    "gridDate": "2024/02/11 14:00:00",
+    "exStartDate": "2024/02/11 14:00:00",
+    "exRoleDate": "2024/02/11 14:00:00",
+    "awakingDate": "-",
+    "extendGridDate": "-"
   },
   "scoutMethod": 1,
   "scheduleId": "chara_6010_0211_FOREVER",
@@ -386,31 +395,6 @@
         100,
         100,
         100
-      ]
-    }
-  ],
-  "luckCookies": [
-    {
-      "cookieName": "小菘（２０２４春季）專用的塔潛能餅乾１",
-      "skills": [
-        {
-          "name": "效果絕佳時威力提升5",
-          "description": "當效果絕佳時,會提高該招式的威力。",
-          "detail": [],
-          "rate": 33
-        },
-        {
-          "name": "擊中要害時威力提升3",
-          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
-          "rate": 33
-        },
-        {
-          "name": "首次上場時賦予物理/特殊增強2",
-          "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
-          "detail": [],
-          "rate": 33
-        }
       ]
     }
   ],
@@ -1038,6 +1022,31 @@
       "y": -3,
       "color": "#BF80FF",
       "type": 6
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "小菘（２０２４春季）專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "效果絕佳時威力提升5",
+          "description": "當效果絕佳時,會提高該招式的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "擊中要害時威力提升3",
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時賦予物理/特殊增強2",
+          "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
+          "detail": [],
+          "rate": 33
+        }
+      ]
     }
   ]
 }

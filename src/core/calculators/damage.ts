@@ -42,7 +42,7 @@ import { PassiveBoost, PassiveSkillModel } from "@/types/passiveModel";
 import { MoveBase } from "@/types/syncModel";
 
 export class DamageEngine {
-    // 獲取屬性替換的被動（一般唯一）
+    // 獲取一般屬性替換的被動（一般唯一）
     static getNormalTypeShiftPassive(
         move: MoveBase,
         passives: PassiveSkillModel[]
@@ -56,6 +56,26 @@ export class DamageEngine {
             (p) =>
                 p.condition.logic === LogicType.NoEffect &&
                 p.condition.extra === ExtraLogic.NormalTypeShift
+        );
+
+        if (shiftPassive) {
+            const targetTypeKey = shiftPassive.condition.key;
+            const newTypeIndex = getTypeIndexByCnName(targetTypeKey);
+            return newTypeIndex;
+        }
+
+        return move.type;
+    }
+
+    // 獲取屬性替換的被動（一般唯一）
+    static getTypeShiftPassive(
+        move: MoveBase,
+        passives: PassiveSkillModel[]
+    ): number {
+        const shiftPassive = passives.find(
+            (p) =>
+                p.condition.logic === LogicType.NoEffect &&
+                p.condition.extra === ExtraLogic.TypeShift
         );
 
         if (shiftPassive) {
@@ -119,7 +139,6 @@ export class DamageEngine {
                         passive.conditions
                     )
                 ) {
-                    console.log(`${passive.name}: false`);
                     continue;
                 }
             }
@@ -149,7 +168,7 @@ export class DamageEngine {
     ): number {
         const totalPercent = activePassives.reduce((sum, item) => {
             if (item.logic === LogicType.GaugeCost || item.logic === LogicType.SpecialMulti) {
-                return sum *= (item.value/100);
+                return sum *= (item.value / 100);
             }
             return sum;
         }, 1);
@@ -372,9 +391,9 @@ export class DamageEngine {
         let boost = 1;
         // 裝備加成（乘算）
         if (scope === MoveScope.Move) {
-            boost *= (1+context.config.gearMove/100);
+            boost *= (1 + context.config.gearMove / 100);
         } else if (scope === MoveScope.Sync) {
-            boost *= (1+context.config.gearSync/100);
+            boost *= (1 + context.config.gearSync / 100);
         }
         // 不用处理直接返回
         return boost;
@@ -437,7 +456,6 @@ export class DamageEngine {
 
         // todo: 增加白值属性抗性, 现在先用 全种类抵抗5
         const mitigation = context.target.statLowerReduction / 10;
-        console.log(`kangxing: ${mitigation}`);
         let currentRank = context.target.ranks[stat] || 0;
 
         // 如果命中要害, 无视对手的提升
@@ -566,13 +584,16 @@ export class DamageEngine {
                 const abnormal = cond.detail.includes("對手")
                     ? env.target.abnormal
                     : env.user.abnormal;
+                if (cond.key === "劇毒" && abnormal === "中毒") {
+                    return true
+                }
                 return cond.key.includes(abnormal);
 
             case LogicType.Hindrance:
                 const hindrance = cond.detail.includes("對手")
                     ? env.target.hindrance
                     : env.user.hindrance;
-                Object.keys(hindrance).some((status) => {
+                return Object.keys(hindrance).some((status) => {
                     const isActive = hindrance[status as HindranceType];
                     if (!isActive) return false;
 
@@ -635,11 +656,10 @@ export class DamageEngine {
                 const activeHindrance = cond.detail.includes("對手")
                     ? env.target.hindrance
                     : env.user.hindrance;
-                Object.keys(activeHindrance).some((status) => {
+                return Object.keys(activeHindrance).some((status) => {
                     const isActive = hindrance[status as HindranceType];
                     if (isActive) return true;
                 });
-                return false;
 
             case LogicType.AllStatNotInHigh:
                 const allstats = cond.detail.includes("對手")
@@ -712,6 +732,34 @@ export class DamageEngine {
                 return conds.every((subCond) => {
                     this.checkCondition(subCond, env, moveType, moveTag);
                 });
+
+            // 复合状态
+            case LogicType.MultiStatusActive:
+                if (cond?.keys) {
+                    if (cond.keys?.abnormal) {
+                        const multiAbnormal = cond.detail.includes("對手")
+                            ? env.target.abnormal
+                            : env.user.abnormal;
+                        if (cond.keys.abnormal.includes("劇毒") && multiAbnormal === "中毒") {
+                            return true
+                        }
+                        if (cond.keys.abnormal.includes(multiAbnormal)) {
+                            return true;
+                        }
+                    }
+                    if (cond.keys?.hindrance) {
+                        const multiHindrance = cond.detail.includes("對手")
+                            ? env.target.hindrance
+                            : env.user.hindrance;
+                        const t = Object.keys(multiHindrance).some((status) => {
+                            const isActive = multiHindrance[status as HindranceType];
+                            if (!isActive) return false;
+
+                            return cond.keys.hindrance.includes(status);
+                        });
+                        return t
+                    }
+                }
         }
         return false;
     }
@@ -760,7 +808,7 @@ export class DamageEngine {
                 let totalRank = 0;
                 STATS.forEach((statName) => {
                     const totalStatKey = getStatKeyByStatCnName(statName);
-                    const totalRankValue = totalStatKey === 'hp'? 0:totalStats[totalStatKey];
+                    const totalRankValue = totalStatKey === 'hp' ? 0 : totalStats[totalStatKey];
                     if (isStatLow) {
                         totalRank +=
                             totalRankValue < 0 ? Math.abs(totalRankValue) : 0;
@@ -819,7 +867,6 @@ export class DamageEngine {
                 const count = theme.tagCounts[cond.key] || 0;
                 value = (boost.baseValue ?? 0.0) + (count - 1) * boost.value;
 
-                console.log(`value:${value}`);
                 return value;
         }
 

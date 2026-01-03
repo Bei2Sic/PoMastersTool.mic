@@ -8,11 +8,21 @@
     "rarity": 4,
     "role": 3,
     "exRole": -1,
-    "ex": true,
+    "ex": false,
+    "exEffect": "拍組招式的威力會變成1.5倍",
+    "exRoleEffect": "無",
     "exclusivity": "Regular",
+    "scoutMethod": 2,
     "maxBonusLevel": 5,
     "dexNumber": "0561",
-    "count": 1
+    "count": 1,
+    "trainerId": "10089000001",
+    "startDate": "2022/08/25 14:00",
+    "gridDate": "2022/08/25 14:00",
+    "exStartDate": "2023/03/29 13:00",
+    "exRoleStartDate": "-",
+    "awakingDate": "-",
+    "extendGridDate": "-"
   },
   "scoutMethod": 2,
   "scheduleId": "FOREVER",
@@ -218,7 +228,6 @@
       }
     }
   ],
-  "luckCookies": {},
   "grid": [
     {
       "id": 1008990000,
@@ -844,5 +853,6 @@
       "color": "#BF80FF",
       "type": 11
     }
-  ]
+  ],
+  "luckCookies": {}
 }

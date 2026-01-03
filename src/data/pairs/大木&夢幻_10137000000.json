@@ -8,11 +8,20 @@
     "rarity": 3,
     "role": 3,
     "exRole": -1,
-    "ex": true,
+    "ex": false,
+    "exEffect": "拍組招式的威力會變成1.5倍",
+    "exRoleEffect": "無",
     "exclusivity": "Regular",
+    "scoutMethod": 2,
     "maxBonusLevel": 5,
     "dexNumber": "0151",
-    "count": 1
+    "count": 1,
+    "startDate": "2020/02/14 14:00:00",
+    "gridDate": "2020/02/14 14:00:00",
+    "exStartDate": "2024/08/25 14:00:00",
+    "exRoleDate": "-",
+    "awakingDate": "-",
+    "extendGridDate": "2020/02/14 14:00:00"
   },
   "scoutMethod": 2,
   "scheduleId": "update_2010_4W_FOREVER",
@@ -370,42 +379,6 @@
         100,
         100,
         100
-      ]
-    }
-  ],
-  "luckCookies": [
-    {
-      "cookieName": "大木專用潛能餅乾１",
-      "skills": [
-        {
-          "name": "攻擊時招式計量槽增加5",
-          "description": "使出招式攻擊成功時,有60%的機率會幫自己增加1條招式計量槽。",
-          "detail": [],
-          "rate": 100
-        }
-      ]
-    },
-    {
-      "cookieName": "大木專用的塔潛能餅乾１",
-      "skills": [
-        {
-          "name": "擊中要害時威力提升3",
-          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
-          "rate": 33
-        },
-        {
-          "name": "拍組招式效果絕佳時威力↑5",
-          "description": "當效果絕佳時,會提高該拍組招式的威力。",
-          "detail": [],
-          "rate": 33
-        },
-        {
-          "name": "首次上場時拍組招式增強5",
-          "description": "首次上場時,會提高自己的下次拍組招式威力增強5階段。",
-          "detail": [],
-          "rate": 33
-        }
       ]
     }
   ],
@@ -1033,6 +1006,42 @@
       "y": 3,
       "color": "#47D147",
       "type": 4
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "大木專用潛能餅乾１",
+      "skills": [
+        {
+          "name": "攻擊時招式計量槽增加5",
+          "description": "使出招式攻擊成功時,有60%的機率會幫自己增加1條招式計量槽。",
+          "detail": [],
+          "rate": 100
+        }
+      ]
+    },
+    {
+      "cookieName": "大木專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "擊中要害時威力提升3",
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "拍組招式效果絕佳時威力↑5",
+          "description": "當效果絕佳時,會提高該拍組招式的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時拍組招式增強5",
+          "description": "首次上場時,會提高自己的下次拍組招式威力增強5階段。",
+          "detail": [],
+          "rate": 33
+        }
+      ]
     }
   ]
 }

@@ -8,11 +8,20 @@
     "rarity": 5,
     "role": 1,
     "exRole": -1,
-    "ex": true,
+    "ex": false,
+    "exEffect": "拍組招式的對象會變成對手全體拍組",
+    "exRoleEffect": "無",
     "exclusivity": "Seasonal",
+    "scoutMethod": 1,
     "maxBonusLevel": 5,
     "dexNumber": "0571",
-    "count": 1
+    "count": 1,
+    "startDate": "2022/06/30 14:00:00",
+    "gridDate": "2022/06/30 14:00:00",
+    "exStartDate": "2022/06/30 14:00:00",
+    "exRoleDate": "-",
+    "awakingDate": "-",
+    "extendGridDate": "-"
   },
   "scoutMethod": 1,
   "scheduleId": "chara_4060_0630_FOREVER",
@@ -216,62 +225,6 @@
         "tags": "none",
         "group": "Sync"
       }
-    }
-  ],
-  "luckCookies": [
-    {
-      "cookieName": "Ｎ（２０２２夏季）專用潛能餅乾１",
-      "skills": [
-        {
-          "name": "首次上場時場地招式計量槽加速",
-          "description": "首次上場時,會讓我方場地變成招式計量槽加速狀態。",
-          "detail": [],
-          "rate": 100
-        }
-      ]
-    },
-    {
-      "cookieName": "N（２０２２夏季）專用的塔潛能餅乾２",
-      "skills": [
-        {
-          "name": "N(2022夏季)的全力以赴",
-          "description": "首次上場時,發動拍組招式所需的行動數會減少1次。當效果絕佳時,會提高該招式或拍組招式的威力。",
-          "detail": [
-            {
-              "name": "首次上場時計數加速1",
-              "description": "首次上場時,發動拍組招式所需的行動數會減少1次。"
-            },
-            {
-              "name": "寶可夢招式及拍組招式效果絕佳時威力↑5",
-              "description": "當效果絕佳時,會提高該招式的威力。當效果絕佳時,會提高該拍組招式的威力。"
-            }
-          ],
-          "rate": 100
-        }
-      ]
-    },
-    {
-      "cookieName": "N（２０２２夏季）專用的塔潛能餅乾１",
-      "skills": [
-        {
-          "name": "效果絕佳時威力提升5",
-          "description": "當效果絕佳時,會提高該招式的威力。",
-          "detail": [],
-          "rate": 33
-        },
-        {
-          "name": "擊中要害時威力提升3",
-          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
-          "rate": 33
-        },
-        {
-          "name": "首次上場時賦予物理/特殊增強2",
-          "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
-          "detail": [],
-          "rate": 33
-        }
-      ]
     }
   ],
   "grid": [
@@ -898,6 +851,62 @@
       "y": -3,
       "color": "#BF80FF",
       "type": 16
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "Ｎ（２０２２夏季）專用潛能餅乾１",
+      "skills": [
+        {
+          "name": "首次上場時場地招式計量槽加速",
+          "description": "首次上場時,會讓我方場地變成招式計量槽加速狀態。",
+          "detail": [],
+          "rate": 100
+        }
+      ]
+    },
+    {
+      "cookieName": "N（２０２２夏季）專用的塔潛能餅乾２",
+      "skills": [
+        {
+          "name": "N(2022夏季)的全力以赴",
+          "description": "首次上場時,發動拍組招式所需的行動數會減少1次。當效果絕佳時,會提高該招式或拍組招式的威力。",
+          "detail": [
+            {
+              "name": "首次上場時計數加速1",
+              "description": "首次上場時,發動拍組招式所需的行動數會減少1次。"
+            },
+            {
+              "name": "寶可夢招式及拍組招式效果絕佳時威力↑5",
+              "description": "當效果絕佳時,會提高該招式的威力。當效果絕佳時,會提高該拍組招式的威力。"
+            }
+          ],
+          "rate": 100
+        }
+      ]
+    },
+    {
+      "cookieName": "N（２０２２夏季）專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "效果絕佳時威力提升5",
+          "description": "當效果絕佳時,會提高該招式的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "擊中要害時威力提升3",
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時賦予物理/特殊增強2",
+          "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
+          "detail": [],
+          "rate": 33
+        }
+      ]
     }
   ]
 }

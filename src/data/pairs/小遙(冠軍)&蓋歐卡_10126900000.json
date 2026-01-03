@@ -8,11 +8,20 @@
     "rarity": 5,
     "role": 5,
     "exRole": 1,
-    "ex": true,
+    "ex": false,
+    "exEffect": "首次使出拍組招式前，會使下列場地效果生效。 僅此時生效的場地效果時間會延長。\n・下雨",
+    "exRoleEffect": "拍組招式的對象會變成對手全體拍組",
     "exclusivity": "Master",
+    "scoutMethod": 1,
     "maxBonusLevel": 5,
     "dexNumber": "0382",
-    "count": 1
+    "count": 1,
+    "startDate": "2025/02/28 14:00:00",
+    "gridDate": "2025/02/28 14:00:00",
+    "exStartDate": "2025/02/28 14:00:00",
+    "exRoleDate": "2025/02/28 14:00:00",
+    "awakingDate": "-",
+    "extendGridDate": "-"
   },
   "scoutMethod": 1,
   "scheduleId": "chara_7020_0228_FOREVER",
@@ -432,42 +441,6 @@
         100,
         100,
         100
-      ]
-    }
-  ],
-  "luckCookies": [
-    {
-      "cookieName": "小遙（冠軍）專用潛能餅乾１",
-      "skills": [
-        {
-          "name": "下雨時拍組招式提升4",
-          "description": "當天氣為下雨時,會提高拍組招式的威力。",
-          "detail": [],
-          "rate": 100
-        }
-      ]
-    },
-    {
-      "cookieName": "小遙（冠軍）專用的塔潛能餅乾１",
-      "skills": [
-        {
-          "name": "天氣場地領域變化時計量槽加速2",
-          "description": "只有在天氣、場地或領域變化時,招式計量槽會累積得較快。",
-          "detail": [],
-          "rate": 33
-        },
-        {
-          "name": "擊中要害時威力提升3",
-          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
-          "rate": 33
-        },
-        {
-          "name": "天氣場地領域變化時拍組招式↑G2",
-          "description": "只有在天氣、場地或領域變化時,會提高我方全體拍組的拍組招式的威力。",
-          "detail": [],
-          "rate": 33
-        }
       ]
     }
   ],
@@ -1121,6 +1094,42 @@
       "y": 3,
       "color": "#BF80FF",
       "type": 3
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "小遙（冠軍）專用潛能餅乾１",
+      "skills": [
+        {
+          "name": "下雨時拍組招式提升4",
+          "description": "當天氣為下雨時,會提高拍組招式的威力。",
+          "detail": [],
+          "rate": 100
+        }
+      ]
+    },
+    {
+      "cookieName": "小遙（冠軍）專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "天氣場地領域變化時計量槽加速2",
+          "description": "只有在天氣、場地或領域變化時,招式計量槽會累積得較快。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "擊中要害時威力提升3",
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "天氣場地領域變化時拍組招式↑G2",
+          "description": "只有在天氣、場地或領域變化時,會提高我方全體拍組的拍組招式的威力。",
+          "detail": [],
+          "rate": 33
+        }
+      ]
     }
   ]
 }

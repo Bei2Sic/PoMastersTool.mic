@@ -8,11 +8,20 @@
     "rarity": 5,
     "role": 4,
     "exRole": 0,
-    "ex": true,
+    "ex": false,
+    "exEffect": "首次使出拍組招式時，發動拍組招式所需的行動數會減少3次。",
+    "exRoleEffect": "拍組招式的對象會變成對手全體拍組",
     "exclusivity": "Regular",
+    "scoutMethod": 2,
     "maxBonusLevel": 5,
     "dexNumber": "0448",
-    "count": 1
+    "count": 1,
+    "startDate": "2024/02/19 14:00:00",
+    "gridDate": "2024/02/19 14:00:00",
+    "exStartDate": "2024/02/19 14:00:00",
+    "exRoleDate": "2024/02/19 14:00:00",
+    "awakingDate": "-",
+    "extendGridDate": "-"
   },
   "scoutMethod": 2,
   "scheduleId": "chara_6010_0219_FOREVER",
@@ -346,7 +355,6 @@
       ]
     }
   ],
-  "luckCookies": {},
   "grid": [
     {
       "id": 1015600000,
@@ -972,5 +980,6 @@
       "color": "#BF80FF",
       "type": 7
     }
-  ]
+  ],
+  "luckCookies": {}
 }

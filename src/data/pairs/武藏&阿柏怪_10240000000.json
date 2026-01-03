@@ -9,10 +9,19 @@
     "role": 1,
     "exRole": -1,
     "ex": false,
+    "exEffect": "拍組招式的對象會變成對手全體拍組",
+    "exRoleEffect": "無",
     "exclusivity": "Regular",
+    "scoutMethod": 2,
     "maxBonusLevel": 5,
     "dexNumber": "0024",
-    "count": 1
+    "count": 1,
+    "startDate": "2020/07/09 14:00:00",
+    "gridDate": "2020/07/09 14:00:00",
+    "exStartDate": "-",
+    "exRoleDate": "-",
+    "awakingDate": "-",
+    "extendGridDate": "-"
   },
   "scoutMethod": 2,
   "scheduleId": "update_2060_M23_1",
@@ -202,7 +211,6 @@
       }
     }
   ],
-  "luckCookies": {},
   "grid": [
     {
       "id": 1024000000,
@@ -282,5 +290,6 @@
       "color": "#779EFF",
       "type": 0
     }
-  ]
+  ],
+  "luckCookies": {}
 }

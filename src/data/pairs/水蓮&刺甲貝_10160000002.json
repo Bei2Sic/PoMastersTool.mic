@@ -8,11 +8,20 @@
     "rarity": 5,
     "role": 2,
     "exRole": 5,
-    "ex": true,
-    "exclusivity": "Regular",
+    "ex": false,
+    "exEffect": "首次使出拍組招式時，氣魄會提高2階段",
+    "exRoleEffect": "首次使出拍組招式前，會使下列場地效果生效。 僅此時生效的場地效果時間會延長。\n・下雨",
+    "exclusivity": "Gym",
+    "scoutMethod": 4,
     "maxBonusLevel": 10,
     "dexNumber": "0091",
-    "count": 1
+    "count": 1,
+    "startDate": "2025/08/01 14:00:00",
+    "gridDate": "2025/08/01 14:00:00",
+    "exStartDate": "2025/08/01 14:00:00",
+    "exRoleDate": "2025/08/01 14:00:00",
+    "awakingDate": "2025/08/01 14:00:00",
+    "extendGridDate": "-"
   },
   "scoutMethod": 4,
   "scheduleId": "chara_7070_0801_FOREVER",
@@ -240,7 +249,6 @@
       }
     }
   ],
-  "luckCookies": {},
   "grid": [
     {
       "id": 1016000200,
@@ -866,5 +874,6 @@
       "color": "#BF80FF",
       "type": 3
     }
-  ]
+  ],
+  "luckCookies": {}
 }

@@ -8,11 +8,20 @@
     "rarity": 5,
     "role": 2,
     "exRole": 4,
-    "ex": true,
+    "ex": false,
+    "exEffect": "首次使出拍組招式時，氣魄會提高2階段",
+    "exRoleEffect": "首次使出拍組招式時，發動拍組招式所需的行動數會減少3次。",
     "exclusivity": "Regular",
+    "scoutMethod": 2,
     "maxBonusLevel": 5,
     "dexNumber": "0716",
-    "count": 1
+    "count": 1,
+    "startDate": "2021/02/11 14:00:00",
+    "gridDate": "2021/02/11 14:00:00",
+    "exStartDate": "2023/01/12 14:00:00",
+    "exRoleDate": "2025/09/09 14:00:00",
+    "awakingDate": "-",
+    "extendGridDate": "2023/02/13 14:00:00"
   },
   "scoutMethod": 2,
   "scheduleId": "event_3010_3W_FOREVER",
@@ -211,53 +220,6 @@
         "tags": "none",
         "group": "Sync"
       }
-    }
-  ],
-  "luckCookies": [
-    {
-      "cookieName": "布拉塔諾專用潛能餅乾１",
-      "skills": [
-        {
-          "name": "上場時攻擊提升G1",
-          "description": "上場時,會提高我方全體拍組的攻擊1階段。",
-          "detail": [],
-          "rate": 100
-        }
-      ]
-    },
-    {
-      "cookieName": "布拉塔諾專用的塔潛能餅乾１",
-      "skills": [
-        {
-          "name": "被攻擊時HP回復G9",
-          "description": "受到招式攻擊時,會回復我方全體拍組的HP。",
-          "detail": [],
-          "rate": 33
-        },
-        {
-          "name": "首次上場時物理/特殊增強G1",
-          "description": "首次上場時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
-          "detail": [],
-          "rate": 33
-        },
-        {
-          "name": "首次上場時拍組招式增強G3",
-          "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
-          "detail": [],
-          "rate": 33
-        }
-      ]
-    },
-    {
-      "cookieName": "布拉塔諾專用潛能餅乾２",
-      "skills": [
-        {
-          "name": "妨害狀態無效",
-          "description": "不會陷入畏縮狀態、混亂狀態或束縛狀態。",
-          "detail": [],
-          "rate": 100
-        }
-      ]
     }
   ],
   "grid": [
@@ -962,6 +924,53 @@
       "y": -2,
       "color": "#FFC266",
       "type": 0
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "布拉塔諾專用潛能餅乾１",
+      "skills": [
+        {
+          "name": "上場時攻擊提升G1",
+          "description": "上場時,會提高我方全體拍組的攻擊1階段。",
+          "detail": [],
+          "rate": 100
+        }
+      ]
+    },
+    {
+      "cookieName": "布拉塔諾專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "被攻擊時HP回復G9",
+          "description": "受到招式攻擊時,會回復我方全體拍組的HP。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時物理/特殊增強G1",
+          "description": "首次上場時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時拍組招式增強G3",
+          "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
+          "detail": [],
+          "rate": 33
+        }
+      ]
+    },
+    {
+      "cookieName": "布拉塔諾專用潛能餅乾２",
+      "skills": [
+        {
+          "name": "妨害狀態無效",
+          "description": "不會陷入畏縮狀態、混亂狀態或束縛狀態。",
+          "detail": [],
+          "rate": 100
+        }
+      ]
     }
   ]
 }

@@ -28,8 +28,8 @@ export const ABNORMAL_STATUSES = [
     "灼傷",
     "麻痺",
     "冰凍",
+    "劇毒", // 劇毒優先匹配
     "中毒",
-    "劇毒",
     "睡眠",
 ] as const;
 

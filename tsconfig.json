@@ -5,20 +5,22 @@
         "./src/*"
       ]
     },
-    "target": "ES2022", 
+    "target": "ES2022",
     "lib": [
-      "ES2022", 
-      "DOM", 
+      "ES2022",
+      "DOM",
       "DOM.Iterable"
     ],
-    
-    "module": "ES2022", 
-    "moduleResolution": "bundler", 
-    
+    "module": "ES2022",
+    "moduleResolution": "bundler",
     "esModuleInterop": true,
     "strict": false,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "types": [
+      "vite/client",
+      "pinia-plugin-persistedstate"
+    ]
   },
   "exclude": [
     "node_modules",

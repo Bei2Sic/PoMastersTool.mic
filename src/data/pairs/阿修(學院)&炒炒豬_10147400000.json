@@ -8,11 +8,20 @@
     "rarity": 5,
     "role": 2,
     "exRole": 5,
-    "ex": true,
+    "ex": false,
+    "exEffect": "首次使出拍組招式時，氣魄會提高2階段",
+    "exRoleEffect": "首次使出拍組招式前，會使下列場地效果生效。 僅此時生效的場地效果時間會延長。\n・晴天",
     "exclusivity": "Academy",
+    "scoutMethod": 5,
     "maxBonusLevel": 5,
     "dexNumber": "0499",
-    "count": 1
+    "count": 1,
+    "startDate": "2025/11/14 14:00:00",
+    "gridDate": "2025/11/14 14:00:00",
+    "exStartDate": "2025/11/14 14:00:00",
+    "exRoleDate": "2025/11/14 14:00:00",
+    "awakingDate": "-",
+    "extendGridDate": "-"
   },
   "scoutMethod": 5,
   "scheduleId": "chara_7100_1114_FOREVER",
@@ -157,7 +166,6 @@
       }
     }
   ],
-  "luckCookies": {},
   "grid": [
     {
       "id": 1014740000,
@@ -1806,5 +1814,6 @@
       "color": "#779EFF",
       "type": 0
     }
-  ]
+  ],
+  "luckCookies": {}
 }

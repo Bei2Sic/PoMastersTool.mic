@@ -12,9 +12,9 @@ import {
     SyncComputed,
     SyncDynamicState,
     SyncMethods,
-    SyncRawData,
     Tile,
 } from "@/types/syncModel";
+import type { GlobalSyncCache, SyncMeta, SyncRawData } from "@/types/cache";
 import { defineStore } from "pinia";
 import { computed, reactive } from "vue";
 
@@ -307,7 +307,6 @@ const createSync = (jsonData: SyncRawData): Sync => {
             }
 
             const variationList = jsonData.pokemon.map((item) => {
-                console.log(item.form);
                 switch (item.variationType) {
                     case 1:
                         return "超級進化";

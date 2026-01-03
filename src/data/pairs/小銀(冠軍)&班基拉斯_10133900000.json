@@ -8,11 +8,20 @@
     "rarity": 5,
     "role": 0,
     "exRole": 4,
-    "ex": true,
+    "ex": false,
+    "exEffect": "拍組招式的對象會變成對手全體拍組",
+    "exRoleEffect": "首次使出拍組招式時，發動拍組招式所需的行動數會減少3次。",
     "exclusivity": "Master",
+    "scoutMethod": 1,
     "maxBonusLevel": 5,
     "dexNumber": "0248",
-    "count": 1
+    "count": 1,
+    "startDate": "2024/03/01 14:00:00",
+    "gridDate": "2024/03/01 14:00:00",
+    "exStartDate": "2024/03/01 14:00:00",
+    "exRoleDate": "2024/03/01 14:00:00",
+    "awakingDate": "-",
+    "extendGridDate": "2025/07/25 14:00:00"
   },
   "scoutMethod": 1,
   "scheduleId": "chara_6020_0301_FOREVER",
@@ -396,42 +405,6 @@
         100,
         100,
         100
-      ]
-    }
-  ],
-  "luckCookies": [
-    {
-      "cookieName": "小銀（冠軍）專用潛能餅乾１",
-      "skills": [
-        {
-          "name": "沙暴時寶可夢招式及拍組招式瞄準要害1",
-          "description": "當天氣為沙暴且使出招式或拍組招式攻擊時,容易擊中要害。",
-          "detail": [],
-          "rate": 100
-        }
-      ]
-    },
-    {
-      "cookieName": "小銀（冠軍）專用的塔潛能餅乾１",
-      "skills": [
-        {
-          "name": "效果絕佳時威力提升5",
-          "description": "當效果絕佳時,會提高該招式的威力。",
-          "detail": [],
-          "rate": 33
-        },
-        {
-          "name": "擊中要害時威力提升3",
-          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
-          "rate": 33
-        },
-        {
-          "name": "首次上場時賦予物理/特殊增強2",
-          "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
-          "detail": [],
-          "rate": 33
-        }
       ]
     }
   ],
@@ -1124,6 +1097,42 @@
       "y": -2,
       "color": "#FFC266",
       "type": 0
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "小銀（冠軍）專用潛能餅乾１",
+      "skills": [
+        {
+          "name": "沙暴時寶可夢招式及拍組招式瞄準要害1",
+          "description": "當天氣為沙暴且使出招式或拍組招式攻擊時,容易擊中要害。",
+          "detail": [],
+          "rate": 100
+        }
+      ]
+    },
+    {
+      "cookieName": "小銀（冠軍）專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "效果絕佳時威力提升5",
+          "description": "當效果絕佳時,會提高該招式的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "擊中要害時威力提升3",
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時賦予物理/特殊增強2",
+          "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
+          "detail": [],
+          "rate": 33
+        }
+      ]
     }
   ]
 }

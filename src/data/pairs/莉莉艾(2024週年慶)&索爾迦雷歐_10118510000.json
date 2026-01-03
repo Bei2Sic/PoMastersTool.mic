@@ -8,11 +8,20 @@
     "rarity": 5,
     "role": 4,
     "exRole": 5,
-    "ex": true,
+    "ex": false,
+    "exEffect": "首次使出拍組招式時，發動拍組招式所需的行動數會減少3次。",
+    "exRoleEffect": "首次使出拍組招式前，會使下列場地效果生效。 僅此時生效的場地效果時間會延長。\n・鋼鐵領域",
     "exclusivity": "Regular",
+    "scoutMethod": 2,
     "maxBonusLevel": 5,
     "dexNumber": "0791",
-    "count": 1
+    "count": 1,
+    "startDate": "2024/08/28 14:00:00",
+    "gridDate": "2024/08/28 14:00:00",
+    "exStartDate": "2024/08/28 14:00:00",
+    "exRoleDate": "2024/08/28 14:00:00",
+    "awakingDate": "-",
+    "extendGridDate": "-"
   },
   "scoutMethod": 2,
   "scheduleId": "chara_6080_0828_FOREVER",
@@ -216,19 +225,6 @@
         "tags": "none",
         "group": "Sync"
       }
-    }
-  ],
-  "luckCookies": [
-    {
-      "cookieName": "莉莉艾（2024週年慶）專用潛能餅乾１",
-      "skills": [
-        {
-          "name": "首次上場時場地招式計量槽加速",
-          "description": "首次上場時,會讓我方場地變成招式計量槽加速狀態。",
-          "detail": [],
-          "rate": 100
-        }
-      ]
     }
   ],
   "grid": [
@@ -855,6 +851,19 @@
       "y": -3,
       "color": "#BF80FF",
       "type": 17
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "莉莉艾（2024週年慶）專用潛能餅乾１",
+      "skills": [
+        {
+          "name": "首次上場時場地招式計量槽加速",
+          "description": "首次上場時,會讓我方場地變成招式計量槽加速狀態。",
+          "detail": [],
+          "rate": 100
+        }
+      ]
     }
   ]
 }

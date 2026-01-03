@@ -4,7 +4,7 @@ import {
     WEATHER_TYPES,
 } from "@/constances/battle";
 import { MOVE_OVERRIDES } from "@/constances/move";
-import { LogicType } from "@/types/calculator";
+import { LogicType, Condition } from "@/types/calculator";
 import { DEFAULT_MOVE_SKILL, MoveSkillModel } from "@/types/moveModel";
 
 export class MoveSkillParser {
@@ -46,12 +46,7 @@ export class MoveSkillParser {
             name: this.name,
             desc: this.desc,
 
-            condition: {
-                key: logicResult.key,
-                detail: logicResult.detail,
-                direction: logicResult.direction,
-                logic: logicResult.logic,
-            },
+            condition: logicResult,
         };
     }
 
@@ -67,17 +62,11 @@ export class MoveSkillParser {
     }
 
     // --- 解析邏輯與條件 (Logic & Condition) ---
-    private resolveLogicAndCondition(): {
-        logic: LogicType;
-        key: string;
-        detail: string;
-        direction?: string;
-    } {
+    private resolveLogicAndCondition(): Condition {
         const desc = this.desc;
 
         // 动态类
         if (desc.includes("越多,威力就越大")) {
-            console.log(desc);
             const match = desc.match(
                 /(自己的|對手的)(.+?)(提高|降低)得越多[，,]\s*威力就越大/
             );
@@ -87,7 +76,6 @@ export class MoveSkillParser {
                 const dirStr = match[3];
 
                 const isTotal = statStr === "能力";
-                console.log(targetStr, statStr, dirStr);
                 return {
                     logic: isTotal
                         ? LogicType.TotalStatScaling
@@ -154,6 +142,20 @@ export class MoveSkillParser {
                 key: "任意",
                 detail: "對手",
             };
+        // 特殊的妨害状态  聂凯&败露球菇
+        if (desc.includes("畏縮、混亂或束縛狀態時")) {
+            return {
+                logic: LogicType.MultiStatusActive,
+                key: "複合狀態",
+                keys: {
+                    hindrance: HINDRANCE_STATUSES.filter(status =>
+                        !["禁止替換"].includes(status)
+                    ),
+                },
+                detail: desc.includes("對手") ? "對手" : "自身",
+            };
+        }
+
 
         // 環境/狀態類
         // 傷害場地

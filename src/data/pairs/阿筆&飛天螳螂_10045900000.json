@@ -8,11 +8,20 @@
     "rarity": 4,
     "role": 2,
     "exRole": -1,
-    "ex": true,
+    "ex": false,
+    "exEffect": "首次使出拍組招式時，氣魄會提高2階段",
+    "exRoleEffect": "無",
     "exclusivity": "Regular",
+    "scoutMethod": 2,
     "maxBonusLevel": 5,
     "dexNumber": "0123",
-    "count": 1
+    "count": 1,
+    "startDate": "2021/07/22 14:00:00",
+    "gridDate": "2021/07/22 14:00:00",
+    "exStartDate": "-",
+    "exRoleDate": "-",
+    "awakingDate": "-",
+    "extendGridDate": "-"
   },
   "scoutMethod": 2,
   "scheduleId": "event_3060_4W_Buddy_Exchange_FOREVER",
@@ -213,7 +222,6 @@
       }
     }
   ],
-  "luckCookies": {},
   "grid": [
     {
       "id": 1004590000,
@@ -839,5 +847,6 @@
       "color": "#BF80FF",
       "type": 12
     }
-  ]
+  ],
+  "luckCookies": {}
 }

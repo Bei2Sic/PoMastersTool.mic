@@ -9,6 +9,18 @@
                     </span>
                 </transition>
             </div>
+            <div class="sort-controls">
+                <select v-model="sortField" class="sort-select">
+                    <option value="_startDate">登陸日期</option>
+                    <option value="_dexNumber">圖鑑編號</option>
+                    <option value="_exStartDate">EX 開放日</option>
+                    <option value="_gridDate">石盤開放日</option>
+                </select>
+                <button class="sort-direction-btn" @click="toggleSortOrder"
+                    :title="sortDesc ? '降序 (新->舊)' : '升序 (舊->新)'">
+                    {{ sortDesc ? '⬇️' : '⬆️' }}
+                </button>
+            </div>
             <button class="filter-toggle-btn" @click="showFilterModal = true">
                 <span class="icon-filter">≡</span> 篩選
                 <span v-if="activeFilterCount > 0" class="badge">{{ activeFilterCount }}</span>
@@ -71,12 +83,14 @@
                                     <span class="arrow-icon" :class="{ rotated: sectionState.exclusivity }">▼</span>
                                 </div>
                                 <transition name="collapse">
-                                    <div v-show="sectionState.exclusivity"  class="options-grid exclusivity">
-                                        <button v-for="tab in exclusivityTabs" :key="tab.key" class="option-btn icon-text-btn"
+                                    <div v-show="sectionState.exclusivity" class="options-grid exclusivity">
+                                        <button v-for="tab in exclusivityTabs" :key="tab.key"
+                                            class="option-btn icon-text-btn"
                                             :class="{ active: tempFilters.exclusivity.includes(tab.key) }"
                                             @click="toggleFilter('exclusivity', tab.key)">
 
-                                            <img v-if="tab.iconName" :src="getUiIcon(tab.iconName)" class="filter-icon" />
+                                            <img v-if="tab.iconName" :src="getUiIcon(tab.iconName)"
+                                                class="filter-icon" />
                                             {{ tab.label }}
                                         </button>
                                     </div>
@@ -202,7 +216,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="filter-footer">
                         <button class="cancel-btn" @click="showFilterModal = false">取消</button>
                         <button class="confirm-btn" @click="applyFilters">確認</button>
@@ -224,10 +237,10 @@ import {
 } from "@/constances/battle";
 import { ExclusivityMap, RoleMap, ThemeMap, TypeMap } from "@/constances/map";
 import { useSyncCacheStore } from "@/stores/syncCache";
-import { SyncMeta } from "@/types/syncModel";
+import { SyncMeta } from "@/types/cache";
 import { getTrainerUrl } from '@/utils/format';
 import { Converter } from 'opencc-js';
-import { computed, reactive, ref } from 'vue';
+import { computed, reactive, ref, watch } from 'vue';
 
 
 // --- 数据准备 ---
@@ -239,6 +252,21 @@ const emit = defineEmits(['select-trainer', 'close-modal']);
 // --- 简繁转换 ---
 const converter = Converter({ from: 'cn', to: 'tw' });
 const toTraditional = (text: string) => text ? converter(text) : '';
+
+// --- 排序 ---
+const sortField = computed({
+    get: () => syncCacheStore.sortField,
+    set: (val) => syncCacheStore.updateSort(val, syncCacheStore.sortDesc)
+});
+const sortDesc = computed({
+    get: () => syncCacheStore.sortDesc,
+    set: (val) => syncCacheStore.updateSort(syncCacheStore.sortField, val)
+});
+
+// 切換升序/降序
+const toggleSortOrder = () => {
+    syncCacheStore.updateSort(syncCacheStore.sortField, !syncCacheStore.sortDesc);
+};
 
 // --- 分页控制 ---
 // 1. 控制“大分页”：'basic' (基础) vs 'skills' (技能)
@@ -305,14 +333,14 @@ const getRarityIcon = (rarity: number) => {
 // --- 筛选状态 ---
 const showFilterModal = ref(false);
 
-const tempFilters = reactive({
-    exclusivity: [],
-    types: [],
-    weaknesses: [],
-    rarity: [],
-    roles: [],
-    exRoles: [],
-    themes: []
+const tempFilters = reactive(JSON.parse(JSON.stringify(syncCacheStore.savedFilters)));
+watch(showFilterModal, (isOpen) => {
+    if (isOpen) {
+        const currentSaved = JSON.parse(JSON.stringify(syncCacheStore.savedFilters));
+        // 逐个属性覆盖，保持 reactive 引用不变
+        Object.assign(tempFilters, currentSaved);
+        activeMainTab.value = 'basic';
+    }
 });
 
 const sectionState = reactive<Record<string, boolean>>({
@@ -415,7 +443,30 @@ const filteredTrainers = computed(() => {
         result = result.filter(t => filters.exclusivity.includes(t.exclusivity));
     }
 
-    return result;
+    return result.sort((a: SyncMeta, b: SyncMeta) => {
+        // 獲取比較的值
+        const field = sortField.value;
+        const valA = a[field];
+        const valB = b[field];
+
+        // // --- 日期類型排序 ---
+        // if (['_startDate', '_exStartDate', '_gridDate', '_exRoleDate'].includes(field)) {
+        //     const timeA = getSafeTimestamp(valA);
+        //     const timeB = getSafeTimestamp(valB);
+
+        //     // 兩者都是 0 (無效日期) -> 保持原順序
+        //     if (timeA === 0 && timeB === 0) return 0;
+
+        //     // 降序 (大到小): 新 -> 舊 (無效日期沉底)
+        //     // 升序 (小到大): 舊 -> 新 (無效日期在前)
+        //     return sortDesc.value ? timeB - timeA : timeA - timeB;
+        // }
+
+        // --- 默認排序 (ID 等) ---
+        if (valA === valB) return 0;
+        const compare = (valA > valB) ? 1 : -1;
+        return sortDesc.value ? -compare : compare;
+    });
 });
 
 const handleSelect = (trainer: SyncMeta) => {
@@ -447,6 +498,42 @@ const handleSelect = (trainer: SyncMeta) => {
     position: relative;
     display: flex;
     align-items: center;
+}
+
+.sort-controls {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.sort-select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+    font-size: 13px;
+    color: #333;
+    cursor: pointer;
+    outline: none;
+}
+
+.sort-direction-btn {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+}
+
+.sort-direction-btn:hover,
+.sort-select:hover {
+    background-color: #f5f5f5;
+    border-color: #ccc;
 }
 
 .filter-input {

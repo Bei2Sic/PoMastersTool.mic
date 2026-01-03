@@ -9,10 +9,19 @@
     "role": 2,
     "exRole": -1,
     "ex": false,
+    "exEffect": "首次使出拍組招式時，氣魄會提高2階段",
+    "exRoleEffect": "無",
     "exclusivity": "Regular",
+    "scoutMethod": 2,
     "maxBonusLevel": 5,
     "dexNumber": "0869",
-    "count": 5
+    "count": 5,
+    "startDate": "2024/02/14 14:00:00",
+    "gridDate": "2024/02/14 14:00:00",
+    "exStartDate": "-",
+    "exRoleDate": "-",
+    "awakingDate": "-",
+    "extendGridDate": "-"
   },
   "scoutMethod": 2,
   "scheduleId": "chara_6010_0214_FOREVER",
@@ -206,7 +215,6 @@
       }
     }
   ],
-  "luckCookies": {},
   "grid": [
     {
       "id": 1800097000,
@@ -832,5 +840,6 @@
       "color": "#BF80FF",
       "type": 18
     }
-  ]
+  ],
+  "luckCookies": {}
 }

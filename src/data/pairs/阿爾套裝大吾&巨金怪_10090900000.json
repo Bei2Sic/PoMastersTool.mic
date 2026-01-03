@@ -8,11 +8,20 @@
     "rarity": 5,
     "role": 6,
     "exRole": 2,
-    "ex": true,
+    "ex": false,
+    "exEffect": "首次使出拍組招式時，會降低對手全體拍組的下列屬性的屬性抵抗１階段\n・鋼",
+    "exRoleEffect": "首次使出拍組招式時，氣魄會提高2階段",
     "exclusivity": "Arcsuit",
+    "scoutMethod": 1,
     "maxBonusLevel": 5,
     "dexNumber": "0376",
-    "count": 2
+    "count": 2,
+    "startDate": "2024/08/30 14:00:00",
+    "gridDate": "2024/08/30 14:00:00",
+    "exStartDate": "2024/08/30 14:00:00",
+    "exRoleDate": "2024/08/30 14:00:00",
+    "awakingDate": "-",
+    "extendGridDate": "-"
   },
   "scoutMethod": 1,
   "scheduleId": "chara_6080_0830_FOREVER",
@@ -406,42 +415,6 @@
         110,
         110,
         110
-      ]
-    }
-  ],
-  "luckCookies": [
-    {
-      "cookieName": "阿爾套裝大吾專用潛能餅乾１",
-      "skills": [
-        {
-          "name": "上場時附帶回復G",
-          "description": "上場時,會讓我方全體拍組變成附帶回復狀態。",
-          "detail": [],
-          "rate": 100
-        }
-      ]
-    },
-    {
-      "cookieName": "阿爾套裝大吾專用的塔潛能餅乾１",
-      "skills": [
-        {
-          "name": "招式後招式計量槽增加9",
-          "description": "招式成功時,會幫自己增加1條招式計量槽。",
-          "detail": [],
-          "rate": 33
-        },
-        {
-          "name": "擊中要害時威力提升3",
-          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
-          "rate": 33
-        },
-        {
-          "name": "首次上場時拍組招式增強G3",
-          "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
-          "detail": [],
-          "rate": 33
-        }
       ]
     }
   ],
@@ -1121,6 +1094,42 @@
       "y": 1,
       "color": "#BF80FF",
       "type": 17
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "阿爾套裝大吾專用潛能餅乾１",
+      "skills": [
+        {
+          "name": "上場時附帶回復G",
+          "description": "上場時,會讓我方全體拍組變成附帶回復狀態。",
+          "detail": [],
+          "rate": 100
+        }
+      ]
+    },
+    {
+      "cookieName": "阿爾套裝大吾專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "招式後招式計量槽增加9",
+          "description": "招式成功時,會幫自己增加1條招式計量槽。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "擊中要害時威力提升3",
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時拍組招式增強G3",
+          "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
+          "detail": [],
+          "rate": 33
+        }
+      ]
     }
   ]
 }

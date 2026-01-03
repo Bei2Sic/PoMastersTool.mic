@@ -8,11 +8,20 @@
     "rarity": 5,
     "role": 2,
     "exRole": -1,
-    "ex": true,
+    "ex": false,
+    "exEffect": "首次使出拍組招式時，氣魄會提高2階段",
+    "exRoleEffect": "無",
     "exclusivity": "Seasonal",
+    "scoutMethod": 1,
     "maxBonusLevel": 5,
     "dexNumber": "0302",
-    "count": 1
+    "count": 1,
+    "startDate": "2021/10/16 14:00:00",
+    "gridDate": "2021/10/16 14:00:00",
+    "exStartDate": "2021/10/16 14:00:00",
+    "exRoleDate": "-",
+    "awakingDate": "-",
+    "extendGridDate": "2025/05/20 14:00:00"
   },
   "scoutMethod": 1,
   "scheduleId": "chara_3090_1016_FOREVER",
@@ -386,42 +395,6 @@
         100,
         120,
         100
-      ]
-    }
-  ],
-  "luckCookies": [
-    {
-      "cookieName": "嘉德麗雅（２０２１秋季）專用潛能餅乾１",
-      "skills": [
-        {
-          "name": "訓練家出招後擊中要害率提升G9",
-          "description": "在訓練家使出招式時,會提高我方全體拍組的擊中要害率1階段。",
-          "detail": [],
-          "rate": 100
-        }
-      ]
-    },
-    {
-      "cookieName": "嘉德麗雅（２０２１秋季）專用的塔潛能餅乾１",
-      "skills": [
-        {
-          "name": "被攻擊時HP回復G9",
-          "description": "受到招式攻擊時,會回復我方全體拍組的HP。",
-          "detail": [],
-          "rate": 33
-        },
-        {
-          "name": "首次上場時物理/特殊增強G1",
-          "description": "首次上場時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
-          "detail": [],
-          "rate": 33
-        },
-        {
-          "name": "首次上場時拍組招式增強G3",
-          "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
-          "detail": [],
-          "rate": 33
-        }
       ]
     }
   ],
@@ -1088,6 +1061,42 @@
       "y": 1,
       "color": "#BF80FF",
       "type": 16
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "嘉德麗雅（２０２１秋季）專用潛能餅乾１",
+      "skills": [
+        {
+          "name": "訓練家出招後擊中要害率提升G9",
+          "description": "在訓練家使出招式時,會提高我方全體拍組的擊中要害率1階段。",
+          "detail": [],
+          "rate": 100
+        }
+      ]
+    },
+    {
+      "cookieName": "嘉德麗雅（２０２１秋季）專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "被攻擊時HP回復G9",
+          "description": "受到招式攻擊時,會回復我方全體拍組的HP。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時物理/特殊增強G1",
+          "description": "首次上場時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時拍組招式增強G3",
+          "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
+          "detail": [],
+          "rate": 33
+        }
+      ]
     }
   ]
 }

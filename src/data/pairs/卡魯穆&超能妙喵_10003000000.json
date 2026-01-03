@@ -8,11 +8,20 @@
     "rarity": 5,
     "role": 3,
     "exRole": -1,
-    "ex": true,
+    "ex": false,
+    "exEffect": "拍組招式的威力會變成1.5倍",
+    "exRoleEffect": "無",
     "exclusivity": "Regular",
+    "scoutMethod": 2,
     "maxBonusLevel": 5,
     "dexNumber": "0678",
-    "count": 1
+    "count": 1,
+    "startDate": "2019/11/07 14:00:00",
+    "gridDate": "2019/11/07 14:00:00",
+    "exStartDate": "2022/03/25 14:00:00",
+    "exRoleDate": "-",
+    "awakingDate": "-",
+    "extendGridDate": "2020/04/20 14:00:00"
   },
   "scoutMethod": 2,
   "scheduleId": "update_M3_2W_FOREVER",
@@ -211,51 +220,6 @@
         "tags": "none",
         "group": "Sync"
       }
-    }
-  ],
-  "luckCookies": [
-    {
-      "cookieName": "卡魯穆專用的塔潛能餅乾２",
-      "skills": [
-        {
-          "name": "卡魯穆的全心全意",
-          "description": "在寶可夢首次使出變化招式時,會讓發動拍組招式所需的行動數減少2次。在寶可夢使出變化招式時,會讓自己變成下次計量槽消耗0狀態。",
-          "detail": [
-            {
-              "name": "寶可夢首次使出變化招式時計數加速2",
-              "description": "在寶可夢首次使出變化招式時,會讓發動拍組招式所需的行動數減少2次。"
-            },
-            {
-              "name": "寶可夢使出變化招式時下次不消耗計量槽9",
-              "description": "在寶可夢使出變化招式時,會讓自己變成下次計量槽消耗0狀態。"
-            }
-          ],
-          "rate": 100
-        }
-      ]
-    },
-    {
-      "cookieName": "卡魯穆專用的塔潛能餅乾１",
-      "skills": [
-        {
-          "name": "擊中要害時威力提升3",
-          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
-          "rate": 33
-        },
-        {
-          "name": "拍組招式效果絕佳時威力↑5",
-          "description": "當效果絕佳時,會提高該拍組招式的威力。",
-          "detail": [],
-          "rate": 33
-        },
-        {
-          "name": "首次上場時拍組招式增強5",
-          "description": "首次上場時,會提高自己的下次拍組招式威力增強5階段。",
-          "detail": [],
-          "rate": 33
-        }
-      ]
     }
   ],
   "grid": [
@@ -882,6 +846,51 @@
       "y": -3,
       "color": "#BF80FF",
       "type": 11
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "卡魯穆專用的塔潛能餅乾２",
+      "skills": [
+        {
+          "name": "卡魯穆的全心全意",
+          "description": "在寶可夢首次使出變化招式時,會讓發動拍組招式所需的行動數減少2次。在寶可夢使出變化招式時,會讓自己變成下次計量槽消耗0狀態。",
+          "detail": [
+            {
+              "name": "寶可夢首次使出變化招式時計數加速2",
+              "description": "在寶可夢首次使出變化招式時,會讓發動拍組招式所需的行動數減少2次。"
+            },
+            {
+              "name": "寶可夢使出變化招式時下次不消耗計量槽9",
+              "description": "在寶可夢使出變化招式時,會讓自己變成下次計量槽消耗0狀態。"
+            }
+          ],
+          "rate": 100
+        }
+      ]
+    },
+    {
+      "cookieName": "卡魯穆專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "擊中要害時威力提升3",
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "拍組招式效果絕佳時威力↑5",
+          "description": "當效果絕佳時,會提高該拍組招式的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時拍組招式增強5",
+          "description": "首次上場時,會提高自己的下次拍組招式威力增強5階段。",
+          "detail": [],
+          "rate": 33
+        }
+      ]
     }
   ]
 }

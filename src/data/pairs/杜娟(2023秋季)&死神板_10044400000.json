@@ -8,11 +8,20 @@
     "rarity": 5,
     "role": 3,
     "exRole": 0,
-    "ex": true,
+    "ex": false,
+    "exEffect": "拍組招式的威力會變成1.5倍",
+    "exRoleEffect": "拍組招式的對象會變成對手全體拍組",
     "exclusivity": "Seasonal",
+    "scoutMethod": 1,
     "maxBonusLevel": 5,
     "dexNumber": "0867",
-    "count": 1
+    "count": 1,
+    "startDate": "2023/10/14 14:00:00",
+    "gridDate": "2023/10/14 14:00:00",
+    "exStartDate": "2023/10/14 14:00:00",
+    "exRoleDate": "2023/10/14 14:00:00",
+    "awakingDate": "-",
+    "extendGridDate": "-"
   },
   "scoutMethod": 1,
   "scheduleId": "chara_5090_1014_FOREVER",
@@ -216,31 +225,6 @@
         "tags": "none",
         "group": "Sync"
       }
-    }
-  ],
-  "luckCookies": [
-    {
-      "cookieName": "杜娟（２０２３秋季）專用的塔潛能餅乾１",
-      "skills": [
-        {
-          "name": "擊中要害時威力提升3",
-          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
-          "rate": 33
-        },
-        {
-          "name": "拍組招式效果絕佳時威力↑5",
-          "description": "當效果絕佳時,會提高該拍組招式的威力。",
-          "detail": [],
-          "rate": 33
-        },
-        {
-          "name": "首次上場時拍組招式增強5",
-          "description": "首次上場時,會提高自己的下次拍組招式威力增強5階段。",
-          "detail": [],
-          "rate": 33
-        }
-      ]
     }
   ],
   "grid": [
@@ -867,6 +851,31 @@
       "y": -3,
       "color": "#BF80FF",
       "type": 9
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "杜娟（２０２３秋季）專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "擊中要害時威力提升3",
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "拍組招式效果絕佳時威力↑5",
+          "description": "當效果絕佳時,會提高該拍組招式的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時拍組招式增強5",
+          "description": "首次上場時,會提高自己的下次拍組招式威力增強5階段。",
+          "detail": [],
+          "rate": 33
+        }
+      ]
     }
   ]
 }

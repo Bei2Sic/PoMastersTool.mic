@@ -8,11 +8,20 @@
     "rarity": 5,
     "role": 2,
     "exRole": 5,
-    "ex": true,
-    "exclusivity": "Regular",
+    "ex": false,
+    "exEffect": "首次使出拍組招式時，氣魄會提高2階段",
+    "exRoleEffect": "首次使出拍組招式前，會使下列場地效果生效。 僅此時生效的場地效果時間會延長。\n・藍天領域",
+    "exclusivity": "Gym",
+    "scoutMethod": 4,
     "maxBonusLevel": 10,
     "dexNumber": "0334",
-    "count": 1
+    "count": 1,
+    "startDate": "2025/01/29 14:00:00",
+    "gridDate": "2025/01/29 14:00:00",
+    "exStartDate": "-",
+    "exRoleDate": "-",
+    "awakingDate": "-",
+    "extendGridDate": "-"
   },
   "scoutMethod": 4,
   "scheduleId": "FOREVER",
@@ -240,7 +249,6 @@
       }
     }
   ],
-  "luckCookies": {},
   "grid": [
     {
       "id": 1004200100,
@@ -866,5 +874,6 @@
       "color": "#BF80FF",
       "type": 10
     }
-  ]
+  ],
+  "luckCookies": {}
 }

@@ -4,49 +4,8 @@ import {
     RarityIndex,
     RoleIndex,
 } from "@/types/indices";
+import { SyncRawData } from "@/types/cache"
 import { ComputedRef } from "vue";
-
-// ------------------------------ 拍组JSON原始数据类型（与JSON结构完全对应）------------------------------
-// 拍组原始JSON的完整类型（与你的JSON结构一一对应，避免类型模糊）
-export interface SyncRawData {
-    trainer: Trainer;
-    pokemon: Pokemon[];
-    themes: Theme[];
-    specialAwaking: SpecialAwaking;
-    luckCookies: LuckCookie[];
-    grid: Grid[]; // 简化，按实际JSON补充
-    scoutMethod: number;
-    scheduleId: string;
-}
-
-// 拍组元信息（从原始JSON中提取的轻量化数据，用于选择器、筛选）
-export interface SyncMeta {
-    id: string; // 拍组ID（与原始数据一致）
-    name: string; // 拍组名称（训练师+宝可梦）
-    enActor: string; // 训练师英文名称（用于图片资源）
-    dexNumber: string; // 宝可梦编号（用于图片资源）
-    count: number; // 当前训练师宝可梦组合出现次数
-    trainerName: string; // 训练师名称
-    pokemonName: string; // 宝可梦名称
-    rarity: RarityIndex; // 稀有度（筛选用）
-    type: string; // 宝可梦属性（统一转为数组，筛选用）
-    weakness: string;
-    ex: boolean; // 是否EX（筛选用）
-    role: string; // 角色類型
-    exRole: string; // EX角色类型（筛选用）
-    exclusivity: string; // 排他性（筛选用）
-    fileName?: string; // 对应的JSON文件名（可选，用于调试）
-    themes: string[]; // 主题技能（筛选用）
-    actorId: string;
-}
-
-// 全局缓存类型：键=拍组训练师ID，值=元信息+原始完整数据
-export interface GlobalSyncCache {
-    [trainerId: string]: {
-        meta: SyncMeta; // 元信息（轻量化）
-        rawData: SyncRawData; // 完整原始数据（用于创建对象）
-    };
-}
 
 // ================================= 基础类型定义（适配新JSON结构）=================================
 /** 训练师信息 */
@@ -64,6 +23,12 @@ export interface Trainer {
     exclusivity: string;
     maxBonusLevel: number;
     count: number; // 训练师以及宝可梦出现次数
+    startDate: string;
+    exStartDate: string;
+    exRoleDate: string;
+    gridDate: string;
+    extendGridDate: string;
+    awakingDate: string;
 }
 
 /** 宝可梦属性统计 */
@@ -105,16 +70,16 @@ export interface MoveBase {
 }
 
 /** 宝可梦普通招式 */
-export interface Move extends MoveBase {}
+export interface Move extends MoveBase { }
 
 /** Sync招式 */
-export interface SyncMove extends MoveBase {}
+export interface SyncMove extends MoveBase { }
 
 /** 极巨化招式 */
-export interface MoveMax extends MoveBase {}
+export interface MoveMax extends MoveBase { }
 
 /** 太晶招式 */
-export interface MoveTera extends MoveBase {}
+export interface MoveTera extends MoveBase { }
 
 export interface MoveFinal extends MoveBase {
     finalPower: number | "-"; // 實際用於顯示和計算的最終威力值

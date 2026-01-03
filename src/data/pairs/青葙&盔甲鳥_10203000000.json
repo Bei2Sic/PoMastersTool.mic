@@ -8,11 +8,20 @@
     "rarity": 5,
     "role": 2,
     "exRole": 3,
-    "ex": true,
+    "ex": false,
+    "exEffect": "首次使出拍組招式時，氣魄會提高2階段",
+    "exRoleEffect": "拍組招式的威力會變成1.5倍",
     "exclusivity": "Pokefair",
+    "scoutMethod": 1,
     "maxBonusLevel": 10,
     "dexNumber": "0227",
-    "count": 1
+    "count": 1,
+    "startDate": "2023/09/18 14:00:00",
+    "gridDate": "2023/09/18 14:00:00",
+    "exStartDate": "2023/09/18 14:00:00",
+    "exRoleDate": "2023/09/18 14:00:00",
+    "awakingDate": "2025/01/01 14:00:00",
+    "extendGridDate": "-"
   },
   "scoutMethod": 1,
   "scheduleId": "chara_5080_0918_FOREVER",
@@ -355,31 +364,6 @@
           "description": "讓我方變成下次傷害防禦狀態。",
           "tags": "none",
           "group": 5
-        }
-      ]
-    }
-  ],
-  "luckCookies": [
-    {
-      "cookieName": "青葙專用的塔潛能餅乾１",
-      "skills": [
-        {
-          "name": "被攻擊時HP回復G9",
-          "description": "受到招式攻擊時,會回復我方全體拍組的HP。",
-          "detail": [],
-          "rate": 33
-        },
-        {
-          "name": "首次上場時物理/特殊增強G1",
-          "description": "首次上場時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
-          "detail": [],
-          "rate": 33
-        },
-        {
-          "name": "首次上場時拍組招式增強G3",
-          "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
-          "detail": [],
-          "rate": 33
         }
       ]
     }
@@ -1086,6 +1070,31 @@
       "y": -3,
       "color": "#BF80FF",
       "type": 17
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "青葙專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "被攻擊時HP回復G9",
+          "description": "受到招式攻擊時,會回復我方全體拍組的HP。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時物理/特殊增強G1",
+          "description": "首次上場時,會分別提高我方全體拍組的下次物理招式威力增強和下次特殊招式威力增強1階段。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時拍組招式增強G3",
+          "description": "首次上場時,會提高我方全體拍組的下次拍組招式威力增強3階段。",
+          "detail": [],
+          "rate": 33
+        }
+      ]
     }
   ]
 }

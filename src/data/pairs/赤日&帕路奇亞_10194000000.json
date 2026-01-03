@@ -8,11 +8,20 @@
     "rarity": 5,
     "role": 1,
     "exRole": 2,
-    "ex": true,
+    "ex": false,
+    "exEffect": "拍組招式的對象會變成對手全體拍組",
+    "exRoleEffect": "首次使出拍組招式時，氣魄會提高2階段",
     "exclusivity": "Regular",
+    "scoutMethod": 2,
     "maxBonusLevel": 5,
     "dexNumber": "0484",
-    "count": 1
+    "count": 1,
+    "startDate": "2020/08/17 14:00:00",
+    "gridDate": "2020/08/17 14:00:00",
+    "exStartDate": "2022/01/13 14:00:00",
+    "exRoleDate": "2025/09/09 14:00:00",
+    "awakingDate": "-",
+    "extendGridDate": "2021/03/15 14:00:00"
   },
   "scoutMethod": 2,
   "scheduleId": "update_2070_3WFOREVER",
@@ -200,42 +209,6 @@
         "tags": "none",
         "group": "Sync"
       }
-    }
-  ],
-  "luckCookies": [
-    {
-      "cookieName": "赤日專用的塔潛能餅乾１",
-      "skills": [
-        {
-          "name": "效果絕佳時威力提升5",
-          "description": "當效果絕佳時,會提高該招式的威力。",
-          "detail": [],
-          "rate": 33
-        },
-        {
-          "name": "擊中要害時威力提升3",
-          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
-          "rate": 33
-        },
-        {
-          "name": "首次上場時賦予物理/特殊增強2",
-          "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
-          "detail": [],
-          "rate": 33
-        }
-      ]
-    },
-    {
-      "cookieName": "赤日專用潛能餅乾１",
-      "skills": [
-        {
-          "name": "必中化",
-          "description": "招式必定會命中。",
-          "detail": [],
-          "rate": 100
-        }
-      ]
     }
   ],
   "grid": [
@@ -940,6 +913,42 @@
       "y": -1,
       "color": "#FF0066",
       "type": 15
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "赤日專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "效果絕佳時威力提升5",
+          "description": "當效果絕佳時,會提高該招式的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "擊中要害時威力提升3",
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時賦予物理/特殊增強2",
+          "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
+          "detail": [],
+          "rate": 33
+        }
+      ]
+    },
+    {
+      "cookieName": "赤日專用潛能餅乾１",
+      "skills": [
+        {
+          "name": "必中化",
+          "description": "招式必定會命中。",
+          "detail": [],
+          "rate": 100
+        }
+      ]
     }
   ]
 }

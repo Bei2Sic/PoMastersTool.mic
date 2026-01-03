@@ -334,6 +334,7 @@
                 </div>
 
                 <div v-else-if="activeTab === 'info'" class="tab-content">
+                    {{ trainer.gridDate }}
                 </div>
             </div>
         </div>

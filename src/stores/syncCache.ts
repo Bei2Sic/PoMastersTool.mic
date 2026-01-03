@@ -1,23 +1,34 @@
 // 本地数据文件动态缓存
 import { STORAGE_KEY } from "@/constances/key";
-import type { GlobalSyncCache, SyncMeta, SyncRawData } from "@/types/syncModel";
+import type { GlobalSyncCache, SyncMeta, SyncRawData, SavedFilters } from "@/types/cache";
 import { loadAllSyncJson } from "@/utils/jsonLoader";
 import { defineStore } from "pinia";
+import { type PersistenceOptions } from 'pinia-plugin-persistedstate'
+
+export interface SyncCacheState {
+    // 全局缓存：拍组ID → {元信息, 完整数据}
+    cache: GlobalSyncCache;
+
+    // 当前选中的拍组ID
+    selectedTrainerId: string;
+
+    // 筛选条件对象
+    savedFilters: SavedFilters;
+
+    // 排序字段 (强类型：必须是 SyncMeta 里的 key)
+    sortField: keyof SyncMeta;
+
+    // 排序方向
+    sortDesc: boolean;
+}
 
 export const useSyncCacheStore = defineStore("syncCache", {
-    state: () => ({
+    state: (): SyncCacheState => ({
         // 全局缓存：拍组ID → {元信息, 完整数据}
         cache: {} as GlobalSyncCache,
-        // 加载状态（用于显示加载中动画）
-        isLoading: false,
-        // 加载失败状态
-        loadError: "" as string,
         // 当前选中的拍组ID
         selectedTrainerId: "" as string,
-        // 石盘资源路径映射
-        gridsImage: {},
-        // 拍组头像资源路径映射
-        actorsImage: {},
+
 
         savedFilters: {
             exclusivity: [] as string[],
@@ -28,22 +39,25 @@ export const useSyncCacheStore = defineStore("syncCache", {
             rarity: [] as number[],
             themes: [] as string[],
         },
+
+        sortField: '_startDate',
+        sortDesc: true,
     }),
     getters: {
-        getMeta: (state): SyncMeta[] => {
-            return Object.values(state.cache).map((item) => item.meta);
+        getMeta: (state: SyncCacheState): SyncMeta[] => {
+            return Object.values(state.cache).map((item: GlobalSyncCache[string]) => item.meta);
         },
 
         // 获取筛选状态
-        getFilters: (state) => state.savedFilters,
+        getFilters: (state: SyncCacheState) => state.savedFilters,
 
-        getRawDataWithTrainerId: (state) => (id: string) => {
+        getRawDataWithTrainerId: (state: SyncCacheState) => (id: string) => {
             const cacheItem = state.cache[id];
             return cacheItem ? cacheItem.rawData : undefined;
         },
 
         // 当前选中拍组的完整原始数据（用于创建拍组对象）
-        selectedRawData: (state): SyncRawData | null => {
+        selectedRawData: (state: SyncCacheState): SyncRawData | null => {
             return state.selectedTrainerId
                 ? state.cache[state.selectedTrainerId]?.rawData || null
                 : null;
@@ -97,5 +111,16 @@ export const useSyncCacheStore = defineStore("syncCache", {
         updateFilters(newFilters: any) {
             this.savedFilters = JSON.parse(JSON.stringify(newFilters));
         },
+
+        updateSort(field: string, desc: boolean) {
+            this.sortField = field;
+            this.sortDesc = desc;
+        }
     },
+
+    persist: {
+        key: 'pomatools-cache',
+        storage: localStorage,
+        paths: ['savedFilters', 'sortField', 'sortDesc'],
+    } as PersistenceOptions<SyncCacheState>,
 });

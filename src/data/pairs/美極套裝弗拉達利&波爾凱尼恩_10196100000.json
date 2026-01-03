@@ -8,11 +8,20 @@
     "rarity": 5,
     "role": 1,
     "exRole": 3,
-    "ex": true,
+    "ex": false,
+    "exEffect": "拍組招式的對象會變成對手全體拍組",
+    "exRoleEffect": "拍組招式的威力會變成1.5倍",
     "exclusivity": "Pokefair",
+    "scoutMethod": 1,
     "maxBonusLevel": 10,
     "dexNumber": "0721",
-    "count": 1
+    "count": 1,
+    "startDate": "2023/02/13 14:00:00",
+    "gridDate": "2023/02/13 14:00:00",
+    "exStartDate": "2023/02/13 14:00:00",
+    "exRoleDate": "2024/04/27 14:00:00",
+    "awakingDate": "2024/12/01 14:00:00",
+    "extendGridDate": "-"
   },
   "scoutMethod": 1,
   "scheduleId": "chara_5010_0213_FOREVER",
@@ -229,31 +238,6 @@
         "tags": "none",
         "group": "Sync"
       }
-    }
-  ],
-  "luckCookies": [
-    {
-      "cookieName": "美極套裝弗拉達利專用的塔潛能餅乾１",
-      "skills": [
-        {
-          "name": "效果絕佳時威力提升5",
-          "description": "當效果絕佳時,會提高該招式的威力。",
-          "detail": [],
-          "rate": 33
-        },
-        {
-          "name": "擊中要害時威力提升3",
-          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
-          "rate": 33
-        },
-        {
-          "name": "首次上場時賦予物理/特殊增強2",
-          "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
-          "detail": [],
-          "rate": 33
-        }
-      ]
     }
   ],
   "grid": [
@@ -958,6 +942,31 @@
       "y": -3,
       "color": "#BF80FF",
       "type": 3
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "美極套裝弗拉達利專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "效果絕佳時威力提升5",
+          "description": "當效果絕佳時,會提高該招式的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "擊中要害時威力提升3",
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時賦予物理/特殊增強2",
+          "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
+          "detail": [],
+          "rate": 33
+        }
+      ]
     }
   ]
 }

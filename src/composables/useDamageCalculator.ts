@@ -605,8 +605,20 @@ export function useDamageCalculator(
             );
 
             // 拍組招式
-            const syncResult = calculateMoveDamage(
+            let activeSyncMove = p.syncMove; // 默認使用原始招式
+            // 属性替换被动
+            const newType = DamageEngine.getTypeShiftPassive(
                 p.syncMove,
+                passives[formIndex].passives
+            );
+            if (newType !== p.syncMove.type) {
+                activeSyncMove = {
+                    ...p.syncMove,
+                    type: newType,
+                };
+            }
+            const syncResult = calculateMoveDamage(
+                activeSyncMove,
                 MoveScope.Sync,
                 PowerMoveScope.Sync,
                 p.vAfterSm && formIndex === 0 ? formIndex + 1 : formIndex

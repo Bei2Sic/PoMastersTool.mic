@@ -8,11 +8,20 @@
     "rarity": 5,
     "role": 0,
     "exRole": 5,
-    "ex": true,
+    "ex": false,
+    "exEffect": "拍組招式的對象會變成對手全體拍組",
+    "exRoleEffect": "首次使出拍組招式前，會使下列場地效果生效。 僅此時生效的場地效果時間會延長。\n・大地領域",
     "exclusivity": "Special",
+    "scoutMethod": 1,
     "maxBonusLevel": 5,
     "dexNumber": "0323",
-    "count": 1
+    "count": 1,
+    "startDate": "2025/11/14 14:00:00",
+    "gridDate": "2025/11/14 14:00:00",
+    "exStartDate": "2025/11/14 14:00:00",
+    "exRoleDate": "2025/11/14 14:00:00",
+    "awakingDate": "-",
+    "extendGridDate": "-"
   },
   "scoutMethod": 1,
   "scheduleId": "chara_7100_1114_FOREVER",
@@ -419,31 +428,6 @@
           "description": "提高我方全體拍組的特防2階段。",
           "tags": "none",
           "group": 5
-        }
-      ]
-    }
-  ],
-  "luckCookies": [
-    {
-      "cookieName": "卡蕪（學院）專用的塔潛能餅乾１",
-      "skills": [
-        {
-          "name": "效果絕佳時威力提升5",
-          "description": "當效果絕佳時,會提高該招式的威力。",
-          "detail": [],
-          "rate": 33
-        },
-        {
-          "name": "擊中要害時威力提升3",
-          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
-          "rate": 33
-        },
-        {
-          "name": "首次上場時賦予物理/特殊增強2",
-          "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
-          "detail": [],
-          "rate": 33
         }
       ]
     }
@@ -1072,6 +1056,31 @@
       "y": -3,
       "color": "#BF80FF",
       "type": 9
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "卡蕪（學院）專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "效果絕佳時威力提升5",
+          "description": "當效果絕佳時,會提高該招式的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "擊中要害時威力提升3",
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時賦予物理/特殊增強2",
+          "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
+          "detail": [],
+          "rate": 33
+        }
+      ]
     }
   ]
 }

@@ -1,6 +1,6 @@
 // 本地加载数据文件
 import { getRoleInfo, getTypeInfo } from '@/core/exporter/map';
-import type { GlobalSyncCache, SyncMeta, SyncRawData } from "@/types/syncModel";
+import type { GlobalSyncCache, SyncMeta, SyncRawData } from "@/types/cache";
 export const loadAllSyncJson = async (): Promise<GlobalSyncCache> => {
     const cache: GlobalSyncCache = {};
     try {
@@ -60,6 +60,8 @@ const extractSyncMeta = (rawData: SyncRawData, filePath: string): SyncMeta => {
     const trainer = rawData.trainer;
     const mainPokemon = rawData.pokemon[0];
     const theme = rawData.themes.map(skill => skill.tag);
+    
+    const toTs = (dateStr: string) => (!dateStr || dateStr === '-') ? 0 : new Date(dateStr).getTime();
 
     // 处理属性：统一转为数组（不管JSON中是单个还是数组）
     const pokemonType = getTypeInfo(rawData.pokemon[0].type).cnName;
@@ -69,7 +71,7 @@ const extractSyncMeta = (rawData: SyncRawData, filePath: string): SyncMeta => {
     if (trainer.exRole != -1) {
         exRole = getRoleInfo(trainer.exRole).cnName;
     }
-    
+
     return {
         id: trainer.id,
         name: `${trainer.name} & ${mainPokemon.name}`, // 拍组完整名称
@@ -87,5 +89,12 @@ const extractSyncMeta = (rawData: SyncRawData, filePath: string): SyncMeta => {
         exclusivity: trainer.exclusivity,
         exRole: exRole,
         actorId: trainer.actorId,
+        variationType: rawData.pokemon[1]?.variationType ?? 0,
+        _startDate: toTs(trainer.startDate),
+        _exStartDate: toTs(trainer.exStartDate),
+        _exRoleDate: toTs(trainer.exRoleDate),
+        _gridDate: toTs(trainer.gridDate),
+        _extendGridDate: toTs(trainer.extendGridDate),
+        _awakingDate: toTs(trainer.awakingDate),
     };
 };

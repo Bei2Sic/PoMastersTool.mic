@@ -8,11 +8,20 @@
     "rarity": 5,
     "role": 0,
     "exRole": 2,
-    "ex": true,
+    "ex": false,
+    "exEffect": "拍組招式的對象會變成對手全體拍組",
+    "exRoleEffect": "首次使出拍組招式時，氣魄會提高2階段",
     "exclusivity": "Pokefair",
+    "scoutMethod": 1,
     "maxBonusLevel": 10,
     "dexNumber": "0034",
-    "count": 1
+    "count": 1,
+    "startDate": "2022/05/19 14:00:00",
+    "gridDate": "2022/05/19 14:00:00",
+    "exStartDate": "2022/05/19 14:00:00",
+    "exRoleDate": "2024/04/27 14:00:00",
+    "awakingDate": "2025/01/01 14:00:00",
+    "extendGridDate": "2024/04/27 14:00:00"
   },
   "scoutMethod": 1,
   "scheduleId": "chara_4040_0519_FOREVER",
@@ -364,31 +373,6 @@
           "description": "提高我方全體拍組的特攻2階段。",
           "tags": "none",
           "group": 5
-        }
-      ]
-    }
-  ],
-  "luckCookies": [
-    {
-      "cookieName": "美極套裝坂木專用的塔潛能餅乾１",
-      "skills": [
-        {
-          "name": "效果絕佳時威力提升5",
-          "description": "當效果絕佳時,會提高該招式的威力。",
-          "detail": [],
-          "rate": 33
-        },
-        {
-          "name": "擊中要害時威力提升3",
-          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
-          "rate": 33
-        },
-        {
-          "name": "首次上場時賦予物理/特殊增強2",
-          "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
-          "detail": [],
-          "rate": 33
         }
       ]
     }
@@ -1095,6 +1079,31 @@
       "y": -4,
       "color": "#FFC266",
       "type": 0
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "美極套裝坂木專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "效果絕佳時威力提升5",
+          "description": "當效果絕佳時,會提高該招式的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "擊中要害時威力提升3",
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時賦予物理/特殊增強2",
+          "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
+          "detail": [],
+          "rate": 33
+        }
+      ]
     }
   ]
 }

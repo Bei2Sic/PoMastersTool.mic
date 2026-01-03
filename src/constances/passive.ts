@@ -712,4 +712,71 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             applyToParty: true,
         },
     ],
+    "曲目:超能力": [
+        {
+            name: "曲目:超能力",
+            desc: "",
+            passiveName: "曲目:超能力",
+            boost: {
+                scope: MoveScope.Move,
+                value: 0.0,
+            },
+            condition: {
+                key: "超能力",
+                detail: "自身",
+                logic: LogicType.NoEffect,
+                extra: ExtraLogic.NormalTypeShift,
+            },
+            statBoost: {
+                isStatBoost: false,
+                stats: [],
+                value: 1.0,
+            },
+            applyToParty: false,
+        },
+    ],
+    "曲目:格鬥": [
+        {
+            name: "曲目:格鬥",
+            desc: "",
+            passiveName: "曲目:格鬥",
+            boost: {
+                scope: MoveScope.Move,
+                value: 0.0,
+            },
+            condition: {
+                key: "格鬥",
+                detail: "自身",
+                logic: LogicType.NoEffect,
+                extra: ExtraLogic.NormalTypeShift,
+            },
+            statBoost: {
+                isStatBoost: false,
+                stats: [],
+                value: 1.0,
+            },
+            applyToParty: false,
+        },
+        {
+            name: "曲目:格鬥",
+            desc: "",
+            passiveName: "曲目:格鬥",
+            boost: {
+                scope: MoveScope.Sync,
+                value: 0.0,
+            },
+            condition: {
+                key: "格鬥",
+                detail: "自身",
+                logic: LogicType.NoEffect,
+                extra: ExtraLogic.TypeShift,
+            },
+            statBoost: {
+                isStatBoost: false,
+                stats: [],
+                value: 1.0,
+            },
+            applyToParty: false,
+        },
+    ],
 };

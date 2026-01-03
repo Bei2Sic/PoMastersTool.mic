@@ -8,11 +8,20 @@
     "rarity": 5,
     "role": 3,
     "exRole": -1,
-    "ex": true,
+    "ex": false,
+    "exEffect": "拍組招式的威力會變成1.5倍",
+    "exRoleEffect": "無",
     "exclusivity": "Regular",
+    "scoutMethod": 1,
     "maxBonusLevel": 5,
     "dexNumber": "0094",
-    "count": 1
+    "count": 1,
+    "startDate": "2021/10/22 14:00:00",
+    "gridDate": "2021/10/22 14:00:00",
+    "exStartDate": "2021/10/22 14:00:00",
+    "exRoleDate": "-",
+    "awakingDate": "-",
+    "extendGridDate": "2025/03/25 14:00:00"
   },
   "scoutMethod": 1,
   "scheduleId": "chara_3090_1022_FOREVER",
@@ -357,31 +366,6 @@
           "description": "提高我方全體拍組的特攻2階段。",
           "tags": "none",
           "group": 5
-        }
-      ]
-    }
-  ],
-  "luckCookies": [
-    {
-      "cookieName": "歐尼奧專用的塔潛能餅乾１",
-      "skills": [
-        {
-          "name": "擊中要害時威力提升3",
-          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
-          "rate": 33
-        },
-        {
-          "name": "拍組招式效果絕佳時威力↑5",
-          "description": "當效果絕佳時,會提高該拍組招式的威力。",
-          "detail": [],
-          "rate": 33
-        },
-        {
-          "name": "首次上場時拍組招式增強5",
-          "description": "首次上場時,會提高自己的下次拍組招式威力增強5階段。",
-          "detail": [],
-          "rate": 33
         }
       ]
     }
@@ -1088,6 +1072,31 @@
       "y": -1,
       "color": "#FFC266",
       "type": 0
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "歐尼奧專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "擊中要害時威力提升3",
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "拍組招式效果絕佳時威力↑5",
+          "description": "當效果絕佳時,會提高該拍組招式的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時拍組招式增強5",
+          "description": "首次上場時,會提高自己的下次拍組招式威力增強5階段。",
+          "detail": [],
+          "rate": 33
+        }
+      ]
     }
   ]
 }

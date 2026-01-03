@@ -8,11 +8,20 @@
     "rarity": 5,
     "role": 3,
     "exRole": 0,
-    "ex": true,
+    "ex": false,
+    "exEffect": "拍組招式的威力會變成1.5倍",
+    "exRoleEffect": "拍組招式的對象會變成對手全體拍組",
     "exclusivity": "Academy",
+    "scoutMethod": 5,
     "maxBonusLevel": 5,
     "dexNumber": "0259",
-    "count": 1
+    "count": 1,
+    "startDate": "2025/08/05 14:00:00",
+    "gridDate": "2025/08/05 14:00:00",
+    "exStartDate": "2025/08/05 14:00:00",
+    "exRoleDate": "2025/08/05 14:00:00",
+    "awakingDate": "-",
+    "extendGridDate": "-"
   },
   "scoutMethod": 5,
   "scheduleId": "chara_7070_0805_FOREVER",
@@ -157,7 +166,6 @@
       }
     }
   ],
-  "luckCookies": {},
   "grid": [
     {
       "id": 1001940000,
@@ -1806,5 +1814,6 @@
       "color": "#779EFF",
       "type": 0
     }
-  ]
+  ],
+  "luckCookies": {}
 }

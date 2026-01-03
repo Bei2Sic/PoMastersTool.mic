@@ -8,11 +8,20 @@
     "rarity": 4,
     "role": 1,
     "exRole": -1,
-    "ex": true,
+    "ex": false,
+    "exEffect": "拍組招式的對象會變成對手全體拍組",
+    "exRoleEffect": "無",
     "exclusivity": "Regular",
+    "scoutMethod": 2,
     "maxBonusLevel": 5,
     "dexNumber": "0653",
-    "count": 1
+    "count": 1,
+    "startDate": "2023/08/01 14:00:00",
+    "gridDate": "2023/08/01 14:00:00",
+    "exStartDate": "2023/08/01 14:00:00",
+    "exRoleDate": "-",
+    "awakingDate": "-",
+    "extendGridDate": "-"
   },
   "scoutMethod": 2,
   "scheduleId": "chara_5070_0801_FOREVER",
@@ -212,7 +221,6 @@
       }
     }
   ],
-  "luckCookies": {},
   "grid": [
     {
       "id": 1000300100,
@@ -838,5 +846,6 @@
       "color": "#BF80FF",
       "type": 2
     }
-  ]
+  ],
+  "luckCookies": {}
 }

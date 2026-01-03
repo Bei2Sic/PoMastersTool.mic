@@ -9,10 +9,19 @@
     "role": 3,
     "exRole": -1,
     "ex": false,
+    "exEffect": "拍組招式的威力會變成1.5倍",
+    "exRoleEffect": "無",
     "exclusivity": "Regular",
+    "scoutMethod": 2,
     "maxBonusLevel": 5,
     "dexNumber": "0133",
-    "count": 1
+    "count": 1,
+    "startDate": "2023/11/17 14:00:00",
+    "gridDate": "2023/11/17 14:00:00",
+    "exStartDate": "-",
+    "exRoleDate": "-",
+    "awakingDate": "-",
+    "extendGridDate": "-"
   },
   "scoutMethod": 2,
   "scheduleId": "chara_5100_1117_FOREVER",
@@ -200,7 +209,6 @@
       }
     }
   ],
-  "luckCookies": {},
   "grid": [
     {
       "id": 1065600000,
@@ -826,5 +834,6 @@
       "color": "#BF80FF",
       "type": 1
     }
-  ]
+  ],
+  "luckCookies": {}
 }

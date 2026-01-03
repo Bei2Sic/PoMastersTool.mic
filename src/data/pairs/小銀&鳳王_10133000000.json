@@ -8,11 +8,20 @@
     "rarity": 5,
     "role": 0,
     "exRole": 4,
-    "ex": true,
+    "ex": false,
+    "exEffect": "拍組招式的對象會變成對手全體拍組",
+    "exRoleEffect": "首次使出拍組招式時，發動拍組招式所需的行動數會減少3次。",
     "exclusivity": "Regular",
+    "scoutMethod": 2,
     "maxBonusLevel": 5,
     "dexNumber": "0250",
-    "count": 1
+    "count": 1,
+    "startDate": "2020/04/30 14:00:00",
+    "gridDate": "2020/04/30 14:00:00",
+    "exStartDate": "2022/05/19 14:00:00",
+    "exRoleDate": "2025/09/09 14:00:00",
+    "awakingDate": "-",
+    "extendGridDate": "2022/05/30 14:00:00"
   },
   "scoutMethod": 2,
   "scheduleId": "update_2040_1W_FOREVER",
@@ -216,42 +225,6 @@
         "tags": "none",
         "group": "Sync"
       }
-    }
-  ],
-  "luckCookies": [
-    {
-      "cookieName": "小銀專用的塔潛能餅乾１",
-      "skills": [
-        {
-          "name": "效果絕佳時威力提升5",
-          "description": "當效果絕佳時,會提高該招式的威力。",
-          "detail": [],
-          "rate": 33
-        },
-        {
-          "name": "擊中要害時威力提升3",
-          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
-          "detail": [],
-          "rate": 33
-        },
-        {
-          "name": "首次上場時賦予物理/特殊增強2",
-          "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
-          "detail": [],
-          "rate": 33
-        }
-      ]
-    },
-    {
-      "cookieName": "小銀專用潛能餅乾１",
-      "skills": [
-        {
-          "name": "晴天時間延長3",
-          "description": "天氣變成日照強烈的瞬間在場上時,會延長日照強烈的狀態的持續時間。",
-          "detail": [],
-          "rate": 100
-        }
-      ]
     }
   ],
   "grid": [
@@ -956,6 +929,42 @@
       "y": -1,
       "color": "#FF0066",
       "type": 0
+    }
+  ],
+  "luckCookies": [
+    {
+      "cookieName": "小銀專用的塔潛能餅乾１",
+      "skills": [
+        {
+          "name": "效果絕佳時威力提升5",
+          "description": "當效果絕佳時,會提高該招式的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "擊中要害時威力提升3",
+          "description": "擊中對手要害時,會提高當下該攻擊的威力。",
+          "detail": [],
+          "rate": 33
+        },
+        {
+          "name": "首次上場時賦予物理/特殊增強2",
+          "description": "首次上場時,會分別提高自己的下次物理招式威力增強和下次特殊招式威力增強2階段。",
+          "detail": [],
+          "rate": 33
+        }
+      ]
+    },
+    {
+      "cookieName": "小銀專用潛能餅乾１",
+      "skills": [
+        {
+          "name": "晴天時間延長3",
+          "description": "天氣變成日照強烈的瞬間在場上時,會延長日照強烈的狀態的持續時間。",
+          "detail": [],
+          "rate": 100
+        }
+      ]
     }
   ]
 }
