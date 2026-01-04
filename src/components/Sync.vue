@@ -9,10 +9,13 @@
             <Grid v-model:bonusLevel="dynamicState.bonusLevel" :grid-data="finalGrid.gridData" :trainer="trainer"
                 :current-rarity="dynamicState.currentRarity" :bonus-level="dynamicState.bonusLevel"
                 :cost-orbs="finalGrid.costOrbs" :last-energy="finalGrid.lastEnergy"
-                :is-tile-reachable="syncMethods.isTileReachable" :get-tile-border-url="syncMethods.getTileBorderUrl"
-                :get-tile-fill-url="syncMethods.getTileFillUrl" :get-trainer-avatar-url="getTrainerUrl"
-                :fix-tile-name="syncMethods.fixTileName" :toggle-tile="syncMethods.toggleTile"
-                :check-selected-tiles="syncMethods.checkSelectedTiles" :on-trainer-click="toggleTrainerSelect" />
+                :cost-fiery-orbs="finalGrid.costFieryOrbs" :cost-leaf-orbs="finalGrid.costLeafOrbs"
+                :cost-bubbly-orbs="finalGrid.costBubblyOrbs" :cost-sparky-orbs="finalGrid.costSparkyOrbs"
+                :cost-t-m-orbs="finalGrid.costTMOrbs" :is-tile-reachable="syncMethods.isTileReachable"
+                :get-tile-border-url="syncMethods.getTileBorderUrl" :get-tile-fill-url="syncMethods.getTileFillUrl"
+                :get-trainer-avatar-url="getTrainerUrl" :fix-tile-name="syncMethods.fixTileName"
+                :toggle-tile="syncMethods.toggleTile" :check-selected-tiles="syncMethods.checkSelectedTiles"
+                :on-trainer-click="toggleTrainerSelect" />
 
             <!-- 彈窗篩選拍組窗口 -->
             <transition name="modal">
@@ -46,60 +49,20 @@
             <div class="pokemon-name">{{ syncMethods.getSyncName() }}</div>
             <div class="info-content">
                 <div v-if="curTab === 'grid'" class="grid-panel">
-                    <!-- 潜能区域移除 -->
-                    <!-- <div class="potential-title" @click="togglePotentialPanel">{{
-                        finalGrid.potentialCookie ?
-                            finalGrid.potentialCookie.cookieName : '潛能' }}</div>
-                    <transition name="slide-window" appear>
-                        <div class="modal-backdrop" v-if="isPotentialWindowOpen" @click="togglePotentialPanel">
-                            <div class="potential-window" @click.stop>
-                                <div class="window-header">
-                                    <div class="window-title">潛能</div>
-                                    <button class="window-close" @click="togglePotentialPanel">×</button>
-                                </div>
-                                <div class="window-content">
-                                    <div class="window-top">
-                                        <div class="window-icons">
-                                            <div v-for="t in [1, 2, 3, 4, 5, 6]" :key="t" class="icon-item"
-                                                :class="{ active: currentType === t }" @click="currentType = t">
-                                                <img :src="PotentialCookiesUrl[t - 1]" alt="潜能类型{{ t }}"
-                                                    class="cookie-type-icon">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="potential-list">
-                                        <div v-for="item in filteredPotentials" :key="item.id" class="potential-item">
-                                            <div class="cookie-name">{{ item.cookieName }}</div>
-                                            <div class="cookie-desc">{{ item.desc }}</div>
-                                            <div class="cookie-item-action">
-                                                <template v-if="Array.isArray(item.level)">
-                                                    <div v-for="l in item.level" :key="l" class="cookie-level-btn"
-                                                        @click="async () => {
-                                                            syncMethods.updatePotentialCookieWithLevel(item, l);
-                                                            await nextTick();
-                                                            togglePotentialPanel();
-                                                        }">
-                                                        {{ l }}
-                                                    </div>
-                                                </template>
-<template v-else>
-                                                    <button class="cookie-select-btn"
-                                                        @click="syncMethods.updatePotentialCookie(item); togglePotentialPanel()">選擇</button>
-                                                </template>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</transition> -->
                     <div class="selected-info">
                         <div class="selected-content">
-                            <div v-for="tile in finalGrid.selectedTiles" :key="tile.id" class="selected-item" :style="{
-                                backgroundColor: `${tile.color}`,
-                                filter: 'saturate(0.7)',
-                            }">
-                                {{ tile.name }}<br>{{ tile.description }}
+                            <div v-for="tile in sortSelectedTiles" :key="tile.id" class="selected-item">
+
+                                <div class="selected-header" :style="{
+                                    backgroundColor: tile.color,
+                                    borderColor: tile.color
+                                }">
+                                    {{ tile.name }}
+                                </div>
+
+                                <div class="selected-description" :style="{ borderColor: tile.color }">
+                                    {{ tile.description }}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -196,6 +159,24 @@ const handleCloseCalc = () => {
     showDamageCalc.value = false;
     curTab.value = 'grid';
 };
+
+const sortSelectedTiles = computed(() => {
+    const colorPriority = {
+        "#FF80BF": 1,
+        "#779EFF": 2,
+        "#47D147": 3,
+        "#BF80FF": 4,
+        "#FF0066": 5,
+        "#FFC266": 6,
+    };
+    return [...finalGrid.value.selectedTiles].sort((a, b) => {
+        // 獲取優先級，如果顏色不在列表裡，給一個很大的數字 (999) 讓它排在最後
+        const priorityA = colorPriority[a.color] ?? 999;
+        const priorityB = colorPriority[b.color] ?? 999;
+
+        return priorityA - priorityB;
+    });
+})
 
 watch(curTab, (newTab) => {
     if (newTab === 'calc') {
@@ -522,326 +503,42 @@ onUnmounted(() => {
 .selected-content {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 1px;
 }
 
 .selected-item {
-    padding: 10px 5px;
-    font-size: 12px;
-    line-height: 1.1;
-    white-space: normal;
-    text-overflow: ellipsis;
-    color: rgba(255, 255, 255, 0.9);
-    font-weight: bold;
-    text-shadow:
-        1px 1px 0 #555,
-        -1px 1px 0 #555,
-        1px -1px 0 #555,
-        -1px -1px 0 #555;
-}
-
-/* 潜能弹窗 */
-/* 遮罩动画：从透明到半透明 */
-.slide-window-enter-from .modal-backdrop,
-.slide-window-leave-to .modal-backdrop {
-    background-color: rgba(0, 0, 0, 0);
-    /* 初始/结束透明 */
-}
-
-.slide-window-enter-active .modal-backdrop,
-.slide-window-leave-active .modal-backdrop {
-    transition: background-color 0.4s ease;
-    /* 遮罩透明度过渡 */
-}
-
-/* 弹窗动画：滑入（上→下）、滑出（下→上） */
-.slide-window-enter-from .potential-window {
-    transform: translateY(-100%);
-    /* 初始位置：在屏幕上方（完全看不到） */
-    opacity: 0;
-    /* 初始透明 */
-}
-
-.slide-window-leave-to .potential-window {
-    transform: translateY(-100%);
-    /* 结束位置：回到屏幕上方 */
-    opacity: 0;
-    /* 结束透明 */
-}
-
-.slide-window-enter-active .potential-window,
-.slide-window-leave-active .potential-window {
-    transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 1s ease;
-    /* cubic-bezier 曲线：滑入时先慢后快，更自然；0.4s 动画时长可调整 */
-}
-
-.modal-backdrop {
-    position: fixed;
-    inset-block-start: 0;
-    inset-inline-start: 0;
-    inline-size: 100vw;
-    block-size: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-    /* 确保在最上层 */
-}
-
-/* 中间弹窗 */
-.potential-window {
-    position: fixed;
-    inline-size: 80%;
-    max-inline-size: 700px;
-    block-size: 100vh;
-    /* max-block-size: 600px; */
-    background-color: #f5d76e;
-    border: 2px solid #8b4513;
-    border-radius: 4px;
+    padding: 0;
+    border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 5px;
 }
 
-/* 弹窗头部 */
-.window-header {
-    background-color: #2980b9;
-    color: white;
+.selected-header {
     padding: 8px 12px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
-.window-title {
     font-weight: bold;
-    font-size: 16px;
+    font-size: 13px;
+    line-height: 1.2;
+
+    text-shadow:
+        -1px -1px 0 #004d40,
+        1px -1px 0 #004d40,
+        -1px 1px 0 #004d40,
+        1px 1px 0 #004d40;
 }
 
-.window-close {
-    background: transparent;
-    border: none;
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
-    padding: 0 8px;
-}
-
-/* 弹窗内容 */
-.window-content {
-    block-size: calc(100% - 40px);
-    /* 减去头部高度 */
-    display: flex;
-    flex-direction: column;
-}
-
-/* 顶部标签栏容器 */
-.window-top {
-    padding: 8px;
-    border-block-end: 1px solid #8b4513;
-    inline-size: 100%;
-    /* 占满弹窗宽度 */
-}
-
-/* 图标容器：等分布局 */
-.window-icons {
-    display: flex;
-    justify-content: space-between;
-    /* 图标均匀分布 */
-    inline-size: 100%;
-    /* 占满父容器宽度 */
-}
-
-/* 单个图标容器：固定宽度+居中 */
-.icon-item {
-    inline-size: 50px;
-    block-size: 50px;
-    background-color: #e0e0e0;
-    border: 1px solid #8b4513;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    overflow: hidden;
-    flex-shrink: 0;
-    /* 禁止缩小，保持固定尺寸 */
-}
-
-/* 图标图片：占满容器 */
-.cookie-type-icon {
-    inline-size: 100%;
-    block-size: 100%;
-    object-fit: contain;
-}
-
-.potential-list {
-    flex: 1;
-    overflow-y: auto;
-    padding: 8px;
-}
-
-/* 潜能条目：设置为网格布局，让名称、描述、等级栏自动排版 */
-.potential-item {
-    background-color: #f5d76e;
-    border: 1px solid #8b4513;
-    margin-block-end: 6px;
-    padding: 8px;
-    display: grid;
-    grid-template-areas:
-        "name name"
-        "desc desc"
-        "level level";
-    /* 等级栏占满整行 */
-}
-
-.cookie-name {
-    grid-area: name;
-    font-weight: bold;
-    color: #333;
-}
-
-.cookie-desc {
-    grid-area: desc;
+.selected-description {
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.4);
     font-size: 12px;
-    color: #555;
-    margin: 4px 0;
-}
-
-/* 等级/选择按钮容器：横向占满+等分布局 */
-.cookie-item-action {
-    grid-area: level;
-    display: flex;
-    justify-content: space-between;
-    /* 等级按钮均匀分布 */
-    inline-size: 100%;
-    margin-block-start: 4px;
-}
-
-/* 等级按钮：占满对应区域 */
-.cookie-level-btn {
-    flex: 1;
-    /* 每个等级按钮平分宽度 */
-    block-size: 30px;
-    background-color: #f39c12;
-    border: 2px solid #8b4513;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    margin: 0 2px;
-    /* 按钮之间留空隙 */
-}
-
-.cookie-level-btn.active {
-    background-color: #e74c3c;
-    color: white;
-}
-
-/* 选择按钮：占满整行 */
-.cookie-select-btn {
-    inline-size: 100%;
-    padding: 8px 0;
-    background-color: #f39c12;
-    border: 1px solid #8b4513;
-    border-radius: 10px;
-    cursor: pointer;
-    color: #333;
-    font-weight: bold;
-}
-
-/* 移动端信息显示 */
-.mobile-info-modal {
-    position: fixed;
-    inset-block-start: 0;
-    inset-inline-start: 0;
-    inline-size: 100vw;
-    block-size: 100vh;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10001;
-    /* 高于所有其他弹窗 */
-    padding: 20px 15px;
-}
-
-.mobile-info-content {
-    inline-size: 100%;
-    max-inline-size: 800px;
-    background-color: #fff;
-    background-image: url('../assets/images/bg_tera.png');
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
-    position: relative;
-    block-size: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-.mobile-info-close {
-    position: absolute;
-    inset-block-start: 12px;
-    inset-inline-end: 12px;
-    inline-size: 36px;
-    block-size: 36px;
-    border-radius: 50%;
-    background-color: #ff4500;
-    color: white;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.mobile-info-title {
-    block-size: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #568dd1;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    border-block-end: 1px solid #eee;
-}
-
-/* Info组件容器：允许滚动 */
-.mobile-info-content>div:last-child {
-    flex: 1;
-    overflow-y: auto;
-    padding: 15px;
-}
-
-/* 簡單樣式範例 */
-.calc-tab-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    block-size: 100%;
-    padding: 20px;
-    text-align: center;
-}
-
-.open-calc-btn {
-    margin-block-start: 15px;
-    padding: 10px 20px;
-    background-color: #009688;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1.1rem;
-}
-
-.open-calc-btn:hover {
-    background-color: #00796b;
+    line-height: 1.5;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+    color: #fff;
+    white-space: normal;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 @media (max-width: 1000px) {

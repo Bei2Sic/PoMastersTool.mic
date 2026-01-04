@@ -12,10 +12,12 @@ import {
     MoveFinal,
     PokemonStat,
     SyncDynamicState,
-    SyncRawData,
     Tile,
     Trainer,
 } from "@/types/syncModel";
+import {
+    SyncRawData,
+} from "@/types/cache";
 
 export interface StatCalcOptions {
     gearBonus?: number; // 裝備加成

@@ -53,6 +53,14 @@ export interface Detail {
     description: string;
 }
 
+export interface RequiredItem {
+    fieryOrb?: number,
+    leafyOrb?: number,
+    bubblyOrb?: number,
+    sparkyOrb?: number,
+    tmOrb?: number,
+}
+
 /** 招式基础信息 */
 export interface MoveBase {
     user: string;
@@ -147,6 +155,7 @@ export interface Grid {
     y: number;
     color: string;
     type: number; // 招式属性
+    requiredItems?: RequiredItem;
 }
 
 /** 石盘动态数据（含激活状态） */
@@ -176,6 +185,11 @@ export interface SyncComputed {
     spd: ComputedRef<number>; // 特防白值（对应spd）
     spe: ComputedRef<number>; // 速度白值（对应spe）
     costOrbs: ComputedRef<number>; // 消耗滴晶数
+    costFieryOrbs: ComputedRef<number>;
+    costLeafOrbs: ComputedRef<number>;
+    costBubblyOrbs: ComputedRef<number>;
+    costSparkyOrbs: ComputedRef<number>;
+    costTMOrbs: ComputedRef<number>;
     lastEnergy: ComputedRef<number>; // 剩余力量
     selectedTiles: ComputedRef<Tile[]>; // 选中的石盘
     currentPokemon: ComputedRef<Pokemon>; // 当前选中的宝可梦形态

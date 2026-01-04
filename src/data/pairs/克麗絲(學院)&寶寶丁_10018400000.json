@@ -178,7 +178,10 @@
       "x": -1,
       "y": 1,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "fieryOrb": 40
+      }
     },
     {
       "id": 1001840001,
@@ -191,7 +194,10 @@
       "x": 0,
       "y": 1,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "fieryOrb": 40
+      }
     },
     {
       "id": 1001840002,
@@ -204,7 +210,10 @@
       "x": 1,
       "y": 0,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "fieryOrb": 40
+      }
     },
     {
       "id": 1001840003,
@@ -217,7 +226,10 @@
       "x": 1,
       "y": -1,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 20
+      }
     },
     {
       "id": 1001840004,
@@ -230,7 +242,10 @@
       "x": 0,
       "y": -1,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 20
+      }
     },
     {
       "id": 1001840005,
@@ -243,7 +258,10 @@
       "x": -1,
       "y": 0,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 20
+      }
     },
     {
       "id": 1001840006,
@@ -256,7 +274,10 @@
       "x": 2,
       "y": -1,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 20
+      }
     },
     {
       "id": 1001840007,
@@ -269,7 +290,10 @@
       "x": 2,
       "y": 0,
       "color": "#FF80BF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "tmOrb": 1
+      }
     },
     {
       "id": 1001840008,
@@ -282,7 +306,10 @@
       "x": 2,
       "y": 1,
       "color": "#FF0066",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "leafyOrb": 40
+      }
     },
     {
       "id": 1001840009,
@@ -295,7 +322,10 @@
       "x": 2,
       "y": 2,
       "color": "#FF0066",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "leafyOrb": 80
+      }
     },
     {
       "id": 1001840010,
@@ -308,7 +338,11 @@
       "x": 3,
       "y": 2,
       "color": "#FF0066",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "leafyOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1001840011,
@@ -321,7 +355,11 @@
       "x": 4,
       "y": 2,
       "color": "#FF0066",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "leafyOrb": 80,
+        "sparkyOrb": 80
+      }
     },
     {
       "id": 1001840012,
@@ -334,7 +372,11 @@
       "x": 5,
       "y": 2,
       "color": "#FF0066",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "leafyOrb": 100,
+        "sparkyOrb": 100
+      }
     },
     {
       "id": 1001840013,
@@ -347,7 +389,10 @@
       "x": 3,
       "y": -1,
       "color": "#FF80BF",
-      "type": 1
+      "type": 1,
+      "requiredItems": {
+        "tmOrb": 1
+      }
     },
     {
       "id": 1001840014,
@@ -360,7 +405,10 @@
       "x": 4,
       "y": -1,
       "color": "#FF0066",
-      "type": 1
+      "type": 1,
+      "requiredItems": {
+        "leafyOrb": 40
+      }
     },
     {
       "id": 1001840015,
@@ -373,7 +421,10 @@
       "x": 5,
       "y": -1,
       "color": "#FF0066",
-      "type": 1
+      "type": 1,
+      "requiredItems": {
+        "leafyOrb": 80
+      }
     },
     {
       "id": 1001840016,
@@ -386,7 +437,11 @@
       "x": 6,
       "y": -1,
       "color": "#47D147",
-      "type": 1
+      "type": 1,
+      "requiredItems": {
+        "leafyOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1001840017,
@@ -399,7 +454,11 @@
       "x": 7,
       "y": -1,
       "color": "#FF0066",
-      "type": 1
+      "type": 1,
+      "requiredItems": {
+        "leafyOrb": 80,
+        "sparkyOrb": 80
+      }
     },
     {
       "id": 1001840018,
@@ -412,7 +471,11 @@
       "x": 8,
       "y": -1,
       "color": "#FF0066",
-      "type": 1
+      "type": 1,
+      "requiredItems": {
+        "leafyOrb": 100,
+        "sparkyOrb": 100
+      }
     },
     {
       "id": 1001840019,
@@ -425,7 +488,10 @@
       "x": 4,
       "y": 0,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 40
+      }
     },
     {
       "id": 1001840020,
@@ -438,7 +504,10 @@
       "x": 5,
       "y": 0,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 40
+      }
     },
     {
       "id": 1001840021,
@@ -451,7 +520,10 @@
       "x": 6,
       "y": 0,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 80
+      }
     },
     {
       "id": 1001840022,
@@ -464,7 +536,10 @@
       "x": 7,
       "y": 0,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 80
+      }
     },
     {
       "id": 1001840023,
@@ -477,7 +552,11 @@
       "x": 8,
       "y": 0,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1001840024,
@@ -490,7 +569,10 @@
       "x": 3,
       "y": -2,
       "color": "#FF80BF",
-      "type": 18
+      "type": 18,
+      "requiredItems": {
+        "tmOrb": 1
+      }
     },
     {
       "id": 1001840025,
@@ -503,7 +585,10 @@
       "x": 4,
       "y": -3,
       "color": "#47D147",
-      "type": 18
+      "type": 18,
+      "requiredItems": {
+        "leafyOrb": 40
+      }
     },
     {
       "id": 1001840026,
@@ -516,7 +601,10 @@
       "x": 5,
       "y": -4,
       "color": "#FF0066",
-      "type": 18
+      "type": 18,
+      "requiredItems": {
+        "leafyOrb": 80
+      }
     },
     {
       "id": 1001840027,
@@ -529,7 +617,11 @@
       "x": 6,
       "y": -5,
       "color": "#47D147",
-      "type": 18
+      "type": 18,
+      "requiredItems": {
+        "leafyOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1001840028,
@@ -542,7 +634,11 @@
       "x": 7,
       "y": -6,
       "color": "#FF0066",
-      "type": 18
+      "type": 18,
+      "requiredItems": {
+        "leafyOrb": 80,
+        "sparkyOrb": 80
+      }
     },
     {
       "id": 1001840029,
@@ -555,7 +651,11 @@
       "x": 8,
       "y": -7,
       "color": "#FF0066",
-      "type": 18
+      "type": 18,
+      "requiredItems": {
+        "leafyOrb": 100,
+        "sparkyOrb": 100
+      }
     },
     {
       "id": 1001840030,
@@ -568,7 +668,10 @@
       "x": 5,
       "y": -3,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 40
+      }
     },
     {
       "id": 1001840031,
@@ -581,7 +684,10 @@
       "x": 6,
       "y": -4,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 40
+      }
     },
     {
       "id": 1001840032,
@@ -594,7 +700,10 @@
       "x": 7,
       "y": -5,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 80
+      }
     },
     {
       "id": 1001840033,
@@ -607,7 +716,10 @@
       "x": 8,
       "y": -6,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 80
+      }
     },
     {
       "id": 1001840034,
@@ -620,7 +732,11 @@
       "x": 9,
       "y": -7,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1001840035,
@@ -633,7 +749,10 @@
       "x": 2,
       "y": -2,
       "color": "#FF80BF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "tmOrb": 1
+      }
     },
     {
       "id": 1001840036,
@@ -646,7 +765,10 @@
       "x": 2,
       "y": -3,
       "color": "#FF0066",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "leafyOrb": 40
+      }
     },
     {
       "id": 1001840037,
@@ -659,7 +781,10 @@
       "x": 3,
       "y": -4,
       "color": "#FF0066",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "leafyOrb": 80
+      }
     },
     {
       "id": 1001840038,
@@ -672,7 +797,11 @@
       "x": 4,
       "y": -5,
       "color": "#FF0066",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "leafyOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1001840039,
@@ -685,7 +814,11 @@
       "x": 5,
       "y": -6,
       "color": "#FF0066",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "leafyOrb": 80,
+        "sparkyOrb": 80
+      }
     },
     {
       "id": 1001840040,
@@ -698,7 +831,11 @@
       "x": 6,
       "y": -7,
       "color": "#FF0066",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "leafyOrb": 100,
+        "sparkyOrb": 100
+      }
     },
     {
       "id": 1001840041,
@@ -711,7 +848,10 @@
       "x": -2,
       "y": 1,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 20
+      }
     },
     {
       "id": 1001840042,
@@ -724,7 +864,10 @@
       "x": -2,
       "y": 2,
       "color": "#FF80BF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "tmOrb": 1
+      }
     },
     {
       "id": 1001840043,
@@ -737,7 +880,10 @@
       "x": -2,
       "y": 3,
       "color": "#FF0066",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "leafyOrb": 40
+      }
     },
     {
       "id": 1001840044,
@@ -750,7 +896,10 @@
       "x": -2,
       "y": 4,
       "color": "#FF0066",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "leafyOrb": 80
+      }
     },
     {
       "id": 1001840045,
@@ -763,7 +912,11 @@
       "x": -3,
       "y": 5,
       "color": "#FF0066",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "leafyOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1001840046,
@@ -776,7 +929,11 @@
       "x": -4,
       "y": 6,
       "color": "#FF0066",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "leafyOrb": 80,
+        "sparkyOrb": 80
+      }
     },
     {
       "id": 1001840047,
@@ -789,7 +946,11 @@
       "x": -5,
       "y": 7,
       "color": "#FF0066",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "leafyOrb": 100,
+        "sparkyOrb": 100
+      }
     },
     {
       "id": 1001840048,
@@ -802,7 +963,10 @@
       "x": -3,
       "y": 2,
       "color": "#FF80BF",
-      "type": 1
+      "type": 1,
+      "requiredItems": {
+        "tmOrb": 1
+      }
     },
     {
       "id": 1001840049,
@@ -815,7 +979,10 @@
       "x": -4,
       "y": 3,
       "color": "#FF0066",
-      "type": 1
+      "type": 1,
+      "requiredItems": {
+        "leafyOrb": 40
+      }
     },
     {
       "id": 1001840050,
@@ -828,7 +995,10 @@
       "x": -5,
       "y": 4,
       "color": "#47D147",
-      "type": 1
+      "type": 1,
+      "requiredItems": {
+        "leafyOrb": 80
+      }
     },
     {
       "id": 1001840051,
@@ -841,7 +1011,11 @@
       "x": -6,
       "y": 5,
       "color": "#FF0066",
-      "type": 1
+      "type": 1,
+      "requiredItems": {
+        "leafyOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1001840052,
@@ -854,7 +1028,11 @@
       "x": -7,
       "y": 6,
       "color": "#47D147",
-      "type": 1
+      "type": 1,
+      "requiredItems": {
+        "leafyOrb": 80,
+        "sparkyOrb": 80
+      }
     },
     {
       "id": 1001840053,
@@ -867,7 +1045,11 @@
       "x": -8,
       "y": 7,
       "color": "#FF0066",
-      "type": 1
+      "type": 1,
+      "requiredItems": {
+        "leafyOrb": 100,
+        "sparkyOrb": 100
+      }
     },
     {
       "id": 1001840054,
@@ -880,7 +1062,10 @@
       "x": -4,
       "y": 4,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 40
+      }
     },
     {
       "id": 1001840055,
@@ -893,7 +1078,10 @@
       "x": -5,
       "y": 5,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 40
+      }
     },
     {
       "id": 1001840056,
@@ -906,7 +1094,10 @@
       "x": -6,
       "y": 6,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 80
+      }
     },
     {
       "id": 1001840057,
@@ -919,7 +1110,10 @@
       "x": -7,
       "y": 7,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 80
+      }
     },
     {
       "id": 1001840058,
@@ -932,7 +1126,11 @@
       "x": -8,
       "y": 8,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1001840059,
@@ -945,7 +1143,10 @@
       "x": -3,
       "y": 1,
       "color": "#FF80BF",
-      "type": 18
+      "type": 18,
+      "requiredItems": {
+        "tmOrb": 1
+      }
     },
     {
       "id": 1001840060,
@@ -958,7 +1159,10 @@
       "x": -4,
       "y": 1,
       "color": "#FF0066",
-      "type": 18
+      "type": 18,
+      "requiredItems": {
+        "leafyOrb": 40
+      }
     },
     {
       "id": 1001840061,
@@ -971,7 +1175,10 @@
       "x": -5,
       "y": 1,
       "color": "#FF0066",
-      "type": 18
+      "type": 18,
+      "requiredItems": {
+        "leafyOrb": 80
+      }
     },
     {
       "id": 1001840062,
@@ -984,7 +1191,11 @@
       "x": -6,
       "y": 1,
       "color": "#47D147",
-      "type": 18
+      "type": 18,
+      "requiredItems": {
+        "leafyOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1001840063,
@@ -997,7 +1208,11 @@
       "x": -7,
       "y": 1,
       "color": "#FF0066",
-      "type": 18
+      "type": 18,
+      "requiredItems": {
+        "leafyOrb": 80,
+        "sparkyOrb": 80
+      }
     },
     {
       "id": 1001840064,
@@ -1010,7 +1225,11 @@
       "x": -8,
       "y": 1,
       "color": "#FF0066",
-      "type": 18
+      "type": 18,
+      "requiredItems": {
+        "leafyOrb": 100,
+        "sparkyOrb": 100
+      }
     },
     {
       "id": 1001840065,
@@ -1023,7 +1242,10 @@
       "x": -5,
       "y": 2,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 40
+      }
     },
     {
       "id": 1001840066,
@@ -1036,7 +1258,10 @@
       "x": -6,
       "y": 2,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 40
+      }
     },
     {
       "id": 1001840067,
@@ -1049,7 +1274,10 @@
       "x": -7,
       "y": 2,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 80
+      }
     },
     {
       "id": 1001840068,
@@ -1062,7 +1290,10 @@
       "x": -8,
       "y": 2,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 80
+      }
     },
     {
       "id": 1001840069,
@@ -1075,7 +1306,11 @@
       "x": -9,
       "y": 2,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1001840070,
@@ -1088,7 +1323,10 @@
       "x": -2,
       "y": 0,
       "color": "#FF80BF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "tmOrb": 1
+      }
     },
     {
       "id": 1001840071,
@@ -1101,7 +1339,10 @@
       "x": -2,
       "y": -1,
       "color": "#FF0066",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "leafyOrb": 40
+      }
     },
     {
       "id": 1001840072,
@@ -1114,7 +1355,10 @@
       "x": -3,
       "y": -1,
       "color": "#FF0066",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "leafyOrb": 80
+      }
     },
     {
       "id": 1001840073,
@@ -1127,7 +1371,11 @@
       "x": -4,
       "y": -1,
       "color": "#FF0066",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "leafyOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1001840074,
@@ -1140,7 +1388,11 @@
       "x": -5,
       "y": -1,
       "color": "#FF0066",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "leafyOrb": 80,
+        "sparkyOrb": 80
+      }
     },
     {
       "id": 1001840075,
@@ -1153,7 +1405,11 @@
       "x": -6,
       "y": -1,
       "color": "#FF0066",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "leafyOrb": 100,
+        "sparkyOrb": 100
+      }
     },
     {
       "id": 1001840076,
@@ -1166,7 +1422,10 @@
       "x": 0,
       "y": 2,
       "color": "#FF0066",
-      "type": 18
+      "type": 18,
+      "requiredItems": {
+        "fieryOrb": 40
+      }
     },
     {
       "id": 1001840077,
@@ -1179,7 +1438,10 @@
       "x": 0,
       "y": 3,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "fieryOrb": 80
+      }
     },
     {
       "id": 1001840078,
@@ -1192,7 +1454,10 @@
       "x": 0,
       "y": 4,
       "color": "#FF0066",
-      "type": 18
+      "type": 18,
+      "requiredItems": {
+        "fieryOrb": 80
+      }
     },
     {
       "id": 1001840079,
@@ -1205,7 +1470,10 @@
       "x": 0,
       "y": 5,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "fieryOrb": 80
+      }
     },
     {
       "id": 1001840080,
@@ -1218,7 +1486,10 @@
       "x": 0,
       "y": 6,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "fieryOrb": 80
+      }
     },
     {
       "id": 1001840081,
@@ -1231,7 +1502,11 @@
       "x": 0,
       "y": 7,
       "color": "#FF0066",
-      "type": 18
+      "type": 18,
+      "requiredItems": {
+        "fieryOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1001840082,
@@ -1244,7 +1519,11 @@
       "x": 0,
       "y": 8,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "fieryOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1001840083,
@@ -1257,7 +1536,11 @@
       "x": 0,
       "y": 9,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "fieryOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1001840084,
@@ -1279,7 +1562,11 @@
       "x": 0,
       "y": 10,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "fieryOrb": 160,
+        "sparkyOrb": 160
+      }
     },
     {
       "id": 1001840085,
@@ -1292,7 +1579,10 @@
       "x": 1,
       "y": 4,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "fieryOrb": 80
+      }
     },
     {
       "id": 1001840086,
@@ -1305,7 +1595,11 @@
       "x": 2,
       "y": 4,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "fieryOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1001840087,
@@ -1318,7 +1612,11 @@
       "x": 3,
       "y": 4,
       "color": "#BF80FF",
-      "type": 18
+      "type": 18,
+      "requiredItems": {
+        "fieryOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1001840088,
@@ -1331,7 +1629,11 @@
       "x": 3,
       "y": 5,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "fieryOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1001840089,
@@ -1344,7 +1646,11 @@
       "x": 4,
       "y": 4,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "fieryOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1001840090,
@@ -1357,7 +1663,11 @@
       "x": 3,
       "y": 6,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "fieryOrb": 80,
+        "sparkyOrb": 80
+      }
     },
     {
       "id": 1001840091,
@@ -1370,7 +1680,11 @@
       "x": 5,
       "y": 4,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "fieryOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1001840092,
@@ -1383,7 +1697,10 @@
       "x": -1,
       "y": 5,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "fieryOrb": 80
+      }
     },
     {
       "id": 1001840093,
@@ -1396,7 +1713,11 @@
       "x": -2,
       "y": 6,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "fieryOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1001840094,
@@ -1409,7 +1730,11 @@
       "x": -3,
       "y": 7,
       "color": "#BF80FF",
-      "type": 18
+      "type": 18,
+      "requiredItems": {
+        "fieryOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1001840095,
@@ -1422,7 +1747,11 @@
       "x": -3,
       "y": 8,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "fieryOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1001840096,
@@ -1435,7 +1764,11 @@
       "x": -4,
       "y": 8,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "fieryOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1001840097,
@@ -1448,7 +1781,11 @@
       "x": -3,
       "y": 9,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "fieryOrb": 80,
+        "sparkyOrb": 80
+      }
     },
     {
       "id": 1001840098,
@@ -1461,7 +1798,11 @@
       "x": -5,
       "y": 9,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "fieryOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1001840099,
@@ -1474,7 +1815,10 @@
       "x": 0,
       "y": -2,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 20
+      }
     },
     {
       "id": 1428465508,
@@ -1487,7 +1831,10 @@
       "x": 0,
       "y": -3,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 20
+      }
     },
     {
       "id": 1428465509,
@@ -1500,7 +1847,10 @@
       "x": 0,
       "y": -4,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 20
+      }
     },
     {
       "id": 1428465510,
@@ -1513,7 +1863,10 @@
       "x": 0,
       "y": -5,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 20
+      }
     },
     {
       "id": 1428465511,
@@ -1526,7 +1879,10 @@
       "x": 0,
       "y": -6,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 40
+      }
     },
     {
       "id": 1428465512,
@@ -1539,7 +1895,10 @@
       "x": -1,
       "y": -6,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 40
+      }
     },
     {
       "id": 1428465513,
@@ -1552,7 +1911,10 @@
       "x": 1,
       "y": -7,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 40
+      }
     },
     {
       "id": 1428465514,
@@ -1565,7 +1927,10 @@
       "x": 0,
       "y": -7,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 60
+      }
     },
     {
       "id": 1428465515,
@@ -1578,7 +1943,10 @@
       "x": -1,
       "y": -7,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 60
+      }
     },
     {
       "id": 1428465516,
@@ -1591,7 +1959,10 @@
       "x": 1,
       "y": -8,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 60
+      }
     },
     {
       "id": 1428465517,
@@ -1604,7 +1975,10 @@
       "x": 0,
       "y": -8,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 80
+      }
     },
     {
       "id": 1428465518,
@@ -1617,7 +1991,10 @@
       "x": 1,
       "y": -4,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 20
+      }
     },
     {
       "id": 1428465519,
@@ -1630,7 +2007,10 @@
       "x": 2,
       "y": -5,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 40
+      }
     },
     {
       "id": 1428465520,
@@ -1643,7 +2023,10 @@
       "x": 3,
       "y": -6,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 40
+      }
     },
     {
       "id": 1428465521,
@@ -1656,7 +2039,10 @@
       "x": 3,
       "y": -7,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 60
+      }
     },
     {
       "id": 1428465522,
@@ -1669,7 +2055,10 @@
       "x": 4,
       "y": -7,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 60
+      }
     },
     {
       "id": 1428465523,
@@ -1682,7 +2071,10 @@
       "x": 3,
       "y": -8,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 80
+      }
     },
     {
       "id": 1428465524,
@@ -1695,7 +2087,10 @@
       "x": 4,
       "y": -8,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 100
+      }
     },
     {
       "id": 1428465525,
@@ -1708,7 +2103,10 @@
       "x": 5,
       "y": -8,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 80
+      }
     },
     {
       "id": 1428465526,
@@ -1721,7 +2119,10 @@
       "x": -1,
       "y": -3,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 20
+      }
     },
     {
       "id": 1428465527,
@@ -1734,7 +2135,10 @@
       "x": -2,
       "y": -3,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 40
+      }
     },
     {
       "id": 1428465528,
@@ -1747,7 +2151,10 @@
       "x": -3,
       "y": -3,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 40
+      }
     },
     {
       "id": 1428465529,
@@ -1760,7 +2167,10 @@
       "x": -3,
       "y": -4,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 60
+      }
     },
     {
       "id": 1428465530,
@@ -1773,7 +2183,10 @@
       "x": -4,
       "y": -3,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 60
+      }
     },
     {
       "id": 1428465531,
@@ -1786,7 +2199,10 @@
       "x": -3,
       "y": -5,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 80
+      }
     },
     {
       "id": 1428465532,
@@ -1799,7 +2215,10 @@
       "x": -4,
       "y": -4,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 100
+      }
     },
     {
       "id": 1428465533,
@@ -1812,7 +2231,10 @@
       "x": -5,
       "y": -3,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 80
+      }
     }
   ],
   "luckCookies": {}

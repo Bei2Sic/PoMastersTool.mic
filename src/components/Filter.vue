@@ -633,8 +633,9 @@ const handleSelect = (trainer: SyncMeta) => {
 /* 悬浮图标 */
 .trainer-meta-overlay {
     position: absolute;
-    inset-block-end: 6px;
-    inset-inline-end: 40px;
+    inset-block-end: 5px;
+    inset-inline-start: 50%; /* 左邊緣移動到父容器的中間 */
+    transform: translateX(-60%);
     display: flex;
     flex-direction: row;
     align-items: flex-start;

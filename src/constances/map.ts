@@ -47,6 +47,7 @@ export const ExclusivityMap: Record<string, TypeMapItem> = {
     5: { key: "Variety", cnName: "繁星限定" },
     6: { key: "Mix", cnName: "繽紛限定" },
     7: { key: "PokefairEX", cnName: "EX群星" },
+    8: { key: "Gym", cnName: "道館限定" },
     996: { key: "MasterEX", cnName: "EX大師" },
     997: { key: "Academy", cnName: "學院套裝" },
     998: { key: "Arcsuit", cnName: "阿爾套裝" },

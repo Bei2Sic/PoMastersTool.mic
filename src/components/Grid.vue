@@ -18,6 +18,15 @@
             </div>
         </div>
 
+        <div v-if="trainer.exclusivity === 'Academy'" class="academy-resources">
+            <div v-for="(item, index) in academyResourceList" :key="index" class="academy-item">
+                <img :src="getAcademyItemIcon(index)" alt="item" class="academy-icon" />
+                <span class="academy-count">x{{ item.count }}</span>
+            </div>
+        </div>
+
+
+
         <div class="svg-scroll-area" @click="handleBackgroundClick">
 
             <svg :viewBox="viewBox" preserveAspectRatio="xMidYMid meet" class="main-svg">
@@ -31,7 +40,7 @@
                     <g :transform="`translate(${calcHexSvgX(tile.x)}, ${calcHexSvgY(tile.x, tile.y)})`"
                         class="tile-group" @click.stop="handleTileClick(tile.id, $event)"
                         :class="{ 'tile-locked': !isTileReachable(tile) }" @mouseenter="handleTileHover(tile, $event)"
-                        @mouseleave="handleTileHover(null)">
+                        @mouseleave="handleTileHover(null, null)">
 
                         <polygon :points="hexPoints"
                             :style="{ cursor: isTileReachable(tile) ? 'pointer' : 'not-allowed' }" fill="transparent" />
@@ -69,6 +78,33 @@
                     <p class="tile-other">
                         滴晶：{{ hoveredTile.orb }}&nbsp;&nbsp;力量：{{ hoveredTile.energy }}
                     </p>
+                    <div v-if="trainer.exclusivity === 'Academy' && hoveredTile.requiredItems"
+                        class="tile-other academy-reqs">
+                        <span v-if="hoveredTile.requiredItems.fieryOrb" class="orb-tag">
+                            <img :src="getAcademyItemIcon(0)" class="mini-orb" />
+                            {{ hoveredTile.requiredItems.fieryOrb }}
+                        </span>
+
+                        <span v-if="hoveredTile.requiredItems.leafyOrb" class="orb-tag">
+                            <img :src="getAcademyItemIcon(1)" class="mini-orb" />
+                            {{ hoveredTile.requiredItems.leafyOrb }}
+                        </span>
+
+                        <span v-if="hoveredTile.requiredItems.bubblyOrb" class="orb-tag">
+                            <img :src="getAcademyItemIcon(2)" class="mini-orb" />
+                            {{ hoveredTile.requiredItems.bubblyOrb }}
+                        </span>
+
+                        <span v-if="hoveredTile.requiredItems.sparkyOrb" class="orb-tag">
+                            <img :src="getAcademyItemIcon(3)" class="mini-orb" />
+                            {{ hoveredTile.requiredItems.sparkyOrb }}
+                        </span>
+
+                        <span v-if="hoveredTile.requiredItems.tmOrb" class="orb-tag">
+                            <img :src="getAcademyItemIcon(4)" class="mini-orb" />
+                            {{ hoveredTile.requiredItems.tmOrb }}
+                        </span>
+                    </div>
                 </div>
             </div>
         </transition>
@@ -76,8 +112,9 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import Bonus from '@/components/Bonus.vue';
+import { Pokemon, Theme, Trainer, Tile } from "@/types/syncModel";
 import { computed, onMounted, onUnmounted, ref, watch } from 'vue';
 
 const CONST_HEX_RADIUS = 50;
@@ -87,11 +124,16 @@ const X_SPACING_RATIO = 0.75;
 const Y_SPACING_RATIO = 1.00;
 
 const props = defineProps({
-    gridData: { type: Array, required: true },
-    trainer: { type: Object, required: true },
+    gridData: { type: Array as () => Tile[], required: true },
+    trainer: { type: Object as () => Trainer, required: true },
     currentRarity: { type: Number, required: true },
     bonusLevel: { type: Number, required: true },
     costOrbs: { type: Number, required: true },
+    costFieryOrbs: { type: Number, required: true },
+    costLeafOrbs: { type: Number, required: true },
+    costBubblyOrbs: { type: Number, required: true },
+    costSparkyOrbs: { type: Number, required: true },
+    costTMOrbs: { type: Number, required: true },
     lastEnergy: { type: Number, required: true },
     fixTileName: { type: Function, required: true },
     isTileReachable: { type: Function, required: true },
@@ -103,17 +145,26 @@ const props = defineProps({
     onTrainerClick: { type: Function, required: false },
 });
 
+// 學院拍的模板
+const academyResourceList = computed(() => [
+    { count: props.costFieryOrbs, icon: 'orb_red', color: '#ff7070' },
+    { count: props.costLeafOrbs, icon: 'orb_green', color: '#70ff70' },
+    { count: props.costBubblyOrbs, icon: 'orb_blue', color: '#7070ff' },
+    { count: props.costSparkyOrbs, icon: 'orb_yellow', color: '#ffff70' },
+    { count: props.costTMOrbs, icon: 'orb_purple', color: '#d070ff' },
+]);
+
 const emit = defineEmits(['update:bonusLevel']);
 const localBonusLevel = ref(props.bonusLevel);
 
 // 状态
-const hoveredTile = ref(null);
-const popupPosition = ref({ 'inset-block-start': 0, 'inset-inline-start': 0, placeAbove: false });
+const hoveredTile = ref<Tile | null>(null);
+const popupPosition = ref({ top: 0, left: 0, bottom: 0, placeAbove: false });
 const isMobile = ref(false);
 
 // 坐标与 viewBox 计算 
-const calcHexSvgX = (x) => x * (CONST_HEX_RADIUS * 2 * X_SPACING_RATIO);
-const calcHexSvgY = (x, y) => {
+const calcHexSvgX = (x: number) => x * (CONST_HEX_RADIUS * 2 * X_SPACING_RATIO);
+const calcHexSvgY = (x: number, y: number) => {
     const ySpacing = CONST_HEX_RADIUS * Math.sqrt(3) * Y_SPACING_RATIO;
     const absX = Math.abs(x);
     const cof = x > 0 ? (-1) * absX : absX;
@@ -160,7 +211,7 @@ const handleBackgroundClick = () => {
 };
 
 // 点击格子：既要触发选中，也要触发弹窗显示
-const handleTileClick = (id, event) => {
+const handleTileClick = (id: number, event: MouseEvent) => {
     // 选中/取消选中
     props.toggleTile(id);
 
@@ -173,16 +224,18 @@ const handleTileClick = (id, event) => {
 };
 
 // 鼠标悬停 (仅桌面端)
-const handleTileHover = (tile, event) => {
+const handleTileHover = (tile: Tile, event: MouseEvent) => {
     if (isMobile.value) return;
+    console.log('鼠標進入:', tile);
+    console.log('鼠標事件:', event);
     hoveredTile.value = tile;
     if (tile && event) {
         updatePopupPosition(event);
     }
 };
 
-const updatePopupPosition = (event) => {
-    const target = event.currentTarget;
+const updatePopupPosition = (event: MouseEvent) => {
+    const target = event.currentTarget as HTMLElement;
     if (!target) return;
     const rect = target.getBoundingClientRect();
     const screenHeight = window.innerHeight;
@@ -220,8 +273,8 @@ const dynamicPopupStyle = computed(() => {
         transform: `translate(-50%, ${placeAbove ? 'calc(-100% - 15px)' : '15px'})`,
     };
 
-    if (placeAbove) style.top = `${top}px`;
-    else style.top = `${bottom}px`;
+    if (placeAbove) style['inset-block-start'] = `${top}px`;
+    else style['inset-block-start'] = `${bottom}px`;
 
     return style;
 });
@@ -250,6 +303,13 @@ const handleTrainerClick = () => { if (props.onTrainerClick) props.onTrainerClic
 
 watch(() => props.bonusLevel, (v) => localBonusLevel.value = v, { immediate: true });
 watch(localBonusLevel, (n, o) => { if (n !== o) props.checkSelectedTiles(); });
+
+const getAcademyItemIcon = (index: number) => {
+    const colors = ['fiery', 'leafy', 'bubbly', 'sparky', 'tm'];
+    const color = colors[index] || 'fiery';
+    console.log(color)
+    return new URL(`../assets/sync-grids/icon_orb_${color}.png`, import.meta.url).href;
+};
 
 onMounted(() => {
     updateWindowWidth();
@@ -317,6 +377,57 @@ onUnmounted(() => {
     display: flex;
     justify-content: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Academy 資源列表容器 */
+.academy-resources {
+    position: absolute;
+    left: 10px;
+    /* 固定在右側 */
+    top: 20%;
+    transform: translateY(-50%);
+    /* 垂直居中 */
+
+    display: flex;
+    flex-direction: column;
+    /* 垂直排列 */
+    gap: 4px;
+
+    background-color: rgba(116, 115, 115, 0.6);
+    /* 深色半透明背景 */
+    padding: 8px 12px;
+    border-radius: 12px;
+    /* 圓角 */
+
+    /* 防止在小屏幕遮擋中間內容，可以設個最大高度讓它滾動，或者調整z-index */
+    z-index: 10;
+    max-height: 90%;
+    overflow-y: auto;
+}
+
+/* 單個資源行 */
+.academy-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* 圖片樣式 */
+.academy-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+/* 文字樣式 */
+.academy-count {
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+    /* 增加文字可讀性 */
+    font-family: monospace;
+    /* 讓數字對齊更好看 */
 }
 
 /* 滚动区域 */
@@ -427,6 +538,32 @@ onUnmounted(() => {
     .svg-scroll-area {
         display: block;
     }
+
+    .academy-resources {
+        /* 1. 位置调整：不再垂直居中，而是改为固定在右上角或者紧贴底部 */
+        /* right: 10%; */
+        top: 18%;
+        transform: none;
+        /* 取消之前的垂直居中位移 */
+
+        /* 2. 布局改为横向：节省垂直空间 */
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 3px;
+        padding: 4px 6px;
+        background-color: rgba(0, 0, 0, 0.5);
+        max-width: 70%;
+    }
+
+    .academy-icon {
+        width: 16px;
+        height: 16px;
+    }
+
+    .academy-count {
+        font-size: 12px;
+    }
 }
 
 /* ================== 弹窗样式 ================== */
@@ -471,6 +608,37 @@ onUnmounted(() => {
     color: #666;
     text-align: center;
     font-weight: bold;
+}
+
+.academy-reqs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    /* 每個項目之間的間距 */
+    margin-top: 4px;
+    /* 與上一行的距離 */
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    /* 可選：加條分隔線 */
+    padding-top: 4px;
+}
+
+.orb-tag {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-size: 13px;
+    line-height: 1.5;
+    /* font-size: 12px; */
+    /* color: #ffd700; */
+    /* 用金色或亮色突出顯示特殊需求 */
+}
+
+.mini-orb {
+    width: 15px;
+    height: 15px;
+    object-fit: contain;
 }
 
 /* 移动端顶部显示逻辑 */

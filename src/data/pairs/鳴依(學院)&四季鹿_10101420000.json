@@ -178,7 +178,10 @@
       "x": -1,
       "y": 1,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "fieryOrb": 40
+      }
     },
     {
       "id": 1800101983,
@@ -191,7 +194,10 @@
       "x": 0,
       "y": 1,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "fieryOrb": 40
+      }
     },
     {
       "id": 1800101984,
@@ -204,7 +210,10 @@
       "x": 1,
       "y": 0,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "fieryOrb": 40
+      }
     },
     {
       "id": 1800101985,
@@ -217,7 +226,10 @@
       "x": 1,
       "y": -1,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 20
+      }
     },
     {
       "id": 1800101986,
@@ -230,7 +242,10 @@
       "x": 0,
       "y": -1,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 20
+      }
     },
     {
       "id": 1800101987,
@@ -243,7 +258,10 @@
       "x": -1,
       "y": 0,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 20
+      }
     },
     {
       "id": 1800101988,
@@ -256,7 +274,10 @@
       "x": 2,
       "y": -1,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 20
+      }
     },
     {
       "id": 1800101989,
@@ -269,7 +290,10 @@
       "x": 2,
       "y": 0,
       "color": "#FF80BF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "tmOrb": 1
+      }
     },
     {
       "id": 1800101990,
@@ -282,7 +306,10 @@
       "x": 2,
       "y": 1,
       "color": "#FF0066",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "leafyOrb": 40
+      }
     },
     {
       "id": 1800101991,
@@ -295,7 +322,10 @@
       "x": 2,
       "y": 2,
       "color": "#FF0066",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "leafyOrb": 80
+      }
     },
     {
       "id": 1800101992,
@@ -308,7 +338,11 @@
       "x": 3,
       "y": 2,
       "color": "#FF0066",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "leafyOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1800101993,
@@ -321,7 +355,11 @@
       "x": 4,
       "y": 2,
       "color": "#FF0066",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "leafyOrb": 80,
+        "sparkyOrb": 80
+      }
     },
     {
       "id": 1800101994,
@@ -334,7 +372,11 @@
       "x": 5,
       "y": 2,
       "color": "#FF0066",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "leafyOrb": 100,
+        "sparkyOrb": 100
+      }
     },
     {
       "id": 1800101995,
@@ -347,7 +389,10 @@
       "x": 3,
       "y": -1,
       "color": "#FF80BF",
-      "type": 5
+      "type": 5,
+      "requiredItems": {
+        "tmOrb": 1
+      }
     },
     {
       "id": 1800101996,
@@ -360,7 +405,10 @@
       "x": 4,
       "y": -1,
       "color": "#FF0066",
-      "type": 5
+      "type": 5,
+      "requiredItems": {
+        "leafyOrb": 40
+      }
     },
     {
       "id": 1800101997,
@@ -373,7 +421,10 @@
       "x": 5,
       "y": -1,
       "color": "#FF0066",
-      "type": 5
+      "type": 5,
+      "requiredItems": {
+        "leafyOrb": 80
+      }
     },
     {
       "id": 1800101998,
@@ -386,7 +437,11 @@
       "x": 6,
       "y": -1,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "leafyOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1800101999,
@@ -399,7 +454,11 @@
       "x": 7,
       "y": -1,
       "color": "#47D147",
-      "type": 5
+      "type": 5,
+      "requiredItems": {
+        "leafyOrb": 80,
+        "sparkyOrb": 80
+      }
     },
     {
       "id": 1800102000,
@@ -412,7 +471,11 @@
       "x": 8,
       "y": -1,
       "color": "#FF0066",
-      "type": 5
+      "type": 5,
+      "requiredItems": {
+        "leafyOrb": 100,
+        "sparkyOrb": 100
+      }
     },
     {
       "id": 1800102001,
@@ -425,7 +488,10 @@
       "x": 4,
       "y": 0,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 40
+      }
     },
     {
       "id": 1800102002,
@@ -438,7 +504,10 @@
       "x": 5,
       "y": 0,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 40
+      }
     },
     {
       "id": 1800102003,
@@ -451,7 +520,10 @@
       "x": 6,
       "y": 0,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 80
+      }
     },
     {
       "id": 1800102004,
@@ -464,7 +536,10 @@
       "x": 7,
       "y": 0,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 80
+      }
     },
     {
       "id": 1800102005,
@@ -477,7 +552,11 @@
       "x": 8,
       "y": 0,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1800102006,
@@ -490,7 +569,10 @@
       "x": 3,
       "y": -2,
       "color": "#FF80BF",
-      "type": 5
+      "type": 5,
+      "requiredItems": {
+        "tmOrb": 1
+      }
     },
     {
       "id": 1800102007,
@@ -503,7 +585,10 @@
       "x": 4,
       "y": -3,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "leafyOrb": 40
+      }
     },
     {
       "id": 1800102008,
@@ -516,7 +601,10 @@
       "x": 5,
       "y": -4,
       "color": "#47D147",
-      "type": 5
+      "type": 5,
+      "requiredItems": {
+        "leafyOrb": 80
+      }
     },
     {
       "id": 1800102009,
@@ -529,7 +617,11 @@
       "x": 6,
       "y": -5,
       "color": "#FF0066",
-      "type": 5
+      "type": 5,
+      "requiredItems": {
+        "leafyOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1800102010,
@@ -542,7 +634,11 @@
       "x": 7,
       "y": -6,
       "color": "#FF0066",
-      "type": 5
+      "type": 5,
+      "requiredItems": {
+        "leafyOrb": 80,
+        "sparkyOrb": 80
+      }
     },
     {
       "id": 1800102011,
@@ -555,7 +651,11 @@
       "x": 8,
       "y": -7,
       "color": "#FF0066",
-      "type": 5
+      "type": 5,
+      "requiredItems": {
+        "leafyOrb": 100,
+        "sparkyOrb": 100
+      }
     },
     {
       "id": 1800102012,
@@ -568,7 +668,10 @@
       "x": 5,
       "y": -3,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 40
+      }
     },
     {
       "id": 1800102013,
@@ -581,7 +684,10 @@
       "x": 6,
       "y": -4,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 40
+      }
     },
     {
       "id": 1800102014,
@@ -594,7 +700,10 @@
       "x": 7,
       "y": -5,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 80
+      }
     },
     {
       "id": 1800102015,
@@ -607,7 +716,10 @@
       "x": 8,
       "y": -6,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 80
+      }
     },
     {
       "id": 1800102016,
@@ -620,7 +732,11 @@
       "x": 9,
       "y": -7,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1800102017,
@@ -633,7 +749,10 @@
       "x": 2,
       "y": -2,
       "color": "#FF80BF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "tmOrb": 1
+      }
     },
     {
       "id": 1800102018,
@@ -646,7 +765,10 @@
       "x": 2,
       "y": -3,
       "color": "#FF0066",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "leafyOrb": 40
+      }
     },
     {
       "id": 1800102019,
@@ -659,7 +781,10 @@
       "x": 3,
       "y": -4,
       "color": "#FF0066",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "leafyOrb": 80
+      }
     },
     {
       "id": 1800102020,
@@ -672,7 +797,11 @@
       "x": 4,
       "y": -5,
       "color": "#FF0066",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "leafyOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1800102021,
@@ -685,7 +814,11 @@
       "x": 5,
       "y": -6,
       "color": "#FF0066",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "leafyOrb": 80,
+        "sparkyOrb": 80
+      }
     },
     {
       "id": 1800102022,
@@ -698,7 +831,11 @@
       "x": 6,
       "y": -7,
       "color": "#FF0066",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "leafyOrb": 100,
+        "sparkyOrb": 100
+      }
     },
     {
       "id": 1800102023,
@@ -711,7 +848,10 @@
       "x": -2,
       "y": 1,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 20
+      }
     },
     {
       "id": 1800102024,
@@ -724,7 +864,10 @@
       "x": -2,
       "y": 2,
       "color": "#FF80BF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "tmOrb": 1
+      }
     },
     {
       "id": 1800102025,
@@ -737,7 +880,10 @@
       "x": -2,
       "y": 3,
       "color": "#FF0066",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "leafyOrb": 40
+      }
     },
     {
       "id": 1800102026,
@@ -750,7 +896,10 @@
       "x": -2,
       "y": 4,
       "color": "#FF0066",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "leafyOrb": 80
+      }
     },
     {
       "id": 1800102027,
@@ -763,7 +912,11 @@
       "x": -3,
       "y": 5,
       "color": "#FF0066",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "leafyOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1800102028,
@@ -776,7 +929,11 @@
       "x": -4,
       "y": 6,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "leafyOrb": 80,
+        "sparkyOrb": 80
+      }
     },
     {
       "id": 1800102029,
@@ -789,7 +946,11 @@
       "x": -5,
       "y": 7,
       "color": "#FF0066",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "leafyOrb": 100,
+        "sparkyOrb": 100
+      }
     },
     {
       "id": 1800102030,
@@ -802,7 +963,10 @@
       "x": -3,
       "y": 2,
       "color": "#FF80BF",
-      "type": 5
+      "type": 5,
+      "requiredItems": {
+        "tmOrb": 1
+      }
     },
     {
       "id": 1800102031,
@@ -815,7 +979,10 @@
       "x": -4,
       "y": 3,
       "color": "#FF0066",
-      "type": 5
+      "type": 5,
+      "requiredItems": {
+        "leafyOrb": 40
+      }
     },
     {
       "id": 1800102032,
@@ -828,7 +995,10 @@
       "x": -5,
       "y": 4,
       "color": "#47D147",
-      "type": 5
+      "type": 5,
+      "requiredItems": {
+        "leafyOrb": 80
+      }
     },
     {
       "id": 1800102033,
@@ -841,7 +1011,11 @@
       "x": -6,
       "y": 5,
       "color": "#FF0066",
-      "type": 5
+      "type": 5,
+      "requiredItems": {
+        "leafyOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1800102034,
@@ -854,7 +1028,11 @@
       "x": -7,
       "y": 6,
       "color": "#FF0066",
-      "type": 5
+      "type": 5,
+      "requiredItems": {
+        "leafyOrb": 80,
+        "sparkyOrb": 80
+      }
     },
     {
       "id": 1800102035,
@@ -867,7 +1045,11 @@
       "x": -8,
       "y": 7,
       "color": "#FF0066",
-      "type": 5
+      "type": 5,
+      "requiredItems": {
+        "leafyOrb": 100,
+        "sparkyOrb": 100
+      }
     },
     {
       "id": 1800102036,
@@ -880,7 +1062,10 @@
       "x": -4,
       "y": 4,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 40
+      }
     },
     {
       "id": 1800102037,
@@ -893,7 +1078,10 @@
       "x": -5,
       "y": 5,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 40
+      }
     },
     {
       "id": 1800102038,
@@ -906,7 +1094,10 @@
       "x": -6,
       "y": 6,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 80
+      }
     },
     {
       "id": 1800102039,
@@ -919,7 +1110,10 @@
       "x": -7,
       "y": 7,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 80
+      }
     },
     {
       "id": 1800102040,
@@ -932,7 +1126,11 @@
       "x": -8,
       "y": 8,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1800102041,
@@ -945,7 +1143,10 @@
       "x": -3,
       "y": 1,
       "color": "#FF80BF",
-      "type": 2
+      "type": 2,
+      "requiredItems": {
+        "tmOrb": 1
+      }
     },
     {
       "id": 1800102042,
@@ -958,7 +1159,10 @@
       "x": -4,
       "y": 1,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "leafyOrb": 40
+      }
     },
     {
       "id": 1800102043,
@@ -971,7 +1175,10 @@
       "x": -5,
       "y": 1,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "leafyOrb": 80
+      }
     },
     {
       "id": 1800102044,
@@ -984,7 +1191,11 @@
       "x": -6,
       "y": 1,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "leafyOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1800102045,
@@ -997,7 +1208,11 @@
       "x": -7,
       "y": 1,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "leafyOrb": 80,
+        "sparkyOrb": 80
+      }
     },
     {
       "id": 1800102046,
@@ -1010,7 +1225,11 @@
       "x": -8,
       "y": 1,
       "color": "#FF0066",
-      "type": 2
+      "type": 2,
+      "requiredItems": {
+        "leafyOrb": 100,
+        "sparkyOrb": 100
+      }
     },
     {
       "id": 1800102046,
@@ -1023,7 +1242,11 @@
       "x": -8,
       "y": 1,
       "color": "#FF0066",
-      "type": 2
+      "type": 2,
+      "requiredItems": {
+        "leafyOrb": 100,
+        "sparkyOrb": 100
+      }
     },
     {
       "id": 1800102047,
@@ -1036,7 +1259,10 @@
       "x": -5,
       "y": 2,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 40
+      }
     },
     {
       "id": 1800102048,
@@ -1049,7 +1275,10 @@
       "x": -6,
       "y": 2,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 40
+      }
     },
     {
       "id": 1800102049,
@@ -1062,7 +1291,10 @@
       "x": -7,
       "y": 2,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 80
+      }
     },
     {
       "id": 1800102050,
@@ -1075,7 +1307,10 @@
       "x": -8,
       "y": 2,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 80
+      }
     },
     {
       "id": 1800102051,
@@ -1088,7 +1323,11 @@
       "x": -9,
       "y": 2,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1800102052,
@@ -1101,7 +1340,10 @@
       "x": -2,
       "y": 0,
       "color": "#FF80BF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "tmOrb": 1
+      }
     },
     {
       "id": 1800102053,
@@ -1114,7 +1356,10 @@
       "x": -2,
       "y": -1,
       "color": "#FF0066",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "leafyOrb": 40
+      }
     },
     {
       "id": 1800102054,
@@ -1127,7 +1372,10 @@
       "x": -3,
       "y": -1,
       "color": "#FF0066",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "leafyOrb": 80
+      }
     },
     {
       "id": 1800102055,
@@ -1140,7 +1388,11 @@
       "x": -4,
       "y": -1,
       "color": "#FF0066",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "leafyOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1800102056,
@@ -1153,7 +1405,11 @@
       "x": -5,
       "y": -1,
       "color": "#FF0066",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "leafyOrb": 80,
+        "sparkyOrb": 80
+      }
     },
     {
       "id": 1800102057,
@@ -1166,7 +1422,11 @@
       "x": -6,
       "y": -1,
       "color": "#FF0066",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "leafyOrb": 100,
+        "sparkyOrb": 100
+      }
     },
     {
       "id": 1800102058,
@@ -1179,7 +1439,10 @@
       "x": 0,
       "y": 2,
       "color": "#FF0066",
-      "type": 5
+      "type": 5,
+      "requiredItems": {
+        "fieryOrb": 40
+      }
     },
     {
       "id": 1800102059,
@@ -1192,7 +1455,10 @@
       "x": 0,
       "y": 3,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "fieryOrb": 80
+      }
     },
     {
       "id": 1800102060,
@@ -1205,7 +1471,10 @@
       "x": 0,
       "y": 4,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "fieryOrb": 80
+      }
     },
     {
       "id": 1800102061,
@@ -1218,7 +1487,10 @@
       "x": 0,
       "y": 5,
       "color": "#FF0066",
-      "type": 5
+      "type": 5,
+      "requiredItems": {
+        "fieryOrb": 80
+      }
     },
     {
       "id": 1800102062,
@@ -1231,7 +1503,10 @@
       "x": 0,
       "y": 6,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "fieryOrb": 80
+      }
     },
     {
       "id": 1800102063,
@@ -1244,7 +1519,11 @@
       "x": 0,
       "y": 7,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "fieryOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1800102064,
@@ -1257,7 +1536,11 @@
       "x": 0,
       "y": 8,
       "color": "#FF0066",
-      "type": 5
+      "type": 5,
+      "requiredItems": {
+        "fieryOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1800102065,
@@ -1270,7 +1553,11 @@
       "x": 0,
       "y": 9,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "fieryOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1800102066,
@@ -1283,7 +1570,11 @@
       "x": 0,
       "y": 10,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "fieryOrb": 160,
+        "sparkyOrb": 160
+      }
     },
     {
       "id": 1800102067,
@@ -1296,7 +1587,10 @@
       "x": 1,
       "y": 4,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "fieryOrb": 80
+      }
     },
     {
       "id": 1800102068,
@@ -1309,7 +1603,11 @@
       "x": 2,
       "y": 4,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "fieryOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1800102069,
@@ -1322,7 +1620,11 @@
       "x": 3,
       "y": 4,
       "color": "#BF80FF",
-      "type": 5
+      "type": 5,
+      "requiredItems": {
+        "fieryOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1800102070,
@@ -1335,7 +1637,11 @@
       "x": 3,
       "y": 5,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "fieryOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1800102071,
@@ -1348,7 +1654,11 @@
       "x": 4,
       "y": 4,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "fieryOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1800102072,
@@ -1361,7 +1671,11 @@
       "x": 3,
       "y": 6,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "fieryOrb": 80,
+        "sparkyOrb": 80
+      }
     },
     {
       "id": 1800102073,
@@ -1374,7 +1688,11 @@
       "x": 5,
       "y": 4,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "fieryOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1800102074,
@@ -1387,7 +1705,10 @@
       "x": -1,
       "y": 5,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "fieryOrb": 80
+      }
     },
     {
       "id": 1800102075,
@@ -1400,7 +1721,11 @@
       "x": -2,
       "y": 6,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "fieryOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1800102076,
@@ -1413,7 +1738,11 @@
       "x": -3,
       "y": 7,
       "color": "#BF80FF",
-      "type": 5
+      "type": 5,
+      "requiredItems": {
+        "fieryOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1800102077,
@@ -1426,7 +1755,11 @@
       "x": -3,
       "y": 8,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "fieryOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1800102078,
@@ -1439,7 +1772,11 @@
       "x": -4,
       "y": 8,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "fieryOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1800102079,
@@ -1452,7 +1789,11 @@
       "x": -3,
       "y": 9,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "fieryOrb": 80,
+        "sparkyOrb": 80
+      }
     },
     {
       "id": 1800102080,
@@ -1465,7 +1806,11 @@
       "x": -5,
       "y": 9,
       "color": "#FFC266",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "fieryOrb": 60,
+        "sparkyOrb": 60
+      }
     },
     {
       "id": 1800102081,
@@ -1478,7 +1823,10 @@
       "x": 0,
       "y": -2,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 20
+      }
     },
     {
       "id": 1800102082,
@@ -1491,7 +1839,10 @@
       "x": 0,
       "y": -3,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 20
+      }
     },
     {
       "id": 1800102083,
@@ -1504,7 +1855,10 @@
       "x": 0,
       "y": -4,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 20
+      }
     },
     {
       "id": 1800102084,
@@ -1517,7 +1871,10 @@
       "x": 0,
       "y": -5,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 20
+      }
     },
     {
       "id": 1800102085,
@@ -1530,7 +1887,10 @@
       "x": 0,
       "y": -6,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 40
+      }
     },
     {
       "id": 1800102086,
@@ -1543,7 +1903,10 @@
       "x": -1,
       "y": -6,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 40
+      }
     },
     {
       "id": 1800102087,
@@ -1556,7 +1919,10 @@
       "x": 1,
       "y": -7,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 40
+      }
     },
     {
       "id": 1800102088,
@@ -1569,7 +1935,10 @@
       "x": 0,
       "y": -7,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 60
+      }
     },
     {
       "id": 1800102089,
@@ -1582,7 +1951,10 @@
       "x": -1,
       "y": -7,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 60
+      }
     },
     {
       "id": 1800102090,
@@ -1595,7 +1967,10 @@
       "x": 1,
       "y": -8,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 60
+      }
     },
     {
       "id": 1800102091,
@@ -1608,7 +1983,10 @@
       "x": 0,
       "y": -8,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 80
+      }
     },
     {
       "id": 1800102092,
@@ -1621,7 +1999,10 @@
       "x": 1,
       "y": -4,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 20
+      }
     },
     {
       "id": 1800102093,
@@ -1634,7 +2015,10 @@
       "x": 2,
       "y": -5,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 40
+      }
     },
     {
       "id": 1800102094,
@@ -1647,7 +2031,10 @@
       "x": 3,
       "y": -6,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 40
+      }
     },
     {
       "id": 1800102095,
@@ -1660,7 +2047,10 @@
       "x": 3,
       "y": -7,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 60
+      }
     },
     {
       "id": 1800102096,
@@ -1673,7 +2063,10 @@
       "x": 4,
       "y": -7,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 60
+      }
     },
     {
       "id": 1800102097,
@@ -1686,7 +2079,10 @@
       "x": 3,
       "y": -8,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 80
+      }
     },
     {
       "id": 1800102098,
@@ -1699,7 +2095,10 @@
       "x": 4,
       "y": -8,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 100
+      }
     },
     {
       "id": 1800102099,
@@ -1712,7 +2111,10 @@
       "x": 5,
       "y": -8,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 80
+      }
     },
     {
       "id": 1800102100,
@@ -1725,7 +2127,10 @@
       "x": -1,
       "y": -3,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 20
+      }
     },
     {
       "id": 1800102101,
@@ -1738,7 +2143,10 @@
       "x": -2,
       "y": -3,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 40
+      }
     },
     {
       "id": 1800102102,
@@ -1751,7 +2159,10 @@
       "x": -3,
       "y": -3,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 40
+      }
     },
     {
       "id": 1800102103,
@@ -1764,7 +2175,10 @@
       "x": -3,
       "y": -4,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 60
+      }
     },
     {
       "id": 1800102104,
@@ -1777,7 +2191,10 @@
       "x": -4,
       "y": -3,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 60
+      }
     },
     {
       "id": 1800102105,
@@ -1790,7 +2207,10 @@
       "x": -3,
       "y": -5,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 80
+      }
     },
     {
       "id": 1800102106,
@@ -1803,7 +2223,10 @@
       "x": -4,
       "y": -4,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 100
+      }
     },
     {
       "id": 1800102107,
@@ -1816,7 +2239,10 @@
       "x": -5,
       "y": -3,
       "color": "#779EFF",
-      "type": 0
+      "type": 0,
+      "requiredItems": {
+        "bubblyOrb": 80
+      }
     }
   ],
   "luckCookies": {}

@@ -61,6 +61,11 @@ export const useSyncElemStore = defineStore("syncUse", {
             return {
                 selectedTiles: state.singleSync.computed.selectedTiles,
                 costOrbs: state.singleSync.computed.costOrbs,
+                costFieryOrbs: state.singleSync.computed.costFieryOrbs,
+                costLeafOrbs: state.singleSync.computed.costLeafOrbs,
+                costBubblyOrbs: state.singleSync.computed.costBubblyOrbs,
+                costSparkyOrbs: state.singleSync.computed.costSparkyOrbs,
+                costTMOrbs: state.singleSync.computed.costTMOrbs,
                 lastEnergy: state.singleSync.computed.lastEnergy,
                 gridData: state.singleSync.state.gridData,
                 potentialCookie: state.singleSync.state.potentialCookie,
@@ -182,6 +187,36 @@ const createSync = (jsonData: SyncRawData): Sync => {
         costOrbs: computed(() => {
             return state.gridData.reduce(
                 (sum, tile) => sum + (tile.isActive ? tile.orb : 0),
+                0
+            );
+        }),
+        costFieryOrbs: computed(() => {
+            return state.gridData.reduce(
+                (sum, tile) => sum + (tile.isActive ? (tile?.requiredItems?.fieryOrb || 0) : 0),
+                0
+            );
+        }),
+        costLeafOrbs: computed(() => {
+            return state.gridData.reduce(
+                (sum, tile) => sum + (tile.isActive ? (tile?.requiredItems?.leafyOrb || 0) : 0),
+                0
+            );
+        }),
+        costBubblyOrbs: computed(() => {
+            return state.gridData.reduce(
+                (sum, tile) => sum + (tile.isActive ? (tile?.requiredItems?.bubblyOrb || 0) : 0),
+                0
+            );
+        }),
+        costSparkyOrbs: computed(() => {
+            return state.gridData.reduce(
+                (sum, tile) => sum + (tile.isActive ? (tile?.requiredItems?.sparkyOrb || 0) : 0),
+                0
+            );
+        }),
+        costTMOrbs: computed(() => {
+            return state.gridData.reduce(
+                (sum, tile) => sum + (tile.isActive ? (tile?.requiredItems?.tmOrb || 0) : 0),
                 0
             );
         }),
