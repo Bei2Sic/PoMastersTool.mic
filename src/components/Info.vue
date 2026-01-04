@@ -116,26 +116,26 @@
                             </div>
                         </div>
                         <div class="move-info">
-                            <div class=" info-col">
-                                <div class="info-item">
-                                    <span class="info-label">分類</span>
-                                    <span class="info-value">
+                            <div class="move-col">
+                                <div class="move-item">
+                                    <span class="move-label">分類</span>
+                                    <span class="move-value">
                                         <span class="icon" :style="getCategoryIconStyle(move.category)"></span>
                                     </span>
                                 </div>
-                                <div class="info-item">
-                                    <span class="info-label">威力</span>
-                                    <span class="info-value">{{ move.finalPower }}</span>
+                                <div class="move-item">
+                                    <span class="move-label">威力</span>
+                                    <span class="move-value">{{ move.finalPower }}</span>
                                 </div>
                             </div>
-                            <div class="info-col">
-                                <div class="info-item">
-                                    <span class="info-label">目標</span>
-                                    <span class="info-value">{{ move.target }}</span>
+                            <div class="move-col">
+                                <div class="move-item">
+                                    <span class="move-label">目標</span>
+                                    <span class="move-value">{{ move.target }}</span>
                                 </div>
-                                <div class="info-item">
-                                    <span class="info-label">命中率</span>
-                                    <span class="info-value">{{ formatMoveAccuracy(move) }}</span>
+                                <div class="move-item">
+                                    <span class="move-label">命中率</span>
+                                    <span class="move-value">{{ formatMoveAccuracy(move) }}</span>
                                 </div>
                             </div>
                         </div>
@@ -153,26 +153,26 @@
                             </div>
                         </div>
                         <div class="move-info">
-                            <div class=" info-col">
-                                <div class="info-item">
-                                    <span class="info-label">分類</span>
-                                    <span class="info-value">
+                            <div class="move-col">
+                                <div class="move-item">
+                                    <span class="move-label">分類</span>
+                                    <span class="move-value">
                                         <span class="icon" :style="getCategoryIconStyle(moveMax.category)"></span>
                                     </span>
                                 </div>
-                                <div class="info-item">
-                                    <span class="info-label">威力</span>
-                                    <span class="info-value">{{ moveMax.finalPower }}</span>
+                                <div class="move-item">
+                                    <span class="move-label">威力</span>
+                                    <span class="move-value">{{ moveMax.finalPower }}</span>
                                 </div>
                             </div>
-                            <div class="info-col">
-                                <div class="info-item">
-                                    <span class="info-label">目標</span>
-                                    <span class="info-value">{{ moveMax.target }}</span>
+                            <div class="move-col">
+                                <div class="move-item">
+                                    <span class="move-label">目標</span>
+                                    <span class="move-value">{{ moveMax.target }}</span>
                                 </div>
-                                <div class="info-item">
-                                    <span class="info-label">命中率</span>
-                                    <span class="info-value">{{ formatMoveAccuracy(moveMax) }}</span>
+                                <div class="move-item">
+                                    <span class="move-label">命中率</span>
+                                    <span class="move-value">{{ formatMoveAccuracy(moveMax) }}</span>
                                 </div>
                             </div>
                         </div>
@@ -203,27 +203,27 @@
                             </div>
                         </div>
                         <div class="move-info">
-                            <div class="info-col">
-                                <div class="info-item">
-                                    <span class="info-label">分類</span>
-                                    <span class="info-value">
+                            <div class="move-col">
+                                <div class="move-item">
+                                    <span class="move-label">分類</span>
+                                    <span class="move-value">
                                         <span class="icon"
                                             :style="getCategoryIconStyle(finalMoves.moveTera.category)"></span>
                                     </span>
                                 </div>
-                                <div class="info-item">
-                                    <span class="info-label">威力</span>
-                                    <span class="info-value">{{ finalMoves.moveTera.finalPower }}</span>
+                                <div class="move-item">
+                                    <span class="move-label">威力</span>
+                                    <span class="move-value">{{ finalMoves.moveTera.finalPower }}</span>
                                 </div>
                             </div>
-                            <div class="info-col">
-                                <div class="info-item">
-                                    <span class="info-label">目標</span>
-                                    <span class="info-value">{{ finalMoves.moveTera.target }}</span>
+                            <div class="move-col">
+                                <div class="move-item">
+                                    <span class="move-label">目標</span>
+                                    <span class="move-value">{{ finalMoves.moveTera.target }}</span>
                                 </div>
-                                <div class="info-item">
-                                    <span class="info-label">命中率</span>
-                                    <span class="info-value"> {{ formatMoveAccuracy(finalMoves.moveTera) }}</span>
+                                <div class="move-item">
+                                    <span class="move-label">命中率</span>
+                                    <span class="move-value"> {{ formatMoveAccuracy(finalMoves.moveTera) }}</span>
                                 </div>
                             </div>
                         </div>
@@ -241,27 +241,27 @@
                             </div>
                         </div>
                         <div class="move-info">
-                            <div class="info-col">
-                                <div class="info-item">
-                                    <span class="info-label">分類</span>
-                                    <span class="info-value">
+                            <div class="move-col">
+                                <div class="move-item">
+                                    <span class="move-label">分類</span>
+                                    <span class="move-value">
                                         <span class="icon"
                                             :style="getCategoryIconStyle(finalMoves.syncMove.category)"></span>
                                     </span>
                                 </div>
-                                <div class="info-item">
-                                    <span class="info-label">威力</span>
-                                    <span class="info-value">{{ finalMoves.syncMove.finalPower }}</span>
+                                <div class="move-item">
+                                    <span class="move-label">威力</span>
+                                    <span class="move-value">{{ finalMoves.syncMove.finalPower }}</span>
                                 </div>
                             </div>
-                            <div class="info-col">
-                                <div class="info-item">
-                                    <span class="info-label">目標</span>
-                                    <span class="info-value">{{ finalMoves.syncMove.target }}</span>
+                            <div class="move-col">
+                                <div class="move-item">
+                                    <span class="move-label">目標</span>
+                                    <span class="move-value">{{ finalMoves.syncMove.target }}</span>
                                 </div>
-                                <div class="info-item">
-                                    <span class="info-label">命中率</span>
-                                    <span class="info-value"> {{ formatMoveAccuracy(finalMoves.syncMove) }}</span>
+                                <div class="move-item">
+                                    <span class="move-label">命中率</span>
+                                    <span class="move-value"> {{ formatMoveAccuracy(finalMoves.syncMove) }}</span>
                                 </div>
                             </div>
                         </div>
@@ -334,7 +334,79 @@
                 </div>
 
                 <div v-else-if="activeTab === 'info'" class="tab-content">
-                    {{ trainer.gridDate }}
+                    <div class="info-top-section">
+
+                        <div class="avatar-card">
+                            <div class="avatar-wrapper">
+                                <!-- <div class="rarity-badge">
+                                    <img v-for="n in trainer.rarity" :key="n" src="@/assets/images/icon_star.png"
+                                        class="star-icon" />
+                                    <img v-if="trainer.ex" src="@/assets/images/icon_ex_mark.png" class="ex-mark" />
+                                </div> -->
+
+                                <img :src="getTrainerUrl(trainer.enActor, trainer.dexNumber, currentRarityValue, trainer.count)"
+                                    class="main-avatar" alt="Avatar" />
+
+                            </div>
+                        </div>
+
+                        <div class="infos-grid">
+                            <!-- <div class="info-box">
+                                <div class="info-label">基礎</div>
+                                <div class="info-value">
+                                    <img v-for="n in trainer.rarity" :key="n" src="@/assets/images/icon_star.png"
+                                        class="mini-star" />
+                                    <img v-if="trainer.ex" src="@/assets/images/icon_ex_mark.png" class="mini-ex" />
+                                </div>
+                            </div> -->
+
+                            <!-- <div class="info-box">
+                                <div class="info-label">體系</div>
+                                <div class="info-value">
+                                    <img :src="getRoleIcon('normal', trainer.role)" class="info-icon" />
+                                    <img v-if="trainer.exRole" :src="getRoleIcon('ex', trainer.exRole)"
+                                        class="info-icon small" />
+                                </div>
+                            </div>
+
+                            <div class="info-box">
+                                <div class="info-label">屬性</div>
+                                <div class="info-value">
+                                    <img :src="getTypeIcon(trainer.type)" class="info-icon" />
+                                </div>
+                            </div>
+
+                            <div class="info-box">
+                                <div class="info-label">弱點</div>
+                                <div class="info-value">
+                                    <img :src="getTypeIcon(trainer.weakness)" class="info-icon" />
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+
+                    <div class="date-section">
+                        <div class="date-box">
+                            <div class="date-label">登場日期</div>
+                            <div class="date-value">{{ trainer.startDate }}</div>
+                        </div>
+                        <div class="date-box">
+                            <div class="date-label">石盤開啓日期</div>
+                            <div class="date-value">{{ trainer.gridDate }}</div>
+                        </div>
+                        <div v-if="trainer.extendGridDate !== '-'" class="date-box">
+                            <div class="date-label">擴盤日期</div>
+                            <div class="date-value">{{ trainer.extendGridDate }}</div>
+                        </div>
+                        <div class="date-box">
+                            <div class="date-label">6★EX</div>
+                            <div class="date-value">{{ trainer.exStartDate }}</div>
+                        </div>
+                        <div v-if="trainer.awakingDate !== '-'" class="date-box">
+                            <div class="date-label">超覺醒日期</div>
+                            <div class="date-value">{{ trainer.awakingDate }}</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -343,6 +415,7 @@
 
 <script setup>
 import { StatValueCalculator } from '@/core/calculators/stat';
+import { getTrainerUrl } from '@/utils/format';
 import { formatMoveAccuracy, formatMoveUses, getCategoryIconStyle, getMoveBackgroundColorClass, getPassiveBackgroundStyle, getThemeBackgroundColorClass, getThemeIconStyle, getTypeIconStyle } from '@/utils/format';
 import { ref, watch } from 'vue';
 
@@ -697,10 +770,172 @@ select.config-input {
 
 .tab-content {
     padding: 16px;
-    background-color: #fff;
+    background: transparent;
     border-radius: 8px;
     font-size: 14px;
     color: #333;
+}
+
+.info-panel {
+    background: linear-gradient(135deg, #a8dadc 0%, #8ec5ce 100%);
+    /* 模仿背景色 */
+    padding: 16px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border: 2px solid #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* --- 上半部分 --- */
+.info-top-section {
+    display: flex;
+    gap: 12px;
+}
+
+/* 左側頭像框 */
+.avatar-card {
+    flex: 0 0 100px;
+    /* 固定寬度 */
+    display: flex;
+    flex-direction: column;
+}
+
+.avatar-wrapper {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background:transparent;
+    border-radius: 12px;
+    /* border: 3px solid #4a8a90; */
+    overflow: hidden;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.0);
+}
+
+.main-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.rarity-badge {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+}
+
+.star-icon {
+    width: 12px;
+    height: 12px;
+}
+
+.ex-mark {
+    height: 14px;
+    margin-left: 2px;
+}
+
+/* 右側 2x2 網格 */
+.infos-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* 兩列 */
+    grid-template-rows: 1fr 1fr;
+    /* 兩行 */
+    gap: 8px;
+}
+
+.info-box {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.info-label {
+    background-color: #6a9ea5;
+    /* 標題深色背景 */
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    padding: 4px 0;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.info-value {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    /* 下半部淺色背景 */
+    padding: 4px;
+    gap: 4px;
+}
+
+.info-icon {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.1));
+}
+
+.info-icon.small {
+    width: 20px;
+    height: 20px;
+}
+
+.mini-star {
+    width: 14px;
+    height: 14px;
+}
+
+.mini-ex {
+    height: 14px;
+}
+
+
+/* --- 下半部分：日期 --- */
+.date-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* 三列 */
+    gap: 8px;
+}
+
+.date-box {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.date-label {
+    background-color: #6a9ea5;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    padding: 4px 0;
+}
+
+.date-value {
+    text-align: center;
+    font-size: 12px;
+    color: black;
+    /* 或者深色 #333，看背景對比度 */
+    font-weight: bold;
+    padding: 6px 4px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    /* 增加文字可讀性 */
+    white-space: nowrap;
 }
 
 /* 技能通用样式 */
@@ -766,13 +1001,13 @@ select.config-input {
     inline-size: 100%;
 }
 
-.info-col {
+.move-col {
     flex: 1;
     display: flex;
     flex-direction: column;
 }
 
-.info-item {
+.move-item {
     display: flex;
     justify-content: space-between;
     padding: 4px 8px;
@@ -781,12 +1016,12 @@ select.config-input {
     background-color: rgba(255, 255, 255, 0.3);
 }
 
-.info-label {
+.move-label {
     color: #f0eeeee1;
     font-weight: 700;
 }
 
-.info-value {
+.move-value {
     display: inline-flex;
     align-items: center;
     font-weight: 700;

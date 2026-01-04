@@ -119,8 +119,8 @@ export const useSyncCacheStore = defineStore("syncCache", {
     },
 
     persist: {
-        key: 'pomatools-cache',
+        key: '_filterCache',
         storage: localStorage,
         paths: ['savedFilters', 'sortField', 'sortDesc'],
-    } as PersistenceOptions<SyncCacheState>,
+    } as any,
 });

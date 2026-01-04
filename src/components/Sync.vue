@@ -316,7 +316,6 @@ onUnmounted(() => {
     /* padding: 10px; */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     background-image: url('../assets/images/bg1.png');
-    background-size: cover;
     background-position: center;
 }
 

@@ -2,7 +2,7 @@
     <div class="filter-container">
         <div class="search-bar-container">
             <div class="input-wrapper">
-                <input v-model="searchKey" placeholder="搜索拍組名稱..." class="filter-input" />
+                <input v-model.lazy="searchKey" placeholder="搜索拍組名稱..." class="filter-input" />
                 <transition name="fade">
                     <span v-if="filteredTrainers.length > 0" class="result-count">
                         {{ filteredTrainers.length }}
@@ -23,7 +23,7 @@
                 :class="'bg_' + getTypeInfoWithCnName(trainer.type).key.toLowerCase()" @click="handleSelect(trainer)">
                 <img :src="getTrainerUrl(trainer.enActor, trainer.dexNumber, trainer.rarity, trainer.count)" alt="trainer" class="trainer-avatar" />
                 <div class="trainer-info">
-                    <div class="trainer-name">{{ trainer.name }}</div>
+                    <!-- <div class="trainer-name">{{ trainer.dex }}</div> -->
                     <div class="trainer-meta">
                         <img :src="getRoleIcon('normal', trainer.role)" :alt="trainer.role" class="meta-icon" />
                         <!-- <img :src="getTypeIcon(trainer.type)" :alt="trainer.type" class="meta-icon" /> -->
@@ -148,7 +148,7 @@ import {
 import { RoleMap, TypeMap } from "@/constances/map";
 import { getTypeInfoWithCnName } from '@/core/exporter/map';
 import { useSyncCacheStore } from "@/stores/syncCache";
-import { SyncMeta } from "@/types/syncModel";
+import { SyncMeta } from "@/types/cache";
 import { getTrainerUrl } from '@/utils/format';
 import { Converter } from 'opencc-js';
 import { computed, reactive, ref } from 'vue';

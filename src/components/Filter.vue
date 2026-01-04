@@ -12,7 +12,7 @@
             <div class="sort-controls">
                 <select v-model="sortField" class="sort-select">
                     <option value="_startDate">登陸日期</option>
-                    <option value="_dexNumber">圖鑑編號</option>
+                    <option value="dexNumber">圖鑑編號</option>
                     <option value="_exStartDate">EX 開放日</option>
                     <option value="_gridDate">石盤開放日</option>
                 </select>
@@ -265,7 +265,7 @@ const sortDesc = computed({
 
 // 切換升序/降序
 const toggleSortOrder = () => {
-    syncCacheStore.updateSort(syncCacheStore.sortField, !syncCacheStore.sortDesc);
+    sortDesc.value = !sortDesc.value;
 };
 
 // --- 分页控制 ---
@@ -449,21 +449,10 @@ const filteredTrainers = computed(() => {
         const valA = a[field];
         const valB = b[field];
 
-        // // --- 日期類型排序 ---
-        // if (['_startDate', '_exStartDate', '_gridDate', '_exRoleDate'].includes(field)) {
-        //     const timeA = getSafeTimestamp(valA);
-        //     const timeB = getSafeTimestamp(valB);
-
-        //     // 兩者都是 0 (無效日期) -> 保持原順序
-        //     if (timeA === 0 && timeB === 0) return 0;
-
-        //     // 降序 (大到小): 新 -> 舊 (無效日期沉底)
-        //     // 升序 (小到大): 舊 -> 新 (無效日期在前)
-        //     return sortDesc.value ? timeB - timeA : timeA - timeB;
-        // }
-
-        // --- 默認排序 (ID 等) ---
-        if (valA === valB) return 0;
+        if (valA === valB) {
+            const compare = a.id > b.id ? 1 : -1;
+            return sortDesc.value ? -compare : compare;
+        }
         const compare = (valA > valB) ? 1 : -1;
         return sortDesc.value ? -compare : compare;
     });
@@ -592,11 +581,11 @@ const handleSelect = (trainer: SyncMeta) => {
 /* --- 列表容器：网格布局 --- */
 .trainer-list {
     display: grid !important;
-    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: max-content;
 
-    /* gap: 2px; */
-    /* padding: 2px; */
+    gap: 2px;
+    padding: 2px;
 
     overflow-y: auto;
     flex: 1;
@@ -612,13 +601,14 @@ const handleSelect = (trainer: SyncMeta) => {
     border-radius: 12px;
     overflow: hidden;
     cursor: pointer;
-    background-color: #f0f0f0;
+    background: transparent;
     /* border: 1px solid rgba(0, 0, 0, 0.1); */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.0);
     /* 确保内容居中撑满 */
     display: flex;
     align-items: center;
     justify-content: center;
+    content-visibility: auto;
 }
 
 .trainer-item:active {
