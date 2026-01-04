@@ -8,7 +8,7 @@
     "rarity": 5,
     "role": 1,
     "exRole": -1,
-    "ex": false,
+    "ex": true,
     "exEffect": "拍組招式的對象會變成對手全體拍組",
     "exRoleEffect": "無",
     "exclusivity": "Regular",
@@ -21,7 +21,7 @@
     "exStartDate": "2020/11/11 14:00:00",
     "exRoleDate": "-",
     "awakingDate": "-",
-    "extendGridDate": "-"
+    "extendGridDate": "2025/05/20 14:00:00"
   },
   "scoutMethod": 1,
   "scheduleId": "update_M1_1W_FOREVER",

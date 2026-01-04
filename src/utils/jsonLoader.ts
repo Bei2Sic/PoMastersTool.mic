@@ -91,7 +91,7 @@ const extractSyncMeta = (rawData: SyncRawData, filePath: string): SyncMeta => {
         actorId: trainer.actorId,
         variationType: rawData.pokemon[1]?.variationType ?? 0,
         _startDate: toTs(trainer.startDate),
-        _exStartDate: toTs(trainer.exStartDate),
+        _exStartDate: trainer.ex ? toTs(trainer.exStartDate) : 0,
         _exRoleDate: toTs(trainer.exRoleDate),
         _gridDate: toTs(trainer.gridDate),
         _extendGridDate: toTs(trainer.extendGridDate),

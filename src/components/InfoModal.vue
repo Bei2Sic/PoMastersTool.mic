@@ -80,6 +80,7 @@
 
 <script setup lang="ts">
 import { changelogs } from '@/constances/changlog';
+import { APP_VERSION_KEY } from '@/constances/key';
 import { onMounted, ref } from 'vue';
 
 // --- 數據處理 ---
@@ -96,7 +97,7 @@ const currentTab = ref('update'); // 默认显示更新
 const GAME_VERSION = 'v2.64.0';
 const MY_VERSION = '2'
 onMounted(() => {
-    const lastVersion = localStorage.getItem('app_version');
+    const lastVersion = localStorage.getItem(APP_VERSION_KEY);
     if (lastVersion !== GAME_VERSION + '_' + MY_VERSION) {
         visible.value = true;
         currentTab.value = 'update'; // 有更新时强制看公告
@@ -112,7 +113,7 @@ const open = (tab = 'update') => {
 const handleClose = () => {
     visible.value = false;
     // 关闭时记录已读
-    localStorage.setItem('app_version', GAME_VERSION + '_' + MY_VERSION);
+    localStorage.setItem(APP_VERSION_KEY, GAME_VERSION + '_' + MY_VERSION);
 };
 
 // 暴露给父组件

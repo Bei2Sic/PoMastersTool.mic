@@ -8,7 +8,7 @@
     "rarity": 5,
     "role": 6,
     "exRole": 3,
-    "ex": false,
+    "ex": true,
     "exEffect": "首次使出拍組招式時，會降低對手全體拍組的下列屬性的屬性抵抗１階段\n・龍",
     "exRoleEffect": "拍組招式的威力會變成1.5倍",
     "exclusivity": "Arcsuit",

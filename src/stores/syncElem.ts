@@ -1,10 +1,11 @@
-import { STORAGE_KEY } from "@/constances/key";
+import { CURRENT_SYNC_KEY } from "@/constances/key";
 import { PowerMoveScope } from "@/core/calculators/power";
 import {
     getFinalStatValue,
     mapMoveToMoveFinal,
 } from "@/core/exporter/syncData";
 import { useSyncCacheStore } from "@/stores/syncCache"; // 原始数据缓存Store
+import type { SyncRawData } from "@/types/cache";
 import { RarityIndex } from "@/types/indices";
 import {
     LuckCookie,
@@ -14,7 +15,6 @@ import {
     SyncMethods,
     Tile,
 } from "@/types/syncModel";
-import type { GlobalSyncCache, SyncMeta, SyncRawData } from "@/types/cache";
 import { defineStore } from "pinia";
 import { computed, reactive } from "vue";
 
@@ -115,7 +115,7 @@ export const useSyncElemStore = defineStore("syncUse", {
             const rawData = syncCacheStore.getRawDataWithTrainerId(trainer_id);
             if (!rawData) return;
             this.singleSync = createSync(rawData);
-            localStorage.setItem(STORAGE_KEY, trainer_id);
+            localStorage.setItem(CURRENT_SYNC_KEY, trainer_id);
         },
     },
 });

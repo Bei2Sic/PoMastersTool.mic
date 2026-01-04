@@ -8,7 +8,7 @@
     "rarity": 5,
     "role": 2,
     "exRole": 3,
-    "ex": false,
+    "ex": true,
     "exEffect": "首次使出拍組招式時，氣魄會提高2階段",
     "exRoleEffect": "拍組招式的威力會變成1.5倍",
     "exclusivity": "Seasonal",

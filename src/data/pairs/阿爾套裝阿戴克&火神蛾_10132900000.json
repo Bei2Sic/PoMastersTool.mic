@@ -8,7 +8,7 @@
     "rarity": 5,
     "role": 6,
     "exRole": 4,
-    "ex": false,
+    "ex": true,
     "exEffect": "首次使出拍組招式時，會降低對手全體拍組的下列屬性的屬性抵抗１階段\n・蟲",
     "exRoleEffect": "首次使出拍組招式時，發動拍組招式所需的行動數會減少3次。",
     "exclusivity": "Arcsuit",

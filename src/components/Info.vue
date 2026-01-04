@@ -333,55 +333,45 @@
                     </div>
                 </div>
 
-                <div v-else-if="activeTab === 'info'" class="tab-content">
+                <div v-else-if="activeTab === 'info'" class="info-container">
                     <div class="info-top-section">
-
                         <div class="avatar-card">
                             <div class="avatar-wrapper">
-                                <!-- <div class="rarity-badge">
-                                    <img v-for="n in trainer.rarity" :key="n" src="@/assets/images/icon_star.png"
-                                        class="star-icon" />
-                                    <img v-if="trainer.ex" src="@/assets/images/icon_ex_mark.png" class="ex-mark" />
-                                </div> -->
-
                                 <img :src="getTrainerUrl(trainer.enActor, trainer.dexNumber, currentRarityValue, trainer.count)"
                                     class="main-avatar" alt="Avatar" />
-
                             </div>
                         </div>
 
                         <div class="infos-grid">
-                            <!-- <div class="info-box">
+                            <div class="info-box">
                                 <div class="info-label">基礎</div>
                                 <div class="info-value">
-                                    <img v-for="n in trainer.rarity" :key="n" src="@/assets/images/icon_star.png"
-                                        class="mini-star" />
-                                    <img v-if="trainer.ex" src="@/assets/images/icon_ex_mark.png" class="mini-ex" />
+                                    <img :src="getRarityIcon(trainer.rarity, trainer.ex)" class="info-icon" />
                                 </div>
-                            </div> -->
+                            </div>
 
-                            <!-- <div class="info-box">
+                            <div class="info-box">
                                 <div class="info-label">體系</div>
                                 <div class="info-value">
                                     <img :src="getRoleIcon('normal', trainer.role)" class="info-icon" />
-                                    <img v-if="trainer.exRole" :src="getRoleIcon('ex', trainer.exRole)"
-                                        class="info-icon small" />
+                                    <img v-if="trainer.exRole !== -1" :src="getRoleIcon('ex', trainer.exRole)"
+                                        class="info-icon" />
                                 </div>
                             </div>
 
                             <div class="info-box">
                                 <div class="info-label">屬性</div>
                                 <div class="info-value">
-                                    <img :src="getTypeIcon(trainer.type)" class="info-icon" />
+                                    <img :src="getTypeIcon(pokemon.type)" class="info-icon small" />
                                 </div>
                             </div>
 
                             <div class="info-box">
                                 <div class="info-label">弱點</div>
                                 <div class="info-value">
-                                    <img :src="getTypeIcon(trainer.weakness)" class="info-icon" />
+                                    <img :src="getTypeIcon(pokemon.weakness)" class="info-icon small" />
                                 </div>
-                            </div> -->
+                            </div>
                         </div>
                     </div>
 
@@ -394,15 +384,19 @@
                             <div class="date-label">石盤開啓日期</div>
                             <div class="date-value">{{ trainer.gridDate }}</div>
                         </div>
-                        <div v-if="trainer.extendGridDate !== '-'" class="date-box">
+                        <div v-show="trainer.ex" class="date-box">
+                            <div class="date-label">EX 開放日期</div>
+                            <div class="date-value">{{ trainer.exStartDate }}</div>
+                        </div>
+                        <div v-show="trainer.exRoleDate !== '-'" class="date-box">
+                            <div class="date-label">EXRole 開放日期</div>
+                            <div class="date-value">{{ trainer.exRoleDate }}</div>
+                        </div>
+                        <div v-show="trainer.extendGridDate !== '-'" class="date-box">
                             <div class="date-label">擴盤日期</div>
                             <div class="date-value">{{ trainer.extendGridDate }}</div>
                         </div>
-                        <div class="date-box">
-                            <div class="date-label">6★EX</div>
-                            <div class="date-value">{{ trainer.exStartDate }}</div>
-                        </div>
-                        <div v-if="trainer.awakingDate !== '-'" class="date-box">
+                        <div v-show="trainer.awakingDate !== '-'" class="date-box">
                             <div class="date-label">超覺醒日期</div>
                             <div class="date-value">{{ trainer.awakingDate }}</div>
                         </div>
@@ -413,10 +407,12 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import { RoleMap, TypeMap } from "@/constances/map";
 import { StatValueCalculator } from '@/core/calculators/stat';
-import { getTrainerUrl } from '@/utils/format';
-import { formatMoveAccuracy, formatMoveUses, getCategoryIconStyle, getMoveBackgroundColorClass, getPassiveBackgroundStyle, getThemeBackgroundColorClass, getThemeIconStyle, getTypeIconStyle } from '@/utils/format';
+import { ExRoleIndex, RarityIndex, RoleIndex } from '@/types/indices';
+import { Pokemon, Theme, Trainer } from "@/types/syncModel";
+import { formatMoveAccuracy, formatMoveUses, getCategoryIconStyle, getMoveBackgroundColorClass, getPassiveBackgroundStyle, getThemeBackgroundColorClass, getThemeIconStyle, getTrainerUrl, getTypeIconStyle } from '@/utils/format';
 import { ref, watch } from 'vue';
 
 const activeTab = ref('move');
@@ -433,21 +429,21 @@ const toggleVariation = () => {
 
 const props = defineProps({
     levelValue: { type: Number, required: true, default: 1 },
-    currentRarityValue: { type: Number, required: true, default: 3 },
+    currentRarityValue: { type: Number as unknown as () => RarityIndex, required: true, default: 3 },
     potentialValue: { type: Number, required: true, default: 0 },
     exRoleEnabledValue: { type: Boolean, required: true, default: false },
     bonusLevel: { type: Number, required: true },
     selectedPokemonIndex: { type: Number, required: true },
-    trainer: { type: Object, required: true },
-    themes: { type: Array, required: true },
+    trainer: { type: Object as () => Trainer, required: true },
+    themes: { type: Array as () => Theme[], required: true },
     specialAwaking: { type: Object, required: false },
     variationList: {
         type: Array, required: true,
-        validator: (value) => value.every(item => typeof item === 'string')
+        validator: (value: string[]) => value.every(item => typeof item === 'string')
     },
     finalStats: { type: Object, required: true, default: () => ({ hp: 0, atk: 0, def: 0, spa: 0, spd: 0, spe: 0 }) },
     finalMoves: { type: Object, required: true, default: () => ({ moves: [], movesDynamax: [], moveTera: {}, syncMove: {} }) },
-    pokemon: { type: Object, required: true },
+    pokemon: { type: Object as () => Pokemon, required: true },
 });
 
 const emit = defineEmits([
@@ -467,11 +463,11 @@ const internalSelectedPokemonIndex = ref(props.selectedPokemonIndex);
 watch(
     () => [props.levelValue, props.currentRarityValue, props.potentialValue, props.exRoleEnabledValue, props.selectedPokemonIndex],
     ([newLevel, newRarity, newPotential, newExEnabled, newSelectedPokemonIndex]) => {
-        internalLevelValue.value = newLevel;
-        internalCurrentRarityValue.value = newRarity;
-        internalPotentialValue.value = newPotential;
-        internalExRoleEnabledValue.value = newExEnabled;
-        internalSelectedPokemonIndex.value = newSelectedPokemonIndex;
+        internalLevelValue.value = newLevel as number;
+        internalCurrentRarityValue.value = newRarity as RarityIndex;
+        internalPotentialValue.value = newPotential as number;
+        internalExRoleEnabledValue.value = newExEnabled as boolean;
+        internalSelectedPokemonIndex.value = newSelectedPokemonIndex as number;
     },
     { deep: true }
 );
@@ -502,6 +498,24 @@ const handlePotentialChange = () => {
 const handleExRoleChange = () => {
     emit('update:exRoleEnabledValue', internalExRoleEnabledValue.value);
 };
+
+const getTypeIcon = (typeIndex: number) => {
+    const entry = TypeMap[typeIndex];
+    const key = entry ? entry.key.toLowerCase() : 'normal';
+    return new URL(`../assets/images/type_${key}.png`, import.meta.url).href;
+};
+
+const getRoleIcon = (type: 'normal' | 'ex', roleIndex: RoleIndex | ExRoleIndex) => {
+    let t = type === 'ex' ? 'role_ex' : 'role';
+    const entry = RoleMap[roleIndex];
+    let key = entry ? entry.key.toLowerCase() : 'physical_strike';
+    return new URL(`../assets/images/role_${key}.png`, import.meta.url).href;
+};
+
+const getRarityIcon = (rarity: RarityIndex, ex: boolean) => {
+    return new URL(`../assets/images/rarity_${ex ? 'ex_' : ''}${rarity}.png`, import.meta.url).href;
+};
+
 </script>
 
 <style scoped>
@@ -768,8 +782,8 @@ select.config-input {
     inline-size: 8px;
 }
 
-.tab-content {
-    padding: 16px;
+.info-container {
+    padding: 10px;
     background: transparent;
     border-radius: 8px;
     font-size: 14px;
@@ -804,9 +818,9 @@ select.config-input {
 
 .avatar-wrapper {
     position: relative;
-    width: 100px;
-    height: 100px;
-    background:transparent;
+    inline-size: 100px;
+    block-size: 100px;
+    background: transparent;
     border-radius: 12px;
     /* border: 3px solid #4a8a90; */
     overflow: hidden;
@@ -814,38 +828,16 @@ select.config-input {
 }
 
 .main-avatar {
-    width: 100%;
-    height: 100%;
+    inline-size: 100%;
+    block-size: 100%;
     object-fit: cover;
 }
 
-.rarity-badge {
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-}
-
-.star-icon {
-    width: 12px;
-    height: 12px;
-}
-
-.ex-mark {
-    height: 14px;
-    margin-left: 2px;
-}
-
-/* 右側 2x2 網格 */
 .infos-grid {
     flex: 1;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    /* 兩列 */
-    grid-template-rows: 1fr 1fr;
-    /* 兩行 */
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     gap: 8px;
 }
 
@@ -862,11 +854,11 @@ select.config-input {
     background-color: #6a9ea5;
     /* 標題深色背景 */
     color: white;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: bold;
     text-align: center;
     padding: 4px 0;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
 }
 
 .info-value {
@@ -881,32 +873,20 @@ select.config-input {
 }
 
 .info-icon {
-    width: 28px;
-    height: 28px;
+    inline-size: 28px;
+    block-size: 28px;
     object-fit: contain;
     filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.1));
 }
 
 .info-icon.small {
-    width: 20px;
-    height: 20px;
+    inline-size: 20px;
+    block-size: 20px;
 }
 
-.mini-star {
-    width: 14px;
-    height: 14px;
-}
-
-.mini-ex {
-    height: 14px;
-}
-
-
-/* --- 下半部分：日期 --- */
 .date-section {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    /* 三列 */
+    grid-template-columns: repeat(3, 1fr);
     gap: 8px;
 }
 
@@ -920,10 +900,11 @@ select.config-input {
 .date-label {
     background-color: #6a9ea5;
     color: white;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: bold;
     text-align: center;
     padding: 4px 0;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
 }
 
 .date-value {
@@ -1153,5 +1134,14 @@ select.config-input {
     font-weight: 700;
     color: #242323da;
     white-space: pre-line;
+}
+
+@media (max-width: 768px) {
+    .date-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .date-value {
+        font-size: 11px;
+    }
 }
 </style>

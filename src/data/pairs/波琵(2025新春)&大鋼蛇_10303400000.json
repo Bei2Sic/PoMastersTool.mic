@@ -8,7 +8,7 @@
     "rarity": 5,
     "role": 5,
     "exRole": 2,
-    "ex": false,
+    "ex": true,
     "exEffect": "首次使出拍組招式前，會使下列場地效果生效。 僅此時生效的場地效果時間會延長。\n・鋼鐵領域",
     "exRoleEffect": "首次使出拍組招式時，氣魄會提高2階段",
     "exclusivity": "Seasonal",

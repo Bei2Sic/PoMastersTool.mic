@@ -56,15 +56,6 @@ export const getStyle = (
     };
 };
 
-// 石盘上显示名字格式化
-export const getTileFormatName = (name: string) => {
-    // 如果名字太长，截取前4个字
-    if (name.length > 5) {
-        return name.substring(0, 4) + "..";
-    }
-    return name;
-};
-
 // 獲取技能屬性 icon 樣式
 export const getTypeIconStyle = (type: number) => {
     const suffix = getTypeInfo(type).key;

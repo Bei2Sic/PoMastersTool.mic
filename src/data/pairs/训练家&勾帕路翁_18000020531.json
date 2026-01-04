@@ -16,11 +16,12 @@
     "maxBonusLevel": 5,
     "dexNumber": "0638",
     "count": 1,
+    "tag": "訓練家&勾帕路翁",
     "trainerId": "18000020531",
     "startDate": "2021/05/31 14:00",
     "gridDate": "2021/05/31 14:00",
     "exStartDate": "-",
-    "exRoleStartDate": "-",
+    "exRoleDate": "-",
     "awakingDate": "-",
     "extendGridDate": "-"
   },

@@ -1,13 +1,20 @@
 // 本地数据文件动态缓存
-import { STORAGE_KEY } from "@/constances/key";
-import type { GlobalSyncCache, SyncMeta, SyncRawData, SavedFilters } from "@/types/cache";
+import { CURRENT_SYNC_KEY } from "@/constances/key";
+import type {
+    GlobalSyncCache,
+    SavedFilters,
+    SyncMeta,
+    SyncRawData,
+} from "@/types/cache";
 import { loadAllSyncJson } from "@/utils/jsonLoader";
 import { defineStore } from "pinia";
-import { type PersistenceOptions } from 'pinia-plugin-persistedstate'
 
 export interface SyncCacheState {
     // 全局缓存：拍组ID → {元信息, 完整数据}
     cache: GlobalSyncCache;
+
+    isLoading: boolean;
+    loadError: string;
 
     // 当前选中的拍组ID
     selectedTrainerId: string;
@@ -29,6 +36,8 @@ export const useSyncCacheStore = defineStore("syncCache", {
         // 当前选中的拍组ID
         selectedTrainerId: "" as string,
 
+        isLoading: false,
+        loadError: "",
 
         savedFilters: {
             exclusivity: [] as string[],
@@ -40,12 +49,14 @@ export const useSyncCacheStore = defineStore("syncCache", {
             themes: [] as string[],
         },
 
-        sortField: '_startDate',
+        sortField: "_startDate",
         sortDesc: true,
     }),
     getters: {
         getMeta: (state: SyncCacheState): SyncMeta[] => {
-            return Object.values(state.cache).map((item: GlobalSyncCache[string]) => item.meta);
+            return Object.values(state.cache).map(
+                (item: GlobalSyncCache[string]) => item.meta
+            );
         },
 
         // 获取筛选状态
@@ -75,7 +86,7 @@ export const useSyncCacheStore = defineStore("syncCache", {
                 this.cache = await loadAllSyncJson();
                 // 自动选中最新的牌組
 
-                this.selectedTrainerId = localStorage.getItem(STORAGE_KEY);
+                this.selectedTrainerId = localStorage.getItem(CURRENT_SYNC_KEY);
                 if (!this.selectedTrainerId) {
                     this.selectedTrainerId = "10000400000";
                 }
@@ -115,12 +126,12 @@ export const useSyncCacheStore = defineStore("syncCache", {
         updateSort(field: string, desc: boolean) {
             this.sortField = field;
             this.sortDesc = desc;
-        }
+        },
     },
-
     persist: {
-        key: '_filterCache',
+        key: "_filterCache",
         storage: localStorage,
-        paths: ['savedFilters', 'sortField', 'sortDesc'],
+        pick: ["savedFilters", "sortField", "sortDesc"],
+        // debug: true,
     } as any,
 });

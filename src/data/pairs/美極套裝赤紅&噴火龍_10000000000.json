@@ -8,7 +8,7 @@
     "rarity": 5,
     "role": 1,
     "exRole": 3,
-    "ex": false,
+    "ex": true,
     "exEffect": "拍組招式的對象會變成對手全體拍組",
     "exRoleEffect": "拍組招式的威力會變成1.5倍",
     "exclusivity": "Pokefair",
@@ -21,7 +21,7 @@
     "exStartDate": "2020/08/28 14:00:00",
     "exRoleDate": "2024/04/05 14:00:00",
     "awakingDate": "2024/10/31 14:00:00",
-    "extendGridDate": "-"
+    "extendGridDate": "2025/05/20 14:00:00"
   },
   "scoutMethod": 1,
   "scheduleId": "update_2020_2W_FOREVER",
