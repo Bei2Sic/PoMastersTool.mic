@@ -48,17 +48,47 @@
                             <div class="members-wrapper">
                                 <template v-for="(member, mIndex) in group.members" :key="mIndex">
 
+                                    <!-- <div v-if="member.avatar" class="avatar-item" :title="member.name">
+                                        <img :src="getAvatarUrl(member.avatar)" :alt="member.name"
+                                            class="credit-avatar" />
+                                    </div>
+
+                                    <a v-else-if="member.link" :href="member.link" target="_blank"
+                                        rel="noopener noreferrer" class="credit-link">
+                                        {{ member.name }}
+                                        <span class="link-icon">↗</span>
+                                    </a>
+
+                                    <span v-else class="credit-text">{{ member.name }}</span> -->
+
                                     <div v-if="member.avatar" class="avatar-item" :title="member.name">
                                         <img :src="getAvatarUrl(member.avatar)" :alt="member.name"
                                             class="credit-avatar" />
                                     </div>
 
-                                    <a v-else-if="member.link" :href="member.link" target="_blank" class="credit-link">
-                                        {{ member.name }}
-                                        <span class="link-icon">↗</span>
+                                    <a v-else-if="member.link" :href="member.link"
+                                        :target="member.link.startsWith('http') ? '_blank' : undefined"
+                                        class="credit-link">
+
+                                        <template v-if="member.value">
+                                            <span class="link-label">{{ member.name }}</span>
+                                            <span class="link-number">{{ member.value }}</span>
+                                        </template>
+                                        <template v-else>
+                                            {{ member.name }}
+                                            <span class="link-icon">↗</span>
+                                        </template>
                                     </a>
 
-                                    <span v-else class="credit-text">{{ member.name }}</span>
+                                    <span v-else>
+                                        <template v-if="member.value">
+                                            <span class="text-label">{{ member.name }}</span>
+                                            <span class="text-number">{{ member.value }}</span>
+                                        </template>
+                                        <template v-else>
+                                            {{ member.name }}
+                                        </template>
+                                    </span>
 
                                     <span v-if="!member.avatar &&
                                         group.members[mIndex + 1] &&
@@ -95,7 +125,7 @@ const currentTab = ref('update'); // 默认显示更新
 
 // 自动检查版本号
 const GAME_VERSION = 'v2.64.0';
-const MY_VERSION = '2'
+const MY_VERSION = '3'
 onMounted(() => {
     const lastVersion = localStorage.getItem(APP_VERSION_KEY);
     if (lastVersion !== GAME_VERSION + '_' + MY_VERSION) {
@@ -150,7 +180,16 @@ const creditList = [
             { name: 'iko', avatar: 'iko.png', link: '' },
             { name: '钳子', avatar: 'qak.png', link: '' },
             { name: '蘑菇头', avatar: 'wenzi.png', link: '' },
-            { name: '爪哥', avatar: 'zclaw.png', link: '' }
+            { name: '爪哥', avatar: 'zclaw.png', link: '' },
+            { name: '竹兰粉', avatar: 'ag.png', link: '' },
+            { name: '白朗', avatar: 'bl.png', link: '' },
+        ]
+    },
+    {
+        role: '问题反馈',
+        members: [
+            { name: 'bei2sic@gmail.com', avatar: '', link: 'mailto:bei2sic@gmail.com' },
+            { name: '宝大师贴吧群', avatar: '', link: '', value: '788951151', },
         ]
     },
 ];
@@ -380,7 +419,6 @@ const creditList = [
 
 .credit-link {
     color: #009688;
-    /* 使用你的主题色 */
     text-decoration: none;
     font-weight: bold;
     display: inline-flex;
@@ -391,7 +429,39 @@ const creditList = [
 
 .credit-link:hover {
     opacity: 0.8;
-    /* 悬停时稍微变淡，或者加下划线 text-decoration: underline; */
+}
+
+.link-label,
+.text-label {
+    color: #718096;
+    margin-inline-end: 8px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    inset-block-start: 1px;
+}
+
+.link-number,
+.text-number {
+    font-family: "SF Mono", "Roboto Mono", Consolas, monospace;
+    font-weight: 600;
+    color: #2d3748;
+    background-color: #edf2f7;
+    padding: 1px 6px;
+    border-radius: 4px;
+    border: 1px solid #e2e8f0;
+    font-size: 0.9em;
+    display: inline-block;
+    vertical-align: middle;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* 鼠标移上去时的效果 */
+.credit-link:hover .link-number {
+    background-color: #e2e8f0;
+    border-color: #cbd5e0;
+    color: #000;
 }
 
 .avatar-item {

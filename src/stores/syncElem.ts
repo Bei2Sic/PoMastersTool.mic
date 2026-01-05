@@ -90,7 +90,7 @@ export const useSyncElemStore = defineStore("syncUse", {
         },
 
         // 用於計算的匯總數據方法
-        currentActivePassive: (state) => { },
+        currentActivePassive: (state) => {},
 
         // ------------------------------ 组队模式：计算属性 ------------------------------
         // 队伍中所有拍组的最终属性（用于伤害计算）
@@ -192,31 +192,40 @@ const createSync = (jsonData: SyncRawData): Sync => {
         }),
         costFieryOrbs: computed(() => {
             return state.gridData.reduce(
-                (sum, tile) => sum + (tile.isActive ? (tile?.requiredItems?.fieryOrb || 0) : 0),
+                (sum, tile) =>
+                    sum +
+                    (tile.isActive ? tile?.requiredItems?.fieryOrb || 0 : 0),
                 0
             );
         }),
         costLeafOrbs: computed(() => {
             return state.gridData.reduce(
-                (sum, tile) => sum + (tile.isActive ? (tile?.requiredItems?.leafyOrb || 0) : 0),
+                (sum, tile) =>
+                    sum +
+                    (tile.isActive ? tile?.requiredItems?.leafyOrb || 0 : 0),
                 0
             );
         }),
         costBubblyOrbs: computed(() => {
             return state.gridData.reduce(
-                (sum, tile) => sum + (tile.isActive ? (tile?.requiredItems?.bubblyOrb || 0) : 0),
+                (sum, tile) =>
+                    sum +
+                    (tile.isActive ? tile?.requiredItems?.bubblyOrb || 0 : 0),
                 0
             );
         }),
         costSparkyOrbs: computed(() => {
             return state.gridData.reduce(
-                (sum, tile) => sum + (tile.isActive ? (tile?.requiredItems?.sparkyOrb || 0) : 0),
+                (sum, tile) =>
+                    sum +
+                    (tile.isActive ? tile?.requiredItems?.sparkyOrb || 0 : 0),
                 0
             );
         }),
         costTMOrbs: computed(() => {
             return state.gridData.reduce(
-                (sum, tile) => sum + (tile.isActive ? (tile?.requiredItems?.tmOrb || 0) : 0),
+                (sum, tile) =>
+                    sum + (tile.isActive ? tile?.requiredItems?.tmOrb || 0 : 0),
                 0
             );
         }),
@@ -416,11 +425,10 @@ const createSync = (jsonData: SyncRawData): Sync => {
                     keyName = "statsup";
                     break;
                 case "#47D147":
-                    if (tile.name.includes("極巨")) {
-                        keyName = "dynamaxmove";
-                    } else {
-                        keyName = "movepowerup";
-                    }
+                    keyName = "movepowerup";
+                    break;
+                case "#FF80BF":
+                    keyName = "dynamaxmove";
                     break;
                 case "#FF0066":
                     keyName = "moveeffect";
@@ -431,7 +439,7 @@ const createSync = (jsonData: SyncRawData): Sync => {
                 case "#BF80FF":
                     keyName = "syncmove";
                     break;
-                case "#FF80BF":
+                case "#7ADAF4":
                     keyName = "learnmove";
                     break;
             }
@@ -458,6 +466,7 @@ const createSync = (jsonData: SyncRawData): Sync => {
                     keyName = "icons/statsup";
                     break;
                 case "#47D147":
+                case "#FF80BF":
                     keyName = "icons/movepowerup-" + tile.type;
                     break;
                 case "#FF0066":
@@ -469,7 +478,7 @@ const createSync = (jsonData: SyncRawData): Sync => {
                 case "#BF80FF":
                     keyName = "icons/syncmove";
                     break;
-                case "#FF80BF":
+                case "#7ADAF4":
                     keyName = "icons/learnmove";
                     break;
             }
@@ -490,7 +499,7 @@ const createSync = (jsonData: SyncRawData): Sync => {
             } else if (tile.color === "#779EFF") {
                 return [name];
             } else if (tile.color === "#FF0066") {
-                // 
+                //
             }
 
             name = name.replace("招式計量槽", "計量槽");

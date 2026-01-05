@@ -15,9 +15,7 @@ import {
     Tile,
     Trainer,
 } from "@/types/syncModel";
-import {
-    SyncRawData,
-} from "@/types/cache";
+import { SyncRawData } from "@/types/cache";
 
 export interface StatCalcOptions {
     gearBonus?: number; // 裝備加成
@@ -52,7 +50,12 @@ function getTileMoveBonus(selectedTiles: Tile[], moveName: string): number {
 
     // 遍歷所有已激活的石盤
     for (const tile of selectedTiles) {
-        if (tile.isActive && (tile.color === "#47D147" || tile.color === "#BF80FF")) {
+        if (
+            tile.isActive &&
+            (tile.color === "#47D147" ||
+                tile.color === "#BF80FF" ||
+                tile.color === "#FF80BF")
+        ) {
             bonus += parseMoveTextBonus(tile.name, moveName);
         }
     }
@@ -115,10 +118,7 @@ export const getFinalStatValue = (
     if (currentPokemon?.scale && currentPokemon.scale.length > 0) {
         let index = getStatIndexByStatKey(statKey) - 1;
         let scale = currentPokemon.scale[index];
-        result = StatValueCalculator.calculateVarietyBonus(
-            result,
-            scale,
-        );
+        result = StatValueCalculator.calculateVarietyBonus(result, scale);
     }
 
     // 石盤的白值加成為最後的加算
@@ -181,7 +181,7 @@ export function getFinalMovePower(
 
     // 自身倍率
     if (options.moveBoost) {
-        power = Math.floor(power * options.moveBoost / 100);
+        power = Math.floor((power * options.moveBoost) / 100);
     }
 
     // 被動倍率

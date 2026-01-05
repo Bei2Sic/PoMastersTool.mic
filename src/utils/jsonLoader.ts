@@ -1,5 +1,5 @@
 // 本地加载数据文件
-import { getRoleInfo, getTypeInfo } from '@/core/exporter/map';
+import { getRoleInfo, getTypeInfo } from "@/core/exporter/map";
 import type { GlobalSyncCache, SyncMeta, SyncRawData } from "@/types/cache";
 export const loadAllSyncJson = async (): Promise<GlobalSyncCache> => {
     const cache: GlobalSyncCache = {};
@@ -59,18 +59,26 @@ export const loadAllSyncJson = async (): Promise<GlobalSyncCache> => {
 const extractSyncMeta = (rawData: SyncRawData, filePath: string): SyncMeta => {
     const trainer = rawData.trainer;
     const mainPokemon = rawData.pokemon[0];
-    const theme = rawData.themes.map(skill => skill.tag);
-    
-    const toTs = (dateStr: string) => (!dateStr || dateStr === '-') ? 0 : new Date(dateStr).getTime();
+    const theme = rawData.themes.map((skill) => skill.tag);
+
+    const toTs = (dateStr: string) =>
+        !dateStr || dateStr === "-" ? 0 : new Date(dateStr).getTime();
 
     // 处理属性：统一转为数组（不管JSON中是单个还是数组）
     const pokemonType = getTypeInfo(rawData.pokemon[0].type).cnName;
     const weakness = getTypeInfo(rawData.pokemon[0].weakness).cnName;
     const role = getRoleInfo(trainer.role).cnName;
-    let exRole = ""
+    let exRole = "";
     if (trainer.exRole != -1) {
         exRole = getRoleInfo(trainer.exRole).cnName;
     }
+    const variationTypes = [
+        ...new Set(
+            rawData.pokemon
+                .map((p) => p.variationType)
+                .filter((v) => v !== undefined && v !== null && v > 0)
+        ),
+    ];
 
     return {
         id: trainer.id,
@@ -87,9 +95,10 @@ const extractSyncMeta = (rawData: SyncRawData, filePath: string): SyncMeta => {
         themes: theme,
         role: role,
         exclusivity: trainer.exclusivity,
+        superAwakening: rawData.specialAwaking.name !== '',
         exRole: exRole,
         actorId: trainer.actorId,
-        variationType: rawData.pokemon[1]?.variationType ?? 0,
+        variationTypes: variationTypes,
         _startDate: toTs(trainer.startDate),
         _exStartDate: trainer.ex ? toTs(trainer.exStartDate) : 0,
         _exRoleDate: toTs(trainer.exRoleDate),

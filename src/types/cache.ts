@@ -1,14 +1,14 @@
 import {
-    LuckCookie,
-    Grid,
-    Theme,
-    Trainer,
-    SpecialAwaking,
-    Pokemon,
-} from "@/types/syncModel";
-import {
     RarityIndex,
 } from "@/types/indices";
+import {
+    Grid,
+    LuckCookie,
+    Pokemon,
+    SpecialAwaking,
+    Theme,
+    Trainer,
+} from "@/types/syncModel";
 
 export interface SavedFilters {
     exclusivity: string[];
@@ -18,7 +18,8 @@ export interface SavedFilters {
     exRoles: string[];
     rarity: number[];
     themes: string[];
-    // variation: string[]; 
+    variation: string[]; 
+    special: string[];
 }
 
 
@@ -51,8 +52,9 @@ export interface SyncMeta {
     exclusivity: string; // 稀罕度（筛选用）
     fileName?: string; // 对应的JSON文件名（可选，用于调试）
     themes: string[]; // 主题技能（筛选用）
+    superAwakening: boolean; // 超觉醒（筛选用）
     actorId: string;
-    variationType: number;
+    variationTypes: number[];
     _startDate: number;
     _exStartDate: number;
     _exRoleDate: number;

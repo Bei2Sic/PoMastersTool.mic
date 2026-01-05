@@ -47,6 +47,8 @@ export const useSyncCacheStore = defineStore("syncCache", {
             exRoles: [] as string[],
             rarity: [] as number[],
             themes: [] as string[],
+            variation: [] as string[],
+            special: [] as string[],
         },
 
         sortField: "_startDate",

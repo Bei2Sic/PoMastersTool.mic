@@ -28,8 +28,14 @@
         </div>
 
         <div class="trainer-list">
-            <div v-if="filteredTrainers.length === 0" class="no-result">
-                未找到匹配的拍組～
+            <div v-if="filteredTrainers.length === 0" class="empty-state">
+                <img src="@/assets/st/ch0101_90_mei_st_1004_128.png" alt="No Result" class="empty-icon" />
+                <h3 class="empty-title">未找到匹配的拍組</h3>
+                <p class="empty-desc">請嘗試更換關鍵字或調整篩選條件</p>
+
+                <button class="clear-filter-btn" @click="resetFilters">
+                    重置篩選
+                </button>
             </div>
 
             <div v-for="trainer in filteredTrainers" :key="trainer.id" class="trainer-item"
@@ -78,16 +84,16 @@
                     <div class="filter-body">
                         <div v-show="activeMainTab === 'basic'" class="basic-filters-view">
                             <div class="filter-section">
-                                <div class="section-title" @click="toggleSection('exclusivity')">
-                                    <span>特殊標籤 (Exclusivity)</span>
-                                    <span class="arrow-icon" :class="{ rotated: sectionState.exclusivity }">▼</span>
+                                <div class="section-title" @click="toggleSection('special')">
+                                    <span>特殊選項 (Options)</span>
+                                    <span class="arrow-icon" :class="{ rotated: sectionState.special }">▼</span>
                                 </div>
                                 <transition name="collapse">
-                                    <div v-show="sectionState.exclusivity" class="options-grid exclusivity">
-                                        <button v-for="tab in exclusivityTabs" :key="tab.key"
+                                    <div v-show="sectionState.special" class="options-grid special">
+                                        <button v-for="tab in specialTabs" :key="tab.key"
                                             class="option-btn icon-text-btn"
-                                            :class="{ active: tempFilters.exclusivity.includes(tab.key) }"
-                                            @click="toggleFilter('exclusivity', tab.key)">
+                                            :class="{ active: tempFilters.special.includes(tab.key) }"
+                                            @click="toggleFilter('special', tab.key)">
 
                                             <img v-if="tab.iconName" :src="getUiIcon(tab.iconName)"
                                                 class="filter-icon" />
@@ -103,6 +109,38 @@
                                     <span class="arrow-icon" :class="{ rotated: sectionState.variation }">▼</span>
                                 </div>
                                 <transition name="collapse">
+                                    <div v-show="sectionState.variation" class="options-grid variation">
+                                        <button v-for="tab in variationTabs" :key="tab.key"
+                                            class="option-btn icon-text-btn"
+                                            :class="{ active: tempFilters.variation.includes(tab.key) }"
+                                            @click="toggleFilter('variation', tab.key)">
+
+                                            <img v-if="tab.iconName" :src="getUiIcon(tab.iconName)"
+                                                class="filter-icon" />
+                                            {{ tab.label }}
+                                        </button>
+                                    </div>
+                                </transition>
+                            </div>
+
+
+                            <div class="filter-section">
+                                <div class="section-title" @click="toggleSection('exclusivity')">
+                                    <span>拍組分類 (Exclusivity)</span>
+                                    <span class="arrow-icon" :class="{ rotated: sectionState.exclusivity }">▼</span>
+                                </div>
+                                <transition name="collapse">
+                                    <div v-show="sectionState.exclusivity" class="options-grid exclusivity">
+                                        <button v-for="tab in exclusivityTabs" :key="tab.key"
+                                            class="option-btn icon-text-btn"
+                                            :class="{ active: tempFilters.exclusivity.includes(tab.key) }"
+                                            @click="toggleFilter('exclusivity', tab.key)">
+
+                                            <img v-if="tab.iconName" :src="getUiIcon(tab.iconName)"
+                                                class="filter-icon" />
+                                            {{ tab.label }}
+                                        </button>
+                                    </div>
                                 </transition>
                             </div>
 
@@ -235,7 +273,7 @@ import {
     THEME_OTHER,
     THEME_TRAINER_GROUP
 } from "@/constances/battle";
-import { ExclusivityMap, RoleMap, ThemeMap, TypeMap } from "@/constances/map";
+import { ExclusivityMap, RoleMap, SpecialMap, ThemeMap, TypeMap, VariationMap } from "@/constances/map";
 import { useSyncCacheStore } from "@/stores/syncCache";
 import { SyncMeta } from "@/types/cache";
 import { getTrainerUrl } from '@/utils/format';
@@ -290,6 +328,14 @@ const skillOptionsMap: Record<string, readonly string[]> = {
     Other: THEME_OTHER
 };
 
+const specialTabs = computed(() => {
+    return Object.values(SpecialMap).map(item => ({
+        key: item.key,
+        label: item.cnName,
+        iconName: `${item.key.toLowerCase()}`
+    }));
+});
+
 const exclusivityTabs = computed(() => {
     return Object.values(ExclusivityMap).map(item => ({
         key: item.key,
@@ -298,10 +344,18 @@ const exclusivityTabs = computed(() => {
     }));
 });
 
+const variationTabs = computed(() => {
+    return Object.entries(VariationMap).map(([mapKey, item]) => ({
+        key: mapKey,
+        label: item.cnName,
+        iconName: `variation_${item.key.toLowerCase()}`
+    }));
+});
+
 // --- 选项配置 ---
 const typeOptions = POKEMON_TYPES.filter(t => t !== '無');
 const roleOptions = ROLE_TYPES;
-const rarityOptions = [1, 2, 3, 4, 5, 6];
+const rarityOptions = [1, 2, 3, 4, 5];
 
 const filteredExRoleOptions = computed(() => {
     return roleOptions.filter(r => r !== '複合型');
@@ -345,6 +399,7 @@ watch(showFilterModal, (isOpen) => {
 
 const sectionState = reactive<Record<string, boolean>>({
     exclusivity: true,
+    special: false,
     variation: false,
     rarity: true,
     types: true,
@@ -359,7 +414,7 @@ const toggleSection = (key: string) => {
 
 const activeFilterCount = computed(() => {
     const f = syncCacheStore.savedFilters;
-    return f.exclusivity.length + f.types.length + f.weaknesses.length + f.roles.length + f.exRoles.length + (f.rarity?.length || 0);
+    return f.special.length + f.variation.length + f.exclusivity.length + f.types.length + f.weaknesses.length + f.roles.length + f.exRoles.length + f.rarity.length;
 });
 
 const toggleFilter = (category: string, value: any) => {
@@ -379,6 +434,11 @@ const resetFilters = () => {
     tempFilters.roles = [];
     tempFilters.exRoles = [];
     tempFilters.themes = [];
+    tempFilters.special = [];
+    tempFilters.variation = [];
+    tempFilters.exclusivity = [];
+
+    syncCacheStore.updateFilters(tempFilters);
 };
 
 const applyFilters = () => {
@@ -399,22 +459,42 @@ const filteredTrainers = computed(() => {
         );
     }
 
-    // 星级筛选逻辑：6星代表检查EX，1-5星代表检查基础星级
-    if (filters.rarity.length > 0) {
-        const requireEx = filters.rarity.includes(6);
-        const selectedBaseRarities = filters.rarity.filter(r => r !== 6);
-
+    if (filters.special.length > 0) {
         result = result.filter(t => {
-            // 如果选了6，必须有ex；没选6则忽略此条件
-            const passEx = requireEx ? (t.ex === true) : true;
+            return filters.special.some(key => {
+                switch (key) {
+                    case "NotEX":
+                        return !t.ex;
 
-            // 如果选了基础星级，必须匹配其中之一；没选基础星级则忽略此条件
-            const passRarity = selectedBaseRarities.length > 0
-                ? selectedBaseRarities.includes(t.rarity)
-                : true;
+                    case "HasEX":
+                        return t.ex;
 
-            return passEx && passRarity;
+                    case "EXRole":
+                        return t.exRole !== '';
+
+                    case "SuperAwakening": // 超觉醒
+                        return t.superAwakening;
+
+                    default:
+                        return false;
+                }
+            });
         });
+    }
+
+    if (filters.exclusivity.length > 0) {
+        result = result.filter(t => filters.exclusivity.includes(t.exclusivity));
+    }
+
+    if (filters.variation.length > 0) {
+        result = result.filter(t => {
+            const trainerTypes = t.variationTypes || [];
+            return trainerTypes.some(v => filters.variation.includes(String(v)));
+        });
+    }
+
+    if (filters.rarity.length > 0) {
+        result = result.filter(t => filters.rarity.includes(t.rarity));
     }
 
     if (filters.types.length > 0) {
@@ -438,9 +518,6 @@ const filteredTrainers = computed(() => {
             if (!t.themes) return false;
             return filters.themes.every(tag => t.themes.includes(tag));
         });
-    }
-    if (filters.exclusivity.length > 0) {
-        result = result.filter(t => filters.exclusivity.includes(t.exclusivity));
     }
 
     return result.sort((a: SyncMeta, b: SyncMeta) => {
@@ -516,7 +593,7 @@ const handleSelect = (trainer: SyncMeta) => {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 36px;
+    min-inline-size: 36px;
 }
 
 .sort-direction-btn:hover,
@@ -578,6 +655,55 @@ const handleSelect = (trainer: SyncMeta) => {
     inset-inline-end: -5px;
 }
 
+.empty-state {
+    grid-column: 1 / -1;
+    inline-size: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+    color: #888;
+    min-block-size: 300px;
+}
+
+.empty-icon {
+    inline-size: 70px;
+    block-size: 64px;
+    /* margin-block-end: 16px; */
+}
+
+.empty-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+    margin: 0 0 8px 0;
+}
+
+.empty-desc {
+    font-size: 14px;
+    color: #999;
+    margin: 0 0 24px 0;
+}
+
+.clear-filter-btn {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    color: #0b7a75;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.clear-filter-btn:hover {
+    background-color: #e0e0e0;
+    color: #333;
+    transform: translateY(-1px);
+}
+
 /* --- 列表容器：网格布局 --- */
 .trainer-list {
     display: grid !important;
@@ -634,7 +760,8 @@ const handleSelect = (trainer: SyncMeta) => {
 .trainer-meta-overlay {
     position: absolute;
     inset-block-end: 5px;
-    inset-inline-start: 50%; /* 左邊緣移動到父容器的中間 */
+    inset-inline-start: 50%;
+    /* 左邊緣移動到父容器的中間 */
     transform: translateX(-60%);
     display: flex;
     flex-direction: row;
@@ -1109,6 +1236,17 @@ const handleSelect = (trainer: SyncMeta) => {
 .options-grid.exclusivity,
 .options-grid.wide {
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+}
+
+.options-grid.variation,
+.options-grid.special {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.options-grid.rarity {
+    grid-template-columns: repeat(5, 1fr);
     gap: 10px;
 }
 

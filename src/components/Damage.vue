@@ -856,7 +856,7 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
 /* Stat Tables */
 .stat-table-container {
     display: flex;
-    flexDirection: row;
+    flex-direction: row;
     overflow-x: auto;
     border: 1px solid #eee;
     border-radius: 8px;

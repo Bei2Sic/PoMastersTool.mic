@@ -39,6 +39,13 @@ export const RoleMap: Record<string, TypeMapItem> = {
     999: { key: "Strike", cnName: "攻擊型" },
 };
 
+export const SpecialMap: Record<string, TypeMapItem> = {
+    1: { key: "NotEX", cnName: "無EX" },
+    2: { key: "HasEX", cnName: "有EX" },
+    3: { key: "EXRole", cnName: "EX體系" },
+    4: { key: "SuperAwakening", cnName: "超覺醒" },
+};
+
 export const ExclusivityMap: Record<string, TypeMapItem> = {
     1: { key: "Regular", cnName: "普池" },
     2: { key: "Pokefair", cnName: "群星限定" },
@@ -52,6 +59,17 @@ export const ExclusivityMap: Record<string, TypeMapItem> = {
     997: { key: "Academy", cnName: "學院套裝" },
     998: { key: "Arcsuit", cnName: "阿爾套裝" },
     999: { key: "Master", cnName: "大師限定" },
+};
+
+export const VariationMap: Record<string, TypeMapItem> = {
+    // 0: { key: "None", cnName: "基礎形態" },
+    1: { key: "Mega", cnName: "超級進化" },
+    // 2: { key: "Variation", cnName: "形態變化" },
+    // 3: { key: "Origin", cnName: "原始形態" },
+    4: { key: "Max", cnName: "極巨化形態" },
+    5: { key: "SyncVariation", cnName: "拍後形態變化" },
+    6: { key: "Reversion", cnName: "原始回歸" },
+    7: { key: "Tera", cnName: "太晶化形態" },
 };
 
 export const AbnormalMap: Record<string, TypeMapItem> = {

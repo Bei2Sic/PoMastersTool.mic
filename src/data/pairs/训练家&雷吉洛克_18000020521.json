@@ -11,7 +11,7 @@
     "ex": false,
     "exEffect": "首次使出拍組招式時，氣魄會提高2階段",
     "exRoleEffect": "無",
-    "exclusivity": "Regular",
+    "exclusivity": "Master",
     "scoutMethod": 2,
     "maxBonusLevel": 5,
     "dexNumber": "0377",

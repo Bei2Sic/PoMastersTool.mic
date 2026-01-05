@@ -441,7 +441,7 @@ export function useDamageCalculator(
                     const pokemonType = rawData.pokemon[index].type
                     if (m.type === pokemonType) {
                         gaugeBoost *= 1.5
-                        passiveStrings.push(`太晶威力增強: *1.5`);
+                        passiveStrings.push(`太晶威力增強: x1.5`);
                     }
                 }
 
