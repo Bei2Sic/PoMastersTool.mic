@@ -512,9 +512,6 @@ onUnmounted(() => {
     font-size: clamp(12px, 2vw, 13px);
     font-weight: 800;
     fill: white;
-    /* stroke: black;
-    stroke-width: 2.5px;
-    stroke-linejoin: round; */
     paint-order: stroke;
     user-select: none;
     text-shadow:
@@ -527,7 +524,6 @@ onUnmounted(() => {
 /* ================== 移动端关键样式 ================== */
 @media (max-width: 768px) {
 
-    /* 强制放大画布，使其可滚动，解决文字过小问题 */
     .main-svg {
         inline-size: 100%;
         block-size: 100%;
@@ -540,13 +536,8 @@ onUnmounted(() => {
     }
 
     .academy-resources {
-        /* 1. 位置调整：不再垂直居中，而是改为固定在右上角或者紧贴底部 */
-        /* right: 10%; */
         top: 18%;
         transform: none;
-        /* 取消之前的垂直居中位移 */
-
-        /* 2. 布局改为横向：节省垂直空间 */
         flex-direction: column;
         flex-wrap: wrap;
         justify-content: flex-end;

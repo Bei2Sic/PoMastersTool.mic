@@ -268,6 +268,13 @@
                         <div class="move-desc">
                             {{ finalMoves.syncMove.description }}
                         </div>
+                        <div v-if="currentRarityValue === 6" class="extra-row ex-integrated">
+                            <span>{{ trainer.exEffect }}</span>
+                        </div>
+
+                        <div v-if="currentRarityValue === 6 && exRoleEnabledValue" class="extra-row role-integrated">
+                            <span>{{ trainer.exRoleEffect }}</span>
+                        </div>
                     </div>
                 </div>
 
@@ -707,27 +714,27 @@ select.config-input {
 }
 
 .stat-column.hp {
-    background-color: #d4f1d4;
+    background-color: #dcfce7;
 }
 
 .stat-column.atk {
-    background-color: #fff3e0;
+    background-color: #ffedd5;
 }
 
 .stat-column.def {
-    background-color: #9de0a3;
+    background-color: #fef9c3;
 }
 
 .stat-column.spAtk {
-    background-color: #e1f5fe;
+    background-color: #dbeafe;
 }
 
 .stat-column.spDef {
-    background-color: #97bdd8;
+    background-color: #e0e7ff;
 }
 
 .stat-column.spd {
-    background-color: #ede7f6;
+    background-color: #fce7f3;
 }
 
 .tab-section {
@@ -1019,6 +1026,25 @@ select.config-input {
     white-space: pre-line;
 }
 
+.extra-row {
+    padding: 8px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #000000ab;
+    line-height: 1.4;
+    white-space: pre-line;
+
+    text-shadow: 0 0 1.2px currentColor;
+}
+
+.ex-integrated {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.role-integrated {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
 /* 被動技能區域 */
 .passives-container {
     display: flex;
@@ -1140,6 +1166,7 @@ select.config-input {
     .date-section {
         grid-template-columns: repeat(2, 1fr);
     }
+
     .date-value {
         font-size: 11px;
     }

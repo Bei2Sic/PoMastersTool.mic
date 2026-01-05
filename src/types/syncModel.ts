@@ -29,6 +29,8 @@ export interface Trainer {
     gridDate: string;
     extendGridDate: string;
     awakingDate: string;
+    exEffect: string;
+    exRoleEffect: string;
 }
 
 /** 宝可梦属性统计 */
