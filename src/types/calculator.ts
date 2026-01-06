@@ -30,6 +30,12 @@ export enum MoveScope {
     Specific = "Specific", // 特定招式
 }
 
+export enum EffectLogic {
+    PowerBoost = "PowerBoost", // 威力增长
+    StatBoost = "StatBoost", // 白值增长
+    ExtraType = "ExtraType", // 額外類型
+}
+
 export enum LogicType {
     // 固定值類型
     Direct = "Direct",
@@ -76,15 +82,12 @@ export enum LogicType {
     GaugeCost = "GaugeCost", // 計量槽消耗增加
     SpecialMulti = "SpecialMulti", // 特定乘算
     
-
-    // 白值能力加成
-    StatBaseBoost = "StatBaseBoost",
-
     // Mega狀態
     IsMega = "IsMega",
 
-    // 無效果
-    NoEffect = "NoEffect",
+    // 無伤害加成效果
+    NotDamage = "NotDamage",
+    NotDamageButCondition = "NotDamageButCondition", // 無傷害但滿足條件
 
     // 特殊被動
     MasterPassive = "MasterPassive",
@@ -102,7 +105,7 @@ export enum LogicType {
 // 主動效果的追加補充邏輯
 export enum ExtraLogic {
     BurnUseless = "BurnUseless",
-    NoDecay = "NoDecay", // 無衰減
+    NonDecay = "NonDecay", // 無衰減
     NormalTypeShift = "NormalTypeShift", //屬性替換
     TypeShift = "TypeShift",
     UseDef = "UseDef", //使用物防結算
@@ -115,6 +118,12 @@ export interface Condition {
     direction?: string;
     extra?: ExtraLogic;
     keys?: any; // 針對一些特殊組合邏輯, 複合key,
+}
+
+export interface ExtraContext {
+    key: string;
+    detail: string;
+    logic: ExtraLogic;
 }
 
 export interface ThemeContext {

@@ -4,7 +4,7 @@ import {
     WEATHER_TYPES,
 } from "@/constances/battle";
 import { MOVE_OVERRIDES } from "@/constances/move";
-import { LogicType, Condition } from "@/types/calculator";
+import { Condition, EffectLogic, LogicType } from "@/types/calculator";
 import { DEFAULT_MOVE_SKILL, MoveSkillModel } from "@/types/moveModel";
 
 export class MoveSkillParser {
@@ -17,7 +17,7 @@ export class MoveSkillParser {
     }
 
     // 獲取解析結果
-    public get result(): MoveSkillModel {
+    public get result(): MoveSkillModel[] {
         const defaultMoveSkill = {
             ...DEFAULT_MOVE_SKILL,
             name: this.name,
@@ -30,24 +30,26 @@ export class MoveSkillParser {
             return moveSkill;
         }
 
-        // 处理通用被动
+        // 处理通用主动技能（拍组招式）
         const isValid = this.isValid(this.desc);
 
         if (!isValid) {
-            return defaultMoveSkill;
+            return [defaultMoveSkill];
         }
         const logicResult = this.resolveLogicAndCondition();
         console.log(logicResult);
-        if (logicResult.logic === LogicType.NoEffect) {
-            return defaultMoveSkill;
+        if (logicResult.logic === LogicType.Direct) {
+            return [defaultMoveSkill];
         }
 
-        return {
-            name: this.name,
-            desc: this.desc,
-
-            condition: logicResult,
-        };
+        return [
+            {
+                name: this.name,
+                desc: this.desc,
+                effect: EffectLogic.PowerBoost,
+                condition: logicResult,
+            },
+        ];
     }
 
     // 合法性檢查：只處理傷害相關
@@ -148,14 +150,13 @@ export class MoveSkillParser {
                 logic: LogicType.MultiStatusActive,
                 key: "複合狀態",
                 keys: {
-                    hindrance: HINDRANCE_STATUSES.filter(status =>
-                        !["禁止替換"].includes(status)
+                    hindrance: HINDRANCE_STATUSES.filter(
+                        (status) => !["禁止替換"].includes(status)
                     ),
                 },
                 detail: desc.includes("對手") ? "對手" : "自身",
             };
         }
-
 
         // 環境/狀態類
         // 傷害場地
@@ -221,7 +222,7 @@ export class MoveSkillParser {
 
         // 兜底
         return {
-            logic: LogicType.NoEffect,
+            logic: LogicType.Direct,
             key: "通用",
             detail: "自身",
         };

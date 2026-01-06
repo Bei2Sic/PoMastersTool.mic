@@ -1,5 +1,5 @@
-import { ExtraLogic, LogicType, MoveScope } from "@/types/calculator";
 import { ABNORMAL_STATUSES, HINDRANCE_STATUSES, WEATHER_TYPES } from "@/constances/battle";
+import { EffectLogic, ExtraLogic, LogicType, MoveScope } from "@/types/calculator";
 import { PassiveSkillModel, PassiveStatBoost } from "@/types/passiveModel";
 import { getTypeCnNameByTypeSpecialName } from "../exporter/map";
 
@@ -41,10 +41,14 @@ export class PassiveSkillParser {
         const logicResult = this.resolveLogicAndCondition();
         const boostValue = this.resolveBoostValue(logicResult.isDynamic);
         const statBoost = this.resolveStatBoost();
+        const effect = statBoost.isStatBoost
+            ? EffectLogic.StatBoost
+            : EffectLogic.PowerBoost;
         return {
             name: this.name,
             desc: this.desc,
             passiveName: this.passiveName,
+            effect: effect,
             applyToParty:
                 this.name.includes("G") || this.desc.includes("全體拍組"), // 注意全形G
             boost: {
@@ -97,7 +101,7 @@ export class PassiveSkillParser {
         // const isDamage = /(?:招式|威力|攻擊).*(?:提升|↑|強)/.test(desc);
 
         // 白值檢查 (包含 '防禦', '特防', '速度', '特攻', 且包含 '倍' 或 '提升')
-        const isStatBoost = /(?:攻击|防禦|特防|特攻|速度).*(?:倍|提升|↑)/.test(
+        const isStatBoost = /(?:攻擊|防禦|特防|特攻|速度).*(?:倍|提升|↑)/.test(
             desc
         );
 
@@ -106,6 +110,7 @@ export class PassiveSkillParser {
         return isDamage || isStatBoost;
     }
 
+    //  --- bp大师被动 ---
     private resolveTeamWorker(name: string, desc: string): PassiveSkillModel {
         const prefix = name.substring(0, 2);
         const key = prefix.split("之")[0];
@@ -113,8 +118,8 @@ export class PassiveSkillParser {
             name: name,
             desc: desc,
             passiveName: name,
+            effect: EffectLogic.PowerBoost,
             statBoost: {
-                isStatBoost: false,
                 stats: [],
                 value: 1.0,
             },
@@ -132,6 +137,7 @@ export class PassiveSkillParser {
         };
     }
 
+    //  --- 大师被动 ---
     private resolveMaster(name: string, desc: string): PassiveSkillModel {
         const match = name.match(/^(.+?)(?:的|’s)\s*(先驅|鬥志|信念)$/);
         const key = match[1];
@@ -153,8 +159,8 @@ export class PassiveSkillParser {
             name: name,
             desc: desc,
             passiveName: name,
+            effect: EffectLogic.PowerBoost,
             statBoost: {
-                isStatBoost: false,
                 stats: [],
                 value: 1.0,
             },
@@ -172,6 +178,7 @@ export class PassiveSkillParser {
         };
     }
 
+    //  --- 阿尔被动 ---
     private resolveArcSuit(name: string, desc: string): PassiveSkillModel {
         const specialName = name.substring(0, 2);
         const key = getTypeCnNameByTypeSpecialName(specialName);
@@ -179,8 +186,8 @@ export class PassiveSkillParser {
             name: name,
             desc: desc,
             passiveName: name,
+            effect: EffectLogic.PowerBoost,
             statBoost: {
-                isStatBoost: false,
                 stats: [],
                 value: 1.0,
             },
@@ -198,22 +205,27 @@ export class PassiveSkillParser {
         };
     }
 
+    //  --- 一般属性替换 ---
     private resolveNormalTypeShift(name: string, desc: string): PassiveSkillModel {
         const key = name.replace("屬性替換", "").trim();
         return {
             name: name,
             desc: desc,
             passiveName: name,
+            effect: EffectLogic.ExtraType,
             statBoost: {
-                isStatBoost: false,
                 stats: [],
                 value: 1.0,
             },
             condition: {
+                key: "",
+                detail: "",
+                logic: LogicType.Direct,
+            },
+            extra: {
                 key: key,
                 detail: "自身",
-                logic: LogicType.NoEffect,
-                extra: ExtraLogic.NormalTypeShift,
+                logic: ExtraLogic.NormalTypeShift,
             },
             boost: {
                 scope: MoveScope.Move,

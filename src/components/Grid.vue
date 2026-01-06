@@ -226,8 +226,7 @@ const handleTileClick = (id: number, event: MouseEvent) => {
 // 鼠标悬停 (仅桌面端)
 const handleTileHover = (tile: Tile, event: MouseEvent) => {
     if (isMobile.value) return;
-    console.log('鼠標進入:', tile);
-    console.log('鼠標事件:', event);
+
     hoveredTile.value = tile;
     if (tile && event) {
         updatePopupPosition(event);

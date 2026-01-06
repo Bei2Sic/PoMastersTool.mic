@@ -87,12 +87,12 @@ export const useDamageCalcStore = defineStore("damageCalc", {
                 ct: 3 as cond.CtRank,
             },
             boosts: {
-                physical: 10 as cond.BoostRank, // 物理招式增強
-                special: 10 as cond.BoostRank, // 特殊招式增強
-                sync: 10 as cond.BoostRank, // 拍組招式增強
+                physical: 0 as cond.BoostRank, // 物理招式增強
+                special: 0 as cond.BoostRank, // 特殊招式增強
+                sync: 0 as cond.BoostRank, // 拍組招式增強
             },
-            syncBuff: 2 as number,
-            currentHPPercent: 100 as number,
+            syncBuff: 0 as number,
+            currentHPPercent: 50 as number,
             // 異常狀態
             abnormal: "無" as cond.AbnormalType,
             // 妨害狀態
@@ -123,7 +123,7 @@ export const useDamageCalcStore = defineStore("damageCalc", {
 
             damageField: "無" as cond.DamageFieldType,
 
-            currentHPPercent: 100 as number,
+            currentHPPercent: 50 as number,
 
             typeRebuffs: initRebuffs(),
             critBuffs: initCritbuffs(),
@@ -154,9 +154,9 @@ export const useDamageCalcStore = defineStore("damageCalc", {
         },
 
         config: {
-            physical: 0 as number,
-            special: 0 as number,
-            sync: 0 as number,
+            physical: 20 as number,
+            special: 20 as number,
+            sync: 20 as number,
             gearMove: 0 as number,
             gearSync: 0 as number,
         },

@@ -25,6 +25,7 @@ import {
     ActiveMultiplier,
     CalcEnvironment,
     Condition,
+    EffectLogic,
     ExtraLogic,
     LogicType,
     MoveScope,
@@ -54,12 +55,14 @@ export class DamageEngine {
 
         const shiftPassive = passives.find(
             (p) =>
-                p.condition.logic === LogicType.NoEffect &&
-                p.condition.extra === ExtraLogic.NormalTypeShift
+                p.effect === EffectLogic.ExtraType &&
+                p?.extra.logic === ExtraLogic.NormalTypeShift
         );
 
         if (shiftPassive) {
-            const targetTypeKey = shiftPassive.condition.key;
+            // todo: 后续可以在这里增加匹配条件的（如果有的话）
+
+            const targetTypeKey = shiftPassive.extra.key;
             const newTypeIndex = getTypeIndexByCnName(targetTypeKey);
             return newTypeIndex;
         }
@@ -74,12 +77,12 @@ export class DamageEngine {
     ): number {
         const shiftPassive = passives.find(
             (p) =>
-                p.condition.logic === LogicType.NoEffect &&
-                p.condition.extra === ExtraLogic.TypeShift
+                p.effect === EffectLogic.ExtraType &&
+                p?.extra.logic === ExtraLogic.TypeShift
         );
 
         if (shiftPassive) {
-            const targetTypeKey = shiftPassive.condition.key;
+            const targetTypeKey = shiftPassive.extra.key;
             const newTypeIndex = getTypeIndexByCnName(targetTypeKey);
             return newTypeIndex;
         }
@@ -98,9 +101,11 @@ export class DamageEngine {
         const result: ActiveMultiplier[] = [];
 
         for (const passive of passives) {
+            // 非伤害计算类跳过
+            if (passive.effect !== EffectLogic.PowerBoost) continue;
             // 跳過白值類
-            if (passive.statBoost.isStatBoost) continue;
-            if (passive.condition.logic === LogicType.NoEffect) continue;
+            // if (passive.statBoost.isStatBoost) continue;
+            // if (passive.condition.logic === LogicType.NotDamage) continue;
 
             const pm = passive.boost;
             if (!pm) continue;
@@ -154,7 +159,10 @@ export class DamageEngine {
 
     static resolvePassiveSum(activePassives: ActiveMultiplier[]): number {
         const totalPercent = activePassives.reduce((sum, item) => {
-            if (item.logic !== LogicType.GaugeCost && item.logic !== LogicType.SpecialMulti) {
+            if (
+                item.logic !== LogicType.GaugeCost &&
+                item.logic !== LogicType.SpecialMulti
+            ) {
                 return sum + item.value;
             }
             return sum;
@@ -163,12 +171,13 @@ export class DamageEngine {
         return totalPercent;
     }
 
-    static resolvePassiveIsMulti(
-        activePassives: ActiveMultiplier[]
-    ): number {
+    static resolvePassiveIsMulti(activePassives: ActiveMultiplier[]): number {
         const totalPercent = activePassives.reduce((sum, item) => {
-            if (item.logic === LogicType.GaugeCost || item.logic === LogicType.SpecialMulti) {
-                return sum *= (item.value / 100);
+            if (
+                item.logic === LogicType.GaugeCost ||
+                item.logic === LogicType.SpecialMulti
+            ) {
+                return (sum *= item.value / 100);
             }
             return sum;
         }, 1);
@@ -176,6 +185,7 @@ export class DamageEngine {
         return totalPercent;
     }
 
+    // 技能威力增强....
     static resolveBoosts(
         scope: MoveScope,
         category: number,
@@ -199,6 +209,7 @@ export class DamageEngine {
         }
     }
 
+    // 配置增强.....
     static resolveConfigBoosts(
         scope: MoveScope,
         category: number,
@@ -222,17 +233,18 @@ export class DamageEngine {
         }
     }
 
+    // 主动技能招式倍率.....
     static resolveMoveMultiplier(
         move: MoveBase,
-        moveSkill: MoveSkillModel,
+        moveSkills: MoveSkillModel[],
         context: CalcEnvironment
     ): number {
-        //  默認技能模型沒有名字
-        if (moveSkill.name !== move.name) {
-            return 100;
-        }
+        // 招式倍率增加一般只有一个
+        const moveSkill = moveSkills.find(
+            (s) => s.name === move.name && s.effect === EffectLogic.PowerBoost // 假设你的枚举值是这个
+        );
 
-        if (!moveSkill.condition?.logic) {
+        if (!moveSkill || !moveSkill.condition?.logic) {
             return 100;
         }
 
@@ -267,6 +279,7 @@ export class DamageEngine {
         return value;
     }
 
+    // 环境倍率.....
     static resolveEnvMultipliers(
         move: MoveBase,
         scope: MoveScope,
@@ -384,6 +397,7 @@ export class DamageEngine {
         return boost;
     }
 
+    // 装备倍率....
     static resolveGearMultipliers(
         scope: MoveScope,
         context: CalcEnvironment
@@ -391,9 +405,9 @@ export class DamageEngine {
         let boost = 1;
         // 裝備加成（乘算）
         if (scope === MoveScope.Move) {
-            boost *= (1 + context.config.gearMove / 100);
+            boost *= 1 + context.config.gearMove / 100;
         } else if (scope === MoveScope.Sync) {
-            boost *= (1 + context.config.gearSync / 100);
+            boost *= 1 + context.config.gearSync / 100;
         }
         // 不用处理直接返回
         return boost;
@@ -409,10 +423,10 @@ export class DamageEngine {
         let boost = 100;
         // 被动白值变化
         passives.forEach((passive) => {
-            if (passive.statBoost.isStatBoost) {
+            if (passive.effect === EffectLogic.StatBoost) {
                 // 判断条件是否达成
                 if (this.checkCondition(passive.condition, context)) {
-                    passive.statBoost.stats.forEach((s) => {
+                    passive?.statBoost.stats.forEach((s) => {
                         const statKey = getStatKeyByStatCnName(s);
                         if (statKey === stat) {
                             boost *= passive.statBoost.value; // (eg: *1.5)
@@ -438,7 +452,6 @@ export class DamageEngine {
         // 灼伤影响(只针对攻击) (*0.8)
         if (stat === "atk") {
             if (context.user.abnormal === "灼傷" && !ignoreBurn) {
-                console.log("灼伤效果触发");
                 boost *= 0.8;
             }
         }
@@ -481,6 +494,72 @@ export class DamageEngine {
         value = Math.floor((value * boost) / 100);
 
         return value;
+    }
+
+    // 获取是否有烧伤无效被动或技能效果
+    static hasBurnUseless(
+        passives: PassiveSkillModel[],
+        moveSkills: MoveSkillModel[],
+        context: CalcEnvironment
+    ): boolean {
+        const passiveHas = passives.some(
+            (passive) =>
+                // 这里需要检测下条件是否生效
+                // 目前应该没有 Compound 类别的吧?
+                this.checkCondition(passive.condition, context) &&
+                passive.effect === EffectLogic.ExtraType &&
+                passive?.extra.logic === ExtraLogic.BurnUseless
+        );
+        const moveHas = moveSkills.some(
+            (move) =>
+                move.effect === EffectLogic.ExtraType &&
+                move?.extra.logic === ExtraLogic.BurnUseless
+        );
+        return passiveHas || moveHas;
+    }
+
+    // 获取是否有无衰减效果
+    static hasNonDecay(
+        passives: PassiveSkillModel[],
+        moveSkills: MoveSkillModel[],
+        context: CalcEnvironment
+    ): boolean {
+        const passiveHas = passives.some(
+            (passive) =>
+                this.checkCondition(passive.condition, context) &&
+                passive.effect === EffectLogic.ExtraType &&
+                passive?.extra.logic === ExtraLogic.NonDecay
+        );
+        const moveHas = moveSkills.some(
+            (move) =>
+                move.effect === EffectLogic.ExtraType &&
+                move?.extra.logic === ExtraLogic.NonDecay
+        );
+        return passiveHas || moveHas;
+    }
+
+    // 获取是否有无衰减效果
+    static hasUseDef(
+        moveSkills: MoveSkillModel[]
+    ): boolean {
+        return moveSkills.some(
+            (move) =>
+                move.effect === EffectLogic.ExtraType &&
+                move?.extra.logic === ExtraLogic.UseDef
+        );
+    }
+
+    // 主动技能也有技能替换效果
+    static hasTypeShift(
+        moveSkills: MoveSkillModel[],
+        context: CalcEnvironment
+    ): boolean {
+        return moveSkills.some(
+            (move) =>
+                this.checkCondition(move.condition, context) &&
+                move.effect === EffectLogic.ExtraType &&
+                move?.extra.logic === ExtraLogic.TypeShift
+        );
     }
 
     private static isScopeMatch(
@@ -585,7 +664,7 @@ export class DamageEngine {
                     ? env.target.abnormal
                     : env.user.abnormal;
                 if (cond.key === "劇毒" && abnormal === "中毒") {
-                    return true
+                    return true;
                 }
                 return cond.key.includes(abnormal);
 
@@ -730,7 +809,7 @@ export class DamageEngine {
             case LogicType.Compound:
                 if (!conds || conds.length === 0) return true;
                 return conds.every((subCond) => {
-                    this.checkCondition(subCond, env, moveType, moveTag);
+                    return this.checkCondition(subCond, env, moveType, moveTag);
                 });
 
             // 复合状态
@@ -740,8 +819,11 @@ export class DamageEngine {
                         const multiAbnormal = cond.detail.includes("對手")
                             ? env.target.abnormal
                             : env.user.abnormal;
-                        if (cond.keys.abnormal.includes("劇毒") && multiAbnormal === "中毒") {
-                            return true
+                        if (
+                            cond.keys.abnormal.includes("劇毒") &&
+                            multiAbnormal === "中毒"
+                        ) {
+                            return true;
                         }
                         if (cond.keys.abnormal.includes(multiAbnormal)) {
                             return true;
@@ -752,12 +834,13 @@ export class DamageEngine {
                             ? env.target.hindrance
                             : env.user.hindrance;
                         const t = Object.keys(multiHindrance).some((status) => {
-                            const isActive = multiHindrance[status as HindranceType];
+                            const isActive =
+                                multiHindrance[status as HindranceType];
                             if (!isActive) return false;
 
                             return cond.keys.hindrance.includes(status);
                         });
-                        return t
+                        return t;
                     }
                 }
         }
@@ -808,7 +891,8 @@ export class DamageEngine {
                 let totalRank = 0;
                 STATS.forEach((statName) => {
                     const totalStatKey = getStatKeyByStatCnName(statName);
-                    const totalRankValue = totalStatKey === 'hp' ? 0 : totalStats[totalStatKey];
+                    const totalRankValue =
+                        totalStatKey === "hp" ? 0 : totalStats[totalStatKey];
                     if (isStatLow) {
                         totalRank +=
                             totalRankValue < 0 ? Math.abs(totalRankValue) : 0;

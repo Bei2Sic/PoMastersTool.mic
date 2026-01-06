@@ -1,4 +1,9 @@
-import { ExtraLogic, LogicType, MoveScope } from "@/types/calculator";
+import {
+    EffectLogic,
+    ExtraLogic,
+    LogicType,
+    MoveScope,
+} from "@/types/calculator";
 import { PassiveSkillModel } from "@/types/passiveModel";
 
 export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
@@ -7,6 +12,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "小智的熱忱",
             desc: "",
             passiveName: "小智的熱忱",
+            effect: EffectLogic.PowerBoost,
             boost: {
                 scope: MoveScope.Specific,
                 moveName: "打雷",
@@ -17,11 +23,6 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
                 detail: "自身",
                 logic: LogicType.SpecialMulti,
             },
-            statBoost: {
-                isStatBoost: false,
-                stats: [],
-                value: 1.0,
-            },
             applyToParty: false,
         },
     ],
@@ -30,20 +31,20 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "坂木的本領",
             desc: "",
             passiveName: "坂木的本領",
+            effect: EffectLogic.ExtraType,
             boost: {
                 scope: MoveScope.Move,
                 value: 1.0,
             },
             condition: {
+                key: "",
+                detail: "",
+                logic: LogicType.Direct,
+            },
+            extra: {
                 key: "地面",
                 detail: "自身",
-                logic: LogicType.NoEffect,
-                extra: ExtraLogic.NormalTypeShift,
-            },
-            statBoost: {
-                isStatBoost: false,
-                stats: [],
-                value: 1.0,
+                logic: ExtraLogic.NormalTypeShift,
             },
             applyToParty: false,
         },
@@ -53,6 +54,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "坂木的經驗",
             desc: "",
             passiveName: "坂木的經驗",
+            effect: EffectLogic.PowerBoost,
             boost: {
                 scope: MoveScope.Move,
                 value: 0.5,
@@ -62,11 +64,6 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
                 detail: "自身",
                 logic: LogicType.Weather,
             },
-            statBoost: {
-                isStatBoost: false,
-                stats: [],
-                value: 1.0,
-            },
             applyToParty: false,
         },
     ],
@@ -75,6 +72,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "洛茲的成就",
             desc: "",
             passiveName: "洛茲的成就",
+            effect: EffectLogic.PowerBoost,
             boost: {
                 scope: MoveScope.Move,
                 value: 0.2,
@@ -84,11 +82,6 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
                 detail: "自身",
                 logic: LogicType.MoveType,
             },
-            statBoost: {
-                isStatBoost: false,
-                stats: [],
-                value: 1.0,
-            },
             applyToParty: false,
         },
     ],
@@ -97,6 +90,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "紅髮的叛逆心",
             desc: "",
             passiveName: "紅髮的叛逆心",
+            effect: EffectLogic.PowerBoost,
             boost: {
                 scope: MoveScope.Move,
                 value: 0.2,
@@ -106,11 +100,6 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
                 detail: "自身",
                 logic: LogicType.Weather,
             },
-            statBoost: {
-                isStatBoost: false,
-                stats: [],
-                value: 1.0,
-            },
             applyToParty: true,
         },
     ],
@@ -119,6 +108,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "莽撞又衝動",
             desc: "",
             passiveName: "莽撞又衝動",
+            effect: EffectLogic.PowerBoost,
             boost: {
                 scope: MoveScope.Specific,
                 moveName: "近身戰",
@@ -129,11 +119,6 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
                 detail: "自身",
                 logic: LogicType.Direct,
             },
-            statBoost: {
-                isStatBoost: false,
-                stats: [],
-                value: 1.0,
-            },
             applyToParty: false,
         },
     ],
@@ -142,6 +127,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "工廠頭目的知識",
             desc: "",
             passiveName: "工廠頭目的知識",
+            effect: EffectLogic.PowerBoost,
             boost: {
                 scope: MoveScope.Move,
                 value: 0.2,
@@ -151,11 +137,6 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
                 detail: "對手",
                 logic: LogicType.Hindrance,
             },
-            statBoost: {
-                isStatBoost: false,
-                stats: [],
-                value: 1.0,
-            },
             applyToParty: true,
         },
     ],
@@ -164,6 +145,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "新手老師的機智",
             desc: "",
             passiveName: "新手老師的機智",
+            effect: EffectLogic.PowerBoost,
             boost: {
                 scope: MoveScope.Move,
                 value: 0.05,
@@ -174,17 +156,13 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
                 direction: "提升",
                 logic: LogicType.BoostScaling,
             },
-            statBoost: {
-                isStatBoost: false,
-                stats: [],
-                value: 1.0,
-            },
             applyToParty: false,
         },
         {
             name: "新手老師的機智",
             desc: "",
             passiveName: "新手老師的機智",
+            effect: EffectLogic.PowerBoost,
             boost: {
                 scope: MoveScope.Sync,
                 value: 0.1,
@@ -195,11 +173,6 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
                 direction: "提升",
                 logic: LogicType.BoostScaling,
             },
-            statBoost: {
-                isStatBoost: false,
-                stats: [],
-                value: 1.0,
-            },
             applyToParty: false,
         },
     ],
@@ -208,6 +181,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "百聞不如一見",
             desc: "",
             passiveName: "百聞不如一見",
+            effect: EffectLogic.PowerBoost,
             boost: {
                 scope: MoveScope.Move,
                 value: 1.5,
@@ -217,11 +191,6 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
                 detail: "自身",
                 logic: LogicType.GaugeCost,
             },
-            statBoost: {
-                isStatBoost: false,
-                stats: [],
-                value: 1.0,
-            },
             applyToParty: false,
         },
     ],
@@ -230,6 +199,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "首席冠軍的才華",
             desc: "",
             passiveName: "首席冠軍的才華",
+            effect: EffectLogic.PowerBoost,
             boost: {
                 scope: MoveScope.Specific,
                 moveName: "百花怒放晶光轉轉",
@@ -240,17 +210,13 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
                 detail: "自身",
                 logic: LogicType.GaugeCost,
             },
-            statBoost: {
-                isStatBoost: false,
-                stats: [],
-                value: 1.0,
-            },
             applyToParty: false,
         },
         {
             name: "首席冠軍的才華",
             desc: "",
             passiveName: "首席冠軍的才華",
+            effect: EffectLogic.PowerBoost,
             boost: {
                 scope: MoveScope.Specific,
                 moveName: "晶光轉轉",
@@ -261,11 +227,6 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
                 detail: "自身",
                 logic: LogicType.GaugeCost,
             },
-            statBoost: {
-                isStatBoost: false,
-                stats: [],
-                value: 1.0,
-            },
             applyToParty: false,
         },
     ],
@@ -274,6 +235,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "王家的財力",
             desc: "",
             passiveName: "王家的財力",
+            effect: EffectLogic.PowerBoost,
             boost: {
                 scope: MoveScope.All,
                 value: 0.4,
@@ -283,11 +245,6 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
                 detail: "自身",
                 logic: LogicType.BattleCircle,
             },
-            statBoost: {
-                isStatBoost: false,
-                stats: [],
-                value: 1.0,
-            },
             applyToParty: true,
         },
     ],
@@ -296,6 +253,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "真新的啟程",
             desc: "",
             passiveName: "真新的啟程",
+            effect: EffectLogic.PowerBoost,
             boost: {
                 scope: MoveScope.Sync,
                 value: 0.1,
@@ -306,11 +264,6 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
                 direction: "提升",
                 logic: LogicType.BoostScaling,
             },
-            statBoost: {
-                isStatBoost: false,
-                stats: [],
-                value: 1.0,
-            },
             applyToParty: false,
         },
     ],
@@ -319,20 +272,20 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "披著披風的龍之使者",
             desc: "",
             passiveName: "披著披風的龍之使者",
+            effect: EffectLogic.ExtraType,
             boost: {
                 scope: MoveScope.Move,
                 value: 0.0,
             },
             condition: {
+                key: "",
+                detail: "",
+                logic: LogicType.Direct,
+            },
+            extra: {
                 key: "龍",
                 detail: "自身",
-                logic: LogicType.NoEffect,
-                extra: ExtraLogic.NormalTypeShift,
-            },
-            statBoost: {
-                isStatBoost: false,
-                stats: [],
-                value: 1.0,
+                logic: ExtraLogic.NormalTypeShift,
             },
             applyToParty: false,
         },
@@ -342,20 +295,20 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "浪跡天涯的冠軍",
             desc: "",
             passiveName: "浪跡天涯的冠軍",
+            effect: EffectLogic.ExtraType,
             boost: {
                 scope: MoveScope.Move,
                 value: 0.0,
             },
             condition: {
+                key: "",
+                detail: "",
+                logic: LogicType.Direct,
+            },
+            extra: {
                 key: "蟲",
                 detail: "自身",
-                logic: LogicType.NoEffect,
-                extra: ExtraLogic.NormalTypeShift,
-            },
-            statBoost: {
-                isStatBoost: false,
-                stats: [],
-                value: 1.0,
+                logic: ExtraLogic.NormalTypeShift,
             },
             applyToParty: false,
         },
@@ -365,6 +318,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "豐緣的熱忱",
             desc: "",
             passiveName: "豐緣的熱忱",
+            effect: EffectLogic.PowerBoost,
             boost: {
                 scope: MoveScope.All,
                 value: 0.2,
@@ -386,11 +340,6 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
                     logic: LogicType.MoveType,
                 },
             ],
-            statBoost: {
-                isStatBoost: false,
-                stats: [],
-                value: 1.0,
-            },
             applyToParty: true,
         },
     ],
@@ -399,6 +348,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "洗翠流動的時間",
             desc: "",
             passiveName: "洗翠流動的時間",
+            effect: EffectLogic.PowerBoost,
             boost: {
                 scope: MoveScope.Move,
                 value: 0.5,
@@ -408,11 +358,6 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
                 detail: "自身",
                 logic: LogicType.Weather,
             },
-            statBoost: {
-                isStatBoost: false,
-                stats: [],
-                value: 1.0,
-            },
             applyToParty: false,
         },
     ],
@@ -421,6 +366,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "破壞的本能",
             desc: "",
             passiveName: "破壞的本能",
+            effect: EffectLogic.PowerBoost,
             boost: {
                 scope: MoveScope.All,
                 value: 0.5,
@@ -430,11 +376,6 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
                 detail: "自身",
                 logic: LogicType.Weather,
             },
-            statBoost: {
-                isStatBoost: false,
-                stats: [],
-                value: 1.0,
-            },
             applyToParty: false,
         },
     ],
@@ -443,6 +384,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "力大無窮",
             desc: "",
             passiveName: "力大無窮",
+            effect: EffectLogic.PowerBoost,
             boost: {
                 scope: MoveScope.Specific,
                 moveName: "地震",
@@ -453,11 +395,6 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
                 detail: "自身",
                 logic: LogicType.Direct,
             },
-            statBoost: {
-                isStatBoost: false,
-                stats: [],
-                value: 1.0,
-            },
             applyToParty: false,
         },
     ],
@@ -466,6 +403,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "攻擊程式",
             desc: "",
             passiveName: "攻擊程式",
+            effect: EffectLogic.PowerBoost,
             boost: {
                 scope: MoveScope.Specific,
                 moveName: "破壞光綫",
@@ -476,11 +414,6 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
                 detail: "自身",
                 logic: LogicType.Direct,
             },
-            statBoost: {
-                isStatBoost: false,
-                stats: [],
-                value: 1.0,
-            },
             applyToParty: false,
         },
     ],
@@ -489,6 +422,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "保護夥伴的決心",
             desc: "",
             passiveName: "保護夥伴的決心",
+            effect: EffectLogic.PowerBoost,
             boost: {
                 scope: MoveScope.All,
                 value: 0.2,
@@ -498,11 +432,6 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
                 detail: "自身",
                 logic: LogicType.BattleCircle,
             },
-            statBoost: {
-                isStatBoost: false,
-                stats: [],
-                value: 1.0,
-            },
             applyToParty: true,
         },
     ],
@@ -511,6 +440,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "熾烈熱舞",
             desc: "",
             passiveName: "熾烈熱舞",
+            effect: EffectLogic.PowerBoost,
             boost: {
                 scope: MoveScope.Move,
                 value: 0.5,
@@ -520,10 +450,26 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
                 detail: "自身",
                 logic: LogicType.AbnormalActive,
             },
-            statBoost: {
-                isStatBoost: false,
-                stats: [],
-                value: 1.0,
+            applyToParty: false,
+        },
+        {
+            name: "熾烈熱舞",
+            desc: "",
+            passiveName: "熾烈熱舞",
+            effect: EffectLogic.ExtraType,
+            boost: {
+                scope: MoveScope.All,
+                value: 0.0,
+            },
+            extra: {
+                key: "",
+                detail: "自身",
+                logic: ExtraLogic.BurnUseless,
+            },
+            condition: {
+                key: "",
+                detail: "",
+                logic: LogicType.Direct,
             },
             applyToParty: false,
         },
@@ -533,6 +479,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "關都的耀眼傳說",
             desc: "",
             passiveName: "關都的耀眼傳說",
+            effect: EffectLogic.PowerBoost,
             boost: {
                 scope: MoveScope.MoveAndSync,
                 value: 0.15,
@@ -543,11 +490,6 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
                 detail: "自身",
                 logic: LogicType.MasterPassive,
             },
-            statBoost: {
-                isStatBoost: false,
-                stats: [],
-                value: 1.0,
-            },
             applyToParty: true,
         },
     ],
@@ -556,6 +498,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "洗翠的耀眼珍珠",
             desc: "",
             passiveName: "洗翠的耀眼珍珠",
+            effect: EffectLogic.PowerBoost,
             boost: {
                 scope: MoveScope.MoveAndSync,
                 value: 0.15,
@@ -565,11 +508,6 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
                 key: "神奧",
                 detail: "自身",
                 logic: LogicType.MasterPassive,
-            },
-            statBoost: {
-                isStatBoost: false,
-                stats: [],
-                value: 1.0,
             },
             applyToParty: true,
         },
@@ -579,6 +517,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "洗翠的寶可夢馴化師",
             desc: "",
             passiveName: "洗翠的寶可夢馴化師",
+            effect: EffectLogic.PowerBoost,
             boost: {
                 scope: MoveScope.MoveAndSync,
                 value: 0.15,
@@ -589,11 +528,6 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
                 detail: "自身",
                 logic: LogicType.MasterPassive,
             },
-            statBoost: {
-                isStatBoost: false,
-                stats: [],
-                value: 1.0,
-            },
             applyToParty: true,
         },
     ],
@@ -602,6 +536,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "合眾的溫柔英雄",
             desc: "",
             passiveName: "合眾的溫柔英雄",
+            effect: EffectLogic.PowerBoost,
             boost: {
                 scope: MoveScope.MoveAndSync,
                 value: 0.15,
@@ -612,11 +547,6 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
                 detail: "自身",
                 logic: LogicType.MasterPassive,
             },
-            statBoost: {
-                isStatBoost: false,
-                stats: [],
-                value: 1.0,
-            },
             applyToParty: true,
         },
     ],
@@ -625,6 +555,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "極低溫冷氣",
             desc: "",
             passiveName: "極低溫冷氣",
+            effect: EffectLogic.PowerBoost,
             boost: {
                 scope: MoveScope.Specific,
                 moveName: "冰凍光束",
@@ -635,11 +566,6 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
                 detail: "自身",
                 logic: LogicType.Direct,
             },
-            statBoost: {
-                isStatBoost: false,
-                stats: [],
-                value: 1.0,
-            },
             applyToParty: false,
         },
     ],
@@ -648,6 +574,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "合眾的熱血少女",
             desc: "",
             passiveName: "合眾的熱血少女",
+            effect: EffectLogic.PowerBoost,
             boost: {
                 scope: MoveScope.MoveAndSync,
                 value: 0.15,
@@ -658,11 +585,6 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
                 detail: "自身",
                 logic: LogicType.MasterPassive,
             },
-            statBoost: {
-                isStatBoost: false,
-                stats: [],
-                value: 1.0,
-            },
             applyToParty: true,
         },
     ],
@@ -671,6 +593,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "伽勒爾的耀眼王牌",
             desc: "",
             passiveName: "伽勒爾的耀眼王牌",
+            effect: EffectLogic.PowerBoost,
             boost: {
                 scope: MoveScope.MoveAndSync,
                 value: 0.15,
@@ -681,11 +604,6 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
                 detail: "自身",
                 logic: LogicType.MasterPassive,
             },
-            statBoost: {
-                isStatBoost: false,
-                stats: [],
-                value: 1.0,
-            },
             applyToParty: true,
         },
     ],
@@ -694,6 +612,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "夯到不行的北上潮女",
             desc: "",
             passiveName: "夯到不行的北上潮女",
+            effect: EffectLogic.PowerBoost,
             boost: {
                 scope: MoveScope.MoveAndSync,
                 value: 0.15,
@@ -704,11 +623,6 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
                 detail: "自身",
                 logic: LogicType.MasterPassive,
             },
-            statBoost: {
-                isStatBoost: false,
-                stats: [],
-                value: 1.0,
-            },
             applyToParty: true,
         },
     ],
@@ -717,20 +631,20 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "曲目:超能力",
             desc: "",
             passiveName: "曲目:超能力",
+            effect: EffectLogic.ExtraType,
             boost: {
                 scope: MoveScope.Move,
                 value: 0.0,
             },
             condition: {
+                key: "",
+                detail: "",
+                logic: LogicType.Direct,
+            },
+            extra: {
                 key: "超能力",
                 detail: "自身",
-                logic: LogicType.NoEffect,
-                extra: ExtraLogic.NormalTypeShift,
-            },
-            statBoost: {
-                isStatBoost: false,
-                stats: [],
-                value: 1.0,
+                logic: ExtraLogic.NormalTypeShift,
             },
             applyToParty: false,
         },
@@ -740,20 +654,20 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "曲目:格鬥",
             desc: "",
             passiveName: "曲目:格鬥",
+            effect: EffectLogic.ExtraType,
             boost: {
                 scope: MoveScope.Move,
                 value: 0.0,
             },
             condition: {
+                key: "",
+                detail: "",
+                logic: LogicType.Direct,
+            },
+            extra: {
                 key: "格鬥",
                 detail: "自身",
-                logic: LogicType.NoEffect,
-                extra: ExtraLogic.NormalTypeShift,
-            },
-            statBoost: {
-                isStatBoost: false,
-                stats: [],
-                value: 1.0,
+                logic: ExtraLogic.NormalTypeShift,
             },
             applyToParty: false,
         },
@@ -761,20 +675,20 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             name: "曲目:格鬥",
             desc: "",
             passiveName: "曲目:格鬥",
+            effect: EffectLogic.ExtraType,
             boost: {
                 scope: MoveScope.Sync,
                 value: 0.0,
             },
             condition: {
+                key: "",
+                detail: "",
+                logic: LogicType.Direct,
+            },
+            extra: {
                 key: "格鬥",
                 detail: "自身",
-                logic: LogicType.NoEffect,
-                extra: ExtraLogic.TypeShift,
-            },
-            statBoost: {
-                isStatBoost: false,
-                stats: [],
-                value: 1.0,
+                logic: ExtraLogic.TypeShift,
             },
             applyToParty: false,
         },

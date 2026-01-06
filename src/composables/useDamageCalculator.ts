@@ -10,10 +10,9 @@ import { PassiveSkillParser } from "@/core/parse/passive";
 import { useDamageCalcStore } from "@/stores/damageCalc";
 import {
     CalcEnvironment,
-    ExtraLogic,
     LogicType,
     MoveScope,
-    ThemeContext,
+    ThemeContext
 } from "@/types/calculator";
 import { CircleLevel, RegionType } from "@/types/conditions";
 import { MoveBase, Pokemon, Sync } from "@/types/syncModel";
@@ -378,6 +377,7 @@ export function useDamageCalculator(
             ) => {
                 if (!m || m.power === 0) return null;
 
+                // 激活的所有被動list
                 const currentPassives = passives[index].passives;
                 let activeMove = m; // 默認使用原始招式
 
@@ -386,9 +386,15 @@ export function useDamageCalculator(
                     activeMove.description
                 );
                 const moveSkill = parser.result;
-                if (moveSkill?.condition) {
-                    console.log(moveSkill);
+                // 如果是特殊效果的主动技能，需要在这里先处理技能效果
+                // 例如属性替换
+                if (DamageEngine.hasTypeShift(moveSkill, localEnv)) {
+                    activeMove = {
+                        ...activeMove,
+                        // todo: 转化属性
+                    };
                 }
+
 
                 // 获取当前技能属性中文名 (用于主题技能匹配)
                 const moveTypeCnName = getTypeCnNameByTypeIndex(
@@ -489,7 +495,7 @@ export function useDamageCalculator(
 
                 // 检查是否有"无视烧伤"逻辑
                 const ignoreBurn = isPhysical
-                    ? moveSkill.condition?.extra === ExtraLogic.BurnUseless
+                    ? DamageEngine.hasBurnUseless(currentPassives, moveSkill, localEnv)
                     : true;
 
                 const userVariationStat = getFinalStatValue(
@@ -533,7 +539,7 @@ export function useDamageCalculator(
                 if (activeMove.category === 1) {
                     targetStat = targeStats.def; // 物理招式看物防
                 } else {
-                    if (moveSkill.condition?.extra === ExtraLogic.UseDef) {
+                    if (DamageEngine.hasUseDef(moveSkill)) {
                         targetStat = targeStats.def;
                     } else {
                         targetStat = targeStats.spd;
