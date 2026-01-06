@@ -1,0 +1,304 @@
+@import "./base.css";
+
+#app {
+    /* max-width: 1280px; */
+    /* margin: 0 auto; */
+    /* padding: 2rem; */
+    font-weight: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("./images/bg1.png");
+    background-repeat: repeat;
+    /* 关键：横向+纵向重复平铺 */
+    background-size: auto;
+    /* 保持图片原始尺寸（或设置固定尺寸，比如 200px 200px） */
+    background-position: top left;
+    /* 居中 */
+    background-attachment: fixed;
+    /* 固定不滚动 */
+    background-color: #f5f8ff;
+    /* 备用色 */
+    min-height: 100vh;
+    /* 确保全屏高度 */
+}
+
+:root {
+    --bug: #aad23c;
+    --bug1: #bbdb63;
+    --bug2: #88a830;
+    --dark: #9696b4;
+    --dark1: #ababc3;
+    --dark2: #787890;
+    --dragon: #32aacd;
+    --dragon1: #5bbbd7;
+    --dragon2: #2888a4;
+    --electric: #ffda3d;
+    --electric1: #ffe164;
+    --electric2: #ccae31;
+    --fairy: #fa9dac;
+    --fairy1: #fbb1bd;
+    --fairy2: #c87e8a;
+    --fighting: #f8925a;
+    --fighting1: #f9a87b;
+    --fighting2: #c67548;
+    --fire: #ee6060;
+    --fire1: #f18080;
+    --fire2: #be4d4d;
+    --flying: #82a0f0;
+    --flying1: #9bb3f3;
+    --flying2: #6880c0;
+    --ghost: #c89bc3;
+    --ghost1: #d3afcf;
+    --ghost2: #a07c9c;
+    --grass: #4fca5c;
+    --grass1: #72d57d;
+    --grass2: #3fa24a;
+    --ground: #d28246;
+    --ground1: #db9b6b;
+    --ground2: #a86838;
+    --ice: #78c8d2;
+    --ice1: #93d3db;
+    --ice2: #60a0a8;
+    --normal: #b0aeac;
+    --normal1: #c0bebd;
+    --normal2: #8d8b8a;
+    --poison: #c873dc;
+    --poison1: #d38fe3;
+    --poison2: #a05cb0;
+    --psychic: #f582af;
+    --psychic1: #f79bbf;
+    --psychic2: #c4688c;
+    --rock: #be9678;
+    --rock1: #cbab93;
+    --rock2: #987860;
+    --steel: #96aad7;
+    --steel1: #abbbdf;
+    --steel2: #7888ac;
+    --water: #5fc3eb;
+    --water1: #7fcfef;
+    --water2: #4c9cbc;
+    --trainer: #6dbfb3;
+    --trainer1: #8accc2;
+    --trainer2: #57998f;
+
+    --maxmove: #333333;
+    --maxmove2: #fc6481;
+    --maxmove3: #dd1f65;
+
+    --hp: #c7f1d3;
+    --attack: #efebcf;
+    --defense: #f3dfba;
+    --spattack: #d3f1f7;
+    --spdefense: #bed3ef;
+    --speed: #dbcde7;
+
+    --button: #7ba7b5;
+    --button1: #c4d5d9;
+    --button2: #a1c0c8;
+
+    --skill: #55dbf1;
+    --passive_master: #cf9fff;
+    --passive_arcsuit: #f4d275;
+    --passive_superawakening: #2478d7;
+    --theme: #5dd0b4;
+    --theme1: #7dd9c3;
+    --theme2: #4aa690;
+
+    --text: #27646e;
+    --textYellow: #fcf067;
+    --textGray: #b2b2b2;
+    --textWhite: white;
+
+    --textOutline: -1px -1px 0 var(--text), 1px -1px 0 var(--text),
+        -1px 1px 0 var(--text), 1px 1px 0 var(--text);
+
+    --bg1: url("./images/bg1.png");
+    --bg2: url("./images/bg2.png");
+    --bgPassive: url("./images/skill_passive.png");
+    --bgPassiveMaster: url("./images/skill_master.png");
+    --iconPassiveMaster: url("./images/icon_master.png");
+    --iconPassiveMasterEX: url("./images/icon_masterex.png");
+    --bgLucky: url("./images/skill_lucky.png");
+    --bgPokeball: url("./images/bg_pokeball.png");
+    --bgSyncMove: url("./images/bg_syncMove.png");
+    --bgSyncMove2: url("./images/bg_syncMove2.png");
+    --bgDynamax: url("./images/bg_dynamax.png");
+    --bgDivineMove: url("./images/bg_divineMove.png");
+    --bgTera: url("./images/bg_tera.png");
+
+    --bgPassiveArcsuit: url("./images/skill_arcsuit.png");
+    --iconPassiveArcsuit: url("./images/icon_arcsuit.png");
+
+    --bgPassiveSuperawakening: url("./images/skill_superawakening.png");
+    --iconPassiveSuperawakening: url("./images/icon_superawakening.png");
+
+    --iconMoveBug: url("./images/move_bug.png");
+    /* 虫 */
+    --iconMoveDark: url("./images/move_dark.png");
+    /* 恶 */
+    --iconMoveDragon: url("./images/move_dragon.png");
+    /* 龙 */
+    --iconMoveElectric: url("./images/move_electric.png");
+    /* 电 */
+    --iconMoveFairy: url("./images/move_fairy.png");
+    /* 妖精 */
+    --iconMoveFighting: url("./images/move_fighting.png");
+    /* 格斗 */
+    --iconMoveFire: url("./images/move_fire.png");
+    /* 火 */
+    --iconMoveFlying: url("./images/move_flying.png");
+    /* 飞行 */
+    --iconMoveGhost: url("./images/move_ghost.png");
+    /* 幽灵 */
+    --iconMoveGrass: url("./images/move_grass.png");
+    /* 草 */
+    --iconMoveGround: url("./images/move_ground.png");
+    /* 地面 */
+    --iconMoveIce: url("./images/move_ice.png");
+    /* 冰 */
+    --iconMoveNormal: url("./images/move_normal.png");
+    /* 一般 */
+    --iconMovePoison: url("./images/move_poison.png");
+    /* 毒 */
+    --iconMovePsychic: url("./images/move_psychic.png");
+    /* 超能力 */
+    --iconMoveRock: url("./images/move_rock.png");
+    /* 岩石 */
+    --iconMoveSteel: url("./images/move_steel.png");
+    /* 钢 */
+    --iconMoveWater: url("./images/move_water.png");
+    /* 水 */
+    --iconMoveTrainer: url("./images/move_trainer.png");
+    /* 训练家 */
+
+
+    --iconGauge: url("./images/icon_gauge.png");
+    --iconPhysical: url("./images/category_physical.png");
+    --iconSpecial: url("./images/category_special.png");
+    --iconStatus: url("./images/category_status.png");
+
+    --iconThemeRegion: url("./images/theme_region.png");
+    --iconThemeFashion: url("./images/theme_fashion.png");
+    --iconThemeType: url("./images/theme_type.png");
+    --iconThemeTrainerGroup: url("./images/theme_trainergroup.png");
+    --iconThemeOther: url("./images/theme_other.png");
+
+    --iconSyncLevelOn: url("./images/sync_level_on.png");
+    --iconSyncLevelOff: url("./images/sync_level_off.png");
+    --iconAwakeningLevelOn: url("./images/awakening_level_on.png");
+    --iconAwakeningLevelOff: url("./images/awakening_level_off.png");
+}
+
+.bg_bug {
+    background: linear-gradient(var(--bug), var(--bug2)) !important;
+}
+
+.bg_dark {
+    background: linear-gradient(var(--dark), var(--dark2)) !important;
+}
+
+.bg_dragon {
+    background: linear-gradient(var(--dragon), var(--dragon2)) !important;
+}
+
+.bg_electric {
+    background: linear-gradient(var(--electric), var(--electric2)) !important;
+}
+
+.bg_fairy {
+    background: linear-gradient(var(--fairy), var(--fairy2)) !important;
+}
+
+.bg_fighting {
+    background: linear-gradient(var(--fighting), var(--fighting2)) !important;
+}
+
+.bg_fire {
+    background: linear-gradient(var(--fire), var(--fire2)) !important;
+}
+
+.bg_flying {
+    background: linear-gradient(var(--flying), var(--flying2)) !important;
+}
+
+.bg_ghost {
+    background: linear-gradient(var(--ghost), var(--ghost2)) !important;
+}
+
+.bg_grass {
+    background: linear-gradient(var(--grass), var(--grass2)) !important;
+}
+
+.bg_ground {
+    background: linear-gradient(var(--ground), var(--ground2)) !important;
+}
+
+.bg_ice {
+    background: linear-gradient(var(--ice), var(--ice2)) !important;
+}
+
+.bg_normal {
+    background: linear-gradient(var(--normal), var(--normal2)) !important;
+}
+
+.bg_poison {
+    background: linear-gradient(var(--poison), var(--poison2)) !important;
+}
+
+.bg_psychic {
+    background: linear-gradient(var(--psychic), var(--psychic2)) !important;
+}
+
+.bg_rock {
+    background: linear-gradient(var(--rock), var(--rock2)) !important;
+}
+
+.bg_steel {
+    background: linear-gradient(var(--steel), var(--steel2)) !important;
+}
+
+.bg_water {
+    background: linear-gradient(var(--water), var(--water2)) !important;
+}
+
+.bg_trainer {
+    background: linear-gradient(var(--trainer), var(--trainer2)) !important;
+}
+
+.bg_ {
+    background: none;
+}
+
+/* .bg_locked {
+    background: linear-gradient(var(--textGray), var(--textWhite)) !important;
+} */
+
+a,
+.green {
+    text-decoration: none;
+    color: hsla(160, 100%, 37%, 1);
+    transition: 0.4s;
+    padding: 3px;
+}
+
+@media (hover: hover) {
+    a:hover {
+        background-color: hsla(160, 100%, 37%, 0.2);
+    }
+}
+
+@media (min-width: 1024px) {
+    body {
+        display: flex;
+        place-items: center;
+    }
+
+    #app {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        /* padding: 0 2rem; */
+    }
+}
