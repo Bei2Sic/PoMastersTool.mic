@@ -312,6 +312,27 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
             },
             applyToParty: false,
         },
+        {
+            name: "浪跡天涯的冠軍",
+            desc: "",
+            passiveName: "浪跡天涯的冠軍",
+            effect: EffectLogic.ExtraType,
+            boost: {
+                scope: MoveScope.Move,
+                value: 0.0,
+            },
+            condition: {
+                key: "",
+                detail: "",
+                logic: LogicType.Direct,
+            },
+            extra: {
+                key: "",
+                detail: "",
+                logic: ExtraLogic.NonDecay,
+            },
+            applyToParty: false,
+        },
     ],
     豐緣的熱忱: [
         {

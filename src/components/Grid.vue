@@ -39,8 +39,7 @@
                 <template v-for="tile in gridData" :key="tile.id">
                     <g :transform="`translate(${calcHexSvgX(tile.x)}, ${calcHexSvgY(tile.x, tile.y)})`"
                         class="tile-group" @click.stop="handleTileClick(tile.id, $event)"
-                        :class="{ 'tile-locked': !isTileReachable(tile) }" @mouseenter="handleTileHover(tile, $event)"
-                        @mouseleave="handleTileHover(null, null)">
+                        @mouseenter="handleTileHover(tile, $event)" @mouseleave="handleTileHover(null, null)">
 
                         <polygon :points="hexPoints"
                             :style="{ cursor: isTileReachable(tile) ? 'pointer' : 'not-allowed' }" fill="transparent" />
@@ -494,30 +493,17 @@ onUnmounted(() => {
     -webkit-tap-highlight-color: transparent;
 }
 
-.tile-locked {
-
-    /* filter: grayscale(0.8) brightness(0.5) contrast(0.8);
-    cursor: not-allowed !important; */
-}
-
-.tile-locked .grid-text {
-    fill: #aaa;
-    /* 文字变灰 */
-    stroke: #333;
-    /* 描边变淡 */
-}
-
 .grid-text {
-    font-size: clamp(12px, 2vw, 13px);
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
     font-weight: 800;
+    font-size: clamp(12px, 2.5vw, 13px);
     fill: white;
-    paint-order: stroke;
+    stroke: #333;
+    stroke-width: 3px;
+    paint-order: stroke fill;
+    filter: drop-shadow(0px 2px 1px rgba(0, 0, 0, 0.1));
     user-select: none;
-    text-shadow:
-        1px 1px 0 #555,
-        -1px 1px 0 #555,
-        1px -1px 0 #555,
-        -1px -1px 0 #555;
+    pointer-events: none;
 }
 
 /* ================== 移动端关键样式 ================== */

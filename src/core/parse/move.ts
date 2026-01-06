@@ -4,7 +4,7 @@ import {
     WEATHER_TYPES,
 } from "@/constances/battle";
 import { MOVE_OVERRIDES } from "@/constances/move";
-import { Condition, EffectLogic, LogicType } from "@/types/calculator";
+import { Condition, EffectLogic, ExtraLogic, LogicType } from "@/types/calculator";
 import { DEFAULT_MOVE_SKILL, MoveSkillModel } from "@/types/moveModel";
 
 export class MoveSkillParser {
@@ -30,6 +30,26 @@ export class MoveSkillParser {
             return moveSkill;
         }
 
+        if (this.isNoneDecay(this.desc)) {
+            return [
+                {
+                    name: this.name,
+                    desc: this.desc,
+                    effect: EffectLogic.ExtraType,
+                    condition: {
+                        key: "",
+                        detail: "",
+                        logic: LogicType.Direct
+                    },
+                    extra: {
+                        key: "",
+                        detail: "",
+                        logic: ExtraLogic.NonDecay
+                    }
+                },
+            ];
+        }
+
         // 处理通用主动技能（拍组招式）
         const isValid = this.isValid(this.desc);
 
@@ -37,7 +57,6 @@ export class MoveSkillParser {
             return [defaultMoveSkill];
         }
         const logicResult = this.resolveLogicAndCondition();
-        console.log(logicResult);
         if (logicResult.logic === LogicType.Direct) {
             return [defaultMoveSkill];
         }
@@ -61,6 +80,12 @@ export class MoveSkillParser {
             desc.includes("會提高威力");
 
         return isBoost;
+    }
+
+    // 是否是無衰減效果的
+    private isNoneDecay(desc: string): boolean {
+        console.log(desc)
+        return desc.includes("即使對象為複數,招式的威力也不會降低。")
     }
 
     // --- 解析邏輯與條件 (Logic & Condition) ---

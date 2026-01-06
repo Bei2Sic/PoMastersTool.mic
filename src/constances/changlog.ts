@@ -9,6 +9,18 @@ export interface LogEntry {
 
 export const changelogs: LogEntry[] = [
     {
+        version: "v2.64.0_4",
+        date: "2026-01-06",
+        title: "功能更新以及BUG修复",
+        content: [
+            "修复：修复極巨化拍組無法進入傷害計算界面的問題。",
+            "新增：新增 [小遙&長耳兔] 拍組招式效果。",
+            "新增：新增 [無衰減AOE] 類被動和招式的解析。",
+            "优化：优化移动端石盘文字的显示",
+        ],
+        isCritical: true,
+    },
+    {
         version: "v2.64.0_3",
         date: "2026-01-05",
         title: "UI优化及功能更新",

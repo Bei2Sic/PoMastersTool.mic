@@ -1,9 +1,9 @@
 // @/types/move.ts
-import { CalcEnvironment, Condition, EffectLogic, ExtraContext } from "@/types/calculator";
+import { CalcEnvironment, Condition, EffectLogic, ExtraContext, SkillModel } from "@/types/calculator";
 import { MoveBase } from "@/types/syncModel";
 export type MoveLogicHandler = (env: CalcEnvironment, move: MoveBase) => number;
 
-export interface MoveSkillModel {
+export interface MoveSkillModel extends SkillModel {
     name: string;
     desc: string;
     effect: EffectLogic;

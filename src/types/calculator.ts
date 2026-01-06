@@ -16,6 +16,7 @@ import {
     WeatherType,
     ZoneType,
 } from "@/types/conditions";
+import { MoveBase } from "./syncModel";
 
 export enum MoveScope {
     Move = "Move", // 小招
@@ -81,7 +82,7 @@ export enum LogicType {
     // 技能威力乘算被动
     GaugeCost = "GaugeCost", // 計量槽消耗增加
     SpecialMulti = "SpecialMulti", // 特定乘算
-    
+
     // Mega狀態
     IsMega = "IsMega",
 
@@ -124,6 +125,17 @@ export interface ExtraContext {
     key: string;
     detail: string;
     logic: ExtraLogic;
+}
+
+// 技能通用模型
+export interface SkillModel {
+    name: string;
+    desc: string;
+    // 影响范围
+    effect: EffectLogic;
+    // 触发条件
+    condition: Condition;
+    extra?: ExtraContext;
 }
 
 export interface ThemeContext {
@@ -207,3 +219,18 @@ export interface CalcEnvironment {
         gearSync: number;
     }
 }
+
+export interface DamageResult {
+    move: MoveBase,
+    passiveBoost: number,
+    moveBoost:number,
+    gaugeBoost:number,
+    movePower:number,
+    envBoost:number,
+    gearBoost:number,
+    userStat:number,
+    targetStat:number,
+    moveDamage:number[],
+    scope: MoveScope,
+    boostDetails: string[],
+};

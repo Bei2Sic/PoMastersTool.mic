@@ -30,6 +30,7 @@ import {
     LogicType,
     MoveScope,
     ThemeContext,
+    SkillModel,
 } from "@/types/calculator";
 import {
     CircleCategory,
@@ -44,9 +45,9 @@ import { MoveBase } from "@/types/syncModel";
 
 export class DamageEngine {
     // 獲取一般屬性替換的被動（一般唯一）
-    static getNormalTypeShiftPassive(
+    static getNormalTypeShiftEffect(
         move: MoveBase,
-        passives: PassiveSkillModel[]
+        passives: SkillModel[]
     ): number {
         // 一般屬性的才會變化，先判斷是不是一般屬性的
         if (getTypeCnNameByTypeIndex(move.type) !== "一般") {
@@ -71,10 +72,14 @@ export class DamageEngine {
     }
 
     // 獲取屬性替換的被動（一般唯一）
-    static getTypeShiftPassive(
+    static getTypeShiftEffect(
         move: MoveBase,
-        passives: PassiveSkillModel[]
+        passives: SkillModel[]
     ): number {
+        if (!move) {
+            return 1;
+        }
+
         const shiftPassive = passives.find(
             (p) =>
                 p.effect === EffectLogic.ExtraType &&
@@ -86,7 +91,6 @@ export class DamageEngine {
             const newTypeIndex = getTypeIndexByCnName(targetTypeKey);
             return newTypeIndex;
         }
-
         return move.type;
     }
 
@@ -242,7 +246,7 @@ export class DamageEngine {
         // 招式倍率增加一般只有一个
         const moveSkill = moveSkills.find(
             (s) => s.name === move.name && s.effect === EffectLogic.PowerBoost // 假设你的枚举值是这个
-        );
+        )
 
         if (!moveSkill || !moveSkill.condition?.logic) {
             return 100;
@@ -283,7 +287,8 @@ export class DamageEngine {
     static resolveEnvMultipliers(
         move: MoveBase,
         scope: MoveScope,
-        context: CalcEnvironment
+        context: CalcEnvironment,
+        isNoneDecay: boolean
     ): number {
         let boost = 1;
         // 轉化下屬性
@@ -366,7 +371,7 @@ export class DamageEngine {
         }
 
         // 目標
-        if (scope !== MoveScope.Sync) {
+        if (!isNoneDecay) {
             const scopeBoost =
                 TARGET_SCOPE_MULTIPLIERS[context.settings.targetScope];
             boost *= scopeBoost;
@@ -467,7 +472,6 @@ export class DamageEngine {
         let value = context.target.stats[stat] || 0;
         let boost = 100;
 
-        // todo: 增加白值属性抗性, 现在先用 全种类抵抗5
         const mitigation = context.target.statLowerReduction / 10;
         let currentRank = context.target.ranks[stat] || 0;
 
@@ -506,9 +510,9 @@ export class DamageEngine {
             (passive) =>
                 // 这里需要检测下条件是否生效
                 // 目前应该没有 Compound 类别的吧?
-                this.checkCondition(passive.condition, context) &&
                 passive.effect === EffectLogic.ExtraType &&
-                passive?.extra.logic === ExtraLogic.BurnUseless
+                passive?.extra.logic === ExtraLogic.BurnUseless &&
+                this.checkCondition(passive.condition, context)
         );
         const moveHas = moveSkills.some(
             (move) =>
@@ -520,15 +524,16 @@ export class DamageEngine {
 
     // 获取是否有无衰减效果
     static hasNonDecay(
+        move: MoveBase,
+        scope: MoveScope,
         passives: PassiveSkillModel[],
         moveSkills: MoveSkillModel[],
-        context: CalcEnvironment
     ): boolean {
         const passiveHas = passives.some(
             (passive) =>
-                this.checkCondition(passive.condition, context) &&
                 passive.effect === EffectLogic.ExtraType &&
-                passive?.extra.logic === ExtraLogic.NonDecay
+                passive?.extra.logic === ExtraLogic.NonDecay &&
+                this.isScopeMatch(passive.boost.scope, scope, move.category, move.name)
         );
         const moveHas = moveSkills.some(
             (move) =>
@@ -556,7 +561,8 @@ export class DamageEngine {
     ): boolean {
         return moveSkills.some(
             (move) =>
-                this.checkCondition(move.condition, context) &&
+                // 技能如果是通用普通技能沒有condition
+                this.checkCondition(move?.condition, context) &&
                 move.effect === EffectLogic.ExtraType &&
                 move?.extra.logic === ExtraLogic.TypeShift
         );
@@ -628,6 +634,11 @@ export class DamageEngine {
         moveTag?: string,
         conds?: Condition[]
     ): boolean {
+        // 安全操作
+        if (!cond) {
+            return false
+        }
+
         switch (cond.logic) {
             // 直接返回
             case LogicType.Direct:

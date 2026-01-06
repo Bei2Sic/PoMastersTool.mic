@@ -125,7 +125,7 @@ const currentTab = ref('update'); // 默认显示更新
 
 // 自动检查版本号
 const GAME_VERSION = 'v2.64.0';
-const MY_VERSION = '3'
+const MY_VERSION = '4'
 onMounted(() => {
     const lastVersion = localStorage.getItem(APP_VERSION_KEY);
     if (lastVersion !== GAME_VERSION + '_' + MY_VERSION) {

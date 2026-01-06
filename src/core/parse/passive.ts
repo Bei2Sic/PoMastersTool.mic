@@ -20,6 +20,10 @@ export class PassiveSkillParser {
         if (this.isNormalTypeShift(this.name)) {
             return this.resolveNormalTypeShift(this.name, this.desc);
         }
+        // 全體化
+        if (this.isMoveExpansion(this.name, this.desc)) {
+            return this.resolveMoveExpansion(this.name, this.desc);
+        }
 
         // 处理大师被动&阿尔被动
         if (this.isTeamWorker(this.name)) {
@@ -83,6 +87,10 @@ export class PassiveSkillParser {
 
     private isNormalTypeShift(name: string): boolean {
         return name.includes("屬性替換");
+    }
+
+    private isMoveExpansion(name: string, desc: string): boolean {
+        return name.includes("全體化") && desc.includes("即使對象為複數")
     }
 
     // 合法性檢查：只處理傷害相關
@@ -213,10 +221,6 @@ export class PassiveSkillParser {
             desc: desc,
             passiveName: name,
             effect: EffectLogic.ExtraType,
-            statBoost: {
-                stats: [],
-                value: 1.0,
-            },
             condition: {
                 key: "",
                 detail: "",
@@ -229,6 +233,70 @@ export class PassiveSkillParser {
             },
             boost: {
                 scope: MoveScope.Move,
+                value: 0.0,
+            },
+            applyToParty: false,
+        };
+    }
+
+    // --- 招式全體化
+    private resolveMoveExpansion(name: string, desc: string): PassiveSkillModel {
+
+        // 丈母娘骡子马特殊被动(无语...)
+        if (name === "拍組招式後寶可夢招式全體化") {
+            return {
+                name: name,
+                desc: desc,
+                passiveName: name,
+                effect: EffectLogic.ExtraType,
+                condition: {
+                    key: "",
+                    detail: "",
+                    logic: LogicType.IsMega,
+                },
+                extra: {
+                    key: "",
+                    detail: "",
+                    logic: ExtraLogic.NonDecay,
+                },
+                boost: {
+                    scope: MoveScope.Move,
+                    value: 0.0,
+                },
+                applyToParty: false,
+            };
+        }
+
+        let scope = MoveScope.Move
+        if (name.includes("寶可夢招式")) {
+            if (name.includes("拍組極巨化招式")) {
+                scope = MoveScope.MoveAndMax
+            } else if (name.includes("拍組招式")) {
+                scope = MoveScope.MoveAndSync
+            }
+        } else if (name.includes("拍組招式")) {
+            scope = MoveScope.Sync
+        } else if (name.includes("拍組極巨化招式")) {
+            scope = MoveScope.Max
+        }
+
+        return {
+            name: name,
+            desc: desc,
+            passiveName: name,
+            effect: EffectLogic.ExtraType,
+            condition: {
+                key: "",
+                detail: "",
+                logic: LogicType.Direct,
+            },
+            extra: {
+                key: "",
+                detail: "",
+                logic: ExtraLogic.NonDecay,
+            },
+            boost: {
+                scope: scope,
                 value: 0.0,
             },
             applyToParty: false,

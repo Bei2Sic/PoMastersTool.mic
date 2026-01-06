@@ -12,7 +12,8 @@ import {
     CalcEnvironment,
     LogicType,
     MoveScope,
-    ThemeContext
+    ThemeContext,
+    DamageResult
 } from "@/types/calculator";
 import { CircleLevel, RegionType } from "@/types/conditions";
 import { MoveBase, Pokemon, Sync } from "@/types/syncModel";
@@ -374,7 +375,7 @@ export function useDamageCalculator(
                 scope: MoveScope,
                 powerScope: PowerMoveScope,
                 index: number
-            ) => {
+            ): DamageResult => {
                 if (!m || m.power === 0) return null;
 
                 // 激活的所有被動list
@@ -389,9 +390,13 @@ export function useDamageCalculator(
                 // 如果是特殊效果的主动技能，需要在这里先处理技能效果
                 // 例如属性替换
                 if (DamageEngine.hasTypeShift(moveSkill, localEnv)) {
+                    const shiftType = DamageEngine.getTypeShiftEffect(
+                        activeMove,
+                        moveSkill
+                    )
                     activeMove = {
                         ...activeMove,
-                        // todo: 转化属性
+                        type: shiftType
                     };
                 }
 
@@ -474,11 +479,24 @@ export function useDamageCalculator(
                     }
                 ) as number;
 
+                // 檢測是否有無衰減
+                let isNoneDecay = false;
+                if (scope === MoveScope.Sync) {
+                    isNoneDecay = true
+                } else {
+                    isNoneDecay = DamageEngine.hasNonDecay(
+                        activeMove,
+                        scope,
+                        currentPassives,
+                        moveSkill
+                    )
+                }
                 // 获取环境提供的倍率
                 const envBoost = DamageEngine.resolveEnvMultipliers(
                     activeMove,
                     scope,
-                    localEnv
+                    localEnv,
+                    isNoneDecay
                 );
 
                 // 裝備乘算倍率
@@ -583,7 +601,7 @@ export function useDamageCalculator(
                     }
                     let activeMove = m; // 默認使用原始招式
                     // 属性替换被动
-                    const newType = DamageEngine.getNormalTypeShiftPassive(
+                    const newType = DamageEngine.getNormalTypeShiftEffect(
                         m,
                         passives[formIndex].passives
                     );
@@ -603,6 +621,7 @@ export function useDamageCalculator(
                 })
                 .filter(Boolean);
 
+            // 太晶招式
             const teraResult = calculateMoveDamage(
                 p.moveTera,
                 MoveScope.Move,
@@ -611,24 +630,28 @@ export function useDamageCalculator(
             );
 
             // 拍組招式
-            let activeSyncMove = p.syncMove; // 默認使用原始招式
-            // 属性替换被动
-            const newType = DamageEngine.getTypeShiftPassive(
-                p.syncMove,
-                passives[formIndex].passives
-            );
-            if (newType !== p.syncMove.type) {
-                activeSyncMove = {
-                    ...p.syncMove,
-                    type: newType,
-                };
+            let syncResult: DamageResult = null
+            // 極巨化形態沒有拍招(坑...)
+            if (p.syncMove) {
+                let activeSyncMove = p.syncMove; // 默認使用原始招式
+                // 属性替换被动
+                const newType = DamageEngine.getTypeShiftEffect(
+                    p.syncMove,
+                    passives[formIndex].passives
+                );
+                if (newType !== p.syncMove.type) {
+                    activeSyncMove = {
+                        ...p.syncMove,
+                        type: newType,
+                    };
+                }
+                syncResult = calculateMoveDamage(
+                    activeSyncMove,
+                    MoveScope.Sync,
+                    PowerMoveScope.Sync,
+                    p.vAfterSm && formIndex === 0 ? formIndex + 1 : formIndex
+                );
             }
-            const syncResult = calculateMoveDamage(
-                activeSyncMove,
-                MoveScope.Sync,
-                PowerMoveScope.Sync,
-                p.vAfterSm && formIndex === 0 ? formIndex + 1 : formIndex
-            );
 
             // 極巨化招式
             const maxResults = p.movesDynamax

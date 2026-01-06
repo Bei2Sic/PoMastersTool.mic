@@ -1,4 +1,4 @@
-import { Condition, EffectLogic, ExtraContext, MoveScope } from "@/types/calculator";
+import { Condition, EffectLogic, ExtraContext, MoveScope, SkillModel } from "@/types/calculator";
 
 export interface PassiveBoost {
     scope: MoveScope;
@@ -13,7 +13,7 @@ export interface PassiveStatBoost {
     value: number; // 乘算倍数
 }
 
-export interface PassiveSkillModel {
+export interface PassiveSkillModel extends SkillModel {
     name: string;
     desc: string;
     passiveName: string;
