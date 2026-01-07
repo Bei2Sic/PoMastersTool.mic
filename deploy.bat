@@ -6,8 +6,8 @@ setlocal
 set REPO_URL=git@github.com:Bei2Sic/PoMastersTool.mic.git
 set REPO_NAME=PoMastersTool.mic
 set DIST_DIR=dist
-@REM set TARGET_BRANCH=gh-pages
-set TARGET_BRANCH=test
+set TARGET_BRANCH=gh-pages
+@REM set TARGET_BRANCH=test
 :: ===========================================
 
 echo [0/4] 清理旧的构建目录...

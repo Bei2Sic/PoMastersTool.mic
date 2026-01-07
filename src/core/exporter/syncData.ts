@@ -6,6 +6,7 @@ import {
     getStatIndexByStatKey,
 } from "@/core/exporter/map";
 import { parseMoveTextBonus, parseStatTextBonus } from "@/core/parse/text";
+import { SyncRawData } from "@/types/cache";
 import { BonusIndex, RarityIndex } from "@/types/indices";
 import {
     MoveBase,
@@ -15,7 +16,6 @@ import {
     Tile,
     Trainer,
 } from "@/types/syncModel";
-import { SyncRawData } from "@/types/cache";
 
 export interface StatCalcOptions {
     gearBonus?: number; // 裝備加成
@@ -179,14 +179,14 @@ export function getFinalMovePower(
     // 石盤（Grid）的白值加成為最後的加算
     power += getTileMoveBonus(gridData, move.name);
 
-    // 自身倍率
-    if (options.moveBoost) {
-        power = Math.floor((power * options.moveBoost) / 100);
-    }
-
     // 被動倍率
     if (options.passiveBoost) {
         power = Math.floor((power * (100 + options.passiveBoost)) / 100);
+    }
+
+    // 自身倍率
+    if (options.moveBoost) {
+        power = Math.floor((power * options.moveBoost) / 100);
     }
 
     return Math.floor(power);

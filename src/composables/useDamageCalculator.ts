@@ -10,10 +10,10 @@ import { PassiveSkillParser } from "@/core/parse/passive";
 import { useDamageCalcStore } from "@/stores/damageCalc";
 import {
     CalcEnvironment,
+    DamageResult,
     LogicType,
     MoveScope,
-    ThemeContext,
-    DamageResult
+    ThemeContext
 } from "@/types/calculator";
 import { CircleLevel, RegionType } from "@/types/conditions";
 import { MoveBase, Pokemon, Sync } from "@/types/syncModel";
@@ -374,7 +374,8 @@ export function useDamageCalculator(
                 m: MoveBase,
                 scope: MoveScope,
                 powerScope: PowerMoveScope,
-                index: number
+                index: number,
+                isTeraMove?: boolean
             ): DamageResult => {
                 if (!m || m.power === 0) return null;
 
@@ -448,7 +449,7 @@ export function useDamageCalculator(
 
                 // 太晶倍率*1.5
                 const isTera = rawData.pokemon[index]?.moveTera ? true : false;
-                if (isTera && scope === MoveScope.Move) {
+                if (isTera && scope === MoveScope.Move && !isTeraMove) {
                     const pokemonType = rawData.pokemon[index].type
                     if (m.type === pokemonType) {
                         gaugeBoost *= 1.5
@@ -626,7 +627,8 @@ export function useDamageCalculator(
                 p.moveTera,
                 MoveScope.Move,
                 PowerMoveScope.Move,
-                formIndex
+                formIndex,
+                true
             );
 
             // 拍組招式
