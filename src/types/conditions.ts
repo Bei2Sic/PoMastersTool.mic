@@ -7,6 +7,24 @@ export type RebuffRank = -3 | -2 | -1 | 0; // 抵抗等級
 export type BerryNum = 0 | 1 | 2 | 3;
 export type StatLowerReduction = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
 
+export interface SyncBattleState {
+    // 能力等级 (-6 ~ +6)
+    ranks: BattleRanks;
+    boosts: {
+        physical: BoostRank, // 物理招式增強
+        special: BoostRank, // 特殊招式增強
+        sync: BoostRank, // 拍組招式增強
+    };
+    // 拍招计数
+    syncBuff: number;
+    // 当前 HP 百分比 (0 ~ 100)
+    currentHPPercent: number;
+    // 異常狀態
+    abnormal: AbnormalType;
+    // 妨害狀態
+    hindrance: Record<HindranceType, boolean>;
+}
+
 export interface BattleRanks {
     atk: StatRank;
     def: StatRank;
@@ -103,7 +121,7 @@ export type CircleLevel = 0 | 1 | 2 | 3;
 export type StatType = "攻擊" | "防禦" | "特攻" | "特防" | "速度";
 
 // 爆傷狀態
-export type CritBuffType = 
+export type CritBuffType =
     | "物理爆傷"
     | "特殊爆傷"
     | "拍招爆傷"

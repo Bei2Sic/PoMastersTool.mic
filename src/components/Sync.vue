@@ -82,13 +82,12 @@
             </div>
         </div>
 
-        <Damage :visible="showDamageCalc" :targetSync="singleSync" :teamSyncs="null" @close="handleCloseCalc" />
+        <Damage :visible="showDamageCalc" :targetSync="activeSync" :teamSyncs="null" @close="handleCloseCalc" />
 
     </div>
 </template>
 
 <script setup>
-// import Bonus from '@/components/Bonus.vue';
 import Damage from '@/components/Damage.vue';
 import Filter from '@/components/Filter.vue';
 import Grid from '@/components/Grid.vue';
@@ -122,7 +121,7 @@ const curTab = ref('grid');
 
 const showDamageCalc = ref(false);
 
-const { singleSync } = storeToRefs(syncElemStore);
+const { activeSync } = storeToRefs(syncElemStore);
 // const { themeSnapshot, passiveSnapshot, statSnapshot, finalDamageResult } = useDamageCalculator(singleSync);
 
 // 潜能相关
@@ -147,7 +146,7 @@ const handleSelectTrainer = (trainerId) => {
             return;
         }
         // 调用 Pinia 的 action 选中拍        syncElemStore.selectSingleSync(trainerId);
-        syncElemStore.selectSingleSync(trainerId);
+        syncElemStore.selectSyncToActiveSlot(trainerId);
         console.log(`成功选中拍组：${trainerId}`);
     } catch (error) {
         console.error('选中拍组失败：', error);

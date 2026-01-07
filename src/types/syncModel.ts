@@ -163,7 +163,7 @@ export interface Grid {
 /** 石盘动态数据（含激活状态） */
 export interface Tile extends Grid {
     isActive: boolean; // 石盘是否激活
-}
+}                                       
 
 /** 拍组动态属性（微调适配新类型） */
 export interface SyncDynamicState {
@@ -180,25 +180,25 @@ export interface SyncDynamicState {
 
 /** Sync计算属性（保持原有六维属性+石盘相关计算） */
 export interface SyncComputed {
-    hp: ComputedRef<number>; // HP白值
-    atk: ComputedRef<number>; // 攻击白值
-    def: ComputedRef<number>; // 防御白值
-    spa: ComputedRef<number>; // 特攻白值（对应spa）
-    spd: ComputedRef<number>; // 特防白值（对应spd）
-    spe: ComputedRef<number>; // 速度白值（对应spe）
-    costOrbs: ComputedRef<number>; // 消耗滴晶数
-    costFieryOrbs: ComputedRef<number>;
-    costLeafOrbs: ComputedRef<number>;
-    costBubblyOrbs: ComputedRef<number>;
-    costSparkyOrbs: ComputedRef<number>;
-    costTMOrbs: ComputedRef<number>;
-    lastEnergy: ComputedRef<number>; // 剩余力量
-    selectedTiles: ComputedRef<Tile[]>; // 选中的石盘
-    currentPokemon: ComputedRef<Pokemon>; // 当前选中的宝可梦形态
-    finalMoves: ComputedRef<MoveFinal[]>;
-    finalSyncMove: ComputedRef<MoveFinal>;
-    finalMoveMax: ComputedRef<MoveFinal[]>;
-    finalMoveTera: ComputedRef<MoveFinal | null>;
+    hp: number; // HP白值
+    atk: number; // 攻击白值
+    def: number; // 防御白值
+    spa: number; // 特攻白值（对应spa）
+    spd: number; // 特防白值（对应spd）
+    spe: number; // 速度白值（对应spe）
+    costOrbs: number; // 消耗滴晶数
+    costFieryOrbs: number;
+    costLeafOrbs: number;
+    costBubblyOrbs: number;
+    costSparkyOrbs: number;
+    costTMOrbs: number;
+    lastEnergy: number; // 剩余力量
+    selectedTiles: Tile[]; // 选中的石盘
+    currentPokemon: Pokemon; // 当前选中的宝可梦形态
+    finalMoves: MoveFinal[];
+    finalSyncMove: MoveFinal | null;
+    finalMoveMax: MoveFinal[];
+    finalMoveTera: MoveFinal | null;
 }
 
 /** Sync操作方法（新增形态切换方法） */

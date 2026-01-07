@@ -20,6 +20,6 @@ const syncCacheStore = useSyncCacheStore();
 await syncCacheStore.initSyncCache();
 const syncElemStore = useSyncElemStore();
 // 默认初始化最新拍组
-syncElemStore.initsingleSync()
+syncElemStore.initActiveSync()
 
 app.mount("#app");

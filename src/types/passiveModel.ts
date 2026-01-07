@@ -1,4 +1,4 @@
-import { Condition, EffectLogic, ExtraContext, MoveScope, SkillModel } from "@/types/calculator";
+import { Condition, EffectLogic, ExtraContext, MoveScope, SkillModel, CalcEnvironment } from "@/types/calculator";
 
 export interface PassiveBoost {
     scope: MoveScope;
@@ -12,6 +12,8 @@ export interface PassiveStatBoost {
     stats: string[]; // ['atk', 'def', ...]
     value: number; // 乘算倍数
 }
+
+export type PassiveLogicHandler = (env: CalcEnvironment) => number;
 
 export interface PassiveSkillModel extends SkillModel {
     name: string;
@@ -29,6 +31,7 @@ export interface PassiveSkillModel extends SkillModel {
     boost: PassiveBoost;
     // 白值加成类，影响的白值
     statBoost?: PassiveStatBoost;
+    handler?: PassiveLogicHandler;
 
     applyToParty: boolean; // 是否全队生效 (G标)
 }
