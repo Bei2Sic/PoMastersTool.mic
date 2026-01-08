@@ -23,9 +23,10 @@ import { computed, Ref, watch } from "vue";
 // ... 其他導入
 function collectActivePassives(
     sync: Sync,
-    formIndex: number
-): { name: string; desc: string; passiveName: string }[] {
-    const passives: { name: string; desc: string; passiveName: string }[] = [];
+    formIndex: number,
+    sourceIndex: number,
+): { name: string; desc: string; passiveName: string, sourceIndex: number }[] {
+    const passives: { name: string; desc: string; passiveName: string, sourceIndex: number }[] = [];
 
     // 1. 本體被動 - 隨 formIndex 變化
     const currentPokemon = sync.rawData.pokemon[formIndex];
@@ -36,6 +37,7 @@ function collectActivePassives(
                     name: p.name,
                     desc: p.description,
                     passiveName: p.name,
+                    sourceIndex: sourceIndex,
                 });
                 return;
             }
@@ -46,6 +48,7 @@ function collectActivePassives(
                         name: detail.name,
                         desc: detail.description,
                         passiveName: p.name,
+                        sourceIndex: sourceIndex,
                     });
                 });
             } else {
@@ -53,6 +56,7 @@ function collectActivePassives(
                     name: p.name,
                     desc: p.description,
                     passiveName: p.name,
+                    sourceIndex: sourceIndex,
                 });
             }
         });
@@ -70,6 +74,7 @@ function collectActivePassives(
                         name: detail.name,
                         desc: detail.description,
                         passiveName: tile.name,
+                        sourceIndex: sourceIndex,
                     });
                 });
             } else {
@@ -77,6 +82,7 @@ function collectActivePassives(
                     name: tile.name,
                     desc: tile.description,
                     passiveName: tile.name,
+                    sourceIndex: sourceIndex,
                 });
             }
         }
@@ -89,26 +95,35 @@ function collectActivePassives(
                 name: detail.name,
                 desc: detail.description,
                 passiveName: sync.rawData.specialAwaking.name,
+                sourceIndex: sourceIndex,
             });
         });
     }
 
-    // 5. 队友被动也要计入
+    // 4. 队友被动也要计入
 
     return passives;
 }
 
 export function useDamageCalculator(
     a: Ref<Sync | null>,
-    teamSyncs: Ref<Sync | null>[] = []
+    b: Ref<Sync | null>[] = []
 ) {
     const syncStore = useSyncElemStore();
     const damageStore = useDamageCalcStore();
 
+    // 当前目标拍组
     const targetSync = computed(() => syncStore.activeSync);
+    // 当前队友拍组
+    const teamSyncs = computed(() => syncStore.team);
+
+    // 是否单人模式
+    const hasTeammates = computed(() => {
+        return syncStore.team.filter(s => s !== null).length > 1;
+    });
 
     const currentTeam = computed(() => {
-        return [targetSync.value, ...teamSyncs.map((r) => r.value)].filter(
+        return [targetSync.value].filter(
             Boolean
         );
     });
@@ -125,10 +140,12 @@ export function useDamageCalculator(
                 );
             });
 
-            const contextTheme = ThemeContextResolver.resolve(newTeam);
-            damageStore.updateThemeStats(contextTheme.flatBonuses);
-            damageStore.updateThemeType(contextTheme.tagType);
-            damageStore.updateThemeTypeAdd(contextTheme.tagAdd);
+            if (hasTeammates.value) {
+                const contextTheme = ThemeContextResolver.resolve(newTeam);
+                damageStore.updateThemeStats(contextTheme.flatBonuses);
+                damageStore.updateThemeType(contextTheme.tagType);
+                damageStore.updateThemeTypeAdd(contextTheme.tagAdd);
+            }
         },
         {
             deep: true,
@@ -210,12 +227,28 @@ export function useDamageCalculator(
     // 被动快照
     const passiveSnapshot = computed(() => {
         const sync = targetSync.value;
+        const team = syncStore.team;
         if (!sync) return [];
 
         const rawData = sync.rawData;
         // 核心：遍歷每一個形態 (Base, Mega, Dynamax...)
         return rawData.pokemon.map((pokemon, formIndex) => {
-            const rawPassives = collectActivePassives(sync, formIndex);
+
+            // --- A. 收集主角被动 (Source = -1) ---
+            const myPassives = collectActivePassives(sync, formIndex, -1);
+            const teammatePassives: ReturnType<typeof collectActivePassives> = [];
+
+            team.forEach((mate, index) => {
+                // 跳过空槽位
+                if (!mate) return;
+
+                // 队友通常只计算 Base 形态 (索引 0)，或者你需要根据队友当前状态取 formIndex
+                // 这里假设取 Base
+                const mateRaw = collectActivePassives(mate, 0, index);
+
+                teammatePassives.push(...mateRaw);
+            });
+            const rawPassives = collectActivePassives(sync, formIndex, -1);
 
             const passiveModels = rawPassives.flatMap((p) => {
                 // 特殊被动查表
@@ -230,7 +263,7 @@ export function useDamageCalculator(
                     p.desc,
                     p.passiveName
                 );
-                const result = parser.result;
+                const result = parser.result;// 这里result就是技能模型，但没法和来源索引对上
                 console.log(JSON.stringify(result, null, 2));
                 if (result !== null) {
                     return [result];

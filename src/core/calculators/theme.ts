@@ -1,7 +1,10 @@
 import { parseComplexThemeSkill } from "@/core/parse/theme";
 import { ThemeContext } from "@/types/calculator";
-import { PokemonType } from "@/types/conditions";
+import { PokemonType, RegionType } from "@/types/conditions";
 import { Sync } from "@/types/syncModel";
+import {
+    BATTLE_REGIONS,
+} from "@/constances/battle";
 
 export class ThemeContextResolver {
     static resolve(team: (Sync | null)[]): ThemeContext {
@@ -53,6 +56,10 @@ export class ThemeContextResolver {
         const counts: Record<string, number> = {};
         // 过滤空队友
         const activeMembers = team.filter((m): m is Sync => m !== null);
+
+        BATTLE_REGIONS.forEach((region: RegionType) => {
+            counts[region] = 0;
+        });
 
         // 统计标签数量
         activeMembers.forEach((member) => {

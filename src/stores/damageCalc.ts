@@ -9,37 +9,37 @@ import { defineStore } from "pinia";
 
 export const useDamageCalcStore = defineStore("damageCalc", {
     state: () => ({
-        user: {
-            gears: {
-                hp: 100 as number,
-                atk: 40 as number,
-                def: 40 as number,
-                spa: 40 as number,
-                spd: 40 as number,
-                spe: 40 as number,
-            } as cond.PokemonStats,
-            ranks: {
-                atk: 6 as cond.StatRank,
-                def: 6 as cond.StatRank,
-                spa: 6 as cond.StatRank,
-                spd: 6 as cond.StatRank,
-                spe: 6 as cond.StatRank,
-                acc: 6 as cond.StatRank,
-                eva: 6 as cond.StatRank,
-                ct: 3 as cond.CtRank,
-            },
-            boosts: {
-                physical: 0 as cond.BoostRank, // 物理招式增強
-                special: 0 as cond.BoostRank, // 特殊招式增強
-                sync: 0 as cond.BoostRank, // 拍組招式增強
-            },
-            syncBuff: 0 as number,
-            currentHPPercent: 50 as number,
-            // 異常狀態
-            abnormal: "無" as cond.AbnormalType,
-            // 妨害狀態
-            hindrance: initHindrances(),
-        },
+        // user: {
+        //     gears: {
+        //         hp: 100 as number,
+        //         atk: 40 as number,
+        //         def: 40 as number,
+        //         spa: 40 as number,
+        //         spd: 40 as number,
+        //         spe: 40 as number,
+        //     } as cond.PokemonStats,
+        //     ranks: {
+        //         atk: 6 as cond.StatRank,
+        //         def: 6 as cond.StatRank,
+        //         spa: 6 as cond.StatRank,
+        //         spd: 6 as cond.StatRank,
+        //         spe: 6 as cond.StatRank,
+        //         acc: 6 as cond.StatRank,
+        //         eva: 6 as cond.StatRank,
+        //         ct: 3 as cond.CtRank,
+        //     },
+        //     boosts: {
+        //         physical: 0 as cond.BoostRank, // 物理招式增強
+        //         special: 0 as cond.BoostRank, // 特殊招式增強
+        //         sync: 0 as cond.BoostRank, // 拍組招式增強
+        //     },
+        //     syncBuff: 0 as number,
+        //     currentHPPercent: 50 as number,
+        //     // 異常狀態
+        //     abnormal: "無" as cond.AbnormalType,
+        //     // 妨害狀態
+        //     hindrance: initHindrances(),
+        // },
 
         themes: {
             hp: 0 as number,

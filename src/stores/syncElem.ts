@@ -42,6 +42,7 @@ export const useSyncElemStore = defineStore("syncUse", {
             return state.team[state.activeSlotIndex] || null;
         },
 
+
         // ------------------------------ 下面的 Getters 全部改用 activeSync ------------------------------
 
         // 当前Sync的最终六维属性

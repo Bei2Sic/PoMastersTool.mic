@@ -2,6 +2,7 @@ import {
     CRITBUFF_STATUSES,
     HINDRANCE_STATUSES,
     POKEMON_TYPES,
+    BATTLE_REGIONS,
 } from "@/constances/battle";
 import {
     BattleCircle,
@@ -35,19 +36,19 @@ export const initHindrances = (): Record<HindranceType, boolean> => {
 
 export const initBattleCircles = (): BattleCircle => {
     const map: Partial<BattleCircle> = {};
-    const regions: RegionType[] = [
-        "關都",
-        "城都",
-        "豐緣",
-        "神奧",
-        "合眾",
-        "卡洛斯",
-        "阿羅拉",
-        "伽勒爾",
-        "帕底亞",
-        "帕希歐",
-    ];
-    regions.forEach((region) => {
+    // const regions: RegionType[] = [
+    //     "關都",
+    //     "城都",
+    //     "豐緣",
+    //     "神奧",
+    //     "合眾",
+    //     "卡洛斯",
+    //     "阿羅拉",
+    //     "伽勒爾",
+    //     "帕底亞",
+    //     "帕希歐",
+    // ];
+    BATTLE_REGIONS.forEach((region) => {
         map[region] = {
             level: 0,
             actives: {
