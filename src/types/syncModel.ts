@@ -6,6 +6,7 @@ import {
 } from "@/types/indices";
 import { SyncRawData } from "@/types/cache"
 import { ComputedRef } from "vue";
+import { BattleState } from "./conditions";
 
 // ================================= 基础类型定义（适配新JSON结构）=================================
 /** 训练师信息 */
@@ -176,6 +177,7 @@ export interface SyncDynamicState {
     gridData: Tile[]; // 石盘动态数据
     potentialCookie: LuckCookie | null; // 当前选择的潜能饼干
     selectedPokemonIndex: number; // 选中的宝可梦形态索引（默认0）
+    battle: BattleState; // 战斗状态
 }
 
 /** Sync计算属性（保持原有六维属性+石盘相关计算） */

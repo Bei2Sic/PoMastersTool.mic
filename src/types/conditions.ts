@@ -7,8 +7,9 @@ export type RebuffRank = -3 | -2 | -1 | 0; // 抵抗等級
 export type BerryNum = 0 | 1 | 2 | 3;
 export type StatLowerReduction = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
 
-export interface SyncBattleState {
+export interface BattleState {
     // 能力等级 (-6 ~ +6)
+    gears: PokemonStats;
     ranks: BattleRanks;
     boosts: {
         physical: BoostRank, // 物理招式增強

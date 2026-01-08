@@ -168,11 +168,8 @@ export interface CalcEnvironment {
 
     user: {
         hpPercent: number; // 0-100
-        gear: PokemonStats;
+        gears: PokemonStats;
         ranks: BattleRanks;
-        theme: PokemonStats;
-        themeType: PokemonType;
-        themeTypeAdd: number;
         boosts: {
             physical: BoostRank;
             special: BoostRank;
@@ -182,6 +179,10 @@ export interface CalcEnvironment {
         abnormal: AbnormalType;
         hindrance: Record<HindranceType, boolean>;
     };
+
+    themes: PokemonStats;
+    themeType: PokemonType;
+    themeTypeAdd: number;
 
     target: {
         hpPercent: number;

@@ -10,8 +10,10 @@ import {
 import { AbnormalMap, CrtibuffsMap, HindranceMap, StatMap, TypeMap, WeatherMap } from "@/constances/map";
 import { getTypeKeyByCnNameOrSpecialName } from "@/core/exporter/map";
 import { useDamageCalcStore } from "@/stores/damageCalc";
+import { useSyncElemStore } from "@/stores/syncElem";
 import { RegionType } from "@/types/conditions";
 import type { Sync } from "@/types/syncModel";
+import { storeToRefs } from "pinia";
 import { computed } from "vue";
 
 // --- Props & Emits ---
@@ -24,6 +26,7 @@ const props = defineProps<{
 const emit = defineEmits(["close"]);
 
 // --- Store & Logic ---
+const sync = useSyncElemStore();
 const store = useDamageCalcStore();
 
 const targetSyncRef = computed(() => props.targetSync);
@@ -32,7 +35,7 @@ const teamSyncsRef = props.teamSyncs
     : [];
 
 const { finalDamageResult, themeSnapshot } = useDamageCalculator(targetSyncRef, teamSyncsRef);
-
+const { currentBattleState } = storeToRefs(sync);
 // --- Constants ---
 const weatherOptions = ["無", ...WEATHER_TYPES] as const;
 const terrainOptions = ["無", ...TERRAIN_TYPES] as const;
@@ -130,18 +133,18 @@ const getRegionLevelOptions = (region: string) => {
 // --- Handlers ---
 const handleAbnormalClick = (target: 'user' | 'target', item: any) => {
     const valueName = (item.key === 'Healthy' || item.cnName === '健康') ? '無' : item.cnName;
-    if (target === 'user') store.user.abnormal = store.user.abnormal === valueName ? '無' : valueName;
+    if (target === 'user') currentBattleState.value.abnormal = currentBattleState.value.abnormal === valueName ? '無' : valueName;
     else store.target.abnormal = store.target.abnormal === valueName ? '無' : valueName;
 };
 
 const isAbnormalActive = (target: 'user' | 'target', item: any) => {
-    const current = target === 'user' ? store.user.abnormal : store.target.abnormal;
+    const current = target === 'user' ? currentBattleState.value.abnormal : store.target.abnormal;
     const valueName = (item.key === 'Healthy' || item.cnName === '健康') ? '無' : item.cnName;
     return current === valueName;
 };
 
 const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
-    if (target === 'user') store.user.hindrance[cnName] = !store.user.hindrance[cnName];
+    if (target === 'user') currentBattleState.value.hindrance[cnName] = !currentBattleState.value.hindrance[cnName];
     else store.target.hindrance[cnName] = !store.target.hindrance[cnName];
 };
 </script>
@@ -169,11 +172,11 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
 
                                     <div class="stat-cell">
                                         <template v-if="isHP(stat.key)">
-                                            <input type="number" v-model.number="store.user.currentHPPercent"
+                                            <input type="number" v-model.number="currentBattleState.currentHPPercent"
                                                 class="val-input text-green-600" placeholder="%" title="剩余HP%">
                                         </template>
-                                        <select v-else v-model.number="store.user.ranks[stat.key]" class="rank-select"
-                                            :class="{ 'rank-pos': store.user.ranks[stat.key] > 0, 'rank-neg': store.user.ranks[stat.key] < 0 }">
+                                        <select v-else v-model.number="currentBattleState.ranks[stat.key]" class="rank-select"
+                                            :class="{ 'rank-pos': currentBattleState.ranks[stat.key] > 0, 'rank-neg': currentBattleState.ranks[stat.key] < 0 }">
                                             <option v-for="r in getRankOptions(stat.key)" :key="r" :value="r">{{ r > 0 ?
                                                 '+'
                                                 + r : r }}</option>
@@ -182,10 +185,10 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
 
                                     <div class="stat-cell double-cell">
                                         <template v-if="isHP(stat.key) || hasBaseStat(stat.key)">
-                                            <input type="number" v-model.number="store.user.gear[stat.key]"
+                                            <input type="number" v-model.number="currentBattleState.gears[stat.key]"
                                                 class="val-input half-input top-input" placeholder="0" title="裝備加成">
-                                            <input type="number" v-model.number="store.user.theme[stat.key]"
-                                                class="val-input half-input bottom-input text-blue-600" placeholder="0"
+                                            <input type="number" v-model.number="store.themes[stat.key]"
+                                                class="val-input half-input text-blue-600" placeholder="0"
                                                 title="組隊技能">
                                         </template>
 
@@ -215,7 +218,7 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
                                     <span class="common-label">妨害</span>
                                     <div class="icon-row">
                                         <button v-for="(item, idx) in Object.values(HindranceMap)" :key="idx"
-                                            class="icon-btn" :class="{ active: store.user.hindrance[item.cnName] }"
+                                            class="icon-btn" :class="{ active: currentBattleState.hindrance[item.cnName] }"
                                             @click="handleHindranceClick('user', item.cnName)" :title="item.cnName">
                                             <img :src="getStatusIcon(item.key, 'hindrance')" />
                                         </button>
@@ -230,7 +233,7 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
                                 </div>
                                 <div class="status-group">
                                     <span class="common-label">氣魄</span>
-                                    <input type="number" v-model.number="store.user.syncBuff" class="sync-input" />
+                                    <input type="number" v-model.number="currentBattleState.syncBuff" class="sync-input" />
                                 </div>
                                 <div class="status-group">
                                     <span class="common-label">樹果</span>
@@ -418,21 +421,21 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
                                     <div class="boost-group">
                                         <div class="boost-icon"><img :src="getBoostIcon('physical')" title="物理威力增强" />
                                         </div>
-                                        <select v-model.number="store.user.boosts.physical" class="boost-select">
+                                        <select v-model.number="currentBattleState.boosts.physical" class="boost-select">
                                             <option v-for="n in getBoostOptions()" :key="n" :value="n">{{ n }}</option>
                                         </select>
                                     </div>
                                     <div class="boost-group">
                                         <div class="boost-icon"><img :src="getBoostIcon('special')" title="特殊威力增强" />
                                         </div>
-                                        <select v-model.number="store.user.boosts.special" class="boost-select">
+                                        <select v-model.number="currentBattleState.boosts.special" class="boost-select">
                                             <option v-for="n in getBoostOptions()" :key="n" :value="n">{{ n }}</option>
                                         </select>
                                     </div>
                                     <div class="boost-group">
                                         <div class="boost-icon"><img :src="getBoostIcon('sync')" title="拍组招式威力增强" />
                                         </div>
-                                        <select v-model.number="store.user.boosts.sync" class="boost-select">
+                                        <select v-model.number="currentBattleState.boosts.sync" class="boost-select">
                                             <option v-for="n in getBoostOptions()" :key="n" :value="n">{{ n }}</option>
                                         </select>
                                     </div>
@@ -545,10 +548,10 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
                             <div class="other-item">
                                 <label>組隊+（白值）</label>
                                 <div class="row-inputs">
-                                    <select v-model="store.user.themeType" class="type-select-small">
+                                    <select v-model="store.themeType" class="type-select-small">
                                         <option v-for="t in typeOptions" :key="t" :value="t">{{ t }}</option>
                                     </select>
-                                    <input type="number" v-model.number="store.user.themeTypeAdd" class="other-input"
+                                    <input type="number" v-model.number="store.themeTypeAdd" class="other-input"
                                         placeholder="0">
                                 </div>
                             </div>
@@ -991,8 +994,6 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
     border-block-end: 1px dashed #eee;
     color: #444;
 }
-
-.bottom-input {}
 
 .stacked-label {
     display: flex;

@@ -1,64 +1,16 @@
-// useDamageCalcStore.ts
-
-import {
-    CRITBUFF_STATUSES,
-    HINDRANCE_STATUSES,
-    POKEMON_TYPES,
-} from "@/constances/battle";
 import * as cond from "@/types/conditions"; // 導入上面的類型
+import {
+    initBattleCircles,
+    initCritbuffs,
+    initHindrances,
+    initRebuffs,
+} from "@/utils/initializers";
 import { defineStore } from "pinia";
-
-// 輔助函數：初始化 18 種屬性抵抗表 (全為 0)
-const initRebuffs = (): cond.TypeRebuffs => {
-    return POKEMON_TYPES.reduce(
-        (acc, type) => ({ ...acc, [type]: 0 }),
-        {} as cond.TypeRebuffs
-    );
-};
-
-const initCritbuffs = (): Record<cond.CritBuffType, boolean> => {
-    return Object.fromEntries(
-        CRITBUFF_STATUSES.map((status) => [status, false])
-    ) as Record<cond.CritBuffType, boolean>;
-};
-
-const initHindrances = (): Record<cond.HindranceType, boolean> => {
-    return Object.fromEntries(
-        HINDRANCE_STATUSES.map((status) => [status, false])
-    ) as Record<cond.HindranceType, boolean>;
-};
-
-const initBattleCircles = (): cond.BattleCircle => {
-    const map: Partial<cond.BattleCircle> = {};
-    const regions: cond.RegionType[] = [
-        "關都",
-        "城都",
-        "豐緣",
-        "神奧",
-        "合眾",
-        "卡洛斯",
-        "阿羅拉",
-        "伽勒爾",
-        "帕底亞",
-        "帕希歐",
-    ];
-    regions.forEach((region) => {
-        map[region] = {
-            level: 0,
-            actives: {
-                物理: false,
-                特殊: false,
-                防禦: false,
-            },
-        };
-    });
-    return map as cond.BattleCircle;
-};
 
 export const useDamageCalcStore = defineStore("damageCalc", {
     state: () => ({
         user: {
-            gear: {
+            gears: {
                 hp: 100 as number,
                 atk: 40 as number,
                 def: 40 as number,
@@ -66,16 +18,6 @@ export const useDamageCalcStore = defineStore("damageCalc", {
                 spd: 40 as number,
                 spe: 40 as number,
             } as cond.PokemonStats,
-            theme: {
-                hp: 0 as number,
-                atk: 0 as number,
-                def: 0 as number,
-                spa: 0 as number,
-                spd: 0 as number,
-                spe: 0 as number,
-            } as cond.PokemonStats,
-            themeType: "無" as cond.PokemonType,
-            themeTypeAdd: 0 as number,
             ranks: {
                 atk: 6 as cond.StatRank,
                 def: 6 as cond.StatRank,
@@ -98,6 +40,17 @@ export const useDamageCalcStore = defineStore("damageCalc", {
             // 妨害狀態
             hindrance: initHindrances(),
         },
+
+        themes: {
+            hp: 0 as number,
+            atk: 0 as number,
+            def: 0 as number,
+            spa: 0 as number,
+            spd: 0 as number,
+            spe: 0 as number,
+        } as cond.PokemonStats,
+        themeType: "無" as cond.PokemonType,
+        themeTypeAdd: 0 as number,
 
         target: {
             stats: {
@@ -181,17 +134,17 @@ export const useDamageCalcStore = defineStore("damageCalc", {
 
         // 更新组队技能字段
         updateThemeStats(themeStats: cond.PokemonStats) {
-            this.user.theme = themeStats;
+            this.themes = themeStats;
         },
 
         // 更新组队特定属性
         updateThemeType(type: cond.PokemonType) {
-            this.user.themeType = type;
+            this.themeType = type;
         },
 
         // 更新组队特定属性
         updateThemeTypeAdd(add: number) {
-            this.user.themeTypeAdd = add;
+            this.themeTypeAdd = add;
         },
     },
 });

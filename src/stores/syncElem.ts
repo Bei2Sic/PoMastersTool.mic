@@ -6,17 +6,18 @@ import {
 } from "@/core/exporter/syncData";
 import { useSyncCacheStore } from "@/stores/syncCache"; // 原始数据缓存Store
 import type { SyncRawData } from "@/types/cache";
+import { BattleState } from "@/types/conditions";
 import { RarityIndex } from "@/types/indices";
 import {
     LuckCookie,
     Sync,
-    SyncComputed,
     SyncDynamicState,
     SyncMethods,
     Tile,
 } from "@/types/syncModel";
+import { initBattleState } from "@/utils/initializers";
 import { defineStore } from "pinia";
-import { computed, reactive, markRaw, ComputedRef } from "vue";
+import { computed, reactive } from "vue";
 
 interface SyncElemState {
     // 统一的队伍存储，固定 3 个槽位
@@ -35,8 +36,8 @@ export const useSyncElemStore = defineStore("syncUse", {
     }),
 
     getters: {
-        // [核心 Helper] 获取当前激活的 Sync 对象
-        // 所有的 UI 渲染都应该依赖这个 getter，而不是直接访问数组
+        // 获取当前激活的 Sync 对象
+        // 所有的渲染都应该依赖这个 getter，而不是直接访问数组
         activeSync: (state): Sync | null => {
             return state.team[state.activeSlotIndex] || null;
         },
@@ -95,8 +96,13 @@ export const useSyncElemStore = defineStore("syncUse", {
         },
 
         // 當前拍組动态信息
-        singleSyncDynamicState() {
+        currentDynamicState() {
             return this.activeSync?.state || null;
+        },
+
+        //  当前选中拍组的战斗状态
+        currentBattleState(): BattleState | null {
+            return this.activeSync?.state.battle || null;
         },
 
         // 暴露方法（用於渲染）
@@ -104,11 +110,6 @@ export const useSyncElemStore = defineStore("syncUse", {
             const sync = this.activeSync;
             if (!sync) return null;
             return sync.methods;
-        },
-
-        // 用於計算的匯總數據方法
-        currentActivePassive: (state) => {
-            // TODO: 实现被动收集逻辑
         },
 
         // ------------------------------ 组队计算属性 ------------------------------
@@ -197,6 +198,7 @@ const createSync = (jsonData: SyncRawData): Sync => {
         gridData: reactive([]),
         potentialCookie: null,
         selectedPokemonIndex: 0, // 默认选中第一个形态
+        battle: initBattleState(),
     });
 
     // ... (省略中间的 computedProps 和 methods 定义，与你原代码完全一致) ...

@@ -8,6 +8,7 @@ import { getFinalMovePower, getFinalStatValue } from "@/core/exporter/syncData";
 import { MoveSkillParser } from "@/core/parse/move";
 import { PassiveSkillParser } from "@/core/parse/passive";
 import { useDamageCalcStore } from "@/stores/damageCalc";
+import { useSyncElemStore } from "@/stores/syncElem";
 import {
     CalcEnvironment,
     DamageResult,
@@ -58,7 +59,6 @@ function collectActivePassives(
     }
 
     // 2. 石盤被動 (Grid) - 所有形態共享
-    // 除非遊戲有極其特殊的拍組是 Mega 後石盤失效（目前沒有），否則都加進去
     sync.state.gridData.forEach((tile) => {
         if (
             tile.isActive &&
@@ -92,7 +92,6 @@ function collectActivePassives(
             });
         });
     }
-    // 4. 潛能餅幹也要計入
 
     // 5. 队友被动也要计入
 
@@ -100,10 +99,13 @@ function collectActivePassives(
 }
 
 export function useDamageCalculator(
-    targetSync: Ref<Sync | null>,
+    a: Ref<Sync | null>,
     teamSyncs: Ref<Sync | null>[] = []
 ) {
+    const syncStore = useSyncElemStore();
     const damageStore = useDamageCalcStore();
+
+    const targetSync = computed(() => syncStore.activeSync);
 
     const currentTeam = computed(() => {
         return [targetSync.value, ...teamSyncs.map((r) => r.value)].filter(
@@ -142,7 +144,8 @@ export function useDamageCalculator(
 
     // 环境快照
     const envSnapshot = computed((): CalcEnvironment => {
-        const u = damageStore.user;
+        const u = targetSync.value.state;
+        const battleState = u.battle;
         const t = damageStore.target;
         return {
             // 直接傳遞中文值
@@ -155,21 +158,17 @@ export function useDamageCalculator(
             battleCircles: damageStore.battleCircles,
             gaugeAcceleration: damageStore.gaugeAcceleration,
             user: {
-                hpPercent: u.currentHPPercent,
-                ranks: u.ranks,
-                gear: u.gear,
-                theme: u.theme,
-                themeType: u.themeType,
-                themeTypeAdd: u.themeTypeAdd,
-                boosts: {
-                    physical: u.boosts.physical,
-                    special: u.boosts.special,
-                    sync: u.boosts.sync,
-                },
-                syncBuff: u.syncBuff,
-                abnormal: u.abnormal,
-                hindrance: u.hindrance,
+                hpPercent: battleState.currentHPPercent || 0,
+                ranks: battleState.ranks,
+                gears: battleState.gears,
+                boosts: battleState.boosts,
+                syncBuff: battleState.syncBuff,
+                abnormal: battleState.abnormal,
+                hindrance: battleState.hindrance,
             },
+            themes: damageStore.themes,
+            themeType: damageStore.themeType,
+            themeTypeAdd: damageStore.themeTypeAdd,
 
             target: {
                 stats: t.stats,
@@ -283,32 +282,32 @@ export function useDamageCalculator(
             const currentstatsBoost = statsBoost[formIndex];
             const statsValue = {
                 hp: getFinalStatValue(rawData, state, "hp", formIndex, {
-                    gearBonus: env.user.gear.hp,
-                    themeBonus: env.user.theme.hp,
+                    gearBonus: env.user.gears.hp,
+                    themeBonus: env.themes.hp,
                 }),
                 atk: getFinalStatValue(rawData, state, "atk", formIndex, {
-                    gearBonus: env.user.gear.atk,
-                    themeBonus: env.user.theme.atk,
+                    gearBonus: env.user.gears.atk,
+                    themeBonus: env.themes.atk,
                     boost: currentstatsBoost["atk"] || 100,
                 }),
                 def: getFinalStatValue(rawData, state, "def", formIndex, {
-                    gearBonus: env.user.gear.def,
-                    themeBonus: env.user.theme.def,
+                    gearBonus: env.user.gears.def,
+                    themeBonus: env.themes.def,
                     boost: currentstatsBoost["def"] || 100,
                 }),
                 spa: getFinalStatValue(rawData, state, "spa", formIndex, {
-                    gearBonus: env.user.gear.spa,
-                    themeBonus: env.user.theme.spa,
+                    gearBonus: env.user.gears.spa,
+                    themeBonus: env.themes.spa,
                     boost: currentstatsBoost["spa"] || 100,
                 }),
                 spd: getFinalStatValue(rawData, state, "spd", formIndex, {
-                    gearBonus: env.user.gear.spd,
-                    themeBonus: env.user.theme.spd,
+                    gearBonus: env.user.gears.spd,
+                    themeBonus: env.themes.spd,
                     boost: currentstatsBoost["spd"] || 100,
                 }),
                 spe: getFinalStatValue(rawData, state, "spe", formIndex, {
-                    gearBonus: env.user.gear.spe,
-                    themeBonus: env.user.theme.spe,
+                    gearBonus: env.user.gears.spe,
+                    themeBonus: env.themes.spe,
                     boost: currentstatsBoost["spe"] || 100,
                 }),
             };
@@ -523,12 +522,12 @@ export function useDamageCalculator(
                     statType,
                     index,
                     {
-                        gearBonus: localEnv.user.gear[statType],
+                        gearBonus: localEnv.user.gears[statType],
                         themeBonus:
-                            moveTypeCnName === localEnv.user.themeType
-                                ? localEnv.user.theme[statType] +
-                                localEnv.user.themeTypeAdd
-                                : localEnv.user.theme[statType],
+                            moveTypeCnName === localEnv.themeType
+                                ? localEnv.themes[statType] +
+                                localEnv.themeTypeAdd
+                                : localEnv.themes[statType],
                         boost: DamageEngine.resolveStatBoost(
                             currentPassives,
                             localEnv,
@@ -544,7 +543,7 @@ export function useDamageCalculator(
                     statType,
                     index,
                     {
-                        gearBonus: localEnv.user.gear[statType],
+                        gearBonus: localEnv.user.gears[statType],
                     }
                 );
 

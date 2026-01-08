@@ -104,7 +104,7 @@ const finalStats = computed(() => syncElemStore.currentFinalStats);
 const finalMoves = computed(() => syncElemStore.currentFinalMoves);
 const finalGrid = computed(() => syncElemStore.currentGridInfo);
 const syncMethods = computed(() => syncElemStore.exportMethods);
-const dynamicState = computed(() => syncElemStore.singleSyncDynamicState);
+const dynamicState = computed(() => syncElemStore.currentDynamicState);
 const pokemon = computed(() => syncElemStore.currentPokemon);
 const trainer = computed(() => {
     const res = syncMethods.value.getTrainer();
@@ -512,7 +512,7 @@ onUnmounted(() => {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     color: #fff;
     font-size: 14px;
-    margin-bottom: 5px;
+    margin-block-end: 5px;
 }
 
 .selected-header {

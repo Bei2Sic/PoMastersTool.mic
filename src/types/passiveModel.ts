@@ -33,5 +33,6 @@ export interface PassiveSkillModel extends SkillModel {
     statBoost?: PassiveStatBoost;
     handler?: PassiveLogicHandler;
 
+    unique?: boolean; // 是否唯一生效 (S标)
     applyToParty: boolean; // 是否全队生效 (G标)
 }
