@@ -491,7 +491,7 @@ export const MOVE_OVERRIDES: Record<string, MoveSkillModel[]> = {
                 logic: LogicType.SpecialHandler
             },
             handler: (env) => {
-                const hpPercent = env.user.hpPercent;
+                const hpPercent = env.user.currentHPPercent;
                 if (hpPercent >= 68) {
                     return 100;
                 } else if (hpPercent < 68 || hpPercent >= 51) {
@@ -515,7 +515,7 @@ export const MOVE_OVERRIDES: Record<string, MoveSkillModel[]> = {
                 logic: LogicType.SpecialHandler,
             },
             handler: (env) => {
-                const hpPercent = env.user.hpPercent;
+                const hpPercent = env.user.currentHPPercent;
                 if (hpPercent === 100) {
                     return 100;
                 } else if (hpPercent < 100 || hpPercent >= 50) {
@@ -540,7 +540,7 @@ export const MOVE_OVERRIDES: Record<string, MoveSkillModel[]> = {
             },
             // 鏡面反射同款
             handler: (env) => {
-                const hpPercent = env.user.hpPercent;
+                const hpPercent = env.user.currentHPPercent;
                 if (hpPercent >= 68) {
                     return 100;
                 } else if (hpPercent < 68 || hpPercent >= 51) {
@@ -564,7 +564,7 @@ export const MOVE_OVERRIDES: Record<string, MoveSkillModel[]> = {
                 logic: LogicType.SpecialHandler,
             },
             handler: (env) => {
-                const hpPercent = env.target.hpPercent;
+                const hpPercent = env.target.currentHPPercent;
                 if (hpPercent === 100) {
                     return 100;
                 } else if (hpPercent < 100 || hpPercent >= 50) {
@@ -726,7 +726,7 @@ export const MOVE_OVERRIDES: Record<string, MoveSkillModel[]> = {
                 logic: LogicType.SpecialHandler,
             },
             handler: (env) => {
-                const hpPercent = env.user.hpPercent;
+                const hpPercent = env.user.currentHPPercent;
                 if (hpPercent === 100) {
                     return 100;
                 } else if (hpPercent < 100 || hpPercent >= 75) {

@@ -141,6 +141,7 @@ export class PassiveSkillParser {
                 value: 0.1,
                 baseValue: 0.1,
             },
+            unique:true,
             applyToParty: true,
         };
     }
@@ -182,6 +183,7 @@ export class PassiveSkillParser {
                 value: value,
                 baseValue: baseValue,
             },
+            unique:true,
             applyToParty: true,
         };
     }
@@ -209,6 +211,7 @@ export class PassiveSkillParser {
                 value: 0.1,
                 baseValue: 0.1,
             },
+            unique:true,
             applyToParty: true,
         };
     }

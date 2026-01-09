@@ -14,7 +14,7 @@ import {
     DamageResult,
     LogicType,
     MoveScope,
-    ThemeContext
+    ThemeContext,
 } from "@/types/calculator";
 import { CircleLevel, RegionType } from "@/types/conditions";
 import { MoveBase, Pokemon, Sync } from "@/types/syncModel";
@@ -24,9 +24,14 @@ import { computed, Ref, watch } from "vue";
 function collectActivePassives(
     sync: Sync,
     formIndex: number,
-    sourceIndex: number,
-): { name: string; desc: string; passiveName: string, sourceIndex: number }[] {
-    const passives: { name: string; desc: string; passiveName: string, sourceIndex: number }[] = [];
+    sourceIndex: number
+): { name: string; desc: string; passiveName: string; sourceIndex: number }[] {
+    const passives: {
+        name: string;
+        desc: string;
+        passiveName: string;
+        sourceIndex: number;
+    }[] = [];
 
     // 1. 本體被動 - 隨 formIndex 變化
     const currentPokemon = sync.rawData.pokemon[formIndex];
@@ -112,20 +117,22 @@ export function useDamageCalculator(
     const syncStore = useSyncElemStore();
     const damageStore = useDamageCalcStore();
 
+    const team = computed(() => syncStore.team);
     // 当前目标拍组
     const targetSync = computed(() => syncStore.activeSync);
     // 当前队友拍组
-    const teamSyncs = computed(() => syncStore.team);
+    const teamSyncs = computed(() => syncStore.teamSync);
 
     // 是否单人模式
     const hasTeammates = computed(() => {
-        return syncStore.team.filter(s => s !== null).length > 1;
+        return syncStore.team.filter((s) => s !== null).length > 1;
     });
 
     const currentTeam = computed(() => {
-        return [targetSync.value].filter(
-            Boolean
-        );
+        return [
+            targetSync.value,
+            ...teamSyncs.value.map((item) => item.sync),
+        ].filter(Boolean);
     });
 
     // 监听隊伍標籤變化
@@ -175,7 +182,7 @@ export function useDamageCalculator(
             battleCircles: damageStore.battleCircles,
             gaugeAcceleration: damageStore.gaugeAcceleration,
             user: {
-                hpPercent: battleState.currentHPPercent || 0,
+                currentHPPercent: battleState.currentHPPercent || 0,
                 ranks: battleState.ranks,
                 gears: battleState.gears,
                 boosts: battleState.boosts,
@@ -183,6 +190,10 @@ export function useDamageCalculator(
                 abnormal: battleState.abnormal,
                 hindrance: battleState.hindrance,
             },
+            teammates: team.value.map((mate) => {
+                if (!mate) return null;
+                return mate.state.battle;
+            }),
             themes: damageStore.themes,
             themeType: damageStore.themeType,
             themeTypeAdd: damageStore.themeTypeAdd,
@@ -191,7 +202,7 @@ export function useDamageCalculator(
                 stats: t.stats,
                 ranks: t.ranks,
                 syncBuff: t.syncBuff,
-                hpPercent: t.currentHPPercent,
+                currentHPPercent: t.currentHPPercent,
                 abnormal: t.abnormal,
                 hindrance: t.hindrance,
                 damageField: t.damageField,
@@ -227,28 +238,29 @@ export function useDamageCalculator(
     // 被动快照
     const passiveSnapshot = computed(() => {
         const sync = targetSync.value;
-        const team = syncStore.team;
+        const team = teamSyncs.value;
         if (!sync) return [];
 
         const rawData = sync.rawData;
         // 核心：遍歷每一個形態 (Base, Mega, Dynamax...)
         return rawData.pokemon.map((pokemon, formIndex) => {
-
-            // --- A. 收集主角被动 (Source = -1) ---
+            // --- 收集当前拍组被动 (Source = -1) ---
             const myPassives = collectActivePassives(sync, formIndex, -1);
-            const teammatePassives: ReturnType<typeof collectActivePassives> = [];
+            const teammatePassives: ReturnType<typeof collectActivePassives> =
+                [];
 
-            team.forEach((mate, index) => {
-                // 跳过空槽位
-                if (!mate) return;
-
+            // --- 收集队友被动 (Source = index) ---
+            team.forEach(({ sync, index }) => {
                 // 队友通常只计算 Base 形态 (索引 0)，或者你需要根据队友当前状态取 formIndex
-                // 这里假设取 Base
-                const mateRaw = collectActivePassives(mate, 0, index);
+                const mateRaw = collectActivePassives(sync, 0, index);
 
                 teammatePassives.push(...mateRaw);
             });
-            const rawPassives = collectActivePassives(sync, formIndex, -1);
+
+            // --- 合并所有被动 ---
+            const rawPassives = [...myPassives, ...teammatePassives];
+
+            // const rawPassives = collectActivePassives(sync, formIndex, -1);
 
             const passiveModels = rawPassives.flatMap((p) => {
                 // 特殊被动查表
@@ -263,17 +275,39 @@ export function useDamageCalculator(
                     p.desc,
                     p.passiveName
                 );
-                const result = parser.result;// 这里result就是技能模型，但没法和来源索引对上
+                const result = parser.result; // 这里result就是技能模型
                 console.log(JSON.stringify(result, null, 2));
                 if (result !== null) {
-                    return [result];
+                    if (p.sourceIndex !== -1 && !result.applyToParty) {
+                        return []; // 丢弃队友的个人被动
+                    }
+                    // 浅拷贝, 并添加来源索引
+                    return [{ ...result, sourceIndex: p.sourceIndex }];
                 }
                 return [];
             });
 
+            // 过滤同名且唯一的被动
+            const seenUniquePassives = new Set<string>();
+            const finalPassiveModels = passiveModels.filter((model) => {
+                // 如果该技能不是 unique 的，直接保留 (允许叠加)
+                if (!model?.unique) {
+                    return true;
+                }
+                // 如果是 unique 的，检查是否已存在
+                // 使用 passiveName 作为唯一标识
+                if (seenUniquePassives.has(model.passiveName)) {
+                    // console.log(`Filtered duplicate unique passive: ${model.name} from source ${model.sourceIndex}`);
+                    return false; // 丢弃后续出现的同名被动
+                }
+                // 第一次遇到这个 unique 技能，记录下来并保留
+                seenUniquePassives.add(model.passiveName);
+                return true;
+            });
+
             return {
                 formName: getFormName(pokemon),
-                passives: passiveModels,
+                passives: finalPassiveModels,
             };
         });
     });
@@ -426,13 +460,12 @@ export function useDamageCalculator(
                     const shiftType = DamageEngine.getTypeShiftEffect(
                         activeMove,
                         moveSkill
-                    )
+                    );
                     activeMove = {
                         ...activeMove,
-                        type: shiftType
+                        type: shiftType,
                     };
                 }
-
 
                 // 获取当前技能属性中文名 (用于主题技能匹配)
                 const moveTypeCnName = getTypeCnNameByTypeIndex(
@@ -453,8 +486,11 @@ export function useDamageCalculator(
                     DamageEngine.resolvePassiveSum(passiveMultis);
                 // 被动加成信息(包括计量槽)
                 const passiveStrings = passiveMultis.map((mult) => {
-                    if (mult.logic === LogicType.GaugeCost || mult.logic === LogicType.SpecialMulti) {
-                        return `${mult.name}: *${mult.value / 100}`
+                    if (
+                        mult.logic === LogicType.GaugeCost ||
+                        mult.logic === LogicType.SpecialMulti
+                    ) {
+                        return `${mult.name}: *${mult.value / 100}`;
                     }
                     return `${mult.name}: +${mult.value.toFixed(0)}%`;
                 });
@@ -482,9 +518,9 @@ export function useDamageCalculator(
                 // 太晶倍率*1.5
                 const isTera = rawData.pokemon[index]?.moveTera ? true : false;
                 if (isTera && scope === MoveScope.Move && !isTeraMove) {
-                    const pokemonType = rawData.pokemon[index].type
+                    const pokemonType = rawData.pokemon[index].type;
                     if (m.type === pokemonType) {
-                        gaugeBoost *= 1.5
+                        gaugeBoost *= 1.5;
                         passiveStrings.push(`太晶威力增強: x1.5`);
                     }
                 }
@@ -515,14 +551,14 @@ export function useDamageCalculator(
                 // 檢測是否有無衰減
                 let isNoneDecay = false;
                 if (scope === MoveScope.Sync) {
-                    isNoneDecay = true
+                    isNoneDecay = true;
                 } else {
                     isNoneDecay = DamageEngine.hasNonDecay(
                         activeMove,
                         scope,
                         currentPassives,
                         moveSkill
-                    )
+                    );
                 }
                 // 获取环境提供的倍率
                 const envBoost = DamageEngine.resolveEnvMultipliers(
@@ -546,7 +582,11 @@ export function useDamageCalculator(
 
                 // 检查是否有"无视烧伤"逻辑
                 const ignoreBurn = isPhysical
-                    ? DamageEngine.hasBurnUseless(currentPassives, moveSkill, localEnv)
+                    ? DamageEngine.hasBurnUseless(
+                          currentPassives,
+                          moveSkill,
+                          localEnv
+                      )
                     : true;
 
                 const userVariationStat = getFinalStatValue(
@@ -559,7 +599,7 @@ export function useDamageCalculator(
                         themeBonus:
                             moveTypeCnName === localEnv.themeType
                                 ? localEnv.themes[statType] +
-                                localEnv.themeTypeAdd
+                                  localEnv.themeTypeAdd
                                 : localEnv.themes[statType],
                         boost: DamageEngine.resolveStatBoost(
                             currentPassives,
@@ -602,10 +642,10 @@ export function useDamageCalculator(
                     ([rollIndex, roll]) => {
                         return Math.floor(
                             movePower *
-                            (((userStat * 0.5) / targetStat) *
-                                envBoost *
-                                gearBoost *
-                                roll)
+                                (((userStat * 0.5) / targetStat) *
+                                    envBoost *
+                                    gearBoost *
+                                    roll)
                         );
                     }
                 );
@@ -664,7 +704,7 @@ export function useDamageCalculator(
             );
 
             // 拍組招式
-            let syncResult: DamageResult = null
+            let syncResult: DamageResult = null;
             // 極巨化形態沒有拍招(坑...)
             if (p.syncMove) {
                 let activeSyncMove = p.syncMove; // 默認使用原始招式

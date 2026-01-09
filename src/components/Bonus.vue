@@ -78,7 +78,7 @@ const handleInteract = (e) => {
     user-select: none;
     position: relative;
     z-index: 999;
-    padding: 2px 0;
+    /* padding: 2px 0; */
     flex-wrap: nowrap;
     /* 增加触摸区域，防止手指太粗遮挡或者点不到 */
     touch-action: none;

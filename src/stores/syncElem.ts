@@ -42,6 +42,19 @@ export const useSyncElemStore = defineStore("syncUse", {
             return state.team[state.activeSlotIndex] || null;
         },
 
+        teamSync(state) {
+            return state.team
+                .map((sync, index) => ({ sync, index }))
+                .filter((item) => {
+                    // 2. 排除当前选中拍组
+                    const isNotActive = item.index !== state.activeSlotIndex;
+                    // 3. 排除空槽位
+                    const isNotEmpty = item.sync !== null;
+
+                    return isNotActive && isNotEmpty;
+                });
+        },
+        // 返回类型示例: Array<{ sync: Sync, index: number }>
 
         // ------------------------------ 下面的 Getters 全部改用 activeSync ------------------------------
 
@@ -181,6 +194,17 @@ export const useSyncElemStore = defineStore("syncUse", {
             // 如果是在操作 0 号位（队长位），通常也视为操作了"单人模式"的记录
             if (this.activeSlotIndex === 0) {
                 localStorage.setItem(CURRENT_SYNC_KEY, trainer_id);
+            }
+        },
+
+        /**
+         * 更新队伍槽位
+         * @param index 0, 1, 2
+         * @param sync 新的 Sync 实例
+         */
+        updateTeamSlot(index: number, sync: Sync) {
+            if (index >= 0 && index < 3) {
+                this.team[index] = sync;
             }
         },
     },

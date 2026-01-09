@@ -29,8 +29,8 @@ import {
     ExtraLogic,
     LogicType,
     MoveScope,
-    ThemeContext,
     SkillModel,
+    ThemeContext,
 } from "@/types/calculator";
 import {
     CircleCategory,
@@ -39,8 +39,13 @@ import {
     PokemonType,
     RegionType,
 } from "@/types/conditions";
-import { DEFAULT_HANDLER, MoveSkillModel } from "@/types/moveModel";
-import { PassiveBoost, PassiveSkillModel } from "@/types/passiveModel";
+import { MOVE_DEFAULT_HANDLER, MoveSkillModel } from "@/types/moveModel";
+import {
+    DEFAULT_SOURCE_INDEX,
+    PASSIVE_DEFAULT_HANDLER,
+    PassiveBoost,
+    PassiveSkillModel,
+} from "@/types/passiveModel";
 import { MoveBase } from "@/types/syncModel";
 
 export class DamageEngine {
@@ -72,10 +77,7 @@ export class DamageEngine {
     }
 
     // 獲取屬性替換的被動（一般唯一）
-    static getTypeShiftEffect(
-        move: MoveBase,
-        passives: SkillModel[]
-    ): number {
+    static getTypeShiftEffect(move: MoveBase, passives: SkillModel[]): number {
         if (!move) {
             return 1;
         }
@@ -128,20 +130,28 @@ export class DamageEngine {
             }
             // 判断是否是 scaling类
             const isScaling = this.isScaling(passive.condition.logic);
+            const isSpecialHandler = this.isSpecialHandler(
+                passive.condition.logic
+            );
             let value = pm.value;
             if (isScaling) {
                 const scalingValue = this.getPassiveScalingMultiplier(
                     passive.condition,
+                    passive.sourceIndex ?? DEFAULT_SOURCE_INDEX,
                     scope,
                     context,
                     passive.boost,
                     theme
                 );
                 value = scalingValue;
+            } else if (isSpecialHandler) {
+                const handler = passive.handler ?? PASSIVE_DEFAULT_HANDLER;
+                value = handler(context, passive.sourceIndex ?? DEFAULT_SOURCE_INDEX);
             } else {
                 if (
                     !this.checkCondition(
                         passive.condition,
+                        passive.sourceIndex ?? DEFAULT_SOURCE_INDEX,
                         context,
                         move.type,
                         move.tags,
@@ -246,15 +256,15 @@ export class DamageEngine {
         // 招式倍率增加一般只有一个
         const moveSkill = moveSkills.find(
             (s) => s.name === move.name && s.effect === EffectLogic.PowerBoost // 假设你的枚举值是这个
-        )
+        );
 
         if (!moveSkill || !moveSkill.condition?.logic) {
             return 100;
         }
 
         // 判斷是不是特殊倍率類型
-        if (moveSkill.condition.logic === LogicType.SpecialHandler) {
-            const handler = moveSkill.handler ?? DEFAULT_HANDLER;
+        if (this.isSpecialHandler(moveSkill.condition.logic)) {
+            const handler = moveSkill.handler ?? MOVE_DEFAULT_HANDLER;
             return handler(context, move);
         }
 
@@ -268,9 +278,11 @@ export class DamageEngine {
             );
             value = scalingValue * 100;
         } else {
+            // 主动技能都是计算拍组本身，所以使用 DEFAULT_SOURCE_INDEX
             if (
                 !this.checkCondition(
                     moveSkill.condition,
+                    DEFAULT_SOURCE_INDEX,
                     context,
                     move.type,
                     move.tags
@@ -430,7 +442,13 @@ export class DamageEngine {
         passives.forEach((passive) => {
             if (passive.effect === EffectLogic.StatBoost) {
                 // 判断条件是否达成
-                if (this.checkCondition(passive.condition, context)) {
+                if (
+                    this.checkCondition(
+                        passive.condition,
+                        DEFAULT_SOURCE_INDEX,
+                        context
+                    )
+                ) {
                     passive?.statBoost.stats.forEach((s) => {
                         const statKey = getStatKeyByStatCnName(s);
                         if (statKey === stat) {
@@ -512,7 +530,11 @@ export class DamageEngine {
                 // 目前应该没有 Compound 类别的吧?
                 passive.effect === EffectLogic.ExtraType &&
                 passive?.extra.logic === ExtraLogic.BurnUseless &&
-                this.checkCondition(passive.condition, context)
+                this.checkCondition(
+                    passive.condition,
+                    DEFAULT_SOURCE_INDEX,
+                    context
+                )
         );
         const moveHas = moveSkills.some(
             (move) =>
@@ -527,13 +549,18 @@ export class DamageEngine {
         move: MoveBase,
         scope: MoveScope,
         passives: PassiveSkillModel[],
-        moveSkills: MoveSkillModel[],
+        moveSkills: MoveSkillModel[]
     ): boolean {
         const passiveHas = passives.some(
             (passive) =>
                 passive.effect === EffectLogic.ExtraType &&
                 passive?.extra.logic === ExtraLogic.NonDecay &&
-                this.isScopeMatch(passive.boost.scope, scope, move.category, move.name)
+                this.isScopeMatch(
+                    passive.boost.scope,
+                    scope,
+                    move.category,
+                    move.name
+                )
         );
         const moveHas = moveSkills.some(
             (move) =>
@@ -544,9 +571,7 @@ export class DamageEngine {
     }
 
     // 获取是否有无衰减效果
-    static hasUseDef(
-        moveSkills: MoveSkillModel[]
-    ): boolean {
+    static hasUseDef(moveSkills: MoveSkillModel[]): boolean {
         return moveSkills.some(
             (move) =>
                 move.effect === EffectLogic.ExtraType &&
@@ -562,7 +587,11 @@ export class DamageEngine {
         return moveSkills.some(
             (move) =>
                 // 技能如果是通用普通技能沒有condition
-                this.checkCondition(move?.condition, context) &&
+                this.checkCondition(
+                    move?.condition,
+                    DEFAULT_SOURCE_INDEX,
+                    context
+                ) &&
                 move.effect === EffectLogic.ExtraType &&
                 move?.extra.logic === ExtraLogic.TypeShift
         );
@@ -618,6 +647,7 @@ export class DamageEngine {
             case LogicType.TotalStatScaling:
             case LogicType.HPScaling:
             case LogicType.GaugeScaling:
+            case LogicType.BoostScaling:
             case LogicType.MasterPassive:
             case LogicType.TeamWorkPassive:
             case LogicType.ArcSuitPassive:
@@ -627,8 +657,18 @@ export class DamageEngine {
         }
     }
 
+    private static isSpecialHandler(logicType: LogicType): boolean {
+        switch (logicType) {
+            case LogicType.SpecialHandler:
+                return true;
+            default:
+                return false;
+        }
+    }
+
     private static checkCondition(
         cond: Condition,
+        sourceIndex: number,
         env: CalcEnvironment,
         moveType?: number,
         moveTag?: string,
@@ -636,8 +676,30 @@ export class DamageEngine {
     ): boolean {
         // 安全操作
         if (!cond) {
-            return false
+            return false;
         }
+
+        // 先确定被动关注对象
+        // 默认情况下，是当前拍组本身
+        let effectiveUser = env.user;
+        if (sourceIndex !== DEFAULT_SOURCE_INDEX) {
+            // 安全检查：确保 env.teammates 存在，且对应索引有数据
+            const teammate = env.teammates?.[sourceIndex];
+            if (teammate) {
+                // 切换上下文
+                effectiveUser = teammate;
+            } else {
+                // 边界情况：被动来源是队友，但队友数据为空（可能是空槽位）
+                // 这种情况下条件无法满足，直接返回 false
+                return false;
+            }
+        }
+
+        // 辅助函数：根据条件描述判断目标是“对手”还是“有效使用者”
+        // 很多条件里会有 "对处于xx状态的对手" 这种描述
+        const getSubject = (detail: string = "") => {
+            return detail.includes("對手") ? env.target : effectiveUser;
+        };
 
         switch (cond.logic) {
             // 直接返回
@@ -671,18 +733,20 @@ export class DamageEngine {
                 return env.gaugeAcceleration;
 
             case LogicType.Abnormal:
-                const abnormal = cond.detail.includes("對手")
-                    ? env.target.abnormal
-                    : env.user.abnormal;
+                // const abnormal = cond.detail.includes("對手")
+                //     ? env.target.abnormal
+                //     : env.user.abnormal;
+                const abnormal = getSubject(cond.detail).abnormal;
                 if (cond.key === "劇毒" && abnormal === "中毒") {
                     return true;
                 }
                 return cond.key.includes(abnormal);
 
             case LogicType.Hindrance:
-                const hindrance = cond.detail.includes("對手")
-                    ? env.target.hindrance
-                    : env.user.hindrance;
+                // const hindrance = cond.detail.includes("對手")
+                //     ? env.target.hindrance
+                //     : env.user.hindrance;
+                const hindrance = getSubject(cond.detail).hindrance;
                 return Object.keys(hindrance).some((status) => {
                     const isActive = hindrance[status as HindranceType];
                     if (!isActive) return false;
@@ -725,9 +789,10 @@ export class DamageEngine {
                 );
 
             case LogicType.StatChange:
-                const stats = cond.detail.includes("對手")
-                    ? env.target.ranks
-                    : env.user.ranks;
+                // const stats = cond.detail.includes("對手")
+                //     ? env.target.ranks
+                //     : env.user.ranks;
+                const stats = getSubject(cond.detail).ranks;
                 const statKey = getStatKeyByStatCnName(cond.key);
                 const rankValue = stats[statKey];
                 if (cond.direction.includes("下降")) {
@@ -737,43 +802,49 @@ export class DamageEngine {
                 }
 
             case LogicType.AbnormalActive:
-                const activeAbnormal = cond.detail.includes("對手")
-                    ? env.target.abnormal
-                    : env.user.abnormal;
+                // const activeAbnormal = cond.detail.includes("對手")
+                //     ? env.target.abnormal
+                //     : env.user.abnormal;
+                const activeAbnormal = getSubject(cond.detail).abnormal;
                 return activeAbnormal !== "無";
 
             case LogicType.HindranceActive:
-                const activeHindrance = cond.detail.includes("對手")
-                    ? env.target.hindrance
-                    : env.user.hindrance;
+                // const activeHindrance = cond.detail.includes("對手")
+                //     ? env.target.hindrance
+                //     : env.user.hindrance;
+                const activeHindrance = getSubject(cond.detail).hindrance;
                 return Object.keys(activeHindrance).some((status) => {
                     const isActive = hindrance[status as HindranceType];
                     if (isActive) return true;
                 });
 
             case LogicType.AllStatNotInHigh:
-                const allstats = cond.detail.includes("對手")
-                    ? env.target.ranks
-                    : env.user.ranks;
+                // const allstats = cond.detail.includes("對手")
+                //     ? env.target.ranks
+                //     : env.user.ranks;
+                const allstats = getSubject(cond.detail).ranks;
                 return Object.values(allstats)
                     .filter((value) => typeof value === "number")
                     .every((value) => value <= 0);
 
             case LogicType.AnyStatInLow:
-                const anystats = cond.detail.includes("對手")
-                    ? env.target.ranks
-                    : env.user.ranks;
+                // const anystats = cond.detail.includes("對手")
+                //     ? env.target.ranks
+                //     : env.user.ranks;
+                const anystats = getSubject(cond.detail).ranks;
                 return Object.values(anystats)
                     .filter((value) => typeof value === "number")
                     .some((value) => value < 0);
 
             case LogicType.HPLow:
-                return env.user.hpPercent <= 20;
+                // return env.user.currentHPPercent <= 20;
+                return effectiveUser.currentHPPercent <= 20;
 
             case LogicType.HPHalf:
-                const hpPercent = cond.detail.includes("對手")
-                    ? env.target.hpPercent
-                    : env.user.hpPercent;
+                // const hpPercent = cond.detail.includes("對手")
+                //     ? env.target.currentHPPercent
+                //     : env.user.currentHPPercent;
+                const hpPercent = getSubject(cond.detail).currentHPPercent;
                 if (cond.direction?.includes("以上")) {
                     return hpPercent > 50;
                 } else {
@@ -781,7 +852,7 @@ export class DamageEngine {
                 }
 
             case LogicType.HPDecreased:
-                return env.user.hpPercent < 100;
+                return effectiveUser.currentHPPercent < 100;
 
             case LogicType.Critical:
                 return env.settings.isCritical;
@@ -801,9 +872,10 @@ export class DamageEngine {
                 return cond.key.includes(typeName);
 
             case LogicType.SyncBuffs:
-                const syncBuffs = cond.detail.includes("對手")
-                    ? env.target.syncBuff
-                    : env.user.syncBuff;
+                // const syncBuffs = cond.detail.includes("對手")
+                //     ? env.target.syncBuff
+                //     : env.user.syncBuff;
+                const syncBuffs = getSubject(cond.detail).syncBuff;
                 if (cond.direction?.includes("充滿")) {
                     return syncBuffs > 0;
                 } else {
@@ -820,16 +892,23 @@ export class DamageEngine {
             case LogicType.Compound:
                 if (!conds || conds.length === 0) return true;
                 return conds.every((subCond) => {
-                    return this.checkCondition(subCond, env, moveType, moveTag);
+                    return this.checkCondition(
+                        subCond,
+                        sourceIndex,
+                        env,
+                        moveType,
+                        moveTag
+                    );
                 });
 
             // 复合状态
             case LogicType.MultiStatusActive:
                 if (cond?.keys) {
                     if (cond.keys?.abnormal) {
-                        const multiAbnormal = cond.detail.includes("對手")
-                            ? env.target.abnormal
-                            : env.user.abnormal;
+                        // const multiAbnormal = cond.detail.includes("對手")
+                        //     ? env.target.abnormal
+                        //     : env.user.abnormal;
+                        const multiAbnormal = getSubject(cond.detail).abnormal;
                         if (
                             cond.keys.abnormal.includes("劇毒") &&
                             multiAbnormal === "中毒"
@@ -841,9 +920,12 @@ export class DamageEngine {
                         }
                     }
                     if (cond.keys?.hindrance) {
-                        const multiHindrance = cond.detail.includes("對手")
-                            ? env.target.hindrance
-                            : env.user.hindrance;
+                        // const multiHindrance = cond.detail.includes("對手")
+                        //     ? env.target.hindrance
+                        //     : env.user.hindrance;
+                        const multiHindrance = getSubject(
+                            cond.detail
+                        ).hindrance;
                         const t = Object.keys(multiHindrance).some((status) => {
                             const isActive =
                                 multiHindrance[status as HindranceType];
@@ -860,17 +942,32 @@ export class DamageEngine {
 
     private static getPassiveScalingMultiplier(
         cond: Condition,
+        sourceIndex: number,
         scope: MoveScope,
         env: CalcEnvironment,
         boost: PassiveBoost,
         theme: ThemeContext
     ): number {
+        let effectiveUser = env.user;
+        if (sourceIndex !== DEFAULT_SOURCE_INDEX) {
+            const teammate = env.teammates?.[sourceIndex];
+            if (teammate) {
+                effectiveUser = teammate;
+            } else {
+                return 0;
+            }
+        }
+        const getSubject = (detail: string = "") => {
+            return detail.includes("對手") ? env.target : effectiveUser;
+        };
+
         let value = 0;
         switch (cond.logic) {
             case LogicType.SingleStatScaling: // 可能有多项，以_分割
-                const stats = cond.detail.includes("對手")
-                    ? env.target.ranks
-                    : env.user.ranks;
+                // const stats = cond.detail.includes("對手")
+                //     ? env.target.ranks
+                //     : env.user.ranks;
+                const stats = getSubject(cond.detail).ranks;
                 const statsList = cond.key.split("_");
                 const multiplierTable =
                     scope === MoveScope.Sync
@@ -895,9 +992,10 @@ export class DamageEngine {
                 return value;
 
             case LogicType.TotalStatScaling:
-                const totalStats = cond.detail.includes("對手")
-                    ? env.target.ranks
-                    : env.user.ranks;
+                // const totalStats = cond.detail.includes("對手")
+                //     ? env.target.ranks
+                //     : env.user.ranks;
+                const totalStats = getSubject(cond.detail).ranks;
                 const isStatLow = cond.direction?.includes("下降");
                 let totalRank = 0;
                 STATS.forEach((statName) => {
@@ -934,9 +1032,10 @@ export class DamageEngine {
                 }
 
             case LogicType.HPScaling:
-                const hpPercent = cond.detail.includes("對手")
-                    ? env.target.hpPercent
-                    : env.user.hpPercent;
+                // const hpPercent = cond.detail.includes("對手")
+                //     ? env.target.currentHPPercent
+                //     : env.user.currentHPPercent;
+                const hpPercent = getSubject(cond.detail).currentHPPercent;
                 const factor = cond.detail.includes("對手") ? 0.1 : 0.05;
                 const thresholdTable = cond.direction?.includes("下降")
                     ? HP_LESS_THRESHOLD
@@ -955,6 +1054,18 @@ export class DamageEngine {
                 value = Math.ceil(rawValue * 100) / 100;
 
                 return value;
+
+            case LogicType.BoostScaling:
+                switch (cond.key) {
+                    case "物理招式威力增強":
+                        return boost.value * effectiveUser.boosts.physical;
+                    case "特殊招式威力增強":
+                        return boost.value * effectiveUser.boosts.special;
+                    case "拍組招式威力增強":
+                        return boost.value * effectiveUser.boosts.sync;
+                    default:
+                        return 0;
+                }
 
             case LogicType.TeamWorkPassive:
             case LogicType.MasterPassive:

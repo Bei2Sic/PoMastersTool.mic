@@ -10,6 +10,15 @@
           <img src="@/assets/images/icon_remove.png" class="home-icon" alt="Home" />
         </button>
       </div>
+
+      <div v-else-if="currentPage === 'team'" class="tool-wrapper">
+        <Team />
+
+        <button class="back-home-btn home-pos" @click="currentPage = 'home'" title="返回目录">
+          <img src="@/assets/images/icon_remove.png" class="home-icon" alt="Home" />
+        </button>
+      </div>
+
     </transition>
   </div>
 </template>
@@ -18,6 +27,7 @@
 import Home from '@/components/Home.vue';
 import Sync from '@/components/Sync.vue';
 import { ref } from 'vue';
+import Team from './components/Team.vue';
 
 // 状态：当前显示哪个页面
 const currentPage = ref('home');

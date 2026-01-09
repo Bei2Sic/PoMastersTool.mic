@@ -1,10 +1,12 @@
+import { getStatKeyByStatCnName } from "@/core/exporter/map";
 import {
     EffectLogic,
     ExtraLogic,
     LogicType,
     MoveScope,
 } from "@/types/calculator";
-import { PassiveSkillModel } from "@/types/passiveModel";
+import { DEFAULT_SOURCE_INDEX, PassiveSkillModel } from "@/types/passiveModel";
+import { STATS } from "./battle";
 
 export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
     小智的熱忱: [
@@ -259,7 +261,7 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
                 value: 0.1,
             },
             condition: {
-                key: "特殊招式威力增强",
+                key: "特殊招式威力增強",
                 detail: "自身",
                 direction: "提升",
                 logic: LogicType.BoostScaling,
@@ -712,6 +714,46 @@ export const PASSIVE_OVERRIDES: Record<string, PassiveSkillModel[]> = {
                 logic: ExtraLogic.TypeShift,
             },
             applyToParty: false,
+        },
+    ],
+
+    // 特殊处理的被动 SpecialHandler
+    "依能力升幅威力↑G": [
+        {
+            name: "依能力升幅威力↑G",
+            desc: "",
+            passiveName: "依能力升幅威力↑G",
+            effect: EffectLogic.PowerBoost,
+            boost: {
+                scope: MoveScope.Move,
+                value: 0.0,
+            },
+            condition: {
+                key: "",
+                detail: "",
+                logic: LogicType.SpecialHandler,
+            },
+            applyToParty: true,
+            handler: (env, sourceIndex) => {
+                let effectiveUser = env.user;
+                if (sourceIndex !== DEFAULT_SOURCE_INDEX) {
+                    const teammate = env.teammates?.[sourceIndex];
+                    if (teammate) {
+                        effectiveUser = teammate;
+                    } else {
+                        return 0;
+                    }
+                }
+                const stats = effectiveUser.ranks;
+                let totalRank = 0;
+                STATS.forEach((statName) => {
+                    const totalStatKey = getStatKeyByStatCnName(statName);
+                    const totalRankValue =
+                        totalStatKey === "hp" ? 0 : stats[totalStatKey];
+                    totalRank += totalRankValue < 0 ? 0 : totalRankValue;
+                });
+                return Math.min(totalRank, 30) * 0.01;
+            },
         },
     ],
 };

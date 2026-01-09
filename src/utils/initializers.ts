@@ -1,16 +1,15 @@
 import {
+    BATTLE_REGIONS,
     CRITBUFF_STATUSES,
     HINDRANCE_STATUSES,
     POKEMON_TYPES,
-    BATTLE_REGIONS,
 } from "@/constances/battle";
 import {
     BattleCircle,
     BattleState,
     CritBuffType,
     HindranceType,
-    RegionType,
-    TypeRebuffs,
+    TypeRebuffs
 } from "@/types/conditions"; // 導入上面的類型
 
 
@@ -78,6 +77,7 @@ export const initBattleState = (): BattleState => ({
         spe: 0,
         acc: 0,
         eva: 0,
+        ct: 0,
     },
     boosts: {
         physical: 0,

@@ -1,5 +1,5 @@
 <template>
-    <div class="home-container">
+    <div class="home-container">    
         <div class="logo-area">
             <img src="@/assets/icons/2.64.0.png" class="logo" />
             <h1>寶可夢大師EX計算器</h1>
@@ -15,11 +15,11 @@
                 </div>
             </div>
 
-            <div class="menu-card disabled">
+            <div class="menu-card" @click="$emit('navigate', 'team')">
                 <img src="@/assets/st/ch0101_42_mei_st_1004_128.png" class="menu-icon" alt="多人" />
                 <div class="text">
                     <h3>组队模式</h3>
-                    <p>待开发...</p>
+                    <p>组队伤害计算</p>
                 </div>
             </div>
         </div>

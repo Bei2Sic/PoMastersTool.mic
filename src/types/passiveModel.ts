@@ -1,5 +1,6 @@
-import { Condition, EffectLogic, ExtraContext, MoveScope, SkillModel, CalcEnvironment } from "@/types/calculator";
+import { CalcEnvironment, Condition, EffectLogic, ExtraContext, MoveScope, SkillModel } from "@/types/calculator";
 
+export const DEFAULT_SOURCE_INDEX = -1;
 export interface PassiveBoost {
     scope: MoveScope;
     moveName?: string;
@@ -13,7 +14,7 @@ export interface PassiveStatBoost {
     value: number; // 乘算倍数
 }
 
-export type PassiveLogicHandler = (env: CalcEnvironment) => number;
+export type PassiveLogicHandler = (env: CalcEnvironment, sourceIndex: number) => number;
 
 export interface PassiveSkillModel extends SkillModel {
     name: string;
@@ -35,4 +36,9 @@ export interface PassiveSkillModel extends SkillModel {
 
     unique?: boolean; // 是否唯一生效 (S标)
     applyToParty: boolean; // 是否全队生效 (G标)
+    sourceIndex?: number; // 来源索引，-1 表示当前计算拍组, 其他值表示队友对应的索引
+}
+
+export const PASSIVE_DEFAULT_HANDLER = (env: CalcEnvironment, sourceIndex: number): number => {
+    return 0;
 }

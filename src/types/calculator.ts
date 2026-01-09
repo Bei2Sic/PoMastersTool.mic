@@ -2,8 +2,8 @@ import {
     AbnormalType,
     BattleCircle,
     BattleRanks,
+    BattleState,
     BerryNum,
-    BoostRank,
     CritBuffType,
     DamageFieldType,
     GaugeValue,
@@ -14,7 +14,7 @@ import {
     StatLowerReduction,
     TerrainType,
     WeatherType,
-    ZoneType,
+    ZoneType
 } from "@/types/conditions";
 import { MoveBase } from "./syncModel";
 
@@ -99,7 +99,7 @@ export enum LogicType {
     Compound = "Compound",
     MultiStatusActive = "MultiStatusActive", // 複合狀態(特殊異常列表/特殊妨害列表/或者組合列表)
 
-    // 特殊倍率的move
+    // 特殊倍率的move/passive
     SpecialHandler = "SpecialHandler",
 }
 
@@ -166,26 +166,15 @@ export interface CalcEnvironment {
     gaugeAcceleration: boolean;
     battleCircles: BattleCircle;
 
-    user: {
-        hpPercent: number; // 0-100
-        gears: PokemonStats;
-        ranks: BattleRanks;
-        boosts: {
-            physical: BoostRank;
-            special: BoostRank;
-            sync: BoostRank;
-        };
-        syncBuff: number;
-        abnormal: AbnormalType;
-        hindrance: Record<HindranceType, boolean>;
-    };
+    user: BattleState;
+    teammates: (BattleState | null)[];
 
     themes: PokemonStats;
     themeType: PokemonType;
     themeTypeAdd: number;
 
     target: {
-        hpPercent: number;
+        currentHPPercent: number;
         stats: PokemonStats;
         ranks: BattleRanks;
         syncBuff: number;

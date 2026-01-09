@@ -18,7 +18,7 @@ export const DEFAULT_MOVE_SKILL = {
     
 } as MoveSkillModel;
 
-export const DEFAULT_HANDLER = (env: CalcEnvironment, move: MoveBase): number => {
+export const MOVE_DEFAULT_HANDLER = (env: CalcEnvironment, move: MoveBase): number => {
     return 100;
 }
 
