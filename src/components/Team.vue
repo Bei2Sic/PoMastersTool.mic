@@ -1,131 +1,130 @@
 <template>
-    <div class="team-builder-root">
-        <div class="team-dock">
-            <div v-for="(slot, index) in 3" :key="index" class="dock-slot"
-                :class="{ 'is-active': activeSlotIndex === index }" @click="handleSlotClick(index)">
-                <div v-if="!team[index]" class="empty-slot">
-                    <div class="add-icon">+</div>
-                    <span class="slot-label">添加</span>
-                </div>
+    <div class="team-dashboard-root">
 
-                <div v-else class="filled-slot">
-                    <img :src="getTrainerAvatar(team[index])" class="slot-avatar" />
-
-                    <div class="role-badge" :class="getRoleClass(team[index])">
-                        {{ getRoleLabel(team[index]) }}
+        <div class="team-header-bar">
+            <div v-for="(index) in 3" :key="`header-${index}`" class="header-slot-wrapper">
+                <div class="header-slot" :class="{
+                    'is-active': activeSlotIndex === (index - 1),
+                    'is-filled': !!team[index - 1]
+                }" @click="handleSlotClick(index - 1)">
+                    <div v-if="!team[index - 1]" class="header-empty" @click.stop="openFilter(index - 1)">
+                        <img src="@/assets/images/none_pair.png" class="empty-bg" />
                     </div>
 
-                    <button class="remove-btn" @click.stop="handleRemoveTeammate(index)">×</button>
-                </div>
+                    <div v-else class="header-filled">
+                        <div class="role-bg" :style="getRoleStyle(team[index - 1])"></div>
 
-                <div v-if="activeSlotIndex === index" class="active-indicator"></div>
+                        <img :src="getAvatar(team[index - 1])" class="header-avatar" />
+                        <button class="header-remove-btn" @click.stop="handleRemove(index - 1)">×</button>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="main-content">
+        <div class="columns-wrapper">
+            <div v-for="(index) in 3" :key="index" class="column-slot" :class="{
+                'is-active': activeSlotIndex === (index - 1),
+                'is-empty': !team[index - 1]
+            }" @click="handleSlotClick(index - 1)">
 
-            <div class="left-stage">
-                <button v-show="isMobileView" class="floating-btn menu-pos" @click="showMobilePanel = !showMobilePanel">
-                    <img src="@/assets/images/bg_pokeball.png" class="btn-icon" alt="Menu" />
-                </button>
+                <div v-if="team[index - 1]" class="action-drawer" :class="{ 'is-open': menuState[index - 1] }"
+                    @click.stop>
+                    <div class="drawer-handle" @click="toggleMenu(index - 1)" title="展开/收起菜单">
+                        <span class="handle-icon" :class="{ 'rotate': menuState[index - 1] }">▼</span>
+                    </div>
 
-                <div v-if="activeSync" class="grid-wrapper">
-                    <Grid :key="activeSlotIndex" :grid-data="currentGridInfo.gridData" :trainer="currentTrainer"
-                        :current-rarity="currentDynamicState.currentRarity"
-                        :bonus-level="currentDynamicState.bonusLevel" :cost-orbs="currentGridInfo.costOrbs"
-                        :last-energy="currentGridInfo.lastEnergy" :cost-fiery-orbs="currentGridInfo.costFieryOrbs"
-                        :cost-leaf-orbs="currentGridInfo.costLeafOrbs"
-                        :cost-bubbly-orbs="currentGridInfo.costBubblyOrbs"
-                        :cost-sparky-orbs="currentGridInfo.costSparkyOrbs" :cost-t-m-orbs="currentGridInfo.costTMOrbs"
-                        :is-tile-reachable="exportMethods.isTileReachable"
-                        :get-tile-border-url="exportMethods.getTileBorderUrl"
-                        :get-tile-fill-url="exportMethods.getTileFillUrl" :get-trainer-avatar-url="getTrainerUrl"
-                        :fix-tile-name="exportMethods.fixTileName" :toggle-tile="exportMethods.toggleTile"
-                        :check-selected-tiles="exportMethods.checkSelectedTiles"
-                        :on-trainer-click="toggleTrainerSelect" />
-                </div>
-
-                <div v-else class="empty-stage-guide">
-                    <p>👈 请先在顶部选择一个拍组</p>
-                    <button class="btn-primary" @click="showFilterModal = true">打开拍组列表</button>
-                </div>
-            </div>
-
-            <div class="right-stage" :class="{ 'mobile-show': showMobilePanel }">
-                <button v-if="isMobileView" class="mobile-panel-close" @click="showMobilePanel = false">×</button>
-
-                <div class="tab-bar segmented-bar">
-                    <div class="tab-inner">
-                        <button class="tab-btn" :class="{ active: curTab === 'info' }" @click="curTab = 'info'">
-                            配置信息
+                    <div class="drawer-content">
+                        <button class="action-btn" @click="openModal('info', index - 1)">
+                            拍组信息
                         </button>
-                        <button class="tab-btn" :class="{ active: curTab === 'grid-list' }"
-                            @click="curTab = 'grid-list'">
-                            石盘列表
-                        </button>
-                        <button class="tab-btn" :class="{ active: curTab === 'calc' }" @click="curTab = 'calc'">
+                        <div class="divider"></div>
+                        <button class="action-btn" @click="openModal('calc', index - 1)">
                             伤害计算
                         </button>
                     </div>
                 </div>
 
-                <div class="pokemon-name" v-if="activeSync">
-                    {{ exportMethods.getSyncName() }}
+                <div v-if="!team[index - 1]" class="empty-state">
+                    <button class="add-btn" @click.stop="openFilter(index - 1)">
+                        <div class="add-icon-circle">+</div>
+                        <span class="add-text">点击添加</span>
+                    </button>
                 </div>
 
-                <div class="info-content" v-if="activeSync">
+                <div v-else class="scroll-container">
 
-                    <Info v-show="curTab === 'info'" :level-value="currentDynamicState.level"
-                        :current-rarity-value="currentDynamicState.currentRarity"
-                        :potential-value="currentDynamicState.potential"
-                        :ex-role-enabled-value="currentDynamicState.exRoleEnabled"
-                        :bonus-level="currentDynamicState.bonusLevel"
-                        :selected-pokemon-index="currentDynamicState.selectedPokemonIndex"
-                        :trainer="exportMethods.getTrainer()" :themes="exportMethods.getThemes()"
-                        :special-awaking="exportMethods.getSpecialAwaking()"
-                        :variation-list="exportMethods.getvariationList()" :final-stats="currentFinalStats"
-                        :final-moves="currentFinalMoves" :pokemon="currentPokemon"
-                        @update:levelValue="(val) => currentDynamicState.level = val"
-                        @update:currentRarityValue="(val) => currentDynamicState.currentRarity = val"
-                        @update:potentialValue="(val) => currentDynamicState.potential = val"
-                        @update:exRoleEnabledValue="(val) => currentDynamicState.exRoleEnabled = val"
-                        @update:selectedPokemonIndex="(val) => currentDynamicState.selectedPokemonIndex = val" />
-
-                    <div v-show="curTab === 'grid-list'" class="grid-list-panel">
-                        <div class="selected-info">
-                            <div class="selected-content">
-                                <div v-for="tile in sortSelectedTiles" :key="tile.id" class="selected-item">
-                                    <div class="selected-header"
-                                        :style="{ backgroundColor: tile.color, borderColor: tile.color }">
-                                        {{ tile.name }}
-                                    </div>
-                                    <div class="selected-description" :style="{ borderColor: tile.color }">
-                                        {{ tile.description }}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="grid-viewport" @mousedown="handleSlotClick(index - 1)">
+                        <Grid :key="team[index - 1].rawData.trainer.id" class="responsive-grid" :is-mini="true"
+                            :grid-data="getSlotGridData(index - 1)" :trainer="getSlotTrainer(index - 1)"
+                            :bonus-level="getSlotState(index - 1).bonusLevel"
+                            @update:bonus-level="(val: any) => updateSlotState(index - 1, 'bonusLevel', val)"
+                            :current-rarity="getSlotState(index - 1).currentRarity"
+                            @update:current-rarity="(val: any) => updateSlotState(index - 1, 'currentRarity', val)"
+                            :cost-orbs="getSlotGridInfo(index - 1).costOrbs"
+                            :last-energy="getSlotGridInfo(index - 1).lastEnergy"
+                            :cost-fiery-orbs="getSlotGridInfo(index - 1).costFieryOrbs"
+                            :cost-leaf-orbs="getSlotGridInfo(index - 1).costLeafOrbs"
+                            :cost-bubbly-orbs="getSlotGridInfo(index - 1).costBubblyOrbs"
+                            :cost-sparky-orbs="getSlotGridInfo(index - 1).costSparkyOrbs"
+                            :cost-t-m-orbs="getSlotGridInfo(index - 1).costTMOrbs"
+                            :is-tile-reachable="getSlotExportMethod(index - 1).isTileReachable"
+                            :check-selected-tiles="getSlotExportMethod(index - 1).checkSelectedTiles"
+                            :get-tile-border-url="getSlotExportMethod(index - 1).getTileBorderUrl"
+                            :get-tile-fill-url="getSlotExportMethod(index - 1).getTileFillUrl"
+                            :fix-tile-name="getSlotExportMethod(index - 1).fixTileName"
+                            :toggle-tile="getSlotExportMethod(index - 1).toggleTile"
+                            :get-trainer-avatar-url="getTrainerUrl" :on-trainer-click="toggleTrainerSelect" />
                     </div>
-
-                    <div v-show="curTab === 'calc'" class="calc-panel-wrapper">
-                        <Damage :visible="true" :targetSync="null" :teamSyncs="null" @close="() => { }" />
-                    </div>
-
-                </div>
-
-                <div v-else class="info-empty">
-                    请选择拍组以查看详情
                 </div>
             </div>
-
         </div>
 
-        <transition name="modal">
+        <transition name="modal-fade">
             <div v-if="showFilterModal" class="modal-overlay" @click="showFilterModal = false">
-                <div class="modal-content" @click.stop>
-                    <h3 class="modal-title">为位置 {{ activeSlotIndex + 1 }} 选择拍组</h3>
-                    <Filter class="filter-component-wrapper" @select-trainer="handleSelectTrainer"
-                        @close-modal="showFilterModal = false" />
+                <div class="modal-window filter-window" @click.stop>
+                    <div class="modal-header">
+                        <h3>选择拍组 (位置 {{ activeSlotIndex + 1 }})</h3>
+                        <button class="close-icon" @click="showFilterModal = false">×</button>
+                    </div>
+                    <div class="modal-body">
+                        <Filter @select-trainer="handleSelectTrainer" @close-modal="showFilterModal = false" />
+                    </div>
+                </div>
+            </div>
+        </transition>
+
+        <transition name="modal-fade">
+            <div v-if="showInfoModal" class="modal-overlay" @click="showInfoModal = false">
+                <div class="modal-window info-window" @click.stop>
+                    <div class="modal-header">
+                        <div class="pokemon-name">{{ exportMethods.getSyncName() }}</div>
+                        <button class="close-icon" @click="showInfoModal = false">×</button>
+                    </div>
+                    <div class="modal-body bg-pattern">
+                        <Info :level-value="currentDynamicState.level"
+                            :current-rarity-value="currentDynamicState.currentRarity"
+                            :potential-value="currentDynamicState.potential"
+                            :ex-role-enabled-value="currentDynamicState.exRoleEnabled"
+                            :bonus-level="currentDynamicState.bonusLevel"
+                            :selected-pokemon-index="currentDynamicState.selectedPokemonIndex"
+                            :trainer="exportMethods.getTrainer()" :themes="exportMethods.getThemes()"
+                            :special-awaking="exportMethods.getSpecialAwaking()"
+                            :variation-list="exportMethods.getvariationList()" :final-stats="currentFinalStats"
+                            :final-moves="currentFinalMoves" :pokemon="currentPokemon"
+                            @update:levelValue="(val) => currentDynamicState.level = val"
+                            @update:currentRarityValue="(val) => currentDynamicState.currentRarity = val"
+                            @update:potentialValue="(val) => currentDynamicState.potential = val"
+                            @update:exRoleEnabledValue="(val) => currentDynamicState.exRoleEnabled = val"
+                            @update:selectedPokemonIndex="(val) => currentDynamicState.selectedPokemonIndex = val" />
+                    </div>
+                </div>
+            </div>
+        </transition>
+
+        <transition name="modal-fade">
+            <div v-if="showCalcModal" class="modal-overlay" @click="showCalcModal = false">
+                <div class="modal-window calc-window" @click.stop>
+                    <Damage :visible="true" :targetSync="activeSync" :teamSyncs="null" @close="showCalcModal = false" />
                 </div>
             </div>
         </transition>
@@ -135,361 +134,635 @@
 
 <script setup lang="ts">
 import { useSyncElemStore } from '@/stores/syncElem';
-import { Sync } from '@/types/syncModel';
+import { Sync, SyncComputed, SyncDynamicState, SyncMethods, Trainer } from '@/types/syncModel';
 import { getTrainerUrl } from '@/utils/format';
 import { storeToRefs } from 'pinia';
-import { computed, ref } from 'vue';
+import { ref } from 'vue';
 
-// 组件引入
 import Damage from '@/components/Damage.vue';
 import Filter from '@/components/Filter.vue';
 import Grid from '@/components/Grid.vue';
 import Info from '@/components/Info.vue';
+import { RoleIndex } from '@/types/indices';
 
-// --- Store ---
 const syncStore = useSyncElemStore();
-const {
-    team,
-    activeSlotIndex,
-    activeSync,
-    // 以下是 getter 映射，确保 store 里有对应的 getter
-    currentGridInfo,
-    currentDynamicState,
-    currentFinalStats,
-    currentFinalMoves,
-    currentPokemon,
-    exportMethods
-} = storeToRefs(syncStore);
+const { team, activeSlotIndex, activeSync, currentDynamicState, currentFinalStats, currentFinalMoves, currentPokemon, exportMethods } = storeToRefs(syncStore);
 
-// --- State ---
 const showFilterModal = ref(false);
-const showMobilePanel = ref(false);
-const curTab = ref('info');
-const isMobileView = ref(window.innerWidth <= 900);
+const showInfoModal = ref(false);
+const showCalcModal = ref(false);
 
-// --- Computed Helpers ---
-const currentTrainer = computed(() => exportMethods.value?.getTrainer?.());
+// ✨ 新增：控制底部菜单展开状态的数组 [false, false, false]
+const menuState = ref<boolean[]>([false, false, false]);
 
-// 石盘排序逻辑 (复用)
-const sortSelectedTiles = computed(() => {
-    if (!currentGridInfo.value?.selectedTiles) return [];
-
-    const colorPriority: Record<string, number> = {
-        "#FF80BF": 1, "#779EFF": 2, "#47D147": 3,
-        "#BF80FF": 4, "#FF0066": 5, "#FFC266": 6,
+// --- 辅助函数 ---
+const getSlotState = (index: number): SyncDynamicState => {
+    const sync = team.value[index];
+    if (!sync) return {} as SyncDynamicState;
+    return sync.state;
+}
+const updateSlotState = (index: number, key: string, value: any) => {
+    const sync = team.value[index];
+    if (sync && sync.state) { sync.state[key] = value; }
+};
+const getSlotGridData = (index: number) => {
+    const sync = team.value[index];
+    return sync ? sync.state.gridData : [];
+}
+const getSlotGridInfo = (index: number): SyncComputed => {
+    const sync = team.value[index];
+    return sync ? sync.computed : {} as SyncComputed;
+}
+const getSlotTrainer = (index: number): Trainer => {
+    const sync = team.value[index];
+    return sync ? sync.rawData.trainer : {} as Trainer;
+}
+const getSlotExportMethod = (index: number): SyncMethods => {
+    const sync = team.value[index];
+    return sync ? sync.methods : {} as SyncMethods;
+}
+const getAvatar = (sync: Sync) => {
+    if (!sync || !sync.rawData) return '';
+    return getTrainerUrl(sync.rawData.trainer.enActor, sync.rawData.trainer.dexNumber, sync.state.currentRarity, sync.rawData.trainer.count);
+};
+const getRoleStyle = (sync: Sync) => {
+    const role = sync?.rawData?.trainer.role || 0;
+    const colors: Record<RoleIndex, string> = {
+        0: 'linear-gradient(to right, #ff5f6d, #ffc371)',
+        1: 'linear-gradient(to right, #ff5f6d, #ffc371)',
+        2: 'linear-gradient(to right, #11998e, #38ef7d)',
+        3: 'linear-gradient(to right, #2193b0, #6dd5ed)',
+        4: 'linear-gradient(to right, #fc4a1a, #f7b733)',
+        5: 'linear-gradient(to right, #834d9b, #d04ed6)',
+        6: 'linear-gradient(to right, #cf8412, #e3f304)'
     };
-    return [...currentGridInfo.value.selectedTiles].sort((a, b) => {
-        const priorityA = colorPriority[a.color] ?? 999;
-        const priorityB = colorPriority[b.color] ?? 999;
-        return priorityA - priorityB;
-    });
-});
+    return { background: colors[role] || '#999' };
+};
 
-// --- Methods ---
+// --- 交互逻辑 ---
 
-// 点击槽位：切换当前编辑的拍组
+// 点击槽位：激活该列，同时收起其他列的菜单（可选）
 const handleSlotClick = (index: number) => {
-    // 如果点击的是当前已选中的，且为空，打开筛选器
-    if (activeSlotIndex.value === index && !team.value[index]) {
-        showFilterModal.value = true;
-        return;
-    }
-
-    // 切换 activeSlotIndex
     syncStore.switchActiveSlot(index);
+    // 如果希望点击列空白处就收起菜单，取消注释下面这行
+    // menuState.value = [false, false, false];
+};
 
-    // 如果切换过去是空的，自动打开筛选器 (可选体验优化)
-    if (!team.value[index]) {
-        // showFilterModal.value = true; 
+// 切换菜单展开/收起
+const toggleMenu = (index: number) => {
+    // 切换当前状态
+    const isOpen = menuState.value[index];
+    // 先关闭所有，实现手风琴效果（互斥）
+    menuState.value = [false, false, false];
+    // 如果之前是关的，现在打开
+    if (!isOpen) {
+        menuState.value[index] = true;
     }
+    // 同时也激活该列
+    syncStore.switchActiveSlot(index);
 };
 
-// 选择拍组回调
-const handleSelectTrainer = (trainerId: string) => {
-    try {
-        // 直接调用 action：将 trainerId 加载到当前 activeSlotIndex
-        syncStore.selectSyncToActiveSlot(trainerId);
-        showFilterModal.value = false;
-    } catch (e) {
-        console.error(e);
-    }
-};
-
-// 移除队员
-const handleRemoveTeammate = (index: number) => {
-    syncStore.updateTeamSlot(index, null);
-};
-
-// 辅助：获取头像 (简单示意，需要根据你的数据结构调整)
-const getTrainerAvatar = (sync: Sync) => {
-    if (!sync) return '';
-    // 假设 sync 对象里有 helper 方法或者 rawData
-    // 这里复用 getTrainerUrl 工具
-    const trainer = sync.rawData.trainer;
-    return getTrainerUrl(trainer.enActor, trainer.dexNumber, trainer.rarity, trainer.count)
-};
-
-// 辅助：获取 Role 样式
-const getRoleClass = (sync: any) => {
-    // 根据 sync.rawData.role 返回对应的颜色类
-    // 比如 'bg-red-500', 'bg-blue-500', 'bg-green-500'
-    return 'bg-gray-400'; // 默认
-};
-const getRoleLabel = (sync: any) => {
-    // 返回 '攻', '技', '辅'
-    return 'S';
-};
-
-const toggleTrainerSelect = () => {
+const openFilter = (index: number) => {
+    syncStore.switchActiveSlot(index);
     showFilterModal.value = true;
 };
 
-// 监听窗口大小
-window.addEventListener('resize', () => {
-    isMobileView.value = window.innerWidth <= 900;
-});
+const openModal = (type: 'info' | 'calc', index: number) => {
+    syncStore.switchActiveSlot(index);
+    if (type === 'info') showInfoModal.value = true;
+    if (type === 'calc') showCalcModal.value = true;
+    // 打开弹窗后，自动收起底部菜单
+    menuState.value[index] = false;
+};
+
+const handleSelectTrainer = (id: string) => {
+    syncStore.selectSyncToActiveSlot(id);
+    showFilterModal.value = false;
+};
+const toggleTrainerSelect = () => { showFilterModal.value = true; };
+const handleRemove = (index: number) => { syncStore.updateTeamSlot(index, null); };
 
 </script>
 
 <style scoped>
 /* 全局容器 */
-.team-builder-root {
+.team-dashboard-root {
+    inline-size: 100vw;
+    block-size: 100vh;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    block-size: 100vh;
-    inline-size: 100vw;
     background-color: #f0f2f5;
-    overflow: hidden;
 }
 
-/* --- 1. Team Dock (顶部悬浮栏) --- */
-.team-dock {
-    flex: 0 0 70px;
-    /* 固定高度 */
-    background: white;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    z-index: 50;
+/* 1. 顶部队伍栏 (Team Header) */
+.team-header-bar {
+    flex: 0 0 100px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    gap: 20px;
-    padding: 0 10px;
+    justify-content: center;
+    /* 居中显示 */
+    background-image: url('../assets/images/bg3.png');
+    /* border-block-end: 2px solid #568dd1; */
+    /* 底部装饰线 */
+    padding: 0 8px;
+    z-index: 10;
 }
 
-.dock-slot {
-    inline-size: 50px;
-    block-size: 50px;
-    border-radius: 50%;
-    background: #e2e8f0;
+.header-slot-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.header-slot {
+    inline-size: 100px;
+    block-size: 100px;
     position: relative;
     cursor: pointer;
-    transition: all 0.2s;
-    border: 2px solid transparent;
+    transition: transform 0.2s;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* 悬停效果 */
+.header-slot:hover {
+    transform: scale(1.05);
 }
 
 /* 选中状态 */
-.dock-slot.is-active {
-    transform: scale(1.1);
-    border-color: #568dd1;
-    box-shadow: 0 0 0 3px rgba(86, 141, 209, 0.2);
+.header-slot.is-active {
+    /* 选中时加个发光效果 */
+    filter: drop-shadow(0 0 10px #568dd1);
+    z-index: 2;
+    /* 浮起 */
 }
 
-/* 选中下面的小点指示器 */
-.active-indicator {
-    position: absolute;
-    inset-block-end: -8px;
-    inset-inline-start: 50%;
-    transform: translateX(-50%);
-    inline-size: 6px;
-    block-size: 6px;
-    background: #568dd1;
-    border-radius: 50%;
-}
-
-.empty-slot {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    block-size: 100%;
-    color: #94a3b8;
-}
-
-.add-icon {
-    font-size: 20px;
-    line-height: 1;
-    font-weight: bold;
-}
-
-.slot-label {
-    font-size: 10px;
-}
-
-.filled-slot {
+.header-empty {
     inline-size: 100%;
     block-size: 100%;
-    position: relative;
+    background-color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.slot-avatar {
+.empty-bg {
     inline-size: 100%;
     block-size: 100%;
     object-fit: cover;
-    border-radius: 50%;
-    border: 2px solid white;
+    opacity: 1;
 }
 
-.role-badge {
+.header-filled {
+    inline-size: 100%;
+    block-size: 100%;
+    position: relative;
+    background: transparent;
+}
+
+.role-bg {
     position: absolute;
-    inset-block-end: -2px;
-    inset-inline-end: -2px;
-    inline-size: 16px;
-    block-size: 16px;
-    background: #64748b;
+    inset: 0;
+    opacity: 0.3;
+    z-index: 0;
+    /* background: linear-gradient(to right, #ff5f6d, #ffc371); */
+    background-size: 200% 100%;
+    /* transition: linear-gradient(to right, #cf8412, #e3f304) */
+}
+
+.header-avatar {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: contain;
+    position: relative;
+    z-index: 1;
+}
+
+.level-badge {
+    position: absolute;
+    inset-block-start: 2px;
+    inset-inline-end: 15px;
+    /* 因为是六边形，靠右可能会被切掉，往中间挪一点 */
+    background-color: rgba(0, 0, 0, 0.7);
     color: white;
     font-size: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    border: 1px solid white;
+    font-weight: bold;
+    padding: 1px 4px;
+    border-radius: 4px;
+    z-index: 3;
+    pointer-events: none;
 }
 
-.remove-btn {
+/* 移除按钮 */
+.header-remove-btn {
     position: absolute;
-    inset-block-start: -5px;
-    inset-inline-end: -5px;
+    inset-block-start: 0;
+    inset-inline-start: 50px;
+    /* 左上角 */
     inline-size: 16px;
     block-size: 16px;
-    border-radius: 50%;
-    background: #ef4444;
-    color: white;
+    background: #ff4d4f;
     border: none;
+    color: white;
     font-size: 12px;
+    line-height: 1;
+    border-radius: 50%;
     display: none;
     /* 默认隐藏 */
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    z-index: 10;
 }
 
-.dock-slot:hover .remove-btn {
+/* 只有悬停且已填充时显示移除按钮 */
+.header-slot.is-filled:hover .header-remove-btn {
     display: flex;
 }
 
-/* --- 2. Main Content (主舞台) --- */
-.main-content {
-    flex: 1;
-    display: flex;
-    overflow: hidden;
-    position: relative;
-    background-color: rgba(255, 255, 255, 0.1);
+.header-remove-btn:hover {
+    background: #ff4d4f;
 }
 
-/* 左侧：石盘区 */
-.left-stage {
+/* 2. 下方内容区 */
+.columns-wrapper {
     flex: 1;
-    /* 占据剩余空间 */
-    position: relative;
+    display: flex;
+    min-block-size: 0;
+    overflow: auto;
+}
+
+.column-slot {
+    flex: 1;
+    /* border-inline-end: 1px solid #e0e0e0; */
     display: flex;
     flex-direction: column;
-    border-inline-end: 1px solid #ddd;
-    background-image: url('../assets/images/bg1.png');
-    /* 复用背景 */
-}
-
-.grid-wrapper {
-    flex: 1;
+    position: relative;
+    background: #fcfcfc;
+    min-block-size: 0;
     overflow: hidden;
 }
 
-.empty-stage-guide {
+.column-slot:last-child {
+    border-inline-end: none;
+}
+
+.column-slot.is-active {
+    background: #fff;
+}
+
+/* 空状态 */
+.empty-state {
+    block-size: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../assets/images/bg1.png');
+}
+
+.add-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: #94a3b8;
+    transition: transform 0.2s;
+}
+
+.add-btn:hover {
+    transform: scale(1.05);
+    color: #568dd1;
+}
+
+.add-icon-circle {
+    inline-size: 60px;
+    block-size: 60px;
+    border-radius: 50%;
+    border: 2px dashed #cbd5e1;
+    display: flex;
+    align-items: center;
     justify-content: center;
+    font-size: 30px;
+    margin-block-end: 10px;
+}
+
+.add-btn:hover .add-icon-circle {
+    border-color: #568dd1;
+    color: #568dd1;
+}
+
+.scroll-container {
+    flex: 1;
+    inline-size: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-image: url('../assets/images/bg3.png');
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+}
+
+.scroll-container::-webkit-scrollbar {
+    inline-size: 6px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+}
+
+/* Grid Viewport - 撑满高度 */
+.grid-viewport {
+    flex: 1;
+    overflow: auto;
+    inline-size: 100%;
+    block-size: 110%;
+    position: relative;
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 为了美观，可以自定义滚动条样式（隐形或细条） */
+.grid-viewport::-webkit-scrollbar {
+    inline-size: 6px;
+    block-size: 6px;
+}
+
+.grid-viewport::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.grid-viewport::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+}
+
+.grid-viewport::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.responsive-grid {
+    inline-size: 100%;
     block-size: 100%;
-    color: white;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-.btn-primary {
-    margin-block-start: 10px;
-    padding: 8px 16px;
-    background: #568dd1;
-    color: white;
-    border: none;
-    border-radius: 4px;
+.action-drawer {
+    position: absolute;
+    inset-block-start: 0;
+    inset-block-end: auto;
+    inline-size: 100%;
+    z-index: 20;
+
+    transform: translateY(calc(-100% + 24px));
+
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+}
+
+/* 展开状态 */
+.action-drawer.is-open {
+    transform: translateY(0);
+}
+
+/* 把手 */
+.drawer-handle {
+    block-size: 24px;
+    inline-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
+
+    margin: 0 20px;
 }
 
-/* 右侧：配置/计算区 */
-.right-stage {
-    inline-size: 450px;
-    /* 固定宽度，或者 flex-basis */
+.handle-icon {
+    font-size: 12px;
+    color: #ec0808;
+    transition: transform 0.3s;
+    display: block;
+}
+
+/* 展开时图标旋转 */
+.handle-icon.rotate {
+    transform: rotate(180deg);
+}
+
+/* 抽屉内容区 */
+.drawer-content {
+    block-size: 60px;
+    /* 按钮区域高度 */
+    display: flex;
+    align-items: center;
+    border-block-start: 1px solid #f0f0f0;
+    padding: 0 10px;
+}
+
+.action-btn {
+    flex: 1;
+    block-size: 40px;
+    border: none;
+    background-image: url('@/assets/images/bg3.png');
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    color: #e2e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: all 0.2s;
+}
+
+.action-btn:hover {
+    background: #e6f0ff;
+    color: #568dd1;
+}
+
+.v-divider {
+    inline-size: 1px;
+    block-size: 20px;
+    background-color: #eee;
+    margin: 0 10px;
+}
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(4px);
+}
+
+.modal-window {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
     display: flex;
     flex-direction: column;
-    background: white;
-    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.05);
-    z-index: 40;
+    overflow: hidden;
+    max-block-size: 90vh;
 }
 
-/* 复用原有的样式 */
-.tab-bar {
-    /* ... */
+.filter-window {
+    inline-size: 450px;
+    block-size: 80vh;
+}
+
+.info-window {
+    inline-size: 500px;
+    block-size: 85vh;
+}
+
+.calc-window {
+    inline-size: 900px;
+    block-size: 85vh;
+    background: transparent;
+    box-shadow: none;
+}
+
+.modal-header {
+    block-size: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    background: #f9f9f9;
+    border-block-end: 1px solid #eee;
 }
 
 .pokemon-name {
-    /* ... */
+    block-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+    font-weight: bold;
+    font-size: 15px;
+    font-weight: 900;
+    color: #fff;
+    /* ✨ 关键：文字描边效果 */
+    text-shadow:
+        -1px -1px 0 #004d40,
+        1px -1px 0 #004d40,
+        -1px 1px 0 #004d40,
+        1px 1px 0 #004d40;
+    letter-spacing: 1.5px;
 }
 
-.info-content {
+.modal-header h3 {
+    font-size: 16px;
+    margin: 0;
+    color: #333;
+}
+
+.close-icon {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #999;
+}
+
+.close-icon:hover {
+    color: #333;
+}
+
+.modal-body {
     flex: 1;
     overflow-y: auto;
-    padding: 10px;
+    position: relative;
 }
 
-/* --- Mobile Response --- */
-@media (max-width: 900px) {
-    .team-dock {
-        flex: 0 0 60px;
-        /* 稍微变小 */
+.bg-pattern {
+    background-image: url('@/assets/images/bg1.png');
+}
+
+.modal-fade-enter-active,
+.modal-fade-leave-active {
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.modal-fade-enter-from,
+.modal-fade-leave-to {
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+
+@media (max-width: 768px) {
+
+    /* 1. 调整根容器高度，去除固定高度，允许浏览器原生滚动条 (可选，防止 Safari 底部工具栏遮挡) */
+    .team-dashboard-root {
+        block-size: 100vh;
+        /* 使用 dvh (dynamic viewport height) 体验更好，如果浏览器支持 */
+        block-size: 100dvh;
     }
 
-    .left-stage {
-        inline-size: 100vw;
+    /* 2. 顶部 Header 调整 */
+    .team-header-bar {
+        /* 如果 3 个头像挤不下，可以允许横向滚动 */
+        overflow-x: auto;
+        justify-content: space-around;
+        /* 或者 flex-start */
+        gap: 5px;
+        padding: 0 5px;
+        flex-shrink: 0;
+        /* 防止被压缩 */
+    }
+
+    .header-slot {
+        /* 稍微缩小一点头像，腾出空间 */
+        inline-size: 60px;
+        block-size: 60px;
+    }
+
+    .column-slot {
+        /* 默认隐藏所有列 */
+        display: none;
+        /* 移除边框，因为现在只有一列 */
+        border-inline-end: none;
         border-inline-end: none;
     }
 
-    .right-stage {
-        position: fixed;
-        inset-block-start: 60px;
-        /* 留出 Dock 的位置 */
-        inset-block-end: 0;
-        inset-inline-start: 0;
-        inline-size: 100vw;
-        transform: translateX(100%);
-        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        z-index: 100;
-        box-shadow: none;
-        /* 移动端不需要侧边阴影 */
+    .column-slot.is-active {
+        display: flex;
+        flex: 1;
+        inline-size: 100%;
+        /* 独占全屏宽度 */
+        block-size: 100%;
     }
 
-    .right-stage.mobile-show {
-        transform: translateX(0);
+    /* 4. 调整石盘视口 */
+    .grid-viewport {
+        /* 移动端不需要那么宽的内边距 */
+        padding: 10px;
     }
 
-    /* 浮动按钮样式 (复用) */
-    .floating-btn {
-        /* ... */
+    /* 5. 调整下拉菜单位置 */
+    .action-drawer {
+        /* 移动端可能需要更大的把手方便手指点击 */
     }
 
-    .mobile-panel-close {
-        /* ... */
+    .drawer-handle {
+        /* 增加触摸区域 */
+        min-inline-size: 60px;
+        block-size: 30px;
     }
-}
-
-/* 复用原有的滚动条、弹窗样式等 */
-.modal-overlay {
-    /* ... */
 }
 </style>

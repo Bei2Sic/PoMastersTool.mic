@@ -13,7 +13,7 @@
                 </div>
             </div>
             <div class="rating-section">
-                <Bonus :model-value="localBonusLevel" @update:model-value="handleBonusUpdate" :star-size="20" :gap="5"
+                <Bonus :model-value="localBonusLevel" @update:model-value="handleBonusUpdate" :star-size="18" :gap="5"
                     :max-rating="maxBonusLevel" />
             </div>
         </div>
@@ -29,39 +29,39 @@
 
         <div class="svg-scroll-area" @click="handleBackgroundClick">
 
-            <svg :viewBox="viewBox" preserveAspectRatio="xMidYMid meet" class="main-svg">
+            <svg :viewBox="viewBox" :preserveAspectRatio="isMobile ? 'xMidYMin meet' : 'xMidYMid meet'" class="main-svg" ">
                 <image :href="trainerAvatarUrl" :x="-CONST_TRAINER_SIZE / 2" :y="-CONST_TRAINER_SIZE / 2"
-                    :width="CONST_TRAINER_SIZE" :height="CONST_TRAINER_SIZE" rx="50%" ry="50%" class="center-avatar" />
-                <circle cx="0" cy="0" :r="CONST_TRAINER_SIZE / 2" fill="transparent"
-                    :style="{ cursor: onTrainerClick ? 'pointer' : 'default', pointerEvents: onTrainerClick ? 'auto' : 'none' }"
-                    @click.stop="handleTrainerClick" />
+                :width="CONST_TRAINER_SIZE" :height="CONST_TRAINER_SIZE" rx="50%" ry="50%" class="center-avatar" />
+            <circle cx="0" cy="0" :r="CONST_TRAINER_SIZE / 2" fill="transparent"
+                :style="{ cursor: onTrainerClick ? 'pointer' : 'default', pointerEvents: onTrainerClick ? 'auto' : 'none' }"
+                @click.stop="handleTrainerClick" />
 
-                <template v-for="tile in gridData" :key="tile.id">
-                    <g :transform="`translate(${calcHexSvgX(tile.x)}, ${calcHexSvgY(tile.x, tile.y)})`"
-                        class="tile-group" @click.stop="handleTileClick(tile.id, $event)"
-                        @mouseenter="handleTileHover(tile, $event)" @mouseleave="handleTileHover(null, null)">
+            <template v-for="tile in gridData" :key="tile.id">
+                <g :transform="`translate(${calcHexSvgX(tile.x)}, ${calcHexSvgY(tile.x, tile.y)})`" class="tile-group"
+                    @click.stop="handleTileClick(tile.id, $event)" :class="{ 'tile-locked': !isTileReachable(tile) }"
+                    @mouseenter="handleTileHover(tile, $event)" @mouseleave="handleTileHover(null, null)">
 
-                        <polygon :points="hexPoints"
-                            :style="{ cursor: isTileReachable(tile) ? 'pointer' : 'not-allowed' }" fill="transparent" />
+                    <polygon :points="hexPoints" :style="{ cursor: isTileReachable(tile) ? 'pointer' : 'not-allowed' }"
+                        fill="transparent" />
 
-                        <image :href="getTileBorderUrl(tile)" :x="-CONST_TILE_SIZE / 2" :y="-CONST_TILE_SIZE / 2"
-                            :width="CONST_TILE_SIZE" :height="CONST_TILE_SIZE" pointer-events="none" />
-                        <image :href="getTileFillUrl(tile)" :x="-CONST_TILE_SIZE / 2" :y="-CONST_TILE_SIZE / 2"
-                            :width="CONST_TILE_SIZE" :height="CONST_TILE_SIZE" pointer-events="none" />
+                    <image :href="getTileBorderUrl(tile)" :x="-CONST_TILE_SIZE / 2" :y="-CONST_TILE_SIZE / 2"
+                        :width="CONST_TILE_SIZE" :height="CONST_TILE_SIZE" pointer-events="none" />
+                    <image :href="getTileFillUrl(tile)" :x="-CONST_TILE_SIZE / 2" :y="-CONST_TILE_SIZE / 2"
+                        :width="CONST_TILE_SIZE" :height="CONST_TILE_SIZE" pointer-events="none" />
 
-                        <polygon v-if="!isTileReachable(tile)" :points="hexPoints" fill="rgba(0, 0, 0, 0.6)"
-                            pointer-events="none" />
+                    <polygon v-if="!isTileReachable(tile)" :points="hexPoints" fill="rgba(0, 0, 0, 0.6)"
+                        pointer-events="none" />
 
-                        <text text-anchor="middle" dominant-baseline="middle" pointer-events="none" class="grid-text">
-                            <template v-for="(line, index) in normalizeTileName(tile)" :key="index">
-                                <tspan x="0"
-                                    :dy="index === 0 ? (-0.6 * (normalizeTileName(tile).length - 1)) + 'em' : '1.2em'">
-                                    {{ line }}
-                                </tspan>
-                            </template>
-                        </text>
-                    </g>
-                </template>
+                    <text text-anchor="middle" dominant-baseline="middle" pointer-events="none" class="grid-text">
+                        <template v-for="(line, index) in normalizeTileName(tile)" :key="index">
+                            <tspan x="0"
+                                :dy="index === 0 ? (-0.6 * (normalizeTileName(tile).length - 1)) + 'em' : '1.2em'">
+                                {{ line }}
+                            </tspan>
+                        </template>
+                    </text>
+                </g>
+            </template>
             </svg>
         </div>
 
@@ -113,7 +113,7 @@
 
 <script setup lang="ts">
 import Bonus from '@/components/Bonus.vue';
-import { Pokemon, Theme, Trainer, Tile } from "@/types/syncModel";
+import { Tile, Trainer } from "@/types/syncModel";
 import { computed, onMounted, onUnmounted, ref, watch } from 'vue';
 
 const CONST_HEX_RADIUS = 50;
@@ -333,10 +333,10 @@ onUnmounted(() => {
     flex-shrink: 0;
     inline-size: 100%;
     max-inline-size: 320px;
-    margin: 10px auto;
+    margin: 5px auto;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    /* gap: px; */
     z-index: 10;
     position: relative;
 }
@@ -348,33 +348,45 @@ onUnmounted(() => {
 
 .info-bar {
     display: flex;
-    background-color: #0b7a75;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-image: url('../assets/images/bg1.png');
 }
 
 .info-item {
     flex: 1;
-    padding: 6px 0;
-    text-align: center;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 500;
+    padding: 4px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    font-family: "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+    line-height: 1.2;
+}
+
+.info-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #212129;
+    letter-spacing: 0.5px;
 }
 
 .info-value {
-    font-weight: bold;
-    margin-inline-start: 4px;
+    font-family: "Roboto", "Helvetica Neue", "Microsoft YaHei", sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    color: #677785;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    font-variant-numeric: tabular-nums;
 }
 
 .rating-section {
-    padding: 6px 12px;
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 8px;
+    padding: 5px 10px;
     display: flex;
     justify-content: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* border-radius: 8px; */
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
 }
 
 /* Academy 資源列表容器 */
@@ -443,10 +455,8 @@ onUnmounted(() => {
     justify-content: center;
     align-items: center;
 
-    /* ✨ 修复卡顿：禁止双击缩放，移除 300ms 点击延迟 */
     touch-action: manipulation;
 
-    /* ✨ 修复阴影：去除点击时的高亮背景色 */
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -517,7 +527,8 @@ onUnmounted(() => {
     }
 
     .svg-scroll-area {
-        display: block;
+        align-items: flex-start;
+        padding-block-start: 20px;
     }
 
     .academy-resources {
