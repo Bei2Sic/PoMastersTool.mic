@@ -4,7 +4,9 @@
       <Home v-if="currentPage === 'home'" @navigate="goToPage" />
 
       <div v-else-if="currentPage === 'sync'" class="tool-wrapper">
-        <Sync />
+        <div v-if="syncStore.activeSync">
+          <Sync />
+        </div>
 
         <button class="back-home-btn home-pos" @click="currentPage = 'home'" title="返回目录">
           <img src="@/assets/images/icon_remove.png" class="home-icon" alt="Home" />
@@ -26,8 +28,11 @@
 <script setup lang="ts">
 import Home from '@/components/Home.vue';
 import Sync from '@/components/Sync.vue';
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import Team from './components/Team.vue';
+import { useSyncElemStore } from "@/stores/syncElem";
+
+const syncStore = useSyncElemStore();
 
 // 状态：当前显示哪个页面
 const currentPage = ref('home');
@@ -35,6 +40,10 @@ const currentPage = ref('home');
 const goToPage = (pageName: string) => {
   currentPage.value = pageName;
 };
+
+onMounted(() => {
+  syncStore.initMode(false);
+});
 </script>
 
 <style scoped>

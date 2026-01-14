@@ -69,12 +69,12 @@ export const useSyncCacheStore = defineStore("syncCache", {
             return cacheItem ? cacheItem.rawData : undefined;
         },
 
-        // 当前选中拍组的完整原始数据（用于创建拍组对象）
-        selectedRawData: (state: SyncCacheState): SyncRawData | null => {
-            return state.selectedTrainerId
-                ? state.cache[state.selectedTrainerId]?.rawData || null
-                : null;
-        },
+        // // 当前选中拍组的完整原始数据（用于创建拍组对象）
+        // selectedRawData: (state: SyncCacheState): SyncRawData | null => {
+        //     return state.selectedTrainerId
+        //         ? state.cache[state.selectedTrainerId]?.rawData || null
+        //         : null;
+        // },
     },
     actions: {
         /**
@@ -88,29 +88,15 @@ export const useSyncCacheStore = defineStore("syncCache", {
                 this.cache = await loadAllSyncJson();
                 // 自动选中最新的牌組
 
-                this.selectedTrainerId = localStorage.getItem(CURRENT_SYNC_KEY);
-                if (!this.selectedTrainerId) {
-                    this.selectedTrainerId = "10000400000";
-                }
+                // this.selectedTrainerId = localStorage.getItem(CURRENT_SYNC_KEY);
+                // if (!this.selectedTrainerId) {
+                //     this.selectedTrainerId = "10000400000";
+                // }
             } catch (error) {
                 this.loadError = "拍组数据加载失败，请刷新重试";
                 console.error("初始化拍组缓存失败：", error);
             } finally {
                 this.isLoading = false;
-            }
-        },
-
-        /**
-         * 切换选中的拍组
-         * @param trainerId 拍组ID
-         */
-        selectSync(trainerId: string) {
-            if (this.cache[trainerId]) {
-                this.selectedTrainerId = trainerId;
-                // todo：存入localStorage，保存上次选择的拍组动态信息
-                // localStorage.setItem("lastSelectedSyncId", trainerId);
-            } else {
-                console.warn(`未找到拍组ID：${trainerId}`);
             }
         },
 

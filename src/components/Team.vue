@@ -17,6 +17,10 @@
                         <img :src="getAvatar(team[index - 1])" class="header-avatar" />
                         <button class="header-remove-btn" @click.stop="handleRemove(index - 1)">×</button>
                     </div>
+
+                    <div class="team-header-btn" @click.stop="handleMobileBtnClick(index - 1);">
+                        {{ '选择' }}
+                    </div>
                 </div>
             </div>
         </div>
@@ -89,6 +93,7 @@
                             :get-tile-fill-url="getSlotExportMethod(index - 1).getTileFillUrl"
                             :fix-tile-name="getSlotExportMethod(index - 1).fixTileName"
                             :toggle-tile="getSlotExportMethod(index - 1).toggleTile"
+                            :reset-selected-tiles="getSlotExportMethod(index - 1).resetSelectedTiles"
                             :get-trainer-avatar-url="getTrainerUrl" :on-trainer-click="toggleTrainerSelect" />
                     </div>
                 </div>
@@ -117,7 +122,8 @@
                         <button class="close-icon" @click="showFilterModal = false">×</button>
                     </div>
                     <div class="filter-wrapper">
-                        <Filter :occupied-ids="occupiedTrainerIds" @select-trainer="handleSelectTrainer" @close-modal="showFilterModal = false" />
+                        <Filter :occupied-ids="occupiedTrainerIds" @select-trainer="handleSelectTrainer"
+                            @close-modal="showFilterModal = false" />
                     </div>
                 </div>
             </div>
@@ -165,7 +171,7 @@ import { useSyncElemStore } from '@/stores/syncElem';
 import { LuckCookie, Passive, Sync, SyncComputed, SyncDynamicState, SyncMethods, Trainer } from '@/types/syncModel';
 import { getTrainerUrl } from '@/utils/format';
 import { storeToRefs } from 'pinia';
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 
 import Damage from '@/components/Damage.vue';
 import Filter from '@/components/Filter.vue';
@@ -193,6 +199,14 @@ const handlePotentialSelect = (passive: Passive | null) => {
     showPotentialModal.value = false;
 };
 const menuState = ref<boolean[]>([false, false, false]);
+
+const handleMobileBtnClick = (index: number) => {
+    syncStore.switchActiveSlot(index);
+
+    if (!team.value[index]) {
+        openFilter(index);
+    }
+};
 
 // --- 辅助函数 ---
 const getSlotState = (index: number): SyncDynamicState => {
@@ -296,6 +310,11 @@ const handleSelectTrainer = (id: string) => {
 const toggleTrainerSelect = () => { showFilterModal.value = true; };
 const handleRemove = (index: number) => { syncStore.updateTeamSlot(index, null); };
 
+onMounted(async () => {
+    
+    syncStore.initMode(true);
+});
+
 </script>
 
 <style scoped>
@@ -317,10 +336,14 @@ const handleRemove = (index: number) => { syncStore.updateTeamSlot(index, null);
     justify-content: center;
     /* 居中显示 */
     background-image: url('../assets/images/bg3.png');
-    /* border-block-end: 2px solid #568dd1; */
     /* 底部装饰线 */
+    overflow-y: hidden;
     padding: 0 8px;
     z-index: 10;
+}
+
+.team-header-btn {
+    display: none;
 }
 
 .header-slot-wrapper {
@@ -329,8 +352,8 @@ const handleRemove = (index: number) => { syncStore.updateTeamSlot(index, null);
 }
 
 .header-slot {
-    inline-size: 200px;
-    block-size: 200px;
+    inline-size: 100px;
+    block-size: 100px;
     position: relative;
     cursor: pointer;
     transition: transform 0.2s;
@@ -354,7 +377,7 @@ const handleRemove = (index: number) => { syncStore.updateTeamSlot(index, null);
 .header-empty {
     inline-size: 100%;
     block-size: 100%;
-    background-color: #e0e0e0;
+    background: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -370,6 +393,9 @@ const handleRemove = (index: number) => { syncStore.updateTeamSlot(index, null);
 .header-filled {
     inline-size: 100%;
     block-size: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     background: transparent;
 }
@@ -390,6 +416,7 @@ const handleRemove = (index: number) => { syncStore.updateTeamSlot(index, null);
     object-fit: contain;
     position: relative;
     z-index: 1;
+    transform: scale(1.3);
 }
 
 .level-badge {
@@ -411,7 +438,7 @@ const handleRemove = (index: number) => { syncStore.updateTeamSlot(index, null);
 .header-remove-btn {
     position: absolute;
     inset-block-start: 0;
-    inset-inline-start: 50px;
+    inset-inline-start: 75%;
     /* 左上角 */
     inline-size: 16px;
     block-size: 16px;
@@ -849,22 +876,63 @@ const handleRemove = (index: number) => { syncStore.updateTeamSlot(index, null);
         block-size: 100dvh;
     }
 
-    /* 2. 顶部 Header 调整 */
     .team-header-bar {
-        /* 如果 3 个头像挤不下，可以允许横向滚动 */
-        overflow-x: auto;
-        justify-content: space-around;
-        /* 或者 flex-start */
-        gap: 5px;
-        padding: 0 5px;
-        flex-shrink: 0;
-        /* 防止被压缩 */
+        overflow: hidden !important;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 10px;
+        gap: 10px;
+        min-height: 140px;
+        align-items: flex-start;
     }
 
+    /* 修改 .header-slot-wrapper */
+    .header-slot-wrapper {
+        flex: 1;
+        display: flex;
+        /* ✨ 关键：改为垂直排列 */
+        flex-direction: column;
+        align-items: center;
+        /* 水平居中 */
+        justify-content: flex-start;
+
+        position: relative;
+    }
+
+    /* 修改 .header-slot (头像容器) */
     .header-slot {
-        /* 稍微缩小一点头像，腾出空间 */
         inline-size: 100px;
         block-size: 100px;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    /* 修改 .team-header-btn (按钮) */
+    .team-header-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 8px;
+        z-index: 20;
+        color: #666;
+        font-size: 12px;
+        font-weight: bold;
+        padding: 4px 14px;
+        border-radius: 12px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        border: 1px solid #eee;
+        white-space: nowrap;
+        transition: all 0.2s;
+
+        background-image: url('../assets/images/bg_btn.png');
+        background-size: cover;
+        background-position: center;
+
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .team-header-btn:active {
+        transform: translateY(-30%) scale(0.95);
+        background-color: #4a7bb3;
     }
 
     .column-slot {

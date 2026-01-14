@@ -23,8 +23,8 @@ app.use(pinia);
 const syncCacheStore = useSyncCacheStore();
 // 等待所以json文件加载完毕
 await syncCacheStore.initSyncCache();
-const syncElemStore = useSyncElemStore();
-// 默认初始化最新拍组
-syncElemStore.initActiveSync()
+// const syncElemStore = useSyncElemStore();
+// // 默认初始化最新拍组
+// syncElemStore.initActiveSync()
 
 app.mount("#app");

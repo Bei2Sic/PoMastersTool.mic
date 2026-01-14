@@ -1,6 +1,14 @@
 <template>
     <div class="sync-grid-container">
 
+        <button class="reset-btn" @click="props.resetSelectedTiles()" title="重置石盘">
+            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+                <path d="M3 3v5h5"></path>
+            </svg>
+        </button>
+
         <div class="bonus-header">
             <div class="info-bar">
                 <div class="info-item">
@@ -29,39 +37,41 @@
 
         <div class="svg-scroll-area" @click="handleBackgroundClick">
 
-            <svg :viewBox="viewBox" :preserveAspectRatio="isMobile ? 'xMidYMin meet' : 'xMidYMid meet'" class="main-svg">
+            <svg :viewBox="viewBox" :preserveAspectRatio="isMobile ? 'xMidYMin meet' : 'xMidYMid meet'"
+                class="main-svg">
                 <image :href="trainerAvatarUrl" :x="-CONST_TRAINER_SIZE / 2" :y="-CONST_TRAINER_SIZE / 2"
-                :width="CONST_TRAINER_SIZE" :height="CONST_TRAINER_SIZE" rx="50%" ry="50%" class="center-avatar" />
-            <circle cx="0" cy="0" :r="CONST_TRAINER_SIZE / 2" fill="transparent"
-                :style="{ cursor: onTrainerClick ? 'pointer' : 'default', pointerEvents: onTrainerClick ? 'auto' : 'none' }"
-                @click.stop="handleTrainerClick" />
+                    :width="CONST_TRAINER_SIZE" :height="CONST_TRAINER_SIZE" rx="50%" ry="50%" class="center-avatar" />
+                <circle cx="0" cy="0" :r="CONST_TRAINER_SIZE / 2" fill="transparent"
+                    :style="{ cursor: onTrainerClick ? 'pointer' : 'default', pointerEvents: onTrainerClick ? 'auto' : 'none' }"
+                    @click.stop="handleTrainerClick" />
 
-            <template v-for="tile in gridData" :key="tile.id">
-                <g :transform="`translate(${calcHexSvgX(tile.x)}, ${calcHexSvgY(tile.x, tile.y)})`" class="tile-group"
-                    @click.stop="handleTileClick(tile.id, $event)" :class="{ 'tile-locked': !isTileReachable(tile) }"
-                    @mouseenter="handleTileHover(tile, $event)" @mouseleave="handleTileHover(null, null)">
+                <template v-for="tile in gridData" :key="tile.id">
+                    <g :transform="`translate(${calcHexSvgX(tile.x)}, ${calcHexSvgY(tile.x, tile.y)})`"
+                        class="tile-group" @click.stop="handleTileClick(tile.id, $event)"
+                        :class="{ 'tile-locked': !isTileReachable(tile) }" @mouseenter="handleTileHover(tile, $event)"
+                        @mouseleave="handleTileHover(null, null)">
 
-                    <polygon :points="hexPoints" :style="{ cursor: isTileReachable(tile) ? 'pointer' : 'not-allowed' }"
-                        fill="transparent" />
+                        <polygon :points="hexPoints"
+                            :style="{ cursor: isTileReachable(tile) ? 'pointer' : 'not-allowed' }" fill="transparent" />
 
-                    <image :href="getTileBorderUrl(tile)" :x="-CONST_TILE_SIZE / 2" :y="-CONST_TILE_SIZE / 2"
-                        :width="CONST_TILE_SIZE" :height="CONST_TILE_SIZE" pointer-events="none" />
-                    <image :href="getTileFillUrl(tile)" :x="-CONST_TILE_SIZE / 2" :y="-CONST_TILE_SIZE / 2"
-                        :width="CONST_TILE_SIZE" :height="CONST_TILE_SIZE" pointer-events="none" />
+                        <image :href="getTileBorderUrl(tile)" :x="-CONST_TILE_SIZE / 2" :y="-CONST_TILE_SIZE / 2"
+                            :width="CONST_TILE_SIZE" :height="CONST_TILE_SIZE" pointer-events="none" />
+                        <image :href="getTileFillUrl(tile)" :x="-CONST_TILE_SIZE / 2" :y="-CONST_TILE_SIZE / 2"
+                            :width="CONST_TILE_SIZE" :height="CONST_TILE_SIZE" pointer-events="none" />
 
-                    <polygon v-if="!isTileReachable(tile)" :points="hexPoints" fill="rgba(0, 0, 0, 0.6)"
-                        pointer-events="none" />
+                        <polygon v-if="!isTileReachable(tile)" :points="hexPoints" fill="rgba(0, 0, 0, 0.6)"
+                            pointer-events="none" />
 
-                    <text text-anchor="middle" dominant-baseline="middle" pointer-events="none" class="grid-text">
-                        <template v-for="(line, index) in normalizeTileName(tile)" :key="index">
-                            <tspan x="0"
-                                :dy="index === 0 ? (-0.6 * (normalizeTileName(tile).length - 1)) + 'em' : '1.2em'">
-                                {{ line }}
-                            </tspan>
-                        </template>
-                    </text>
-                </g>
-            </template>
+                        <text text-anchor="middle" dominant-baseline="middle" pointer-events="none" class="grid-text">
+                            <template v-for="(line, index) in normalizeTileName(tile)" :key="index">
+                                <tspan x="0"
+                                    :dy="index === 0 ? (-0.6 * (normalizeTileName(tile).length - 1)) + 'em' : '1.2em'">
+                                    {{ line }}
+                                </tspan>
+                            </template>
+                        </text>
+                    </g>
+                </template>
             </svg>
         </div>
 
@@ -142,6 +152,7 @@ const props = defineProps({
     checkSelectedTiles: { type: Function, required: true },
     toggleTile: { type: Function, required: true },
     onTrainerClick: { type: Function, required: false },
+    resetSelectedTiles: { type: Function, required: true },
 });
 
 // 學院拍的模板
@@ -175,8 +186,8 @@ const viewBox = computed(() => {
 
     let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
 
-    const validTiles = props.gridData.filter(t => 
-        typeof t.x === 'number' && !isNaN(t.x) && 
+    const validTiles = props.gridData.filter(t =>
+        typeof t.x === 'number' && !isNaN(t.x) &&
         typeof t.y === 'number' && !isNaN(t.y)
     );
 
@@ -336,6 +347,37 @@ onUnmounted(() => {
     display: flex;
     flex-direction: column;
     background: transparent;
+}
+
+.reset-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 50;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    color: #666;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.reset-btn:hover {
+    background-color: #fff;
+    color: #568dd1;
+    transform: rotate(90deg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.reset-btn:active {
+    transform: scale(0.9);
 }
 
 /* 顶部信息栏 */
@@ -540,6 +582,13 @@ onUnmounted(() => {
         block-size: 100%;
         /* min-inline-size: 150%; */
         min-block-size: 80vh;
+    }
+
+    .reset-btn {
+        top: 30px;
+        right: 10px;
+        width: 25px;
+        height: 25px;
     }
 
     .svg-scroll-area {

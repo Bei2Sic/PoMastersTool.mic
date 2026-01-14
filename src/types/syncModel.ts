@@ -164,7 +164,7 @@ export interface Grid {
 /** 石盘动态数据（含激活状态） */
 export interface Tile extends Grid {
     isActive: boolean; // 石盘是否激活
-}                                       
+}
 
 /** 拍组动态属性（微调适配新类型） */
 export interface SyncDynamicState {
@@ -216,6 +216,7 @@ export interface SyncMethods {
     getvariationList: () => string[]; // 获取宝可梦变化形态
     getPokemon: (index: number) => Pokemon; // 获取对应形态宝可梦
     toggleTile: (tileId: number) => void; // 切换石盘激活状态
+    resetSelectedTiles: () => void;
     updateLevel: (level: number) => void; // 更新等级（含验证）
     updateRarity: (rarity: RarityIndex) => void; // 更新星级（EX后重置潜力）
     updatePotentialCookie: (cookie: Passive | null) => void; // 更新潜能饼干

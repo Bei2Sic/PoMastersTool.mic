@@ -1,4 +1,4 @@
-import { CURRENT_SYNC_KEY } from "@/constances/key";
+import { CURRENT_SYNC_KEY, DEFAULT_TRAINER_ID, TEAM_SYNC_KEY } from "@/constances/key";
 import { PowerMoveScope } from "@/core/calculators/power";
 import {
     getFinalStatValue,
@@ -26,6 +26,8 @@ interface SyncElemState {
 
     // 当前正在查看/编辑的槽位索引 (0, 1, 2)
     activeSlotIndex: number;
+
+    isTeam: boolean;
 }
 
 export const useSyncElemStore = defineStore("syncUse", {
@@ -33,6 +35,7 @@ export const useSyncElemStore = defineStore("syncUse", {
         // 初始化 3 个空槽位
         team: [null, null, null],
         activeSlotIndex: 0,
+        isTeam: false,
     }),
 
     getters: {
@@ -138,6 +141,127 @@ export const useSyncElemStore = defineStore("syncUse", {
     },
 
     actions: {
+        // ======================== 设置模式初始化 ==============================
+        initMode(isTeam: boolean) {
+            const syncCacheStore = useSyncCacheStore();
+
+            if (!syncCacheStore.getRawDataWithTrainerId(DEFAULT_TRAINER_ID)) {
+                console.warn("基础数据未加载，无法初始化 SyncStore");
+                return;
+            }
+
+            // 1. 设置模式
+            this.isTeam = isTeam;
+            this.activeSlotIndex = 0; // 切换模式时重置选中索引
+
+            // 2. 确定存储键
+            const targetKey = isTeam ? TEAM_SYNC_KEY : CURRENT_SYNC_KEY;
+            const json = localStorage.getItem(targetKey);
+
+            // 3. 先清空当前内存，防止残留
+            this.team = [null, null, null];
+            // ======================= 有本地存档 =======================
+            if (json) {
+                try {
+                    const savedData = JSON.parse(json);
+
+                    savedData.forEach((item: any, index: number) => {
+                        // 单人模式只读第0个，组队读所有
+                        if (!isTeam && index > 0) return;
+                        if (index >= 3) return;
+
+                        if (item && item.id) {
+                            this.team[index] = this._reconstructSync(item);
+                        }
+                    });
+                    console.log(`[SyncStore] 已加载 ${isTeam ? "组队" : "单人"} 模式存档`);
+                    return;
+                } catch (e) {
+                    console.error("存档损坏，执行兜底逻辑", e);
+                }
+            }
+
+            // ======================= 分支 B: 无存档 (兜底逻辑) =======================
+            console.log(`[SyncStore] 无 ${isTeam ? "组队" : "单人"} 存档，执行初始化默认设置`);
+
+            if (!isTeam) {
+                // 单人模式：位置 0 设置默认 ID
+                const rawData = syncCacheStore.getRawDataWithTrainerId(DEFAULT_TRAINER_ID);
+                if (rawData) {
+                    this.team[0] = createSync(rawData);
+                }
+            } else {
+                // 组队模式：保持 [null, null, null]
+            }
+        },
+
+
+        // ========================= 持久化存储逻辑 =========================
+
+        /**
+         * 将当前队伍状态保存到 LocalStorage
+         * 我们只保存能“重建”这个对象所需的数据 (ID, 石盘点位, 等级等)
+         */
+        saveToStorage() {
+            // 序列化当前 team
+            const dataToSave = this.team.map((slot: Sync) => {
+                if (!slot) return null;
+                return {
+                    id: slot.rawData.trainer.id,
+                    // 仅保存必要的动态状态
+                    state: {
+                        level: slot.state.level,
+                        bonusLevel: slot.state.bonusLevel,
+                        potential: slot.state.potential,
+                        currentRarity: slot.state.currentRarity,
+                        selectedGridIds: slot.state.gridData
+                            .filter((t: Tile) => t.isActive)
+                            .map((t: Tile) => t.id)
+                    }
+                };
+            });
+
+            // 根据当前模式写入对应的 Key
+            const targetKey = this.isTeam ? TEAM_SYNC_KEY : CURRENT_SYNC_KEY;
+
+            if (!this.isTeam) {
+                // 强制只保存第一个，确保干净
+                localStorage.setItem(targetKey, JSON.stringify([dataToSave[0]]));
+            } else {
+                localStorage.setItem(targetKey, JSON.stringify(dataToSave));
+            }
+        },
+
+        // ======================= 辅助：重建对象 =======================
+
+        _reconstructSync(savedItem: any): Sync | null {
+            const syncCacheStore = useSyncCacheStore();
+            const rawData = syncCacheStore.getRawDataWithTrainerId(savedItem.id);
+
+            if (!rawData) return null;
+
+            const newSync = createSync(rawData);
+
+            // 恢复保存的状态
+            if (savedItem.state) {
+                const s = savedItem.state;
+                if (s.level) newSync.state.level = s.level;
+                if (s.bonusLevel) newSync.state.bonusLevel = s.bonusLevel;
+                if (s.potential) newSync.state.potential = s.potential;
+                if (s.currentRarity) newSync.state.currentRarity = s.currentRarity;
+
+                // 恢复石盘
+                if (Array.isArray(s.selectedGridIds)) {
+                    s.selectedGridIds.forEach((gid: number) => {
+                        const tile = newSync.state.gridData.find(t => t.id === gid);
+                        if (tile) tile.isActive = true;
+                    });
+                }
+            }
+            return newSync;
+        },
+
+
         // ------------------------------ 槽位管理 ------------------------------
 
         /**
@@ -158,34 +282,32 @@ export const useSyncElemStore = defineStore("syncUse", {
             if (this.activeSlotIndex === 0) {
                 localStorage.removeItem(CURRENT_SYNC_KEY);
             }
+
+            this.saveToStorage();
         },
 
         // ------------------------------ 核心操作 (作用于当前槽位) ------------------------------
 
-        // 初始化当前槽位 (通常用于页面加载时读取缓存)
-        initActiveSync() {
-            const syncCacheStore = useSyncCacheStore();
-            const rawData = syncCacheStore.selectedRawData;
+        // // 初始化当前槽位 (通常用于页面加载时读取缓存)
+        // initActiveSync() {
+        //     const syncCacheStore = useSyncCacheStore();
+        //     const rawData = syncCacheStore.selectedRawData;
 
-            // 如果缓存里有数据，就加载到当前槽位
-            if (rawData) {
-                this.team[this.activeSlotIndex] = createSync(rawData);
-            }
-        },
+        //     // 如果缓存里有数据，就加载到当前槽位
+        //     if (rawData) {
+        //         this.team[this.activeSlotIndex] = createSync(rawData);
+        //     }
+        // },
 
-        /**
-         * 重置当前拍组的动态状态（恢复默认）
-         * 逻辑：重新用 rawData 创建一个新实例覆盖旧的
-         */
-        resetActiveSync() {
-            const currentSync = this.activeSync;
-            if (!currentSync) return;
+        // resetActiveSync() {
+        //     const currentSync = this.activeSync;
+        //     if (!currentSync) return;
 
-            // 这里假设我们能通过 ID 重新获取 rawData，或者 rawData 本身就在 Sync 对象里存了一份
-            // 你之前的 createSync 返回了 rawData，所以可以直接用
-            const rawData = currentSync.rawData;
-            this.team[this.activeSlotIndex] = createSync(rawData);
-        },
+        //     // 这里假设我们能通过 ID 重新获取 rawData，或者 rawData 本身就在 Sync 对象里存了一份
+        //     // 你之前的 createSync 返回了 rawData，所以可以直接用
+        //     const rawData = currentSync.rawData;
+        //     this.team[this.activeSlotIndex] = createSync(rawData);
+        // },
 
         // 選擇拍組方法 (加载数据到当前槽位)
         selectSyncToActiveSlot(trainer_id: string) {
@@ -201,11 +323,15 @@ export const useSyncElemStore = defineStore("syncUse", {
             if (this.activeSlotIndex === 0) {
                 localStorage.setItem(CURRENT_SYNC_KEY, trainer_id);
             }
+
+            this.saveToStorage();
         },
 
         updateTeamSlot(index: number, sync: Sync) {
             if (index >= 0 && index < 3) {
                 this.team[index] = sync;
+
+                this.saveToStorage();
             }
         },
 
@@ -213,6 +339,8 @@ export const useSyncElemStore = defineStore("syncUse", {
             const temp = this.team[indexA];
             this.team[indexA] = this.team[indexB];
             this.team[indexB] = temp;
+
+            this.saveToStorage();
         },
     },
 });
@@ -472,6 +600,13 @@ const createSync = (jsonData: SyncRawData): Sync => {
             if (tile && methods.isTileReachable(tile)) {
                 tile.isActive = !tile.isActive;
             }
+        },
+
+        // 重置石盘
+        resetSelectedTiles: () => {
+            state.gridData.forEach(tile => {
+                tile.isActive = false;
+            });
         },
 
         // 更新等级（含范围验证）
