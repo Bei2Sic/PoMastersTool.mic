@@ -6,8 +6,13 @@ import { useSyncElemStore } from "@/stores/syncElem";
 import { createPinia } from "pinia";
 import { createApp } from 'vue';
 import App from './App.vue';
+import VConsole from 'vconsole';
 
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
+
+if (import.meta.env.MODE === 'development' || window.location.host.includes('dev')) {
+    new VConsole();
+}
 
 const app = createApp(App);
 const pinia = createPinia();
