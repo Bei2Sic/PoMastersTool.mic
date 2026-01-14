@@ -174,7 +174,13 @@ const viewBox = computed(() => {
     if (!props.gridData || props.gridData.length === 0) return '-500 -500 1000 1000';
 
     let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
-    props.gridData.forEach(tile => {
+
+    const validTiles = props.gridData.filter(t => 
+        typeof t.x === 'number' && !isNaN(t.x) && 
+        typeof t.y === 'number' && !isNaN(t.y)
+    );
+
+    validTiles.forEach(tile => {
         const cx = calcHexSvgX(tile.x);
         const cy = calcHexSvgY(tile.x, tile.y);
         minX = Math.min(minX, cx - CONST_HEX_RADIUS);
@@ -182,6 +188,10 @@ const viewBox = computed(() => {
         minY = Math.min(minY, cy - CONST_HEX_RADIUS);
         maxY = Math.max(maxY, cy + CONST_HEX_RADIUS);
     });
+
+    if (isNaN(minX) || isNaN(maxX) || isNaN(minY) || isNaN(maxY)) {
+        return '-500 -500 1000 1000';
+    }
 
     // 留白
     const padding = 10;
