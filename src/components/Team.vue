@@ -329,8 +329,8 @@ const handleRemove = (index: number) => { syncStore.updateTeamSlot(index, null);
 }
 
 .header-slot {
-    inline-size: 100px;
-    block-size: 100px;
+    inline-size: 200px;
+    block-size: 200px;
     position: relative;
     cursor: pointer;
     transition: transform 0.2s;
@@ -542,6 +542,7 @@ const handleRemove = (index: number) => { syncStore.updateTeamSlot(index, null);
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: url('../assets/images/bg3.png');
 }
 
 /* 为了美观，可以自定义滚动条样式（隐形或细条） */
@@ -862,8 +863,8 @@ const handleRemove = (index: number) => { syncStore.updateTeamSlot(index, null);
 
     .header-slot {
         /* 稍微缩小一点头像，腾出空间 */
-        inline-size: 60px;
-        block-size: 60px;
+        inline-size: 100px;
+        block-size: 100px;
     }
 
     .column-slot {
