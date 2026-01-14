@@ -1,11 +1,10 @@
+import { SyncRawData } from "@/types/cache";
 import {
     BonusIndex,
     ExRoleIndex,
     RarityIndex,
     RoleIndex,
 } from "@/types/indices";
-import { SyncRawData } from "@/types/cache"
-import { ComputedRef } from "vue";
 import { BattleState } from "./conditions";
 
 // ================================= 基础类型定义（适配新JSON结构）=================================
@@ -134,8 +133,9 @@ export interface SpecialAwaking {
 
 /** 潜能饼干技能 */
 export interface LuckCookieSkill {
-    name: string[];
+    name: string;
     description: string;
+    detail?: Detail[];
     rate: number;
 }
 
@@ -175,7 +175,7 @@ export interface SyncDynamicState {
     bonusLevel: BonusIndex; // 当前宝数等级
     // bonusList: { id: number; isActive: boolean }[]; // 宝数激活列表
     gridData: Tile[]; // 石盘动态数据
-    potentialCookie: LuckCookie | null; // 当前选择的潜能饼干
+    potentialCookie: Passive | null; // 当前选择的潜能饼干
     selectedPokemonIndex: number; // 选中的宝可梦形态索引（默认0）
     battle: BattleState; // 战斗状态
 }
@@ -184,7 +184,7 @@ export interface SyncDynamicState {
 export interface SyncComputed {
     hp: number; // HP白值
     atk: number; // 攻击白值
-    def: number; // 防御白值
+    def: number; // 防御白值bin
     spa: number; // 特攻白值（对应spa）
     spd: number; // 特防白值（对应spd）
     spe: number; // 速度白值（对应spe）
@@ -218,8 +218,7 @@ export interface SyncMethods {
     toggleTile: (tileId: number) => void; // 切换石盘激活状态
     updateLevel: (level: number) => void; // 更新等级（含验证）
     updateRarity: (rarity: RarityIndex) => void; // 更新星级（EX后重置潜力）
-    updatePotentialCookie: (cookie: LuckCookie | null) => void; // 更新潜能饼干
-    updatePotentialCookieWithLevel: (cookie: LuckCookie, level: number) => void; // 带等级的饼干更新
+    updatePotentialCookie: (cookie: Passive | null) => void; // 更新潜能饼干
     getTileBorderUrl: (tile: Tile) => string;
     getTileFillUrl: (tile: Tile) => string;
     fixTileName: (tile: Tile) => string[];

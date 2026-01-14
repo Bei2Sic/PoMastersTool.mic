@@ -9,7 +9,7 @@ import type { SyncRawData } from "@/types/cache";
 import { BattleState } from "@/types/conditions";
 import { RarityIndex } from "@/types/indices";
 import {
-    LuckCookie,
+    Passive,
     Sync,
     SyncDynamicState,
     SyncMethods,
@@ -129,6 +129,12 @@ export const useSyncElemStore = defineStore("syncUse", {
         // ------------------------------ 组队计算属性 ------------------------------
         // 这里可以很方便地获取整个队伍，因为 team 就在 state 里
         teamSyncList: (state) => state.team,
+
+        occupiedTrainerIds: (state) => {
+            return state.team
+                .filter((slot): slot is Sync => slot !== null)
+                .map(slot => slot.rawData.trainer.id);
+        }
     },
 
     actions: {
@@ -197,15 +203,16 @@ export const useSyncElemStore = defineStore("syncUse", {
             }
         },
 
-        /**
-         * 更新队伍槽位
-         * @param index 0, 1, 2
-         * @param sync 新的 Sync 实例
-         */
         updateTeamSlot(index: number, sync: Sync) {
             if (index >= 0 && index < 3) {
                 this.team[index] = sync;
             }
+        },
+
+        swapTeamSlots(indexA: number, indexB: number) {
+            const temp = this.team[indexA];
+            this.team[indexA] = this.team[indexB];
+            this.team[indexB] = temp;
         },
     },
 });
@@ -482,16 +489,8 @@ const createSync = (jsonData: SyncRawData): Sync => {
         },
 
         // 更新潜能饼干
-        updatePotentialCookie: (cookie: LuckCookie | null) => {
+        updatePotentialCookie: (cookie: Passive | null) => {
             state.potentialCookie = cookie;
-        },
-
-        // 带等级的饼干更新（示例：饼干名称拼接等级）
-        updatePotentialCookieWithLevel: (cookie: LuckCookie, level: number) => {
-            state.potentialCookie = {
-                ...cookie,
-                cookieName: `${cookie.cookieName}${level}`,
-            };
         },
 
         // 判断石盘是否可达（基于宝数等级）

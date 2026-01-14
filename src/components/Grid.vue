@@ -333,7 +333,7 @@ onUnmounted(() => {
     flex-shrink: 0;
     inline-size: 100%;
     max-inline-size: 320px;
-    margin: 5px auto;
+    margin: 10px auto;
     display: flex;
     flex-direction: column;
     /* gap: px; */
@@ -351,7 +351,9 @@ onUnmounted(() => {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    background-image: url('../assets/images/bg1.png');
+    background-image: url('../assets/images/bg_btn.png');
+    background-size: cover;
+    background-position: center;
 }
 
 .info-item {
@@ -501,6 +503,10 @@ onUnmounted(() => {
     cursor: pointer;
     /* 去除高亮 */
     -webkit-tap-highlight-color: transparent;
+}
+
+.tile-locked .grid-text {
+    fill: #666;
 }
 
 .grid-text {

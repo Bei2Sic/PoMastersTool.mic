@@ -531,6 +531,10 @@ const getRarityIcon = (rarity: RarityIndex, ex: boolean) => {
     flex-direction: column;
     block-size: 100%;
     overflow: hidden;
+    gap: 2px;
+    padding: 0 20px 5px 20px;
+    background-image: url('../assets/images/bg1.png');
+    background-position: center;
 }
 
 .controls-header {

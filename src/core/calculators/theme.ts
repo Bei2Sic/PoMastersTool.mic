@@ -1,10 +1,10 @@
+import {
+    BATTLE_REGIONS,
+} from "@/constances/battle";
 import { parseComplexThemeSkill } from "@/core/parse/theme";
 import { ThemeContext } from "@/types/calculator";
 import { PokemonType, RegionType } from "@/types/conditions";
 import { Sync } from "@/types/syncModel";
-import {
-    BATTLE_REGIONS,
-} from "@/constances/battle";
 
 export class ThemeContextResolver {
     static resolve(team: (Sync | null)[]): ThemeContext {
@@ -38,7 +38,7 @@ export class ThemeContextResolver {
                     // 累加条件加成
                     if (cBonus) {
                         tagType = cBonus.type;
-                        tagAdd = cBonus.atk; // 攻擊和特攻加成是一致的
+                        tagAdd += cBonus.atk; // 攻擊和特攻加成是一致的
                     }
                 }
             });

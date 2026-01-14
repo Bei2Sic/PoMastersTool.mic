@@ -107,9 +107,9 @@ export const useDamageCalcStore = defineStore("damageCalc", {
         },
 
         config: {
-            physical: 20 as number,
-            special: 20 as number,
-            sync: 20 as number,
+            physical: 0 as number,
+            special: 0 as number,
+            sync: 0 as number,
             gearMove: 0 as number,
             gearSync: 0 as number,
         },

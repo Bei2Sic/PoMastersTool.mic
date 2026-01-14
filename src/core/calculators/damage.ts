@@ -1070,6 +1070,8 @@ export class DamageEngine {
             case LogicType.TeamWorkPassive:
             case LogicType.MasterPassive:
             case LogicType.ArcSuitPassive:
+                console.log(cond.key);
+                console.log(theme.tagCounts);
                 const count = theme.tagCounts[cond.key] || 0;
                 value = (boost.baseValue ?? 0.0) + (count - 1) * boost.value;
 

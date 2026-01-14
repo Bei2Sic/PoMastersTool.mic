@@ -6,23 +6,25 @@
                 <img src="@/assets/images/bg_pokeball.png" class="btn-icon" alt="Menu" />
             </button>
 
-            <Grid v-model:bonusLevel="dynamicState.bonusLevel" :grid-data="finalGrid.gridData" :trainer="trainer"
-                :current-rarity="dynamicState.currentRarity" :bonus-level="dynamicState.bonusLevel"
-                :cost-orbs="finalGrid.costOrbs" :last-energy="finalGrid.lastEnergy"
-                :cost-fiery-orbs="finalGrid.costFieryOrbs" :cost-leaf-orbs="finalGrid.costLeafOrbs"
-                :cost-bubbly-orbs="finalGrid.costBubblyOrbs" :cost-sparky-orbs="finalGrid.costSparkyOrbs"
-                :cost-t-m-orbs="finalGrid.costTMOrbs" :is-tile-reachable="syncMethods.isTileReachable"
-                :get-tile-border-url="syncMethods.getTileBorderUrl" :get-tile-fill-url="syncMethods.getTileFillUrl"
-                :get-trainer-avatar-url="getTrainerUrl" :fix-tile-name="syncMethods.fixTileName"
-                :toggle-tile="syncMethods.toggleTile" :check-selected-tiles="syncMethods.checkSelectedTiles"
-                :on-trainer-click="toggleTrainerSelect" />
-
+            <div class="grid-viewport">
+                <Grid class="responsive-grid" v-model:bonusLevel="dynamicState.bonusLevel" :grid-data="finalGrid.gridData" :trainer="trainer"
+                    :current-rarity="dynamicState.currentRarity" :bonus-level="dynamicState.bonusLevel"
+                    :cost-orbs="finalGrid.costOrbs" :last-energy="finalGrid.lastEnergy"
+                    :cost-fiery-orbs="finalGrid.costFieryOrbs" :cost-leaf-orbs="finalGrid.costLeafOrbs"
+                    :cost-bubbly-orbs="finalGrid.costBubblyOrbs" :cost-sparky-orbs="finalGrid.costSparkyOrbs"
+                    :cost-t-m-orbs="finalGrid.costTMOrbs" :is-tile-reachable="syncMethods.isTileReachable"
+                    :get-tile-border-url="syncMethods.getTileBorderUrl" :get-tile-fill-url="syncMethods.getTileFillUrl"
+                    :get-trainer-avatar-url="getTrainerUrl" :fix-tile-name="syncMethods.fixTileName"
+                    :toggle-tile="syncMethods.toggleTile" :check-selected-tiles="syncMethods.checkSelectedTiles"
+                    :on-trainer-click="toggleTrainerSelect" />
+            </div>
             <!-- 彈窗篩選拍組窗口 -->
             <transition name="modal">
                 <div v-if="showFilterModal" class="modal-overlay" @click="showFilterModal = false">
                     <div class="modal-content" @click.stop>
                         <h3 class="modal-title">选择拍组</h3>
-                        <Filter class="filter-component-wrapper" @select-trainer="handleSelectTrainer"
+                        <Filter class="filter-component-wrapper" :occupied-ids="occupiedTrainerIds"
+                            @select-trainer="handleSelectTrainer"
                             @close-modal="showFilterModal = false" />
                     </div>
                 </div>
@@ -82,7 +84,7 @@
             </div>
         </div>
 
-        <Damage :visible="showDamageCalc" :targetSync="activeSync" :teamSyncs="null" @close="handleCloseCalc" />
+        <Damage :visible="showDamageCalc" :is-team="false" @close="handleCloseCalc" />
 
     </div>
 </template>
@@ -121,7 +123,7 @@ const curTab = ref('grid');
 
 const showDamageCalc = ref(false);
 
-const { activeSync } = storeToRefs(syncElemStore);
+const { activeSync, occupiedTrainerIds } = storeToRefs(syncElemStore);
 // const { themeSnapshot, passiveSnapshot, statSnapshot, finalDamageResult } = useDamageCalculator(singleSync);
 
 // 潜能相关
@@ -244,6 +246,27 @@ onUnmounted(() => {
     display: flex;
     flex-direction: column;
     border-inline-end: 1px solid #ddd;
+    overflow: hidden;
+}
+
+.grid-viewport {
+    flex: 1;
+    inline-size: 100%;
+    block-size: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+}
+
+.responsive-grid {
+    inline-size: 100%;
+    min-block-size: 120%; 
 }
 
 .modal-overlay {

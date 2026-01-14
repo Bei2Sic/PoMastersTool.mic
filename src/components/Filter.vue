@@ -39,7 +39,11 @@
             </div>
 
             <div v-for="trainer in filteredTrainers" :key="trainer.id" class="trainer-item"
-                @click="handleSelect(trainer)">
+                :class="{ 'is-occupied': props.occupiedIds.includes(trainer.id) }" @click="handleSelect(trainer)">
+
+                <div v-if="props.occupiedIds.includes(trainer.id)" class="occupied-badge">
+                    已選擇
+                </div>
 
                 <div class="image-wrapper">
                     <img :src="getTrainerUrl(trainer.enActor, trainer.dexNumber, trainer.rarity, trainer.count)"
@@ -280,6 +284,12 @@ import { getTrainerUrl } from '@/utils/format';
 import { Converter } from 'opencc-js';
 import { computed, reactive, ref, watch } from 'vue';
 
+const props = defineProps({
+    occupiedIds: {
+        type: Array,
+        default: () => []
+    }
+});
 
 // --- 数据准备 ---
 const syncCacheStore = useSyncCacheStore();
@@ -550,6 +560,8 @@ const handleSelect = (trainer: SyncMeta) => {
     padding: 16px;
     box-sizing: border-box;
     gap: 12px;
+    background-image: url('../assets/images/bg1.png');
+    background-position: center;
 }
 
 /* --- 搜索栏 --- */
@@ -739,6 +751,26 @@ const handleSelect = (trainer: SyncMeta) => {
 
 .trainer-item:active {
     transform: scale(0.95);
+}
+
+.trainer-card.is-occupied {
+    opacity: 0.8;
+    /*稍微变暗 */
+    border: 2px solid #568dd1;
+    /* 加个边框提示 */
+    background-color: #f0f7ff;
+}
+
+.occupied-badge {
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-end: 0;
+    background: #568dd1;
+    color: white;
+    font-size: 10px;
+    padding: 2px 4px;
+    border-radius: 0 0 0 4px;
+    z-index: 10;
 }
 
 /* 图片容器 */

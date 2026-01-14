@@ -18,7 +18,7 @@ import {
 } from "@/types/calculator";
 import { CircleLevel, RegionType } from "@/types/conditions";
 import { MoveBase, Pokemon, Sync } from "@/types/syncModel";
-import { computed, Ref, watch } from "vue";
+import { computed, watch } from "vue";
 
 // ... 其他導入
 function collectActivePassives(
@@ -105,15 +105,19 @@ function collectActivePassives(
         });
     }
 
-    // 4. 队友被动也要计入
+    if (sync.state.potentialCookie) {
+        passives.push({
+            name: sync.state.potentialCookie.name,
+            desc: sync.state.potentialCookie.description,
+            passiveName: sync.state.potentialCookie.name,
+            sourceIndex: sourceIndex,
+        });
+    }
 
     return passives;
 }
 
-export function useDamageCalculator(
-    a: Ref<Sync | null>,
-    b: Ref<Sync | null>[] = []
-) {
+export function useDamageCalculator() {
     const syncStore = useSyncElemStore();
     const damageStore = useDamageCalcStore();
 
@@ -262,11 +266,23 @@ export function useDamageCalculator(
 
             // const rawPassives = collectActivePassives(sync, formIndex, -1);
 
+            console.log(JSON.stringify(rawPassives, null, 2));
             const passiveModels = rawPassives.flatMap((p) => {
                 // 特殊被动查表
+                // todo: 目前都是不唯一的，後續如果有怎麼辦
                 const override = PASSIVE_OVERRIDES[p.passiveName];
                 if (override) {
-                    return override;
+                    return override
+                        .filter((item) => {
+                            if (p.sourceIndex !== -1 && !item.applyToParty) {
+                                return false;
+                            }
+                            return true;
+                        })
+                        .map((item) => ({
+                            ...item,
+                            sourceIndex: p.sourceIndex,
+                        }));
                 }
 
                 // 通用解析
@@ -276,7 +292,7 @@ export function useDamageCalculator(
                     p.passiveName
                 );
                 const result = parser.result; // 这里result就是技能模型
-                console.log(JSON.stringify(result, null, 2));
+                // console.log(JSON.stringify(result, null, 2));
                 if (result !== null) {
                     if (p.sourceIndex !== -1 && !result.applyToParty) {
                         return []; // 丢弃队友的个人被动
@@ -286,6 +302,7 @@ export function useDamageCalculator(
                 }
                 return [];
             });
+            console.log(JSON.stringify(passiveModels, null, 2));
 
             // 过滤同名且唯一的被动
             const seenUniquePassives = new Set<string>();
@@ -305,6 +322,7 @@ export function useDamageCalculator(
                 return true;
             });
 
+            // console.log(JSON.stringify(finalPassiveModels, null, 2));
             return {
                 formName: getFormName(pokemon),
                 passives: finalPassiveModels,
@@ -447,6 +465,7 @@ export function useDamageCalculator(
 
                 // 激活的所有被動list
                 const currentPassives = passives[index].passives;
+                // console.log(JSON.stringify(currentPassives, null, 2));
                 let activeMove = m; // 默認使用原始招式
 
                 const parser = new MoveSkillParser(

@@ -12,7 +12,7 @@
                     </div>
 
                     <div v-else class="header-filled">
-                        <div class="role-bg" :style="getRoleStyle(team[index - 1])"></div>
+                        <div class="role-bg"></div>
 
                         <img :src="getAvatar(team[index - 1])" class="header-avatar" />
                         <button class="header-remove-btn" @click.stop="handleRemove(index - 1)">×</button>
@@ -52,6 +52,22 @@
                 </div>
 
                 <div v-else class="scroll-container">
+                    <div class="potential-trigger-bar"
+                        :class="{ 'is-selected': getSlotState(index - 1).potentialCookie }"
+                        @click.stop="openPotentialModal(index - 1)">
+
+                        <template v-if="getSlotState(index - 1).potentialCookie">
+                            <span class="current-cookie-name">
+                                {{ getSlotState(index - 1).potentialCookie?.name }}
+                            </span>
+                        </template>
+
+                        <template v-else>
+                            <span class="placeholder-icon">+</span>
+                            <span class="label">潜能饼干</span>
+                        </template>
+                    </div>
+
 
                     <div class="grid-viewport" @mousedown="handleSlotClick(index - 1)">
                         <Grid :key="team[index - 1].rawData.trainer.id" class="responsive-grid" :is-mini="true"
@@ -80,14 +96,28 @@
         </div>
 
         <transition name="modal-fade">
+            <div v-if="showPotentialModal" class="modal-overlay" @click="showPotentialModal = false">
+                <div class="modal-window potential-window" @click.stop>
+                    <div class="modal-header">
+                        <div class="pokemon-name">{{ exportMethods.getSyncName() }}</div>
+                        <button class="close-icon" @click="showPotentialModal = false">×</button>
+                    </div>
+                    <Lucky :special-cookies="getSlotLuckCookies(activePotentialSlotIndex)"
+                        :model-value="getSlotState(activePotentialSlotIndex).potentialCookie"
+                        @update:model-value="handlePotentialSelect" />
+                </div>
+            </div>
+        </transition>
+
+        <transition name="modal-fade">
             <div v-if="showFilterModal" class="modal-overlay" @click="showFilterModal = false">
                 <div class="modal-window filter-window" @click.stop>
                     <div class="modal-header">
-                        <h3>选择拍组 (位置 {{ activeSlotIndex + 1 }})</h3>
+                        <div class="pokemon-name">选择拍组 {{ activeSlotIndex + 1 }}号位</div>
                         <button class="close-icon" @click="showFilterModal = false">×</button>
                     </div>
-                    <div class="modal-body">
-                        <Filter @select-trainer="handleSelectTrainer" @close-modal="showFilterModal = false" />
+                    <div class="filter-wrapper">
+                        <Filter :occupied-ids="occupiedTrainerIds" @select-trainer="handleSelectTrainer" @close-modal="showFilterModal = false" />
                     </div>
                 </div>
             </div>
@@ -100,23 +130,21 @@
                         <div class="pokemon-name">{{ exportMethods.getSyncName() }}</div>
                         <button class="close-icon" @click="showInfoModal = false">×</button>
                     </div>
-                    <div class="modal-body bg-pattern">
-                        <Info :level-value="currentDynamicState.level"
-                            :current-rarity-value="currentDynamicState.currentRarity"
-                            :potential-value="currentDynamicState.potential"
-                            :ex-role-enabled-value="currentDynamicState.exRoleEnabled"
-                            :bonus-level="currentDynamicState.bonusLevel"
-                            :selected-pokemon-index="currentDynamicState.selectedPokemonIndex"
-                            :trainer="exportMethods.getTrainer()" :themes="exportMethods.getThemes()"
-                            :special-awaking="exportMethods.getSpecialAwaking()"
-                            :variation-list="exportMethods.getvariationList()" :final-stats="currentFinalStats"
-                            :final-moves="currentFinalMoves" :pokemon="currentPokemon"
-                            @update:levelValue="(val) => currentDynamicState.level = val"
-                            @update:currentRarityValue="(val) => currentDynamicState.currentRarity = val"
-                            @update:potentialValue="(val) => currentDynamicState.potential = val"
-                            @update:exRoleEnabledValue="(val) => currentDynamicState.exRoleEnabled = val"
-                            @update:selectedPokemonIndex="(val) => currentDynamicState.selectedPokemonIndex = val" />
-                    </div>
+                    <Info :level-value="currentDynamicState.level"
+                        :current-rarity-value="currentDynamicState.currentRarity"
+                        :potential-value="currentDynamicState.potential"
+                        :ex-role-enabled-value="currentDynamicState.exRoleEnabled"
+                        :bonus-level="currentDynamicState.bonusLevel"
+                        :selected-pokemon-index="currentDynamicState.selectedPokemonIndex"
+                        :trainer="exportMethods.getTrainer()" :themes="exportMethods.getThemes()"
+                        :special-awaking="exportMethods.getSpecialAwaking()"
+                        :variation-list="exportMethods.getvariationList()" :final-stats="currentFinalStats"
+                        :final-moves="currentFinalMoves" :pokemon="currentPokemon"
+                        @update:levelValue="(val) => currentDynamicState.level = val"
+                        @update:currentRarityValue="(val) => currentDynamicState.currentRarity = val"
+                        @update:potentialValue="(val) => currentDynamicState.potential = val"
+                        @update:exRoleEnabledValue="(val) => currentDynamicState.exRoleEnabled = val"
+                        @update:selectedPokemonIndex="(val) => currentDynamicState.selectedPokemonIndex = val" />
                 </div>
             </div>
         </transition>
@@ -124,7 +152,7 @@
         <transition name="modal-fade">
             <div v-if="showCalcModal" class="modal-overlay" @click="showCalcModal = false">
                 <div class="modal-window calc-window" @click.stop>
-                    <Damage :visible="true" :targetSync="activeSync" :teamSyncs="null" @close="showCalcModal = false" />
+                    <Damage :visible="true" :is-team="true" @close="showCalcModal = false" />
                 </div>
             </div>
         </transition>
@@ -134,7 +162,7 @@
 
 <script setup lang="ts">
 import { useSyncElemStore } from '@/stores/syncElem';
-import { Sync, SyncComputed, SyncDynamicState, SyncMethods, Trainer } from '@/types/syncModel';
+import { LuckCookie, Passive, Sync, SyncComputed, SyncDynamicState, SyncMethods, Trainer } from '@/types/syncModel';
 import { getTrainerUrl } from '@/utils/format';
 import { storeToRefs } from 'pinia';
 import { ref } from 'vue';
@@ -144,15 +172,26 @@ import Filter from '@/components/Filter.vue';
 import Grid from '@/components/Grid.vue';
 import Info from '@/components/Info.vue';
 import { RoleIndex } from '@/types/indices';
+import Lucky from './Lucky.vue';
 
 const syncStore = useSyncElemStore();
-const { team, activeSlotIndex, activeSync, currentDynamicState, currentFinalStats, currentFinalMoves, currentPokemon, exportMethods } = storeToRefs(syncStore);
+const { team, activeSlotIndex, activeSync, currentDynamicState, currentFinalStats, currentFinalMoves, currentPokemon, exportMethods, occupiedTrainerIds } = storeToRefs(syncStore);
 
 const showFilterModal = ref(false);
 const showInfoModal = ref(false);
 const showCalcModal = ref(false);
-
-// ✨ 新增：控制底部菜单展开状态的数组 [false, false, false]
+const showPotentialModal = ref(false);
+const activePotentialSlotIndex = ref(0);
+const openPotentialModal = (index: number) => {
+    activePotentialSlotIndex.value = index;
+    showPotentialModal.value = true;
+};
+const handlePotentialSelect = (passive: Passive | null) => {
+    // 更新对应槽位的数据
+    updateSlotState(activePotentialSlotIndex.value, 'potentialCookie', passive);
+    // 选完后关闭弹窗
+    showPotentialModal.value = false;
+};
 const menuState = ref<boolean[]>([false, false, false]);
 
 // --- 辅助函数 ---
@@ -176,6 +215,10 @@ const getSlotGridInfo = (index: number): SyncComputed => {
 const getSlotTrainer = (index: number): Trainer => {
     const sync = team.value[index];
     return sync ? sync.rawData.trainer : {} as Trainer;
+}
+const getSlotLuckCookies = (index: number): LuckCookie[] => {
+    const sync = team.value[index];
+    return sync ? sync.rawData.luckCookies : {} as LuckCookie[];
 }
 const getSlotExportMethod = (index: number): SyncMethods => {
     const sync = team.value[index];
@@ -236,7 +279,18 @@ const openModal = (type: 'info' | 'calc', index: number) => {
 };
 
 const handleSelectTrainer = (id: string) => {
-    syncStore.selectSyncToActiveSlot(id);
+    // 检查这个 ID 是否已经在队伍里了
+    const existingSlotIndex = team.value.findIndex(
+        slot => slot?.rawData?.trainer?.id === id
+    );
+    // 如果找到了，且不在当前正在操作的槽位上
+    if (existingSlotIndex !== -1 && existingSlotIndex !== activeSlotIndex.value) {
+        syncStore.swapTeamSlots(existingSlotIndex, activeSlotIndex.value);
+    } else {
+        // 正常逻辑：没有重复，直接选中
+        syncStore.selectSyncToActiveSlot(id);
+    }
+
     showFilterModal.value = false;
 };
 const toggleTrainerSelect = () => { showFilterModal.value = true; };
@@ -280,6 +334,7 @@ const handleRemove = (index: number) => { syncStore.updateTeamSlot(index, null);
     position: relative;
     cursor: pointer;
     transition: transform 0.2s;
+    padding: 10px;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
@@ -460,6 +515,7 @@ const handleRemove = (index: number) => { syncStore.updateTeamSlot(index, null);
     background-image: url('../assets/images/bg3.png');
     scrollbar-width: thin;
     scrollbar-color: transparent transparent;
+
 }
 
 .scroll-container::-webkit-scrollbar {
@@ -480,7 +536,7 @@ const handleRemove = (index: number) => { syncStore.updateTeamSlot(index, null);
     flex: 1;
     overflow: auto;
     inline-size: 100%;
-    block-size: 110%;
+    block-size: 120%;
     position: relative;
     overflow: auto;
     display: flex;
@@ -510,6 +566,78 @@ const handleRemove = (index: number) => { syncStore.updateTeamSlot(index, null);
 .responsive-grid {
     inline-size: 100%;
     block-size: 100%;
+}
+
+.potential-trigger-bar {
+    inline-size: fit-content;
+    max-inline-size: 85%;
+    max-block-size: 4%;
+    /* 防止名字太长撑爆屏幕 */
+    margin: 10px auto 5px;
+    /* 2. 外观：胶囊圆角 */
+    background: transparent;
+    border: 1px solid #e0e0e0;
+    border-radius: 24px;
+    /* 更大的圆角，形成胶囊形状 */
+    padding: 6px 16px;
+    /* 稍微紧凑的内边距 */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: px;
+
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    /* 轻微浮起阴影 */
+    z-index: 5;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+}
+
+/* 悬停效果 */
+.potential-trigger-bar:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-color: #568dd1;
+}
+
+/* 选中状态下的特殊样式 (可选：加个边框颜色区分) */
+.potential-trigger-bar.is-selected {
+    border-color: #ffd591;
+    /* 淡橙色边框 */
+    background: #fffbf0;
+    /* 极淡的暖色背景 */
+}
+
+/* 饼干图标 */
+.cookie-icon {
+    font-size: 14px;
+}
+
+/* 加号图标 */
+.placeholder-icon {
+    font-size: 16px;
+    font-weight: bold;
+    color: #999;
+    line-height: 1;
+}
+
+/* “潜能技能” 占位文字 */
+.label {
+    font-size: 11px;
+    color: #ebe7e7;
+    font-weight: 600;
+}
+
+/* 选中后的饼干名称 */
+.current-cookie-name {
+    color: #d46b08;
+    font-weight: bold;
+    font-size: 11px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .action-drawer {
@@ -609,23 +737,37 @@ const handleRemove = (index: number) => { syncStore.updateTeamSlot(index, null);
 }
 
 .modal-window {
-    background: white;
+    background: rgb(252, 252, 252);
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    max-block-size: 90vh;
+    max-block-size: 100vh;
+}
+
+/* 弹窗尺寸定义 */
+.potential-window {
+    inline-size: 500px;
+    block-size: 95dvh;
 }
 
 .filter-window {
-    inline-size: 450px;
-    block-size: 80vh;
+    inline-size: 90%;
+    max-inline-size: 500px;
+    block-size: 88dvh;
+}
+
+.filter-wrapper {
+    flex: 1;
+    min-block-size: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .info-window {
     inline-size: 500px;
-    block-size: 85vh;
+    block-size: 95dvh;
 }
 
 .calc-window {
@@ -640,7 +782,7 @@ const handleRemove = (index: number) => { syncStore.updateTeamSlot(index, null);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 15px;
+    padding: 0 10px;
     background: #f9f9f9;
     border-block-end: 1px solid #eee;
 }
@@ -651,12 +793,10 @@ const handleRemove = (index: number) => { syncStore.updateTeamSlot(index, null);
     align-items: center;
     justify-content: center;
 
-    font-size: 18px;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 900;
     color: #fff;
-    /* ✨ 关键：文字描边效果 */
     text-shadow:
         -1px -1px 0 #004d40,
         1px -1px 0 #004d40,
@@ -681,12 +821,6 @@ const handleRemove = (index: number) => { syncStore.updateTeamSlot(index, null);
 
 .close-icon:hover {
     color: #333;
-}
-
-.modal-body {
-    flex: 1;
-    overflow-y: auto;
-    position: relative;
 }
 
 .bg-pattern {
