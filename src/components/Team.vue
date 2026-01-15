@@ -18,7 +18,7 @@
                         <button class="header-remove-btn" @click.stop="handleRemove(index - 1)">×</button>
                     </div>
 
-                    <div class="team-header-btn" @click="handleMobileBtnClick(index - 1);">
+                    <div class="team-header-btn" @click.="handleMobileBtnClick(index - 1);">
                         {{ '选择' }}
                     </div>
                 </div>
@@ -361,9 +361,10 @@ onMounted(async () => {
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
-/* 悬停效果 */
-.header-slot:hover {
-    transform: scale(1.05);
+@media (hover: hover) {
+    .header-slot:hover {
+        transform: scale(1.05);
+    }
 }
 
 /* 选中状态 */
@@ -565,7 +566,7 @@ onMounted(async () => {
     inline-size: 100%;
     block-size: 120%;
     position: relative;
-    overflow: auto;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -882,7 +883,7 @@ onMounted(async () => {
         justify-content: space-between;
         padding: 0 10px;
         gap: 10px;
-        min-height: 140px;
+        min-block-size: 140px;
         align-items: flex-start;
     }
 
@@ -911,7 +912,7 @@ onMounted(async () => {
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-top: 8px;
+        margin-block-start: 8px;
         z-index: 20;
         color: #666;
         font-size: 12px;
@@ -928,11 +929,6 @@ onMounted(async () => {
         background-position: center;
 
         -webkit-tap-highlight-color: transparent;
-    }
-
-    .team-header-btn:active {
-        transform: translateY(-30%) scale(0.95);
-        background-color: #4a7bb3;
     }
 
     .column-slot {

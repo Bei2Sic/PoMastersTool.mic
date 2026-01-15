@@ -499,7 +499,7 @@ onUnmounted(() => {
 .svg-scroll-area {
     flex: 1;
     inline-size: 100%;
-    overflow: hidden;
+    overflow: auto;
     position: relative;
     -webkit-overflow-scrolling: touch;
 
