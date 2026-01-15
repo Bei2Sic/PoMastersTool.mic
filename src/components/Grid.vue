@@ -347,6 +347,7 @@ onUnmounted(() => {
     display: flex;
     flex-direction: column;
     background: transparent;
+    overflow: hidden;
 }
 
 .reset-btn {
@@ -498,7 +499,7 @@ onUnmounted(() => {
 .svg-scroll-area {
     flex: 1;
     inline-size: 100%;
-    overflow: auto;
+    overflow: hidden;
     position: relative;
     -webkit-overflow-scrolling: touch;
 

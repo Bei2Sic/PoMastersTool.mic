@@ -18,7 +18,7 @@
                         <button class="header-remove-btn" @click.stop="handleRemove(index - 1)">×</button>
                     </div>
 
-                    <div class="team-header-btn" @click.stop="handleMobileBtnClick(index - 1);">
+                    <div class="team-header-btn" @click="handleMobileBtnClick(index - 1);">
                         {{ '选择' }}
                     </div>
                 </div>
@@ -311,7 +311,7 @@ const toggleTrainerSelect = () => { showFilterModal.value = true; };
 const handleRemove = (index: number) => { syncStore.updateTeamSlot(index, null); };
 
 onMounted(async () => {
-    
+
     // syncStore.initMode(true);
 });
 
