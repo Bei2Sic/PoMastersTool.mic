@@ -495,6 +495,7 @@ onMounted(async () => {
 
 /* 空状态 */
 .empty-state {
+    inline-size: 100%;
     block-size: 100%;
     display: flex;
     align-items: center;
@@ -564,7 +565,7 @@ onMounted(async () => {
     flex: 1;
     overflow: auto;
     inline-size: 100%;
-    block-size: 100%;
+    block-size: 120%;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -870,10 +871,12 @@ onMounted(async () => {
 
 @media (max-width: 768px) {
 
-    /* 1. 调整根容器高度，去除固定高度，允许浏览器原生滚动条 (可选，防止 Safari 底部工具栏遮挡) */
+    .grid-viewport {
+        block-size: 100%;
+    }
+
     .team-dashboard-root {
         block-size: 100vh;
-        /* 使用 dvh (dynamic viewport height) 体验更好，如果浏览器支持 */
         block-size: 100dvh;
     }
 
