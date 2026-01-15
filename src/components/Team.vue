@@ -6,7 +6,7 @@
                 <div class="header-slot" :class="{
                     'is-active': activeSlotIndex === (index - 1),
                     'is-filled': !!team[index - 1]
-                }" @click="handleSlotClick(index - 1)">
+                }">
                     <div v-if="!team[index - 1]" class="header-empty" @click.stop="openFilter(index - 1)">
                         <img src="@/assets/images/none_pair.png" class="empty-bg" />
                     </div>
@@ -18,7 +18,7 @@
                         <button class="header-remove-btn" @click.stop="handleRemove(index - 1)">×</button>
                     </div>
 
-                    <div class="team-header-btn" @click.="handleMobileBtnClick(index - 1);">
+                    <div class="team-header-btn" @click.stop="handleMobileBtnClick(index - 1);">
                         {{ '选择' }}
                     </div>
                 </div>
@@ -930,8 +930,7 @@ onMounted(async () => {
         block-size: 100%;
     }
 
-    .action-drawer {
-    }
+    .action-drawer {}
 
     .drawer-handle {
         /* 增加触摸区域 */
