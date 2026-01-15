@@ -171,7 +171,7 @@ import { useSyncElemStore } from '@/stores/syncElem';
 import { LuckCookie, Passive, Sync, SyncComputed, SyncDynamicState, SyncMethods, Trainer } from '@/types/syncModel';
 import { getTrainerUrl } from '@/utils/format';
 import { storeToRefs } from 'pinia';
-import { ref, onMounted } from 'vue';
+import { onMounted, ref } from 'vue';
 
 import Damage from '@/components/Damage.vue';
 import Filter from '@/components/Filter.vue';
@@ -312,7 +312,7 @@ const handleRemove = (index: number) => { syncStore.updateTeamSlot(index, null);
 
 onMounted(async () => {
     
-    syncStore.initMode(true);
+    // syncStore.initMode(true);
 });
 
 </script>

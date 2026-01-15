@@ -218,7 +218,7 @@ watch(curTab, (newTab) => {
 // }, { immediate: true });
 
 onMounted(() => {
-    syncElemStore.initMode(false);
+    // syncElemStore.initMode(false);
 });
 
 onUnmounted(() => {

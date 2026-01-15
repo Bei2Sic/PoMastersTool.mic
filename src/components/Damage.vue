@@ -188,10 +188,10 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
 
                                         <div v-else-if="stat.key === 'acc'" class="stacked-label">
                                             <span class="row-label">裝備</span>
-                                            <div class="label-divider"></div>
+                                            <!-- <div class="label-divider"></div> -->
                                             <span class="row-label text-blue-600">隊伍技能</span>
                                         </div>
-                                        <div v-else class="placeholder">-</div>
+                                        <!-- <div v-else class="placeholder">-</div> -->
                                     </div>
 
                                 </div>
@@ -935,7 +935,7 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
     border: none;
     text-align: center;
     background: transparent;
-    font-size: 0.9rem;
+    font-size: clamp(11px, 2vw, 12px);
     font-weight: bold;
     color: #444;
 }
@@ -984,7 +984,7 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
     block-size: 32px;
     inline-size: 100%;
     border: none;
-    font-size: 0.85rem;
+    font-size: clamp(11px, 2vw, 12px);
 }
 
 .top-input {
@@ -1040,7 +1040,7 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
 }
 
 .common-label {
-    font-size: 0.85rem;
+    font-size: clamp(11px, 2vw, 13px);
     color: #333;
     font-weight: bold;
 }
@@ -1092,7 +1092,7 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
     border-radius: 4px;
     text-align: center;
     font-weight: bold;
-    font-size: 1rem;
+    font-size: clamp(11px, 2vw, 13px);
 }
 
 /* Boost Section */
@@ -1285,7 +1285,7 @@ const handleHindranceClick = (target: 'user' | 'target', cnName: string) => {
 }
 
 .rebuff-select {
-    font-size: 0.8rem;
+    font-size: clamp(10px, 2vw, 12px);
     background: #fafafa;
 }
 

@@ -14,7 +14,9 @@ export const changelogs: LogEntry[] = [
         title: "功能更新以及BUG修复",
         content: [
             "修复：修复招式威力增強類的被動無法生效的問題。",
+            "修复：修复鬥陣觸發類的被動無法生效的問題。",
             "新增：新增 [組隊模式]",
+            "新增：新增頁面內容本地緩存",
             "优化：优化部分顯示",
         ],
         isCritical: true,

@@ -15,7 +15,7 @@
                 </div>
             </div>
 
-            <div class="menu-card" @click="$emit('navigate', 'team')">
+            <div class="menu-card primary" @click="$emit('navigate', 'team')">
                 <img src="@/assets/st/ch0101_42_mei_st_1004_128.png" class="menu-icon" alt="多人" />
                 <div class="text">
                     <h3>组队模式</h3>

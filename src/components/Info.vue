@@ -480,7 +480,7 @@ watch(
 );
 
 const expandedPassives = ref({});
-const togglePassiveDetail = (index) => {
+const togglePassiveDetail = (index: string | number) => {
     expandedPassives.value[index] = !expandedPassives.value[index];
 };
 
@@ -700,7 +700,7 @@ select.config-input {
 
 .stat-header {
     font-weight: 500;
-    font-size: 12px;
+    font-size: clamp(10px, 2vw, 12px);
     color: black;
     inline-size: 100%;
     text-align: center;
@@ -708,7 +708,7 @@ select.config-input {
 }
 
 .stat-value {
-    font-size: 12px;
+    font-size: clamp(10px, 2vw, 12px);
     color: black;
     inline-size: 100%;
     text-align: center;
@@ -763,7 +763,7 @@ select.config-input {
     background-color: #a5d6e3;
     border: 2px solid #4a9ab0;
     border-radius: 6px;
-    font-size: 16px;
+    font-size: clamp(12px, 2vw, 15px);
     font-weight: bold;
     color: #000;
     cursor: pointer;
@@ -949,7 +949,7 @@ select.config-input {
     align-items: center;
     padding: 8px 12px;
     font-weight: bolder;
-    font-size: 16px;
+    font-size: clamp(12px, 2vw, 14px);
     color: #000000dc;
 }
 
@@ -958,6 +958,7 @@ select.config-input {
     align-items: center;
     font-weight: 700;
     gap: 8px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .icon {
@@ -984,7 +985,7 @@ select.config-input {
 .move-uses {
     padding: 2px 6px;
     color: black;
-    font-size: 14px;
+    font-size: clamp(12px, 2vw, 14px);
     border-radius: 4px;
 }
 
@@ -1003,7 +1004,7 @@ select.config-input {
     display: flex;
     justify-content: space-between;
     padding: 4px 8px;
-    font-size: 14px;
+    font-size: clamp(11px, 2vw, 14px);
     border-block-end: 1px solid rgba(0, 0, 0, 0.08);
     background-color: rgba(255, 255, 255, 0.3);
 }
@@ -1022,12 +1023,13 @@ select.config-input {
 
 .move-desc {
     padding: 8px 12px;
-    font-size: 14px;
+    font-size: clamp(11px, 2vw, 14px);
     font-weight: 700;
     color: #000000ab;
     border-block-start: 1px solid rgba(0, 0, 0, 0.1);
     line-height: 1.4;
     white-space: pre-line;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .extra-row {
@@ -1073,7 +1075,7 @@ select.config-input {
 .passive-name {
     text-align: center;
     font-weight: 700;
-    font-size: 15px;
+    font-size: clamp(12px, 2vw, 14px);
     margin-block-end: 8px;
     color: #ffffffe5;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
@@ -1086,7 +1088,7 @@ select.config-input {
     border-radius: 4px;
     background-color: #ffffff;
     color: rgb(2, 2, 2);
-    font-size: 18px;
+    font-size: clamp(14px, 2vw, 16px);
     font-weight: bold;
     cursor: pointer;
     display: flex;
@@ -1098,7 +1100,7 @@ select.config-input {
 }
 
 .passive-content {
-    font-size: 14px;
+    font-size: clamp(11px, 2vw, 13px);
     line-height: 1.5;
     color: #222;
     white-space: pre-line;
@@ -1115,11 +1117,12 @@ select.config-input {
 }
 
 .passive-desc {
-    font-size: 12px;
+    font-size: clamp(11px, 2vw, 13px);
     line-height: 1.5;
     font-weight: 700;
     color: #242323cc;
     white-space: pre-line;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 /* 组队技能 */
@@ -1166,7 +1169,15 @@ select.config-input {
     white-space: pre-line;
 }
 
+html {
+    font-size: 62.5%;
+}
+
 @media (max-width: 768px) {
+    html {
+        font-size: 53.125%;
+    }
+
     .date-section {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1174,5 +1185,15 @@ select.config-input {
     .date-value {
         font-size: 11px;
     }
+
+    /* .stat-header {
+        font-size: 11px;
+    }
+    .stat-value {
+        font-size: 10px;
+    }
+    .tab-btn {
+        font-size: 13px;
+    } */
 }
 </style>

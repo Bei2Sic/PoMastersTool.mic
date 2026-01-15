@@ -1,4 +1,8 @@
-import { CURRENT_SYNC_KEY, DEFAULT_TRAINER_ID, TEAM_SYNC_KEY } from "@/constances/key";
+import {
+    CURRENT_SYNC_KEY,
+    DEFAULT_TRAINER_ID,
+    TEAM_SYNC_KEY,
+} from "@/constances/key";
 import { PowerMoveScope } from "@/core/calculators/power";
 import {
     getFinalStatValue,
@@ -28,6 +32,7 @@ interface SyncElemState {
     activeSlotIndex: number;
 
     isTeam: boolean;
+    isReady: boolean;
 }
 
 export const useSyncElemStore = defineStore("syncUse", {
@@ -36,6 +41,7 @@ export const useSyncElemStore = defineStore("syncUse", {
         team: [null, null, null],
         activeSlotIndex: 0,
         isTeam: false,
+        isReady: false,
     }),
 
     getters: {
@@ -136,65 +142,70 @@ export const useSyncElemStore = defineStore("syncUse", {
         occupiedTrainerIds: (state) => {
             return state.team
                 .filter((slot): slot is Sync => slot !== null)
-                .map(slot => slot.rawData.trainer.id);
-        }
+                .map((slot) => slot.rawData.trainer.id);
+        },
     },
 
     actions: {
         // ======================== 设置模式初始化 ==============================
         initMode(isTeam: boolean) {
-            const syncCacheStore = useSyncCacheStore();
+            this.isReady = false;
 
+            const syncCacheStore = useSyncCacheStore();
             if (!syncCacheStore.getRawDataWithTrainerId(DEFAULT_TRAINER_ID)) {
                 console.warn("基础数据未加载，无法初始化 SyncStore");
                 return;
             }
 
-            // 1. 设置模式
             this.isTeam = isTeam;
-            this.activeSlotIndex = 0; // 切换模式时重置选中索引
+            this.activeSlotIndex = 0;
+            this.team = [null, null, null];
 
-            // 2. 确定存储键
             const targetKey = isTeam ? TEAM_SYNC_KEY : CURRENT_SYNC_KEY;
             const json = localStorage.getItem(targetKey);
 
-            // 3. 先清空当前内存，防止残留
-            this.team = [null, null, null];
-            // ======================= 有本地存档 =======================
+            let loadedSuccess = false; // 标记是否从本地加载成功
+
+            // ======================= 加载本地存档 =======================
             if (json) {
                 try {
                     const savedData = JSON.parse(json);
-
                     savedData.forEach((item: any, index: number) => {
-                        // 单人模式只读第0个，组队读所有
                         if (!isTeam && index > 0) return;
                         if (index >= 3) return;
-
                         if (item && item.id) {
                             this.team[index] = this._reconstructSync(item);
                         }
                     });
-                    console.log(`[SyncStore] 已加载 ${isTeam ? "组队" : "单人"} 模式存档`);
-                    return;
+                    console.log(
+                        `[SyncStore] 已加载 ${
+                            isTeam ? "组队" : "单人"
+                        } 模式存档`
+                    );
+                    loadedSuccess = true;
                 } catch (e) {
                     console.error("存档损坏，执行兜底逻辑", e);
                 }
             }
 
-            // ======================= 分支 B: 无存档 (兜底逻辑) =======================
-            console.log(`[SyncStore] 无 ${isTeam ? "组队" : "单人"} 存档，执行初始化默认设置`);
-
-            if (!isTeam) {
-                // 单人模式：位置 0 设置默认 ID
-                const rawData = syncCacheStore.getRawDataWithTrainerId(DEFAULT_TRAINER_ID);
-                if (rawData) {
-                    this.team[0] = createSync(rawData);
+            if (!loadedSuccess) {
+                console.log(`[SyncStore] 无存档或读取失败，执行初始化默认设置`);
+                if (!isTeam) {
+                    // 单人模式：给个默认ID
+                    const rawData =
+                        syncCacheStore.getRawDataWithTrainerId(
+                            DEFAULT_TRAINER_ID
+                        );
+                    if (rawData) {
+                        this.team[0] = createSync(rawData);
+                        // this.saveData();
+                    }
+                } else {
+                    // 组队模式：保持全空，啥也不用做
                 }
-            } else {
-                // 组队模式：保持 [null, null, null]
             }
+            this.isReady = true;
         },
-
 
         // ========================= 持久化存储逻辑 =========================
 
@@ -216,8 +227,8 @@ export const useSyncElemStore = defineStore("syncUse", {
                         currentRarity: slot.state.currentRarity,
                         selectedGridIds: slot.state.gridData
                             .filter((t: Tile) => t.isActive)
-                            .map((t: Tile) => t.id)
-                    }
+                            .map((t: Tile) => t.id),
+                    },
                 };
             });
 
@@ -226,7 +237,10 @@ export const useSyncElemStore = defineStore("syncUse", {
 
             if (!this.isTeam) {
                 // 强制只保存第一个，确保干净
-                localStorage.setItem(targetKey, JSON.stringify([dataToSave[0]]));
+                localStorage.setItem(
+                    targetKey,
+                    JSON.stringify([dataToSave[0]])
+                );
             } else {
                 localStorage.setItem(targetKey, JSON.stringify(dataToSave));
             }
@@ -236,7 +250,9 @@ export const useSyncElemStore = defineStore("syncUse", {
 
         _reconstructSync(savedItem: any): Sync | null {
             const syncCacheStore = useSyncCacheStore();
-            const rawData = syncCacheStore.getRawDataWithTrainerId(savedItem.id);
+            const rawData = syncCacheStore.getRawDataWithTrainerId(
+                savedItem.id
+            );
 
             if (!rawData) return null;
 
@@ -248,19 +264,21 @@ export const useSyncElemStore = defineStore("syncUse", {
                 if (s.level) newSync.state.level = s.level;
                 if (s.bonusLevel) newSync.state.bonusLevel = s.bonusLevel;
                 if (s.potential) newSync.state.potential = s.potential;
-                if (s.currentRarity) newSync.state.currentRarity = s.currentRarity;
+                if (s.currentRarity)
+                    newSync.state.currentRarity = s.currentRarity;
 
                 // 恢复石盘
                 if (Array.isArray(s.selectedGridIds)) {
                     s.selectedGridIds.forEach((gid: number) => {
-                        const tile = newSync.state.gridData.find(t => t.id === gid);
+                        const tile = newSync.state.gridData.find(
+                            (t) => t.id === gid
+                        );
                         if (tile) tile.isActive = true;
                     });
                 }
             }
             return newSync;
         },
-
 
         // ------------------------------ 槽位管理 ------------------------------
 
@@ -604,7 +622,7 @@ const createSync = (jsonData: SyncRawData): Sync => {
 
         // 重置石盘
         resetSelectedTiles: () => {
-            state.gridData.forEach(tile => {
+            state.gridData.forEach((tile) => {
                 tile.isActive = false;
             });
         },

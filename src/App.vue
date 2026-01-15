@@ -4,9 +4,7 @@
       <Home v-if="currentPage === 'home'" @navigate="goToPage" />
 
       <div v-else-if="currentPage === 'sync'" class="tool-wrapper">
-        <div v-if="syncStore.activeSync">
-          <Sync />
-        </div>
+        <Sync />
 
         <button class="back-home-btn home-pos" @click="currentPage = 'home'" title="返回目录">
           <img src="@/assets/images/icon_remove.png" class="home-icon" alt="Home" />
@@ -28,9 +26,9 @@
 <script setup lang="ts">
 import Home from '@/components/Home.vue';
 import Sync from '@/components/Sync.vue';
-import { ref, onMounted } from 'vue';
-import Team from './components/Team.vue';
 import { useSyncElemStore } from "@/stores/syncElem";
+import { onMounted, ref, watch } from 'vue';
+import Team from './components/Team.vue';
 
 const syncStore = useSyncElemStore();
 
@@ -38,11 +36,40 @@ const syncStore = useSyncElemStore();
 const currentPage = ref('home');
 
 const goToPage = (pageName: string) => {
+  if (pageName === 'home') {
+    currentPage.value = pageName;
+    return;
+  }
+  if (pageName === 'sync') {
+    syncStore.initMode(false);
+  }
+  else if (pageName === 'team') {
+    syncStore.initMode(true);
+  }
   currentPage.value = pageName;
 };
 
+let saveTimer: number | null = null;
+
+watch(
+  () => syncStore.team, // 监听目标
+  (newVal, oldVal) => {
+    if (!syncStore.isReady) return;
+
+    // 清除上一次的定时器
+    if (saveTimer) clearTimeout(saveTimer);
+
+    // 开启新的定时器 (500ms 后执行)
+    saveTimer = setTimeout(() => {
+      syncStore.saveToStorage();
+    }, 500);
+  },
+  {
+    deep: true
+  }
+);
+
 onMounted(() => {
-  syncStore.initMode(false);
 });
 </script>
 

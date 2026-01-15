@@ -727,7 +727,7 @@ export class DamageEngine {
                 const [circleRegion, circleCategory] = parts;
                 const region = circleRegion as RegionType;
                 const category = circleCategory as CircleCategory;
-                return env.battleCircles[region][category].isActive;
+                return env.battleCircles[region].actives[category];
 
             case LogicType.GaugeSpeedBoostOn:
                 return env.gaugeAcceleration;
