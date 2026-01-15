@@ -18,7 +18,7 @@
                         <button class="header-remove-btn" @click.stop="handleRemove(index - 1)">×</button>
                     </div>
 
-                    <div class="team-header-btn" @click.stop="handleMobileBtnClick(index - 1);">
+                    <div class="team-header-btn" @click="handleMobileBtnClick(index - 1);">
                         {{ '选择' }}
                     </div>
                 </div>
@@ -855,6 +855,7 @@ onMounted(async () => {
     .grid-viewport {
         block-size: 100%;
         padding: 5px;
+        overscroll-behavior-y: none;
     }
 
     .team-dashboard-root {

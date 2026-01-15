@@ -10,7 +10,7 @@
 body {
     margin: 0;
     padding: 0;
-    /* background-image: url("./images/bg2.png"); */
+    background-image: url("./images/bg3.png");
     background-repeat: repeat;
     /* 关键：横向+纵向重复平铺 */
     background-size: auto;

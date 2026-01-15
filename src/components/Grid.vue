@@ -512,6 +512,8 @@ onUnmounted(() => {
 
     touch-action: manipulation;
 
+    overscroll-behavior: contain;
+
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -590,11 +592,6 @@ onUnmounted(() => {
         right: 10px;
         width: 25px;
         height: 25px;
-    }
-
-    .svg-scroll-area {
-        align-items: flex-start;
-        padding-block-start: 20px;
     }
 
     .academy-resources {
