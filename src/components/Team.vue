@@ -564,7 +564,7 @@ onMounted(async () => {
     flex: 1;
     overflow: auto;
     inline-size: 100%;
-    block-size: 120%;
+    block-size: 100%;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -887,27 +887,21 @@ onMounted(async () => {
         align-items: flex-start;
     }
 
-    /* 修改 .header-slot-wrapper */
     .header-slot-wrapper {
         flex: 1;
         display: flex;
-        /* ✨ 关键：改为垂直排列 */
         flex-direction: column;
         align-items: center;
-        /* 水平居中 */
         justify-content: flex-start;
-
         position: relative;
     }
 
-    /* 修改 .header-slot (头像容器) */
     .header-slot {
         inline-size: 100px;
         block-size: 100px;
         -webkit-tap-highlight-color: transparent;
     }
 
-    /* 修改 .team-header-btn (按钮) */
     .team-header-btn {
         display: flex;
         align-items: center;
@@ -927,6 +921,10 @@ onMounted(async () => {
         background-image: url('../assets/images/bg_btn.png');
         background-size: cover;
         background-position: center;
+
+        cursor: pointer;
+        user-select: none;
+        -webkit-user-select: none;
 
         -webkit-tap-highlight-color: transparent;
     }
