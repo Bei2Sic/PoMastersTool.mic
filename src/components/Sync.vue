@@ -357,6 +357,7 @@ onUnmounted(() => {
     block-size: 100vh;
     display: flex;
     flex-direction: column;
+    background-image: url('../assets/images/bg2.png');
     /* max-block-size: 880px; */
 }
 
