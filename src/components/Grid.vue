@@ -37,8 +37,8 @@
 
         <div class="svg-scroll-area" @click="handleBackgroundClick">
 
-            <svg :viewBox="viewBox" :preserveAspectRatio="isMobile ? 'xMidYMin meet' : 'xMidYMid meet'"
-                class="main-svg">
+            <!-- <svg :viewBox="viewBox" :preserveAspectRatio="isMobile ? 'xMidYMin meet' : 'xMidYMid meet'" -->
+            <svg :viewBox="viewBox" :preserveAspectRatio="'xMidYMin meet'" class="main-svg">
                 <image :href="trainerAvatarUrl" :x="-CONST_TRAINER_SIZE / 2" :y="-CONST_TRAINER_SIZE / 2"
                     :width="CONST_TRAINER_SIZE" :height="CONST_TRAINER_SIZE" rx="50%" ry="50%" class="center-avatar" />
                 <circle cx="0" cy="0" :r="CONST_TRAINER_SIZE / 2" fill="transparent"
