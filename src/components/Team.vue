@@ -581,7 +581,7 @@ onMounted(async () => {
     flex: 1;
     overflow: auto;
     inline-size: 100%;
-    block-size: 120%;
+    block-size: 130%;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -598,25 +598,20 @@ onMounted(async () => {
 .potential-trigger-bar {
     inline-size: fit-content;
     max-inline-size: 85%;
-    max-block-size: 4%;
-    /* 防止名字太长撑爆屏幕 */
+    max-block-size: 10%;
     margin: 10px auto 5px;
-    /* 2. 外观：胶囊圆角 */
     background: transparent;
     border: 1px solid #e0e0e0;
     border-radius: 24px;
-    /* 更大的圆角，形成胶囊形状 */
     padding: 6px 16px;
-    /* 稍微紧凑的内边距 */
 
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: px;
+    gap: 10px;
 
     cursor: pointer;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    /* 轻微浮起阴影 */
     z-index: 5;
     flex-shrink: 0;
     transition: all 0.2s ease;
