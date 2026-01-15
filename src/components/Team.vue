@@ -7,7 +7,7 @@
                     'is-active': activeSlotIndex === (index - 1),
                     'is-filled': !!team[index - 1]
                 }">
-                    <div v-if="!team[index - 1]" class="header-empty" @click.stop="openFilter(index - 1)">
+                    <div v-if="!team[index - 1]" class="header-empty">
                         <img src="@/assets/images/none_pair.png" class="empty-bg" />
                     </div>
 
@@ -15,11 +15,11 @@
                         <div class="role-bg"></div>
 
                         <img :src="getAvatar(team[index - 1])" class="header-avatar" />
-                        <button class="header-remove-btn" @click.stop="handleRemove(index - 1)">×</button>
+                        <button class="header-remove-btn" @click="handleRemove(index - 1)">×</button>
                     </div>
 
                     <div class="team-header-btn" @click="handleMobileBtnClick(index - 1);">
-                        {{ '选择' }}
+                        {{ '選擇' }}
                     </div>
                 </div>
             </div>
@@ -39,11 +39,11 @@
 
                     <div class="drawer-content">
                         <button class="action-btn" @click="openModal('info', index - 1)">
-                            拍组信息
+                            拍組信息
                         </button>
                         <div class="divider"></div>
                         <button class="action-btn" @click="openModal('calc', index - 1)">
-                            伤害计算
+                            傷害計算
                         </button>
                     </div>
                 </div>
@@ -51,7 +51,7 @@
                 <div v-if="!team[index - 1]" class="empty-state">
                     <button class="add-btn" @click.stop="openFilter(index - 1)">
                         <div class="add-icon-circle">+</div>
-                        <span class="add-text">点击添加</span>
+                        <span class="add-text">點擊添加拍組</span>
                     </button>
                 </div>
 
@@ -118,7 +118,7 @@
             <div v-if="showFilterModal" class="modal-overlay" @click="showFilterModal = false">
                 <div class="modal-window filter-window" @click.stop>
                     <div class="modal-header">
-                        <div class="pokemon-name">选择拍组 {{ activeSlotIndex + 1 }}号位</div>
+                        <div class="pokemon-name">選擇拍組 {{ activeSlotIndex + 1 }}号位</div>
                         <button class="close-icon" @click="showFilterModal = false">×</button>
                     </div>
                     <div class="filter-wrapper">

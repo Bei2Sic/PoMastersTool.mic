@@ -1,7 +1,7 @@
 <template>
     <div class="sync-grid-container">
 
-        <button class="reset-btn" @click="props.resetSelectedTiles()" title="重置石盘">
+        <button class="reset-btn" @click="props.resetSelectedTiles()" title="重置石盤">
             <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"
                 stroke-linecap="round" stroke-linejoin="round">
                 <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
@@ -352,8 +352,8 @@ onUnmounted(() => {
 
 .reset-btn {
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 10%;
+    right: 2%;
     z-index: 50;
     width: 36px;
     height: 36px;
@@ -580,16 +580,9 @@ onUnmounted(() => {
 /* ================== 移动端关键样式 ================== */
 @media (max-width: 768px) {
 
-    .main-svg {
-        inline-size: 100%;
-        block-size: 100%;
-        /* min-inline-size: 150%; */
-        min-block-size: 80vh;
-    }
-
     .reset-btn {
-        top: 30px;
-        right: 10px;
+        top: 10%;
+        right: 5%;
         width: 25px;
         height: 25px;
     }
