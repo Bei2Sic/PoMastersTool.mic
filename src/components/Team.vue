@@ -58,7 +58,7 @@
                 <div v-else class="scroll-container">
                     <div class="potential-trigger-bar"
                         :class="{ 'is-selected': getSlotState(index - 1).potentialCookie }"
-                        @click.stop="openPotentialModal(index - 1)">
+                        @click="openPotentialModal(index - 1)">
 
                         <template v-if="getSlotState(index - 1).potentialCookie">
                             <span class="current-cookie-name">
@@ -362,8 +362,24 @@ onMounted(async () => {
 }
 
 @media (hover: hover) {
+    .action-btn:hover {
+        background: #e6f0ff;
+        color: #568dd1;
+    }
+
+    .close-icon:hover {
+        color: #333;
+    }
+
     .header-slot:hover {
         transform: scale(1.05);
+    }
+
+    /* 悬停效果 */
+    .potential-trigger-bar:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        border-color: #568dd1;
     }
 }
 
@@ -574,25 +590,6 @@ onMounted(async () => {
     background-image: url('../assets/images/bg3.png');
 }
 
-/* 为了美观，可以自定义滚动条样式（隐形或细条） */
-.grid-viewport::-webkit-scrollbar {
-    inline-size: 6px;
-    block-size: 6px;
-}
-
-.grid-viewport::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.grid-viewport::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.1);
-    border-radius: 3px;
-}
-
-.grid-viewport::-webkit-scrollbar-thumb:hover {
-    background: rgba(0, 0, 0, 0.2);
-}
-
 .responsive-grid {
     inline-size: 100%;
     block-size: 100%;
@@ -623,13 +620,6 @@ onMounted(async () => {
     z-index: 5;
     flex-shrink: 0;
     transition: all 0.2s ease;
-}
-
-/* 悬停效果 */
-.potential-trigger-bar:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    border-color: #568dd1;
 }
 
 /* 选中状态下的特殊样式 (可选：加个边框颜色区分) */
@@ -742,11 +732,6 @@ onMounted(async () => {
     transition: all 0.2s;
 }
 
-.action-btn:hover {
-    background: #e6f0ff;
-    color: #568dd1;
-}
-
 .v-divider {
     inline-size: 1px;
     block-size: 20px;
@@ -849,10 +834,6 @@ onMounted(async () => {
     color: #999;
 }
 
-.close-icon:hover {
-    color: #333;
-}
-
 .bg-pattern {
     background-image: url('@/assets/images/bg1.png');
 }
@@ -873,6 +854,7 @@ onMounted(async () => {
 
     .grid-viewport {
         block-size: 100%;
+        padding: 5px;
     }
 
     .team-dashboard-root {
@@ -948,15 +930,7 @@ onMounted(async () => {
         block-size: 100%;
     }
 
-    /* 4. 调整石盘视口 */
-    .grid-viewport {
-        /* 移动端不需要那么宽的内边距 */
-        padding: 10px;
-    }
-
-    /* 5. 调整下拉菜单位置 */
     .action-drawer {
-        /* 移动端可能需要更大的把手方便手指点击 */
     }
 
     .drawer-handle {

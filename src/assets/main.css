@@ -1,7 +1,7 @@
 @import "./base.css";
 
 #app {
-    /* max-width: 1280px; */
+    /* max-inline-size: 1280px; */
     /* margin: 0 auto; */
     /* padding: 2rem; */
     font-weight: normal;
@@ -10,7 +10,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url("./images/bg2.png");
+    /* background-image: url("./images/bg2.png"); */
     background-repeat: repeat;
     /* 关键：横向+纵向重复平铺 */
     background-size: auto;
@@ -21,7 +21,7 @@ body {
     /* 固定不滚动 */
     background-color: #f5f8ff;
     /* 备用色 */
-    min-height: 100vh;
+    min-block-size: 100vh;
     /* 确保全屏高度 */
 }
 

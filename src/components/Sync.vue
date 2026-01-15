@@ -248,6 +248,12 @@ onUnmounted(() => {
     flex-direction: column;
     border-inline-end: 1px solid #ddd;
     overflow: hidden;
+    background-image: url("../assets/images/bg2.png");
+    background-repeat: repeat;
+    /* 关键：横向+纵向重复平铺 */
+    background-size: auto;
+    /* 保持图片原始尺寸（或设置固定尺寸，比如 200px 200px） */
+    background-position: top left;
 }
 
 .grid-viewport {
