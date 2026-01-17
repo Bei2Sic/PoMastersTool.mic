@@ -9,6 +9,16 @@ export interface LogEntry {
 
 export const changelogs: LogEntry[] = [
     {
+        version: "v2.64.0_6",
+        date: "2026-01-17",
+        title: "BUG修复",
+        content: [
+            "修复：修复劇毒中毒包含關係顛倒的問題。",
+            "修复：修复全體類被動觸發對象有誤的問題。",
+        ],
+        isCritical: true,
+    },
+    {
         version: "v2.64.0_5",
         date: "2026-01-15",
         title: "功能更新以及BUG修复",

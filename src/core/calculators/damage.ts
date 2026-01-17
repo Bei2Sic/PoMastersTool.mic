@@ -737,7 +737,7 @@ export class DamageEngine {
                 //     ? env.target.abnormal
                 //     : env.user.abnormal;
                 const abnormal = getSubject(cond.detail).abnormal;
-                if (cond.key === "劇毒" && abnormal === "中毒") {
+                if (cond.key === "中毒" && abnormal === "劇毒") {
                     return true;
                 }
                 return cond.key.includes(abnormal);

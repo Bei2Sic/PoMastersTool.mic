@@ -464,14 +464,14 @@ export class PassiveSkillParser {
             return {
                 logic: LogicType.AbnormalActive,
                 key: "異常狀態",
-                detail: desc.includes("對手") ? "對手" : "自身",
+                detail: name.includes("對手") ? "對手" : "自身",
                 isDynamic: false,
             };
         if (desc.includes("妨害狀態"))
             return {
                 logic: LogicType.HindranceActive,
                 key: "妨害狀態",
-                detail: desc.includes("對手") ? "對手" : "自身",
+                detail: name.includes("對手") ? "對手" : "自身",
                 isDynamic: false,
             };
         if (desc.includes("HP非全滿狀態"))
@@ -485,14 +485,14 @@ export class PassiveSkillParser {
             return {
                 logic: LogicType.AllStatNotInHigh,
                 key: "沒有處於提高狀態的能力",
-                detail: desc.includes("對手") ? "對手" : "自身",
+                detail: name.includes("對手") ? "對手" : "自身",
                 isDynamic: false,
             };
         if (desc.includes("能力降低"))
             return {
                 logic: LogicType.AnyStatInLow,
                 key: "能力降低",
-                detail: desc.includes("對手") ? "對手" : "自身",
+                detail: name.includes("對手") ? "對手" : "自身",
                 isDynamic: false,
             };
         if (desc.includes("HP非全滿狀態"))
@@ -506,7 +506,7 @@ export class PassiveSkillParser {
             return {
                 logic: LogicType.HPHalf,
                 key: "HP剩下一半",
-                detail: desc.includes("對手") ? "對手" : "自身",
+                detail: name.includes("對手") ? "對手" : "自身",
                 direction: desc.includes("HP剩下一半以上") ? "以上" : "以下",
                 isDynamic: false,
             };
@@ -616,7 +616,7 @@ export class PassiveSkillParser {
                 return {
                     logic: LogicType.Abnormal,
                     key: s,
-                    detail: desc.includes("對手") ? "對手" : "自身",
+                    detail: name.includes("對手") ? "對手" : "自身",
                     isDynamic: false,
                 };
         }
@@ -626,7 +626,7 @@ export class PassiveSkillParser {
                 return {
                     logic: LogicType.Hindrance,
                     key: s,
-                    detail: desc.includes("對手") ? "對手" : "自身",
+                    detail: name.includes("對手") ? "對手" : "自身",
                     isDynamic: false,
                 };
         }
